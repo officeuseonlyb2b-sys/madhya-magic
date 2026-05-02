@@ -219,7 +219,7 @@ const DestinationPillars = ({ destinations }: Props) => {
             </div>
 
             {/* RIGHT CARDS */}
-            <div className="w-full lg:w-1/2 overflow-hidden relative">
+            <div className="w-full lg:w-1/2 overflow-hidden relative" onWheel={onWheel}>
               <motion.div
                 drag="x"
                 style={{ x: dragX }}
@@ -287,6 +287,26 @@ const DestinationPillars = ({ destinations }: Props) => {
                   })}
                 </AnimatePresence>
               </motion.div>
+
+              {/* Arrow controls */}
+              <div className="absolute bottom-4 right-4 z-30 flex gap-2">
+                <button
+                  type="button"
+                  aria-label="Previous"
+                  onClick={() => goTo(-1)}
+                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                >
+                  <ArrowLeft size={16} />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next"
+                  onClick={() => goTo(1)}
+                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                >
+                  <ArrowRight size={16} />
+                </button>
+              </div>
             </div>
 
           </div>
