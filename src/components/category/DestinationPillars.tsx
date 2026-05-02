@@ -121,6 +121,30 @@ const DestinationPillars = ({ destinations }: Props) => {
     return () => clearInterval(interval);
   }, [isPaused, activeIdx]);
 
+  // Manual nav (arrows / wheel)
+  const goTo = useCallback(
+    (dir: 1 | -1) => {
+      pauseAuto();
+      animate(dragX, 0, { type: "spring", stiffness: 240, damping: 30 });
+      setActiveIdx((prev) => (prev + dir + len) % len);
+      scheduleResume();
+    },
+    [len]
+  );
+
+  // Wheel scroll support (horizontal or vertical wheel)
+  const wheelLockRef = useRef(false);
+  const onWheel = (e: React.WheelEvent) => {
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (Math.abs(delta) < 8 || wheelLockRef.current) return;
+    wheelLockRef.current = true;
+    goTo(delta > 0 ? 1 : -1);
+    setTimeout(() => {
+      wheelLockRef.current = false;
+    }, 350);
+  };
+
+
   if (len === 0) return null;
 
   const safeIdx = activeIdx % len;
