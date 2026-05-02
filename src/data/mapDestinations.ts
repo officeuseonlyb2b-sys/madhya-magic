@@ -1,0 +1,178 @@
+import bandhavgarhImg from "@/assets/dest-bandhavgarh.jpg";
+import kanhaImg from "@/assets/dest-kanha.jpg";
+import penchImg from "@/assets/dest-pench.jpg";
+import satpuraImg from "@/assets/dest-satpura.jpg";
+import pannaImg from "@/assets/dest-panna.jpg";
+import madhavImg from "@/assets/dest-madhav.jpg";
+import sanjayDubriImg from "@/assets/dest-sanjay-dubri.jpg";
+import orchhaImg from "@/assets/dest-orchha.jpg";
+import khajurahoImg from "@/assets/dest-khajuraho.jpg";
+import gwaliorImg from "@/assets/dest-gwalior.jpg";
+import manduImg from "@/assets/dest-mandu.jpg";
+import chanderiImg from "@/assets/dest-chanderi.jpg";
+import maheshwarImg from "@/assets/dest-maheshwar.jpg";
+import burhanpurImg from "@/assets/dest-burhanpur.jpg";
+import ujjainImg from "@/assets/dest-ujjain.jpg";
+import omkareshwarImg from "@/assets/dest-omkareshwar.jpg";
+import chitrakootImg from "@/assets/dest-chitrakoot.jpg";
+import amarKantakImg from "@/assets/dest-amarkantak.jpg";
+import maiharImg from "@/assets/dest-maihar.jpg";
+import pachmarhiImg from "@/assets/dest-pachmarhi.jpg";
+import bhedaghatImg from "@/assets/dest-bhedaghat.jpg";
+import tawaImg from "@/assets/dest-tawa.jpg";
+import hanuwantiyaImg from "@/assets/dest-hanuwantiya.jpg";
+import tamiaImg from "@/assets/dest-tamia.jpg";
+import bhopalImg from "@/assets/dest-bhopal.jpg";
+import sailaniImg from "@/assets/dest-sailani.jpg";
+import udayagiriImg from "@/assets/dest-udayagiri.jpg";
+import indoreImg from "@/assets/dest-indore.jpg";
+import bhimbetkaImg from "@/assets/dest-bhimbetka.jpg";
+// import khandwaImg from "@/assets/dest-khandwa.jpg";
+import mandsaurImg from "@/assets/dest-mandsaur.jpg";
+import parsiliImg from "@/assets/dest-parsili.jpg";
+import mukundpurImg from "@/assets/dest-mukundpur.jpg";
+import kunoImg from "@/assets/dest-kuno.jpg";
+import bhojpurImg from "@/assets/dest-bhojpur.jpg";
+import datiaImg from "@/assets/dest-datia.jpg";
+import sonagiriImg from "@/assets/dest-sonagiri.jpg";
+import shivpuriImg from "@/assets/dest-shivpuri.jpg";
+// Reused images for newly added destinations (no new assets created)
+// const shivpuriImg = madhavImg; // Madhav NP is in Shivpuri district
+// const vidishaImg = udayagiriImg; // Udayagiri Caves are in Vidisha district
+
+export type MapCategory = "Wildlife" | "Heritage" | "Spiritual" | "Nature";
+
+export interface MapDestination {
+  id: string;
+  name: string;
+  category: MapCategory[];
+  image: string;
+  description: string;
+  x: number;
+  y: number;
+}
+
+export const mapDestinations: MapDestination[] = [
+  // ─── Wildlife ───
+  { id: "pench", name: "Pench National Park", category: ["Wildlife"], image: penchImg, description: "Straddling MP and Maharashtra, Pench is famous for its tiger sightings and teak forests.", x: 62, y: 78 },
+  { id: "sanjay-dubri", name: "Sanjay Dubri National Park", category: ["Wildlife"], image: sanjayDubriImg, description: "Remote wilderness on the MP-Chhattisgarh border, home to tigers, leopards, and wild dogs.", x: 82, y: 72 },
+  { id: "panna", name: "Panna National Park", category: ["Wildlife"], image: pannaImg, description: "A success story of tiger reintroduction with stunning Ken river gorge and diamond mines.", x: 72, y: 38 },
+  { id: "kanha", name: "Kanha National Park", category: ["Wildlife"], image: kanhaImg, description: "India's finest tiger reserve and the inspiration behind Rudyard Kipling's Jungle Book.", x: 68, y: 68 },
+  { id: "satpura", name: "Satpura National Park", category: ["Wildlife"], image: satpuraImg, description: "Offbeat wildlife destination offering walking safaris, boat safaris and rugged terrain.", x: 52, y: 72 },
+  { id: "bandhavgarh", name: "Bandhavgarh National Park", category: ["Wildlife"], image: bandhavgarhImg, description: "Highest density of Royal Bengal Tigers in India, set amid ancient fort ruins and dense sal forests.", x: 72, y: 58 },
+  { id: "mukundpur", name: "Mukundpur White Tiger Safari & Zoo", category: ["Wildlife"], image: mukundpurImg, description: "India's first white tiger safari and zoo, home to rare white tigers and diverse fauna.", x: 74, y: 52 },
+  { id: "kuno", name: "Kuno National Park", category: ["Wildlife"], image: kunoImg, description: "India's cheetah reintroduction site with savanna grasslands and rich biodiversity.", x: 34, y: 38 },
+  { id: "madhav", name: "Madhav National Park", category: ["Wildlife"], image: madhavImg, description: "Historic royal hunting ground near Shivpuri with a scenic lake and George Castle.", x: 42, y: 22 },
+
+  // ─── Heritage ───
+  { id: "khajuraho", name: "Khajuraho", category: ["Heritage"], image: khajurahoImg, description: "UNESCO World Heritage temples with exquisite medieval sculptures from the Chandela dynasty.", x: 70, y: 32 },
+  { id: "udayagiri", name: "Udayagiri Caves", category: ["Heritage"], image: udayagiriImg, description: "Gupta-era rock-cut caves near Vidisha with stunning Hindu and Jain carvings.", x: 50, y: 44 },
+  { id: "chanderi", name: "Chanderi", category: ["Heritage"], image: chanderiImg, description: "Ancient silk-weaving town with Jain rock-cut temples and medieval fort gates.", x: 44, y: 36 },
+  { id: "indore", name: "Indore", category: ["Heritage"], image: indoreImg, description: "MP's commercial capital with Rajwada Palace, Lal Bagh, and vibrant street food culture.", x: 22, y: 62 },
+  { id: "bhopal", name: "Bhopal", category: ["Heritage"], image: bhopalImg, description: "City of lakes with Taj-ul-Masajid, tribal museum, and rich Nawabi heritage.", x: 46, y: 48 },
+  { id: "bhimbetka", name: "Bhimbetka Rock Shelters", category: ["Heritage"], image: bhimbetkaImg, description: "UNESCO site with prehistoric cave paintings dating back 30,000 years.", x: 48, y: 56 },
+  { id: "gwalior", name: "Gwalior", category: ["Heritage"], image: gwaliorImg, description: "One of India's most impregnable forts, with stunning Tomar-era palaces and Jain sculptures.", x: 48, y: 12 },
+  { id: "maheshwar", name: "Maheshwar", category: ["Heritage"], image: maheshwarImg, description: "Queen Ahilya Bai's capital on the Narmada, famous for Maheshwari sarees.", x: 30, y: 68 },
+  // { id: "khandwa", name: "Khandwa", category: ["Heritage"], image: khandwaImg, description: "Historic city near Omkareshwar dam with scenic Narmada river landscapes.", x: 34, y: 70 },
+  { id: "orchha", name: "Orchha", category: ["Heritage"], image: orchhaImg, description: "Medieval Bundela kingdom with grand palaces, temples, and cenotaphs along the Betwa river.", x: 56, y: 30 },
+  // Datia: controlled duplication — primary in Heritage, also appears in Spiritual via category array
+  { id: "datia", name: "Datia", category: ["Heritage", "Spiritual"], image: datiaImg, description: "Bundela royal town famous for the seven-storey palace and the revered Pitambara Peeth.", x: 52, y: 18 },
+  { id: "shivpuri", name: "Shivpuri", category: ["Heritage"], image: shivpuriImg, description: "Former Scindia summer capital with marble cenotaphs, lakes, and Madhav National Park nearby.", x: 44, y: 20 },
+  { id: "burhanpur", name: "Burhanpur", category: ["Heritage"], image: burhanpurImg, description: "Mughal-era city where Shah Jahan conceived the idea of the Taj Mahal.", x: 34, y: 76 },
+  { id: "mandu", name: "Mandu", category: ["Heritage"], image: manduImg, description: "Romantic ruins of the Afghan-inspired Jahaz Mahal and Rani Roopmati's Pavilion.", x: 28, y: 72 },
+  // { id: "vidisha", name: "Vidisha", category: ["Heritage"], image: vidishaImg, description: "Ancient Besnagar town with the Heliodorus Pillar and gateway to Sanchi and Udayagiri.", x: 50, y: 46 },
+
+  // ─── Spiritual ───
+  { id: "omkareshwar", name: "Omkareshwar", category: ["Spiritual"], image: omkareshwarImg, description: "Sacred Om-shaped island on the Narmada housing one of India's 12 Jyotirlingas.", x: 28, y: 62 },
+  { id: "bhojpur", name: "Bhojpur", category: ["Spiritual"], image: bhojpurImg, description: "Home to an unfinished Shiva temple with one of the largest Shivalingas in the world.", x: 48, y: 50 },
+  { id: "chitrakoot", name: "Chitrakoot", category: ["Spiritual"], image: chitrakootImg, description: "Where Lord Ram spent 11 years of exile — a deeply spiritual riverside pilgrimage town.", x: 78, y: 28 },
+  { id: "amarkantak", name: "Amarkantak", category: ["Spiritual"], image: amarKantakImg, description: "Origin of the holy Narmada river, surrounded by lush forests and ancient temples.", x: 76, y: 65 },
+  { id: "maihar", name: "Maihar", category: ["Spiritual"], image: maiharImg, description: "Home to the hilltop Sharda Devi temple, one of the 51 Shakti Peethas.", x: 74, y: 48 },
+  { id: "ujjain", name: "Ujjain", category: ["Spiritual"], image: ujjainImg, description: "Ancient city of temples, the sacred Kumbh Mela destination, and Mahakaleshwar Jyotirlinga.", x: 26, y: 55 },
+  { id: "mandsaur", name: "Mandsaur", category: ["Spiritual"], image: mandsaurImg, description: "Ancient Dashpur with the revered Pashupatinath temple on the banks of the Shivna river.", x: 20, y: 48 },
+  { id: "sonagiri", name: "Sonagiri", category: ["Spiritual"], image: sonagiriImg, description: "Sacred Jain pilgrimage site with 77 hilltop Digambar Jain temples.", x: 50, y: 20 },
+
+  // ─── Nature ───
+  { id: "tawa", name: "Tawa", category: ["Nature"], image: tawaImg, description: "Vast scenic reservoir perfect for boating, fishing, and sunset views.", x: 50, y: 66 },
+  { id: "hanuwantiya", name: "Hanuwantiya", category: ["Nature"], image: hanuwantiyaImg, description: "MP's premier water sports and adventure island resort on Indira Sagar Dam.", x: 38, y: 62 },
+  { id: "bhedaghat", name: "Bhedaghat", category: ["Nature"], image: bhedaghatImg, description: "Towering marble cliffs along the Narmada river with the thundering Dhuandhar Falls.", x: 64, y: 55 },
+  { id: "parsili", name: "Parsili", category: ["Nature"], image: parsiliImg, description: "Pristine forest retreat near Sanjay Dubri with lush greenery, rivers and serene nature trails.", x: 60, y: 74 },
+  { id: "tamia", name: "Tamia", category: ["Nature"], image: tamiaImg, description: "Hidden hill station with misty valleys, tribal culture, and the famous Patalkot viewpoint.", x: 58, y: 68 },
+  { id: "sailani", name: "Sailani Island", category: ["Nature"], image: sailaniImg, description: "Scenic island on Indira Sagar reservoir offering serene backwaters and untouched nature.", x: 36, y: 66 },
+  { id: "pachmarhi", name: "Pachmarhi", category: ["Nature"], image: pachmarhiImg, description: "Queen of Satpura — MP's only hill station with waterfalls, caves, and panoramic viewpoints.", x: 56, y: 62 },
+];
+
+// Dropdown navigation structure
+export const exploreCategories: Record<MapCategory, { label: string; icon: string; destinations: { id: string; name: string }[] }> = {
+  Nature: {
+    label: "🌄 Nature",
+    icon: "🌄",
+    destinations: [
+      { id: "tawa", name: "Tawa" },
+      { id: "hanuwantiya", name: "Hanuwantiya" },
+      { id: "bhedaghat", name: "Bhedaghat" },
+      { id: "parsili", name: "Parsili" },
+      { id: "tamia", name: "Tamia" },
+      { id: "sailani", name: "Sailani Island" },
+      { id: "pachmarhi", name: "Pachmarhi" },
+    ],
+  },
+  Heritage: {
+    label: "🏛️ Heritage",
+    icon: "🏛️",
+    destinations: [
+      { id: "khajuraho", name: "Khajuraho" },
+      { id: "udayagiri", name: "Udayagiri Caves" },
+      { id: "chanderi", name: "Chanderi" },
+      { id: "indore", name: "Indore" },
+      { id: "bhopal", name: "Bhopal" },
+      { id: "bhimbetka", name: "Bhimbetka Rock Shelters" },
+      { id: "gwalior", name: "Gwalior" },
+      { id: "maheshwar", name: "Maheshwar" },
+      // { id: "khandwa", name: "Khandwa" },
+      { id: "orchha", name: "Orchha" },
+      { id: "datia", name: "Datia" },
+      { id: "shivpuri", name: "Shivpuri" },
+      { id: "burhanpur", name: "Burhanpur" },
+      { id: "mandu", name: "Mandu" },
+      // { id: "vidisha", name: "Vidisha" },
+    ],
+  },
+  Wildlife: {
+    label: "🐅 Wildlife",
+    icon: "🐅",
+    destinations: [
+      { id: "pench", name: "Pench National Park" },
+      { id: "sanjay-dubri", name: "Sanjay Dubri National Park" },
+      { id: "panna", name: "Panna National Park" },
+      { id: "kanha", name: "Kanha National Park" },
+      { id: "satpura", name: "Satpura National Park" },
+      { id: "bandhavgarh", name: "Bandhavgarh National Park" },
+      { id: "mukundpur", name: "Mukundpur White Tiger Safari & Zoo" },
+      { id: "kuno", name: "Kuno National Park" },
+      { id: "madhav", name: "Madhav National Park" },
+    ],
+  },
+  Spiritual: {
+    label: "🛕 Spiritual",
+    icon: "🛕",
+    destinations: [
+      { id: "omkareshwar", name: "Omkareshwar" },
+      { id: "bhojpur", name: "Bhojpur" },
+      { id: "chitrakoot", name: "Chitrakoot" },
+      { id: "amarkantak", name: "Amarkantak" },
+      { id: "maihar", name: "Maihar" },
+      { id: "ujjain", name: "Ujjain" },
+      { id: "datia", name: "Datia" },
+      { id: "mandsaur", name: "Mandsaur" },
+      { id: "sonagiri", name: "Sonagiri" },
+    ],
+  },
+};
+
+export const mapCategoryColors: Record<MapCategory, { dot: string; glow: string; label: string }> = {
+  Wildlife: { dot: "bg-green-500", glow: "shadow-green-500/50", label: "text-green-600" },
+  Heritage: { dot: "bg-amber-500", glow: "shadow-amber-500/50", label: "text-amber-600" },
+  Spiritual: { dot: "bg-orange-500", glow: "shadow-orange-500/50", label: "text-orange-600" },
+  Nature: { dot: "bg-blue-500", glow: "shadow-blue-500/50", label: "text-blue-600" },
+};
