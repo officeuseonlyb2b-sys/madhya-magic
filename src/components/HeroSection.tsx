@@ -1,14 +1,10 @@
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect, useCallback } from "react";
-import heroNature from "@/assets/hero-nature.jpg";
-import heroHeritage from "@/assets/hero-heritage.jpg";
-import heroWildlife from "@/assets/hero-wildlife.jpg";
-import heroSpiritual from "@/assets/hero-spiritual.jpg";
 
 const slides = [
   {
     key: "nature",
-    src: heroNature,
+    src: "/videos/hero/jabalpur.mp4",
     alt: "Nature landscapes of Madhya Pradesh",
     badge: "🌿 Pristine Wilderness",
     titleLine1: "Breathtaking",
@@ -18,7 +14,7 @@ const slides = [
   },
   {
     key: "heritage",
-    src: heroHeritage,
+    src: "/videos/hero/maheshwar.mp4",
     alt: "Heritage temples of Madhya Pradesh",
     badge: "🏛️ Timeless Legacy",
     titleLine1: "Ancient",
@@ -28,7 +24,7 @@ const slides = [
   },
   {
     key: "wildlife",
-    src: heroWildlife,
+    src: "/videos/hero/wildlife.mp4",
     alt: "Wildlife safari in Madhya Pradesh",
     badge: "🐅 Roar of the Wild",
     titleLine1: "Thrilling",
@@ -38,7 +34,7 @@ const slides = [
   },
   {
     key: "spiritual",
-    src: heroSpiritual,
+    src: "/videos/hero/ujjain.mp4",
     alt: "Spiritual destinations of Madhya Pradesh",
     badge: "🕉️ Divine Serenity",
     titleLine1: "Sacred",
@@ -58,7 +54,9 @@ const categoryToIndex: Record<string, number> = {
 const HeroSection = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [inView, setInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
+  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
@@ -68,14 +66,42 @@ const HeroSection = () => {
 
   const currentSlide = slides[activeIndex];
 
-  // Auto slider
+  // Lazy-load: only load videos when hero is in viewport
   useEffect(() => {
-    if (isPaused) return;
+    const node = sectionRef.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto slider — every 10s
+  useEffect(() => {
+    if (isPaused || !inView) return;
     const timer = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    }, 10000);
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, [isPaused, inView]);
+
+  // Ensure active video plays from start
+  useEffect(() => {
+    const v = videoRefs.current[currentSlide.key];
+    if (v) {
+      try {
+        v.currentTime = 0;
+        v.play().catch(() => {});
+      } catch {}
+    }
+  }, [activeIndex, currentSlide.key, inView]);
 
   // Listen for category hover events from Navbar
   const handleCategoryHover = useCallback((e: Event) => {
@@ -99,39 +125,46 @@ const HeroSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
-      {/* Sliding background images */}
+      {/* Sliding background videos */}
       <AnimatePresence mode="sync">
         <motion.div
           key={currentSlide.key}
-          initial={{ opacity: 0, scale: 1.1 }}
+          initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{
             opacity: { duration: 1.4, ease: "easeInOut" },
-            scale: { duration: 8, ease: "easeOut" },
+            scale: { duration: 10, ease: "easeOut" },
           }}
           className="absolute inset-0 w-full h-full"
         >
-          <img
-            src={currentSlide.src}
-            alt={currentSlide.alt}
-            className="w-full h-full object-cover"
-            loading={activeIndex === 0 ? "eager" : "lazy"}
-            width={1920}
-            height={1080}
-          />
+          {inView && (
+            <video
+              ref={(el) => {
+                videoRefs.current[currentSlide.key] = el;
+              }}
+              src={currentSlide.src}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              aria-label={currentSlide.alt}
+              className="w-full h-full object-cover"
+            />
+          )}
+          {/* Subtle dark overlay for legibility */}
+          <div className="absolute inset-0 bg-black/30" />
         </motion.div>
       </AnimatePresence>
 
-
-      {/* Hero Content - Added padding top to avoid navbar overlap */}
+      {/* Hero Content */}
       <motion.div
         style={{ y: textY, opacity }}
         className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 md:pt-24 lg:pt-28 text-center text-white"
       >
-        {/* Dynamic Badge */}
         <motion.div
           key={`badge-${activeIndex}`}
           initial={{ opacity: 0, y: 20 }}
@@ -144,7 +177,6 @@ const HeroSection = () => {
           </span>
         </motion.div>
 
-        {/* Dynamic Headline */}
         <motion.h1
           key={`title-${activeIndex}`}
           initial={{ opacity: 0, y: 30 }}
@@ -160,7 +192,6 @@ const HeroSection = () => {
           </span>
         </motion.h1>
 
-        {/* Elegant divider */}
         <motion.div
           key={`div-${activeIndex}`}
           initial={{ opacity: 0, scaleX: 0 }}
@@ -169,7 +200,6 @@ const HeroSection = () => {
           className="mx-auto mt-6 sm:mt-8 h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-amber-300/70 to-transparent origin-center"
         />
 
-        {/* Dynamic Description */}
         <motion.p
           key={`desc-${activeIndex}`}
           initial={{ opacity: 0, y: 20 }}
@@ -180,29 +210,12 @@ const HeroSection = () => {
           {currentSlide.description}
         </motion.p>
 
-        {/* Attractive CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-8 sm:mt-10 md:mt-12"
-        >
-          {/* <button className="group relative px-6 sm:px-8 py-3 sm:py-4 rounded-full bg-white/10 backdrop-blur-md border border-white/30 text-white font-semibold text-base sm:text-lg shadow-2xl hover:bg-white/20 transition-all duration-300 overflow-hidden">
-            <span className="relative z-10 flex items-center gap-2">
-              Explore {currentSlide.titleLine2}
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
-            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-amber-500/20 to-yellow-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl" />
-          </button> */}
-        </motion.div>
+        />
 
         {/* Slide indicators */}
         <div className="flex justify-center gap-2 mt-12 sm:mt-16">
@@ -220,21 +233,6 @@ const HeroSection = () => {
           ))}
         </div>
       </motion.div>
-
-      {/* Scroll indicator */}
-      {/* <motion.div
-        animate={{ y: [0, 10, 0] }}
-        transition={{ repeat: Infinity, duration: 2.5, ease: "easeInOut" }}
-        className="absolute bottom-6 sm:bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <div className="w-6 sm:w-7 h-10 sm:h-12 rounded-full border-2 border-white/30 flex justify-center pt-2 sm:pt-3 backdrop-blur-sm">
-          <motion.div
-            animate={{ opacity: [0.5, 1, 0.5], height: [4, 8, 4] }}
-            transition={{ repeat: Infinity, duration: 2 }}
-            className="w-1 sm:w-1.5 rounded-full bg-white/70"
-          />
-        </div>
-      </motion.div> */}
     </section>
   );
 };
