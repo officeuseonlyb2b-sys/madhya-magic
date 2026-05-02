@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   motion,
@@ -6,7 +6,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import { ArrowRight, Bookmark } from "lucide-react";
+import { ArrowRight, ArrowLeft, Bookmark } from "lucide-react";
 import type { MapDestination } from "@/data/mapDestinations";
 
 interface Props {
