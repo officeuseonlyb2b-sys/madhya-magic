@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link } from "react-router-dom";
 import {
   motion,
@@ -6,7 +6,7 @@ import {
   useMotionValue,
   animate,
 } from "framer-motion";
-import { ArrowRight, Bookmark } from "lucide-react";
+import { ArrowRight, ArrowLeft, Bookmark } from "lucide-react";
 import type { MapDestination } from "@/data/mapDestinations";
 
 interface Props {
@@ -121,6 +121,30 @@ const DestinationPillars = ({ destinations }: Props) => {
     return () => clearInterval(interval);
   }, [isPaused, activeIdx]);
 
+  // Manual nav (arrows / wheel)
+  const goTo = useCallback(
+    (dir: 1 | -1) => {
+      pauseAuto();
+      animate(dragX, 0, { type: "spring", stiffness: 240, damping: 30 });
+      setActiveIdx((prev) => (prev + dir + len) % len);
+      scheduleResume();
+    },
+    [len]
+  );
+
+  // Wheel scroll support (horizontal or vertical wheel)
+  const wheelLockRef = useRef(false);
+  const onWheel = (e: React.WheelEvent) => {
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (Math.abs(delta) < 8 || wheelLockRef.current) return;
+    wheelLockRef.current = true;
+    goTo(delta > 0 ? 1 : -1);
+    setTimeout(() => {
+      wheelLockRef.current = false;
+    }, 350);
+  };
+
+
   if (len === 0) return null;
 
   const safeIdx = activeIdx % len;
@@ -195,7 +219,7 @@ const DestinationPillars = ({ destinations }: Props) => {
             </div>
 
             {/* RIGHT CARDS */}
-            <div className="w-full lg:w-1/2 overflow-hidden relative">
+            <div className="w-full lg:w-1/2 overflow-hidden relative" onWheel={onWheel}>
               <motion.div
                 drag="x"
                 style={{ x: dragX }}
@@ -263,6 +287,26 @@ const DestinationPillars = ({ destinations }: Props) => {
                   })}
                 </AnimatePresence>
               </motion.div>
+
+              {/* Arrow controls */}
+              <div className="absolute bottom-4 right-4 z-30 flex gap-2">
+                <button
+                  type="button"
+                  aria-label="Previous"
+                  onClick={() => goTo(-1)}
+                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                >
+                  <ArrowLeft size={16} />
+                </button>
+                <button
+                  type="button"
+                  aria-label="Next"
+                  onClick={() => goTo(1)}
+                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                >
+                  <ArrowRight size={16} />
+                </button>
+              </div>
             </div>
 
           </div>
