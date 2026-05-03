@@ -56,7 +56,10 @@ const DestinationCard = ({
       </div>
 
       <div className="absolute bottom-4 left-4 right-4">
-        <h4 className="text-white text-base font-semibold" style={{ textShadow: "0 2px 8px rgba(0,0,0,0.7)" }}>
+        <h4
+          className="text-white text-base font-semibold"
+          style={{ textShadow: "0 2px 8px rgba(0,0,0,0.7)" }}
+        >
           {item.name}
         </h4>
       </div>
@@ -73,19 +76,15 @@ const DestinationPillars = ({ destinations }: Props) => {
   const dragX = useMotionValue(0);
   const len = destinations.length;
   const CARD_WIDTH = 210;
-  const RESUME_DELAY = 2500; // ms after interaction stops before auto-scroll resumes
+  const RESUME_DELAY = 2500;
 
   const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isDraggingRef = useRef(false);
-
-  // Rotating queue: dragX represents transient offset during drag, always snaps back to 0
-  const getX = (_index: number) => 0;
 
   useEffect(() => {
     dragX.set(0);
   }, []);
 
-  // Helper: pause auto-scroll & schedule a smooth resume
   const pauseAuto = () => {
     if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
     setIsPaused(true);
@@ -104,7 +103,6 @@ const DestinationPillars = ({ destinations }: Props) => {
     };
   }, []);
 
-  // 👉 Auto Scroll - just advances index; visual order rotates so cards never disappear
   const handleAutoScroll = () => {
     const next = (activeIdx + 1) % len;
     animate(dragX, 0, {
@@ -116,12 +114,10 @@ const DestinationPillars = ({ destinations }: Props) => {
 
   useEffect(() => {
     if (isPaused || len <= 1) return;
-
     const interval = setInterval(handleAutoScroll, 3500);
     return () => clearInterval(interval);
   }, [isPaused, activeIdx]);
 
-  // Manual nav (arrows / wheel)
   const goTo = useCallback(
     (dir: 1 | -1) => {
       pauseAuto();
@@ -132,10 +128,10 @@ const DestinationPillars = ({ destinations }: Props) => {
     [len]
   );
 
-  // Wheel scroll support (horizontal or vertical wheel)
   const wheelLockRef = useRef(false);
   const onWheel = (e: React.WheelEvent) => {
-    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    const delta =
+      Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
     if (Math.abs(delta) < 8 || wheelLockRef.current) return;
     wheelLockRef.current = true;
     goTo(delta > 0 ? 1 : -1);
@@ -144,171 +140,163 @@ const DestinationPillars = ({ destinations }: Props) => {
     }, 350);
   };
 
-
   if (len === 0) return null;
 
   const safeIdx = activeIdx % len;
   const activeItem = destinations[safeIdx];
 
   return (
-    <section className="py-12 md:py-20 bg-background">
-      {/* TITLE */}
-      <div className="container mx-auto px-4 mb-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-center">
+    <section className="pt-6 pb-12 md:pb-16 bg-background">
+      <div className="container mx-auto px-4">
+
+        {/* TITLE */}
+        {/* <h2 className="text-3xl md:text-5xl font-bold text-center mb-6">
           Places to Explore
-        </h2>
-      </div>
+        </h2> */}
 
-      <div
-        className="relative min-h-[720px] overflow-hidden flex items-end"
-        onMouseEnter={pauseAuto}
-        onMouseLeave={() => {
-          if (!isDraggingRef.current) scheduleResume();
-        }}
-        onTouchStart={pauseAuto}
-        onTouchEnd={() => {
-          if (!isDraggingRef.current) scheduleResume();
-        }}
-      >
-        {/* BACKGROUND */}
-        <AnimatePresence>
-          <motion.div
-            key={activeItem.id}
-            layoutId={`card-${activeItem.id}`}
-            className="absolute inset-0 z-0"
-            transition={{ duration: 0.8 }}
-          >
-            <img
-              src={activeItem.image}
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-        </AnimatePresence>
+        <div
+          className="relative min-h-[720px] overflow-hidden flex items-end rounded-[40px] md:rounded-[50px] shadow-xl"
+          onMouseEnter={pauseAuto}
+          onMouseLeave={() => {
+            if (!isDraggingRef.current) scheduleResume();
+          }}
+          onTouchStart={pauseAuto}
+          onTouchEnd={() => {
+            if (!isDraggingRef.current) scheduleResume();
+          }}
+        >
+          {/* BACKGROUND */}
+          <AnimatePresence>
+            <motion.div
+              key={activeItem.id}
+              layoutId={`card-${activeItem.id}`}
+              className="absolute inset-0 z-0 rounded-[40px] md:rounded-[50px] overflow-hidden"
+              transition={{ duration: 0.8 }}
+            >
+              <img
+                src={activeItem.image}
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+          </AnimatePresence>
 
-        
+          {/* CONTENT */}
+          <div className="relative z-20 pb-16 w-full">
+            <div className="flex w-full min-h-[500px]">
 
-        {/* CONTENT */}
-        <div className="container mx-auto px-6 relative z-20 pb-16">
-          <div className="flex w-full min-h-[500px]">
-
-            {/* LEFT TEXT */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-end pr-6">
-              <AnimatePresence mode="wait">
-                <motion.h2
-                  key={activeItem.name}
-                  initial={{ opacity: 0, y: 40 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-5xl font-bold text-white"
-                >
-                  {activeItem.name}
-                </motion.h2>
-              </AnimatePresence>
-
-              <p className="text-white/80 mt-4 max-w-md">
-                {activeItem.description}
-              </p>
-
-              <Link
-                to={`/destination/${activeItem.id}`}
-                className="inline-flex items-center gap-2 mt-6 text-white"
-              >
-                View Details <ArrowRight size={16} />
-              </Link>
-            </div>
-
-            {/* RIGHT CARDS */}
-            <div className="w-full lg:w-1/2 overflow-hidden relative" onWheel={onWheel}>
-              <motion.div
-                drag="x"
-                style={{ x: dragX }}
-                dragConstraints={{ left: -CARD_WIDTH, right: CARD_WIDTH }}
-                dragElastic={0.2}
-                dragMomentum={false}
-                whileTap={{ cursor: "grabbing" }}
-
-                onDragStart={() => {
-                  isDraggingRef.current = true;
-                  pauseAuto();
-                }}
-
-                onDragEnd={(e, info) => {
-                  const offset = info.offset.x;
-                  const velocity = info.velocity.x;
-
-                  let newIndex = activeIdx;
-
-                  if (offset < -60 || velocity < -400) {
-                    newIndex = (activeIdx + 1) % len;
-                  } else if (offset > 60 || velocity > 400) {
-                    newIndex = (activeIdx - 1 + len) % len;
-                  }
-
-                  animate(dragX, 0, {
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 32,
-                    mass: 0.9,
-                  });
-
-                  setActiveIdx(newIndex);
-                  isDraggingRef.current = false;
-                  scheduleResume();
-                }}
-
-                className="flex gap-5 items-end h-full cursor-grab active:cursor-grabbing touch-pan-y select-none"
-              >
-                <AnimatePresence mode="popLayout" initial={false}>
-                  {Array.from({ length: len }).map((_, offset) => {
-                    const i = (safeIdx + offset) % len;
-                    const item = destinations[i];
-
-                    return (
-                      <DestinationCard
-                        key={item.id}
-                        item={item}
-                        active={offset === 0}
-                        distance={offset}
-                        onTap={() => {
-                          if (isDraggingRef.current) return;
-                          pauseAuto();
-                          animate(dragX, 0, {
-                            type: "spring",
-                            stiffness: 240,
-                            damping: 30,
-                          });
-
-                          setActiveIdx(i);
-                          scheduleResume();
-                        }}
-                      />
-                    );
-                  })}
+              {/* LEFT TEXT */}
+              <div className="w-full lg:w-1/2 flex flex-col justify-center px-6 md:px-10 lg:px-14 pb-10 lg:pb-16">
+                <AnimatePresence mode="wait">
+                  <motion.h2
+                    key={activeItem.name}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.6 }}
+                    className="text-3xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                  >
+                    {activeItem.name}
+                  </motion.h2>
                 </AnimatePresence>
-              </motion.div>
 
-              {/* Arrow controls */}
-              <div className="absolute bottom-4 right-4 z-30 flex gap-2">
-                <button
-                  type="button"
-                  aria-label="Previous"
-                  onClick={() => goTo(-1)}
-                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                <p className="text-white/80 mt-4 max-w-lg text-sm md:text-base leading-relaxed">
+                  {activeItem.description}
+                </p>
+
+                <Link
+                  to={`/destination/${activeItem.id}`}
+                  className="inline-flex items-center gap-2 mt-6 text-white font-medium"
                 >
-                  <ArrowLeft size={16} />
-                </button>
-                <button
-                  type="button"
-                  aria-label="Next"
-                  onClick={() => goTo(1)}
-                  className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                  View Details <ArrowRight size={16} />
+                </Link>
+              </div>
+
+              {/* RIGHT CARDS */}
+              <div
+                className="w-full lg:w-1/2 overflow-hidden relative"
+                onWheel={onWheel}
+              >
+                <motion.div
+                  drag="x"
+                  style={{ x: dragX }}
+                  dragConstraints={{ left: -CARD_WIDTH, right: CARD_WIDTH }}
+                  dragElastic={0.2}
+                  dragMomentum={false}
+                  whileTap={{ cursor: "grabbing" }}
+                  onDragStart={() => {
+                    isDraggingRef.current = true;
+                    pauseAuto();
+                  }}
+                  onDragEnd={(e, info) => {
+                    const offset = info.offset.x;
+                    const velocity = info.velocity.x;
+
+                    let newIndex = activeIdx;
+
+                    if (offset < -60 || velocity < -400) {
+                      newIndex = (activeIdx + 1) % len;
+                    } else if (offset > 60 || velocity > 400) {
+                      newIndex = (activeIdx - 1 + len) % len;
+                    }
+
+                    animate(dragX, 0, {
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 32,
+                      mass: 0.9,
+                    });
+
+                    setActiveIdx(newIndex);
+                    isDraggingRef.current = false;
+                    scheduleResume();
+                  }}
+                  className="flex gap-5 items-end h-full cursor-grab active:cursor-grabbing touch-pan-y select-none"
                 >
-                  <ArrowRight size={16} />
-                </button>
+                  <AnimatePresence mode="popLayout" initial={false}>
+                    {Array.from({ length: len }).map((_, offset) => {
+                      const i = (safeIdx + offset) % len;
+                      const item = destinations[i];
+
+                      return (
+                        <DestinationCard
+                          key={item.id}
+                          item={item}
+                          active={offset === 0}
+                          distance={offset}
+                          onTap={() => {
+                            if (isDraggingRef.current) return;
+                            pauseAuto();
+                            animate(dragX, 0, {
+                              type: "spring",
+                              stiffness: 240,
+                              damping: 30,
+                            });
+                            setActiveIdx(i);
+                            scheduleResume();
+                          }}
+                        />
+                      );
+                    })}
+                  </AnimatePresence>
+                </motion.div>
+
+                {/* Arrow controls */}
+                <div className="absolute bottom-4 right-4 z-30 flex gap-2">
+                  <button
+                    onClick={() => goTo(-1)}
+                    className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                  >
+                    <ArrowLeft size={16} />
+                  </button>
+                  <button
+                    onClick={() => goTo(1)}
+                    className="w-10 h-10 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                  >
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
