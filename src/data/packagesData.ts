@@ -225,10 +225,15 @@ export const allPackages: PackageData[] = [
 ];
 
 /* ─────────────────────────────────────────────────────────────
-   Filter / UI helpers — kept compatible with existing components
+   Append additional packages from the brochure (44 tours)
    ───────────────────────────────────────────────────────────── */
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 import { extraPackages } from "./extraPackages";
 allPackages.push(...extraPackages);
+
+/* ─────────────────────────────────────────────────────────────
+   Filter / UI helpers — kept compatible with existing components
+   ───────────────────────────────────────────────────────────── */
 
 export const destinations = [
   "All",
