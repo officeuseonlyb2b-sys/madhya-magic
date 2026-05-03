@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import HeroCarousel from "@/components/category/HeroCarousel";
+import SpiritualHero from "@/components/category/SpiritualHero";
 import DestinationPillars from "@/components/category/DestinationPillars";
 import ActivitiesReelsSection from "@/components/ActivitiesReelsSection";
 import ReelsSection from "@/components/ReelsSection";
@@ -28,7 +29,11 @@ const CategoryPage = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
-      <HeroCarousel images={data.heroImages} title={data.title} />
+      {data.slug === "spiritual" ? (
+        <SpiritualHero />
+      ) : (
+        <HeroCarousel images={data.heroImages} title={data.title} />
+      )}
       <DestinationPillars destinations={filteredDestinations} categorySlug={data.slug} />
 
       {/* Home-page–style sections, scoped to this category via FilterProvider */}
