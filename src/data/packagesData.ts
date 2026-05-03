@@ -227,6 +227,9 @@ export const allPackages: PackageData[] = [
 /* ─────────────────────────────────────────────────────────────
    Filter / UI helpers — kept compatible with existing components
    ───────────────────────────────────────────────────────────── */
+import { extraPackages } from "./extraPackages";
+allPackages.push(...extraPackages);
+
 export const destinations = [
   "All",
   "Indore - Ujjain - Indore",
