@@ -1,4 +1,4 @@
-/* Auto-generated additions from EXIDR01 brochure */
+/* Auto-generated additions from EXIDR01 brochure (44 tours) */
 import type { PackageData } from "./packagesData";
 
 const img = (id: string, w = 800) => `https://images.unsplash.com/photo-${id}?w=${w}&q=80&auto=format&fit=crop`;
@@ -16,7 +16,7 @@ export const extraPackages: PackageData[] = [
     tourCategory: "Quick Getaways",
     image: img("1524492412937-b28074a5d7da"),
     highlights: [
-      "The Kingdom of Mahakaal, where ancient spirituality reigns supreme, beckoning tr",
+      "The Kingdom of Mahakaal",
       "Harsiddhi Mata Temple Aarti",
       "Omkareshwar",
       "Maheshwar",
@@ -28,37 +28,37 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Indore & Drive to Ujjain by road (55 kms & 1.5 Hours approx.) – TOUR BEGINS",
-        description: "Upon arrival at Indore Station/Airport, you will be meet by our driver cum company representative who will greet you and drive you to Ujjain, known as \"The Kingdom of Mahakal.\" Upon arrival in Ujjain, you will be transferred to the hotel. Check-in at the hotel. Embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover th",
+        description: "Upon arrival at Indore Station/Airport, you will be meet by our driver cum company representative who will greet you and drive you to Ujjain, known as \"The Kingdom of Mahakal.\" Upon arrival in Ujjain, you will be transferred to the hotel. Check-in at the hotel. Embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals and sculptures before heading to…",
       },
       {
         day: 2,
         title: "Ujjain - Omkareshwar - Maheshwar by road (205 Kms & 5 Hours approx.)",
-        description: "Morning after breakfast, check out from the hotel and drive to Maheshwar via visiting Omkareshwar. Embark on a morning half-day tour of Omkareshwar, a serene enclave on the banks of the Narmada River. Begin at the revered Omkareshwar Temple, dedicated to Lord Shiva, soaking in its divine ambiance and intricate architecture. Then, explore the ancient Mamleshwar Temple across the river, steeped in religious significance. Conclude with an optional tranquil boat ride along the Narmada, offering scenic views of the temple town (available on direct payment basis). This spiritual journey promises a s",
+        description: "Morning after breakfast, check out from the hotel and drive to Maheshwar via visiting Omkareshwar. Embark on a morning half-day tour of Omkareshwar, a serene enclave on the banks of the Narmada River. Begin at the revered Omkareshwar Temple, dedicated to Lord Shiva, soaking in its divine ambiance and intricate architecture. Then, explore the ancient Mamleshwar Temple across the river, steeped in religious significance. Conclude with an optional tranquil boat ride along the Narmada, offering scenic views of the temple town (available on direct payment basis). This spiritual journey promises a serene retreat amidst sacred shrines and the gentle flow of the river. After visits drive to…",
       },
       {
         day: 3,
-        title: "Maheshwar - Mandu by road (40 kms & 1 Hour approx.) ",
-        description: "Morning after breakfast, check out from the hotel & proceed to visit Maheshwar Fort. Exploration of Maheshwar, where history, culture, and natural beauty converge. Begin your journey at the majestic Maheshwar Fort, adorned with intricate carvings, offering a glimpse into the region's rich heritage. Stroll along the serene ghats of the Narmada River, soaking in the spiritual ambiance and witnessing local life unfold. Don't miss the opportunity to indulge in the exquisite Maheshwari sarees, renowned for their fine craftsmanship and traditional designs. Lastly, unwind with a picturesque boat ride",
+        title: "Maheshwar - Mandu by road (40 kms & 1 Hour approx.)",
+        description: "Morning after breakfast, check out from the hotel & proceed to visit Maheshwar Fort. Exploration of Maheshwar, where history, culture, and natural beauty converge. Begin your journey at the majestic Maheshwar Fort, adorned with intricate carvings, offering a glimpse into the region's rich heritage. Stroll along the serene ghats of the Narmada River, soaking in the spiritual ambiance and witnessing local life unfold. Don't miss the opportunity to indulge in the exquisite Maheshwari sarees, renowned for their fine craftsmanship and traditional designs. Lastly, unwind with a picturesque boat ride on the Narmada, offering stunning views of the fort (boat ride available on direct payment…",
       },
       {
         day: 4,
         title: "Mandu",
-        description: "Morning after breakfast proceed to visit City tour of Mandu. Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. ",
+        description: "Morning after breakfast proceed to visit City tour of Mandu. Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue your adventure with a visit to Rewa Kund, a tranquil…",
       },
       {
         day: 5,
         title: "Mandu - Bhopal by road (278 kms & 6 Hours approx.)",
-        description: "Morning after breakfast, check out from the hotel and drive to Bhopal \"The City of Begums & Lakes.\" Upon arrival, check in at the hotel and enjoy a city tour.  Exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect en",
+        description: "Morning after breakfast, check out from the hotel and drive to Bhopal \"The City of Begums & Lakes.\" Upon arrival, check in at the hotel and enjoy a city tour. Exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. Overnight at Bhopal Meals : Breakfast",
       },
       {
         day: 6,
         title: "Bhopal (Excursion to Bhimbetka, Bhojpur & Sanchi Stupa)",
-        description: "Morning after breakfast enjoy your excursion of Bhimbetka Rocks Shelter Caves, Bhojpur Temple & Sanchi Stupa Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and",
+        description: "Morning after breakfast enjoy your excursion of Bhimbetka Rocks Shelter Caves, Bhojpur Temple & Sanchi Stupa Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and nature enthusiasts. Afternoon Discover the historical marvel of Bhojpur, renowned for the…",
       },
       {
         day: 7,
         title: "Bhopal - Indore by road (193 kms & 4 Hours approx.) & Departure from Indore - TOUR END",
-        description: "Morning after breakfast, check out from the hotel and drive to Indore Arrive Indore & proceed for the local sightseeing of the Indore. Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mir",
+        description: "Morning after breakfast, check out from the hotel and drive to Indore Arrive Indore & proceed for the local sightseeing of the Indore. Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the city's artistic heritage. Delve into the historical significance of…",
       },
     ],
     included: [
@@ -88,7 +88,7 @@ export const extraPackages: PackageData[] = [
     tourCategory: "Quick Getaways",
     image: img("1582510003544-4d00b7f74220"),
     highlights: [
-      "The Kingdom of Mahakaal, where ancient spirituality reigns supreme, beckoning tr",
+      "The Kingdom of Mahakaal",
       "Harsiddhi Mata Temple Aarti",
       "Omkareshwar",
       "Indore",
@@ -99,22 +99,22 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Ujjain – TOUR BEGINS",
-        description: "Upon arriving at Ujjain's \"The Kingdom of Mahakal\" railway station, you will be met by our driver cum company representative who will greet you and transfer you to your hotel for check-in at hotel. Embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals ",
+        description: "Upon arriving at Ujjain's \"The Kingdom of Mahakal\" railway station, you will be met by our driver cum company representative who will greet you and transfer you to your hotel for check-in at hotel. Embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals and sculptures before heading to Ram Ghat, a sacred riverside spot. Conclude your day at the…",
       },
       {
         day: 2,
         title: "Ujjain - Omkareshwar - Indore by road (218 Kms & 6 Hours approx.)",
-        description: "Morning, after breakfast, check-out from the hotel and drive to Indore,via- visiting Omkareshwar. Embark on a morning half-day tour of Omkareshwar, a serene enclave on the banks of the Narmada River. Begin at the revered Omkareshwar Temple, dedicated to Lord Shiva, soaking in its divine ambiance and intricate architecture. Then, explore the ancient Mamleshwar Temple across the river, steeped in religious significance. Conclude with an optional tranquil boat ride along the Narmada, offering scenic views of the temple town (available on direct payment basis). This spiritual journey promises a se",
+        description: "Morning, after breakfast, check-out from the hotel and drive to Indore,via- visiting Omkareshwar. Embark on a morning half-day tour of Omkareshwar, a serene enclave on the banks of the Narmada River. Begin at the revered Omkareshwar Temple, dedicated to Lord Shiva, soaking in its divine ambiance and intricate architecture. Then, explore the ancient Mamleshwar Temple across the river, steeped in religious significance. Conclude with an optional tranquil boat ride along the Narmada, offering scenic views of the temple town (available on direct payment basis). This spiritual journey promises a serene retreat amidst sacred shrines and the gentle flow of the river. After visits drive to…",
       },
       {
         day: 3,
         title: "Indore & Departure from Indore-TOUR END",
-        description: "Morning, after breakfast, check-out from the hotel. Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the city's artistic heritage. Delve into the historical sign",
+        description: "Morning, after breakfast, check-out from the hotel. Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the city's artistic heritage. Delve into the historical significance of Boliya Chattri, a testament to the regal legacy of Indore's rulers. Finally, immerse…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 02 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. ",
+      "Accommodation for Total 02 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
       "Total 02 Breakfasts as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -130,7 +130,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "kanha-calling",
     name: "Kanha Calling",
-    location: "Jabalpur -  Kanha National Park - Jabalpur",
+    location: "Jabalpur - Kanha National Park - Jabalpur",
     duration: "3 Days / 2 Nights",
     days: 3,
     price: 20000,
@@ -152,17 +152,17 @@ export const extraPackages: PackageData[] = [
       {
         day: 2,
         title: "Kanha National park",
-        description: "Early in the morning, enjoy a Jeep safari into the Kanha National Park. Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's",
+        description: "Early in the morning, enjoy a Jeep safari into the Kanha National Park. Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a deeper appreciation for nature's wonders.…",
       },
       {
         day: 3,
-        title: " Kanha National park - Jabalpur by road (130 Kms & 3 Hours approx.) & Departure from Jabalpur- TOUR ENDS",
+        title: "Kanha National park - Jabalpur by road (130 Kms & 3 Hours approx.) & Departure from Jabalpur- TOUR ENDS",
         description: "Morning after breakfast, check out from the hotel and drive to Jabalpur. On arrival, transfer to the railway station or airport to board your train or flight for your onward journey. Meals : Breakfast",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 02 nights on sharing basis on Room plus Breakfast, Lunch & Dinner on fixed menu/buffet basis. ",
+      "Accommodation for Total 02 nights on sharing basis on Room plus Breakfast, Lunch & Dinner on fixed menu/buffet basis.",
       "Total 02 Breakfasts 02 Lunches & 02 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
@@ -179,7 +179,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "magical-kanha-jabalpur",
     name: "Magical Kanha & Jabalpur",
-    location: "Jabalpur -  Kanha National Park - Jabalpur",
+    location: "Jabalpur - Kanha National Park - Jabalpur",
     duration: "4 Days / 3 Nights",
     days: 4,
     price: 24600,
@@ -203,17 +203,17 @@ export const extraPackages: PackageData[] = [
       {
         day: 2,
         title: "Kanha National park",
-        description: "Early in the morning, enjoy a Jeep safari into Kanha National Park. Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an ",
+        description: "Early in the morning, enjoy a Jeep safari into Kanha National Park. Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a deeper appreciation for nature's wonders.…",
       },
       {
         day: 3,
         title: "Kanha National park - Jabalpur by road (130 Kms & 3 Hours approx.)",
-        description: "Morning after breakfast, check out from the hotel and drive straight to Jabalpur. Upon arrival in Jabalpur, check in at the hotel. In the afternoon, delve into the historical and cultural treasures of Jabalpur. Begin your exploration with a visit to the Rani Durgavati Museum, which is home to a treasure trove of artifacts showcasing the region's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your after",
+        description: "Morning after breakfast, check out from the hotel and drive straight to Jabalpur. Upon arrival in Jabalpur, check in at the hotel. In the afternoon, delve into the historical and cultural treasures of Jabalpur. Begin your exploration with a visit to the Rani Durgavati Museum, which is home to a treasure trove of artifacts showcasing the region's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your afternoon with a serene retreat to Pisan Hari Ki Madhaiya, nestled amidst tranquil landscapes. As…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 03 nights on sharing basis on Room plus breakfast, on fixed menu/buffet basis. Except in Kanha National Park the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 03 nights on sharing basis on Room plus breakfast, on fixed menu/buffet basis. Except in Kanha National Park the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis.",
       "Total 03 Breakfasts 02 Lunches & 02 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
@@ -252,12 +252,12 @@ export const extraPackages: PackageData[] = [
       {
         day: 2,
         title: "Bandhvgarh National park",
-        description: "Early morning, enjoy a Jeep Safari into Bandhavgarh National Park for a game drive. Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a",
+        description: "Early morning, enjoy a Jeep Safari into Bandhavgarh National Park for a game drive. Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, the park is…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative or driver.",
-      "Accommodation for Total 02 nights on sharing basis on Room plus breakfast, Lunch & Dinner on fixed menu/buffet basis. ",
+      "Accommodation for Total 02 nights on sharing basis on Room plus breakfast, Lunch & Dinner on fixed menu/buffet basis.",
       "Total 02 Breakfasts 02 Lunches & 02 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 early morning Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
@@ -298,12 +298,12 @@ export const extraPackages: PackageData[] = [
       {
         day: 2,
         title: "Bandhvgarh National park",
-        description: "Early morning, enjoy a Jeep Safari into Bandhavgarh National Park for a game drive. Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a",
+        description: "Early morning, enjoy a Jeep Safari into Bandhavgarh National Park for a game drive. Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, the park is…",
       },
       {
         day: 3,
         title: "Bandhavgarh National park  Jabalpur by road (165 Kms. & 4 Hours approx.)",
-        description: "Morning after breakfast, check out from the hotel and drive to Jabalpur. Upon arrival in Jabalpur, check-in at the hotel. In the afternoon, delve into the historical and cultural treasures of Jabalpur. Begin your exploration with a visit to the Rani Durgavati Museum, which is home to a treasure trove of artifacts showcasing the region's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your afternoon with",
+        description: "Morning after breakfast, check out from the hotel and drive to Jabalpur. Upon arrival in Jabalpur, check-in at the hotel. In the afternoon, delve into the historical and cultural treasures of Jabalpur. Begin your exploration with a visit to the Rani Durgavati Museum, which is home to a treasure trove of artifacts showcasing the region's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your afternoon with a serene retreat to Pisan Hari Ki Madhaiya, nestled amidst tranquil landscapes. As evening…",
       },
     ],
     included: [
@@ -336,7 +336,7 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Bandhavgarh National Park",
       "Jeep Safari at Tiger Reserve",
-      "Amarkantak, renowned as Thirtharaj, where sacred rivers converge, lush forests t",
+      "Amarkantak",
       "Jabalpur",
       "Bhedaghat's boat ride",
     ],
@@ -350,17 +350,17 @@ export const extraPackages: PackageData[] = [
       {
         day: 2,
         title: "Bandhvgarh National park",
-        description: "Early morning, enjoy a Jeep Safari into Bandhavgarh National Park for a game drive. Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a",
+        description: "Early morning, enjoy a Jeep Safari into Bandhavgarh National Park for a game drive. Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, the park is…",
       },
       {
         day: 3,
-        title: " Bandhavgarh National park  - Amarkantak by road (182 Kms. & 4 Hours approx)",
-        description: "Morning after breakfast, check out from the hotel & drive to Amarkantak. Arrive in Amarkantak and check in at the hotel. Embark on a spiritually enriching full-day journey through Amarkantak, the revered source of the Narmada River, where every moment is steeped in divine grace and ancient mysticism. Begin your odyssey with a visit to the sacred Narmada Udgam and Kund, where the pristine waters of the Narmada emerge, bestowing blessings upon pilgrims. Marvel at the majestic Kapildhara Waterfall, where cascading waters create a serene ambiance perfect for contemplation and introspection. Explor",
+        title: "Bandhavgarh National park - Amarkantak by road (182 Kms. & 4 Hours approx)",
+        description: "Morning after breakfast, check out from the hotel & drive to Amarkantak. Arrive in Amarkantak and check in at the hotel. Embark on a spiritually enriching full-day journey through Amarkantak, the revered source of the Narmada River, where every moment is steeped in divine grace and ancient mysticism. Begin your odyssey with a visit to the sacred Narmada Udgam and Kund, where the pristine waters of the Narmada emerge, bestowing blessings upon pilgrims. Marvel at the majestic Kapildhara Waterfall, where cascading waters create a serene ambiance perfect for contemplation and introspection. Explore the tranquil Sonmuda, the origin of the Son River, amidst lush greenery and pristine…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.  Except in Bandhavgarh National Park where the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Bandhavgarh National Park where the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis.",
       "Total 04 Breakfasts, 02 Lunches & 02 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 early morning Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
@@ -398,37 +398,37 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Jabalpur – TOUR BEGINS",
-        description: "Upon arrival at Jabalpur railway station or airport, you will be greet by our company representative who will assist you and transfer you to the hotel. Check-in at the hotel. In the afternoon, delve into the historical and cultural treasures of Jabalpur. Begin your exploration with a visit to the Rani Durgavati Museum, which is home to a treasure trove of artifacts showcasing the region's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological won",
+        description: "Upon arrival at Jabalpur railway station or airport, you will be greet by our company representative who will assist you and transfer you to the hotel. Check-in at the hotel. In the afternoon, delve into the historical and cultural treasures of Jabalpur. Begin your exploration with a visit to the Rani Durgavati Museum, which is home to a treasure trove of artifacts showcasing the region's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your afternoon with a serene retreat to Pisan Hari Ki…",
       },
       {
         day: 2,
         title: "Jabalpur - Kanha National Park by road (129 kms & 3 Hours approx.)",
-        description: "In the morning, after breakfast, check out from the hotel and proceed to visit Bhedaghat. Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the anc",
+        description: "In the morning, after breakfast, check out from the hotel and proceed to visit Bhedaghat. Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural heritage of the region.…",
       },
       {
         day: 3,
         title: "Kanha National Park - Bandhavgarh National Park by road (215 kms & 4.5 Hours approx.)",
-        description: "Early morning get ready for the thrilling Jeep Safari into the Kanha National Park / Game drive. Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomize",
+        description: "Early morning get ready for the thrilling Jeep Safari into the Kanha National Park / Game drive. Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a deeper…",
       },
       {
         day: 4,
         title: "Arrive Jabalpur – TOUR BEGINS",
-        description: "Upon arrival at Jabalpur railway station or airport, you will be greeted by our company representative who will assist you and transfer you to the hotel. Check-in at the hotel. Embark on a captivating half-day city tour of Jabalpur in the morning, where you'll delve into the historical and cultural treasures of the region. Begin your exploration with a visit to the Rani Durgavati Museum, which houses a treasure trove of artifacts showcasing the area's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding ",
+        description: "Upon arrival at Jabalpur railway station or airport, you will be greeted by our company representative who will assist you and transfer you to the hotel. Check-in at the hotel. Embark on a captivating half-day city tour of Jabalpur in the morning, where you'll delve into the historical and cultural treasures of the region. Begin your exploration with a visit to the Rani Durgavati Museum, which houses a treasure trove of artifacts showcasing the area's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity.…",
       },
       {
         day: 5,
         title: "Jabalpur - Kanha National Park by road (129 kms & 3 Hours approx.)",
-        description: "Morning, after breakfast, check out from the hotel and proceed to visit Bhedaghat. Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Ch",
+        description: "Morning, after breakfast, check out from the hotel and proceed to visit Bhedaghat. Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural heritage of the region. After…",
       },
       {
         day: 6,
         title: "Kanha National Park - Pachmarhi by road (335 kms & 08 Hours approx.)",
-        description: "Early morning get ready for the thrilling Jeep Safari into the Kanha National Park / Game drive. Have Breakfast \"Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sigh",
+        description: "Early morning get ready for the thrilling Jeep Safari into the Kanha National Park / Game drive. Have Breakfast \"Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Bandhavgarh National Park and Kanha National Park the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis.  ",
+      "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Bandhavgarh National Park and Kanha National Park the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis.",
       "Total 04 Breakfasts 03 Lunches & 03 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
@@ -446,7 +446,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "nature-s-splendor-and-ancient-marvels",
     name: "Nature's Splendor and Ancient Marvels",
-    location: "Jabalpur - Kanha National Park - Pachmarhi - Bhimbetka - Bhojpur - Bhopal - Sanchi  - Bhopal",
+    location: "Jabalpur - Kanha National Park - Pachmarhi - Bhimbetka - Bhojpur - Bhopal - Sanchi - Bhopal",
     duration: "6 Days / 5 Nights",
     days: 6,
     price: 39600,
@@ -467,7 +467,7 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Tour Itinerary",
-        description: "Jabalpur - Kanha National Park - Pachmarhi - Bhimbetka - Bhojpur - Bhopal - Sanchi  - Bhopal",
+        description: "Jabalpur - Kanha National Park - Pachmarhi - Bhimbetka - Bhojpur - Bhopal - Sanchi - Bhopal",
       },
     ],
     included: [
@@ -476,7 +476,7 @@ export const extraPackages: PackageData[] = [
       "Total 05 Breakfast 01 Lunch (03 Lunches in 3 Star Deluxe & 4 Star Hotel Option) & 03 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
-      "Experience 01 Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide",
+      "Experience 01 Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
     ],
     excluded: [
@@ -490,7 +490,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "jewels-of-bhopal",
     name: "Jewels Of Bhopal",
-    location: "Bhopal - Bhimbetka  - Bhojpur - Sanchi - Bhopal",
+    location: "Bhopal - Bhimbetka - Bhojpur - Sanchi - Bhopal",
     duration: "3 Days / 2 Nights",
     days: 3,
     price: 9100,
@@ -500,25 +500,25 @@ export const extraPackages: PackageData[] = [
     image: img("1564507592333-c60657eea523"),
     highlights: [
       "Explore Bharat Bhavan",
-      "Bhimbetka Caves UNESCO site with ancient rock art spanning eras, revealing India",
-      "Bhojpur home to the majestic Bhojeshwar Temple, showcasing ancient craftsmanship",
+      "Bhimbetka Caves UNESCO site with ancient rock art spanning eras",
+      "Bhojpur home to the majestic Bhojeshwar Temple",
     ],
     description: "Explore Bharat Bhavan: Bhopal's iconic arts hub by Charles Correa, offering diverse galleries, workshops, and theaters since 1982.",
     itinerary: [
       {
         day: 1,
         title: "Arrive Bhopal - TOUR BEGINS",
-        description: "Upon arrival at Bhopal Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings",
+        description: "Upon arrival at Bhopal Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. Meals : NA",
       },
       {
         day: 2,
         title: "Bhopal (Excursion to Bhimbetka, Bhojpur & Sanchi)",
-        description: "Morning after breakfast proceed to explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and nature enthusiasts. Later discover the historical marvel of Bhojpur, reno",
+        description: "Morning after breakfast proceed to explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and nature enthusiasts. Later discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest…",
       },
       {
         day: 3,
         title: "Departure from Bhopal- TOUR ENDS",
-        description: "Morning after breakfast check-out from the hotel  transfer to the railway station or airport for your onward destination. Meals : Breakfast",
+        description: "Morning after breakfast check-out from the hotel transfer to the railway station or airport for your onward destination. Meals : Breakfast",
       },
     ],
     included: [
@@ -550,7 +550,7 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Bhopal",
       "Bhimbetka Rock Shelters",
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
+      "A colossal testament to ancient engineering",
       "Sanchi Stupa",
       "Pachmarhi",
     ],
@@ -558,23 +558,23 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: " Arrive Bhopal (Excursion to Sanchi stupa) - TOUR BEGINS",
-        description: "Upon arriving at Bhopal railway station or airport, you will be met by our company representative, who will greet you and transfer you to the hotel. Check-in at the hotel. After some rest, enjoy your excursion to Sanchi Stupa.Explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it",
+        title: "Arrive Bhopal (Excursion to Sanchi stupa) - TOUR BEGINS",
+        description: "Upon arriving at Bhopal railway station or airport, you will be met by our company representative, who will greet you and transfer you to the hotel. Check-in at the hotel. After some rest, enjoy your excursion to Sanchi Stupa.Explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts.. Afternoon drive back to the…",
       },
       {
         day: 2,
-        title: " Bhopal - Bhojpur temple - Bhimbetka rocks shelter caves - Pachmarhi by road (205 kms & 5.5 Hours approx.)",
-        description: "Morning, after breakfast, check out from the hotel. Drive to Pachmarhi, via-visiting Bhimbetka Rock Shelter Caves & Bhojpur Temple en route. Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding landsc",
+        title: "Bhopal - Bhojpur temple - Bhimbetka rocks shelter caves - Pachmarhi by road (205 kms & 5.5 Hours approx.)",
+        description: "Morning, after breakfast, check out from the hotel. Drive to Pachmarhi, via-visiting Bhimbetka Rock Shelter Caves & Bhojpur Temple en route. Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding landscapes, making Bhojpur a must-visit destination for history and architecture enthusiasts. Explore…",
       },
       {
         day: 3,
         title: "Pachmarhi (local sightseeing by open Gypsy)",
-        description: "Morning, after breakfast at your hotel, proceed with the local sightseeing of Pachmarhi, including Pandav Caves, Apsara Vihar, Silver Waterfall, and Panchali Kund. Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a re",
+        description: "Morning, after breakfast at your hotel, proceed with the local sightseeing of Pachmarhi, including Pandav Caves, Apsara Vihar, Silver Waterfall, and Panchali Kund. Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 03 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Pachmarhi where the stay is on Plan / Half board basis that is with breakfast and dinner in Pachmarhi  (3 Star Deluxe & 4 Star hotel) where the stay is on APAI Plan / full board basis that is with breakfast, lunch and dinner on fixed menu / buffet basis.",
+      "Accommodation for Total 03 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Pachmarhi where the stay is on Plan / Half board basis that is with breakfast and dinner in Pachmarhi (3 Star Deluxe & 4 Star hotel) where the stay is on APAI Plan / full board basis that is with breakfast, lunch and dinner on fixed menu / buffet basis.",
       "Total 03 Breakfasts, (02 Lunch In 3 Star Deluxe & 4 Star Hotel) & 02 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide.",
@@ -602,7 +602,7 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Bhopal",
       "Bhimbetka Rock Shelters",
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
+      "A colossal testament to ancient engineering",
       "Sanchi Stupa",
       "Tawa Reservoir",
       "Jeep Safari at Tiger Reserve",
@@ -611,23 +611,23 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Bhopal  & (Excursion to Bhimbetka Rock Shelter Caves, Bhojpur Temple, & Sanchi Stupa)  - TOUR BEGINS",
-        description: "Upon arrival at Bhopal airport / railway station meet by our company representative who will meet and greet you and will transfer to hotel. Check-in at the hotel & Enjoy your excursion Bhimbetka Rock Shelter Caves, Bhojpur temple & Sanchi Stupa. Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique gl",
+        title: "Arrive Bhopal & (Excursion to Bhimbetka Rock Shelter Caves, Bhojpur Temple, & Sanchi Stupa) - TOUR BEGINS",
+        description: "Upon arrival at Bhopal airport / railway station meet by our company representative who will meet and greet you and will transfer to hotel. Check-in at the hotel & Enjoy your excursion Bhimbetka Rock Shelter Caves, Bhojpur temple & Sanchi Stupa. Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it…",
       },
       {
         day: 2,
-        title: " Bhopal - Tawa Reserver - Madhaii by road (153 kms & 3.5 Hours approx.)",
-        description: "Morning after breakfast, check out from the hotel and proceed to visit Bhopal for a local city tour. Embark on a morning exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Explore the architectural marvels of Shaukat Mahal and Sadar Manzil, soaking in their historical significance. Conclude your tour with a visit to Bhojtal (Upper Lake), where you can enjoy a seren",
+        title: "Bhopal - Tawa Reserver - Madhaii by road (153 kms & 3.5 Hours approx.)",
+        description: "Morning after breakfast, check out from the hotel and proceed to visit Bhopal for a local city tour. Embark on a morning exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Explore the architectural marvels of Shaukat Mahal and Sadar Manzil, soaking in their historical significance. Conclude your tour with a visit to Bhojtal (Upper Lake), where you can enjoy a serene boat ride (On direct payment basis) amidst the picturesque surroundings, offering a perfect…",
       },
       {
         day: 3,
         title: "Madai / Satpura National Pak - Pachmarhi by road (95 kms & 2.5 Hour approx.)",
-        description: "Early morning, embark on a jeep safari into the Satpura National Park / Tiger Reserve have breakfast. Embark on an exhilarating morning jeep safari through the pristine wilderness of Satpura National Park, a hidden gem nestled in the heart of central India. Named after the majestic Satpura Range that surrounds it, this biodiverse sanctuary offers a haven for wildlife enthusiasts and nature lovers alike. As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this lesser-known tiger reserve, renowned for its diverse habitats and abundant wildlife. Led by experienc",
+        description: "Early morning, embark on a jeep safari into the Satpura National Park / Tiger Reserve have breakfast. Embark on an exhilarating morning jeep safari through the pristine wilderness of Satpura National Park, a hidden gem nestled in the heart of central India. Named after the majestic Satpura Range that surrounds it, this biodiverse sanctuary offers a haven for wildlife enthusiasts and nature lovers alike. As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this lesser-known tiger reserve, renowned for its diverse habitats and abundant wildlife. Led by experienced naturalists, venture deep into the jungle, where elusive tigers, leopards, and sloth bears…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative Or driver.",
-      "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Madhai/Pachmarhi (3 Star Deluxe & 4 Star Hotel Option) where the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu in Pachmarhi where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner in Pachmarhi on fixed menu / buffet basis. ",
+      "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Madhai/Pachmarhi (3 Star Deluxe & 4 Star Hotel Option) where the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu in Pachmarhi where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner in Pachmarhi on fixed menu / buffet basis.",
       "Total 04 Breakfasts, 01 Lunch, (03 Lunches In 03 Star Deluxe & 4 Star Hotel) & 03 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience early morning Jeep Safari at Satpura National Park on private basis with naturalist.",
@@ -656,7 +656,7 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Bhopal",
       "Bhimbetka Rock Shelters",
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
+      "A colossal testament to ancient engineering",
       "Tawa Reservoir",
       "Jeep Safari at Tiger Reserve",
       "Pachmarhi",
@@ -665,24 +665,24 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Bhopal  & (Excursion Udaygiri caves to Sanchi Stupa)  - TOUR BEGINS",
-        description: "Upon arrival in Bhopal, our representative will greet you at the airport/railway station and transfer you to the hotel. After check-in, enjoy an excursion to Udayagiri Caves & Sanchi Stupa. Udayagiri Caves, a complex of 20 rock-cut caves dating back to the early 5th century CE. These caves are significant for their historical and religious importance, featuring Hindu and Jain sculptures and inscriptions. The most notable cave is Cave 5, which houses a massive carving of Vishnu in his Varaha (boar) avatar, lifting the Earth goddess Bhudevi. The caves are a blend of artistic and architectural br",
+        title: "Arrive Bhopal & (Excursion Udaygiri caves to Sanchi Stupa) - TOUR BEGINS",
+        description: "Upon arrival in Bhopal, our representative will greet you at the airport/railway station and transfer you to the hotel. After check-in, enjoy an excursion to Udayagiri Caves & Sanchi Stupa. Udayagiri Caves, a complex of 20 rock-cut caves dating back to the early 5th century CE. These caves are significant for their historical and religious importance, featuring Hindu and Jain sculptures and inscriptions. The most notable cave is Cave 5, which houses a massive carving of Vishnu in his Varaha (boar) avatar, lifting the Earth goddess Bhudevi. The caves are a blend of artistic and architectural brilliance, offering a glimpse into the Gupta period’s religious practices and iconography.…",
       },
       {
         day: 2,
         title: "Bhopal - Bhojpur - Bhimbetka - Tawa Reservoir by road (180 kms & 4.5 Hours approx.)",
-        description: "Morning, after breakfast, check out from the hotel and drive to Tawa Reservoir, visiting Bhimbetka rock shelter caves and Bhojpur Temple en route. Bhojpur:- Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the su",
+        description: "Morning, after breakfast, check out from the hotel and drive to Tawa Reservoir, visiting Bhimbetka rock shelter caves and Bhojpur Temple en route. Bhojpur:- Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding landscapes, making Bhojpur a must-visit destination for history and architecture…",
       },
       {
         day: 3,
-        title: " Tawa Reservoir - Madai by road (45 Min. to 01 Hour approx.)",
-        description: "Morning, after breakfast, guests can enjoy water activities at Tawa Reservoir (available on a direct payment basis). Nestled on the serene banks of the Tawa Reservoir in Madhya Pradesh, Tawa offers travelers a tranquil retreat amidst picturesque landscapes. Formed by the Tawa Dam on the Tawa River, this destination is perfect for boating, fishing, and picnicking enthusiasts. Surrounded by lush forests and wildlife sanctuaries, it’s an ideal haven for nature lovers seeking peace and adventure. A highlight of visiting Tawa is embarking on a mini cruise or boat ride across the calm waters of the ",
+        title: "Tawa Reservoir - Madai by road (45 Min. to 01 Hour approx.)",
+        description: "Morning, after breakfast, guests can enjoy water activities at Tawa Reservoir (available on a direct payment basis). Nestled on the serene banks of the Tawa Reservoir in Madhya Pradesh, Tawa offers travelers a tranquil retreat amidst picturesque landscapes. Formed by the Tawa Dam on the Tawa River, this destination is perfect for boating, fishing, and picnicking enthusiasts. Surrounded by lush forests and wildlife sanctuaries, it’s an ideal haven for nature lovers seeking peace and adventure. A highlight of visiting Tawa is embarking on a mini cruise or boat ride across the calm waters of the reservoir (On direct payment basis). Whether you opt for a leisurely cruise or an adventurous…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
       "Accommodation for Total 07 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Tawa, Madhai & Kanha National Park and Pachmarhi (3 Star Deluxe & 4 Star Hotel Option) where the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu & in Pachmarhi where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner on in fixed menu.",
-      "Total 07 Breakfasts, 03 Lunches (05 Lunches in 4 star Hotel) 05 Dinners  as mentioned in the program.",
+      "Total 07 Breakfasts, 03 Lunches (05 Lunches in 4 star Hotel) 05 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience early morning Jeep Safari at Satpura National Park on private basis with naturalist.",
       "Experience Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide.",
@@ -711,7 +711,7 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Bhopal",
       "Bhimbetka Rock Shelters",
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
+      "A colossal testament to ancient engineering",
       "Pachmarhi",
       "Kanha National Park",
       "Jeep Safari at Tiger Reserve",
@@ -720,24 +720,24 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Bhopal  & (Excursion Udaygiri caves to Sanchi Stupa)  - TOUR BEGINS",
-        description: "Upon arrival in Bhopal, our representative will greet you at the airport/railway station and transfer you to the hotel. After check-in, enjoy an excursion to Udayagiri Caves & Sanchi Stupa. \"Udayagiri Caves, a complex of 20 rock-cut caves dating back to the early 5th century CE. These caves are significant for their historical and religious importance, featuring Hindu and Jain sculptures and inscriptions. The most notable cave is Cave 5, which houses a massive carving of Vishnu in his Varaha (boar) avatar, lifting the Earth goddess Bhudevi. The caves are a blend of artistic and architectural b",
+        title: "Arrive Bhopal & (Excursion Udaygiri caves to Sanchi Stupa) - TOUR BEGINS",
+        description: "Upon arrival in Bhopal, our representative will greet you at the airport/railway station and transfer you to the hotel. After check-in, enjoy an excursion to Udayagiri Caves & Sanchi Stupa. \"Udayagiri Caves, a complex of 20 rock-cut caves dating back to the early 5th century CE. These caves are significant for their historical and religious importance, featuring Hindu and Jain sculptures and inscriptions. The most notable cave is Cave 5, which houses a massive carving of Vishnu in his Varaha (boar) avatar, lifting the Earth goddess Bhudevi. The caves are a blend of artistic and architectural brilliance, offering a glimpse into the Gupta period’s religious practices and iconography.…",
       },
       {
         day: 2,
         title: "Bhopal - Bhojpur - Bhimbetka - Pachmarhi by road (205 kms & 5.5 Hours approx.)",
-        description: "Morning, after breakfast, check out from the hotel. Drive to Pachmarhi, via-visiting Bhojpur Temple and Bhimbetka Rock Shelter Caves.\" Bhojpur:- Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding la",
+        description: "Morning, after breakfast, check out from the hotel. Drive to Pachmarhi, via-visiting Bhojpur Temple and Bhimbetka Rock Shelter Caves.\" Bhojpur:- Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding landscapes, making Bhojpur a must-visit destination for history and architecture enthusiasts.…",
       },
       {
         day: 3,
         title: "Pachmarhi (local sightseeing by open Gypsy)",
-        description: "Morning, after breakfast at your hotel, proceed for local sightseeing of Pachmarhi, including Pandav Caves, Apsara Vihar, Silver Waterfall, and Panchali Kund. \"Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refres",
+        description: "Morning, after breakfast at your hotel, proceed for local sightseeing of Pachmarhi, including Pandav Caves, Apsara Vihar, Silver Waterfall, and Panchali Kund. \"Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative or driver.",
       "Accommodation for Total 07 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Kanha National Park and (In Pachmarhi 3 Star Deluxe & 4 Star Hotel Option) Where the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner in Pachmarhi where the stay is on MAPAI Plan / Half board basis that is with breakfast and Dinner in Pachmarhi on fixed menu / buffet basis.",
-      "Total 07 Breakfasts, 01 Lunch (03 Lunches in 4 Star hotel in Pachmarhi) & 03 Dinners  as mentioned in the program.",
+      "Total 07 Breakfasts, 01 Lunch (03 Lunches in 4 Star hotel in Pachmarhi) & 03 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide.",
       "Experience early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
@@ -775,12 +775,12 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Day 01 : Arrive Gwalior - TOUR BEGINS",
-        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. In the afternoon, visit Jai Vilas Palace, renowned for its stunning architecture and the iconic Durbar Hall, adorned with magnificent chandeliers and gold furnishings. The museum showcases neo-classical rooms, crystal furniture, and a unique silver train dining table. Explore the Tomb of Ghaus Mohammad & Tansen, showcasing exquisite early Mughal architecture. The tomb of Ghaus Mohammad, an Afghan prince, is a fine example of Mughal d",
+        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. In the afternoon, visit Jai Vilas Palace, renowned for its stunning architecture and the iconic Durbar Hall, adorned with magnificent chandeliers and gold furnishings. The museum showcases neo-classical rooms, crystal furniture, and a unique silver train dining table. Explore the Tomb of Ghaus Mohammad & Tansen, showcasing exquisite early Mughal architecture. The tomb of Ghaus Mohammad, an Afghan prince, is a fine example of Mughal design, while the smaller tomb of Tansen, the famous musician from Emperor Akbar’s court, adds to…",
       },
       {
         day: 2,
         title: "Departure from Gwalior- TOUR ENDS",
-        description: "Begin your visit to Gwalior Fort at sunrise, experiencing the breathtaking views and serene ambiance as the first light illuminates this majestic hilltop fort. Start with a stroll through the fort's significant sites, including the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. The early morning light enhances the intricate details of these architectural marvels, offering a unique and peaceful exploration before the crowds arrive. This sunrise visit provides a tranquil and awe-inspiring start to your day in",
+        description: "Begin your visit to Gwalior Fort at sunrise, experiencing the breathtaking views and serene ambiance as the first light illuminates this majestic hilltop fort. Start with a stroll through the fort's significant sites, including the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. The early morning light enhances the intricate details of these architectural marvels, offering a unique and peaceful exploration before the crowds arrive. This sunrise visit provides a tranquil and awe-inspiring start to your day in Gwalior, then head back to your hotel, have breakfast, before concluding your tour with a…",
       },
     ],
     included: [
@@ -821,23 +821,23 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: " Arrive Gwalior - TOUR BEGINS",
-        description: "\"Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"\"optional\"\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, sur",
+        title: "Arrive Gwalior - TOUR BEGINS",
+        description: "\"Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"\"optional\"\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrounded by historical buildings and bustling with local vendors, offering a vibrant glimpse into…",
       },
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "In the morning, have breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. \"Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone",
+        description: "In the morning, have breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. \"Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been…",
       },
       {
         day: 3,
         title: "Gwalior - Sonagiri - Datia - Orchha by road (135 kms 3 Hours approx.)",
-        description: "In the morning, after breakfast, check out from the hotel drive to Orchha enroute visiting Sonagiri Jain Temple, Datia Palace. \"The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding la",
+        description: "In the morning, after breakfast, check out from the hotel drive to Orchha enroute visiting Sonagiri Jain Temple, Datia Palace. \"The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every April, Sonagir comes…",
       },
       {
         day: 4,
-        title: "Orchha -  Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
-        description: "In the morning, after breakfast, check-out from the hotel and Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visit drive to Khajuraho. Arrive Khajuraho & check-in at the hotel. \"In the afternoon Embark on a captiva",
+        title: "Orchha - Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
+        description: "In the morning, after breakfast, check-out from the hotel and Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visit drive to Khajuraho. Arrive Khajuraho & check-in at the hotel. \"In the afternoon Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await. Begin…",
       },
       {
         day: 5,
@@ -863,7 +863,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "jungle-tails-and-heritage-trails",
     name: "Jungle Tails and Heritage Trails",
-    location: "Gwalior - Morena -  Gwalior - Sonagiri - Datia - Orchha - Khajuraho - Panna National Park - Khajuraho",
+    location: "Gwalior - Morena - Gwalior - Sonagiri - Datia - Orchha - Khajuraho - Panna National Park - Khajuraho",
     duration: "6 Days / 5 Nights",
     days: 6,
     price: 30100,
@@ -884,27 +884,27 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Day 01 : Arrive Gwalior - TOUR BEGINS",
-        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrou",
+        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrounded by historical buildings and bustling with local vendors, offering a vibrant glimpse into…",
       },
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Surve",
+        description: "Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Post visits drive back to the…",
       },
       {
         day: 3,
         title: "Gwalior - Sonagiri - Datia - Orchha by road (135 kms 3 Hours approx.)",
-        description: "\"Morning, after breakfast, check out from the hotel drive to Orchha enroute visiting Sonagiri Jain Temple & Datia Palace. The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscap",
+        description: "\"Morning, after breakfast, check out from the hotel drive to Orchha enroute visiting Sonagiri Jain Temple & Datia Palace. The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every April, Sonagir comes alive…",
       },
       {
         day: 4,
-        title: "Orchha -  Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
-        description: "Morning, after breakfast, check out from the hotel and proceed for a local city tour of Orchha. Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visit straight drive to Khajuraho. Arrive Khajuraho & check-in at the h",
+        title: "Orchha - Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
+        description: "Morning, after breakfast, check out from the hotel and proceed for a local city tour of Orchha. Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visit straight drive to Khajuraho. Arrive Khajuraho & check-in at the hotel. Overnight at Khajuraho Meals : Breakfast",
       },
       {
         day: 5,
-        title: "Khajuraho / Panna National park ",
-        description: "Early morning jeep safari through the captivating landscapes of Panna National Park, nestled in the heart of Madhya Pradesh, India. As the sun rises over the horizon, immerse yourself in the wilderness of this biodiverse sanctuary, where every moment brings the possibility of thrilling wildlife encounters. Led by experienced guides, traverse rugged trails and verdant forests in search of majestic Bengal tigers, elusive leopards, and other fascinating creatures. With each passing moment, unravel the mysteries of the jungle and create memories to last a lifetime. After visit drive back to Khajur",
+        title: "Khajuraho / Panna National park",
+        description: "Early morning jeep safari through the captivating landscapes of Panna National Park, nestled in the heart of Madhya Pradesh, India. As the sun rises over the horizon, immerse yourself in the wilderness of this biodiverse sanctuary, where every moment brings the possibility of thrilling wildlife encounters. Led by experienced guides, traverse rugged trails and verdant forests in search of majestic Bengal tigers, elusive leopards, and other fascinating creatures. With each passing moment, unravel the mysteries of the jungle and create memories to last a lifetime. After visit drive back to Khajuraho have packed breakfast. Embark on a captivating half-day city tour of Khajuraho, where…",
       },
       {
         day: 6,
@@ -914,10 +914,10 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 05 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. ",
+      "Accommodation for Total 05 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
       "Total 05 Breakfasts as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
-      " Experience early morning Jeep Safari at Panna National Park on private basis with naturalist.",
+      "Experience early morning Jeep Safari at Panna National Park on private basis with naturalist.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
     ],
     excluded: [
@@ -952,32 +952,32 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Gwalior - TOUR BEGINS",
-        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrou",
+        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrounded by historical buildings and bustling with local vendors, offering a vibrant glimpse into…",
       },
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "Morning after breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Surv",
+        description: "Morning after breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Post visits drive back to the…",
       },
       {
         day: 3,
         title: "Gwalior - Shivpuri - Chanderi by road (385 kms 7.5 Hours approx.)",
-        description: "Morning, after breakfast, check out from the hotel and proceed with a straight drive to Chanderi, en route visiting Shivpuri Embark on a captivating city tour of Shivpuri, a gem in Madhya Pradesh brimming with historical and natural splendor. Begin your journey with a visit to the Chhatris of the Scindia Dynasty, where the intricate blend of Hindu and Islamic architecture pays homage to the royal lineage in a serene and reflective setting. Next, marvel at the opulence of the Madhav Vilas Palace, the former summer residence of the Scindia family, adorned in its iconic pink-and-white hues, offer",
+        description: "Morning, after breakfast, check out from the hotel and proceed with a straight drive to Chanderi, en route visiting Shivpuri Embark on a captivating city tour of Shivpuri, a gem in Madhya Pradesh brimming with historical and natural splendor. Begin your journey with a visit to the Chhatris of the Scindia Dynasty, where the intricate blend of Hindu and Islamic architecture pays homage to the royal lineage in a serene and reflective setting. Next, marvel at the opulence of the Madhav Vilas Palace, the former summer residence of the Scindia family, adorned in its iconic pink-and-white hues, offering panoramic views and a glimpse into the regal lifestyle of yesteryears. Continue your…",
       },
       {
         day: 4,
         title: "Chanderi",
-        description: "Morning after breakfast proceed to visit local city tour Chanderi' Embark on an immersive city tour of Chanderi, a town steeped in history and architectural grandeur. Begin your exploration at the magnificent Koshak Mahal, a symbol of Chanderi's regal legacy. Delve into the town's past at the Chanderi Historical Museum, where artifacts and exhibits narrate its rich cultural heritage. Continue to marvel at the ancient Kati Ghati and the grandeur of the Jama Masjid, each a testament to Chanderi's architectural prowess. Traverse through the majestic Badal Mahal Gate and explore the ornate Raja Ra",
+        description: "Morning after breakfast proceed to visit local city tour Chanderi' Embark on an immersive city tour of Chanderi, a town steeped in history and architectural grandeur. Begin your exploration at the magnificent Koshak Mahal, a symbol of Chanderi's regal legacy. Delve into the town's past at the Chanderi Historical Museum, where artifacts and exhibits narrate its rich cultural heritage. Continue to marvel at the ancient Kati Ghati and the grandeur of the Jama Masjid, each a testament to Chanderi's architectural prowess. Traverse through the majestic Badal Mahal Gate and explore the ornate Raja Rani Mahal and serene Shehzadi Ka Rauza, reflecting the town's royal heritage. Unwind amidst…",
       },
       {
         day: 5,
         title: "Chanderi - Khajuraho by road (225 kms & 5.5 Hours approx.)",
-        description: "Morning after breakfast, check-out from the hotel and drive to Khajuraho. Arrival Khajuraho check in at the hotel. Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await. Begin your morning exploration at the Western Group of Temples, home to some of Khajuraho's most iconic structures, including the awe-inspiring Kandariya Mahadev, Lakshmana, and Vishvanath temples. Marvel at the intricate carvings and architectural brilliance that adorn these sacred sites, each telling a story of devotion and craftsmanship from centuries past. Continue your",
+        description: "Morning after breakfast, check-out from the hotel and drive to Khajuraho. Arrival Khajuraho check in at the hotel. Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await. Begin your morning exploration at the Western Group of Temples, home to some of Khajuraho's most iconic structures, including the awe-inspiring Kandariya Mahadev, Lakshmana, and Vishvanath temples. Marvel at the intricate carvings and architectural brilliance that adorn these sacred sites, each telling a story of devotion and craftsmanship from centuries past. Continue your journey to the Eastern Group of Temples, where a serene ambiance and lesser-known treasures…",
       },
       {
         day: 6,
         title: "Khajuraho - Orchha by road (175 kms & 3 Hours approx.)",
-        description: "Morning after breakfast check-out from the hotel and Later, drive to Orchha, where you'll check in at the hotel. Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Admire the serene beauty of the ancient Chhatris by the Betwa River. Conclude your day with the unique guard of honor ceremony at Ram Raja Temple since it's the only place where Lord Ram is considered as King, just before the soul-stirring Aarti ceremony. Immerse yourself",
+        description: "Morning after breakfast check-out from the hotel and Later, drive to Orchha, where you'll check in at the hotel. Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Admire the serene beauty of the ancient Chhatris by the Betwa River. Conclude your day with the unique guard of honor ceremony at Ram Raja Temple since it's the only place where Lord Ram is considered as King, just before the soul-stirring Aarti ceremony. Immerse yourself in Orchha's timeless charm and cultural heritage, creating memories to cherish for a lifetime.…",
       },
       {
         day: 7,
@@ -987,7 +987,7 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. ",
+      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
       "Total 06 Breakfasts as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -1003,7 +1003,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "ancient-chronicles-of-north-m-p",
     name: "Ancient Chronicles of North M.P",
-    location: "Gwalior - Morena - Gwalior - Shivpuri - Chanderi - Khajuraho - Orchha  - Gwalior",
+    location: "Gwalior - Morena - Gwalior - Shivpuri - Chanderi - Khajuraho - Orchha - Gwalior",
     duration: "7 Days / 6 Nights",
     days: 7,
     price: 26100,
@@ -1024,27 +1024,27 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Gwalior - TOUR BEGINS",
-        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrou",
+        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrounded by historical buildings and bustling with local vendors, offering a vibrant glimpse into…",
       },
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "Morning, have breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Surv",
+        description: "Morning, have breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Post visits drive back to the…",
       },
       {
         day: 3,
-        title: "Gwalior  - Sonagiri Jain Temple - Datia Palace - Orchha",
-        description: "Morning after breakfast check-out from the hotel & drive to Orchha en-route visiting Sonagiri Temples & Datia Palace. \"The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, ",
+        title: "Gwalior - Sonagiri Jain Temple - Datia Palace - Orchha",
+        description: "Morning after breakfast check-out from the hotel & drive to Orchha en-route visiting Sonagiri Temples & Datia Palace. \"The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every April, Sonagir comes alive…",
       },
       {
         day: 4,
-        title: "Orchha -  Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
-        description: "Morning, after breakfast, check out from the hotel and proceed for a local city tour of Orchha, Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. \"After visit straight drive to Khajuraho. Arrive Khajuraho, \"\"Embark on a cap",
+        title: "Orchha - Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
+        description: "Morning, after breakfast, check out from the hotel and proceed for a local city tour of Orchha, Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. \"After visit straight drive to Khajuraho. Arrive Khajuraho, \"\"Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await.…",
       },
       {
         day: 5,
-        title: "Khajuraho - Jabalpur by road (255 kms 5.3 Hours approx.) ",
-        description: "After breakfast check-out from the hotel and straight drive to Jabalpur. Arrive Jabalpur check-in at the hotel. \"\"Embark on a captivating full-day city tour of Jabalpur, starting with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration ",
+        title: "Khajuraho - Jabalpur by road (255 kms 5.3 Hours approx.)",
+        description: "After breakfast check-out from the hotel and straight drive to Jabalpur. Arrive Jabalpur check-in at the hotel. \"\"Embark on a captivating full-day city tour of Jabalpur, starting with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural…",
       },
       {
         day: 6,
@@ -1054,7 +1054,7 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 05 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. ",
+      "Accommodation for Total 05 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
       "Total 05 Breakfasts as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -1091,27 +1091,27 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Gwalior - TOUR BEGINS",
-        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrou",
+        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrounded by historical buildings and bustling with local vendors, offering a vibrant glimpse into…",
       },
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "Morning, have breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Surv",
+        description: "Morning, have breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Post visits drive back to the…",
       },
       {
         day: 3,
-        title: "Gwalior  - Sonagiri Jain Temple - Datia Palace - Orchha",
-        description: "Morning after breakfast check-out from the hotel & drive to Orchha en-route visiting Sonagiri Temples & Datia Palace. \"The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, ",
+        title: "Gwalior - Sonagiri Jain Temple - Datia Palace - Orchha",
+        description: "Morning after breakfast check-out from the hotel & drive to Orchha en-route visiting Sonagiri Temples & Datia Palace. \"The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every April, Sonagir comes alive…",
       },
       {
         day: 4,
-        title: "Orchha -  Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
-        description: "Morning, after breakfast, check out from the hotel and proceed for a local city tour of Orchha, Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. \"After visit straight drive to Khajuraho. Arrive Khajuraho, \"\"Embark on a cap",
+        title: "Orchha - Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
+        description: "Morning, after breakfast, check out from the hotel and proceed for a local city tour of Orchha, Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. \"After visit straight drive to Khajuraho. Arrive Khajuraho, \"\"Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await.…",
       },
       {
         day: 5,
-        title: "Khajuraho - Jabalpur by road (255 kms 5.3 Hours approx.) ",
-        description: "After breakfast check-out from the hotel and straight drive to Jabalpur. Arrive Jabalpur check-in at the hotel. \"\"Embark on a captivating full-day city tour of Jabalpur, starting with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration ",
+        title: "Khajuraho - Jabalpur by road (255 kms 5.3 Hours approx.)",
+        description: "After breakfast check-out from the hotel and straight drive to Jabalpur. Arrive Jabalpur check-in at the hotel. \"\"Embark on a captivating full-day city tour of Jabalpur, starting with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural…",
       },
       {
         day: 6,
@@ -1121,7 +1121,7 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 05 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. ",
+      "Accommodation for Total 05 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
       "Total 05 Breakfasts as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -1158,37 +1158,37 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Gwalior - TOUR BEGINS",
-        description: "\"Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"\"optional\"\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, sur",
+        description: "\"Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and transfer you to the hotel. Check-in at the hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"\"optional\"\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at Maharaj Bada, the central market square of Gwalior, surrounded by historical buildings and bustling with local vendors, offering a vibrant glimpse into…",
       },
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "Morning, have breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Surv",
+        description: "Morning, have breakfast and enjoy your excursion to Mitawoli Temple, Garhi Padawali, and The Bateswara Group of temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Post visits drive back to the…",
       },
       {
         day: 3,
-        title: "Gwalior  - Sonagiri Jain Temple - Datia Palace - Orchha",
-        description: "Morning after breakfast check-out from the hotel & drive to Orchha en-route visiting Sonagiri Temples & Datia Palace. \"The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, ",
+        title: "Gwalior - Sonagiri Jain Temple - Datia Palace - Orchha",
+        description: "Morning after breakfast check-out from the hotel & drive to Orchha en-route visiting Sonagiri Temples & Datia Palace. \"The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every April, Sonagir comes alive…",
       },
       {
         day: 4,
-        title: "Orchha -  Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
-        description: "\"In the morning, after breakfast, check out from the hotel and proceed for a local city tour of Orchha, including Jehangir Mahal, Raja Mahal, Rai Praveen Mahal, Chaturbhuj Temple, and the Royal Cenotaphs (Chattris). Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a sere",
+        title: "Orchha - Khajuraho by road (182 Kms. & 2.5 Hours approx.)",
+        description: "\"In the morning, after breakfast, check out from the hotel and proceed for a local city tour of Orchha, including Jehangir Mahal, Raja Mahal, Rai Praveen Mahal, Chaturbhuj Temple, and the Royal Cenotaphs (Chattris). Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visit drive to Khajuraho. Arrive Khajuraho…",
       },
       {
         day: 5,
-        title: "Khajuraho - Bandhavgarh National Park by road (228 kms & 5 Hours approx.) ",
-        description: "\"Morning after breakfast check-out from the hotel & proceed to visit City tour of Khajuraho. Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await. Begin your morning exploration at the Western Group of Temples, home to some of Khajuraho's most iconic structures, including the awe-inspiring Kandariya Mahadev, Lakshmana, and Vishvanath temples. Marvel at the intricate carvings and architectural brilliance that adorn these sacred sites, each telling a story of devotion and craftsmanship from centuries past. Continue your journey to the Easter",
+        title: "Khajuraho - Bandhavgarh National Park by road (228 kms & 5 Hours approx.)",
+        description: "\"Morning after breakfast check-out from the hotel & proceed to visit City tour of Khajuraho. Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await. Begin your morning exploration at the Western Group of Temples, home to some of Khajuraho's most iconic structures, including the awe-inspiring Kandariya Mahadev, Lakshmana, and Vishvanath temples. Marvel at the intricate carvings and architectural brilliance that adorn these sacred sites, each telling a story of devotion and craftsmanship from centuries past. Continue your journey to the Eastern Group of Temples, where a serene ambiance and lesser-known treasures await. Discover hidden…",
       },
       {
         day: 6,
-        title: "Bandhavgarh National Park - Jabalpur by road (165 kms & 3.5 Hours approx.) ",
-        description: "\"Early morning enjoy Jeep Safari into the Bandhavgarh National Park / Game drive.  \"Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a",
+        title: "Bandhavgarh National Park - Jabalpur by road (165 kms & 3.5 Hours approx.)",
+        description: "\"Early morning enjoy Jeep Safari into the Bandhavgarh National Park / Game drive. \"Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, the park is…",
       },
       {
         day: 7,
         title: "Jabalpur & Departure from Jabalpur- TOUR ENDS",
-        description: "After breakfast, check out from the hotel and proceed to visit Bhedaghat. Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yo",
+        description: "After breakfast, check out from the hotel and proceed to visit Bhedaghat. Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural heritage of the region. In time for…",
       },
     ],
     included: [
@@ -1231,70 +1231,70 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Gwalior-TOUR BEGINS",
-        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and will transfer you to the hotel. Check-in at the hotel.  Evening one can enjoy Sound and Light Show (Optional) at Gwalior Fort. The Sound and Light show at the Man Mandir Palace of Gwalior Fort gives you a glimpse into its glorious past. The story of this 'pearl' begins with the sonorous and eloquent narration by Amitabh Bachchan as Gopachal, the sutradhar (narrator). Later return to your hotel & Overnight at Gwalior. Meals : NA",
+        description: "Upon arrival at Gwalior Station or Airport, you will be met by our company representative who will greet you and will transfer you to the hotel. Check-in at the hotel. Evening one can enjoy Sound and Light Show (Optional) at Gwalior Fort. The Sound and Light show at the Man Mandir Palace of Gwalior Fort gives you a glimpse into its glorious past. The story of this 'pearl' begins with the sonorous and eloquent narration by Amitabh Bachchan as Gopachal, the sutradhar (narrator). Later return to your hotel & Overnight at Gwalior. Meals : NA",
       },
       {
         day: 2,
         title: "Gwalior - Jhansi - Orchha by road (172 kms & 3 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Later proceed to visit Jai Vilas Palace, renowned for its stunning architecture and the iconic Durbar Hall, adorned with magnificent chandeliers and gold furnishings. The museum showcases neo-classical rooms, crystal furniture, and a unique silver train dining table. After visit drive to Orchha en route visiting Jhansi Fort. Embark ",
+        description: "Morning after breakfast check out from the hotel & exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Later proceed to visit Jai Vilas Palace, renowned for its stunning architecture and the iconic Durbar Hall, adorned with magnificent chandeliers and gold furnishings. The museum showcases neo-classical rooms, crystal furniture, and a unique silver train dining table. After visit drive to Orchha en route visiting Jhansi Fort. Embark on a captivating city tour of Jhansi, where every corner is steeped in history and legend. Begin…",
       },
       {
         day: 3,
         title: "Orchha - Khajuraho by road (172 kms & 3 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & enjoy city tour of Orchha.  Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visits drive to Khajuraho. Arrive Khajuraho & check in at the hotel. Overnight at Khajur",
+        description: "Morning after breakfast check out from the hotel & enjoy city tour of Orchha. Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visits drive to Khajuraho. Arrive Khajuraho & check in at the hotel. Overnight at Khajuraho. Meals: Breakfast",
       },
       {
         day: 4,
         title: "Khajuraho",
-        description: "Morning after breakfast & enjoy full day city tour of Khajuraho.  Embark on a full-day journey through the timeless beauty and architectural marvels of Khajuraho, a UNESCO World Heritage Site renowned for its exquisite temples and intricate sculptures that depict the ancient art and culture of India. Begin your exploration in the morning at the Western Group of Temples, where you'll be awe-struck by the majestic structures such as Kandariya Mahadev, Lakshmana, and Vishvanath. Marvel at the intricate carvings and detailed sculptures that adorn these temples, each telling a story of devotion and",
+        description: "Morning after breakfast & enjoy full day city tour of Khajuraho. Embark on a full-day journey through the timeless beauty and architectural marvels of Khajuraho, a UNESCO World Heritage Site renowned for its exquisite temples and intricate sculptures that depict the ancient art and culture of India. Begin your exploration in the morning at the Western Group of Temples, where you'll be awe-struck by the majestic structures such as Kandariya Mahadev, Lakshmana, and Vishvanath. Marvel at the intricate carvings and detailed sculptures that adorn these temples, each telling a story of devotion and craftsmanship from centuries past. Continue your journey to the Eastern Group of Temples, where…",
       },
       {
         day: 5,
         title: "Khajuraho - Raneh Fall - Ken Ghadiyal Sentury - Bandhavgarh by road (253 kms & 6 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Bandhavgarh National Park via visiting Raneh Waterfall & Ken Ghadiyal Sentury. For travelers seeking a touch of natural beauty in Khajuraho, a visit to Raneh Falls is a perfect activity. Located a short drive from town, Raneh Falls features the Ken River cascading over rugged, multi-colored volcanic rocks, creating stunning waterfalls and deep canyons. Enjoy leisurely walks along trails with multiple vantage points to admire the falls and the vibrant rock formations. The serene atmosphere and breathtaking scenery offer a refreshing re",
+        description: "Morning after breakfast check out from the hotel & drive to Bandhavgarh National Park via visiting Raneh Waterfall & Ken Ghadiyal Sentury. For travelers seeking a touch of natural beauty in Khajuraho, a visit to Raneh Falls is a perfect activity. Located a short drive from town, Raneh Falls features the Ken River cascading over rugged, multi-colored volcanic rocks, creating stunning waterfalls and deep canyons. Enjoy leisurely walks along trails with multiple vantage points to admire the falls and the vibrant rock formations. The serene atmosphere and breathtaking scenery offer a refreshing retreat, adding a memorable dimension to your Khajuraho experience. After visits drive to…",
       },
       {
         day: 6,
         title: "Bandhavgarh National Park",
-        description: "Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, th",
+        description: "Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, the park is home to a diverse array of wildlife, including leopards, wild dogs, various species of…",
       },
       {
         day: 7,
         title: "Bandhavgarh National Park - Jabalpur by road (203 Kms & 3.5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Jabalpur. Arrive Jabalpur & check in at the hotel. Afternoon enjoy half-day city tour of Jabalpur, starting with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visi",
+        description: "Morning after breakfast check out from the hotel & drive to Jabalpur. Arrive Jabalpur & check in at the hotel. Afternoon enjoy half-day city tour of Jabalpur, starting with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural heritage of the…",
       },
       {
         day: 8,
         title: "Jabalpur - Pachmarhi by road (289 kms & 5.5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & Embark on a captivating half-day city tour of Jabalpur in the morning, where you'll delve into the historical and cultural treasures of the region. Begin your exploration with a visit to the Rani Durgavati Museum, which houses a treasure trove of artifacts showcasing the area's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your morning excursion with ",
+        description: "Morning after breakfast check out from the hotel & Embark on a captivating half-day city tour of Jabalpur in the morning, where you'll delve into the historical and cultural treasures of the region. Begin your exploration with a visit to the Rani Durgavati Museum, which houses a treasure trove of artifacts showcasing the area's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your morning excursion with a serene retreat to Pisan Hari Ki Madhaiya, nestled amidst tranquil landscapes, before…",
       },
       {
         day: 9,
         title: "Pachmarhi (local sightseeing by open Gypsy)",
-        description: "Morning after breakfast \"Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, crea",
+        description: "Morning after breakfast \"Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, creating a mesmerizing spectacle. In the afternoon, continue your exploration with a visit to Bee…",
       },
       {
         day: 10,
         title: "Pachmarhi - Bhimbetka - Bhojpur - Bhopal by road (205 kms & 5.5 Hours approx.)",
-        description: "Morning after breakfast check out from the hotel & drive to Bhopal via-visiting Bhimbetka Rock Shelter Caves & Bhojpur Temple. Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destinati",
+        description: "Morning after breakfast check out from the hotel & drive to Bhopal via-visiting Bhimbetka Rock Shelter Caves & Bhojpur Temple. Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and nature enthusiasts. Discover the historical marvel of Bhojpur, renowned for…",
       },
       {
         day: 11,
         title: "Bhopal",
-        description: "Morning after breakfast Embark on a full-day exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. In the afternoon, visit the architectural marvels of Shaukat Mahal and Sadar Manzil, followed by the Indira Gandhi Rashtriya Manav Sangrahalaya, which offers fascinating insights into the evolution of mankind and cultural heritage. Discover the elegance of Gohar Mahal, a",
+        description: "Morning after breakfast Embark on a full-day exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. In the afternoon, visit the architectural marvels of Shaukat Mahal and Sadar Manzil, followed by the Indira Gandhi Rashtriya Manav Sangrahalaya, which offers fascinating insights into the evolution of mankind and cultural heritage. Discover the elegance of Gohar Mahal, a palace blending Mughal and Hindu styles, and the striking white facade of Moti Masjid. Conclude…",
       },
       {
         day: 12,
         title: "Bhopal (Excursion to Sanchi) & Departure from Bhopal - TOUR END",
-        description: "Morning after breakfast check out from the hotel & explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts.  After visits drive back to Bhopal. Arrive Bhopal & In time transfer to Railway station/Airport to board Trai",
+        description: "Morning after breakfast check out from the hotel & explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts. After visits drive back to Bhopal. Arrive Bhopal & In time transfer to Railway station/Airport to board Train/Flight for onward journey. Meals: Breakfast",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
       "Accommodation for Total 11 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Bandhavgarh National Park & Pachmarhi (4 Star hotel) where the stay is on APAI Plan / Full board basis that is which breakfast, lunch & dinner on fixed menu / buffet basis. Except in Pachmarhi where the stay is on MAPAI Plan /Half board basis that is which breakfast & dinner on fixed menu / buffet basis.",
       "Total 11 Breakfasts, 02 Lunches (04 Lunches in 4 star hotel) & 04 Dinners as mentioned in the program.",
-      " Experience early morning Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
-      " Experience night Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
+      "Experience early morning Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
+      "Experience night Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
       "Experience Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -1336,62 +1336,62 @@ export const extraPackages: PackageData[] = [
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Surve",
+        description: "Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Post visits drive back to the…",
       },
       {
         day: 3,
         title: "Gwalior - Sonagiri - Datia - Orchha by road (121 kms & 2.5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Orchha via visiting Sonagiri Jain Temple & Datia Palace. The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, ad",
+        description: "Morning after breakfast check out from the hotel & drive to Orchha via visiting Sonagiri Jain Temple & Datia Palace. The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every April, Sonagir comes alive with…",
       },
       {
         day: 4,
         title: "Orchha - Khajuraho by road (172 kms & 3 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & enjoy city tour of Orchha.  Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visits drive to Khajuraho. Arrive Khajuraho & check in at the hotel. Overnight at Khajur",
+        description: "Morning after breakfast check out from the hotel & enjoy city tour of Orchha. Embark on a captivating half-day city tour of Orchha, where history and spirituality intertwine seamlessly. Explore the majestic Orchha Fort Complex and delve into the 17th-century Chaturbhuj Temple's rich history. Then, visit the revered Ram Raja Temple, where Lord Ram is honored as a king. Conclude your tour with a visit to the ancient Chhatris by the Betwa River, offering a serene moment amidst Orchha's timeless allure. After visits drive to Khajuraho. Arrive Khajuraho & check in at the hotel. Overnight at Khajuraho. Meals: Breakfast",
       },
       {
         day: 5,
         title: "Khajuraho",
-        description: "Morning after breakfast & enjoy full day city tour of Khajuraho.  Embark on a full-day journey through the timeless beauty and architectural marvels of Khajuraho, a UNESCO World Heritage Site renowned for its exquisite temples and intricate sculptures that depict the ancient art and culture of India. Begin your exploration in the morning at the Western Group of Temples, where you'll be awe-struck by the majestic structures such as Kandariya Mahadev, Lakshmana, and Vishvanath. Marvel at the intricate carvings and detailed sculptures that adorn these temples, each telling a story of devotion and",
+        description: "Morning after breakfast & enjoy full day city tour of Khajuraho. Embark on a full-day journey through the timeless beauty and architectural marvels of Khajuraho, a UNESCO World Heritage Site renowned for its exquisite temples and intricate sculptures that depict the ancient art and culture of India. Begin your exploration in the morning at the Western Group of Temples, where you'll be awe-struck by the majestic structures such as Kandariya Mahadev, Lakshmana, and Vishvanath. Marvel at the intricate carvings and detailed sculptures that adorn these temples, each telling a story of devotion and craftsmanship from centuries past. Continue your journey to the Eastern Group of Temples, where…",
       },
       {
         day: 6,
         title: "Khajuraho - Raneh Fall - Ken Ghadiyal Sentury - Bandhavgarh by road (253 kms & 6 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Bandhavgarh National Park via visiting Raneh Waterfall & Ken Ghadiyal Sentury. For travelers seeking a touch of natural beauty in Khajuraho, a visit to Raneh Falls is a perfect activity. Located a short drive from town, Raneh Falls features the Ken River cascading over rugged, multi-colored volcanic rocks, creating stunning waterfalls and deep canyons. Enjoy leisurely walks along trails with multiple vantage points to admire the falls and the vibrant rock formations. The serene atmosphere and breathtaking scenery offer a refreshing re",
+        description: "Morning after breakfast check out from the hotel & drive to Bandhavgarh National Park via visiting Raneh Waterfall & Ken Ghadiyal Sentury. For travelers seeking a touch of natural beauty in Khajuraho, a visit to Raneh Falls is a perfect activity. Located a short drive from town, Raneh Falls features the Ken River cascading over rugged, multi-colored volcanic rocks, creating stunning waterfalls and deep canyons. Enjoy leisurely walks along trails with multiple vantage points to admire the falls and the vibrant rock formations. The serene atmosphere and breathtaking scenery offer a refreshing retreat, adding a memorable dimension to your Khajuraho experience. After visits drive to…",
       },
       {
         day: 7,
         title: "Bandhavgarh National Park",
-        description: "Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, th",
+        description: "Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, the park is home to a diverse array of wildlife, including leopards, wild dogs, various species of…",
       },
       {
         day: 8,
         title: "Bandhavgarh National Park - Jabalpur by road (203 Kms & 3.5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Jabalpur. Arrive Jabalpur & check in at the hotel. Afternoon enjoy half-day city tour of Jabalpur, starting with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visi",
+        description: "Morning after breakfast check out from the hotel & drive to Jabalpur. Arrive Jabalpur & check in at the hotel. Afternoon enjoy half-day city tour of Jabalpur, starting with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural heritage of the…",
       },
       {
         day: 9,
         title: "Jabalpur - Pachmarhi by road (289 kms & 5.5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & Embark on a captivating half-day city tour of Jabalpur in the morning, where you'll delve into the historical and cultural treasures of the region. Begin your exploration with a visit to the Rani Durgavati Museum, which houses a treasure trove of artifacts showcasing the area's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your morning excursion with ",
+        description: "Morning after breakfast check out from the hotel & Embark on a captivating half-day city tour of Jabalpur in the morning, where you'll delve into the historical and cultural treasures of the region. Begin your exploration with a visit to the Rani Durgavati Museum, which houses a treasure trove of artifacts showcasing the area's rich heritage. Next, discover the iconic Madan Mahal Fort, a historic landmark perched atop a hill, offering panoramic views of the surrounding landscape. Marvel at the famous Balancing Rock, a geological wonder that defies gravity. Conclude your morning excursion with a serene retreat to Pisan Hari Ki Madhaiya, nestled amidst tranquil landscapes, before…",
       },
       {
         day: 10,
         title: "Pachmarhi (local sightseeing by open Gypsy)",
-        description: "Morning after breakfast \"Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, crea",
+        description: "Morning after breakfast \"Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, creating a mesmerizing spectacle. In the afternoon, continue your exploration with a visit to Bee…",
       },
       {
         day: 11,
         title: "Pachmarhi - Bhimbetka - Bhojpur - Bhopal by road (205 kms & 5.5 Hours approx.)",
-        description: "Morning after breakfast check out from the hotel & drive to Bhopal via-visiting Bhimbetka Rock Shelter Caves & Bhojpur Temple. Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destinati",
+        description: "Morning after breakfast check out from the hotel & drive to Bhopal via-visiting Bhimbetka Rock Shelter Caves & Bhojpur Temple. Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and nature enthusiasts. Discover the historical marvel of Bhojpur, renowned for…",
       },
       {
         day: 12,
         title: "Bhopal",
-        description: "Morning after breakfast Embark on a full-day exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. In the afternoon, visit the architectural marvels of Shaukat Mahal and Sadar Manzil, followed by the Indira Gandhi Rashtriya Manav Sangrahalaya, which offers fascinating insights into the evolution of mankind and cultural heritage. Discover the elegance of Gohar Mahal, a",
+        description: "Morning after breakfast Embark on a full-day exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. In the afternoon, visit the architectural marvels of Shaukat Mahal and Sadar Manzil, followed by the Indira Gandhi Rashtriya Manav Sangrahalaya, which offers fascinating insights into the evolution of mankind and cultural heritage. Discover the elegance of Gohar Mahal, a palace blending Mughal and Hindu styles, and the striking white facade of Moti Masjid. Conclude…",
       },
       {
         day: 13,
         title: "Bhopal (Excursion to Sanchi) & Departure from Bhopal - TOUR END",
-        description: "Morning after breakfast check out from the hotel & explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts.  Later visits drive back to Bhopal. Arrive Bhopal & In time transfer to Railway station/Airport to board Trai",
+        description: "Morning after breakfast check out from the hotel & explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts. Later visits drive back to Bhopal. Arrive Bhopal & In time transfer to Railway station/Airport to board Train/Flight for onward journey. Meals: Breakfast",
       },
       {
         day: 14,
@@ -1403,8 +1403,8 @@ export const extraPackages: PackageData[] = [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
       "Accommodation for Total 12 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Bandhavgarh National Park & Pachmarhi (4 Star hotel) where the stay is on APAI Plan / Full board basis that is which breakfast, lunch & dinner on fixed menu / buffet basis. Except in Pachmarhi where the stay is on MAPAI Plan /Half board basis that is which breakfast & dinner on fixed menu / buffet basis.",
       "Total 12 Breakfasts, 02 Lunches (04 Lunches in 4 star hotel) & 04 Dinners as mentioned in the program.",
-      " Experience early morning Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
-      " Experience night Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
+      "Experience early morning Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
+      "Experience night Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
       "Experience Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -1434,7 +1434,7 @@ export const extraPackages: PackageData[] = [
       "Pachmarhi",
       "Bhopal",
       "Bhimbetka Rock Shelters",
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
+      "A colossal testament to ancient engineering",
     ],
     description: "Kanha National Park: A wildlife paradise where Bengal tigers roam, rare barasingha thrive, and breathtaking landscapes captivate every explorer.",
     itinerary: [
@@ -1464,7 +1464,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "central-india-wildlife-and-culture-expedition",
     name: "Central India Wildlife and Culture Expedition",
-    location: "Raipur - Kanha National Park - Bandhvgarh National Park -  Jabalpur - Madai - Satpura National Park - Bhimbetka - Bhojpur - Bhopal",
+    location: "Raipur - Kanha National Park - Bandhvgarh National Park - Jabalpur - Madai - Satpura National Park - Bhimbetka - Bhojpur - Bhopal",
     duration: "7 Days / 6 Nights",
     days: 7,
     price: 58000,
@@ -1484,38 +1484,38 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: " Arrive Raipur & Drive to Kanha National Park by road (182 kms & 4.5 Hours approx.) -TOUR BEGINS ",
-        description: "Upon arrival at Raipur airport/railway station, you will be met by our company representative who will greet you and drive to Kanha National Park  Arrive Kanha National Park. Post lunch the day at leisure, enjoy facilities available at the lodge & Enjoy your dinner at hotel, Overnight at Kanha National Park. Meals : Lunch & Dinner",
+        title: "Arrive Raipur & Drive to Kanha National Park by road (182 kms & 4.5 Hours approx.) -TOUR BEGINS",
+        description: "Upon arrival at Raipur airport/railway station, you will be met by our company representative who will greet you and drive to Kanha National Park Arrive Kanha National Park. Post lunch the day at leisure, enjoy facilities available at the lodge & Enjoy your dinner at hotel, Overnight at Kanha National Park. Meals : Lunch & Dinner",
       },
       {
         day: 2,
-        title: " Kanha National Park ",
-        description: "Early morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a deeper appreciation for nature's won",
+        title: "Kanha National Park",
+        description: "Early morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a deeper appreciation for nature's wonders. Enjoy breakfast during the safari later return to the hotel and enjoy the rest of the day…",
       },
       {
         day: 3,
         title: "Kanha National Park - Bandhvgarh National Park by road (215 kms & 4.5 Hours approx.)",
-        description: "Morning after breakfast, check out from the hotel drive to Bandhavgarh National Park. Upon arrival, transfer to your hotel and check-in. Post lunch the day at leisure, enjoy facilities available at the lodge. Optional :- One can enjoy either an exciting afternoon Jeep Safari or can enjoy a thrilling Afternoon Jeep Safari into the Bandhavgarh National Park.  In the night enjoy dinner at the hotel & Overnight in Bandhavgarh National Park. Meals : Breakfast, Lunch & Dinner",
+        description: "Morning after breakfast, check out from the hotel drive to Bandhavgarh National Park. Upon arrival, transfer to your hotel and check-in. Post lunch the day at leisure, enjoy facilities available at the lodge. Optional :- One can enjoy either an exciting afternoon Jeep Safari or can enjoy a thrilling Afternoon Jeep Safari into the Bandhavgarh National Park. In the night enjoy dinner at the hotel & Overnight in Bandhavgarh National Park. Meals : Breakfast, Lunch & Dinner",
       },
       {
         day: 4,
         title: "Bandhvgrah National Park - Jabalpur by road (180 kms & 4 Hours approx.)",
-        description: "Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, th",
+        description: "Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, the park is home to a diverse array of wildlife, including leopards, wild dogs, various species of…",
       },
       {
         day: 5,
-        title: " Jabalpur  - Madhai / Satpura National Park by road (280 kms & 5 Hours approx.)",
-        description: "\"After breakfast at your hotel in the morning, check- out from the hotel & proceed for local city tour of Jabalpur Bhedaghat. Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your",
+        title: "Jabalpur - Madhai / Satpura National Park by road (280 kms & 5 Hours approx.)",
+        description: "\"After breakfast at your hotel in the morning, check- out from the hotel & proceed for local city tour of Jabalpur Bhedaghat. Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
       "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Kanha National Park, Bandhvgarh National Park & Satpura National Park where the stay is on Plan / Full board basis that is which breakfast, lunch & dinner on fixed menu / buffet basis.",
-      "Total 06 Breakfasts, 05 Lunches & 05 dinners  as mentioned in the program.",
+      "Total 06 Breakfasts, 05 Lunches & 05 dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 Early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
       "Experience 01 Early morningJeep Safari at Bandhvgarh National Park on private basis with naturalist.",
-      "Experience 01  Early morning Jeep Safari at Satpura National Park on private basis with naturalist.",
+      "Experience 01 Early morning Jeep Safari at Satpura National Park on private basis with naturalist.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
     ],
     excluded: [
@@ -1538,7 +1538,7 @@ export const extraPackages: PackageData[] = [
     tourCategory: "Wildlife Exclusive",
     image: img("1561731216-c3a4d99437d5"),
     highlights: [
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
+      "A colossal testament to ancient engineering",
       "Bhimbetka Rock Shelters",
       "Jeep Safari at Tiger Reserve",
       "Pench National Park",
@@ -1549,41 +1549,41 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Bhopal & Drive to Bhojpur - Bhimbetka - Madai by road (135 kms & 3.5 Hours approx.) -TOUR BEGINS ",
-        description: "Upon arrival at Bhopal airport/railway station, you will be met by our company representative who will greet you and drive to Madai, via -visiting Bhojpur & Bhimbetka.   Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surr",
+        title: "Arrive Bhopal & Drive to Bhojpur - Bhimbetka - Madai by road (135 kms & 3.5 Hours approx.) -TOUR BEGINS",
+        description: "Upon arrival at Bhopal airport/railway station, you will be met by our company representative who will greet you and drive to Madai, via -visiting Bhojpur & Bhimbetka. Explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and nature enthusiasts. Discover the…",
       },
       {
         day: 2,
         title: "Madhai / Satpur National Park - Pench National Park (244 Kms & 6 Hours approx)",
-        description: "Early morning get ready for the thrilling Jeep Safari into the Satpura National Park / Game drive.  Embark on an exhilarating morning jeep safari through the pristine wilderness of Satpura National Park, a hidden gem nestled in the heart of central India. Named after the majestic Satpura Range that surrounds it, this biodiverse sanctuary offers a haven for wildlife enthusiasts and nature lovers alike. As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this lesser-known tiger reserve, renowned for its diverse habitats and abundant wildlife. Led by experienced",
+        description: "Early morning get ready for the thrilling Jeep Safari into the Satpura National Park / Game drive. Embark on an exhilarating morning jeep safari through the pristine wilderness of Satpura National Park, a hidden gem nestled in the heart of central India. Named after the majestic Satpura Range that surrounds it, this biodiverse sanctuary offers a haven for wildlife enthusiasts and nature lovers alike. As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this lesser-known tiger reserve, renowned for its diverse habitats and abundant wildlife. Led by experienced naturalists, venture deep into the jungle, where elusive tigers, leopards, and sloth bears roam…",
       },
       {
         day: 3,
         title: "Pench National Park - Kanha National Park by road (280 kms & 5 Hours approx.)",
-        description: "Early morning get ready for the thrilling Jeep Safari into the Pench National Park / Game drive.  Embark on an exhilarating morning jeep safari through the pristine wilderness of Pench National Park, the legendary setting that inspired Rudyard Kipling's \"\"The Jungle Book.\"\" As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this renowned tiger reserve, named after the Pench River that flows through its heart. Led by experienced naturalists, venture deep into the jungle, where elusive tigers roam freely amidst dense forests and meandering streams. Keep your e",
+        description: "Early morning get ready for the thrilling Jeep Safari into the Pench National Park / Game drive. Embark on an exhilarating morning jeep safari through the pristine wilderness of Pench National Park, the legendary setting that inspired Rudyard Kipling's \"\"The Jungle Book.\"\" As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this renowned tiger reserve, named after the Pench River that flows through its heart. Led by experienced naturalists, venture deep into the jungle, where elusive tigers roam freely amidst dense forests and meandering streams. Keep your eyes peeled for sightings of majestic predators and other wildlife, including leopards, wild dogs,…",
       },
       {
         day: 4,
-        title: " Kanha National Park ",
-        description: "Early morning get ready for the thrilling Jeep Safari into the Kanah National Park / Game drive.  Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomiz",
+        title: "Kanha National Park",
+        description: "Early morning get ready for the thrilling Jeep Safari into the Kanah National Park / Game drive. Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a deeper…",
       },
       {
         day: 5,
-        title: " Kanha National Park - Bandhvgarh National Park by road (215 kms & 4.5 Hours approx.)",
-        description: "After breakfast, check out from the hotel in the morning and drive to Bandhavgarh National Park. Upon arrival at Bandhavgarh National Park, check in at the hotel. enjoy the rest of the day at leisure, taking advantage of the facilities available at the lodge. Embark on an exhilarating afternoon jeep safari at Bandhavgarh National Park, an enchanting wilderness sanctuary nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the day begins to wane and the shadows grow longer, you'll set out on an adventure through this pristine landscape, guided by experienced naturalists who possess",
+        title: "Kanha National Park - Bandhvgarh National Park by road (215 kms & 4.5 Hours approx.)",
+        description: "After breakfast, check out from the hotel in the morning and drive to Bandhavgarh National Park. Upon arrival at Bandhavgarh National Park, check in at the hotel. enjoy the rest of the day at leisure, taking advantage of the facilities available at the lodge. Embark on an exhilarating afternoon jeep safari at Bandhavgarh National Park, an enchanting wilderness sanctuary nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the day begins to wane and the shadows grow longer, you'll set out on an adventure through this pristine landscape, guided by experienced naturalists who possess a deep understanding of the park's ecology and wildlife behavior. Bandhavgarh is renowned for…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
       "Accommodation for Total 08 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Madai / Satpura National Park , Pench National Park, Kanha National Park, Bandhvgarh National Park & Panna National Park where the stay is on Plan / Full board basis that is which breakfast, lunch & dinner on fixed menu / buffet basis.",
-      "Total 08 Breakfasts, 07 Lunches & 07 dinners  as mentioned in the program.",
+      "Total 08 Breakfasts, 07 Lunches & 07 dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 Early morning Jeep Safari at Madai/ Satpur National Park on private basis with naturalist.",
       "Experience 01 Early morningJeep Safari at Pench National Park on private basis with naturalist.",
-      "Experience 01  Early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
-      "Experience 01  Early morning Jeep Safari at Bandhvgarh National Park on private basis with naturalist.",
-      "Experience 01  Afternoon Jeep Safari at Bandhvgarh National Park on private basis with naturalist.",
-      "Experience 01  Early Morning Jeep Safari at Panna National Park on private basis with naturalist.",
+      "Experience 01 Early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
+      "Experience 01 Early morning Jeep Safari at Bandhvgarh National Park on private basis with naturalist.",
+      "Experience 01 Afternoon Jeep Safari at Bandhvgarh National Park on private basis with naturalist.",
+      "Experience 01 Early Morning Jeep Safari at Panna National Park on private basis with naturalist.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
     ],
     excluded: [
@@ -1597,7 +1597,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "tiger-kingdoms-of-central-india",
     name: "Tiger Kingdoms of Central India",
-    location: "Jabalpur  - Bandhavgarh National Park - Kanha National Park - Pench National Park - Nagpur",
+    location: "Jabalpur - Bandhavgarh National Park - Kanha National Park - Pench National Park - Nagpur",
     duration: "8 Days / 7 Nights",
     days: 8,
     price: 87700,
@@ -1618,37 +1618,37 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Jabalpur-TOUR BEGINS",
-        description: "Upon arrival at Jabalpur airport/railway station, you will be met by our company representative who will greet you and will transfer you to the hotel. Check-in at the hotel.  As the evening sun sets over Jabalpur, immerse yourself in a soul-stirring experience at Gwarighat. Here, on the tranquil banks of the Narmada River, witness the sacred rituals of the evening Aarti. Devotees gather in reverence, their voices raised in melodious hymns, as the flickering flames of lamps illuminate the surroundings. Feel the serene ambiance envelop you as you witness the rhythmic movements of the priests, of",
+        description: "Upon arrival at Jabalpur airport/railway station, you will be met by our company representative who will greet you and will transfer you to the hotel. Check-in at the hotel. As the evening sun sets over Jabalpur, immerse yourself in a soul-stirring experience at Gwarighat. Here, on the tranquil banks of the Narmada River, witness the sacred rituals of the evening Aarti. Devotees gather in reverence, their voices raised in melodious hymns, as the flickering flames of lamps illuminate the surroundings. Feel the serene ambiance envelop you as you witness the rhythmic movements of the priests, offering prayers to the river goddess. Allow yourself to be swept away by the spiritual energy that…",
       },
       {
         day: 2,
         title: "Jabalpur - Bandhavgarh National Park by road (203 kms & 3.5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing ",
+        description: "Morning after breakfast check out from the hotel & Embark on a captivating half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural heritage of the region. After visits drive to Bandhavgarh National…",
       },
       {
         day: 3,
         title: "Bandhavgarh National Park",
-        description: "Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, th",
+        description: "Embark on an unforgettable early morning jeep safari at Bandhavgarh National Park, an oasis of wilderness nestled in the heart of Madhya Pradesh, India's Tiger Capital. As the sun begins to rise over the lush landscapes and rocky hills, you'll venture deep into the heart of this pristine sanctuary, accompanied by experienced guides who are well-versed in the park's ecology and wildlife behavior. Bandhavgarh is renowned for its thriving population of Bengal tigers, offering visitors a rare opportunity to catch a glimpse of these majestic creatures in their natural habitat. Along with tigers, the park is home to a diverse array of wildlife, including leopards, wild dogs, various species of…",
       },
       {
         day: 4,
         title: "Bandhavgarh National Park - Kanha National Park by road (215 kms & 4.5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Kanha National Park. Arrive Kanha National Park check in at the hotel. Rest of the day will remain at leisure to enjoy facilities at the lodge &  Experience the magic of the jungle after dark with a thrilling night jeep safari (Optional) in Kanha National Park. As the sun sets and the nocturnal creatures emerge, prepare for an unforgettable adventure. Kanha, known for its vibrant nightlife, offers the chance to encounter elusive predators like leopards and wild dogs, along with a myriad of other fascinating creatures. Traverse the sha",
+        description: "Morning after breakfast check out from the hotel & drive to Kanha National Park. Arrive Kanha National Park check in at the hotel. Rest of the day will remain at leisure to enjoy facilities at the lodge & Experience the magic of the jungle after dark with a thrilling night jeep safari (Optional) in Kanha National Park. As the sun sets and the nocturnal creatures emerge, prepare for an unforgettable adventure. Kanha, known for its vibrant nightlife, offers the chance to encounter elusive predators like leopards and wild dogs, along with a myriad of other fascinating creatures. Traverse the shadowy depths of the forest, guided by expert naturalists who unravel the mysteries of the night.…",
       },
       {
         day: 5,
-        title: "Kanha National Park  ",
-        description: "Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a deeper appreciatio",
+        title: "Kanha National Park",
+        description: "Embark on a captivating morning jeep safari through Kanha National Park, the Tiger Capital of the world. As the sun rises, anticipate thrilling encounters with Bengal tigers, leopards, wild dogs, and the elusive gharial. Traverse diverse habitats, from dense forests to open grasslands, soaking in the sights and sounds of the wilderness. Feel the cool breeze on your face and listen to the calls of birds echoing through the trees. Catch your breath as you spot your first tiger, a sight that epitomizes the park's allure. It's an adventure you'll never forget, leaving you with a deeper appreciation for nature's wonders. Enjoy packed breakfast during the safari. Rest of the day will remain at…",
       },
       {
         day: 6,
         title: "Kanha National Park - Pench National Park by road (211 kms & 4 Hours approx)",
-        description: "Embark on an intimate exploration of Kanha National Park with a captivating (Optional) walking safari. Step into the heart of the jungle, guided by expert naturalists who illuminate the park's hidden treasures and intricate ecosystems. Kanha, renowned for its biodiversity and pristine landscapes, offers a unique opportunity to witness wildlife up close in their natural habitat. Traverse scenic trails, winding through dense forests and tranquil meadows, as you encounter a diverse array of flora and fauna. Keep your senses sharp as you listen to the symphony of sounds and immerse yourself in the",
+        description: "Embark on an intimate exploration of Kanha National Park with a captivating (Optional) walking safari. Step into the heart of the jungle, guided by expert naturalists who illuminate the park's hidden treasures and intricate ecosystems. Kanha, renowned for its biodiversity and pristine landscapes, offers a unique opportunity to witness wildlife up close in their natural habitat. Traverse scenic trails, winding through dense forests and tranquil meadows, as you encounter a diverse array of flora and fauna. Keep your senses sharp as you listen to the symphony of sounds and immerse yourself in the sights and scents of the wilderness. With each step, you'll deepen your connection to nature…",
       },
       {
         day: 7,
         title: "Pench National Park",
-        description: "Embark on an exhilarating morning jeep safari through the pristine wilderness of Pench National Park, the legendary setting that inspired Rudyard Kipling's \"The Jungle Book.\" As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this renowned tiger reserve, named after the Pench River that flows through its heart. Led by experienced naturalists, venture deep into the jungle, where elusive tigers roam freely amidst dense forests and meandering streams. Keep your eyes peeled for sightings of majestic predators and other wildlife, including leopards, wild dogs, an",
+        description: "Embark on an exhilarating morning jeep safari through the pristine wilderness of Pench National Park, the legendary setting that inspired Rudyard Kipling's \"The Jungle Book.\" As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this renowned tiger reserve, named after the Pench River that flows through its heart. Led by experienced naturalists, venture deep into the jungle, where elusive tigers roam freely amidst dense forests and meandering streams. Keep your eyes peeled for sightings of majestic predators and other wildlife, including leopards, wild dogs, and a myriad of bird species. With each passing moment, you'll unravel the mysteries of the jungle…",
       },
       {
         day: 8,
@@ -1658,7 +1658,7 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 07 nights on sharing basis on Room plus breakfast, lunch & dinner on fixed menu/buffet basis. Except in Jabalpur where is the stay is on CPAI Plan basis that is which breakfast on fixed menu / buffet basis. ",
+      "Accommodation for Total 07 nights on sharing basis on Room plus breakfast, lunch & dinner on fixed menu/buffet basis. Except in Jabalpur where is the stay is on CPAI Plan basis that is which breakfast on fixed menu / buffet basis.",
       "Total 07 Breakfasts, 06 Lunches & 06 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience early morning Jeep Safari at Bandhavgarh National Park on private basis with naturalist.",
@@ -1689,8 +1689,8 @@ export const extraPackages: PackageData[] = [
     tourCategory: "Summer Exclusive",
     image: img("1500964757637-c85e8a162699"),
     highlights: [
-      "Amarkantak, renowned as Thirtharaj, where sacred rivers converge, lush forests t",
-      "A hidden wilderness in Madhya Pradesh, Sanjay Dubri National Park is a haven for",
+      "Amarkantak",
+      "A hidden wilderness in Madhya Pradesh",
       "Witness the wild awaken in the misty forests of Sanjay Dubri on an unforgettable",
     ],
     description: "Amarkantak, renowned as Thirtharaj, where sacred rivers converge, lush forests thrive, and spirituality meets natural splendor.",
@@ -1702,8 +1702,8 @@ export const extraPackages: PackageData[] = [
       },
       {
         day: 2,
-        title: "Amarkantak ",
-        description: "Morning after breakfast journey of local sightseeing of full-day journey through Amarkantak, the revered source of the Narmada River, where every moment is steeped in divine grace and ancient mysticism. Begin your odyssey with a visit to the sacred Narmada Udgam and Kund, where the pristine waters of the Narmada emerge, bestowing blessings upon pilgrims. Marvel at the majestic Kapildhara Waterfall, where cascading waters create a serene ambiance perfect for contemplation and introspection. Explore the tranquil Sonmuda, the origin of the Son River, amidst lush greenery and pristine landscapes. ",
+        title: "Amarkantak",
+        description: "Morning after breakfast journey of local sightseeing of full-day journey through Amarkantak, the revered source of the Narmada River, where every moment is steeped in divine grace and ancient mysticism. Begin your odyssey with a visit to the sacred Narmada Udgam and Kund, where the pristine waters of the Narmada emerge, bestowing blessings upon pilgrims. Marvel at the majestic Kapildhara Waterfall, where cascading waters create a serene ambiance perfect for contemplation and introspection. Explore the tranquil Sonmuda, the origin of the Son River, amidst lush greenery and pristine landscapes. Pay homage at the revered Shri Yantra Temple, a testament to divine geometry and spiritual…",
       },
       {
         day: 3,
@@ -1718,7 +1718,7 @@ export const extraPackages: PackageData[] = [
       {
         day: 5,
         title: "Parsili - Prayagraj by road (199 Kms & 4.5 Hours approx.)",
-        description: "Morning after breakfast check-out from the hotel drive to Prayagraj, arrive Prayagraj in time transfer to airport or railway station to board flight or train for onward journey  Meals: Breakfast",
+        description: "Morning after breakfast check-out from the hotel drive to Prayagraj, arrive Prayagraj in time transfer to airport or railway station to board flight or train for onward journey Meals: Breakfast",
       },
     ],
     included: [
@@ -1749,8 +1749,8 @@ export const extraPackages: PackageData[] = [
     tourCategory: "Summer Exclusive",
     image: img("1565538810643-b5bdb714032a"),
     highlights: [
-      "Amarkantak, renowned as Thirtharaj, where sacred rivers converge, lush forests t",
-      "A hidden wilderness in Madhya Pradesh, Sanjay Dubri National Park is a haven for",
+      "Amarkantak",
+      "A hidden wilderness in Madhya Pradesh",
       "Witness the wild awaken in the misty forests of Sanjay Dubri on an unforgettable",
       "Jabalpur",
       "Bhedaghat's boat ride",
@@ -1764,8 +1764,8 @@ export const extraPackages: PackageData[] = [
       },
       {
         day: 2,
-        title: "Amarkantak ",
-        description: "Morning after breakfast journey of local sightseeing of full-day journey through Amarkantak, the revered source of the Narmada River, where every moment is steeped in divine grace and ancient mysticism. Begin your odyssey with a visit to the sacred Narmada Udgam and Kund, where the pristine waters of the Narmada emerge, bestowing blessings upon pilgrims. Marvel at the majestic Kapildhara Waterfall, where cascading waters create a serene ambiance perfect for contemplation and introspection. Explore the tranquil Sonmuda, the origin of the Son River, amidst lush greenery and pristine landscapes. ",
+        title: "Amarkantak",
+        description: "Morning after breakfast journey of local sightseeing of full-day journey through Amarkantak, the revered source of the Narmada River, where every moment is steeped in divine grace and ancient mysticism. Begin your odyssey with a visit to the sacred Narmada Udgam and Kund, where the pristine waters of the Narmada emerge, bestowing blessings upon pilgrims. Marvel at the majestic Kapildhara Waterfall, where cascading waters create a serene ambiance perfect for contemplation and introspection. Explore the tranquil Sonmuda, the origin of the Son River, amidst lush greenery and pristine landscapes. Pay homage at the revered Shri Yantra Temple, a testament to divine geometry and spiritual…",
       },
       {
         day: 3,
@@ -1780,12 +1780,12 @@ export const extraPackages: PackageData[] = [
       {
         day: 5,
         title: "Parsili - Jabalpur by road (283 Kms & 5.5 Hours approx.)",
-        description: "Morning after breakfast check-out from the hotel drive to Jabalpur, arrive Jabalpur As the evening sun sets over Jabalpur, immerse yourself in a soul-stirring experience at Gwarighat. Here, on the tranquil banks of the Narmada River, witness the sacred rituals of the evening Aarti. Devotees gather in reverence, their voices raised in melodious hymns, as the flickering flames of lamps illuminate the surroundings. Feel the serene ambiance envelop you as you witness the rhythmic movements of the priests, offering prayers to the river goddess. Allow yourself to be swept away by the spiritual energ",
+        description: "Morning after breakfast check-out from the hotel drive to Jabalpur, arrive Jabalpur As the evening sun sets over Jabalpur, immerse yourself in a soul-stirring experience at Gwarighat. Here, on the tranquil banks of the Narmada River, witness the sacred rituals of the evening Aarti. Devotees gather in reverence, their voices raised in melodious hymns, as the flickering flames of lamps illuminate the surroundings. Feel the serene ambiance envelop you as you witness the rhythmic movements of the priests, offering prayers to the river goddess. Allow yourself to be swept away by the spiritual energy that permeates the air, leaving you with a sense of peace and tranquility that lingers long…",
       },
       {
         day: 6,
-        title: "Departure Jabalpur ",
-        description: "Morning after breakfast check-out from the hotel proceed to visit half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself ",
+        title: "Departure Jabalpur",
+        description: "Morning after breakfast check-out from the hotel proceed to visit half-day city tour of Jabalpur, beginning with the awe-inspiring natural wonders of Dhuandhar Falls and Marble Rocks at Bhedaghat, where limestone cliffs rise dramatically along the banks of the Narmada River. Experience the enchanting boat ride amidst the stunning Marble Rocks, marveling at the towering cliffs and the play of light and shadow on the marble surface. This memorable experience can be enjoyed on a direct payment basis. Continue your exploration with a visit to the ancient Chausath Yogini Temple, immersing yourself in the rich cultural heritage of the region. after visit in time transfer to airport or railway…",
       },
       {
         day: 7,
@@ -1795,12 +1795,12 @@ export const extraPackages: PackageData[] = [
       {
         day: 8,
         title: "Mandu",
-        description: "Morning after breakfast embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue yo",
+        description: "Morning after breakfast embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue your adventure with a visit to Rewa Kund, a tranquil reservoir nestled amidst lush greenery.…",
       },
       {
         day: 9,
         title: "Mandu - Indore by road (98 kms & 2 Hours approx.) & Departure from Indore - TOUR END",
-        description: "Morning breakfast and check-out from the hotel and drive to Indore. Arrive Indore Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the city's artistic heritage. ",
+        description: "Morning breakfast and check-out from the hotel and drive to Indore. Arrive Indore Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the city's artistic heritage. Delve into the historical significance of Boliya Chattri, a testament to the regal legacy of…",
       },
     ],
     included: [
@@ -1887,22 +1887,22 @@ export const extraPackages: PackageData[] = [
       {
         day: 2,
         title: "Mandu",
-        description: "Morning after breakfast Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue yo",
+        description: "Morning after breakfast Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue your adventure with a visit to Rewa Kund, a tranquil reservoir nestled amidst lush greenery.…",
       },
       {
         day: 3,
         title: "Mandu - Indore by road (98 kms & 2 Hours approx.)",
-        description: "Morning after breakfast check out from the hotel & drive to Indore. Arrive Indore & check in at the hotel. Embark on a full-day exploration of Indore's cultural and historical treasures, beginning with the majestic Rajwada and Lal Bagh Palace. Admire the dazzling mirror work at Kanch Mandir and pay homage at Bada Ganpati Temple and Khajrana Ganesh Temple. Marvel at the architectural splendors of Boliya and Krishna Pura Chhatris, epitomizing the city's rich heritage. In the evening, delve into the bustling ambiance of 56 Dukaan Street, a vibrant marketplace offering a diverse array of local cra",
+        description: "Morning after breakfast check out from the hotel & drive to Indore. Arrive Indore & check in at the hotel. Embark on a full-day exploration of Indore's cultural and historical treasures, beginning with the majestic Rajwada and Lal Bagh Palace. Admire the dazzling mirror work at Kanch Mandir and pay homage at Bada Ganpati Temple and Khajrana Ganesh Temple. Marvel at the architectural splendors of Boliya and Krishna Pura Chhatris, epitomizing the city's rich heritage. In the evening, delve into the bustling ambiance of 56 Dukaan Street, a vibrant marketplace offering a diverse array of local crafts, textiles, and culinary delights. Immerse yourself in the colorful tapestry of Indore's…",
       },
       {
         day: 4,
         title: "Indore - Bhopal by road (194 kms & 4 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Bhopal. Arrive Bhopal & check in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. Af",
+        description: "Morning after breakfast check out from the hotel & drive to Bhopal. Arrive Bhopal & check in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. After visits return to your hotel & Overnight at Bhopal. Meals: Breakfast",
       },
       {
         day: 5,
         title: "Bhopal (Excursion to Bhimbetka, Bhojpur & Sanchi)",
-        description: "Morning after breakfast proceed to explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and nature enthusiasts. Later discover the historical marvel of Bhojpur, reno",
+        description: "Morning after breakfast proceed to explore the ancient rock shelters of Bhimbetka, a UNESCO World Heritage Site renowned for its prehistoric rock art dating back 30,000 years. Nestled in the Vindhya mountains, Bhimbetka showcases over 750 rock shelters with diverse paintings depicting hunting, dancing, and daily life. This site, named after Bhima from the Mahabharata, offers a unique glimpse into the evolution of human culture and the natural beauty of its surroundings, making it an unmissable destination for history and nature enthusiasts. Later discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest…",
       },
       {
         day: 6,
@@ -1939,9 +1939,9 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Bhopal",
       "Bhimbetka Rock Shelters",
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
-      "Sanchi Stupa a Timeless marvel of Buddhist grandeur, a symbol of serenity and ar",
-      "Marvel at the Great Stupa of Sanchi, a UNESCO World Heritage site",
+      "A colossal testament to ancient engineering",
+      "Sanchi Stupa a Timeless marvel of Buddhist grandeur",
+      "Marvel at the Great Stupa of Sanchi",
       "Discover the ancient rock-cut Udayagiri Caves and their magnificent carvings",
     ],
     description: "Bhopal: Where ancient history meets modern charm amidst the tranquil lakes, vibrant culture, and culinary delights of the City of Lakes.",
@@ -1949,27 +1949,27 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Bhopal-TOUR BEGINS",
-        description: "Upon arrival at Bhopal Station/Airport, you will be met by our company representative who will greet you and you will be transferred to the hotel. Check-in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surr",
+        description: "Upon arrival at Bhopal Station/Airport, you will be met by our company representative who will greet you and you will be transferred to the hotel. Check-in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. Later return to the hotel &…",
       },
       {
         day: 2,
         title: "Bhopal (Excursion to Sanchi & Udaygiri Caves)",
-        description: "Morning after breakfast Embark on a captivating half-day excursion from Bhopal to explore the historical wonders of Sanchi and Udayagiri Caves. Begin your journey with a visit to Sanchi, a UNESCO World Heritage site renowned for its ancient Buddhist stupas, monasteries, temples, and pillars. At the heart of Sanchi lies the Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE, featuring intricate carvings and gateways that depict scenes from the life of Buddha. Take your time to explore the serene complex and delve into the rich Buddhist heritage at the Sanchi Museum, which houses",
+        description: "Morning after breakfast Embark on a captivating half-day excursion from Bhopal to explore the historical wonders of Sanchi and Udayagiri Caves. Begin your journey with a visit to Sanchi, a UNESCO World Heritage site renowned for its ancient Buddhist stupas, monasteries, temples, and pillars. At the heart of Sanchi lies the Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE, featuring intricate carvings and gateways that depict scenes from the life of Buddha. Take your time to explore the serene complex and delve into the rich Buddhist heritage at the Sanchi Museum, which houses a remarkable collection of artifacts and sculptures. Next, proceed to the Udayagiri Caves, a…",
       },
       {
         day: 3,
         title: "Bhopal - Bhojpur - Bhimbetka - Pachmarhi by road (182 kms & 4.5 Hours approx.)",
-        description: "Morning after breakfast check out from the hotel & drive to Pachmarhi via visiting Bhojpur & Bhimbetka. Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding landscapes, making Bhojpur a must-visit des",
+        description: "Morning after breakfast check out from the hotel & drive to Pachmarhi via visiting Bhojpur & Bhimbetka. Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding landscapes, making Bhojpur a must-visit destination for history and architecture enthusiasts. Explore the ancient rock shelters of…",
       },
       {
         day: 4,
         title: "Pachmarhi (local sightseeing by open Gypsy)",
-        description: "Morning after breakfast, Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, crea",
+        description: "Morning after breakfast, Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, creating a mesmerizing spectacle. In the afternoon, continue your exploration with a visit to Bee…",
       },
       {
         day: 5,
         title: "Pachmarhi - Tawa by road (114 kms & 3 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Tawa Reservoir. Arrive Tawa Reservoir & check in at the hotel. Nestled on the serene banks of the Tawa Reservoir in Madhya Pradesh, Tawa offers travelers a tranquil retreat amidst picturesque landscapes. Formed by the Tawa Dam on the Tawa River, this destination is perfect for boating, fishing, and picnicking enthusiasts. Surrounded by lush forests and wildlife sanctuaries, it’s an ideal haven for nature lovers seeking peace and adventure. A highlight of visiting Tawa is embarking on a mini cruise or boat ride across the calm waters o",
+        description: "Morning after breakfast check out from the hotel & drive to Tawa Reservoir. Arrive Tawa Reservoir & check in at the hotel. Nestled on the serene banks of the Tawa Reservoir in Madhya Pradesh, Tawa offers travelers a tranquil retreat amidst picturesque landscapes. Formed by the Tawa Dam on the Tawa River, this destination is perfect for boating, fishing, and picnicking enthusiasts. Surrounded by lush forests and wildlife sanctuaries, it’s an ideal haven for nature lovers seeking peace and adventure. A highlight of visiting Tawa is embarking on a mini cruise or boat ride across the calm waters of the reservoir (On direct payment basis). Whether you opt for a leisurely cruise or an…",
       },
       {
         day: 6,
@@ -1979,7 +1979,7 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 05 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Pachmarhi (in 3 Star hotels) where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner. Tawa & Pachmarhi (In 3 Star Deluxe & 4 Star hotels) the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 05 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Pachmarhi (in 3 Star hotels) where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner. Tawa & Pachmarhi (In 3 Star Deluxe & 4 Star hotels) the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis.",
       "Total 05 Breakfasts, 01 Lunch (03 Lunches in 3 Star Deluxe & 4 Star hotels) & 03 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide.",
@@ -2022,27 +2022,27 @@ export const extraPackages: PackageData[] = [
       {
         day: 2,
         title: "Mandu",
-        description: "Morning after breakfast Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue yo",
+        description: "Morning after breakfast Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue your adventure with a visit to Rewa Kund, a tranquil reservoir nestled amidst lush greenery.…",
       },
       {
         day: 3,
         title: "Mandu - Indore by road (98 kms & 2 Hours approx.)",
-        description: "Morning after breakfast check out from the hotel & drive to Indore. Arrive Indore check in at the hotel. Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the cit",
+        description: "Morning after breakfast check out from the hotel & drive to Indore. Arrive Indore check in at the hotel. Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the city's artistic heritage. Delve into the historical significance of Boliya Chattri, a testament to…",
       },
       {
         day: 4,
         title: "Indore - Bhopal by road (194 kms & 4 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Bhopal. Arrive Bhopal & check in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. Af",
+        description: "Morning after breakfast check out from the hotel & drive to Bhopal. Arrive Bhopal & check in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. After visits return to your hotel & Overnight at Bhopal. Meals: Breakfast",
       },
       {
         day: 5,
         title: "Bhopal - Sanchi - Bhojpur - Bhimbetka - Pachmarhi by road (190 kms & 5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Pachmarhi via visiting Sanchi, Bhojpur & Bhimbetka. Explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts. Discover the historical marvel of Bhojpur, renow",
+        description: "Morning after breakfast check out from the hotel & drive to Pachmarhi via visiting Sanchi, Bhojpur & Bhimbetka. Explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts. Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest…",
       },
       {
         day: 6,
         title: "Pachmarhi (local sightseeing by open Gypsy)",
-        description: "Morning after breakfast, Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, crea",
+        description: "Morning after breakfast, Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, creating a mesmerizing spectacle. In the afternoon, continue your exploration with a visit to Bee…",
       },
       {
         day: 7,
@@ -2052,7 +2052,7 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Pachmarhi (in 3 Star hotels) where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner. Pachmarhi (In 3 Star Deluxe & 4 Star hotels) the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Pachmarhi (in 3 Star hotels) where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner. Pachmarhi (In 3 Star Deluxe & 4 Star hotels) the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis.",
       "Total 06 Breakfasts, (02 Lunches in 4 Star hotels) & 02 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide.",
@@ -2080,7 +2080,7 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Bhopal",
       "Bhimbetka Rock Shelters",
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
+      "A colossal testament to ancient engineering",
       "Pachmarhi",
     ],
     description: "Bhopal: Where ancient history meets modern charm amidst the tranquil lakes, vibrant culture, and culinary delights of the City of Lakes.",
@@ -2088,22 +2088,22 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Bhopal-TOUR BEGINS",
-        description: "Upon arrival at Bhopal Station/Airport, you will be met by our company representative who will greet you and you will be transferred to the hotel. Check-in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surr",
+        description: "Upon arrival at Bhopal Station/Airport, you will be met by our company representative who will greet you and you will be transferred to the hotel. Check-in at the hotel. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. Overnight at Bhopal. Meals : NA",
       },
       {
         day: 2,
         title: "Bhopal - Bhojpur - Bhimbetka - Pachmarhi by road (182 kms & 4.5 Hours approx.)",
-        description: "Morning after breakfast check out from the hotel & drive to Pachmarhi via visiting Bhojpur & Bhimbetka. Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding landscapes, making Bhojpur a must-visit des",
+        description: "Morning after breakfast check out from the hotel & drive to Pachmarhi via visiting Bhojpur & Bhimbetka. Discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the legendary Raja Bhoj, this site showcases advanced medieval engineering with its monolithic constructions and ancient dam remnants. Additionally, explore intricate Jain temples and enjoy the serene natural beauty of the surrounding landscapes, making Bhojpur a must-visit destination for history and architecture enthusiasts. Explore the ancient rock shelters of…",
       },
       {
         day: 3,
         title: "Pachmarhi (local sightseeing by open Gypsy)",
-        description: "Morning after breakfast, Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, crea",
+        description: "Morning after breakfast, Embark on a captivating journey of local sightseeing in Pachmarhi, a picturesque hill station nestled amidst the lush forests of Madhya Pradesh. Begin your exploration with a visit to the ancient Pandav Caves, steeped in mythology and history, where legends of the Pandavas are said to echo through the cavernous halls. Next, marvel at the natural beauty of Apsara Vihar, a tranquil waterfall cascading into a serene pool, offering a refreshing escape from the summer heat. Then, make your way to the Silver Waterfall, where shimmering streams cascade down rocky cliffs, creating a mesmerizing spectacle. In the afternoon, continue your exploration with a visit to Bee…",
       },
       {
         day: 4,
         title: "Pachmarhi (local sightseeing by open Gypsy)",
-        description: "Morning after beakfast Embark on another day of discovery as you delve deeper into the enchanting wonders of Pachmarhi. Begin your exploration with a visit to Jatashankar, a sacred cave shrine dedicated to Lord Shiva, nestled amidst the natural beauty of the surrounding forests. Next, venture to Handi Khoh, a breathtaking gorge offering panoramic views of the rugged cliffs and dense forests below. Continue your journey with a visit to Priyadarshini, a popular viewpoint known for its stunning vistas of Pachmarhi's scenic landscapes. In the afternoon, continue your adventure with visits to Gupt ",
+        description: "Morning after beakfast Embark on another day of discovery as you delve deeper into the enchanting wonders of Pachmarhi. Begin your exploration with a visit to Jatashankar, a sacred cave shrine dedicated to Lord Shiva, nestled amidst the natural beauty of the surrounding forests. Next, venture to Handi Khoh, a breathtaking gorge offering panoramic views of the rugged cliffs and dense forests below. Continue your journey with a visit to Priyadarshini, a popular viewpoint known for its stunning vistas of Pachmarhi's scenic landscapes. In the afternoon, continue your adventure with visits to Gupt Mahadev and Bada Mahadev, two ancient temples dedicated to Lord Shiva. Marvel at the intricate…",
       },
       {
         day: 5,
@@ -2113,7 +2113,7 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Pachmarhi (in 3 Star hotels) where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner. Pachmarhi (In 3 Star Deluxe & 4 Star hotels) the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Pachmarhi (in 3 Star hotels) where the stay is on MAPAI Plan / Half board basis that is with breakfast and dinner. Pachmarhi (In 3 Star Deluxe & 4 Star hotels) the stay is on APAI Plan / Full board basis that is with breakfast, lunch & dinner on fixed menu / buffet basis.",
       "Total 04 Breakfasts, (03 Lunches in 4 Star hotels) & 03 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 02 Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide. (01 Day Covering Forest & 02 Day Covering Non Forest).",
@@ -2130,7 +2130,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "ancient-madhya-pradesh",
     name: "Ancient Madhya Pradesh",
-    location: "Gwalior - Orchha - Khajuraho - Sanchi - Bhopal - Ujjain -  Omkareshwar - Maheshwar - Mandu - Indore",
+    location: "Gwalior - Orchha - Khajuraho - Sanchi - Bhopal - Ujjain - Omkareshwar - Maheshwar - Mandu - Indore",
     duration: "9 Days / 8 Nights",
     days: 9,
     price: 40800,
@@ -2150,23 +2150,23 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: " Arrive Gwalior - TOUR BEGINS",
-        description: "Upon arrival at Gwalior airport or railway station, you will be met by our driver cum company representative who will greet you and will transfer you to hotel. In the afternoon, visit Jai Vilas Palace, renowned for its stunning architecture and the iconic Durbar Hall, adorned with magnificent chandeliers and gold furnishings. The museum showcases neo-classical rooms, crystal furniture, and a unique silver train dining table. Explore the Tomb of Ghaus Mohammad & Tansen, showcasing exquisite early Mughal architecture. The tomb of Ghaus Mohammad, an Afghan prince, is a fine example of Mughal desi",
+        title: "Arrive Gwalior - TOUR BEGINS",
+        description: "Upon arrival at Gwalior airport or railway station, you will be met by our driver cum company representative who will greet you and will transfer you to hotel. In the afternoon, visit Jai Vilas Palace, renowned for its stunning architecture and the iconic Durbar Hall, adorned with magnificent chandeliers and gold furnishings. The museum showcases neo-classical rooms, crystal furniture, and a unique silver train dining table. Explore the Tomb of Ghaus Mohammad & Tansen, showcasing exquisite early Mughal architecture. The tomb of Ghaus Mohammad, an Afghan prince, is a fine example of Mughal design, while the smaller tomb of Tansen, the famous musician from Emperor Akbar’s court, adds to…",
       },
       {
         day: 2,
         title: "Gwalior - Orchha by road (121 kms & 2.5 Hours approx)",
-        description: "Early morning begin your visit to Gwalior Fort at sunrise, experiencing the breathtaking views and serene ambiance as the first light illuminates this majestic hilltop fort. Start with a stroll through the fort's significant sites, including the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. The early morning light enhances the intricate details of these architectural marvels, offering a unique and peaceful exploration before the crowds arrive. This sunrise visit provides a tranquil and awe-inspiring start ",
+        description: "Early morning begin your visit to Gwalior Fort at sunrise, experiencing the breathtaking views and serene ambiance as the first light illuminates this majestic hilltop fort. Start with a stroll through the fort's significant sites, including the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. The early morning light enhances the intricate details of these architectural marvels, offering a unique and peaceful exploration before the crowds arrive. This sunrise visit provides a tranquil and awe-inspiring start to your day in Gwalior. After visits return to hotel & have breakfast. Later check-out from the…",
       },
       {
         day: 3,
-        title: " Orchha - Khajuraho by road (172 kms & 3 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Khajuraho. Arrive Khajuraho & check in at the hotel. Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await. Begin your morning exploration at the Western Group of Temples, home to some of Khajuraho's most iconic structures, including the awe-inspiring Kandariya Mahadev, Lakshmana, and Vishvanath temples. Marvel at the intricate carvings and architectural brilliance that adorn these sacred sites, each telling a story of devotion and craftsmanship from centuries past. Continue your j",
+        title: "Orchha - Khajuraho by road (172 kms & 3 Hours approx)",
+        description: "Morning after breakfast check out from the hotel & drive to Khajuraho. Arrive Khajuraho & check in at the hotel. Embark on a captivating half-day city tour of Khajuraho, where ancient history and exquisite artistry await. Begin your morning exploration at the Western Group of Temples, home to some of Khajuraho's most iconic structures, including the awe-inspiring Kandariya Mahadev, Lakshmana, and Vishvanath temples. Marvel at the intricate carvings and architectural brilliance that adorn these sacred sites, each telling a story of devotion and craftsmanship from centuries past. Continue your journey to the Eastern Group of Temples, where a serene ambiance and lesser-known treasures…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 08 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Maheshwar (in 3 star & 3 Star Deluxe Hotels) Where the stay is on MAPAI Plan basis that is which breakfast & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 08 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Maheshwar (in 3 star & 3 Star Deluxe Hotels) Where the stay is on MAPAI Plan basis that is which breakfast & dinner on fixed menu / buffet basis.",
       "Total 08 Breakfasts & 01 Dinner (in 3 star & 3 Star Deluxe Hotels) as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -2202,23 +2202,23 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: " Arrive Gwalior - TOUR BEGINS",
+        title: "Arrive Gwalior - TOUR BEGINS",
         description: "Upon arrival at Gwalior airport or railway Station, you will be met by our company representative who will greet you and will transfer you to hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Later return to your Hotel & Overnight at Gwalior. Meals : NA",
       },
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Surve",
+        description: "Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Post visits drive back to the…",
       },
       {
         day: 3,
-        title: " Gwalior - Sonagiri - Datia - Orchha by road (132 kms & 3 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Orchha en route visiting Sonagiri Jain Temple & Datia Palace. Morning proceed to visit The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of",
+        title: "Gwalior - Sonagiri - Datia - Orchha by road (132 kms & 3 Hours approx)",
+        description: "Morning after breakfast check out from the hotel & drive to Orchha en route visiting Sonagiri Jain Temple & Datia Palace. Morning proceed to visit The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Kanha National Park Where the stay is on APAI Plan basis that is which breakfast, lunch & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Kanha National Park Where the stay is on APAI Plan basis that is which breakfast, lunch & dinner on fixed menu / buffet basis.",
       "Total 06 Breakfasts, 01 Lunch & 01 Dinner as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Experience 01 early morning Jeep Safari at Kanha National Park on private basis with naturalist.",
@@ -2236,7 +2236,7 @@ export const extraPackages: PackageData[] = [
   {
     id: "historical-saga-of-madhya-pradesh",
     name: "Historical Saga Of Madhya Pradesh",
-    location: "Gwalior - Morena - Gwalior - Sonagiri - Datia - Orchha - Khajuraho - Sanchi - Bhopal  - Bhojpur - Bhimbetka - Bhopal - Ujjain - Omkareshwar - Maheshwar - Mandu - Indore",
+    location: "Gwalior - Morena - Gwalior - Sonagiri - Datia - Orchha - Khajuraho - Sanchi - Bhopal - Bhojpur - Bhimbetka - Bhopal - Ujjain - Omkareshwar - Maheshwar - Mandu - Indore",
     duration: "11 Days / 10 Nights",
     days: 11,
     price: 46500,
@@ -2256,23 +2256,23 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: " Arrive Gwalior - TOUR BEGINS",
+        title: "Arrive Gwalior - TOUR BEGINS",
         description: "Upon arrival at Gwalior airport or railway station, you will be met by our company representative who will greet you and will transfer you to hotel. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Later return to your Hotel & Overnight at Gwalior. Meals : NA",
       },
       {
         day: 2,
         title: "Gwalior (Excursion to Morena)",
-        description: "Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Surve",
+        description: "Morning after breakfast, embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Post visits drive back to the…",
       },
       {
         day: 3,
-        title: " Gwalior - Sonagiri - Datia - Orchha by road (132 kms & 3 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Orchha en route visiting Sonagiri Jain Temple & Datia Palace. Morning proceed to visit The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of",
+        title: "Gwalior - Sonagiri - Datia - Orchha by road (132 kms & 3 Hours approx)",
+        description: "Morning after breakfast check out from the hotel & drive to Orchha en route visiting Sonagiri Jain Temple & Datia Palace. Morning proceed to visit The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 10 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Maheshwar (3 Star & 3 Star Deluxe ) Where the stay is on MAPAI Plan basis that is which breakfast & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 10 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Maheshwar (3 Star & 3 Star Deluxe ) Where the stay is on MAPAI Plan basis that is which breakfast & dinner on fixed menu / buffet basis.",
       "Total 10 Breakfasts & 01 Dinner (3 Star & 3 Star Deluxe Hotel) as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -2299,32 +2299,32 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Bhopal",
       "Bhimbetka Rock Shelters",
-      "A colossal testament to ancient engineering, housing the unfinished marvel of on",
-      "Sanchi Stupa a Timeless marvel of Buddhist grandeur, a symbol of serenity and ar",
-      "Marvel at the Great Stupa of Sanchi, a UNESCO World Heritage site",
-      "The Kingdom of Mahakaal, where ancient spirituality reigns supreme, beckoning tr",
+      "A colossal testament to ancient engineering",
+      "Sanchi Stupa a Timeless marvel of Buddhist grandeur",
+      "Marvel at the Great Stupa of Sanchi",
+      "The Kingdom of Mahakaal",
     ],
     description: "Bhopal: Where ancient history meets modern charm amidst the tranquil lakes, vibrant culture, and culinary delights of the City of Lakes.",
     itinerary: [
       {
         day: 1,
         title: "Arrive Bhopal -TOUR BEGINS",
-        description: "Upon arrival at Bhopal airport or railway Station, you will be met by our company representative who will greet you and will transfer you to hotel. Afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end ",
+        description: "Upon arrival at Bhopal airport or railway Station, you will be met by our company representative who will greet you and will transfer you to hotel. Afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. Later return to your hotel. Overnight at Bhopal. Meals : NA",
       },
       {
         day: 2,
         title: "Bhopal (Excursion to Sanchi, Bhojpur & Bhimbetka)",
-        description: "Morning after breakfast explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts. Later discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's",
+        description: "Morning after breakfast explore the ancient marvel of Sanchi, a UNESCO World Heritage Site renowned for its Great Stupa, commissioned by Emperor Ashoka in the 3rd century BCE. Discover the intricately carved gateways depicting Buddha's life and Jataka tales, and wander through the vast monastic complex with its stupas, temples, and pillars. Sanchi's rich history and stunning Buddhist art make it an essential destination for heritage and spiritual enthusiasts. Later discover the historical marvel of Bhojpur, renowned for the magnificent, unfinished Bhojeshwar Temple, which houses one of India's largest lingams, measuring 7.5 feet high and 17.8 feet in circumference. Attributed to the…",
       },
       {
         day: 3,
-        title: " Bhopal - Ujjain by road (191 kms & 3.5 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Ujjain \"The Kingdom of Mahakaal\". Arrive Ujjain & check in at the hotel. Embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals and sculptures before heading to Ram Ghat, a sacred riverside spo",
+        title: "Bhopal - Ujjain by road (191 kms & 3.5 Hours approx)",
+        description: "Morning after breakfast check out from the hotel & drive to Ujjain \"The Kingdom of Mahakaal\". Arrive Ujjain & check in at the hotel. Embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals and sculptures before heading to Ram Ghat, a sacred riverside spot. Conclude your day at the Harsiddhi Mata Temple, renowned for its architecture and spiritual…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Maheshwar (in 3 Star & 3 Star Deluxe) Where the stay is on MAPAI Plan basis that is which breakfast & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except in Maheshwar (in 3 Star & 3 Star Deluxe) Where the stay is on MAPAI Plan basis that is which breakfast & dinner on fixed menu / buffet basis.",
       "Total 06 Breakfasts & 01 Maheshwar (in 3 Star & 3 Star Deluxe) as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -2354,24 +2354,24 @@ export const extraPackages: PackageData[] = [
       "Experience the breathtaking sunrise vista from Gwalior Fort's ramparts",
       "Marvel at Jai Vilas Palace's grandeur with the world's largest chandelier and si",
       "Step into the exquisite craftsmanship of Tomb of Ghaus Mohammad's intricate jaal",
-      "Unveil Mitaoli's Chausath Yogini Temple, whose circular design and architectural",
+      "Unveil Mitaoli's Chausath Yogini Temple",
     ],
     description: "Discover Gwalior's enduring glory as the 'Pearl Among the Fortresses of Hind.'",
     itinerary: [
       {
         day: 1,
         title: "Arrive Gwalior & (Excursion to Morena)- TOUR BEGINS",
-        description: "Upon arrival at Gwalior airport or railway Station, you will be met by our company representative who will greet you and will transfer you to hotel. After some rest enjoy your excursion to Morena. Embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Ba",
+        description: "Upon arrival at Gwalior airport or railway Station, you will be met by our company representative who will greet you and will transfer you to hotel. After some rest enjoy your excursion to Morena. Embark on an excursion to Mitawali Temple, Garhi Padavali, and the Bateswara Group of Temples. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between…",
       },
       {
         day: 2,
         title: "Gwalior",
-        description: "Morning after breakfast at your hotel enjoy city tour of Gwalior begin your full day city tour of Gwalior with a visit to the magnificent Jai Vilas Palace, followed by the serene Tomb of Ghaus Mohammad, a Mughal-style mausoleum with intricate latticework and the memorial of Tansen, one of India's greatest musicians. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show ",
+        description: "Morning after breakfast at your hotel enjoy city tour of Gwalior begin your full day city tour of Gwalior with a visit to the magnificent Jai Vilas Palace, followed by the serene Tomb of Ghaus Mohammad, a Mughal-style mausoleum with intricate latticework and the memorial of Tansen, one of India's greatest musicians. Afternoon exploring the iconic Gwalior Fort, which includes significant sites such as the Jain Statues of Siddhanchal Parvat, Sahastra Bahu Temple, Teli Ka Mandir, Gurudwara Data Bandi Chod, Mansingh Palace, and Karan Mahal. Conclude the day with an \"optional\" sound and light show at the fort, narrating Gwalior's history through a spectacular display followed by a stopover at…",
       },
       {
         day: 3,
         title: "Gwalior - Sonagiri - Datia - Orchha by road (132 kms & 3 Hours approx)",
-        description: "Morning after breakfast check out from the hotel & drive to Orchha en route visiting Sonagiri Jain Temple & Datia Palace. The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscap",
+        description: "Morning after breakfast check out from the hotel & drive to Orchha en route visiting Sonagiri Jain Temple & Datia Palace. The Jain Temples of Sonagir, located 15 km from Datia, are a renowned pilgrimage site featuring 77 marble-clad temples built on the slopes of a hill, dating back to the 17th century. These temples are a testament to the rich Jain architectural heritage and spiritual significance. The most prominent temple is dedicated to Chandranatha, the 8th Tirthankara, known for its exquisite carvings and serene ambiance. The hilltop offers a breathtaking view of the surrounding landscape, adding to the tranquil and spiritual experience of visitors. Every April, Sonagir comes alive…",
       },
     ],
     included: [
@@ -2413,25 +2413,25 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Bhopal -TOUR BEGINS",
-        description: "Upon arrival at Bhopal airport or railway Station, you will be met by our company representative who will greet you and check in at the hotel. After some rest enjoy city tour of Bhopal. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst th",
+        description: "Upon arrival at Bhopal airport or railway Station, you will be met by our company representative who will greet you and check in at the hotel. After some rest enjoy city tour of Bhopal. Embark on an afternoon exploration of Bhopal, starting with the majestic Taj-ul-Masajid, one of India's largest mosques, showcasing its impressive architecture and expansive courtyard. Continue to Bharat Bhavan, a multi-arts complex designed by Charles Correa, where you can delve into tribal and folk art. Conclude your tour at Bhojtal (Upper Lake), enjoying a serene boat ride (On direct payment basis) amidst the beautiful surroundings, making for a perfect end to your Bhopal city tour. visits return to…",
       },
       {
         day: 2,
         title: "Bhopal - Tawa - Madai - Tawa - Madai by road (123 kms & 2.5 Hours approx)",
-        description: "Morning, after breakfast check-out from the hotel & drive to Madhai. \"Nestled on the serene banks of the Tawa Reservoir in Madhya Pradesh, Tawa offers travelers a tranquil retreat amidst picturesque landscapes. Formed by the Tawa Dam on the Tawa River, this destination is perfect for boating, fishing, and picnicking enthusiasts. Surrounded by lush forests and wildlife sanctuaries, it’s an ideal haven for nature lovers seeking peace and adventure. A highlight of visiting Tawa is embarking on a mini cruise or boat ride across the calm waters of the reservoir (On direct payment basis). Whether yo",
+        description: "Morning, after breakfast check-out from the hotel & drive to Madhai. \"Nestled on the serene banks of the Tawa Reservoir in Madhya Pradesh, Tawa offers travelers a tranquil retreat amidst picturesque landscapes. Formed by the Tawa Dam on the Tawa River, this destination is perfect for boating, fishing, and picnicking enthusiasts. Surrounded by lush forests and wildlife sanctuaries, it’s an ideal haven for nature lovers seeking peace and adventure. A highlight of visiting Tawa is embarking on a mini cruise or boat ride across the calm waters of the reservoir (On direct payment basis). Whether you opt for a leisurely cruise or an adventurous ride, the scenic vistas and serene atmosphere…",
       },
       {
         day: 3,
         title: "Madai/Satpura National Park",
-        description: "Early morning jeep safari through the pristine wilderness of Satpura National Park, a hidden gem nestled in the heart of central India. Named after the majestic Satpura Range that surrounds it, this biodiverse sanctuary offers a haven for wildlife enthusiasts and nature lovers alike. As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this lesser-known tiger reserve, renowned for its diverse habitats and abundant wildlife. Led by experienced naturalists, venture deep into the jungle, where elusive tigers, leopards, and sloth bears roam freely amidst dense for",
+        description: "Early morning jeep safari through the pristine wilderness of Satpura National Park, a hidden gem nestled in the heart of central India. Named after the majestic Satpura Range that surrounds it, this biodiverse sanctuary offers a haven for wildlife enthusiasts and nature lovers alike. As the sun rises over the rugged landscapes, immerse yourself in the untamed beauty of this lesser-known tiger reserve, renowned for its diverse habitats and abundant wildlife. Led by experienced naturalists, venture deep into the jungle, where elusive tigers, leopards, and sloth bears roam freely amidst dense forests and meandering streams. Keep your eyes peeled for sightings of rare species like the Indian…",
       },
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast & Dinner on fixed menu/buffet basis. Except in Satpura National Park & Pachmarhi (In 3 Star Deluxe & 4 Star)  Where the stay is on APAI Plan basis that is which breakfast, lunch & dinner on fixed menu / buffet basis. ",
+      "Accommodation for Total 06 nights on sharing basis on Room plus breakfast & Dinner on fixed menu/buffet basis. Except in Satpura National Park & Pachmarhi (In 3 Star Deluxe & 4 Star) Where the stay is on APAI Plan basis that is which breakfast, lunch & dinner on fixed menu / buffet basis.",
       "Total 06 Breakfast, 02 Lunches & (04 Lunch in 3 Star Deluxe & 4 Star Hotel Option) & 04 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
-      "Experience 02 Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide. (01 Day Covering Forest Points & 01 Day Covering Non - forest Points).",
+      "Experience 02 Full day Pachmarhi Sightseeing by Open Gypsy with Naturalist / Guide. (01 Day Covering Forest Points & 01 Day Covering Non - forest Points).",
       "Experience 01 early morning Jeep Safari at Satpura National Park on private basis with naturalist.",
       "Experience 01 Afternoon Jeep Safari at Satpura National Park on private basis with naturalist.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
@@ -2468,17 +2468,17 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Gwalior-TOUR BEGINS",
-        description: "Upon arrival at Gwalior Station/Airport, you will be met by our company representative who will greet you and assist with your transfer to the hotel. Check-in at the hotel. Evening heritage walking tour, beginning at the Chatri Mandi Temple, a hidden gem nestled in the historic lanes of old Gwalior. This atmospheric enclave is home to intricately carved cenotaphs and temples that reflect the Maratha influence on the city’s spiritual and architectural fabric. The area resonates with devotion and timeless artistry, offering a glimpse into the cultural continuity of Gwalior’s sacred traditions. C",
+        description: "Upon arrival at Gwalior Station/Airport, you will be met by our company representative who will greet you and assist with your transfer to the hotel. Check-in at the hotel. Evening heritage walking tour, beginning at the Chatri Mandi Temple, a hidden gem nestled in the historic lanes of old Gwalior. This atmospheric enclave is home to intricately carved cenotaphs and temples that reflect the Maratha influence on the city’s spiritual and architectural fabric. The area resonates with devotion and timeless artistry, offering a glimpse into the cultural continuity of Gwalior’s sacred traditions. Continue your walk to the bustling heart of the city — Maharaj Bada, a vibrant public square that…",
       },
       {
         day: 2,
         title: "Gwalior",
-        description: "Morning after breakfast, embark on a curated city tour of Gwalior, beginning with a guided visit to the opulent Jai Vilas Palace — a living legacy of royal grandeur, featuring the world’s largest pair of chandeliers and an extraordinary blend of European architectural styles. Continue to the peaceful Tomb of Ghaus Mohammad, an exquisite example of Mughal artistry with its delicate stone latticework, and pay homage at the memorial of Tansen, the legendary musician of Emperor Akbar’s court. Afternoon: Delve into the grandeur of the Gwalior Fort, an enduring symbol of Rajput valor and architectur",
+        description: "Morning after breakfast, embark on a curated city tour of Gwalior, beginning with a guided visit to the opulent Jai Vilas Palace — a living legacy of royal grandeur, featuring the world’s largest pair of chandeliers and an extraordinary blend of European architectural styles. Continue to the peaceful Tomb of Ghaus Mohammad, an exquisite example of Mughal artistry with its delicate stone latticework, and pay homage at the memorial of Tansen, the legendary musician of Emperor Akbar’s court. Afternoon: Delve into the grandeur of the Gwalior Fort, an enduring symbol of Rajput valor and architectural magnificence. Explore its key landmarks: the towering Jain statues of Siddhanchal Parvat, the…",
       },
       {
         day: 3,
         title: "Gwalior (Excursion to Morena & Shanichara)",
-        description: "Morning after breakfast, enjoy your excursion to Mitawali Temple, Garhi Padavali, the Bateswara Group of Temples, and Shanichara. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeolog",
+        description: "Morning after breakfast, enjoy your excursion to Mitawali Temple, Garhi Padavali, the Bateswara Group of Temples, and Shanichara. Begin with a visit to the Chausath Yogini Temple at Mitawali, perched atop a hill with stunning views. Its circular design inspired the Parliament House in New Delhi. Next, explore the 18th-century Padavali fortress, featuring a temple for Lord Shiva with ancient inscriptions and details. Continue to the Bateshwar complex, where nearly 200 sandstone temples dedicated to Shiva and Vishnu, built between the 8th and 10th centuries, have been reclaimed by the Archaeological Survey of India since 1988. The site is also a haven for wildlife. Lastly, explore…",
       },
     ],
     included: [
@@ -2521,17 +2521,17 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Indore & Drive to Maheshwar by road (98 kms & 2.5 Hours approx.) - TOUR BEGINS",
-        description: "Upon arrival at Indore Station/Airport, you will be met by our company representative who will greet you and drive you to Maheshwar. Arrive Maheshwar & transfer you to the hotel. Check-in at the hotel. Embark on an enchanting afternoon journey through Maheshwar, where the timeless beauty of the Narmada River awaits. Begin your exploration by marveling at the grandeur of Maheshwar Fort, adorned with intricate carvings that echo tales of bygone eras. As the sun begins its descent, head to the serene ghats lining the riverbank, where the golden hues of sunset cast a mesmerizing glow over the land",
+        description: "Upon arrival at Indore Station/Airport, you will be met by our company representative who will greet you and drive you to Maheshwar. Arrive Maheshwar & transfer you to the hotel. Check-in at the hotel. Embark on an enchanting afternoon journey through Maheshwar, where the timeless beauty of the Narmada River awaits. Begin your exploration by marveling at the grandeur of Maheshwar Fort, adorned with intricate carvings that echo tales of bygone eras. As the sun begins its descent, head to the serene ghats lining the riverbank, where the golden hues of sunset cast a mesmerizing glow over the landscape. Here, immerse yourself in the tranquil ambiance, watching as the sky transforms into a…",
       },
       {
         day: 2,
         title: "Maheshwar (Excursion to Mandu)",
-        description: "Morning after breakfast enjoy your excursion to Mandu. Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the",
+        description: "Morning after breakfast enjoy your excursion to Mandu. Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue your adventure with a visit to Rewa Kund, a tranquil reservoir…",
       },
       {
         day: 3,
         title: "Maheshwar (Excursion to Bakawan & Omkareshwar)",
-        description: "Morning after breakfast enjoy your excursion to Bakawan & Omkareshwar. Bakawan is a historically and culturally significant village located on the banks of the Narmada River in Madhya Pradesh, within the Nimar region of Malwa. Known for its rich heritage, the village primarily speaks the Nimadi dialect and Hindi. Nearby, the ruins of a fort in Mardana are believed to have been the capital of Raja Mordhvaj, with a cave housing the sinhasana (throne) of Maharaja Mayuradhvaja, a figure mentioned in ancient texts. The site also features a hidden ghat (Gupt Ghat) and a cave shrine dedicated to Lord",
+        description: "Morning after breakfast enjoy your excursion to Bakawan & Omkareshwar. Bakawan is a historically and culturally significant village located on the banks of the Narmada River in Madhya Pradesh, within the Nimar region of Malwa. Known for its rich heritage, the village primarily speaks the Nimadi dialect and Hindi. Nearby, the ruins of a fort in Mardana are believed to have been the capital of Raja Mordhvaj, with a cave housing the sinhasana (throne) of Maharaja Mayuradhvaja, a figure mentioned in ancient texts. The site also features a hidden ghat (Gupt Ghat) and a cave shrine dedicated to Lord Shiva. Rani Ahilyabai Holkar, the renowned queen of Malwa, once considered Bakawan as the…",
       },
     ],
     included: [
@@ -2563,7 +2563,7 @@ export const extraPackages: PackageData[] = [
     highlights: [
       "Indore",
       "Sarafa Bazaar Night Food Market",
-      "The Kingdom of Mahakaal, where ancient spirituality reigns supreme, beckoning tr",
+      "The Kingdom of Mahakaal",
       "Harsiddhi Mata Temple Aarti",
       "Omkareshwar",
       "Maheshwar",
@@ -2573,27 +2573,27 @@ export const extraPackages: PackageData[] = [
       {
         day: 1,
         title: "Arrive Indore-TOUR BEGINS",
-        description: "Upon arriving at Indore railway station / airport, meet by our company representative who will meet and greet you and will transfer you to hotel & Check-in at hotel.  Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Ma",
+        description: "Upon arriving at Indore railway station / airport, meet by our company representative who will meet and greet you and will transfer you to hotel & Check-in at hotel. Embark on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the city's artistic heritage. Delve into…",
       },
       {
         day: 2,
         title: "Indore (Excursion to Ujjain)",
-        description: "Morning after breakfast enjoy your excursion to Ujjain \"The Kingdom of Mahakaal\". Arrive Ujjain & Embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals and sculptures before heading to Ram Ghat, a sacred riverside spot. Conclude your day at the Harsidd",
+        description: "Morning after breakfast enjoy your excursion to Ujjain \"The Kingdom of Mahakaal\". Arrive Ujjain & Embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals and sculptures before heading to Ram Ghat, a sacred riverside spot. Conclude your day at the Harsiddhi Mata Temple, renowned for its architecture and spiritual ambiance. As the sun sets, witness…",
       },
       {
         day: 3,
         title: "Indore - Omkareshwar - Maheshwar by road (150 kms & 4.5 Hours approx.)",
-        description: "Morning after breakfast check-out from the hotel & drive to Maheshwar via visiting Omkareshwar.  Embark on an enchanting afternoon half-day tour of Omkareshwar, a sacred destination steeped in spiritual significance and natural beauty. Begin your journey with a visit to the revered Omkareshwar Temple, dedicated to Lord Shiva, where the divine energy and architectural splendor leave a lasting impression on every visitor. Next, explore the ancient Mamleshwar Temple, nestled on the opposite bank of the Narmada River. Glide along the tranquil waters, marveling at the picturesque surroundings and f",
+        description: "Morning after breakfast check-out from the hotel & drive to Maheshwar via visiting Omkareshwar. Embark on an enchanting afternoon half-day tour of Omkareshwar, a sacred destination steeped in spiritual significance and natural beauty. Begin your journey with a visit to the revered Omkareshwar Temple, dedicated to Lord Shiva, where the divine energy and architectural splendor leave a lasting impression on every visitor. Next, explore the ancient Mamleshwar Temple, nestled on the opposite bank of the Narmada River. Glide along the tranquil waters, marveling at the picturesque surroundings and feeling a deep sense of connection with nature and spirituality. As the sun sets, make your way to…",
       },
       {
         day: 4,
         title: "Maheshwar (Excursion to Mandu)",
-        description: "Morning after breakfast enjoy your excursion to Mandu.  Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As th",
+        description: "Morning after breakfast enjoy your excursion to Mandu. Embark on a full day journey through Mandu's architectural wonders and scenic landscapes, beginning with a morning exploration of its iconic landmarks. Start your day at Jahaz Mahal, a palace resembling a ship floating on water, followed by a visit to Hindola Mahal, known for its sloping walls and unique design. Discover the grandeur of Jama Masjid, one of India's largest mosques, and marvel at Hoshang Shah's Tomb, India's first marble structure. Then, immerse yourself in the blend of Hindu and Afghan architecture at Nilkanth Mahal. As the afternoon unfolds, continue your adventure with a visit to Rewa Kund, a tranquil reservoir…",
       },
       {
         day: 5,
         title: "Maheshwar (Excursion to Bakawan)",
-        description: "Morning after breakfast enjoy your excursion to Bakawan. Bakawan is a historically and culturally significant village located on the banks of the Narmada River in Madhya Pradesh, within the Nimar region of Malwa. Known for its rich heritage, the village primarily speaks the Nimadi dialect and Hindi. Nearby, the ruins of a fort in Mardana are believed to have been the capital of Raja Mordhvaj, with a cave housing the sinhasana (throne) of Maharaja Mayuradhvaja, a figure mentioned in ancient texts. The site also features a hidden ghat (Gupt Ghat) and a cave shrine dedicated to Lord Shiva. Rani A",
+        description: "Morning after breakfast enjoy your excursion to Bakawan. Bakawan is a historically and culturally significant village located on the banks of the Narmada River in Madhya Pradesh, within the Nimar region of Malwa. Known for its rich heritage, the village primarily speaks the Nimadi dialect and Hindi. Nearby, the ruins of a fort in Mardana are believed to have been the capital of Raja Mordhvaj, with a cave housing the sinhasana (throne) of Maharaja Mayuradhvaja, a figure mentioned in ancient texts. The site also features a hidden ghat (Gupt Ghat) and a cave shrine dedicated to Lord Shiva. Rani Ahilyabai Holkar, the renowned queen of Malwa, once considered Bakawan as the location for her…",
       },
       {
         day: 6,
@@ -2629,7 +2629,7 @@ export const extraPackages: PackageData[] = [
     image: img("1568454537842-d933259bb258"),
     highlights: [
       "Harsiddhi Mata Temple Aarti",
-      "The Kingdom of Mahakaal, where ancient spirituality reigns supreme, beckoning tr",
+      "The Kingdom of Mahakaal",
       "Omkareshwar",
       "Maheshwar",
     ],
@@ -2637,18 +2637,18 @@ export const extraPackages: PackageData[] = [
     itinerary: [
       {
         day: 1,
-        title: "Arrive Indore & Drive to Ujjain by road (55 Kms 1.5 Hours approx.) – TOUR BEGINS ",
-        description: "Upon arriving at Indore airport, meet by our company representative who will meet and greet you & drive to Ujjain “The Kingdom of Mahakal” transfer you to hotel and check-in at the hotel. Evening procced to visit Harsiddhi Mata Temple, renowned for its architecture and spiritual ambiance. As the sun sets, witness the mesmerizing Aarti ceremony at Harsiddhi Mata Temple, where 1051 earthen lamps illuminate the evening sky, creating a divine spectacle of light and sound.  Later return to your hotel & Overnight at Ujjain.  Meals: Lunch & Dinner",
+        title: "Arrive Indore & Drive to Ujjain by road (55 Kms 1.5 Hours approx.) – TOUR BEGINS",
+        description: "Upon arriving at Indore airport, meet by our company representative who will meet and greet you & drive to Ujjain “The Kingdom of Mahakal” transfer you to hotel and check-in at the hotel. Evening procced to visit Harsiddhi Mata Temple, renowned for its architecture and spiritual ambiance. As the sun sets, witness the mesmerizing Aarti ceremony at Harsiddhi Mata Temple, where 1051 earthen lamps illuminate the evening sky, creating a divine spectacle of light and sound. Later return to your hotel & Overnight at Ujjain. Meals: Lunch & Dinner",
       },
       {
         day: 2,
-        title: "Ujjain - Maheshwar by road (167 Kms & 3.5 Hours approx.) ",
-        description: "Morning after breakfast, check-out from the hotel & embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River.  Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals and sculptures before heading to Ram Ghat, a sacred riverside spot. After visit drive to Maheshwar arrive Maheshwar check-in at the hotel & Overn",
+        title: "Ujjain - Maheshwar by road (167 Kms & 3.5 Hours approx.)",
+        description: "Morning after breakfast, check-out from the hotel & embark on a spiritual journey through Ujjain, starting with the historic Sandipani Ashram and the tranquil Mangal Nath Temple on the banks of the Shipra River. Explore the unique Kaal Bhairav Temple known for its ritual of offering liquor to the deity, and then visit the revered Mahakaleshwar Temple, a major pilgrimage site. Discover the newly developed Mahakaal Corridor with its captivating murals and sculptures before heading to Ram Ghat, a sacred riverside spot. After visit drive to Maheshwar arrive Maheshwar check-in at the hotel & Overnight at Maheshwar. Meals: Breakfast, Lunch & Dinner",
       },
       {
         day: 3,
         title: "Maheshwar (Excursion to Omkareshwar)",
-        description: "Morning after breakfast, enjoy your excursion to Omkareshwar. Embark on half-day city tour of Omkareshwar, a serene enclave on the banks of the Narmada River. Begin at the revered Omkareshwar Temple, dedicated to Lord Shiva, soaking in its divine ambiance and intricate architecture. Then, explore the ancient Mamleshwar Temple across the river, steeped in religious significance. Conclude with an optional tranquil boat ride along the Narmada, offering scenic views of the temple town. This spiritual journey promises a serene retreat amidst sacred shrines and the gentle flow of the river.  Later d",
+        description: "Morning after breakfast, enjoy your excursion to Omkareshwar. Embark on half-day city tour of Omkareshwar, a serene enclave on the banks of the Narmada River. Begin at the revered Omkareshwar Temple, dedicated to Lord Shiva, soaking in its divine ambiance and intricate architecture. Then, explore the ancient Mamleshwar Temple across the river, steeped in religious significance. Conclude with an optional tranquil boat ride along the Narmada, offering scenic views of the temple town. This spiritual journey promises a serene retreat amidst sacred shrines and the gentle flow of the river. Later drive back to Maheshwar, arrive Maheshwar & Embark on exploration of Maheshwar, where history,…",
       },
       {
         day: 4,
@@ -2658,8 +2658,8 @@ export const extraPackages: PackageData[] = [
     ],
     included: [
       "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-      "Accommodation for Total 03 nights on sharing basis on Room plus breakfast, lunch & dinner on fixed menu/buffet basis. ",
-      "Total 03 Breakfasts, 03 Lunches & 03 Dinners as mentioned in the program. ",
+      "Accommodation for Total 03 nights on sharing basis on Room plus breakfast, lunch & dinner on fixed menu/buffet basis.",
+      "Total 03 Breakfasts, 03 Lunches & 03 Dinners as mentioned in the program.",
       "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air-Conditioned Vehicle.",
       "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Umbrellas, Masks etc. in vehicle during the tour.",
       "Enjoy boat ride at Sunset at Maheshwar (weather permitting).",
