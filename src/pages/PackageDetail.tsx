@@ -1,11 +1,12 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Clock, Check, X as XIcon, ArrowLeft, MapPin, MessageCircle, Phone, Plus, Minus, Sparkles } from "lucide-react";
+import { Clock, Check, X as XIcon, ArrowLeft, MapPin, MessageCircle, Phone, Plus, Minus, Sparkles, FileText } from "lucide-react";
 import { allPackages } from "@/data/packagesData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import GetBestQuoteModal from "@/components/GetBestQuoteModal";
 
 const PackageDetail = () => {
   const { id } = useParams();
@@ -13,6 +14,7 @@ const PackageDetail = () => {
 
   const [customDays, setCustomDays] = useState(pkg?.days ?? 3);
   const [customize, setCustomize] = useState(false);
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
   if (!pkg) {
     return (
