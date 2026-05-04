@@ -229,6 +229,13 @@ const PackageDetail = () => {
                   >
                     <Phone size={18} /> Call to Book
                   </a>
+                  <button
+                    type="button"
+                    onClick={() => setQuoteOpen(true)}
+                    className="mt-3 w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-xl py-3 font-semibold transition-transform hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    <FileText size={18} /> Get Best Quote
+                  </button>
                   <p className="text-xs text-muted-foreground text-center mt-3">Free cancellation up to 48 hours</p>
                 </motion.div>
               </div>
