@@ -222,6 +222,7 @@ export const allPackages: PackageData[] = [
     featured: true,
     offer: true,
   },
+  ...buildExcelPackages(),
 ];
 
 /* ─────────────────────────────────────────────────────────────
