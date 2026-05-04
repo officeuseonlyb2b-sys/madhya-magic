@@ -1,11 +1,12 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Clock, Check, X as XIcon, ArrowLeft, MapPin, MessageCircle, Phone, Plus, Minus, Sparkles } from "lucide-react";
+import { Clock, Check, X as XIcon, ArrowLeft, MapPin, MessageCircle, Phone, Plus, Minus, Sparkles, FileText } from "lucide-react";
 import { allPackages } from "@/data/packagesData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import GetBestQuoteModal from "@/components/GetBestQuoteModal";
 
 const PackageDetail = () => {
   const { id } = useParams();
@@ -13,6 +14,7 @@ const PackageDetail = () => {
 
   const [customDays, setCustomDays] = useState(pkg?.days ?? 3);
   const [customize, setCustomize] = useState(false);
+  const [quoteOpen, setQuoteOpen] = useState(false);
 
   if (!pkg) {
     return (
@@ -227,6 +229,13 @@ const PackageDetail = () => {
                   >
                     <Phone size={18} /> Call to Book
                   </a>
+                  <button
+                    type="button"
+                    onClick={() => setQuoteOpen(true)}
+                    className="mt-3 w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-xl py-3 font-semibold transition-transform hover:scale-105 flex items-center justify-center gap-2"
+                  >
+                    <FileText size={18} /> Get Best Quote
+                  </button>
                   <p className="text-xs text-muted-foreground text-center mt-3">Free cancellation up to 48 hours</p>
                 </motion.div>
               </div>
@@ -237,6 +246,12 @@ const PackageDetail = () => {
 
       <Footer />
       <FloatingButtons />
+      <GetBestQuoteModal
+        open={quoteOpen}
+        onOpenChange={setQuoteOpen}
+        packageName={pkg.name}
+        duration={customize ? `${customDays} Days / ${customDays - 1} Nights` : pkg.duration}
+      />
     </div>
   );
 };
