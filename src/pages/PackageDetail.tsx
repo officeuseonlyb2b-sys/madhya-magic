@@ -246,6 +246,12 @@ const PackageDetail = () => {
 
       <Footer />
       <FloatingButtons />
+      <GetBestQuoteModal
+        open={quoteOpen}
+        onOpenChange={setQuoteOpen}
+        packageName={pkg.name}
+        duration={customize ? `${customDays} Days / ${customDays - 1} Nights` : pkg.duration}
+      />
     </div>
   );
 };
