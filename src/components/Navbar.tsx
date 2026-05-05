@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import logo from "@/assets/logo.png";
@@ -35,7 +35,7 @@ const categoryRoutes: Record<MapCategory, string> = {
 };
 
 /* ===============================
-Explore Dropdown (Desktop) — with destinations submenu
+Explore Dropdown (Desktop)
 ================================ */
 
 const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
@@ -58,20 +58,16 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
 
   const handleCatEnter = (cat: MapCategory) => {
     setActiveCat(cat);
-    window.dispatchEvent(new CustomEvent("hero-category-hover", { detail: { category: cat } }));
+    window.dispatchEvent(
+      new CustomEvent("hero-category-hover", { detail: { category: cat } })
+    );
   };
 
   const activeDests = exploreCategories[activeCat]?.destinations ?? [];
 
   return (
-    <div
-      className="relative"
-      onMouseEnter={handleEnter}
-      onMouseLeave={handleLeave}
-    >
-      <button
-        className={`nav-font flex items-center gap-2 text-sm transition text-white`}
-      >
+    <div className="relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+      <button className="nav-font flex items-center gap-2 text-sm text-white">
         Explore
         <motion.div animate={{ rotate: open ? 180 : 0 }}>
           <ChevronDown size={14} />
@@ -86,11 +82,9 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
             exit={{ opacity: 0 }}
             className="absolute left-1/2 -translate-x-1/2 mt-6 flex
             bg-black/70 backdrop-blur-xl
-            rounded-3xl
-            border border-white/10
-            shadow-2xl z-50"
+            rounded-3xl border border-white/10 shadow-2xl z-50"
           >
-            {/* Left: Categories */}
+            {/* Categories */}
             <div className="p-3 w-[180px] border-r border-white/10">
               {categoryOrder.map((cat) => (
                 <button
@@ -101,9 +95,12 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
                     navigate(categoryRoutes[cat]);
                   }}
                   className={`nav-font text-white flex items-center gap-2
-                  w-full px-3 py-2.5 text-sm
-                  rounded-xl transition
-                  ${activeCat === cat ? "bg-white/20" : "hover:bg-white/10"}`}
+                  w-full px-3 py-2.5 text-sm rounded-xl transition
+                  ${
+                    activeCat === cat
+                      ? "bg-white/20"
+                      : "hover:bg-white/10"
+                  }`}
                 >
                   <span>{categoryIcons[cat]}</span>
                   {cat}
@@ -112,11 +109,12 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
               ))}
             </div>
 
-            {/* Right: Destinations list */}
-            <div className="p-3 w-[220px] max-h-[360px] overflow-y-auto scrollbar-thin">
+            {/* Destinations */}
+            <div className="p-3 w-[220px] max-h-[360px] overflow-y-auto">
               <p className="text-white/40 text-[10px] uppercase tracking-widest px-3 mb-2">
                 {activeCat} Destinations
               </p>
+
               {activeDests.map((dest) => (
                 <Link
                   key={dest.id}
@@ -127,6 +125,7 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
                   {dest.name}
                 </Link>
               ))}
+
               <Link
                 to={categoryRoutes[activeCat]}
                 onClick={() => setOpen(false)}
@@ -142,7 +141,6 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
   );
 };
 
-
 /* ===============================
 Navbar
 ================================ */
@@ -151,48 +149,62 @@ const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mobileExpanded, setMobileExpanded] = useState<MapCategory | null>(null);
   const [scrolled, setScrolled] = useState(false);
-  const [hidden, setHidden] = useState(false);
-  const lastYRef = useRef(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const y = window.scrollY;
-      setScrolled(y > 80);
-      const last = lastYRef.current;
-      if (y > 120 && y > last) {
-        setHidden(true);
-      } else if (y < last) {
-        setHidden(false);
-      }
-      lastYRef.current = y;
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
+    const handleScroll = () => setScrolled(window.scrollY > 80);
+    window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <motion.nav
       initial={{ y: -80 }}
-      animate={{ y: hidden && !mobileOpen ? -120 : 0 }}
-      transition={{ duration: 0.35, ease: "easeOut" }}
+      animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50
-      transition-[background,padding,box-shadow] duration-500
-      ${scrolled ? "bg-black/70 backdrop-blur-xl py-3 shadow-lg" : "bg-gradient-to-b from-black/50 to-transparent backdrop-blur-sm py-6"}`}
+      transition-all duration-500
+      ${
+        scrolled
+          ? "bg-black/70 backdrop-blur-xl py-3 shadow-lg"
+          : "bg-transparent py-4"
+      }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
-        {/* Logo */}
-        <Link to="/">
-          <motion.img src={logo} className="h-12" whileHover={{ scale: 1.05 }} />
+      <div
+        className={`container mx-auto px-6 flex justify-between items-center transition-all duration-300 ${
+          scrolled ? "h-16" : "h-24"
+        }`}
+      >
+        {/* ✅ MP STYLE LOGO */}
+        <Link to="/" className="flex items-center">
+          <motion.img
+            src={logo}
+            initial={false}
+            animate={{
+              height: scrolled ? 56 : 88,
+            }}
+            transition={{ duration: 0.35, ease: "easeOut" }}
+            className="object-contain"
+            style={{ transformOrigin: "left center" }}
+          />
         </Link>
 
         {/* Desktop */}
-        <div className="hidden md:flex items-center gap-10">
+        <div
+          className={`hidden md:flex items-center gap-10 transition-all duration-300 ${
+            scrolled ? "mt-0" : "mt-2"
+          }`}
+        >
           <ExploreDropdown scrolled={scrolled} />
+
           {navLinks.map((link) => (
-            <Link key={link.label} to={link.href} className="nav-font text-white text-sm">
+            <Link
+              key={link.label}
+              to={link.href}
+              className="nav-font text-white text-sm"
+            >
               {link.label}
             </Link>
           ))}
+
           <motion.button
             whileHover={{ scale: 1.05 }}
             className="nav-font border border-white/30 px-6 py-2.5 rounded-full text-white backdrop-blur-md"
@@ -202,7 +214,10 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button onClick={() => setMobileOpen(!mobileOpen)} className="md:hidden text-white">
+        <button
+          onClick={() => setMobileOpen(!mobileOpen)}
+          className="md:hidden text-white"
+        >
           {mobileOpen ? <X /> : <Menu />}
         </button>
       </div>
@@ -217,19 +232,29 @@ const Navbar = () => {
             className="md:hidden bg-black/80 backdrop-blur-xl"
           >
             <div className="flex flex-col p-6 gap-2 max-h-[80vh] overflow-y-auto">
-              <p className="nav-font text-white/50 text-xs uppercase tracking-widest">Explore</p>
+              <p className="nav-font text-white/50 text-xs uppercase tracking-widest">
+                Explore
+              </p>
+
               {categoryOrder.map((cat) => (
                 <div key={cat}>
                   <button
-                    onClick={() => setMobileExpanded(mobileExpanded === cat ? null : cat)}
+                    onClick={() =>
+                      setMobileExpanded(
+                        mobileExpanded === cat ? null : cat
+                      )
+                    }
                     className="nav-font text-white flex items-center gap-2 w-full py-2"
                   >
                     <span>{categoryIcons[cat]}</span> {cat}
                     <ChevronDown
                       size={14}
-                      className={`ml-auto transition-transform ${mobileExpanded === cat ? "rotate-180" : ""}`}
+                      className={`ml-auto transition-transform ${
+                        mobileExpanded === cat ? "rotate-180" : ""
+                      }`}
                     />
                   </button>
+
                   <AnimatePresence>
                     {mobileExpanded === cat && (
                       <motion.div
@@ -248,6 +273,7 @@ const Navbar = () => {
                             {dest.name}
                           </Link>
                         ))}
+
                         <Link
                           to={`/${cat.toLowerCase()}`}
                           onClick={() => setMobileOpen(false)}
