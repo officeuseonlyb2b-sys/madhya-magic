@@ -111,7 +111,7 @@ const ActivityCard = ({
 
 const ActivitiesReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
-  const { ref, onMouseEnter, onMouseLeave } = useAutoScroll<HTMLDivElement>(55);
+  const { ref, onMouseEnter, onMouseLeave } = useAutoScroll<HTMLDivElement>(-55);
 
   const reelActivities = useMemo(() => {
     const base = activityReels
