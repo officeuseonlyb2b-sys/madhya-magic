@@ -335,11 +335,14 @@ const HomeCategoryShowcase = () => {
           {/* ===== RIGHT SLIDER (forward rotating queue) ===== */}
           <div className="relative">
             <div
-              className="flex gap-3 sm:gap-4 lg:gap-5 overflow-hidden no-scrollbar py-6 items-end justify-center lg:justify-start min-h-[350px] sm:min-h-[380px]"
+              className="flex gap-3 sm:gap-4 lg:gap-5 overflow-hidden no-scrollbar py-6 items-end justify-center lg:justify-start min-h-[350px] sm:min-h-[380px] cursor-grab active:cursor-grabbing touch-pan-y select-none"
+              onPointerDown={onPointerDown}
+              onPointerUp={onPointerUp}
+              onPointerCancel={onPointerUp}
+              onWheel={onWheel}
             >
               <AnimatePresence mode="popLayout" initial={false}>
                 {(() => {
-                  const len = categories.length;
                   const window = [0, 1, 2].map((offset) => {
                     const idx = (activeIdx + offset) % len;
                     return { item: categories[idx], idx, offset };
@@ -351,7 +354,12 @@ const HomeCategoryShowcase = () => {
                       index={idx}
                       active={offset === 0}
                       distance={Math.abs(offset)}
-                      onTap={() => setActiveIdx(idx)}
+                      onTap={() => {
+                        if (dragStartRef.current) return;
+                        pauseAuto();
+                        setActiveIdx(idx);
+                        scheduleResume();
+                      }}
                     />
                   ));
                 })()}
@@ -364,7 +372,7 @@ const HomeCategoryShowcase = () => {
                 {categories.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => setActiveIdx(i)}
+                    onClick={() => { pauseAuto(); setActiveIdx(i); scheduleResume(); }}
                     className={`h-1 rounded-full transition-all ${
                       i === activeIdx
                         ? "w-8 bg-orange-400"
@@ -374,9 +382,27 @@ const HomeCategoryShowcase = () => {
                   />
                 ))}
               </div>
-              <span className="text-white/60 text-xs font-mono tracking-widest">
-                {String(activeIdx + 1).padStart(2, "0")} / {String(categories.length).padStart(2, "0")}
-              </span>
+              <div className="flex items-center gap-3">
+                <div className="flex gap-2">
+                  <button
+                    onClick={() => goTo(-1)}
+                    aria-label="Previous"
+                    className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                  >
+                    <ArrowLeft size={14} />
+                  </button>
+                  <button
+                    onClick={() => goTo(1)}
+                    aria-label="Next"
+                    className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
+                  >
+                    <ArrowRight size={14} />
+                  </button>
+                </div>
+                <span className="text-white/60 text-xs font-mono tracking-widest">
+                  {String(activeIdx + 1).padStart(2, "0")} / {String(len).padStart(2, "0")}
+                </span>
+              </div>
             </div>
           </div>
         </div>
