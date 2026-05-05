@@ -79,9 +79,9 @@ const ReelsSection = () => {
             </span>
 
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 sm:mt-4 leading-tight">
-              Explore through
+              Top Destinations
               <br />
-              cinematic reels
+              Explore through cinematic reels
             </h2>
 
             <p className="text-gray-600 mt-4 sm:mt-5 text-sm sm:text-base">

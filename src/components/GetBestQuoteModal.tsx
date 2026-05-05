@@ -202,12 +202,12 @@ const GetBestQuoteModal = ({
             </div>
 
             <div className="space-y-1.5">
-              <Label>Agent Name*</Label>
+              <Label>Name*</Label>
               <Input value={form.agentName} onChange={(e) => update("agentName", e.target.value)} placeholder="Your name" required />
             </div>
 
             <div className="space-y-1.5">
-              <Label>Agent Email*</Label>
+              <Label>Email*</Label>
               <Input type="email" value={form.agentEmail} onChange={(e) => update("agentEmail", e.target.value)} placeholder="you@example.com" required />
             </div>
 

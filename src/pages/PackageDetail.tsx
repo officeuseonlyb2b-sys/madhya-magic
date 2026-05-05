@@ -167,47 +167,6 @@ const PackageDetail = () => {
                     </div>
                   </div>
 
-                  {/* Customize Duration Widget */}
-                  <div className="mb-5 rounded-xl border border-primary/20 bg-primary/5 p-3">
-                    <button
-                      onClick={() => {
-                        setCustomize(!customize);
-                        if (!customize) setCustomDays(pkg.days);
-                      }}
-                      className="w-full flex items-center justify-between text-sm font-semibold text-foreground"
-                    >
-                      <span className="flex items-center gap-2">
-                        <Sparkles size={14} className="text-primary" />
-                        Customize Duration
-                      </span>
-                      <span className="text-xs text-primary">{customize ? "Reset" : "Extend"}</span>
-                    </button>
-
-                    {customize && (
-                      <div className="mt-3 flex items-center justify-between gap-3">
-                        <button
-                          onClick={() => setCustomDays(Math.max(pkg.days, customDays - 1))}
-                          disabled={customDays <= pkg.days}
-                          className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center disabled:opacity-40 hover:bg-muted transition"
-                          aria-label="Decrease days"
-                        >
-                          <Minus size={14} />
-                        </button>
-                        <div className="flex-1 text-center">
-                          <div className="text-2xl font-bold text-foreground">{customDays}</div>
-                          <div className="text-[10px] uppercase tracking-wider text-muted-foreground">Days</div>
-                        </div>
-                        <button
-                          onClick={() => setCustomDays(Math.min(pkg.days + 7, customDays + 1))}
-                          disabled={customDays >= pkg.days + 7}
-                          className="w-9 h-9 rounded-lg bg-card border border-border flex items-center justify-center disabled:opacity-40 hover:bg-muted transition"
-                          aria-label="Increase days"
-                        >
-                          <Plus size={14} />
-                        </button>
-                      </div>
-                    )}
-                  </div>
 
                   <a
                     href={`https://wa.me/919111009498?text=${encodeURIComponent(
