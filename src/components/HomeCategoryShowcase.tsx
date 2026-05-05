@@ -162,23 +162,82 @@ const CategoryCard = ({ item, active, distance, onTap }: CardProps) => {
 const HomeCategoryShowcase = () => {
   const [activeIdx, setActiveIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const len = categories.length;
+
+  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const isInteractingRef = useRef(false);
 
   const activeItem = categories[activeIdx];
+
+  const pauseAuto = useCallback(() => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    setIsPaused(true);
+  }, []);
+
+  const scheduleResume = useCallback((delay = 2500) => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+    resumeTimerRef.current = setTimeout(() => {
+      if (!isInteractingRef.current) setIsPaused(false);
+    }, delay);
+  }, []);
+
+  useEffect(() => () => {
+    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
+  }, []);
 
   /* Auto-advance every 5s */
   useEffect(() => {
     if (isPaused) return;
     const timer = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % categories.length);
+      setActiveIdx((prev) => (prev + 1) % len);
     }, 5000);
     return () => clearInterval(timer);
-  }, [isPaused]);
+  }, [isPaused, len]);
+
+  const goTo = useCallback(
+    (dir: 1 | -1) => {
+      pauseAuto();
+      setActiveIdx((prev) => (prev + dir + len) % len);
+      scheduleResume();
+    },
+    [len, pauseAuto, scheduleResume]
+  );
+
+  // Drag handling for the slider track
+  const dragStartRef = useRef<{ x: number; id: number } | null>(null);
+  const onPointerDown = (e: React.PointerEvent) => {
+    isInteractingRef.current = true;
+    pauseAuto();
+    dragStartRef.current = { x: e.clientX, id: e.pointerId };
+    (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
+  };
+  const onPointerUp = (e: React.PointerEvent) => {
+    const start = dragStartRef.current;
+    dragStartRef.current = null;
+    isInteractingRef.current = false;
+    if (start) {
+      const dx = e.clientX - start.x;
+      if (Math.abs(dx) > 40) {
+        setActiveIdx((prev) => (prev + (dx < 0 ? 1 : -1) + len) % len);
+      }
+    }
+    scheduleResume();
+  };
+
+  const wheelLockRef = useRef(false);
+  const onWheel = (e: React.WheelEvent) => {
+    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+    if (Math.abs(delta) < 8 || wheelLockRef.current) return;
+    wheelLockRef.current = true;
+    goTo(delta > 0 ? 1 : -1);
+    setTimeout(() => { wheelLockRef.current = false; }, 400);
+  };
 
   return (
     <section
       className="relative min-h-[680px] lg:min-h-[760px] overflow-hidden flex items-center"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      onMouseEnter={pauseAuto}
+      onMouseLeave={() => { if (!isInteractingRef.current) scheduleResume(300); }}
     >
       {/* ===== ANIMATED BACKGROUND ===== */}
       <AnimatePresence mode="sync">
