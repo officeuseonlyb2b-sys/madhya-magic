@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Play } from "lucide-react";
 import { useFilters } from "@/contexts/FilterContext";
@@ -15,12 +15,7 @@ const ReelCard = ({ reel, index }: { reel: ReelItem; index: number }) => {
       className="reel-card w-[220px] sm:w-[240px] lg:w-[260px] flex-shrink-0 rounded-3xl"
     >
       <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer">
-        <img
-          src={reel.thumbnail}
-          alt={reel.title}
-          loading="lazy"
-          className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-        />
+        <LazyReelVideo reel={reel} />
 
         
 
