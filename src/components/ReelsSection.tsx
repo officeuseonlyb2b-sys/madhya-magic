@@ -6,6 +6,56 @@ import { useFilters } from "@/contexts/FilterContext";
 import { reelsData, type ReelItem } from "@/data/reelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
 
+const LazyReelVideo = ({ reel }: { reel: ReelItem }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [inView, setInView] = useState(false);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true);
+          obs.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
+    obs.observe(containerRef.current);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (inView && videoRef.current) {
+      videoRef.current.play().catch(() => {});
+    }
+  }, [inView]);
+
+  return (
+    <div ref={containerRef} className="absolute inset-0">
+      <img
+        src={reel.thumbnail}
+        alt={reel.title}
+        loading="lazy"
+        className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+      />
+      {inView && (
+        <video
+          ref={videoRef}
+          src={reel.videoUrl}
+          muted
+          loop
+          playsInline
+          autoPlay
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
+        />
+      )}
+    </div>
+  );
+};
+
 const ReelCard = ({ reel, index }: { reel: ReelItem; index: number }) => {
   return (
     <motion.div
