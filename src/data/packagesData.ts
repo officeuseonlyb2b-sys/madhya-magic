@@ -4,6 +4,100 @@ import pkgMarvelsMalwa from "@/assets/pkg-marvels-malwa.jpg";
 import pkgJyotirlingaHeritage from "@/assets/pkg-jyotirlinga-heritage.jpg";
 import pkgHeritageTrailsSacred from "@/assets/pkg-heritage-trails-sacred.jpg";
 
+// Unique per-package imagery for the 44 Excel-imported packages (ids 6–49)
+import pkgBhopal from "@/assets/pkg-bhopal.jpg";
+import pkgGwalior from "@/assets/pkg-gwalior.jpg";
+import pkgKanha from "@/assets/pkg-kanha.jpg";
+import pkgPachmarhi from "@/assets/pkg-pachmarhi.jpg";
+import pkgSatpura from "@/assets/pkg-satpura.jpg";
+import destUjjain from "@/assets/dest-ujjain.jpg";
+import destKanha from "@/assets/dest-kanha.jpg";
+import destJabalpur from "@/assets/dest-jabalpur.jpg";
+import destBandhavgarh from "@/assets/dest-bandhavgarh.jpg";
+import destBhedaghat from "@/assets/dest-bhedaghat.jpg";
+import destAmarkantak from "@/assets/dest-amarkantak.jpg";
+import destBhopal from "@/assets/dest-bhopal.jpg";
+import destPachmarhi from "@/assets/dest-pachmarhi.jpg";
+import destSatpura from "@/assets/dest-satpura.jpg";
+import destTamia from "@/assets/dest-tamia.jpg";
+import destGwalior from "@/assets/dest-gwalior.jpg";
+import destOrchha from "@/assets/dest-orchha.jpg";
+import destPanna from "@/assets/dest-panna.jpg";
+import destKhajuraho from "@/assets/dest-khajuraho.jpg";
+import destMukundpur from "@/assets/dest-mukundpur.jpg";
+import destMandu from "@/assets/dest-mandu.jpg";
+import destPench from "@/assets/dest-pench.jpg";
+import destKuno from "@/assets/dest-kuno.jpg";
+import destChitrakoot from "@/assets/dest-chitrakoot.jpg";
+import destParsili from "@/assets/dest-parsili.jpg";
+import destSailani from "@/assets/dest-sailani.jpg";
+import destTawa from "@/assets/dest-tawa.jpg";
+import destHoshangabad from "@/assets/dest-hoshangabad.jpg";
+import destSonagiri from "@/assets/dest-sonagiri.jpg";
+import destDatia from "@/assets/dest-datia.jpg";
+import destChanderi from "@/assets/dest-chanderi.jpg";
+import destRaisen from "@/assets/dest-raisen.jpg";
+import destUdayagiri from "@/assets/dest-udayagiri.jpg";
+import destHanuwantiya from "@/assets/dest-hanuwantiya.jpg";
+import destMaheshwar from "@/assets/dest-maheshwar.jpg";
+import destOmkareshwar from "@/assets/dest-omkareshwar.jpg";
+import destIndore from "@/assets/dest-indore.jpg";
+import catArchitectural from "@/assets/cat-architectural.jpg";
+import catBestselling from "@/assets/cat-bestselling.jpg";
+import catSpecial from "@/assets/cat-special.jpg";
+import catWildlife from "@/assets/cat-wildlife.jpg";
+import catMonsoon from "@/assets/cat-monsoon.jpg";
+import catSeasonal from "@/assets/cat-seasonal.jpg";
+import catLuxury from "@/assets/cat-luxury.jpg";
+
+/** Unique image per Excel package id (6–49) — no duplicates. */
+const PKG_IMAGE_BY_ID: Record<number, string> = {
+  6: pkgBhopal,
+  7: destUjjain,
+  8: destKanha,
+  9: destJabalpur,
+  10: destBandhavgarh,
+  11: destBhedaghat,
+  12: destAmarkantak,
+  13: pkgKanha,
+  14: pkgPachmarhi,
+  15: destBhopal,
+  16: destPachmarhi,
+  17: destSatpura,
+  18: pkgSatpura,
+  19: destTamia,
+  20: destGwalior,
+  21: destOrchha,
+  22: destPanna,
+  23: pkgGwalior,
+  24: destKhajuraho,
+  25: catArchitectural,
+  26: destMukundpur,
+  27: catBestselling,
+  28: catSpecial,
+  29: destMandu,
+  30: destPench,
+  31: catWildlife,
+  32: destKuno,
+  33: destChitrakoot,
+  34: destParsili,
+  35: catMonsoon,
+  36: destSailani,
+  37: destTawa,
+  38: catSeasonal,
+  39: destHoshangabad,
+  40: destSonagiri,
+  41: destDatia,
+  42: destChanderi,
+  43: destRaisen,
+  44: destUdayagiri,
+  45: destHanuwantiya,
+  46: catLuxury,
+  47: destMaheshwar,
+  48: destOmkareshwar,
+  49: destIndore,
+};
+
 export interface PackageData {
   id: string;
   name: string;
@@ -296,7 +390,7 @@ function buildExcelPackages(): PackageData[] {
       originalPrice: Math.round(p.price * 1.2),
       category: normalizeCategory(p.rawCat),
       tourCategory: p.tourCategory,
-      image: p.image,
+      image: PKG_IMAGE_BY_ID[p.id] ?? p.image,
       highlights: p.highlights,
       description: p.description,
       itinerary,
