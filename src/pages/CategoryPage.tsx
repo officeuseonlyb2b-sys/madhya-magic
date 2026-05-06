@@ -11,6 +11,15 @@ import PackagesSection from "@/components/PackagesSection";
 import { categoryPages } from "@/data/categoryPagesData";
 import { mapDestinations, type MapCategory } from "@/data/mapDestinations";
 import { FilterProvider } from "@/contexts/FilterContext";
+import natureHero from "@/assets/explore/nature-hero.jpg";
+import heritageHero from "@/assets/explore/heritage-hero.jpg";
+import wildlifeHero from "@/assets/explore/wildlife-hero.png";
+
+const heroImageMap: Record<string, string> = {
+  nature: natureHero,
+  heritage: heritageHero,
+  wildlife: wildlifeHero,
+};
 
 const CategoryPage = () => {
   const location = useLocation();
@@ -32,7 +41,7 @@ const CategoryPage = () => {
       {data.slug === "spiritual" ? (
         <SpiritualHero />
       ) : (
-        <HeroCarousel images={data.heroImages} title={data.title} />
+        <HeroCarousel images={data.heroImages} title={data.title} staticImage={heroImageMap[data.slug]} />
       )}
       <DestinationPillars destinations={filteredDestinations} categorySlug={data.slug} />
 
