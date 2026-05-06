@@ -4,6 +4,17 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
 import logo from "@/assets/logo.png";
 import { exploreCategories, type MapCategory } from "@/data/mapDestinations";
+import natureImg from "@/assets/explore/nature.jpg";
+import heritageImg from "@/assets/explore/heritage.jpg";
+import spiritualImg from "@/assets/explore/spiritual.jpg";
+import wildlifeImg from "@/assets/explore/wildlife.png";
+
+const categoryImages: Record<MapCategory, string> = {
+  Nature: natureImg,
+  Heritage: heritageImg,
+  Spiritual: spiritualImg,
+  Wildlife: wildlifeImg,
+};
 
 const navLinks = [
   { label: "Packages", href: "/packages" },
@@ -133,6 +144,27 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
               >
                 View All {activeCat} →
               </Link>
+            </div>
+
+            {/* Static category image */}
+            <div className="p-3 w-[260px]">
+              <div className="relative w-full h-full min-h-[280px] rounded-2xl overflow-hidden border border-white/10">
+                <img
+                  src={categoryImages[activeCat]}
+                  alt={`${activeCat} in Madhya Pradesh`}
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                <div className="absolute bottom-3 left-3 right-3">
+                  <p className="nav-font text-white text-xs uppercase tracking-widest opacity-80">
+                    {categoryIcons[activeCat]} Discover
+                  </p>
+                  <p className="font-display text-white text-lg leading-tight">
+                    {activeCat} of MP
+                  </p>
+                </div>
+              </div>
             </div>
           </motion.div>
         )}
