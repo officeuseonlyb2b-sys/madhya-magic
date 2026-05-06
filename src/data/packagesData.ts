@@ -390,7 +390,7 @@ function buildExcelPackages(): PackageData[] {
       originalPrice: Math.round(p.price * 1.2),
       category: normalizeCategory(p.rawCat),
       tourCategory: p.tourCategory,
-      image: p.image,
+      image: PKG_IMAGE_BY_ID[p.id] ?? p.image,
       highlights: p.highlights,
       description: p.description,
       itinerary,
