@@ -10,6 +10,46 @@ import pkgHeritageTrailsSacred from "@/assets/pkg-heritage-trails-sacred.jpg";
 // ─── Unique per-package imagery for 44 Excel-imported packages (IDs 6–49) ──
 // Image files named as pkg-6.jpg, pkg-7.jpg, ..., pkg-49.jpg inside src/assets/
 import pkgculturalheritageodysseyofmadhyapradesh from "@/assets/pkg-cultural-heritage-odyssey-of-madhya-pradesh.jpg";
+import pkgaspiritualodysseyofmadhyapradesh from "@/assets/pkg-a-spiritual-odyssey-of-madhya-pradesh.jpg"
+import pkgkanhacalling from "@/assets/pkg-kanha-calling.jpg"
+import pkgmagicalkanhajablpur from "@/assets/pkg-magical-kanha-jabalpur.jpg"
+import pkgthetigerlandbandhavghar from "@/assets/pkg-the-tiger-land-bandhavghar.jpg"
+import pkgnaturetreasuresmarvalrocks from "@/assets/pkg-nature-treasures-marval-rocks.jpg"
+import pkgnaturewildernessretreat from "@/assets/pkg-nature-wilderness-retreat.jpg"
+import pkgnaturesplendorancient from "@/assets/pkg-nature-splendor-ancient.jpg"
+import pkgjweelsofbhopal from "@/assets/pkg-jweels-of-bhopal.jpg"
+import pkgbhopalpanchmarhisojourn from "@/assets/pkg-bhopal-Pachmarhi-Sojourn.jpg"
+import pkggetawayfrombhopal from "@/assets/pkg-getaway-from-bhopal.jpg"
+import pkgjourneythroughheritagewilderness from "@/assets/pkg-journey-through-heritage-wilderness.png"
+import pkgnaturescapessacredtrails from "@/assets/pkg-naturescapes-sacred-trails.jpg"
+import pkggloriesgwalior from "@/assets/pkg-glories-gwalior.jpg"
+import pkgmarvelshambalbundelkhand from "@/assets/pkg-marvels-hambal-bundelkhand.jpg"
+import pkgjungletalesheritagetrails from "@/assets/pkg-jungle-tales-heritage-trails.jpg"
+import pkgechoeshistory from "@/assets/pkg-echoes-history.jpg"
+import pkgancientchroniclesnorth from "@/assets/pkg-ancient-chronicles-north.jpeg"
+import pkgheritagegemsmarblewonders from "@/assets/pkg-heritage-gems-marble-wonders.jpg"
+import pkgheritagetigersmarblemajesty from "@/assets/pkg-heritage-tigers-marble-majesty.jpg"
+import pkgmysteriesmadhyapradesh from "@/assets/pkg-mysteries-madhya-pradesh.jpg"
+import pkgmysticheartmadhyapradesh from "@/assets/pkg-mystic-heart-madhya-pradesh.jpg"
+import pkgculturalwonderswildlifesafari from "@/assets/pkg-cultural-wonders-wildlife-safari.jpg"
+import pkgentralindiawildlifecultureexpedition from "@/assets/pkg-entral-india-wildlife-culture-expedition.jpg"
+import pkgthetigerkingdomodyssey from "@/assets/pkg-the-tiger-kingdom-odyssey.jpg"
+import pkgsacredtrailssilentforests from "@/assets/pkg-sacred-trails-silent-forests.jpeg"
+import pkgsacredrootsshimmeringrocks from "@/assets/pkg-Sacred-roots-shimmering-rocks.jpeg"
+import pkgmandumonsoonmagic from "@/assets/pkg-mandu-monsoon-magic.jpg"
+import pkgmonsoonheritagespiritualjourney from "@/assets/pkg-monsoon-heritage-spiritual-journey.jpeg"
+import pkgmadhyapradeshculturalnaturaltrail from "@/assets/pkg-madhya-pradesh-cultural-natural-trail.jpg"
+import pkgheritagespiritualmonsoonedition from "@/assets/pkg-heritage-spiritual-monsoon-edition.jpeg"
+import pkgdivinenaturemonsoonexperience from "@/assets/pkg-divine-nature-monsoon-experience.jpeg"
+import pkgancientmp from "@/assets/pkg-ancient-mp.jpg"
+import pkgessencemp from "@/assets/pkg-essence-mp.jpg"
+import pkghistoricalsagamp from "@/assets/pkg-historical-saga-mp.jpg"
+import pkgexcitingmp from "@/assets/pkg-exciting-pm.jpg"
+import pkgtimelesstreasures from "@/assets/pkg-timeless-treasures.jpg" 
+import pkghiddenheirlooms from "@/assets/pkg-hidden-heirlooms.jpg"
+import pkgmaheswarsojourn from "@/assets/pkg-maheswar-sojourn.jpeg"
+import pkgsacredmalva from "@/assets/pkg-sacred-malva.jpg"
+import pkgmahakalcoridoor from "@/assets/pkg-mahakal-coridoor.jpg"
 
 
 // Remove all old unused imports (pkgBhopal, destUjjain, etc.) – they are no longer needed.
@@ -17,7 +57,46 @@ import pkgculturalheritageodysseyofmadhyapradesh from "@/assets/pkg-cultural-her
 /** Unique image per Excel package id (6–49) — all local assets now. */
 const PKG_IMAGE_BY_ID: Record<number, string> = {
   6: pkgculturalheritageodysseyofmadhyapradesh,
-  
+  7: pkgaspiritualodysseyofmadhyapradesh,
+  8: pkgkanhacalling,
+  9: pkgmagicalkanhajablpur,
+  10: pkgthetigerlandbandhavghar,
+  12: pkgnaturetreasuresmarvalrocks,
+  13: pkgnaturewildernessretreat,
+  14: pkgnaturesplendorancient,
+  15: pkgjweelsofbhopal,
+  16: pkgbhopalpanchmarhisojourn,
+  17: pkggetawayfrombhopal,
+  18: pkgjourneythroughheritagewilderness,
+  19: pkgnaturescapessacredtrails,
+  20: pkggloriesgwalior,
+  21: pkgmarvelshambalbundelkhand,
+  22: pkgjungletalesheritagetrails,
+  23: pkgechoeshistory,
+  24: pkgancientchroniclesnorth,
+  25: pkgheritagegemsmarblewonders,
+  26: pkgheritagetigersmarblemajesty,
+  27: pkgmysteriesmadhyapradesh,
+  28: pkgmysticheartmadhyapradesh,
+  29: pkgculturalwonderswildlifesafari,
+  30: pkgentralindiawildlifecultureexpedition,
+  31: pkgthetigerkingdomodyssey,
+  33: pkgsacredtrailssilentforests,
+  34: pkgsacredrootsshimmeringrocks,
+  35: pkgmandumonsoonmagic,
+  36: pkgmonsoonheritagespiritualjourney,
+  37: pkgmadhyapradeshculturalnaturaltrail,
+  38: pkgheritagespiritualmonsoonedition,
+  39: pkgdivinenaturemonsoonexperience,
+  40: pkgancientmp,
+  41: pkgessencemp,
+  42: pkghistoricalsagamp,
+  43: pkgexcitingmp,
+  45: pkgtimelesstreasures, 
+  46: pkghiddenheirlooms,
+  47: pkgmaheswarsojourn,
+  48: pkgsacredmalva,
+  49: pkgmahakalcoridoor,
 };
 
 // ──────────────────────── (baaki code same hai) ────────────────────────
