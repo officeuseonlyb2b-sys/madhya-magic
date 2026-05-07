@@ -709,7 +709,14 @@ const maxDays = 45;
     const monCounts: Record<string, number> = {};
 
     allPackages.forEach((pkg) => {
+      // Count for full location and any city contained within it
       destCounts[pkg.location] = (destCounts[pkg.location] || 0) + 1;
+      destinations.forEach((d) => {
+        if (d === "All" || d === pkg.location) return;
+        if (pkg.location.toLowerCase().includes(d.toLowerCase())) {
+          destCounts[d] = (destCounts[d] || 0) + 1;
+        }
+      });
 
       const matchedInterest = Object.keys(interestToCategory).find(
         (k) => interestToCategory[k] === pkg.category
