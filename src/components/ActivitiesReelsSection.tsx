@@ -46,45 +46,51 @@ const ActivityCard = ({
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const src = activityVideos[activity.id];
+  const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    const play = () => v.play().catch(() => {});
-    play();
-  }, []);
+    if (hovered) {
+      v.play().catch(() => {});
+    } else {
+      v.pause();
+      try { v.currentTime = 0; } catch {}
+    }
+  }, [hovered]);
 
   return (
     <motion.div
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.05 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onTouchStart={() => setHovered(true)}
+      onTouchEnd={() => setHovered(false)}
       className="reel-card w-[220px] sm:w-[240px] lg:w-[260px] flex-shrink-0 rounded-3xl"
     >
       <Link to={`/activities/${activity.id}`}>
         <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer bg-black">
-          {src ? (
+          <img
+            src={activity.image}
+            alt={activity.name}
+            loading="lazy"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${src && hovered ? "opacity-0" : "opacity-100"}`}
+          />
+          {src && (
             <video
               ref={videoRef}
               src={src}
-              poster={activity.image}
-              autoPlay
               muted
               loop
               playsInline
               preload="metadata"
-              className="w-full h-full object-cover"
-            />
-          ) : (
-            <img
-              src={activity.image}
-              alt={activity.name}
-              loading="lazy"
-              className="w-full h-full object-cover"
+              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hovered ? "opacity-100" : "opacity-0"}`}
             />
           )}
 
-          
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
           <div className="absolute top-4 left-4">
             <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/80 backdrop-blur-md text-white shadow-lg">
