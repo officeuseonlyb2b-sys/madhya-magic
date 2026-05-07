@@ -1,105 +1,102 @@
-// / <reference path="./types/importMeta.d.ts" />
-
-// ─── Manually curated packages (first 5) ──────────────────
 import pkgMahakal from "@/assets/pkg-mahakal.jpg";
 import pkgHeritagePilgrimage from "@/assets/pkg-heritage-pilgrimage.jpg";
 import pkgMarvelsMalwa from "@/assets/pkg-marvels-malwa.jpg";
 import pkgJyotirlingaHeritage from "@/assets/pkg-jyotirlinga-heritage.jpg";
 import pkgHeritageTrailsSacred from "@/assets/pkg-heritage-trails-sacred.jpg";
 
-// ─── Unique per-package imagery for 44 Excel-imported packages (IDs 6–49) ──
-// Image files named as pkg-6.jpg, pkg-7.jpg, ..., pkg-49.jpg inside src/assets/
-import pkgculturalheritageodysseyofmadhyapradesh from "@/assets/pkg-cultural-heritage-odyssey-of-madhya-pradesh.jpg";
-import pkgaspiritualodysseyofmadhyapradesh from "@/assets/pkg-a-spiritual-odyssey-of-madhya-pradesh.jpg"
-import pkgkanhacalling from "@/assets/pkg-kanha-calling.jpg"
-import pkgmagicalkanhajablpur from "@/assets/pkg-magical-kanha-jabalpur.jpg"
-import pkgthetigerlandbandhavghar from "@/assets/pkg-the-tiger-land-bandhavghar.jpg"
-import pkgnaturetreasuresmarvalrocks from "@/assets/pkg-nature-treasures-marval-rocks.jpg"
-import pkgnaturewildernessretreat from "@/assets/pkg-nature-wilderness-retreat.jpg"
-import pkgnaturesplendorancient from "@/assets/pkg-nature-splendor-ancient.jpg"
-import pkgjweelsofbhopal from "@/assets/pkg-jweels-of-bhopal.jpg"
-import pkgbhopalpanchmarhisojourn from "@/assets/pkg-bhopal-Pachmarhi-Sojourn.jpg"
-import pkggetawayfrombhopal from "@/assets/pkg-getaway-from-bhopal.jpg"
-import pkgjourneythroughheritagewilderness from "@/assets/pkg-journey-through-heritage-wilderness.png"
-import pkgnaturescapessacredtrails from "@/assets/pkg-naturescapes-sacred-trails.jpg"
-import pkggloriesgwalior from "@/assets/pkg-glories-gwalior.jpg"
-import pkgmarvelshambalbundelkhand from "@/assets/pkg-marvels-hambal-bundelkhand.jpg"
-import pkgjungletalesheritagetrails from "@/assets/pkg-jungle-tales-heritage-trails.jpg"
-import pkgechoeshistory from "@/assets/pkg-echoes-history.jpg"
-import pkgancientchroniclesnorth from "@/assets/pkg-ancient-chronicles-north.jpeg"
-import pkgheritagegemsmarblewonders from "@/assets/pkg-heritage-gems-marble-wonders.jpg"
-import pkgheritagetigersmarblemajesty from "@/assets/pkg-heritage-tigers-marble-majesty.jpg"
-import pkgmysteriesmadhyapradesh from "@/assets/pkg-mysteries-madhya-pradesh.jpg"
-import pkgmysticheartmadhyapradesh from "@/assets/pkg-mystic-heart-madhya-pradesh.jpg"
-import pkgculturalwonderswildlifesafari from "@/assets/pkg-cultural-wonders-wildlife-safari.jpg"
-import pkgentralindiawildlifecultureexpedition from "@/assets/pkg-entral-india-wildlife-culture-expedition.jpg"
-import pkgthetigerkingdomodyssey from "@/assets/pkg-the-tiger-kingdom-odyssey.jpg"
-import pkgsacredtrailssilentforests from "@/assets/pkg-sacred-trails-silent-forests.jpeg"
-import pkgsacredrootsshimmeringrocks from "@/assets/pkg-sacred-roots-shimmering-rocks.jpeg"
-import pkgmandumonsoonmagic from "@/assets/pkg-mandu-monsoon-magic.jpg"
-import pkgmonsoonheritagespiritualjourney from "@/assets/pkg-monsoon-heritage-spiritual-journey.jpeg"
-import pkgmadhyapradeshculturalnaturaltrail from "@/assets/pkg-madhya-pradesh-cultural-natural-trail.jpg"
-import pkgheritagespiritualmonsoonedition from "@/assets/pkg-heritage-spiritual-monsoon-edition.jpeg"
-import pkgdivinenaturemonsoonexperience from "@/assets/pkg-divine-nature-monsoon-experience.jpeg"
-import pkgancientmp from "@/assets/pkg-ancient-mp.jpg"
-import pkgessencemp from "@/assets/pkg-essence-mp.jpg"
-import pkghistoricalsagamp from "@/assets/pkg-historical-saga-mp.jpg"
-import pkgexcitingmp from "@/assets/pkg-exciting-pm.jpg"
-import pkgtimelesstreasures from "@/assets/pkg-timeless-treasures.jpg" 
-import pkghiddenheirlooms from "@/assets/pkg-hidden-heirlooms.jpg"
-import pkgmaheswarsojourn from "@/assets/pkg-maheswar-sojourn.jpeg"
-import pkgsacredmalva from "@/assets/pkg-sacred-malva.jpg"
-import pkgmahakalcoridoor from "@/assets/pkg-mahakal-coridoor.jpg"
+// Unique per-package imagery for the 44 Excel-imported packages (ids 6–49)
+import pkgBhopal from "@/assets/pkg-bhopal.jpg";
+import pkgGwalior from "@/assets/pkg-gwalior.jpg";
+import pkgKanha from "@/assets/pkg-kanha.jpg";
+import pkgPachmarhi from "@/assets/pkg-pachmarhi.jpg";
+import pkgSatpura from "@/assets/pkg-satpura.jpg";
+import destUjjain from "@/assets/dest-ujjain.jpg";
+import destKanha from "@/assets/dest-kanha.jpg";
+import destJabalpur from "@/assets/dest-jabalpur.jpg";
+import destBandhavgarh from "@/assets/dest-bandhavgarh.jpg";
+import destBhedaghat from "@/assets/dest-bhedaghat.jpg";
+import destAmarkantak from "@/assets/dest-amarkantak.jpg";
+import destBhopal from "@/assets/dest-bhopal.jpg";
+import destPachmarhi from "@/assets/dest-pachmarhi.jpg";
+import destSatpura from "@/assets/dest-satpura.jpg";
+import destTamia from "@/assets/dest-tamia.jpg";
+import destGwalior from "@/assets/dest-gwalior.jpg";
+import destOrchha from "@/assets/dest-orchha.jpg";
+import destPanna from "@/assets/dest-panna.jpg";
+import destKhajuraho from "@/assets/dest-khajuraho.jpg";
+import destMukundpur from "@/assets/dest-mukundpur.jpg";
+import destMandu from "@/assets/dest-mandu.jpg";
+import destPench from "@/assets/dest-pench.jpg";
+import destKuno from "@/assets/dest-kuno.jpg";
+import destChitrakoot from "@/assets/dest-chitrakoot.jpg";
+import destParsili from "@/assets/dest-parsili.jpg";
+import destSailani from "@/assets/dest-sailani.jpg";
+import destTawa from "@/assets/dest-tawa.jpg";
+import destHoshangabad from "@/assets/dest-hoshangabad.jpg";
+import destSonagiri from "@/assets/dest-sonagiri.jpg";
+import destDatia from "@/assets/dest-datia.jpg";
+import destChanderi from "@/assets/dest-chanderi.jpg";
+import destRaisen from "@/assets/dest-raisen.jpg";
+import destUdayagiri from "@/assets/dest-udayagiri.jpg";
+import destHanuwantiya from "@/assets/dest-hanuwantiya.jpg";
+import destMaheshwar from "@/assets/dest-maheshwar.jpg";
+import destOmkareshwar from "@/assets/dest-omkareshwar.jpg";
+import destIndore from "@/assets/dest-indore.jpg";
+import catArchitectural from "@/assets/cat-architectural.jpg";
+import catBestselling from "@/assets/cat-bestselling.jpg";
+import catSpecial from "@/assets/cat-special.jpg";
+import catWildlife from "@/assets/cat-wildlife.jpg";
+import catMonsoon from "@/assets/cat-monsoon.jpg";
+import catSeasonal from "@/assets/cat-seasonal.jpg";
+import catLuxury from "@/assets/cat-luxury.jpg";
 
-
-// Remove all old unused imports (pkgBhopal, destUjjain, etc.) – they are no longer needed.
-
-/** Unique image per Excel package id (6–49) — all local assets now. */
+/** Unique image per Excel package id (6–49) — no duplicates. */
 const PKG_IMAGE_BY_ID: Record<number, string> = {
-  6: pkgculturalheritageodysseyofmadhyapradesh,
-  7: pkgaspiritualodysseyofmadhyapradesh,
-  8: pkgkanhacalling,
-  9: pkgmagicalkanhajablpur,
-  10: pkgthetigerlandbandhavghar,
-  12: pkgnaturetreasuresmarvalrocks,
-  13: pkgnaturewildernessretreat,
-  14: pkgnaturesplendorancient,
-  15: pkgjweelsofbhopal,
-  16: pkgbhopalpanchmarhisojourn,
-  17: pkggetawayfrombhopal,
-  18: pkgjourneythroughheritagewilderness,
-  19: pkgnaturescapessacredtrails,
-  20: pkggloriesgwalior,
-  21: pkgmarvelshambalbundelkhand,
-  22: pkgjungletalesheritagetrails,
-  23: pkgechoeshistory,
-  24: pkgancientchroniclesnorth,
-  25: pkgheritagegemsmarblewonders,
-  26: pkgheritagetigersmarblemajesty,
-  27: pkgmysteriesmadhyapradesh,
-  28: pkgmysticheartmadhyapradesh,
-  29: pkgculturalwonderswildlifesafari,
-  30: pkgentralindiawildlifecultureexpedition,
-  31: pkgthetigerkingdomodyssey,
-  33: pkgsacredtrailssilentforests,
-  34: pkgsacredrootsshimmeringrocks,
-  35: pkgmandumonsoonmagic,
-  36: pkgmonsoonheritagespiritualjourney,
-  37: pkgmadhyapradeshculturalnaturaltrail,
-  38: pkgheritagespiritualmonsoonedition,
-  39: pkgdivinenaturemonsoonexperience,
-  40: pkgancientmp,
-  41: pkgessencemp,
-  42: pkghistoricalsagamp,
-  43: pkgexcitingmp,
-  45: pkgtimelesstreasures, 
-  46: pkghiddenheirlooms,
-  47: pkgmaheswarsojourn,
-  48: pkgsacredmalva,
-  49: pkgmahakalcoridoor,
+  6: pkgBhopal,
+  7: destUjjain,
+  8: destKanha,
+  9: destJabalpur,
+  10: destBandhavgarh,
+  11: destBhedaghat,
+  12: destAmarkantak,
+  13: pkgKanha,
+  14: pkgPachmarhi,
+  15: destBhopal,
+  16: destPachmarhi,
+  17: destSatpura,
+  18: pkgSatpura,
+  19: destTamia,
+  20: destGwalior,
+  21: destOrchha,
+  22: destPanna,
+  23: pkgGwalior,
+  24: destKhajuraho,
+  25: catArchitectural,
+  26: destMukundpur,
+  27: catBestselling,
+  28: catSpecial,
+  29: destMandu,
+  30: destPench,
+  31: catWildlife,
+  32: destKuno,
+  33: destChitrakoot,
+  34: destParsili,
+  35: catMonsoon,
+  36: destSailani,
+  37: destTawa,
+  38: catSeasonal,
+  39: destHoshangabad,
+  40: destSonagiri,
+  41: destDatia,
+  42: destChanderi,
+  43: destRaisen,
+  44: destUdayagiri,
+  45: destHanuwantiya,
+  46: catLuxury,
+  47: destMaheshwar,
+  48: destOmkareshwar,
+  49: destIndore,
 };
-
-// ──────────────────────── (baaki code same hai) ────────────────────────
 
 export interface PackageData {
   id: string;
@@ -117,10 +114,15 @@ export interface PackageData {
   itinerary: { day: number; title: string; description: string }[];
   included: string[];
   excluded: string[];
+  /** Curated for the home "Special Offers & Featured Packages" slider */
   featured?: boolean;
+  /** Marked as a current promotional offer */
   offer?: boolean;
 }
 
+/* ─────────────────────────────────────────────────────────────
+   Common inclusions / exclusions (from source brochure)
+   ───────────────────────────────────────────────────────────── */
 const baseExcluded = [
   "Air fares, train or flight tickets",
   "Guides, entrance fees & activity charges",
@@ -161,34 +163,39 @@ const inclusions4N = [
   "Mineral water, tissues, sanitizers & masks in vehicle",
 ];
 
+/* ─────────────────────────────────────────────────────────────
+   Excel-imported packages (IDs 6 – 49 from EXIDR01.xlsx)
+   Categories normalized to: Spiritual | Heritage | Wildlife | Nature
+   Images use optimized Unsplash CDN (auto-format, ~1200w).
+   ───────────────────────────────────────────────────────────── */
 const img = (id: string) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=1200&q=70`;
 
 const IMG = {
-  spiritual: img("photo-1518002171953-a080ee817e1f"),
-  ujjain: img("photo-1561361513-2d000a50f0dc"),
-  omkareshwar: img("photo-1605649487212-47bdab064df7"),
-  maheshwar: img("photo-1623059508779-2542c6e83753"),
-  mandu: img("photo-1599661046289-e31897846e41"),
-  heritage: img("photo-1564507592333-c60657eea523"),
-  khajuraho: img("photo-1564507004663-b6dfb3c824d5"),
-  orchha: img("photo-1606298855672-3efb63017be8"),
-  gwalior: img("photo-1602216056096-3b40cc0c9944"),
-  sanchi: img("photo-1610018556010-6a11691bc905"),
-  bhimbetka: img("photo-1591267990439-bc68fdc92cf2"),
-  wildlife: img("photo-1549366021-9f761d040a94"),
-  tiger: img("photo-1561731216-c3a4d99437d5"),
-  kanha: img("photo-1605300045834-3b69f1d3a4d2"),
-  bandhavgarh: img("photo-1606115915090-be18fea23ec7"),
-  pench: img("photo-1607604276583-eef5d076aa5f"),
-  panna: img("photo-1574068468668-a05a11f871da"),
-  satpura: img("photo-1448375240586-882707db888b"),
-  nature: img("photo-1506905925346-21bda4d32df4"),
-  pachmarhi: img("photo-1542359649-31e03cd4d909"),
-  amarkantak: img("photo-1502082553048-f009c37129b9"),
-  marble: img("photo-1597223557154-721c1cecc4b0"),
-  monsoon: img("photo-1519681393784-d120267933ba"),
-  luxury: img("photo-1582719478250-c89cae4dc85b"),
+  spiritual: img("photo-1518002171953-a080ee817e1f"),    // temple aarti
+  ujjain: img("photo-1561361513-2d000a50f0dc"),          // ghats
+  omkareshwar: img("photo-1605649487212-47bdab064df7"),  // river temple
+  maheshwar: img("photo-1623059508779-2542c6e83753"),    // fort river
+  mandu: img("photo-1599661046289-e31897846e41"),        // ruins arch
+  heritage: img("photo-1564507592333-c60657eea523"),     // taj-style heritage
+  khajuraho: img("photo-1564507004663-b6dfb3c824d5"),    // khajuraho temple
+  orchha: img("photo-1606298855672-3efb63017be8"),       // orchha
+  gwalior: img("photo-1602216056096-3b40cc0c9944"),      // gwalior fort
+  sanchi: img("photo-1610018556010-6a11691bc905"),       // stupa
+  bhimbetka: img("photo-1591267990439-bc68fdc92cf2"),    // rock shelters
+  wildlife: img("photo-1549366021-9f761d040a94"),        // tiger
+  tiger: img("photo-1561731216-c3a4d99437d5"),           // tiger close
+  kanha: img("photo-1605300045834-3b69f1d3a4d2"),        // jungle
+  bandhavgarh: img("photo-1606115915090-be18fea23ec7"),  // forest tiger
+  pench: img("photo-1607604276583-eef5d076aa5f"),        // safari
+  panna: img("photo-1574068468668-a05a11f871da"),        // tiger river
+  satpura: img("photo-1448375240586-882707db888b"),      // forest
+  nature: img("photo-1506905925346-21bda4d32df4"),       // mountains
+  pachmarhi: img("photo-1542359649-31e03cd4d909"),       // hills waterfall
+  amarkantak: img("photo-1502082553048-f009c37129b9"),   // forest river
+  marble: img("photo-1597223557154-721c1cecc4b0"),       // marble rocks
+  monsoon: img("photo-1519681393784-d120267933ba"),      // misty
+  luxury: img("photo-1582719478250-c89cae4dc85b"),       // palace luxury
 };
 
 const baseInclusion = (n: number) => ({
@@ -204,22 +211,12 @@ const baseInclusion = (n: number) => ({
 });
 
 const slug = (s: string) =>
-  s.toLowerCase()
-    .replace(/&/g, "and")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-|-$/g, "");
+  s.toLowerCase().replace(/&/g, "and").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
 interface ExcelPkg {
-  id: number;
-  name: string;
-  days: number;
-  price: number;
-  route: string;
-  rawCat: string;
-  tourCategory: string;
-  image: string; // fallback (ab PKG_IMAGE_BY_ID se override hoga)
-  highlights: string[];
-  description: string;
+  id: number; name: string; days: number; price: number; route: string;
+  rawCat: string; tourCategory: string; image: string;
+  highlights: string[]; description: string;
 }
 
 const excelPkgs: ExcelPkg[] = [
@@ -359,6 +356,7 @@ const excelPkgs: ExcelPkg[] = [
 
 function normalizeCategory(raw: string): string {
   const r = raw.toLowerCase();
+  // priority order: Wildlife > Spiritual > Heritage > Nature
   if (r.includes("wildlife")) return "Wildlife";
   if (r.includes("sprit") || r.includes("spirit")) return "Spiritual";
   if (r.includes("heritage")) return "Heritage";
@@ -376,17 +374,12 @@ function buildExcelPackages(): PackageData[] {
       const isLast = i === p.days - 1;
       return {
         day: i + 1,
-        title: isLast
-          ? `${from} (Departure)`
-          : from === to
-          ? `${from} — Sightseeing`
-          : `${from} → ${to}`,
+        title: isLast ? `${from} (Departure)` : (from === to ? `${from} — Sightseeing` : `${from} → ${to}`),
         description: isLast
           ? `Final breakfast at the hotel. Visit any remaining attractions in ${from} before your departure transfer.`
           : `Drive from ${from} to ${to}. Explore key attractions en-route and check-in. Overnight stay in ${to}.`,
       };
     });
-
     return {
       id: slug(p.name),
       name: p.name,
@@ -397,7 +390,7 @@ function buildExcelPackages(): PackageData[] {
       originalPrice: Math.round(p.price * 1.2),
       category: normalizeCategory(p.rawCat),
       tourCategory: p.tourCategory,
-      image: PKG_IMAGE_BY_ID[p.id] ?? p.image, // local image prefer hogi
+      image: PKG_IMAGE_BY_ID[p.id] ?? p.image,
       highlights: p.highlights,
       description: p.description,
       itinerary,
@@ -410,7 +403,6 @@ function buildExcelPackages(): PackageData[] {
 }
 
 export const allPackages: PackageData[] = [
-  // ... first 5 manually defined packages (same as before)
   {
     id: "mahakal-darshan",
     name: "Mahakal Darshan",
@@ -563,15 +555,53 @@ export const allPackages: PackageData[] = [
   ...buildExcelPackages(),
 ];
 
-export const destinations = ["All", "Indore - Ujjain - Indore", "Indore - Ujjain - Omkareshwar - Maheshwar - Mandu - Indore"];
-export const durations = ["All", ...Array.from({ length: 45 }, (_, i) => `${i + 1} Day${i === 0 ? "" : "s"}`)];
+/* ─────────────────────────────────────────────────────────────
+   Filter / UI helpers — kept compatible with existing components
+   ───────────────────────────────────────────────────────────── */
+// Dynamically derived list of every unique location across all packages.
+// Includes both full route strings and individual city names parsed from them.
+const _locationSet = new Set<string>();
+allPackages.forEach((p) => {
+  if (!p.location) return;
+  _locationSet.add(p.location);
+  p.location
+    .split(/\s*[-,/&]\s*/)
+    .map((c) => c.trim())
+    .filter((c) => c && c.length > 1 && !/^\d/.test(c))
+    .forEach((city) => _locationSet.add(city));
+});
+export const destinations = ["All", ...Array.from(_locationSet).sort()];
+
+export const durations = [
+  "All",
+  ...Array.from({ length: 45 }, (_, i) => `${i + 1} Day${i === 0 ? "" : "s"}`),
+];
+
 export const categories = ["All", "Wildlife", "Heritage", "Spiritual", "Nature", "Quick Getaways", "Women Exclusive", "Special Interest Tours", "Best-Selling Tours", "Senior Citizen", "Seasonal Tours", "Group Join-in", "Luxury & Experiential"];
 export const budgets = ["All", "Under ₹7,000", "₹7,000 – ₹12,000", "Above ₹12,000"];
-export const months = ["All", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+
+export const months = [
+  "All",
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
 export const interests = ["All", "Heritage", "Wild Life", "Spiritual", "Nature"];
+
+// Map UI interest label → category value stored on packages
 export const interestToCategory: Record<string, string> = {
-  Heritage: "Heritage",
+  "Heritage": "Heritage",
   "Wild Life": "Wildlife",
-  Spiritual: "Spiritual",
-  Nature: "Nature",
+  "Spiritual": "Spiritual",
+  "Nature": "Nature",
 };

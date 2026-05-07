@@ -577,8 +577,9 @@ const PackageCard = ({ pkg, index }: { pkg: PackageData; index: number }) => {
       transition={{ delay: index * 0.1, duration: 0.5 }}
     >
       <motion.div
-        whileHover={{ y: -8 }}
-        className="group rounded-2xl overflow-hidden bg-card border border-border/30 shadow-[var(--shadow-card)] hover:shadow-[var(--shadow-card-hover)] transition-shadow"
+        whileHover={{ y: -10 }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        className="pkg-card-3d group rounded-2xl overflow-hidden bg-card border border-border/30"
       >
         <div className="image-zoom aspect-[16/10] relative overflow-hidden">
           <img
@@ -587,10 +588,10 @@ const PackageCard = ({ pkg, index }: { pkg: PackageData; index: number }) => {
             loading="lazy"
             width={1024}
             height={768}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-foreground/40 to-transparent" />
-          <div className="absolute top-3 left-3 gradient-gold text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
+          <div className="absolute top-3 left-3 gradient-gold text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-md text-shadow-soft">
             {Math.round(((pkg.originalPrice - pkg.price) / pkg.originalPrice) * 100)}% OFF
           </div>
           <div className="absolute top-3 right-3 flex flex-col items-end gap-1.5">
@@ -709,7 +710,14 @@ const maxDays = 45;
     const monCounts: Record<string, number> = {};
 
     allPackages.forEach((pkg) => {
+      // Count for full location and any city contained within it
       destCounts[pkg.location] = (destCounts[pkg.location] || 0) + 1;
+      destinations.forEach((d) => {
+        if (d === "All" || d === pkg.location) return;
+        if (pkg.location.toLowerCase().includes(d.toLowerCase())) {
+          destCounts[d] = (destCounts[d] || 0) + 1;
+        }
+      });
 
       const matchedInterest = Object.keys(interestToCategory).find(
         (k) => interestToCategory[k] === pkg.category
@@ -742,8 +750,13 @@ const maxDays = 45;
         }
       }
 
-      // Destination (multi)
-      if (selectedDestinations.length > 0 && !selectedDestinations.includes(pkg.location))
+      // Destination (multi) — match if pkg.location equals or contains any selected city/route
+      if (
+        selectedDestinations.length > 0 &&
+        !selectedDestinations.some(
+          (d) => pkg.location === d || pkg.location.toLowerCase().includes(d.toLowerCase())
+        )
+      )
         return false;
 
       // Duration (range)
