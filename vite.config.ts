@@ -32,4 +32,8 @@ export default defineConfig(({ mode }) => ({
       "@tanstack/query-core",
     ],
   },
+
+  build: {
+    outDir: "dist",
+  },
 }));
