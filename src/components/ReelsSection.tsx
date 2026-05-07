@@ -26,21 +26,15 @@ const ReelVideo = ({ reel, isHovered }: { reel: ReelItem; isHovered: boolean }) 
   }, [isHovered, loaded]);
 
   return (
-    <div className="absolute inset-0">
-      <img
-        src={reel.thumbnail}
-        alt={reel.title}
-        loading="lazy"
-        className={`w-full h-full object-cover transition duration-700 ${isHovered ? "opacity-0" : "opacity-100 group-hover:scale-110"}`}
-      />
+    <div className="absolute inset-0 bg-black">
       <video
         ref={videoRef}
         src={reel.videoUrl}
         muted
         loop
         playsInline
-        preload="none"
-        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"}`}
+        preload="metadata"
+        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
     </div>
   );
