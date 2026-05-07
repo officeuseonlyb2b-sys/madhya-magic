@@ -696,7 +696,7 @@ const Packages = () => {
   };
 }, []);
 const minDays = 2;
-const maxDays = 45;
+const maxDays = 30;
 
   useEffect(() => {
     setPriceRange([minPrice, maxPrice]);
