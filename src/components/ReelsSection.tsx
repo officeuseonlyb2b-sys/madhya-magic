@@ -6,71 +6,67 @@ import { useFilters } from "@/contexts/FilterContext";
 import { reelsData, type ReelItem } from "@/data/reelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
 
-const LazyReelVideo = ({ reel }: { reel: ReelItem }) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+const ReelVideo = ({ reel, isHovered }: { reel: ReelItem; isHovered: boolean }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [inView, setInView] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          obs.disconnect();
-        }
-      },
-      { rootMargin: "200px" }
-    );
-    obs.observe(containerRef.current);
-    return () => obs.disconnect();
-  }, []);
-
-  useEffect(() => {
-    if (inView && videoRef.current) {
-      videoRef.current.play().catch(() => {});
+    const v = videoRef.current;
+    if (!v) return;
+    if (isHovered) {
+      if (!loaded) {
+        v.load();
+        setLoaded(true);
+      }
+      v.play().catch(() => {});
+    } else {
+      v.pause();
+      try { v.currentTime = 0; } catch {}
     }
-  }, [inView]);
+  }, [isHovered, loaded]);
 
   return (
-    <div ref={containerRef} className="absolute inset-0">
+    <div className="absolute inset-0">
       <img
         src={reel.thumbnail}
         alt={reel.title}
         loading="lazy"
-        className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+        className={`w-full h-full object-cover transition duration-700 ${isHovered ? "opacity-0" : "opacity-100 group-hover:scale-110"}`}
       />
-      {inView && (
-        <video
-          ref={videoRef}
-          src={reel.videoUrl}
-          muted
-          loop
-          playsInline
-          autoPlay
-          preload="metadata"
-          className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition duration-700"
-        />
-      )}
+      <video
+        ref={videoRef}
+        src={reel.videoUrl}
+        muted
+        loop
+        playsInline
+        preload="none"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${isHovered ? "opacity-100" : "opacity-0"}`}
+      />
     </div>
   );
 };
 
 const ReelCard = ({ reel, index }: { reel: ReelItem; index: number }) => {
+  const [hovered, setHovered] = useState(false);
   return (
     <motion.div
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.05 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onTouchStart={() => setHovered(true)}
+      onTouchEnd={() => setHovered(false)}
       className="reel-card w-[220px] sm:w-[240px] lg:w-[260px] flex-shrink-0 rounded-3xl"
     >
       <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer">
-        <LazyReelVideo reel={reel} />
+        <ReelVideo reel={reel} isHovered={hovered} />
 
-        
+        {/* Dark gradient overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/35 pointer-events-none" />
 
         <div className="absolute top-4 left-4">
-          <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/80 backdrop-blur-md text-white shadow-lg">
+          <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-lg text-shadow-soft">
             {reel.category}
           </span>
         </div>
@@ -82,11 +78,11 @@ const ReelCard = ({ reel, index }: { reel: ReelItem; index: number }) => {
         </div>
 
         <div className="absolute bottom-6 left-6 right-6 text-white">
-          <h3 className="text-lg font-bold line-clamp-1">
+          <h3 className="text-lg font-bold line-clamp-1 text-shadow-soft">
             {reel.title}
           </h3>
 
-          <div className="flex items-center gap-1 text-xs mt-1 opacity-90">
+          <div className="flex items-center gap-1 text-xs mt-1 opacity-95 text-shadow-soft">
             <MapPin size={12} />
             <span>{reel.location}</span>
           </div>
