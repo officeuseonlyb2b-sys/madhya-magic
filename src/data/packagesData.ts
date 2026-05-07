@@ -35,7 +35,7 @@ import pkgculturalwonderswildlifesafari from "@/assets/pkg-cultural-wonders-wild
 import pkgentralindiawildlifecultureexpedition from "@/assets/pkg-entral-india-wildlife-culture-expedition.jpg"
 import pkgthetigerkingdomodyssey from "@/assets/pkg-the-tiger-kingdom-odyssey.jpg"
 import pkgsacredtrailssilentforests from "@/assets/pkg-sacred-trails-silent-forests.jpeg"
-import pkgsacredrootsshimmeringrocks from "@/assets/pkg-Sacred-roots-shimmering-rocks.jpeg"
+import pkgsacredrootsshimmeringrocks from "@/assets/pkg-sacred-roots-shimmering-rocks.jpeg"
 import pkgmandumonsoonmagic from "@/assets/pkg-mandu-monsoon-magic.jpg"
 import pkgmonsoonheritagespiritualjourney from "@/assets/pkg-monsoon-heritage-spiritual-journey.jpeg"
 import pkgmadhyapradeshculturalnaturaltrail from "@/assets/pkg-madhya-pradesh-cultural-natural-trail.jpg"
