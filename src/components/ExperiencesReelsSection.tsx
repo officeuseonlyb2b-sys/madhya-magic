@@ -21,35 +21,51 @@ const ExperienceCard = ({
   exp: typeof experiencesData[0];
   index: number;
 }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [hovered, setHovered] = useState(false);
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (hovered) {
+      v.play().catch(() => {});
+    } else {
+      v.pause();
+      try { v.currentTime = 0; } catch {}
+    }
+  }, [hovered]);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: index * 0.05 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onTouchStart={() => setHovered(true)}
+      onTouchEnd={() => setHovered(false)}
       className="reel-card w-[220px] sm:w-[240px] lg:w-[260px] flex-shrink-0 rounded-3xl"
     >
-      <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer">
-        {exp.video ? (
+      <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer bg-black">
+        <img
+          src={exp.image}
+          alt={exp.title}
+          loading="lazy"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${exp.video && hovered ? "opacity-0" : "opacity-100"}`}
+        />
+        {exp.video && (
           <video
+            ref={videoRef}
             src={exp.video}
-            poster={exp.image}
-            autoPlay
             muted
             loop
             playsInline
             preload="metadata"
-            className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
-          />
-        ) : (
-          <img
-            src={exp.image}
-            alt={exp.title}
-            loading="lazy"
-            className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hovered ? "opacity-100" : "opacity-0"}`}
           />
         )}
 
-        
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
 
         <div className="absolute top-4 left-4">
           <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/80 backdrop-blur-md text-white shadow-lg">
