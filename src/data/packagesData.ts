@@ -558,11 +558,19 @@ export const allPackages: PackageData[] = [
 /* ─────────────────────────────────────────────────────────────
    Filter / UI helpers — kept compatible with existing components
    ───────────────────────────────────────────────────────────── */
-export const destinations = [
-  "All",
-  "Indore - Ujjain - Indore",
-  "Indore - Ujjain - Omkareshwar - Maheshwar - Mandu - Indore",
-];
+// Dynamically derived list of every unique location across all packages.
+// Includes both full route strings and individual city names parsed from them.
+const _locationSet = new Set<string>();
+allPackages.forEach((p) => {
+  if (!p.location) return;
+  _locationSet.add(p.location);
+  p.location
+    .split(/\s*[-,/&]\s*/)
+    .map((c) => c.trim())
+    .filter((c) => c && c.length > 1 && !/^\d/.test(c))
+    .forEach((city) => _locationSet.add(city));
+});
+export const destinations = ["All", ...Array.from(_locationSet).sort()];
 
 export const durations = [
   "All",
