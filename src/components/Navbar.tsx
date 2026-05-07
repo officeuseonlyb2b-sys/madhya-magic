@@ -237,12 +237,14 @@ const Navbar = () => {
             </Link>
           ))}
 
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="nav-font border border-white/30 px-6 py-2.5 rounded-full text-white backdrop-blur-md"
-          >
-            Book Now
-          </motion.button>
+          <Link to="/packages">
+            <motion.span
+              whileHover={{ scale: 1.05 }}
+              className="nav-font inline-block border border-white/30 px-6 py-2.5 rounded-full text-white backdrop-blur-md hover:bg-white/10 hover:border-white/60 transition"
+            >
+              Book Now
+            </motion.span>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -332,9 +334,13 @@ const Navbar = () => {
                 </Link>
               ))}
 
-              <button className="nav-font border border-white py-3 rounded-xl text-white mt-2">
+              <Link
+                to="/packages"
+                onClick={() => setMobileOpen(false)}
+                className="nav-font border border-white py-3 rounded-xl text-white mt-2 text-center hover:bg-white/10 transition"
+              >
                 Book Now
-              </button>
+              </Link>
             </div>
           </motion.div>
         )}
