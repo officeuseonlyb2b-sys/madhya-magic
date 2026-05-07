@@ -742,8 +742,13 @@ const maxDays = 45;
         }
       }
 
-      // Destination (multi)
-      if (selectedDestinations.length > 0 && !selectedDestinations.includes(pkg.location))
+      // Destination (multi) — match if pkg.location equals or contains any selected city/route
+      if (
+        selectedDestinations.length > 0 &&
+        !selectedDestinations.some(
+          (d) => pkg.location === d || pkg.location.toLowerCase().includes(d.toLowerCase())
+        )
+      )
         return false;
 
       // Duration (range)
