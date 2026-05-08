@@ -291,3 +291,18 @@ scrollbar-width: none;
 /* Premium 3D package card */
 .pkg-card-3d{transition:transform 500ms cubic-bezier(0.22,1,0.36,1), box-shadow 500ms ease, border-color 400ms ease;box-shadow:0 10px 30px -12px rgba(20,20,20,0.18), 0 4px 12px -6px rgba(20,20,20,0.08);}
 .pkg-card-3d:hover{transform:translateY(-10px);box-shadow:0 30px 60px -20px rgba(20,20,20,0.30), 0 12px 28px -10px hsla(32,80%,50%,0.25);border-color:hsla(32,80%,50%,0.35);}
+
+/* ===== Performance: skip rendering offscreen heavy sections ===== */
+section { content-visibility: auto; contain-intrinsic-size: 1px 800px; }
+
+/* GPU-friendly defaults for animated elements */
+.reel-card, .pkg-card-3d { transform: translateZ(0); backface-visibility: hidden; }
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
