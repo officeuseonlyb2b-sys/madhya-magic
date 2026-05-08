@@ -2,6 +2,8 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import customImage from "@/assets/customimage.png";
 import { Link, useSearchParams } from "react-router-dom";
+// Top of file main import add karo
+import packageImage from "@/assets/packageimage.jpg";
 import {
   MapPin,
   Clock,
@@ -53,7 +55,7 @@ const getPackageMonths = (pkg: PackageData): string[] => {
 };
 
 // --------------------------------------------
-// 2. Compact Calendar-Style Month Selector (with seasonal colors)
+// 2. Compact Calendar-Style Month Selector (with seasonal colors, no counts)
 // --------------------------------------------
 const monthGroups = {
   Winter: ["December", "January", "February"],
@@ -107,11 +109,9 @@ const seasonStyle: Record<string, { idle: string; selected: string; dot: string;
 const AdvancedMonthSelector = ({
   selectedMonths,
   onChange,
-  packageMonthAvailability,
 }: {
   selectedMonths: string[];
   onChange: (months: string[]) => void;
-  packageMonthAvailability?: Record<string, number>;
 }) => {
   const toggleMonth = (month: string) => {
     if (selectedMonths.includes(month))
@@ -211,7 +211,6 @@ const AdvancedMonthSelector = ({
             <div className="grid grid-cols-4 gap-1">
               {calendarOrder.map((month) => {
                 const isSelected = selectedMonths.includes(month);
-                const count = packageMonthAvailability?.[month] || 0;
                 const s = seasonStyle[seasonOf(month)];
                 return (
                   <motion.button
@@ -225,9 +224,6 @@ const AdvancedMonthSelector = ({
                     `}
                   >
                     {month.slice(0, 3)}
-                    {count > 0 && !isSelected && (
-                      <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full ${s.dot}`} />
-                    )}
                   </motion.button>
                 );
               })}
@@ -261,22 +257,21 @@ const AdvancedMonthSelector = ({
 };
 
 // --------------------------------------------
-// 3. Advanced Destination Selector (multi + search)
+// 3. Advanced Destination Selector (multi + search, only MP cities, no counts)
 // --------------------------------------------
 const AdvancedDestinationSelector = ({
   selectedDestinations,
   onChange,
-  destinationCounts,
+  allDestinations,
 }: {
   selectedDestinations: string[];
   onChange: (dests: string[]) => void;
-  destinationCounts: Record<string, number>;
+  allDestinations: string[];
 }) => {
   const [search, setSearch] = useState("");
   const [isOpen, setIsOpen] = useState(false);
 
-  const allDestOptions = destinations.filter((d) => d !== "All");
-  const filtered = allDestOptions.filter((d) =>
+  const filtered = allDestinations.filter((d) =>
     d.toLowerCase().includes(search.toLowerCase())
   );
 
@@ -333,7 +328,6 @@ const AdvancedDestinationSelector = ({
                   />
                   <span className="text-sm">{dest}</span>
                 </div>
-                <span className="text-xs text-muted-foreground">{destinationCounts[dest] || 0}</span>
               </label>
             ))}
           </motion.div>
@@ -344,16 +338,14 @@ const AdvancedDestinationSelector = ({
 };
 
 // --------------------------------------------
-// 4. Advanced Interest Selector (multi tag cloud)
+// 4. Advanced Interest Selector (multi tag cloud, no counts)
 // --------------------------------------------
 const AdvancedInterestSelector = ({
   selectedInterests,
   onChange,
-  interestCounts,
 }: {
   selectedInterests: string[];
   onChange: (interests: string[]) => void;
-  interestCounts: Record<string, number>;
 }) => {
   const toggleInterest = (interest: string) => {
     if (selectedInterests.includes(interest))
@@ -370,15 +362,13 @@ const AdvancedInterestSelector = ({
           onClick={() => toggleInterest(interest)}
           className={`
             text-sm px-3 py-1.5 rounded-full border transition-all
-            ${
-              selectedInterests.includes(interest)
-                ? "bg-primary text-primary-foreground border-primary shadow-sm"
-                : "bg-background/50 border-border hover:border-primary/50 hover:bg-accent/30"
+            ${selectedInterests.includes(interest)
+              ? "bg-primary text-primary-foreground border-primary shadow-sm"
+              : "bg-background/50 border-border hover:border-primary/50 hover:bg-accent/30"
             }
           `}
         >
           {interest}
-          <span className="ml-1 text-xs opacity-70">{interestCounts[interest] || 0}</span>
         </button>
       ))}
     </div>
@@ -689,55 +679,54 @@ const Packages = () => {
 
   // Compute global min/max from packages
   const { minPrice, maxPrice } = useMemo(() => {
-  const prices = allPackages.map((p) => p.price);
-  return {
-    minPrice: Math.min(...prices),
-    maxPrice: Math.max(...prices),
-  };
-}, []);
-const minDays = 2;
-const maxDays = 30;
+    const prices = allPackages.map((p) => p.price);
+    return {
+      minPrice: Math.min(...prices),
+      maxPrice: Math.max(...prices),
+    };
+  }, []);
+  const minDays = 2;
+  const maxDays = 30;
 
   useEffect(() => {
     setPriceRange([minPrice, maxPrice]);
     setDurationRange([minDays, maxDays]);
   }, [minPrice, maxPrice, minDays, maxDays]);
 
-  // Build counts for destination / interest / month using derived months
-  const { destinationCounts, interestCounts, monthCounts } = useMemo(() => {
-    const destCounts: Record<string, number> = {};
-    const intCounts: Record<string, number> = {};
-    const monCounts: Record<string, number> = {};
-
-    allPackages.forEach((pkg) => {
-      // Count for full location and any city contained within it
-      destCounts[pkg.location] = (destCounts[pkg.location] || 0) + 1;
-      destinations.forEach((d) => {
-        if (d === "All" || d === pkg.location) return;
-        if (pkg.location.toLowerCase().includes(d.toLowerCase())) {
-          destCounts[d] = (destCounts[d] || 0) + 1;
-        }
-      });
-
-      const matchedInterest = Object.keys(interestToCategory).find(
-        (k) => interestToCategory[k] === pkg.category
-      );
-      if (matchedInterest) {
-        intCounts[matchedInterest] = (intCounts[matchedInterest] || 0) + 1;
-      }
-
-      const monthsForPkg = getPackageMonths(pkg);
-      monthsForPkg.forEach((m) => {
-        monCounts[m] = (monCounts[m] || 0) + 1;
-      });
-    });
-    return { destinationCounts: destCounts, interestCounts: intCounts, monthCounts: monCounts };
-  }, []);
+  // 🔹 MP ALL MAJOR CITIES LIST (edit/add as needed)
+  const mpCities = [
+    "Ujjain",
+    "Indore",
+    "Jabalpur",
+    "Bhopal",
+    "Gwalior",
+    "Khajuraho",
+    "Orchha",
+    "Pachmarhi",
+    "Kanha",
+    "Bandhavgarh",
+    "Sanchi",
+    "Mandu",
+    "Maheshwar",
+    "Omkareshwar",
+    "Chitrakoot",
+    "Amarkantak",
+    "Panchmarhi",
+    "Satpura",
+    "Panna",
+    "Datia",
+    "Shivpuri",
+    "Chanderi",
+    "Burhanpur",
+    "Ratlam",
+    "Dewas",
+    "Sagar",
+  ];
 
   // Filtering logic
   const filtered = useMemo(() => {
     let result = allPackages.filter((pkg) => {
-      // Tour category / subcategory filter (same as before)
+      // Tour category / subcategory filter
       if (tourCategory !== "All") {
         if (tourSubCategory) {
           if (pkg.tourCategory?.toLowerCase() !== tourSubCategory.toLowerCase()) return false;
@@ -750,7 +739,7 @@ const maxDays = 30;
         }
       }
 
-      // Destination (multi) — match if pkg.location equals or contains any selected city/route
+      // Destination (multi) — match if pkg.location equals or contains any selected city
       if (
         selectedDestinations.length > 0 &&
         !selectedDestinations.some(
@@ -885,7 +874,7 @@ const maxDays = 30;
     <div className="space-y-3">
       {/* Compact 4-column toolbar */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
-        {/* Destination */}
+        {/* Destination — now uses mpCities */}
         <div className="space-y-1">
           <label className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1">
             <MapPin size={11} /> Destination
@@ -893,11 +882,11 @@ const maxDays = 30;
           <AdvancedDestinationSelector
             selectedDestinations={selectedDestinations}
             onChange={setSelectedDestinations}
-            destinationCounts={destinationCounts}
+            allDestinations={mpCities}
           />
         </div>
 
-        {/* Month — Google Calendar style dropdown */}
+        {/* Month */}
         <div className="space-y-1">
           <label className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1">
             <Calendar size={11} /> Travel Month
@@ -905,7 +894,6 @@ const maxDays = 30;
           <AdvancedMonthSelector
             selectedMonths={selectedMonths}
             onChange={setSelectedMonths}
-            packageMonthAvailability={monthCounts}
           />
         </div>
 
@@ -932,7 +920,7 @@ const maxDays = 30;
         </div>
       </div>
 
-      {/* Interests row — compact tag cloud */}
+      {/* Interests row */}
       <div className="space-y-1 pt-1">
         <label className="text-[10px] font-semibold uppercase tracking-wider text-muted-foreground flex items-center gap-1">
           <Heart size={11} /> Interests
@@ -940,7 +928,6 @@ const maxDays = 30;
         <AdvancedInterestSelector
           selectedInterests={selectedInterests}
           onChange={setSelectedInterests}
-          interestCounts={interestCounts}
         />
       </div>
 
@@ -949,11 +936,10 @@ const maxDays = 30;
         <div className="flex items-center gap-2">
           <button
             onClick={() => setOffersOnly((v) => !v)}
-            className={`inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border transition-all ${
-              offersOnly
+            className={`inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full border transition-all ${offersOnly
                 ? "bg-primary text-primary-foreground border-primary shadow-sm"
                 : "bg-background/50 text-foreground border-border hover:border-primary/50"
-            }`}
+              }`}
           >
             <Sparkles size={12} /> Offers
           </button>
@@ -969,7 +955,6 @@ const maxDays = 30;
             </select>
             <ChevronDown size={12} className="absolute right-2 top-1/2 -translate-y-1/2 text-muted-foreground pointer-events-none" />
           </div>
-          <span className="text-xs text-muted-foreground">{filtered.length} found</span>
         </div>
         {activeFiltersCount > 0 && (
           <button onClick={resetFilters} className="text-xs text-primary hover:underline flex items-center gap-1">
@@ -989,8 +974,15 @@ const maxDays = 30;
       {/* Hero */}
       <section className="relative h-[50vh] md:h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-foreground" />
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1920')] bg-cover bg-center opacity-40" />
+
+        {/* Manual Image from Assets */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-40"
+          style={{ backgroundImage: `url(${packageImage})` }}
+        />
+
         <div className="absolute inset-0 bg-gradient-to-t from-foreground via-foreground/50 to-transparent" />
+
         <motion.div
           ref={headerRef}
           initial={{ opacity: 0, y: 40 }}
@@ -998,21 +990,26 @@ const maxDays = 30;
           transition={{ duration: 0.8 }}
           className="relative z-10 text-center px-4"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-widest">Curated Journeys</span>
-          <h1 className="text-4xl md:text-6xl font-display font-bold text-white mt-3">Travel Packages</h1>
+          <span className="text-primary font-semibold text-sm uppercase tracking-widest">
+            Curated Journeys
+          </span>
+
+          <h1 className="text-4xl md:text-6xl font-display font-bold text-white mt-3">
+            Travel Packages
+          </h1>
         </motion.div>
       </section>
 
       {/* Filter Section */}
       <section className="container mx-auto px-4 relative z-20">
-        {/* Desktop */}
+        {/* Desktop — fixed overflow for calendar popup */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="hidden md:block sticky top-24 relative overflow-hidden rounded-2xl border border-amber-200/40 shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
+          className="hidden md:block sticky top-24 relative overflow-visible rounded-2xl border border-amber-200/40 shadow-[0_10px_40px_rgba(0,0,0,0.06)]"
         >
-          <div className="absolute inset-0 bg-white/85 backdrop-blur-xl" />
+          <div className="absolute inset-0 bg-white/85 backdrop-blur-xl rounded-2xl" />
           {/* subtle heritage motif corners */}
           <svg className="absolute top-2 left-2 w-8 h-8 text-amber-400/40 pointer-events-none" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1">
             <path d="M2 8 V2 H8 M12 2 a4 4 0 0 1 4 4 M2 12 a4 4 0 0 0 4 4" />
