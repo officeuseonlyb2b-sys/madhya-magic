@@ -28,6 +28,7 @@ const activityVideos: Record<string, string> = {
   "jungle-walk": "/videos/activities/jungle-walk.mp4",
   "rafting": "/videos/activities/canoeing.mp4",
   "trekking": "/videos/activities/motor-boat.mp4",
+  "river-rafting": "/videos/activities/canoeing2.mp4",
 };
 
 const filterToActivityCategories: Record<MapCategory, ActivityCategory[]> = {

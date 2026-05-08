@@ -206,7 +206,7 @@ const InteractiveMapSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <span className="text-primary font-semibold text-sm uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full">Interactive Map</span>
+          {/* <span className="text-primary font-semibold text-sm uppercase tracking-widest bg-primary/10 px-4 py-1.5 rounded-full">Interactive Map</span> */}
           <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mt-4">Explore Madhya Pradesh</h2>
           <div className="section-divider my-4" />
           <p className="text-muted-foreground max-w-2xl mx-auto">Select categories to filter destinations — multi-select supported</p>

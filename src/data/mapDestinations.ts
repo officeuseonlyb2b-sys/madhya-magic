@@ -63,15 +63,7 @@ export const mapDestinations: MapDestination[] = [
     x: 59.995,
     y: 85.8873,
   },
-  {
-    id: "sanjay-dubri",
-    name: "Sanjay Dubri National Park",
-    category: ["Wildlife"],
-    image: sanjayDubriImg,
-    description: "Remote wilderness on the MP-Chhattisgarh border, home to tigers, leopards, and wild dogs.",
-    x: 89.5826,
-    y: 51.0164,
-  },
+
   {
     id: "panna",
     name: "Panna National Park",
@@ -81,6 +73,7 @@ export const mapDestinations: MapDestination[] = [
     x: 70.1739,
     y: 38.1872,
   },
+
   {
     id: "kanha",
     name: "Kanha National Park",
@@ -90,6 +83,7 @@ export const mapDestinations: MapDestination[] = [
     x: 65.9023,
     y: 63.9536,
   },
+
   {
     id: "satpura",
     name: "Satpura National Park",
@@ -99,6 +93,7 @@ export const mapDestinations: MapDestination[] = [
     x: 50.7536,
     y: 75.5089,
   },
+
   {
     id: "bandhavgarh",
     name: "Bandhavgarh National Park",
@@ -108,15 +103,7 @@ export const mapDestinations: MapDestination[] = [
     x: 80.2666,
     y: 41.8638,
   },
-  {
-    id: "mukundpur",
-    name: "Mukundpur White Tiger Safari & Zoo",
-    category: ["Wildlife"],
-    image: mukundpurImg,
-    description: "India's first white tiger safari and zoo, home to rare white tigers and diverse fauna.",
-    x: 80.7883,
-    y: 39.6807,
-  },
+
   {
     id: "kuno",
     name: "Kuno National Park",
@@ -126,6 +113,17 @@ export const mapDestinations: MapDestination[] = [
     x: 39.8804,
     y: 25.5814,
   },
+
+  {
+    id: "mukundpur",
+    name: "Mukundpur White Tiger Safari & Zoo",
+    category: ["Wildlife"],
+    image: mukundpurImg,
+    description: "India's first white tiger safari and zoo, home to rare white tigers and diverse fauna.",
+    x: 80.7883,
+    y: 39.6807,
+  },
+
   {
     id: "madhav",
     name: "Madhav National Park",
@@ -136,43 +134,21 @@ export const mapDestinations: MapDestination[] = [
     y: 26.0759,
   },
 
+
+  {
+    id: "sanjay-dubri",
+    name: "Sanjay Dubri National Park",
+    category: ["Wildlife"],
+    image: sanjayDubriImg,
+    description: "Remote wilderness on the MP-Chhattisgarh border, home to tigers, leopards, and wild dogs.",
+    x: 89.5826,
+    y: 51.0164,
+  },
+
+
+
   // ─── Heritage ───
-  {
-    id: "khajuraho",
-    name: "Khajuraho",
-    category: ["Heritage"],
-    image: khajurahoImg,
-    description: "UNESCO World Heritage temples with exquisite medieval sculptures from the Chandela dynasty.",
-    x: 66.3299,
-    y: 34.4156,
-  },
-  {
-    id: "udayagiri",
-    name: "Udayagiri Caves",
-    category: ["Heritage"],
-    image: udayagiriImg,
-    description: "Gupta-era rock-cut caves near Vidisha with stunning Hindu and Jain carvings.",
-    x: 46.5055,
-    y: 38.4899,
-  },
-  {
-    id: "chanderi",
-    name: "Chanderi",
-    category: ["Heritage"],
-    image: chanderiImg,
-    description: "Ancient silk-weaving town with Jain rock-cut temples and medieval fort gates.",
-    x: 42.3319,
-    y: 54.4836,
-  },
-  {
-    id: "indore",
-    name: "Indore",
-    category: ["Heritage"],
-    image: indoreImg,
-    description: "MP's commercial capital with Rajwada Palace, Lal Bagh, and vibrant street food culture.",
-    x: 21.6131,
-    y: 71.493,
-  },
+
   {
     id: "bhopal",
     name: "Bhopal",
@@ -183,15 +159,6 @@ export const mapDestinations: MapDestination[] = [
     y: 59.095,
   },
   {
-    id: "bhimbetka",
-    name: "Bhimbetka Rock Shelters",
-    category: ["Heritage"],
-    image: bhimbetkaImg,
-    description: "UNESCO site with prehistoric cave paintings dating back 30,000 years.",
-    x: 40.6923,
-    y: 63.9281,
-  },
-  {
     id: "gwalior",
     name: "Gwalior",
     category: ["Heritage"],
@@ -199,6 +166,15 @@ export const mapDestinations: MapDestination[] = [
     description: "One of India's most impregnable forts, with stunning Tomar-era palaces and Jain sculptures.",
     x: 48.09,
     y: 12.7131,
+  },
+  {
+    id: "khajuraho",
+    name: "Khajuraho",
+    category: ["Heritage"],
+    image: khajurahoImg,
+    description: "UNESCO World Heritage temples with exquisite medieval sculptures from the Chandela dynasty.",
+    x: 66.3299,
+    y: 34.4156,
   },
   {
     id: "maheshwar",
@@ -237,13 +213,31 @@ export const mapDestinations: MapDestination[] = [
     y: 19.8695,
   },
   {
-    id: "burhanpur",
-    name: "Burhanpur",
+    id: "chanderi",
+    name: "Chanderi",
     category: ["Heritage"],
-    image: burhanpurImg,
-    description: "Mughal-era city where Shah Jahan conceived the idea of the Taj Mahal.",
-    x: 25.7867,
-    y: 95.11,
+    image: chanderiImg,
+    description: "Ancient silk-weaving town with Jain rock-cut temples and medieval fort gates.",
+    x: 42.3319,
+    y: 54.4836,
+  },
+  {
+    id: "bhimbetka",
+    name: "Bhimbetka Rock Shelters",
+    category: ["Heritage"],
+    image: bhimbetkaImg,
+    description: "UNESCO site with prehistoric cave paintings dating back 30,000 years.",
+    x: 40.6923,
+    y: 63.9281,
+  },
+  {
+    id: "indore",
+    name: "Indore",
+    category: ["Heritage"],
+    image: indoreImg,
+    description: "MP's commercial capital with Rajwada Palace, Lal Bagh, and vibrant street food culture.",
+    x: 21.6131,
+    y: 71.493,
   },
   {
     id: "mandu",
@@ -255,7 +249,39 @@ export const mapDestinations: MapDestination[] = [
     y: 80.0969,
   },
 
+  {
+    id: "burhanpur",
+    name: "Burhanpur",
+    category: ["Heritage"],
+    image: burhanpurImg,
+    description: "Mughal-era city where Shah Jahan conceived the idea of the Taj Mahal.",
+    x: 25.7867,
+    y: 95.11,
+  },
+  {
+    id: "udayagiri",
+    name: "Udayagiri Caves",
+    category: ["Heritage"],
+    image: udayagiriImg,
+    description: "Gupta-era rock-cut caves near Vidisha with stunning Hindu and Jain carvings.",
+    x: 46.5055,
+    y: 38.4899,
+  },
+
+
+
   // ─── Spiritual ───
+
+  {
+    id: "ujjain",
+    name: "Ujjain",
+    category: ["Spiritual"],
+    image: ujjainImg,
+    description: "Ancient city of temples, the sacred Kumbh Mela destination, and Mahakaleshwar Jyotirlinga.",
+    x: 19.9735,
+    y: 63.2743,
+  },
+
   {
     id: "omkareshwar",
     name: "Omkareshwar",
@@ -301,15 +327,7 @@ export const mapDestinations: MapDestination[] = [
     x: 74.3044,
     y: 43.7667,
   },
-  {
-    id: "ujjain",
-    name: "Ujjain",
-    category: ["Spiritual"],
-    image: ujjainImg,
-    description: "Ancient city of temples, the sacred Kumbh Mela destination, and Mahakaleshwar Jyotirlinga.",
-    x: 19.9735,
-    y: 63.2743,
-  },
+
   {
     id: "mandsaur",
     name: "Mandsaur",
@@ -330,24 +348,17 @@ export const mapDestinations: MapDestination[] = [
   },
 
   // ─── Nature ───
+
   {
-    id: "tawa",
-    name: "Tawa",
+    id: "pachmarhi",
+    name: "Pachmarhi",
     category: ["Nature"],
-    image: tawaImg,
-    description: "Vast scenic reservoir perfect for boating, fishing, and sunset views.",
-    x: 43.8267,
-    y: 74.1184,
+    image: pachmarhiImg,
+    description: "Queen of Satpura — MP's only hill station with waterfalls, caves, and panoramic viewpoints.",
+    x: 51.346,
+    y: 51.8657,
   },
-  {
-    id: "hanuwantiya",
-    name: "Hanuwantiya",
-    category: ["Nature"],
-    image: hanuwantiyaImg,
-    description: "MP's premier water sports and adventure island resort on Indira Sagar Dam.",
-    x: 26.6201,
-    y: 86.1617,
-  },
+
   {
     id: "bhedaghat",
     name: "Bhedaghat",
@@ -357,24 +368,7 @@ export const mapDestinations: MapDestination[] = [
     x: 67.3602,
     y: 64.1171,
   },
-  {
-    id: "parsili",
-    name: "Parsili",
-    category: ["Nature"],
-    image: parsiliImg,
-    description: "Pristine forest retreat near Sanjay Dubri with lush greenery, rivers and serene nature trails.",
-    x: 77.6582,
-    y: 55.8262,
-  },
-  {
-    id: "tamia",
-    name: "Tamia",
-    category: ["Nature"],
-    image: tamiaImg,
-    description: "Hidden hill station with misty valleys, tribal culture, and the famous Patalkot viewpoint.",
-    x: 53.4618,
-    y: 77.5257,
-  },
+
   {
     id: "sailani",
     name: "Sailani Island",
@@ -385,14 +379,46 @@ export const mapDestinations: MapDestination[] = [
     y: 78.8478,
   },
   {
-    id: "pachmarhi",
-    name: "Pachmarhi",
+    id: "tawa",
+    name: "Tawa",
     category: ["Nature"],
-    image: pachmarhiImg,
-    description: "Queen of Satpura — MP's only hill station with waterfalls, caves, and panoramic viewpoints.",
-    x: 51.346,
-    y: 51.8657,
+    image: tawaImg,
+    description: "Vast scenic reservoir perfect for boating, fishing, and sunset views.",
+    x: 43.8267,
+    y: 74.1184,
   },
+
+  {
+    id: "tamia",
+    name: "Tamia",
+    category: ["Nature"],
+    image: tamiaImg,
+    description: "Hidden hill station with misty valleys, tribal culture, and the famous Patalkot viewpoint.",
+    x: 53.4618,
+    y: 77.5257,
+  },
+  {
+    id: "hanuwantiya",
+    name: "Hanuwantiya",
+    category: ["Nature"],
+    image: hanuwantiyaImg,
+    description: "MP's premier water sports and adventure island resort on Indira Sagar Dam.",
+    x: 26.6201,
+    y: 86.1617,
+  },
+
+  {
+    id: "parsili",
+    name: "Parsili",
+    category: ["Nature"],
+    image: parsiliImg,
+    description: "Pristine forest retreat near Sanjay Dubri with lush greenery, rivers and serene nature trails.",
+    x: 77.6582,
+    y: 55.8262,
+  },
+
+
+
 ];
 // Dropdown navigation structure
 export const exploreCategories: Record<MapCategory, { label: string; icon: string; destinations: { id: string; name: string }[] }> = {
@@ -400,33 +426,36 @@ export const exploreCategories: Record<MapCategory, { label: string; icon: strin
     label: "🌄 Nature",
     icon: "🌄",
     destinations: [
-      { id: "tawa", name: "Tawa" },
-      { id: "hanuwantiya", name: "Hanuwantiya" },
-      { id: "bhedaghat", name: "Bhedaghat" },
-      { id: "parsili", name: "Parsili" },
-      { id: "tamia", name: "Tamia" },
-      { id: "sailani", name: "Sailani Island" },
       { id: "pachmarhi", name: "Pachmarhi" },
+      { id: "bhedaghat", name: "Bhedaghat" },
+      { id: "sailani", name: "Sailani Island" },
+      { id: "tawa", name: "Tawa" },
+      { id: "tamia", name: "Tamia" },
+      { id: "hanuwantiya", name: "Hanuwantiya" },
+      { id: "parsili", name: "Parsili" },
+
+
+
     ],
   },
   Heritage: {
     label: "🏛️ Heritage",
     icon: "🏛️",
     destinations: [
-      { id: "khajuraho", name: "Khajuraho" },
-      { id: "udayagiri", name: "Udayagiri Caves" },
-      { id: "chanderi", name: "Chanderi" },
-      { id: "indore", name: "Indore" },
       { id: "bhopal", name: "Bhopal" },
-      { id: "bhimbetka", name: "Bhimbetka Rock Shelters" },
       { id: "gwalior", name: "Gwalior" },
+      { id: "khajuraho", name: "Khajuraho" },
       { id: "maheshwar", name: "Maheshwar" },
-      // { id: "khandwa", name: "Khandwa" },
       { id: "orchha", name: "Orchha" },
       { id: "datia", name: "Datia" },
       { id: "shivpuri", name: "Shivpuri" },
-      { id: "burhanpur", name: "Burhanpur" },
+      { id: "chanderi", name: "Chanderi" },
+      { id: "bhimbetka", name: "Bhimbetka Rock Shelters" },
+      { id: "indore", name: "Indore" },
       { id: "mandu", name: "Mandu" },
+      { id: "burhanpur", name: "Burhanpur" },
+      { id: "udayagiri", name: "Udayagiri Caves" },
+      // { id: "khandwa", name: "Khandwa" },    
       // { id: "vidisha", name: "Vidisha" },
     ],
   },
@@ -435,29 +464,29 @@ export const exploreCategories: Record<MapCategory, { label: string; icon: strin
     icon: "🐅",
     destinations: [
       { id: "pench", name: "Pench National Park" },
-      { id: "sanjay-dubri", name: "Sanjay Dubri National Park" },
       { id: "panna", name: "Panna National Park" },
       { id: "kanha", name: "Kanha National Park" },
       { id: "satpura", name: "Satpura National Park" },
       { id: "bandhavgarh", name: "Bandhavgarh National Park" },
-      { id: "mukundpur", name: "Mukundpur White Tiger Safari & Zoo" },
       { id: "kuno", name: "Kuno National Park" },
+      { id: "mukundpur", name: "Mukundpur White Tiger Safari & Zoo" },
       { id: "madhav", name: "Madhav National Park" },
+      { id: "sanjay-dubri", name: "Sanjay Dubri National Park" },
     ],
   },
   Spiritual: {
     label: "🛕 Spiritual",
     icon: "🛕",
     destinations: [
+      { id: "ujjain", name: "Ujjain" },
       { id: "omkareshwar", name: "Omkareshwar" },
       { id: "bhojpur", name: "Bhojpur" },
       { id: "chitrakoot", name: "Chitrakoot" },
       { id: "amarkantak", name: "Amarkantak" },
       { id: "maihar", name: "Maihar" },
-      { id: "ujjain", name: "Ujjain" },
-      { id: "datia", name: "Datia" },
       { id: "mandsaur", name: "Mandsaur" },
       { id: "sonagiri", name: "Sonagiri" },
+      { id: "datia", name: "Datia" },
     ],
   },
 };
