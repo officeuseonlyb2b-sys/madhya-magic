@@ -5,6 +5,7 @@ const slides = [
   {
     key: "nature",
     src: "/videos/hero/jabalpur.mp4",
+    poster: "/videos/posters/hero_jabalpur.jpg",
     alt: "Nature landscapes of Madhya Pradesh",
     badge: "🌿 Pristine Wilderness",
     titleLine1: "Breathtaking",
@@ -15,6 +16,7 @@ const slides = [
   {
     key: "heritage",
     src: "/videos/hero/maheshwar.mp4",
+    poster: "/videos/posters/hero_maheshwar.jpg",
     alt: "Heritage temples of Madhya Pradesh",
     badge: "🏛️ Timeless Legacy",
     titleLine1: "Ancient",
@@ -25,6 +27,7 @@ const slides = [
   {
     key: "wildlife",
     src: "/videos/hero/wildlife.mp4",
+    poster: "/videos/posters/hero_wildlife.jpg",
     alt: "Wildlife safari in Madhya Pradesh",
     badge: "🐅 Roar of the Wild",
     titleLine1: "Thrilling",
@@ -35,6 +38,7 @@ const slides = [
   {
     key: "spiritual",
     src: "/videos/hero/ujjain.mp4",
+    poster: "/videos/posters/hero_ujjain.jpg",
     alt: "Spiritual destinations of Madhya Pradesh",
     badge: "🕉️ Divine Serenity",
     titleLine1: "Sacred",
@@ -146,11 +150,12 @@ const HeroSection = () => {
                 videoRefs.current[currentSlide.key] = el;
               }}
               src={currentSlide.src}
+              poster={currentSlide.poster}
               autoPlay
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               aria-label={currentSlide.alt}
               className="w-full h-full object-cover"
             />
