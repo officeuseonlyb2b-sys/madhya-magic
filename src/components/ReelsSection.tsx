@@ -33,7 +33,7 @@ const ReelVideo = ({ reel, isHovered }: { reel: ReelItem; isHovered: boolean }) 
         muted
         loop
         playsInline
-        preload="metadata"
+        preload="none"
         className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
       />
     </div>

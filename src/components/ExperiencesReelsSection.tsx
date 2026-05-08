@@ -57,10 +57,11 @@ const ExperienceCard = ({
           <video
             ref={videoRef}
             src={exp.video}
+            poster={exp.image}
             muted
             loop
             playsInline
-            preload="metadata"
+            preload="none"
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hovered ? "opacity-100" : "opacity-0"}`}
           />
         )}
