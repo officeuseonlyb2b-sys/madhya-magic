@@ -165,16 +165,16 @@ const AdvancedMonthSelector = ({
         <ChevronDown size={14} className={`text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`} />
       </button>
 
-      {/* Popover — Google Calendar style mini month grid */}
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -6, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -6, scale: 0.98 }}
-            transition={{ duration: 0.15 }}
-            className="absolute z-30 mt-2 left-0 right-0 sm:right-auto sm:w-[280px] bg-white rounded-xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-3"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-30 overflow-hidden"
           >
+            <div className="mt-2 sm:w-[280px] bg-white rounded-xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-3">
             {/* Header */}
             <div className="flex items-center justify-between mb-2 px-1">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
