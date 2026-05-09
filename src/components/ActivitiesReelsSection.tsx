@@ -2,63 +2,85 @@ import { motion } from "framer-motion";
 import { useMemo, useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
-import { activitiesData, type ActivityCategory } from "@/data/activitiesData";
 import { useFilters } from "@/contexts/FilterContext";
 import type { MapCategory } from "@/data/mapDestinations";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import {
+  activityReelsData,
+  type ActivityReel,
+  type ActivityReelCategory,
+} from "@/data/activityReelsData";
 
-const activityReels = [
-  { id: "jungle-jeep-safari" },
-  { id: "walking-tour" },
-  { id: "boat-safari" },
-  { id: "camping" },
-  { id: "hot-air-balloon" },
-  { id: "jungle-walk" },
-  { id: "rafting" },
-  { id: "trekking" },
-];
-
-// Map activity id -> video file in /public/videos/activities
-const activityVideos: Record<string, string> = {
-  "jungle-jeep-safari": "/videos/activities/jungle-jeep-safari.mp4",
-  "walking-tour": "/videos/activities/walking-tour.mp4",
-  "boat-safari": "/videos/activities/boat-safari.mp4",
-  "camping": "/videos/activities/camping.mp4",
-  "hot-air-balloon": "/videos/activities/hot-air-balloon.mp4",
-  "jungle-walk": "/videos/activities/jungle-walk.mp4",
-  "rafting": "/videos/activities/canoeing.mp4",
-  "trekking": "/videos/activities/motor-boat.mp4",
-  "river-rafting": "/videos/activities/canoeing2.mp4",
-};
-
-const filterToActivityCategories: Record<MapCategory, ActivityCategory[]> = {
+// Map global filter category -> activity reel categories
+const filterToActivityCategories: Record<MapCategory, ActivityReelCategory[]> = {
   Wildlife: ["Wildlife"],
   Heritage: ["Heritage"],
   Nature: ["Nature", "Adventure"],
-  Spiritual: ["Heritage"],
+  Spiritual: ["Heritage", "Spiritual"],
 };
 
-const ActivityCard = ({
-  activity,
-  index,
-}: {
-  activity: typeof activitiesData[0];
-  index: number;
-}) => {
+// ----- Single reel card with hover-to-play video -----
+const ActivityCard = ({ reel, index }: { reel: ActivityReel; index: number }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const src = activityVideos[activity.id];
   const [hovered, setHovered] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
     if (hovered) {
+      // Lazy-load: only fetch the video when user hovers
+      if (!loaded) {
+        v.load();
+        setLoaded(true);
+      }
       v.play().catch(() => {});
     } else {
       v.pause();
       try { v.currentTime = 0; } catch {}
     }
-  }, [hovered]);
+  }, [hovered, loaded]);
+
+  const Inner = (
+    <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer bg-black">
+      <img
+        src={reel.thumbnail}
+        alt={reel.title}
+        loading="lazy"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hovered ? "opacity-0" : "opacity-100"}`}
+      />
+      <video
+        ref={videoRef}
+        src={reel.video}
+        poster={reel.thumbnail}
+        muted
+        loop
+        playsInline
+        preload="none"
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hovered ? "opacity-100" : "opacity-0"}`}
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+
+      <div className="absolute top-4 left-4">
+        <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/80 backdrop-blur-md text-white shadow-lg">
+          {reel.category}
+        </span>
+      </div>
+
+      <div className="absolute bottom-6 left-6 right-6 text-white">
+        <h3 className="text-lg font-bold line-clamp-1">{reel.title}</h3>
+        <div className="flex items-center gap-1 text-xs mt-1 opacity-90">
+          <MapPin size={12} />
+          <span>{reel.location}</span>
+        </div>
+        <span className="inline-flex items-center gap-2 mt-3 text-xs uppercase tracking-widest">
+          Explore
+          <ArrowRight size={14} />
+        </span>
+      </div>
+    </div>
+  );
 
   return (
     <motion.div
@@ -71,48 +93,7 @@ const ActivityCard = ({
       onTouchEnd={() => setHovered(false)}
       className="reel-card w-[220px] sm:w-[240px] lg:w-[260px] flex-shrink-0 rounded-3xl"
     >
-      <Link to={`/activities/${activity.id}`}>
-        <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer bg-black">
-          <img
-            src={activity.image}
-            alt={activity.name}
-            loading="lazy"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${src && hovered ? "opacity-0" : "opacity-100"}`}
-          />
-          {src && (
-            <video
-              ref={videoRef}
-              src={src}
-              poster={activity.image}
-              muted
-              loop
-              playsInline
-              preload="none"
-              className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hovered ? "opacity-100" : "opacity-0"}`}
-            />
-          )}
-
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-
-          <div className="absolute top-4 left-4">
-            <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/80 backdrop-blur-md text-white shadow-lg">
-              {activity.category}
-            </span>
-          </div>
-
-          <div className="absolute bottom-6 left-6 right-6 text-white">
-            <h3 className="text-lg font-bold line-clamp-1">{activity.name}</h3>
-            <div className="flex items-center gap-1 text-xs mt-1 opacity-90">
-              <MapPin size={12} />
-              <span>{activity.locations[0]}</span>
-            </div>
-            <span className="inline-flex items-center gap-2 mt-3 text-xs uppercase tracking-widest">
-              Explore
-              <ArrowRight size={14} />
-            </span>
-          </div>
-        </div>
-      </Link>
+      {reel.link ? <Link to={reel.link}>{Inner}</Link> : Inner}
     </motion.div>
   );
 };
@@ -121,23 +102,18 @@ const ActivitiesReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
   const { ref, onMouseEnter, onMouseLeave } = useAutoScroll<HTMLDivElement>(-55);
 
-  const reelActivities = useMemo(() => {
-    const base = activityReels
-      .map((r) => activitiesData.find((a) => a.id === r.id))
-      .filter(Boolean) as typeof activitiesData;
-
-    if (isAll) return base;
-    const allowed = new Set<ActivityCategory>();
+  // Filter reels based on the global category filter
+  const reels = useMemo(() => {
+    if (isAll) return activityReelsData;
+    const allowed = new Set<ActivityReelCategory>();
     selectedFilters.forEach((f) => {
       filterToActivityCategories[f]?.forEach((c) => allowed.add(c));
     });
-    return base.filter((a) => allowed.has(a.category));
+    return activityReelsData.filter((a) => allowed.has(a.category));
   }, [selectedFilters, isAll]);
 
-  const sliderData = useMemo(
-    () => [...reelActivities, ...reelActivities],
-    [reelActivities]
-  );
+  // Duplicate list for seamless infinite-scroll loop
+  const sliderData = useMemo(() => [...reels, ...reels], [reels]);
 
   return (
     <section className="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
@@ -157,12 +133,8 @@ const ActivitiesReelsSection = () => {
               className="reel-scroller overflow-x-auto no-scrollbar order-1 py-4"
             >
               <div className="reel-track flex gap-5 w-max items-center">
-                {sliderData.map((act, i) => (
-                  <ActivityCard
-                    key={`${act.id}-${i}`}
-                    activity={act}
-                    index={i}
-                  />
+                {sliderData.map((reel, i) => (
+                  <ActivityCard key={`${reel.id}-${i}`} reel={reel} index={i} />
                 ))}
               </div>
             </div>
