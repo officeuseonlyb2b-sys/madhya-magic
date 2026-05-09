@@ -302,7 +302,7 @@ const AdvancedDestinationSelector = ({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute z-20 mt-2 w-full bg-card border border-border rounded-xl shadow-xl p-2 max-h-64 overflow-auto"
+            className="absolute z-50 mt-2 left-0 right-0 sm:w-[300px] bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto"
           >
             <div className="flex items-center gap-2 px-2 py-1.5 bg-muted/50 rounded-lg mb-2">
               <Search size={14} className="text-muted-foreground" />
@@ -693,35 +693,26 @@ const Packages = () => {
     setDurationRange([minDays, maxDays]);
   }, [minPrice, maxPrice, minDays, maxDays]);
 
-  // 🔹 MP ALL MAJOR CITIES LIST (edit/add as needed)
+  // 🔹 MP Cities + Major Destinations / Landmarks
   const mpCities = [
-    "Ujjain",
-    "Indore",
-    "Jabalpur",
-    "Bhopal",
-    "Gwalior",
-    "Khajuraho",
-    "Orchha",
-    "Pachmarhi",
-    "Kanha",
-    "Bandhavgarh",
-    "Sanchi",
-    "Mandu",
-    "Maheshwar",
-    "Omkareshwar",
-    "Chitrakoot",
-    "Amarkantak",
-    "Panchmarhi",
-    "Satpura",
-    "Panna",
-    "Datia",
-    "Shivpuri",
-    "Chanderi",
-    "Burhanpur",
-    "Ratlam",
-    "Dewas",
-    "Sagar",
-  ];
+    // Cities
+    "Ujjain", "Indore", "Jabalpur", "Bhopal", "Gwalior", "Khajuraho",
+    "Orchha", "Pachmarhi", "Sanchi", "Mandu", "Maheshwar", "Omkareshwar",
+    "Chitrakoot", "Amarkantak", "Datia", "Shivpuri", "Chanderi",
+    "Burhanpur", "Ratlam", "Dewas", "Sagar", "Maihar", "Mandsaur", "Bhojpur",
+    // National Parks & Wildlife
+    "Kanha National Park", "Bandhavgarh National Park", "Pench National Park",
+    "Panna National Park", "Satpura National Park", "Kuno National Park",
+    "Madhav National Park", "Sanjay Dubri National Park",
+    "Mukundpur White Tiger Safari",
+    // Heritage / Landmark Destinations
+    "Bhimbetka Rock Shelters", "Udayagiri Caves", "Sonagiri",
+    "Sanchi Stupa", "Mahakaleshwar Temple", "Omkareshwar Jyotirlinga",
+    "Gwalior Fort", "Orchha Fort", "Khajuraho Temples", "Mandu Fort",
+    // Nature & Scenic
+    "Bhedaghat", "Marble Rocks", "Dhuandhar Falls",
+    "Sailani Island", "Tawa Reservoir", "Tamia", "Hanuwantiya", "Parsili",
+  ].sort();
 
   // Filtering logic
   const filtered = useMemo(() => {
@@ -1054,7 +1045,7 @@ const Packages = () => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                className="relative mt-2 rounded-2xl border border-border/30 shadow-[0_10px_40px_rgba(0,0,0,0.08)] overflow-hidden"
+                className="relative mt-2 rounded-2xl border border-border/30 shadow-[0_10px_40px_rgba(0,0,0,0.08)] overflow-visible"
               >
                 <div className="absolute inset-0 bg-white/80 backdrop-blur-xl" />
                 <div className="relative z-10 p-4">
