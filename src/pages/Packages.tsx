@@ -693,35 +693,26 @@ const Packages = () => {
     setDurationRange([minDays, maxDays]);
   }, [minPrice, maxPrice, minDays, maxDays]);
 
-  // 🔹 MP ALL MAJOR CITIES LIST (edit/add as needed)
+  // 🔹 MP Cities + Major Destinations / Landmarks
   const mpCities = [
-    "Ujjain",
-    "Indore",
-    "Jabalpur",
-    "Bhopal",
-    "Gwalior",
-    "Khajuraho",
-    "Orchha",
-    "Pachmarhi",
-    "Kanha",
-    "Bandhavgarh",
-    "Sanchi",
-    "Mandu",
-    "Maheshwar",
-    "Omkareshwar",
-    "Chitrakoot",
-    "Amarkantak",
-    "Panchmarhi",
-    "Satpura",
-    "Panna",
-    "Datia",
-    "Shivpuri",
-    "Chanderi",
-    "Burhanpur",
-    "Ratlam",
-    "Dewas",
-    "Sagar",
-  ];
+    // Cities
+    "Ujjain", "Indore", "Jabalpur", "Bhopal", "Gwalior", "Khajuraho",
+    "Orchha", "Pachmarhi", "Sanchi", "Mandu", "Maheshwar", "Omkareshwar",
+    "Chitrakoot", "Amarkantak", "Datia", "Shivpuri", "Chanderi",
+    "Burhanpur", "Ratlam", "Dewas", "Sagar", "Maihar", "Mandsaur", "Bhojpur",
+    // National Parks & Wildlife
+    "Kanha National Park", "Bandhavgarh National Park", "Pench National Park",
+    "Panna National Park", "Satpura National Park", "Kuno National Park",
+    "Madhav National Park", "Sanjay Dubri National Park",
+    "Mukundpur White Tiger Safari",
+    // Heritage / Landmark Destinations
+    "Bhimbetka Rock Shelters", "Udayagiri Caves", "Sonagiri",
+    "Sanchi Stupa", "Mahakaleshwar Temple", "Omkareshwar Jyotirlinga",
+    "Gwalior Fort", "Orchha Fort", "Khajuraho Temples", "Mandu Fort",
+    // Nature & Scenic
+    "Bhedaghat", "Marble Rocks", "Dhuandhar Falls",
+    "Sailani Island", "Tawa Reservoir", "Tamia", "Hanuwantiya", "Parsili",
+  ].sort();
 
   // Filtering logic
   const filtered = useMemo(() => {
