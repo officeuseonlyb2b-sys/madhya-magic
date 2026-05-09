@@ -109,19 +109,15 @@ const ReelsSection = () => {
 
           {/* LEFT */}
           <div className="text-center lg:text-left">
-            <span className="text-orange-500 uppercase text-xs sm:text-sm font-semibold tracking-widest">
-              Visual Stories
-            </span>
-
+            
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 sm:mt-4 leading-tight">
               Top Destinations
               <br />
-              Explore through cinematic reels
             </h2>
 
             <p className="text-gray-600 mt-4 sm:mt-5 text-sm sm:text-base">
               {isAll
-                ? "Discover cinematic moments from Madhya Pradesh's most breathtaking destinations."
+                ? "Discover the most iconic, hidden, and unforgettable corners of Madhya Pradesh."
                 : `Reels matching: ${selectedFilters.join(", ")}`}
             </p>
 
@@ -137,7 +133,7 @@ const ReelsSection = () => {
               </div>
 
               <span className="uppercase tracking-widest text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-orange-500 transition">
-                Watch All Reels
+                Discover all destinations
               </span>
             </Link>
           </div>

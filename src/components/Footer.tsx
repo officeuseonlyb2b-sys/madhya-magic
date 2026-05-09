@@ -1,4 +1,15 @@
-import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Youtube, Send, Clock, Award } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Facebook,
+  Twitter,
+  Youtube,
+  Send,
+  Clock,
+  Award,
+} from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -17,6 +28,7 @@ const Footer = () => {
       { name: "Gwalior", path: "/destination/gwalior" },
       { name: "Jabalupr", path: "/destination/jabalpur" },
     ],
+
     quickLinks: [
       { name: "Packages", href: "/#packages" },
       { name: "Experiences", href: "/#experiences" },
@@ -27,10 +39,33 @@ const Footer = () => {
   };
 
   const socialIcons = [
-    { Icon: Instagram, href: "https://instagram.com", label: "Instagram", color: "hover:bg-gradient-to-tr from-purple-500 to-pink-500" },
-    { Icon: Facebook, href: "https://facebook.com", label: "Facebook", color: "hover:bg-blue-600" },
-    { Icon: Twitter, href: "https://twitter.com", label: "Twitter", color: "hover:bg-sky-500" },
-    { Icon: Youtube, href: "https://youtube.com", label: "YouTube", color: "hover:bg-red-600" },
+    {
+      Icon: Instagram,
+      href: "https://instagram.com",
+      label: "Instagram",
+      color: "hover:bg-gradient-to-tr from-purple-500 to-pink-500",
+    },
+
+    {
+      Icon: Facebook,
+      href: "https://facebook.com",
+      label: "Facebook",
+      color: "hover:bg-blue-600",
+    },
+
+    {
+      Icon: Twitter,
+      href: "https://twitter.com",
+      label: "Twitter",
+      color: "hover:bg-sky-500",
+    },
+
+    {
+      Icon: Youtube,
+      href: "https://youtube.com",
+      label: "YouTube",
+      color: "hover:bg-red-600",
+    },
   ];
 
   return (
@@ -38,9 +73,11 @@ const Footer = () => {
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl animate-pulse" />
+
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
+
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
-        
+
         {/* Floating particles */}
         {[...Array(8)].map((_, i) => (
           <motion.div
@@ -52,8 +89,15 @@ const Footer = () => {
               x: [0, (Math.random() - 0.5) * 80],
               opacity: [0, 0.5, 0],
             }}
-            transition={{ duration: 10 + Math.random() * 15, repeat: Infinity, delay: Math.random() * 5 }}
-            style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+            transition={{
+              duration: 10 + Math.random() * 15,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
           />
         ))}
       </div>
@@ -72,15 +116,23 @@ const Footer = () => {
               <h2 className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
                 Enchanting MP
               </h2>
+
               <div className="w-12 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-500 mt-2" />
             </div>
+
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
-              Your gateway to exploring the heart of incredible India. Curated travel experiences across Madhya Pradesh — from ancient temples to roaring tigers.
+              Your gateway to exploring the heart of incredible India. Curated
+              travel experiences across Madhya Pradesh — from ancient temples to
+              roaring tigers.
             </p>
+
             <div className="flex items-center gap-2 mb-4">
               <Award size={16} className="text-amber-400" />
-              <span className="text-xs text-gray-400">Recognized by MP Tourism</span>
+              <span className="text-xs text-gray-400">
+                Recognized by MP Tourism
+              </span>
             </div>
+
             <div className="flex gap-3">
               {socialIcons.map((social, idx) => (
                 <motion.a
@@ -113,6 +165,7 @@ const Footer = () => {
               Top Destinations
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-amber-400 rounded-full" />
             </h4>
+
             <ul className="space-y-2.5 text-sm">
               {footerLinks.destinations.map((dest, idx) => (
                 <motion.li
@@ -144,6 +197,7 @@ const Footer = () => {
               Quick Links
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-amber-400 rounded-full" />
             </h4>
+
             <ul className="space-y-2.5 text-sm">
               {footerLinks.quickLinks.map((link, idx) => (
                 <motion.li
@@ -173,7 +227,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Contact Info Column - Updated Address & Phone */}
+          {/* Contact Info Column */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -184,43 +238,73 @@ const Footer = () => {
               Contact Us
               <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-amber-400 rounded-full" />
             </h4>
+
             <ul className="space-y-4 text-sm">
               <motion.li
                 whileHover={{ x: 5 }}
                 className="flex items-start gap-3 group"
               >
-                <MapPin size={18} className="shrink-0 mt-0.5 text-amber-400 group-hover:scale-110 transition-transform" />
+                <MapPin
+                  size={18}
+                  className="shrink-0 mt-0.5 text-amber-400 group-hover:scale-110 transition-transform"
+                />
+
                 <span className="text-gray-300 leading-relaxed">
-                  1st Floor, Jain Bhawan, Above Himalaya Wellness Centre,<br />
+                  1st Floor, Jain Bhawan, Above Himalaya Wellness Centre,
+                  <br />
                   Nayaa Bazaar, Gwalior, Madhya Pradesh – 474009 (India)
                 </span>
               </motion.li>
+
               <motion.li
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-3 group"
               >
-                <Phone size={18} className="text-amber-400 group-hover:scale-110 transition-transform" />
-                <a href="tel:+919109114934" className="text-gray-300 hover:text-amber-400 transition-colors">
+                <Phone
+                  size={18}
+                  className="text-amber-400 group-hover:scale-110 transition-transform"
+                />
+
+                <a
+                  href="tel:+919109114934"
+                  className="text-gray-300 hover:text-amber-400 transition-colors"
+                >
                   +91 9109114934
                 </a>
               </motion.li>
+
               <motion.li
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-3 group"
               >
-                <Mail size={18} className="text-amber-400 group-hover:scale-110 transition-transform" />
-                <a href="mailto:info@enchantingmp.com" className="text-gray-300 hover:text-amber-400 transition-colors">
+                <Mail
+                  size={18}
+                  className="text-amber-400 group-hover:scale-110 transition-transform"
+                />
+
+                <a
+                  href="mailto:info@enchantingmp.com"
+                  className="text-gray-300 hover:text-amber-400 transition-colors"
+                >
                   info@enchantingmp.com
                 </a>
               </motion.li>
+
               <motion.li
                 whileHover={{ x: 5 }}
                 className="flex items-center gap-3 group"
               >
-                <Clock size={18} className="text-amber-400 group-hover:scale-110 transition-transform" />
-                <span className="text-gray-300">Mon - Sat: 9:00 AM - 7:00 PM</span>
+                <Clock
+                  size={18}
+                  className="text-amber-400 group-hover:scale-110 transition-transform"
+                />
+
+                <span className="text-gray-300">
+                  Mon - Sat: 9:00 AM - 7:00 PM
+                </span>
               </motion.li>
             </ul>
+
             <div className="mt-6 pt-4 border-t border-white/10">
               <div className="flex items-center gap-2 text-xs text-gray-400">
                 <Send size={14} className="text-amber-400" />
@@ -241,16 +325,28 @@ const Footer = () => {
           <p>
             © {currentYear} Enchanting Madhya Pradesh. All rights reserved.
           </p>
+
           <div className="flex gap-6">
-            <a href="#" className="hover:text-amber-400 transition-colors duration-300">
+            <Link
+              to="/privacy-policy"
+              className="hover:text-amber-400 transition-colors duration-300"
+            >
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-amber-400 transition-colors duration-300">
+            </Link>
+
+            <Link
+              to="/terms-conditions"
+              className="hover:text-amber-400 transition-colors duration-300"
+            >
               Terms of Service
-            </a>
-            <a href="#" className="hover:text-amber-400 transition-colors duration-300">
+            </Link>
+
+            <Link
+              to="/cancellation-policy"
+              className="hover:text-amber-400 transition-colors duration-300"
+            >
               Cancellation Policy
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>

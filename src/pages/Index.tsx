@@ -1,7 +1,6 @@
 import { Suspense, lazy } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import KnowMPSection from "@/components/KnowMPSection";
 import { FilterProvider } from "@/contexts/FilterContext";
 import FloatingButtons from "@/components/FloatingButtons";
 
@@ -13,10 +12,11 @@ const ExperiencesReelsSection = lazy(() => import("@/components/ExperiencesReels
 const PackagesSection = lazy(() => import("@/components/PackagesSection"));
 const HomeCategoryShowcase = lazy(() => import("@/components/HomeCategoryShowcase"));
 const ReasonsToExploreMP = lazy(() => import("@/components/ReasonsToExploreMP"));
-const StatsSection = lazy(() => import("@/components/StatsSection"));
 const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
+const FAQSection = lazy(() => import("@/components/FAQSection"));
+const BookingStepsSection = lazy(() => import("@/components/BookingStepsSection"));
+const TravelInsightsSection = lazy(() => import("@/components/TravelInsightsSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
-const NewsletterSection = lazy(() => import("@/components/NewsletterSection"));
 const Footer = lazy(() => import("@/components/Footer"));
 
 const SectionFallback = () => (
@@ -30,7 +30,6 @@ const Index = () => (
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <KnowMPSection />
       <Suspense fallback={<SectionFallback />}>
         <InteractiveMapSection />
         <ReelsSection />
@@ -39,10 +38,14 @@ const Index = () => (
         <PackagesSection />
         <HomeCategoryShowcase />
         <ReasonsToExploreMP />
-        <StatsSection />
+
         <WhyChooseUs />
+        <FAQSection />
+        <BookingStepsSection />
+        <TravelInsightsSection />
+
+        
         <TestimonialsSection />
-        <NewsletterSection />
         <Footer />
       </Suspense>
       <FloatingButtons />

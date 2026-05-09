@@ -129,19 +129,15 @@ const ExperiencesReelsSection = () => {
 
           {/* LEFT TEXT */}
           <div className="text-center lg:text-left">
-            <span className="text-orange-500 uppercase text-xs sm:text-sm font-semibold tracking-widest">
-              Immersive Journeys
-            </span>
-
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 sm:mt-4 leading-tight">
-              Curated
+             Top Curated
               <br />
-              experiences
+              Experiences
             </h2>
 
             <p className="text-gray-600 mt-4 sm:mt-5 text-sm sm:text-base">
               {isAll
-                ? "From sacred rituals to wild safaris — once-in-a-lifetime moments in Madhya Pradesh."
+                ? "Moments that connect you with the wilderness, heritage, spirituality, and soul of Central India."
                 : `Experiences matching: ${selectedFilters.join(", ")}`}
             </p>
 

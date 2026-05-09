@@ -43,12 +43,12 @@ const ActivityCard = ({ reel, index }: { reel: ActivityReel; index: number }) =>
 
   const Inner = (
     <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer bg-black">
-      <img
+      {/* <img
         src={reel.thumbnail}
         alt={reel.title}
         loading="lazy"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hovered ? "opacity-0" : "opacity-100"}`}
-      />
+      /> */}
       <video
         ref={videoRef}
         src={reel.video}
@@ -142,17 +142,14 @@ const ActivitiesReelsSection = () => {
 
           {/* RIGHT TEXT */}
           <div className="text-center lg:text-left order-2">
-            <span className="text-orange-500 uppercase text-xs sm:text-sm font-semibold tracking-widest">
-              Things To Do
-            </span>
+            
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 sm:mt-4 leading-tight">
-              Top activities
+              Top Activities
               <br />
-              to experience
             </h2>
             <p className="text-gray-600 mt-4 sm:mt-5 text-sm sm:text-base">
               {isAll
-                ? "From thrilling safaris to peaceful river rides — explore the best activities in Madhya Pradesh."
+                ? "From thrilling adventures to cultural encounters — experience Madhya Pradesh beyond sightseeing."
                 : `Activities matching: ${selectedFilters.join(", ")}`}
             </p>
             <Link to="/activities" className="group mt-6 sm:mt-8 inline-flex items-center gap-3 sm:gap-4">

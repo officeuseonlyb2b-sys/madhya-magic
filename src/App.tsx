@@ -15,6 +15,9 @@ import Experiences from "./pages/Experiences.tsx";
 import CategoryPage from "./pages/CategoryPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import PrivacyPolicy from "@/components/PrivacyPolicy";
+import TermsConditions from "@/components/TermsConditions";
+import CancellationPolicy from "./components/CancellationPolicy";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +42,9 @@ const App = () => (
           <Route path="/spiritual" element={<CategoryPage />} />
           <Route path="/wildlife" element={<CategoryPage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/cancellation-policy" element={<CancellationPolicy />}/>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
