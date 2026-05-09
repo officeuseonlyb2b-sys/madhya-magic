@@ -1045,7 +1045,7 @@ const Packages = () => {
                 initial={{ height: 0, opacity: 0 }}
                 animate={{ height: "auto", opacity: 1 }}
                 exit={{ height: 0, opacity: 0 }}
-                className="relative mt-2 rounded-2xl border border-border/30 shadow-[0_10px_40px_rgba(0,0,0,0.08)] overflow-hidden"
+                className="relative mt-2 rounded-2xl border border-border/30 shadow-[0_10px_40px_rgba(0,0,0,0.08)] overflow-visible"
               >
                 <div className="absolute inset-0 bg-white/80 backdrop-blur-xl" />
                 <div className="relative z-10 p-4">
