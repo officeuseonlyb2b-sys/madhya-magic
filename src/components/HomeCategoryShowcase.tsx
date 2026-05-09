@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, ArrowLeft, Bookmark } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 import imgGetaway from "@/assets/travel-getaway.jpg";
 import imgWomen from "@/assets/travel-women.jpg";
@@ -12,399 +14,183 @@ import imgSeasonal from "@/assets/travel-seasonal.jpg";
 import imgGroup from "@/assets/travel-group.jpg";
 import imgLuxury from "@/assets/travel-luxury.jpg";
 
-/* ================= TYPES ================= */
 interface CategoryItem {
   label: string;
   description: string;
   image: string;
   query: string;
-  hasNested?: boolean;
 }
 
-/* ================= DATA ================= */
 const categories: CategoryItem[] = [
+  {
+    label: "Special Interest Tour Packages",
+    description:
+      "Thematic tours focused on wildlife, heritage, spirituality, art, or adventure.",
+    image: imgSpecial,
+    query: "?tourCategory=Special%20Interest%20Tours",
+  },
+  {
+    label: "Seasonal Tour Packages",
+    description:
+      "Curated experiences to celebrate the best of Madhya Pradesh during every season.",
+    image: imgSeasonal,
+    query: "?tourCategory=Seasonal%20Tours",
+  },
+  {
+    label: "Luxury / Experiential Exclusive Tour Packages",
+    description:
+      "High-end journeys with premium stays, unique activities, and immersive experiences.",
+    image: imgLuxury,
+    query: "?tourCategory=Luxury%20Experiential",
+  },
+  {
+    label: "School / College Exclusive Tour Packages",
+    description:
+      "Educational, safe, and fun-filled tours designed specifically for students and groups.",
+    image: imgGroup,
+    query: "?tourCategory=Group",
+  },
+  {
+    label: "VIP Guest Handling",
+    description:
+      "Specialized handling for high-profile guests in MP with comfort and security.",
+    image: imgWomen,
+    query: "?tourCategory=VIP",
+  },
   {
     label: "Quick Getaways",
     description:
-      "Short and refreshing 2–3 day trips for quick relaxation. Escape the city rush and rejuvenate with curated weekend escapes through the heart of Madhya Pradesh.",
+      "Short relaxing trips for weekend escapes and quick rejuvenation.",
     image: imgGetaway,
-    query: "?tourCategory=Quick%20Getaways",
+    query: "?tourCategory=Quick",
   },
   {
-    label: "Women Exclusive",
+    label: "Best Selling Tours",
     description:
-      "Safe and curated tours designed especially for women travellers. Travel confidently with female-led groups exploring culture, cuisine and heritage together.",
-    image: imgWomen,
-    query: "?tourCategory=Women%20Exclusive",
-  },
-  {
-    label: "Special Interest Tours",
-    description:
-      "Theme-based journeys including heritage, wildlife and culture. Dive deep into your passion with expert-guided experiences crafted around what fascinates you most.",
-    image: imgSpecial,
-    query: "?tourCategory=Special%20Interest%20Tours",
-    hasNested: true,
-  },
-  {
-    label: "Best-Selling Tours",
-    description:
-      "Most popular and customer loved packages. Tried, tested and treasured by thousands of travellers — these signature itineraries deliver unforgettable moments.",
+      "Most loved and top-rated travel experiences by our customers.",
     image: imgBestselling,
-    query: "?tourCategory=Best-Selling%20Tours",
+    query: "?tourCategory=Best",
   },
   {
-    label: "Senior Citizen",
+    label: "Senior Citizen Tours",
     description:
-      "Relaxed and comfortable travel for senior travellers. Slower pace, premium comfort, and thoughtfully designed itineraries that prioritise wellness and ease.",
+      "Comfortable and slow-paced travel specially designed for seniors.",
     image: imgSenior,
-    query: "?tourCategory=Senior%20Citizen",
-  },
-  {
-    label: "Seasonal Tours",
-    description:
-      "Travel based on monsoon, winter and summer. Discover Madhya Pradesh in its most magical seasonal moods — lush greens, golden sunsets and crisp winter mornings.",
-    image: imgSeasonal,
-    query: "?tourCategory=Seasonal%20Tours",
-    hasNested: true,
-  },
-  {
-    label: "Group Join-in",
-    description:
-      "Join group departures and meet fellow travellers. Make new friends and share unforgettable adventures with like-minded explorers from across the country.",
-    image: imgGroup,
-    query: "?tourCategory=Group%20Join-in",
-  },
-  {
-    label: "Luxury & Experiential",
-    description:
-      "Premium curated luxury travel experiences. Stay in heritage palaces, dine like royalty, and travel through Madhya Pradesh in unmatched style and comfort.",
-    image: imgLuxury,
-    query: "?tourCategory=Luxury%20%26%20Experiential",
+    query: "?tourCategory=Senior",
   },
 ];
 
-/* ================= CARD ================= */
-interface CardProps {
-  item: CategoryItem;
-  index: number;
-  active: boolean;
-  distance: number;
-  onTap: () => void;
-}
-
-const CategoryCard = ({ item, active, distance, onTap }: CardProps) => {
-  const targetOpacity = active ? 1 : distance === 1 ? 0.8 : 0.58;
-  const targetScale = active ? 1 : distance === 1 ? 0.9 : 0.8;
-  const targetY = active ? -6 : distance === 1 ? 10 : 18;
-
-  const sizeClass = active
-    ? "w-[220px] h-[320px] sm:w-[240px] sm:h-[340px] xl:w-[260px] xl:h-[360px]"
-    : distance === 1
-      ? "w-[170px] h-[260px] sm:w-[180px] sm:h-[275px] xl:w-[190px] xl:h-[290px]"
-      : "w-[140px] h-[220px] sm:w-[155px] sm:h-[235px] xl:w-[170px] xl:h-[255px]";
-
-  return (
-    <motion.div
-      onClick={onTap}
-      layout
-      initial={{ opacity: 0, scale: 0.72, x: 120 }}
-      animate={{
-        opacity: targetOpacity,
-        scale: targetScale,
-        x: 0,
-        y: targetY,
-      }}
-      exit={{ opacity: 0, scale: 0.72, x: -120, y: 8 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={!active ? { y: -4, opacity: 1 } : undefined}
-      className={`relative shrink-0 cursor-pointer rounded-[28px] overflow-hidden ${sizeClass} ${
-        active
-          ? "ring-2 ring-orange-400/80 shadow-[0_25px_60px_-15px_rgba(251,146,60,0.6)]"
-          : "shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5)]"
-      }`}
-    >
-      <img
-        src={item.image}
-        alt={item.label}
-        loading="lazy"
-        className="w-full h-full object-cover transition-transform duration-[1200ms] ease-out hover:scale-110"
-      />
-
-
-      {/* Bookmark icon top-right */}
-      <div className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-center text-white">
-        <Bookmark size={15} />
-      </div>
-
-      {/* Dot indicators */}
-      <div className="absolute top-4 left-4 flex gap-1.5">
-        {[0, 1, 2, 3].map((i) => (
-          <span
-            key={i}
-            className={`h-1 rounded-full transition-all ${
-              i === 0 ? "w-4 bg-white" : "w-1 bg-white/50"
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Bottom label */}
-      <div className="absolute bottom-4 left-4 right-4">
-        <h4 className="text-white text-base font-semibold drop-shadow-lg leading-tight">
-          {item.label}
-        </h4>
-      </div>
-    </motion.div>
-  );
-};
-
-/* ================= MAIN ================= */
 const HomeCategoryShowcase = () => {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const len = categories.length;
+  const [startIndex, setStartIndex] = useState(0);
 
-  const resumeTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const isInteractingRef = useRef(false);
+  const nextSlide = () => {
+    setStartIndex((prev) =>
+      prev + 1 >= categories.length - 4 ? 0 : prev + 1
+    );
+  };
 
-  const activeItem = categories[activeIdx];
+  const prevSlide = () => {
+    setStartIndex((prev) =>
+      prev === 0 ? categories.length - 5 : prev - 1
+    );
+  };
 
-  const pauseAuto = useCallback(() => {
-    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
-    setIsPaused(true);
-  }, []);
-
-  const scheduleResume = useCallback((delay = 2500) => {
-    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
-    resumeTimerRef.current = setTimeout(() => {
-      if (!isInteractingRef.current) setIsPaused(false);
-    }, delay);
-  }, []);
-
-  useEffect(() => () => {
-    if (resumeTimerRef.current) clearTimeout(resumeTimerRef.current);
-  }, []);
-
-  /* Auto-advance every 5s */
-  useEffect(() => {
-    if (isPaused) return;
-    const timer = setInterval(() => {
-      setActiveIdx((prev) => (prev + 1) % len);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, [isPaused, len]);
-
-  const goTo = useCallback(
-    (dir: 1 | -1) => {
-      pauseAuto();
-      setActiveIdx((prev) => (prev + dir + len) % len);
-      scheduleResume();
-    },
-    [len, pauseAuto, scheduleResume]
+  const visibleCards = categories.slice(
+    startIndex,
+    startIndex + 5
   );
 
-  // Drag handling for the slider track
-  const dragStartRef = useRef<{ x: number; id: number } | null>(null);
-  const onPointerDown = (e: React.PointerEvent) => {
-    isInteractingRef.current = true;
-    pauseAuto();
-    dragStartRef.current = { x: e.clientX, id: e.pointerId };
-    (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
-  };
-  const onPointerUp = (e: React.PointerEvent) => {
-    const start = dragStartRef.current;
-    dragStartRef.current = null;
-    isInteractingRef.current = false;
-    if (start) {
-      const dx = e.clientX - start.x;
-      if (Math.abs(dx) > 40) {
-        setActiveIdx((prev) => (prev + (dx < 0 ? 1 : -1) + len) % len);
-      }
-    }
-    scheduleResume();
-  };
-
-  const wheelLockRef = useRef(false);
-  const onWheel = (e: React.WheelEvent) => {
-    const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
-    if (Math.abs(delta) < 8 || wheelLockRef.current) return;
-    wheelLockRef.current = true;
-    goTo(delta > 0 ? 1 : -1);
-    setTimeout(() => { wheelLockRef.current = false; }, 400);
-  };
-
   return (
-    <section
-      className="relative min-h-[680px] lg:min-h-[760px] overflow-hidden flex items-center"
-      onMouseEnter={pauseAuto}
-      onMouseLeave={() => { if (!isInteractingRef.current) scheduleResume(300); }}
-    >
-      {/* ===== ANIMATED BACKGROUND ===== */}
-      <AnimatePresence mode="sync">
-        <motion.div
-          key={activeItem.image}
-          initial={{ opacity: 0, scale: 1.08 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 1.02 }}
-          transition={{
-            opacity: { duration: 1.2, ease: "easeInOut" },
-            scale: { duration: 6, ease: "easeOut" },
-          }}
-          className="absolute inset-0"
-        >
-          <img
-            src={activeItem.image}
-            alt=""
-            className="w-full h-full object-cover"
-          />
-        </motion.div>
-      </AnimatePresence>
+    <section className="relative py-20 bg-[#f7f7f7] overflow-hidden">
+      <div className="max-w-[1450px] mx-auto px-6">
 
-
-      {/* ===== LEFT VERTICAL TIMELINE ===== */}
-      <div className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 z-20 flex-col items-center gap-3">
-        <span className="text-white/80 text-xs font-mono tracking-widest">
-          {String(activeIdx + 1).padStart(2, "0")}
-        </span>
-        <div className="w-px h-32 bg-gradient-to-b from-white/10 via-white/40 to-white/10" />
-        <span className="text-white/50 text-xs font-mono tracking-widest">
-          {String(categories.length).padStart(2, "0")}
-        </span>
-      </div>
-
-      {/* ===== CONTENT ===== */}
-      <div className="container mx-auto px-6 lg:px-16 relative z-10 py-20 lg:py-28">
-        <div className="grid lg:grid-cols-[42%_58%] gap-10 lg:gap-12 items-center">
-          {/* ===== LEFT TEXT ===== */}
-          <div>
-            <motion.span
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-block text-orange-400 uppercase text-xs font-semibold tracking-[0.3em]"
+        {/* HEADING */}
+        <div className="text-center mb-14">
+          
+          <h2 className="text-[42px] md:text-[58px] font-light leading-none text-[#1e2432]">
+            <span
+              className="font-normal italic mr-3"
+              style={{
+                fontFamily: "cursive",
+              }}
             >
-              Travel Styles
-            </motion.span>
+              Know
+            </span>
 
-            <AnimatePresence mode="wait">
-              <motion.h2
-                key={activeItem.label}
-                initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-                animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-                exit={{ opacity: 0, y: -20, filter: "blur(8px)" }}
-                transition={{ duration: 0.7, ease: "easeOut" }}
-                className="text-5xl md:text-6xl xl:text-7xl font-bold mt-5 leading-[1.05] text-white uppercase tracking-tight"
-                style={{ textShadow: "0 4px 30px rgba(0,0,0,0.5)" }}
-              >
-                {activeItem.label}
-              </motion.h2>
-            </AnimatePresence>
+            <span className="font-bold">
+              what we offer in Madhya Pradesh
+            </span>
+          </h2>
 
-            <AnimatePresence mode="wait">
-              <motion.p
-                key={`desc-${activeItem.label}`}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.7, delay: 0.1 }}
-                className="text-white/80 mt-6 leading-relaxed text-sm md:text-base max-w-xl"
-              >
-                {activeItem.description}
-              </motion.p>
-            </AnimatePresence>
+          <p className="mt-5 text-[18px] md:text-[22px] text-[#2d2d2d] font-medium">
+            Tailor-Made Travel Solutions for Every Client Type
+          </p>
+        </div>
 
-            {/* Explore button */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="mt-10"
-            >
+        {/* CAROUSEL */}
+        <div className="relative flex items-center">
+
+          {/* LEFT BUTTON */}
+          <button
+            onClick={prevSlide}
+            className="absolute -left-3 z-20 w-14 h-14 rounded-full bg-[#e9e9e9] hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center"
+          >
+            <ChevronLeft size={28} />
+          </button>
+
+          {/* CARDS */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 w-full px-10">
+            
+            {visibleCards.map((item, index) => (
               <Link
-                to={`/packages${activeItem.query}`}
-                className="group inline-flex items-center gap-3 px-7 py-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-semibold shadow-[0_15px_40px_-10px_rgba(37,99,235,0.6)] hover:shadow-[0_20px_50px_-10px_rgba(37,99,235,0.8)] hover:scale-[1.03] transition-all duration-300"
+                key={index}
+                to={`/packages${item.query}`}
+                className={`group rounded-[28px] overflow-hidden bg-white border border-[#e7e7e7] transition-all duration-500 ${
+                  index === 1
+                    ? "shadow-[0_15px_40px_rgba(255,190,11,0.35)]"
+                    : "shadow-sm hover:shadow-xl"
+                }`}
               >
-                <span className="text-sm tracking-wider">Explore</span>
-                <span className="w-7 h-7 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition">
-                  <ArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
-                </span>
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* ===== RIGHT SLIDER (forward rotating queue) ===== */}
-          <div className="relative">
-            <div
-              className="flex gap-3 sm:gap-4 lg:gap-5 overflow-hidden no-scrollbar py-6 items-end justify-center lg:justify-start min-h-[350px] sm:min-h-[380px] cursor-grab active:cursor-grabbing touch-pan-y select-none"
-              onPointerDown={onPointerDown}
-              onPointerUp={onPointerUp}
-              onPointerCancel={onPointerUp}
-              onWheel={onWheel}
-            >
-              <AnimatePresence mode="popLayout" initial={false}>
-                {(() => {
-                  const window = [0, 1, 2].map((offset) => {
-                    const idx = (activeIdx + offset) % len;
-                    return { item: categories[idx], idx, offset };
-                  });
-                  return window.map(({ item, idx, offset }) => (
-                    <CategoryCard
-                      key={item.label}
-                      item={item}
-                      index={idx}
-                      active={offset === 0}
-                      distance={Math.abs(offset)}
-                      onTap={() => {
-                        if (dragStartRef.current) return;
-                        pauseAuto();
-                        setActiveIdx(idx);
-                        scheduleResume();
-                      }}
-                    />
-                  ));
-                })()}
-              </AnimatePresence>
-            </div>
-
-            {/* Pagination + nav */}
-            <div className="flex items-center justify-between mt-6 px-2">
-              <div className="flex gap-2">
-                {categories.map((_, i) => (
-                  <button
-                    key={i}
-                    onClick={() => { pauseAuto(); setActiveIdx(i); scheduleResume(); }}
-                    className={`h-1 rounded-full transition-all ${
-                      i === activeIdx
-                        ? "w-8 bg-orange-400"
-                        : "w-3 bg-white/30 hover:bg-white/50"
-                    }`}
-                    aria-label={`Go to slide ${i + 1}`}
+                
+                {/* IMAGE */}
+                <div className="relative h-[300px] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.label}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
-                ))}
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="flex gap-2">
-                  <button
-                    onClick={() => goTo(-1)}
-                    aria-label="Previous"
-                    className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
-                  >
-                    <ArrowLeft size={14} />
-                  </button>
-                  <button
-                    onClick={() => goTo(1)}
-                    aria-label="Next"
-                    className="w-9 h-9 rounded-full bg-white/15 hover:bg-white/30 backdrop-blur-md border border-white/25 flex items-center justify-center text-white transition"
-                  >
-                    <ArrowRight size={14} />
-                  </button>
+
+                  {/* GOLD CORNER */}
+                  <div className="absolute top-5 right-5 w-8 h-8 border-t-2 border-r-2 border-[#d4af37] rounded-tr-xl" />
                 </div>
-                <span className="text-white/60 text-xs font-mono tracking-widest">
-                  {String(activeIdx + 1).padStart(2, "0")} / {String(len).padStart(2, "0")}
-                </span>
-              </div>
-            </div>
+
+                {/* CONTENT */}
+                <div className="px-6 py-7 text-center">
+
+                  {/* TITLE */}
+                  <h3 className="text-[20px] leading-[1.25] font-bold text-[#1e2432] min-h-[82px]">
+                    {item.label}
+                  </h3>
+
+                  {/* GOLD LINE */}
+                  <div className="w-10 h-[2px] bg-[#d4af37] mx-auto my-4 rounded-full" />
+
+                  {/* DESCRIPTION */}
+                  <p className="text-[15px] leading-7 text-[#666] line-clamp-4">
+                    {item.description}
+                  </p>
+                </div>
+              </Link>
+            ))}
           </div>
+
+          {/* RIGHT BUTTON */}
+          <button
+            onClick={nextSlide}
+            className="absolute -right-3 z-20 w-14 h-14 rounded-full bg-[#e9e9e9] hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center"
+          >
+            <ChevronRight size={28} />
+          </button>
         </div>
       </div>
     </section>
