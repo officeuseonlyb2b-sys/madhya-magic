@@ -249,6 +249,7 @@ const AdvancedMonthSelector = ({
                 })}
               </div>
             )}
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
