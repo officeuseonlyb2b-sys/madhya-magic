@@ -297,40 +297,43 @@ const AdvancedDestinationSelector = ({
         <ChevronDown size={16} className={`transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </div>
 
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="absolute z-50 mt-2 left-0 right-0 sm:w-[300px] bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="relative z-50 overflow-hidden"
           >
-            <div className="flex items-center gap-2 px-2 py-1.5 bg-muted/50 rounded-lg mb-2">
-              <Search size={14} className="text-muted-foreground" />
-              <input
-                type="text"
-                placeholder="Search destinations..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="bg-transparent flex-1 text-sm outline-none"
-              />
+            <div className="mt-2 sm:w-[300px] bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto">
+              <div className="flex items-center gap-2 px-2 py-1.5 bg-muted/50 rounded-lg mb-2 sticky top-0 bg-white">
+                <Search size={14} className="text-muted-foreground" />
+                <input
+                  type="text"
+                  placeholder="Search destinations..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="bg-transparent flex-1 text-sm outline-none"
+                />
+              </div>
+              {filtered.map((dest) => (
+                <label
+                  key={dest}
+                  className="flex items-center justify-between px-3 py-2 hover:bg-accent/50 rounded-lg cursor-pointer"
+                >
+                  <div className="flex items-center gap-2">
+                    <input
+                      type="checkbox"
+                      checked={selectedDestinations.includes(dest)}
+                      onChange={() => toggleDestination(dest)}
+                      className="rounded border-primary"
+                    />
+                    <span className="text-sm">{dest}</span>
+                  </div>
+                </label>
+              ))}
             </div>
-            {filtered.map((dest) => (
-              <label
-                key={dest}
-                className="flex items-center justify-between px-3 py-2 hover:bg-accent/50 rounded-lg cursor-pointer"
-              >
-                <div className="flex items-center gap-2">
-                  <input
-                    type="checkbox"
-                    checked={selectedDestinations.includes(dest)}
-                    onChange={() => toggleDestination(dest)}
-                    className="rounded border-primary"
-                  />
-                  <span className="text-sm">{dest}</span>
-                </div>
-              </label>
-            ))}
           </motion.div>
         )}
       </AnimatePresence>
