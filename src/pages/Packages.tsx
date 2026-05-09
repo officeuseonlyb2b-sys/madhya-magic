@@ -302,7 +302,7 @@ const AdvancedDestinationSelector = ({
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="absolute z-20 mt-2 w-full bg-card border border-border rounded-xl shadow-xl p-2 max-h-64 overflow-auto"
+            className="absolute z-50 mt-2 left-0 right-0 sm:w-[300px] bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto"
           >
             <div className="flex items-center gap-2 px-2 py-1.5 bg-muted/50 rounded-lg mb-2">
               <Search size={14} className="text-muted-foreground" />
