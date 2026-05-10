@@ -109,9 +109,13 @@ const seasonStyle: Record<string, { idle: string; selected: string; dot: string;
 const AdvancedMonthSelector = ({
   selectedMonths,
   onChange,
+  isOpen,
+  onOpenChange,
 }: {
   selectedMonths: string[];
   onChange: (months: string[]) => void;
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
 }) => {
   const toggleMonth = (month: string) => {
     if (selectedMonths.includes(month))
@@ -130,16 +134,15 @@ const AdvancedMonthSelector = ({
 
   const clearMonths = () => onChange([]);
 
-  const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) onOpenChange(false);
     };
-    if (open) document.addEventListener("mousedown", handleClick);
+    if (isOpen) document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
-  }, [open]);
+  }, [isOpen, onOpenChange]);
 
   const triggerLabel =
     selectedMonths.length === 0
@@ -153,7 +156,7 @@ const AdvancedMonthSelector = ({
       {/* Trigger — compact Google Calendar–like input */}
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => onOpenChange(!isOpen)}
         className="w-full flex items-center justify-between gap-2 px-3 py-2 bg-white border border-border/60 rounded-lg text-sm hover:border-primary/50 hover:shadow-sm transition-all"
       >
         <span className="flex items-center gap-2 text-foreground">
@@ -162,19 +165,19 @@ const AdvancedMonthSelector = ({
             {triggerLabel}
           </span>
         </span>
-        <ChevronDown size={14} className={`text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`} />
+        <ChevronDown size={14} className={`text-muted-foreground transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       <AnimatePresence initial={false}>
-        {open && (
+        {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, y: -6, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -6, scale: 0.98 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-30 overflow-hidden"
+            className="absolute left-0 top-full z-50 w-full min-w-[280px] origin-top-left"
           >
-            <div className="mt-2 sm:w-[280px] bg-white rounded-xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-3">
+            <div className="mt-2 w-full bg-white rounded-xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-3">
             {/* Header */}
             <div className="flex items-center justify-between mb-2 px-1">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
