@@ -109,9 +109,13 @@ const seasonStyle: Record<string, { idle: string; selected: string; dot: string;
 const AdvancedMonthSelector = ({
   selectedMonths,
   onChange,
+  isOpen,
+  onOpenChange,
 }: {
   selectedMonths: string[];
   onChange: (months: string[]) => void;
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
 }) => {
   const toggleMonth = (month: string) => {
     if (selectedMonths.includes(month))
@@ -130,16 +134,15 @@ const AdvancedMonthSelector = ({
 
   const clearMonths = () => onChange([]);
 
-  const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleClick = (e: MouseEvent) => {
-      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+      if (ref.current && !ref.current.contains(e.target as Node)) onOpenChange(false);
     };
-    if (open) document.addEventListener("mousedown", handleClick);
+    if (isOpen) document.addEventListener("mousedown", handleClick);
     return () => document.removeEventListener("mousedown", handleClick);
-  }, [open]);
+  }, [isOpen, onOpenChange]);
 
   const triggerLabel =
     selectedMonths.length === 0
@@ -153,7 +156,7 @@ const AdvancedMonthSelector = ({
       {/* Trigger — compact Google Calendar–like input */}
       <button
         type="button"
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => onOpenChange(!isOpen)}
         className="w-full flex items-center justify-between gap-2 px-3 py-2 bg-white border border-border/60 rounded-lg text-sm hover:border-primary/50 hover:shadow-sm transition-all"
       >
         <span className="flex items-center gap-2 text-foreground">
@@ -162,19 +165,19 @@ const AdvancedMonthSelector = ({
             {triggerLabel}
           </span>
         </span>
-        <ChevronDown size={14} className={`text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`} />
+        <ChevronDown size={14} className={`text-muted-foreground transition-transform ${isOpen ? "rotate-180" : ""}`} />
       </button>
 
       <AnimatePresence initial={false}>
-        {open && (
+        {isOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-30 overflow-hidden"
+            className="relative z-50 overflow-hidden"
           >
-            <div className="mt-2 sm:w-[280px] bg-white rounded-xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-3">
+            <div className="mt-2 w-full sm:w-[280px] bg-white rounded-xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-3">
             {/* Header */}
             <div className="flex items-center justify-between mb-2 px-1">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
@@ -264,13 +267,25 @@ const AdvancedDestinationSelector = ({
   selectedDestinations,
   onChange,
   allDestinations,
+  isOpen,
+  onOpenChange,
 }: {
   selectedDestinations: string[];
   onChange: (dests: string[]) => void;
   allDestinations: string[];
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
 }) => {
   const [search, setSearch] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) onOpenChange(false);
+    };
+    if (isOpen) document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [isOpen, onOpenChange]);
 
   const filtered = allDestinations.filter((d) =>
     d.toLowerCase().includes(search.toLowerCase())
@@ -284,10 +299,10 @@ const AdvancedDestinationSelector = ({
   };
 
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       <div
         className="flex items-center justify-between px-4 py-2.5 bg-background/50 backdrop-blur-sm border border-border rounded-xl cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => onOpenChange(!isOpen)}
       >
         <span className="text-sm text-muted-foreground">
           {selectedDestinations.length === 0
@@ -306,7 +321,7 @@ const AdvancedDestinationSelector = ({
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
             className="relative z-50 overflow-hidden"
           >
-            <div className="mt-2 sm:w-[300px] bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto">
+            <div className="mt-2 w-full sm:w-[300px] bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto">
               <div className="flex items-center gap-2 px-2 py-1.5 bg-muted/50 rounded-lg mb-2 sticky top-0 bg-white">
                 <Search size={14} className="text-muted-foreground" />
                 <input
@@ -651,6 +666,7 @@ const PackageCard = ({ pkg, index }: { pkg: PackageData; index: number }) => {
 const Packages = () => {
   const [tourCategory, setTourCategory] = useState<TourCategory>("All");
   const [tourSubCategory, setTourSubCategory] = useState<string | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<"destination" | "month" | null>(null);
 
   // Advanced filter states
   const [selectedDestinations, setSelectedDestinations] = useState<string[]>([]);
@@ -878,6 +894,8 @@ const Packages = () => {
             selectedDestinations={selectedDestinations}
             onChange={setSelectedDestinations}
             allDestinations={mpCities}
+            isOpen={openDropdown === "destination"}
+            onOpenChange={(open) => setOpenDropdown(open ? "destination" : null)}
           />
         </div>
 
@@ -889,6 +907,8 @@ const Packages = () => {
           <AdvancedMonthSelector
             selectedMonths={selectedMonths}
             onChange={setSelectedMonths}
+            isOpen={openDropdown === "month"}
+            onOpenChange={(open) => setOpenDropdown(open ? "month" : null)}
           />
         </div>
 
