@@ -882,13 +882,7 @@ const Packages = () => {
   };
 
   const FilterContent = () => (
-    <div className={`space-y-3 transition-[padding] duration-300 ease-out ${
-      openDropdown === "destination"
-        ? "pb-[380px]"
-        : openDropdown === "month"
-          ? "pb-[190px]"
-          : "pb-0"
-    }`}>
+    <div className="space-y-3">
       {/* Compact 4-column toolbar */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {/* Destination — now uses mpCities */}
