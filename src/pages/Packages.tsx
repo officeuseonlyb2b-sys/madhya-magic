@@ -171,13 +171,13 @@ const AdvancedMonthSelector = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -6, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -6, scale: 0.98 }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 top-full z-50 w-full min-w-[280px] origin-top-left"
+            className="relative z-50 overflow-hidden"
           >
-            <div className="mt-2 w-full bg-white rounded-xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-3">
+            <div className="mt-2 w-full sm:w-[280px] bg-white rounded-xl border border-border/60 shadow-[0_12px_40px_rgba(0,0,0,0.12)] p-3">
             {/* Header */}
             <div className="flex items-center justify-between mb-2 px-1">
               <span className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
@@ -277,6 +277,15 @@ const AdvancedDestinationSelector = ({
   onOpenChange: (open: boolean) => void;
 }) => {
   const [search, setSearch] = useState("");
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) onOpenChange(false);
+    };
+    if (isOpen) document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [isOpen, onOpenChange]);
 
   const filtered = allDestinations.filter((d) =>
     d.toLowerCase().includes(search.toLowerCase())
@@ -290,7 +299,7 @@ const AdvancedDestinationSelector = ({
   };
 
   return (
-    <div className="relative">
+    <div className="relative" ref={ref}>
       <div
         className="flex items-center justify-between px-4 py-2.5 bg-background/50 backdrop-blur-sm border border-border rounded-xl cursor-pointer"
         onClick={() => onOpenChange(!isOpen)}
@@ -306,13 +315,13 @@ const AdvancedDestinationSelector = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -6, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -6, scale: 0.98 }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute left-0 top-full z-50 w-full min-w-[300px] origin-top-left"
+            className="relative z-50 overflow-hidden"
           >
-            <div className="mt-2 w-full bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto">
+            <div className="mt-2 w-full sm:w-[300px] bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto">
               <div className="flex items-center gap-2 px-2 py-1.5 bg-muted/50 rounded-lg mb-2 sticky top-0 bg-white">
                 <Search size={14} className="text-muted-foreground" />
                 <input
