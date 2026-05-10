@@ -267,13 +267,16 @@ const AdvancedDestinationSelector = ({
   selectedDestinations,
   onChange,
   allDestinations,
+  isOpen,
+  onOpenChange,
 }: {
   selectedDestinations: string[];
   onChange: (dests: string[]) => void;
   allDestinations: string[];
+  isOpen: boolean;
+  onOpenChange: (open: boolean) => void;
 }) => {
   const [search, setSearch] = useState("");
-  const [isOpen, setIsOpen] = useState(false);
 
   const filtered = allDestinations.filter((d) =>
     d.toLowerCase().includes(search.toLowerCase())
@@ -290,7 +293,7 @@ const AdvancedDestinationSelector = ({
     <div className="relative">
       <div
         className="flex items-center justify-between px-4 py-2.5 bg-background/50 backdrop-blur-sm border border-border rounded-xl cursor-pointer"
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={() => onOpenChange(!isOpen)}
       >
         <span className="text-sm text-muted-foreground">
           {selectedDestinations.length === 0
@@ -303,13 +306,13 @@ const AdvancedDestinationSelector = ({
       <AnimatePresence initial={false}>
         {isOpen && (
           <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
+            initial={{ opacity: 0, y: -6, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -6, scale: 0.98 }}
             transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-50 overflow-hidden"
+            className="absolute left-0 top-full z-50 w-full min-w-[300px] origin-top-left"
           >
-            <div className="mt-2 sm:w-[300px] bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto">
+            <div className="mt-2 w-full bg-white border border-border rounded-xl shadow-2xl p-2 max-h-[360px] overflow-auto">
               <div className="flex items-center gap-2 px-2 py-1.5 bg-muted/50 rounded-lg mb-2 sticky top-0 bg-white">
                 <Search size={14} className="text-muted-foreground" />
                 <input
