@@ -657,6 +657,7 @@ const PackageCard = ({ pkg, index }: { pkg: PackageData; index: number }) => {
 const Packages = () => {
   const [tourCategory, setTourCategory] = useState<TourCategory>("All");
   const [tourSubCategory, setTourSubCategory] = useState<string | null>(null);
+  const [openDropdown, setOpenDropdown] = useState<"destination" | "month" | null>(null);
 
   // Advanced filter states
   const [selectedDestinations, setSelectedDestinations] = useState<string[]>([]);
@@ -872,7 +873,13 @@ const Packages = () => {
   };
 
   const FilterContent = () => (
-    <div className="space-y-3">
+    <div className={`space-y-3 transition-[padding] duration-300 ease-out ${
+      openDropdown === "destination"
+        ? "pb-[380px]"
+        : openDropdown === "month"
+          ? "pb-[190px]"
+          : "pb-0"
+    }`}>
       {/* Compact 4-column toolbar */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
         {/* Destination — now uses mpCities */}
@@ -884,6 +891,8 @@ const Packages = () => {
             selectedDestinations={selectedDestinations}
             onChange={setSelectedDestinations}
             allDestinations={mpCities}
+            isOpen={openDropdown === "destination"}
+            onOpenChange={(open) => setOpenDropdown(open ? "destination" : null)}
           />
         </div>
 
@@ -895,6 +904,8 @@ const Packages = () => {
           <AdvancedMonthSelector
             selectedMonths={selectedMonths}
             onChange={setSelectedMonths}
+            isOpen={openDropdown === "month"}
+            onOpenChange={(open) => setOpenDropdown(open ? "month" : null)}
           />
         </div>
 
