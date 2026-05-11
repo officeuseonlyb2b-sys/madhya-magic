@@ -50,23 +50,53 @@ const FAQSection = () => {
   return (
     <section className="py-10 md:py-14 bg-[#f7f7f7] overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 md:px-5">
-        
+
+        {/* MOBILE HEADING */}
+        <div className="block lg:hidden mb-5">
+          <h2 className="text-[24px] leading-[1.03] tracking-[-1px] text-black font-light">
+            Everything{" "}
+            <span className="font-bold">
+              You Need to Know
+            </span>
+
+            <br />
+
+            Before{" "}
+            <span className="font-bold">
+              You Travel.
+            </span>
+          </h2>
+        </div>
+
+        {/* MOBILE CONTACT TEXT */}
+        <div className="block lg:hidden mb-5">
+          <p className="text-[12px] leading-5 text-[#777]">
+            Still Have Questions? We’re Here to Help!{" "}
+            <span className="text-black font-semibold cursor-pointer hover:underline">
+              Contact Us
+            </span>
+          </p>
+
+          <div className="w-full h-[1px] bg-[#dddddd] mt-4" />
+        </div>
+
         {/* MAIN GRID */}
         <div className="grid lg:grid-cols-[190px_1fr] gap-6 lg:gap-10 items-start">
-          
-          {/* LEFT SIDE */}
-          <div className="lg:pt-1 md:pt-1 pt-0">
-            
-            {/* TEXT */}
-            <p className="text-[12px] leading-5 text-[#777] max-w-[170px]">
-              Still Have Questions? We’re Here to Help!{" "}
-              <span className="text-black font-semibold cursor-pointer hover:underline">
-                Contact Us
-              </span>
-            </p>
 
-            {/* LINE */}
-            <div className="w-full h-[1px] bg-[#dddddd] my-4" />
+          {/* LEFT SIDE */}
+          <div className="lg:pt-1">
+
+            {/* DESKTOP TEXT */}
+            <div className="hidden lg:block">
+              <p className="text-[12px] leading-5 text-[#777] max-w-[170px]">
+                Still Have Questions? We’re Here to Help!{" "}
+                <span className="text-black font-semibold cursor-pointer hover:underline">
+                  Contact Us
+                </span>
+              </p>
+
+              <div className="w-full h-[1px] bg-[#dddddd] my-4" />
+            </div>
 
             {/* CATEGORY BUTTONS */}
             <div className="flex flex-col gap-2">
@@ -88,10 +118,10 @@ const FAQSection = () => {
 
           {/* RIGHT SIDE */}
           <div className="max-w-[760px] w-full">
-            
-            {/* HEADING */}
-            <div className="mb-5">
-              <h2 className="text-[24px] md:text-[40px] leading-[1.03] tracking-[-1px] text-black font-light">
+
+            {/* DESKTOP HEADING */}
+            <div className="hidden lg:block mb-5">
+              <h2 className="text-[40px] leading-[1.03] tracking-[-1px] text-black font-light">
                 Everything{" "}
                 <span className="font-bold">
                   You Need to Know
@@ -108,7 +138,7 @@ const FAQSection = () => {
 
             {/* FAQ BOX */}
             <div className="bg-white rounded-[18px] border border-[#ececec] overflow-hidden shadow-sm">
-              
+
               {faqs.map((faq, index) => {
                 const isOpen = openIndex === index;
 
@@ -121,7 +151,7 @@ const FAQSection = () => {
                         : ""
                     }`}
                   >
-                    
+
                     {/* QUESTION */}
                     <button
                       onClick={() => toggleFAQ(index)}

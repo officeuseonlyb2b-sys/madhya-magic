@@ -1,12 +1,19 @@
 import { motion } from "framer-motion";
 import { useMemo, useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+} from "lucide-react";
+
 import { experiencesData } from "@/data/experiencesData";
 import { useFilters } from "@/contexts/FilterContext";
 import type { MapCategory } from "@/data/mapDestinations";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
 
+// FILTER MAP
 const filterToExperienceCategories: Record<MapCategory, string[]> = {
   Spiritual: ["Spiritual", "Wellness"],
   Wildlife: ["Wildlife"],
@@ -14,6 +21,7 @@ const filterToExperienceCategories: Record<MapCategory, string[]> = {
   Heritage: ["Spiritual"],
 };
 
+// ----- EXPERIENCE CARD -----
 const ExperienceCard = ({
   exp,
   index,
@@ -22,16 +30,22 @@ const ExperienceCard = ({
   index: number;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+
   const [hovered, setHovered] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
+
     if (!v) return;
+
     if (hovered) {
       v.play().catch(() => {});
     } else {
       v.pause();
-      try { v.currentTime = 0; } catch {}
+
+      try {
+        v.currentTime = 0;
+      } catch {}
     }
   }, [hovered]);
 
@@ -39,68 +53,89 @@ const ExperienceCard = ({
     <motion.div
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.05 }}
+      transition={{ delay: index * 0.04 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
       onTouchEnd={() => setHovered(false)}
-      className="reel-card w-[220px] sm:w-[240px] lg:w-[260px] flex-shrink-0 rounded-3xl"
+      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0"
     >
-      <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer bg-black">
-        <img
-          src={exp.image}
-          alt={exp.title}
-          loading="lazy"
-          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${exp.video && hovered ? "opacity-0" : "opacity-100"}`}
-        />
-        {exp.video && (
-          <video
-            ref={videoRef}
-            src={exp.video}
-            poster={exp.image}
-            muted
-            loop
-            playsInline
-            preload="none"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ${hovered ? "opacity-100" : "opacity-0"}`}
+      <div className="group relative overflow-hidden rounded-[24px] bg-[#f6f1ea] shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2">
+
+        {/* MEDIA */}
+        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px]">
+
+          {/* IMAGE */}
+          <img
+            src={exp.image}
+            alt={exp.title}
+            loading="lazy"
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
+              exp.video && hovered
+                ? "opacity-0 scale-105"
+                : "opacity-100 scale-100"
+            }`}
           />
-        )}
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+          {/* VIDEO */}
+          {exp.video && (
+            <video
+              ref={videoRef}
+              src={exp.video}
+              poster={exp.image}
+              muted
+              loop
+              playsInline
+              preload="none"
+              className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
+                hovered
+                  ? "opacity-100 scale-100"
+                  : "opacity-0 scale-110"
+              }`}
+            />
+          )}
 
-        <div className="absolute top-4 left-4">
-          <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/80 backdrop-blur-md text-white shadow-lg">
-            {exp.category}
-          </span>
-        </div>
+          {/* OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
 
-        <div className="absolute bottom-6 left-6 right-6 text-white">
-          <h3 className="text-lg font-bold line-clamp-1">
-            {exp.title}
-          </h3>
-
-          <div className="flex items-center gap-1 text-xs mt-1 opacity-90">
-            <MapPin size={12} />
-            <span>{exp.subtitle}</span>
+          {/* TOP TITLE */}
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full">
+            <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug">
+              {exp.title}
+            </h3>
           </div>
 
-          <Link
-            to="/experiences"
-            className="inline-flex items-center gap-2 mt-3 text-xs uppercase tracking-widest"
-          >
-            Discover
-            <ArrowRight size={14} />
-          </Link>
+          {/* CATEGORY */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
+            <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
+              {exp.category}
+            </span>
+          </div>
+        </div>
+
+        {/* LOCATION */}
+        <div className="bg-[#f6f1ea] py-4 px-3 text-center border-t border-[#e4d9cb]">
+          <div className="flex items-center justify-center gap-2 text-[#8c644d]">
+            <MapPin size={14} />
+
+            <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
+              {exp.subtitle}
+            </span>
+          </div>
         </div>
       </div>
     </motion.div>
   );
 };
 
+// ----- MAIN SECTION -----
 const ExperiencesReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
-  const { ref, onMouseEnter, onMouseLeave } = useAutoScroll<HTMLDivElement>(50);
 
+  const { ref, onMouseEnter, onMouseLeave } =
+    useAutoScroll<HTMLDivElement>(50);
+
+  // FILTER DATA
   const filteredExperiences = useMemo(() => {
     if (isAll) return experiencesData;
 
@@ -117,50 +152,78 @@ const ExperiencesReelsSection = () => {
     );
   }, [selectedFilters, isAll]);
 
+  // DUPLICATE FOR INFINITE LOOP
   const sliderData = useMemo(
     () => [...filteredExperiences, ...filteredExperiences],
     [filteredExperiences]
   );
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-[30%_70%] gap-8 lg:gap-14 items-center">
+    <section className="relative py-10 sm:py-12 lg:py-14 bg-[#f3ede7] overflow-hidden">
 
-          {/* LEFT TEXT */}
+      {/* BACKGROUND PATTERN */}
+      <div className="absolute inset-0 opacity-[0.05] bg-[url('/patterns/topography.svg')] bg-cover bg-center pointer-events-none" />
+
+      {/* SMALL CONTAINER */}
+      <div className="relative z-10 max-w-[1350px] mx-auto px-4 sm:px-6">
+
+        <div className="grid lg:grid-cols-[30%_70%] gap-8 lg:gap-12 items-center">
+
+          {/* LEFT CONTENT */}
           <div className="text-center lg:text-left">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 sm:mt-4 leading-tight">
-             Top Curated
+
+            {/* SCRIPT TEXT */}
+            <span className="block text-[#8b7268] text-2xl sm:text-3xl font-light italic mb-3">
+              Discover Meaningful
+            </span>
+
+            {/* HEADING */}
+            <h2 className="text-[#6e5548] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide">
+              Top
+              <br />
+              Curated
               <br />
               Experiences
             </h2>
 
-            <p className="text-gray-600 mt-4 sm:mt-5 text-sm sm:text-base">
+            {/* DESCRIPTION */}
+            <p className="text-[#7b6559] mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
               {isAll
-                ? "Moments that connect you with the wilderness, heritage, spirituality, and soul of Central India."
+                ? "Moments that connect you with spirituality, wellness, wildlife, and the timeless beauty of Central India."
                 : `Experiences matching: ${selectedFilters.join(", ")}`}
             </p>
 
+            {/* BUTTON */}
             <Link
               to="/experiences"
-              className="group mt-6 sm:mt-8 inline-flex items-center gap-3 sm:gap-4"
+              className="group inline-flex items-center gap-3 mt-7 border border-[#7a6256] rounded-full px-5 py-2.5 text-[#6e5548] hover:bg-[#7a6256] hover:text-white transition-all duration-300"
             >
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition">
-                <ArrowRight
-                  size={18}
-                  className="group-hover:text-white transition"
-                />
-              </div>
-
-              <span className="uppercase tracking-widest text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-orange-500 transition">
-                Explore All Experiences
+              <span className="uppercase tracking-[3px] text-[11px] sm:text-xs">
+                Explore More
               </span>
+
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </Link>
+
+            {/* ARROWS */}
+            <div className="flex items-center justify-center lg:justify-start gap-4 mt-10 text-[#6e5548]">
+
+              <button className="hover:scale-110 transition">
+                <ChevronLeft size={34} strokeWidth={1.5} />
+              </button>
+
+              <button className="hover:scale-110 transition">
+                <ChevronRight size={34} strokeWidth={1.5} />
+              </button>
+            </div>
           </div>
 
           {/* RIGHT SLIDER */}
           {sliderData.length === 0 ? (
-            <p className="text-center text-muted-foreground py-10">
+            <p className="text-center text-[#6e5548] py-10">
               No experiences match the selected categories.
             </p>
           ) : (
@@ -171,6 +234,7 @@ const ExperiencesReelsSection = () => {
               className="reel-scroller overflow-x-auto no-scrollbar py-4"
             >
               <div className="reel-track flex gap-5 w-max items-center">
+
                 {sliderData.map((exp, i) => (
                   <ExperienceCard
                     key={`${exp.id}-${i}`}
@@ -178,6 +242,7 @@ const ExperiencesReelsSection = () => {
                     index={i}
                   />
                 ))}
+
               </div>
             </div>
           )}

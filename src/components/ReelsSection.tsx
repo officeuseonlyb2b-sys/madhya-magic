@@ -1,84 +1,137 @@
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, MapPin, Play } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  MapPin,
+  Play,
+} from "lucide-react";
+
 import { useFilters } from "@/contexts/FilterContext";
 import { reelsData, type ReelItem } from "@/data/reelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
 
-const ReelVideo = ({ reel, isHovered }: { reel: ReelItem; isHovered: boolean }) => {
+// ----- VIDEO -----
+const ReelVideo = ({
+  reel,
+  isHovered,
+}: {
+  reel: ReelItem;
+  isHovered: boolean;
+}) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
+
     if (!v) return;
+
     if (isHovered) {
       if (!loaded) {
         v.load();
         setLoaded(true);
       }
+
       v.play().catch(() => {});
     } else {
       v.pause();
-      try { v.currentTime = 0; } catch {}
+
+      try {
+        v.currentTime = 0;
+      } catch {}
     }
   }, [isHovered, loaded]);
 
   return (
-    <div className="absolute inset-0 bg-black">
-      <video
-        ref={videoRef}
-        src={reel.videoUrl}
-        muted
-        loop
-        playsInline
-        preload="none"
-        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-      />
-    </div>
+    <video
+      ref={videoRef}
+      src={reel.videoUrl}
+      poster={reel.thumbnail}
+      muted
+      loop
+      playsInline
+      preload="none"
+      className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
+        isHovered ? "scale-100 opacity-100" : "scale-110 opacity-0"
+      }`}
+    />
   );
 };
 
-const ReelCard = ({ reel, index }: { reel: ReelItem; index: number }) => {
+// ----- CARD -----
+const ReelCard = ({
+  reel,
+  index,
+}: {
+  reel: ReelItem;
+  index: number;
+}) => {
   const [hovered, setHovered] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.05 }}
+      transition={{ delay: index * 0.04 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
       onTouchEnd={() => setHovered(false)}
-      className="reel-card w-[220px] sm:w-[240px] lg:w-[260px] flex-shrink-0 rounded-3xl"
+      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0"
     >
-      <div className="group relative h-[320px] sm:h-[340px] lg:h-[360px] rounded-3xl overflow-hidden cursor-pointer">
-        <ReelVideo reel={reel} isHovered={hovered} />
+      <div className="group relative overflow-hidden rounded-[24px] bg-[#f4efe8] shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2">
 
-        {/* Dark gradient overlay for text legibility */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/35 pointer-events-none" />
+        {/* MEDIA */}
+        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px]">
 
-        <div className="absolute top-4 left-4">
-          <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-primary/90 backdrop-blur-md text-white shadow-lg text-shadow-soft">
-            {reel.category}
-          </span>
-        </div>
+          {/* IMAGE */}
+          <img
+            src={reel.thumbnail}
+            alt={reel.title}
+            loading="lazy"
+            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
+              hovered ? "opacity-0 scale-105" : "opacity-100 scale-100"
+            }`}
+          />
 
-        <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-          <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 flex items-center justify-center">
-            <Play size={24} fill="white" className="ml-1 text-white" />
+          {/* VIDEO */}
+          <ReelVideo reel={reel} isHovered={hovered} />
+
+          {/* OVERLAY */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
+
+          {/* TOP TITLE */}
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full">
+            <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug">
+              {reel.title}
+            </h3>
+          </div>
+
+          {/* PLAY BUTTON */}
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+            <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 flex items-center justify-center">
+              <Play size={22} fill="white" className="ml-1 text-white" />
+            </div>
+          </div>
+
+          {/* CATEGORY */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
+            <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
+              {reel.category}
+            </span>
           </div>
         </div>
 
-        <div className="absolute bottom-6 left-6 right-6 text-white">
-          <h3 className="text-lg font-bold line-clamp-1 text-shadow-soft">
-            {reel.title}
-          </h3>
-
-          <div className="flex items-center gap-1 text-xs mt-1 opacity-95 text-shadow-soft">
-            <MapPin size={12} />
-            <span>{reel.location}</span>
+        {/* LOCATION */}
+        <div className="bg-[#f4efe8] py-4 px-3 text-center border-t border-[#ddd2c7]">
+          <div className="flex items-center justify-center gap-2 text-[#7d5f4f]">
+            <MapPin size={14} />
+            <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
+              {reel.location}
+            </span>
           </div>
         </div>
       </div>
@@ -86,61 +139,92 @@ const ReelCard = ({ reel, index }: { reel: ReelItem; index: number }) => {
   );
 };
 
+// ----- MAIN SECTION -----
 const ReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
-  const { ref, onMouseEnter, onMouseLeave } = useAutoScroll<HTMLDivElement>(50);
 
+  const { ref, onMouseEnter, onMouseLeave } =
+    useAutoScroll<HTMLDivElement>(50);
+
+  // FILTER DATA
   const filteredReels = useMemo(() => {
     if (isAll) return reelsData;
+
     return reelsData.filter((r) =>
       selectedFilters.includes(r.category as any)
     );
   }, [selectedFilters, isAll]);
 
+  // DUPLICATE FOR INFINITE LOOP
   const sliderData = useMemo(
     () => [...filteredReels, ...filteredReels],
     [filteredReels]
   );
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white overflow-hidden">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid lg:grid-cols-[30%_70%] gap-8 lg:gap-14 items-center">
+    <section className="relative py-14 sm:py-16 lg:py-20 bg-[#eef3f1] overflow-hidden">
 
-          {/* LEFT */}
+      {/* BACKGROUND PATTERN */}
+      <div className="absolute inset-0 opacity-[0.05] bg-[url('/patterns/topography.svg')] bg-cover bg-center pointer-events-none" />
+
+      {/* SMALL CONTAINER */}
+      <div className="relative z-10 max-w-[1350px] mx-auto px-4 sm:px-6">
+
+        <div className="grid lg:grid-cols-[30%_70%] gap-8 lg:gap-12 items-center">
+
+          {/* LEFT CONTENT */}
           <div className="text-center lg:text-left">
-            
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mt-3 sm:mt-4 leading-tight">
-              Top Destinations
+
+            {/* SCRIPT TEXT */}
+            <span className="block text-[#61746d] text-2xl sm:text-3xl font-light italic mb-3">
+              Explore the Beauty of
+            </span>
+
+            {/* HEADING */}
+            <h2 className="text-[#435750] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide">
+              Top
               <br />
+              Destinations
             </h2>
 
-            <p className="text-gray-600 mt-4 sm:mt-5 text-sm sm:text-base">
+            {/* DESCRIPTION */}
+            <p className="text-[#5d6e68] mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
               {isAll
-                ? "Discover the most iconic, hidden, and unforgettable corners of Madhya Pradesh."
+                ? "Discover iconic landscapes, hidden gems, and unforgettable destinations across Madhya Pradesh."
                 : `Reels matching: ${selectedFilters.join(", ")}`}
             </p>
 
+            {/* BUTTON */}
             <Link
               to="/"
-              className="group mt-6 sm:mt-8 inline-flex items-center gap-3 sm:gap-4"
+              className="group inline-flex items-center gap-3 mt-7 border border-[#5f746c] rounded-full px-5 py-2.5 text-[#435750] hover:bg-[#5f746c] hover:text-white transition-all duration-300"
             >
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full border border-gray-300 flex items-center justify-center group-hover:bg-orange-500 group-hover:border-orange-500 transition">
-                <ArrowRight
-                  size={18}
-                  className="group-hover:text-white transition"
-                />
-              </div>
-
-              <span className="uppercase tracking-widest text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-orange-500 transition">
-                Discover all destinations
+              <span className="uppercase tracking-[3px] text-[11px] sm:text-xs">
+                Discover More
               </span>
+
+              <ArrowRight
+                size={16}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
             </Link>
+
+            {/* ARROWS */}
+            <div className="flex items-center justify-center lg:justify-start gap-4 mt-10 text-[#435750]">
+
+              <button className="hover:scale-110 transition">
+                <ChevronLeft size={34} strokeWidth={1.5} />
+              </button>
+
+              <button className="hover:scale-110 transition">
+                <ChevronRight size={34} strokeWidth={1.5} />
+              </button>
+            </div>
           </div>
 
-          {/* RIGHT */}
+          {/* RIGHT SLIDER */}
           {sliderData.length === 0 ? (
-            <p className="text-center text-muted-foreground py-10">
+            <p className="text-center text-[#435750] py-10">
               No reels match the selected categories.
             </p>
           ) : (
@@ -151,6 +235,7 @@ const ReelsSection = () => {
               className="reel-scroller overflow-x-auto no-scrollbar py-4"
             >
               <div className="reel-track flex gap-5 w-max items-center">
+
                 {sliderData.map((reel, i) => (
                   <ReelCard
                     key={`${reel.id}-${i}`}
@@ -158,6 +243,7 @@ const ReelsSection = () => {
                     index={i}
                   />
                 ))}
+
               </div>
             </div>
           )}

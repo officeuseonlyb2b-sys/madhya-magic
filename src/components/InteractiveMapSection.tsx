@@ -116,11 +116,10 @@ const ProgressDots = ({
       <button
         key={i}
         onClick={() => onSelect(i)}
-        className={`h-1.5 rounded-full transition-all duration-500 ${
-          i === current % 8
+        className={`h-1.5 rounded-full transition-all duration-500 ${i === current % 8
             ? "w-8 bg-primary"
             : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"
-        }`}
+          }`}
       />
     ))}
   </div>
@@ -226,22 +225,24 @@ const InteractiveMapSection = () => {
 
       <div className="container mx-auto px-4 max-w-[1400px] relative z-10">
         {/* Header */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
-        > 
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-foreground mt-4">
+          className="text-center mb-12 shadow-none drop-shadow-none"
+        >
+          <h2 className="text-3xl md:text-5xl font-display font-bold text-black mt-4 shadow-none drop-shadow-none">
             Explore Madhya Pradesh
           </h2>
 
-          <div className="section-divider my-4" />
+          <div className="section-divider my-4 shadow-none drop-shadow-none" />
 
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-gray-600 max-w-2xl mx-auto shadow-none drop-shadow-none">
             Select categories to filter destinations — multi-select supported
           </p>
         </motion.div>
+
 
         {/* Filters */}
         <CategoryFilters inView={inView} />
