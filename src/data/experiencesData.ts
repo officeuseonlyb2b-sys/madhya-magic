@@ -197,4 +197,97 @@ export const experiencesData: Experience[] = [
     bestTime: "Year-round · Festival days are most vibrant",
     duration: "Half-day to full-day temple circuits",
   },
+
+  // ============================================================
+  // NEW REELS — appended below. To add/remove reels in the future,
+  // simply edit entries in this section. Keeps original list intact.
+  // ============================================================
+  {
+    id: "bhasm-aarti-2",
+    title: "Bhasm Aarti",
+    subtitle: "Mahakaleshwar Temple, Ujjain",
+    description:
+      "A second glimpse into the mystical pre-dawn Bhasm Aarti at Mahakaleshwar Jyotirlinga.",
+    image: expBhasmAarti,
+    video: "/videos/experiences/bhasm-aarti-2.mp4",
+    category: "Spiritual",
+    icon: "🔥",
+  },
+  {
+    id: "abhishekam-2",
+    title: "Abhishekam Ceremony",
+    subtitle: "Mahakaleshwar Temple, Ujjain",
+    description:
+      "Sacred Abhishekam ritual with panchamrit offerings and Vedic chants.",
+    image: expAbhishekam,
+    video: "/videos/experiences/abhishekam-2.mp4",
+    category: "Spiritual",
+    icon: "🙏",
+  },
+  {
+    id: "harsiddhi-aarti-2",
+    title: "Harsiddhi Mata Aarti",
+    subtitle: "Harsiddhi Temple, Ujjain",
+    description:
+      "Evening Aarti with the iconic Deep Stambh towers glowing with 1,011 lamps.",
+    image: expHarsiddhi,
+    video: "/videos/experiences/harsiddhi-aarti-2.mp4",
+    category: "Spiritual",
+    icon: "🪔",
+  },
+  {
+    id: "meditation-retreat-2",
+    title: "Meditation & Spiritual Retreat",
+    subtitle: "Ancient Caves & Heritage Sites",
+    description:
+      "Mindful meditation moments at heritage and natural sites across MP.",
+    image: expMeditation,
+    video: "/videos/experiences/meditation-2.mp4",
+    category: "Wellness",
+    icon: "🧘",
+  },
+  {
+    id: "jungle-safari-2",
+    title: "Jungle Safari Experience",
+    subtitle: "Tiger Reserves of Madhya Pradesh",
+    description:
+      "Thrilling 4x4 jeep safaris through India's finest tiger habitats.",
+    image: expJungleSafari,
+    video: "/videos/experiences/jungle-safari-2.mp4",
+    category: "Wildlife",
+    icon: "🐯",
+  },
+  {
+    id: "wildlife-photography-2",
+    title: "Wildlife Photography",
+    subtitle: "National Parks & Sanctuaries",
+    description:
+      "Capture rare wildlife moments in the wild forests of Madhya Pradesh.",
+    image: expWildlifePhoto,
+    video: "/videos/experiences/wildlife-photography-2.mp4",
+    category: "Wildlife",
+    icon: "📸",
+  },
+  {
+    id: "yoga-heritage-2",
+    title: "Yoga at Heritage Sites",
+    subtitle: "Historic Palaces & Temples",
+    description:
+      "Sunrise yoga sessions amid the timeless architecture of MP's heritage sites.",
+    image: expYoga,
+    video: "/videos/experiences/yoga-heritage-2.mp4",
+    category: "Wellness",
+    icon: "🕉️",
+  },
+  {
+    id: "temple-ritual-2",
+    title: "Temple Ritual Experience",
+    subtitle: "Sacred Temples of MP",
+    description:
+      "Authentic priest-guided temple rituals at MP's most sacred shrines.",
+    image: expTempleRitual,
+    video: "/videos/experiences/temple-ritual-2.mp4",
+    category: "Spiritual",
+    icon: "🛕",
+  },
 ];
