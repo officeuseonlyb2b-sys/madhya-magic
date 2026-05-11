@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import { FilterProvider } from "@/contexts/FilterContext";
 import FloatingButtons from "@/components/FloatingButtons";
 import SectionSkeleton from "@/components/SectionSkeleton";
-import heritagePatternBg from "@/assets/heritage-pattern-bg.jpg";
+
 
 // Lazy-load below-the-fold sections to reduce initial JS, improve LCP/TBT.
 const InteractiveMapSection = lazy(() => import("@/components/InteractiveMapSection"));
@@ -38,18 +38,7 @@ const Index = () => (
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <div
-        className="relative"
-        style={{
-          backgroundImage: `url(${heritagePatternBg})`,
-          backgroundRepeat: "no-repeat",
-          backgroundSize: "100% 100%",
-          backgroundPosition: "center center",
-          backgroundAttachment: "scroll",
-        }}
-      >
-        {/* Soft cream overlay for readability */}
-        <div className="absolute inset-0 bg-[hsl(40,40%,98%)]/82 pointer-events-none" aria-hidden="true" />
+      <div className="relative">
         <div className="relative">
           <LazySection variant="default"><InteractiveMapSection /></LazySection>
           <LazySection variant="slider"><ReelsSection /></LazySection>
