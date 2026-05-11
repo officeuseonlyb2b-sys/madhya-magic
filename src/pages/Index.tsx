@@ -42,9 +42,9 @@ const Index = () => (
         className="relative"
         style={{
           backgroundImage: `url(${heritagePatternBg})`,
-          backgroundRepeat: "repeat",
-          backgroundSize: "300px auto",
-          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "100% 100%",
+          backgroundPosition: "center center",
           backgroundAttachment: "scroll",
         }}
       >
