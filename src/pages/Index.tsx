@@ -4,7 +4,7 @@ import HeroSection from "@/components/HeroSection";
 import { FilterProvider } from "@/contexts/FilterContext";
 import FloatingButtons from "@/components/FloatingButtons";
 import SectionSkeleton from "@/components/SectionSkeleton";
-import heritagePatternBg from "@/assets/heritage-pattern-bg.jpg";
+
 
 // Lazy-load below-the-fold sections to reduce initial JS, improve LCP/TBT.
 const InteractiveMapSection = lazy(() => import("@/components/InteractiveMapSection"));
