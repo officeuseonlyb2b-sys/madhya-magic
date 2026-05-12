@@ -74,12 +74,7 @@ const DestinationsSection = () => {
     : destinations.filter(d => d.category.some(c => selectedFilters.includes(c as any)));
 
   return (
-    <section id="destinations" className="relative py-20 md:py-28 overflow-hidden">
-      <div
-        className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${destinationsBg})` }}
-      />
-      <div className="absolute inset-0 bg-background/85" />
+    <section id="destinations" className="relative py-20 md:py-28 overflow-hidden bg-white">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           ref={titleRef}

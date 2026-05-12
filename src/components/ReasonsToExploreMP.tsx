@@ -62,7 +62,7 @@ const SpecialOffersSection = () => {
 
   return (
     <section
-      className="relative py-14 md:py-18 bg-gradient-to-b from-background via-muted/20 to-background overflow-hidden"
+      className="relative py-14 md:py-18 bg-white overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >

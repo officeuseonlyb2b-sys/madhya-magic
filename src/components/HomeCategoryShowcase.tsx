@@ -101,7 +101,7 @@ const HomeCategoryShowcase = () => {
   );
 
   return (
-    <section className="relative py-20 bg-[#f7f7f7] overflow-hidden">
+    <section className="relative py-20 bg-white overflow-hidden">
       <div className="max-w-[1450px] mx-auto px-6">
 
         {/* HEADING */}
