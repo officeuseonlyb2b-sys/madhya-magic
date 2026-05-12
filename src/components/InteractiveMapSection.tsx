@@ -117,8 +117,8 @@ const ProgressDots = ({
         key={i}
         onClick={() => onSelect(i)}
         className={`h-1.5 rounded-full transition-all duration-500 ${i === current % 8
-            ? "w-8 bg-primary"
-            : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"
+          ? "w-8 bg-primary"
+          : "w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50"
           }`}
       />
     ))}
@@ -232,13 +232,25 @@ const InteractiveMapSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12 shadow-none drop-shadow-none"
         >
-          <h2 className="text-3xl md:text-5xl font-display font-bold text-black mt-4 shadow-none drop-shadow-none">
+          <h2
+            className="text-3xl md:text-5xl font-display font-bold text-black mt-4"
+            style={{
+              textShadow: "none",
+              filter: "none",
+            }}
+          >
             Explore Madhya Pradesh
           </h2>
 
           <div className="section-divider my-4 shadow-none drop-shadow-none" />
 
-          <p className="text-gray-600 max-w-2xl mx-auto shadow-none drop-shadow-none">
+          <p
+            className="text-gray-600 max-w-2xl mx-auto"
+            style={{
+              textShadow: "none",
+              filter: "none",
+            }}
+          >
             Select categories to filter destinations — multi-select supported
           </p>
         </motion.div>

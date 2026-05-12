@@ -108,17 +108,17 @@ const HomeCategoryShowcase = () => {
         <div className="text-center mb-14">
           
           <h2 className="text-[42px] md:text-[58px] font-light leading-none text-[#1e2432]">
-            <span
+            {/* <span
               className="font-normal italic mr-3"
               style={{
                 fontFamily: "cursive",
               }}
             >
               Know
-            </span>
+            </span> */}
 
             <span className="font-bold">
-              what we offer in Madhya Pradesh
+              Know what we offer in Madhya Pradesh
             </span>
           </h2>
 
@@ -139,50 +139,50 @@ const HomeCategoryShowcase = () => {
           </button>
 
           {/* CARDS */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 w-full px-10">
-            
-            {visibleCards.map((item, index) => (
-              <Link
-                key={index}
-                to={`/packages${item.query}`}
-                className={`group rounded-[28px] overflow-hidden bg-white border border-[#e7e7e7] transition-all duration-500 ${
-                  index === 1
-                    ? "shadow-[0_15px_40px_rgba(255,190,11,0.35)]"
-                    : "shadow-sm hover:shadow-xl"
-                }`}
-              >
-                
-                {/* IMAGE */}
-                <div className="relative h-[300px] overflow-hidden">
-                  <img
-                    src={item.image}
-                    alt={item.label}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full px-8">
+  
+  {visibleCards.map((item, index) => (
+    <Link
+      key={index}
+      to={`/packages${item.query}`}
+      className={`group rounded-[28px] overflow-hidden bg-white border border-[#e7e7e7] transition-all duration-500 ${
+        index === 1
+          ? "shadow-[0_15px_40px_rgba(255,190,11,0.35)]"
+          : "shadow-sm hover:shadow-xl"
+      }`}
+    >
+      
+      {/* IMAGE */}
+      <div className="relative h-[220px] overflow-hidden">
+        <img
+          src={item.image}
+          alt={item.label}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+        />
 
-                  {/* GOLD CORNER */}
-                  <div className="absolute top-5 right-5 w-8 h-8 border-t-2 border-r-2 border-[#d4af37] rounded-tr-xl" />
-                </div>
+        {/* GOLD CORNER */}
+        <div className="absolute top-5 right-5 w-8 h-8 border-t-2 border-r-2 border-[#d4af37] rounded-tr-xl" />
+      </div>
 
-                {/* CONTENT */}
-                <div className="px-6 py-7 text-center">
+      {/* CONTENT */}
+      <div className="px-5 py-5 text-center">
 
-                  {/* TITLE */}
-                  <h3 className="text-[20px] leading-[1.25] font-bold text-[#1e2432] min-h-[82px]">
-                    {item.label}
-                  </h3>
+        {/* TITLE */}
+        <h3 className="text-[18px] leading-[1.3] font-bold text-[#1e2432] min-h-[60px]">
+          {item.label}
+        </h3>
 
-                  {/* GOLD LINE */}
-                  <div className="w-10 h-[2px] bg-[#d4af37] mx-auto my-4 rounded-full" />
+        {/* GOLD LINE */}
+        <div className="w-10 h-[2px] bg-[#d4af37] mx-auto my-3 rounded-full" />
 
-                  {/* DESCRIPTION */}
-                  <p className="text-[15px] leading-7 text-[#666] line-clamp-4">
-                    {item.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
+        {/* DESCRIPTION */}
+        <p className="text-[14px] leading-6 text-[#666] line-clamp-3">
+          {item.description}
+        </p>
+      </div>
+    </Link>
+  ))}
+</div>
 
           {/* RIGHT BUTTON */}
           <button

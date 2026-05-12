@@ -60,7 +60,7 @@ const ReelVideo = ({
   );
 };
 
-// ----- CARD -----
+
 // ----- CARD -----
 const ReelCard = ({
   reel,
@@ -106,12 +106,6 @@ const ReelCard = ({
             </h3>
           </div>
 
-          {/* PLAY BUTTON */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
-            <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 flex items-center justify-center">
-              <Play size={22} fill="white" className="ml-1 text-white" />
-            </div>
-          </div>
 
           {/* CATEGORY */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center pointer-events-none">
@@ -190,32 +184,10 @@ const ReelsSection = () => {
                 : `Reels matching: ${selectedFilters.join(", ")}`}
             </p>
 
-            {/* BUTTON */}
-            <Link
-              to="/"
-              className="group inline-flex items-center gap-3 mt-7 border border-[#5f746c] rounded-full px-5 py-2.5 text-[#435750] hover:bg-[#5f746c] hover:text-white transition-all duration-300"
-            >
-              <span className="uppercase tracking-[3px] text-[11px] sm:text-xs">
-                Discover More
-              </span>
-
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
-              />
-            </Link>
+           
 
             {/* ARROWS */}
-            <div className="flex items-center justify-center lg:justify-start gap-4 mt-10 text-[#435750]">
-
-              <button className="hover:scale-110 transition">
-                <ChevronLeft size={34} strokeWidth={1.5} />
-              </button>
-
-              <button className="hover:scale-110 transition">
-                <ChevronRight size={34} strokeWidth={1.5} />
-              </button>
-            </div>
+            
           </div>
 
           {/* RIGHT SLIDER */}

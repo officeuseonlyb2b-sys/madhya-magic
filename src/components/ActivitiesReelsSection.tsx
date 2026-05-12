@@ -213,7 +213,7 @@ const ActivitiesReelsSection = () => {
             </Link>
 
             {/* ARROWS */}
-            <div className="flex items-center justify-center lg:justify-start gap-4 mt-10 text-[#7a5d65]">
+            {/* <div className="flex items-center justify-center lg:justify-start gap-4 mt-10 text-[#7a5d65]">
 
               <button className="hover:scale-110 transition">
                 <ChevronLeft size={34} strokeWidth={1.5} />
@@ -222,7 +222,7 @@ const ActivitiesReelsSection = () => {
               <button className="hover:scale-110 transition">
                 <ChevronRight size={34} strokeWidth={1.5} />
               </button>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT SLIDER */}

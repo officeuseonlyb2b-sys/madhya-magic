@@ -207,7 +207,7 @@ const ExperiencesReelsSection = () => {
             </Link>
 
             {/* ARROWS */}
-            <div className="flex items-center justify-center lg:justify-start gap-4 mt-10 text-[#6e5548]">
+            {/* <div className="flex items-center justify-center lg:justify-start gap-4 mt-10 text-[#6e5548]">
 
               <button className="hover:scale-110 transition">
                 <ChevronLeft size={34} strokeWidth={1.5} />
@@ -216,7 +216,7 @@ const ExperiencesReelsSection = () => {
               <button className="hover:scale-110 transition">
                 <ChevronRight size={34} strokeWidth={1.5} />
               </button>
-            </div>
+            </div> */}
           </div>
 
           {/* RIGHT SLIDER */}
