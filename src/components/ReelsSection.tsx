@@ -35,13 +35,13 @@ const ReelVideo = ({
         setLoaded(true);
       }
 
-      v.play().catch(() => {});
+      v.play().catch(() => { });
     } else {
       v.pause();
 
       try {
         v.currentTime = 0;
-      } catch {}
+      } catch { }
     }
   }, [isHovered, loaded]);
 
@@ -54,13 +54,13 @@ const ReelVideo = ({
       loop
       playsInline
       preload="none"
-      className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
-        isHovered ? "scale-100 opacity-100" : "scale-110 opacity-0"
-      }`}
+      className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${isHovered ? "scale-100 opacity-100" : "scale-110 opacity-0"
+        }`}
     />
   );
 };
 
+// ----- CARD -----
 // ----- CARD -----
 const ReelCard = ({
   reel,
@@ -80,45 +80,41 @@ const ReelCard = ({
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
       onTouchEnd={() => setHovered(false)}
-      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0"
+      style={{
+        outline: "none",
+        border: "none",
+        boxShadow: "none",
+        WebkitTapHighlightColor: "transparent",
+      }}
+      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 focus:outline-none focus:ring-0"
     >
-      <div className="group relative overflow-hidden rounded-[24px] bg-[#f4efe8] shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2">
+      <div className="group relative overflow-hidden rounded-[24px] bg-[#f4efe8] border-none outline-none ring-0 shadow-none">
 
         {/* MEDIA */}
-        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px]">
-
-          {/* IMAGE */}
-          <img
-            src={reel.thumbnail}
-            alt={reel.title}
-            loading="lazy"
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
-              hovered ? "opacity-0 scale-105" : "opacity-100 scale-100"
-            }`}
-          />
+        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none">
 
           {/* VIDEO */}
           <ReelVideo reel={reel} isHovered={hovered} />
 
           {/* OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 pointer-events-none" />
 
           {/* TOP TITLE */}
-          <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full">
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full pointer-events-none">
             <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug">
               {reel.title}
             </h3>
           </div>
 
           {/* PLAY BUTTON */}
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+          <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300 pointer-events-none">
             <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-xl border border-white/30 flex items-center justify-center">
               <Play size={22} fill="white" className="ml-1 text-white" />
             </div>
           </div>
 
           {/* CATEGORY */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center pointer-events-none">
             <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
               {reel.category}
             </span>
@@ -126,7 +122,7 @@ const ReelCard = ({
         </div>
 
         {/* LOCATION */}
-        <div className="bg-[#f4efe8] py-4 px-3 text-center border-t border-[#ddd2c7]">
+        <div className="bg-[#f4efe8] py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
           <div className="flex items-center justify-center gap-2 text-[#7d5f4f]">
             <MapPin size={14} />
             <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">

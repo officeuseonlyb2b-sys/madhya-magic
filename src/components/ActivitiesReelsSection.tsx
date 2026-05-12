@@ -23,6 +23,7 @@ const filterToActivityCategories: Record<
 };
 
 // ----- SINGLE LUXURY CARD -----
+// ----- SINGLE LUXURY CARD -----
 const ActivityCard = ({
   reel,
   index,
@@ -57,20 +58,13 @@ const ActivityCard = ({
   }, [hovered, loaded]);
 
   const Inner = (
-    <div className="group relative overflow-hidden rounded-[24px] bg-[#f5f1ec] shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2">
+    <div className="group relative overflow-hidden rounded-[24px] bg-[#f5f1ec] border-none outline-none ring-0 shadow-none">
 
       {/* IMAGE / VIDEO */}
-      <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px]">
+      <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none">
 
         {/* IMAGE */}
-        <img
-          src={reel.thumbnail}
-          alt={reel.title}
-          loading="lazy"
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
-            hovered ? "opacity-0 scale-105" : "opacity-100 scale-100"
-          }`}
-        />
+        
 
         {/* VIDEO */}
         <video
@@ -81,23 +75,23 @@ const ActivityCard = ({
           loop
           playsInline
           preload="none"
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
+          className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
             hovered ? "opacity-100 scale-100" : "opacity-0 scale-110"
           }`}
         />
 
         {/* OVERLAY */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 pointer-events-none" />
 
         {/* TOP TITLE */}
-        <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full">
+        <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full pointer-events-none">
           <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug">
             {reel.title}
           </h3>
         </div>
 
         {/* CATEGORY */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center pointer-events-none">
           <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
             {reel.category}
           </span>
@@ -105,7 +99,7 @@ const ActivityCard = ({
       </div>
 
       {/* LOCATION */}
-      <div className="bg-[#f5f1ec] py-4 px-3 text-center border-t border-[#e8ddd0]">
+      <div className="bg-[#f5f1ec] py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
         <div className="flex items-center justify-center gap-2 text-[#8b5e4f]">
           <MapPin size={14} />
           <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
@@ -125,13 +119,27 @@ const ActivityCard = ({
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
       onTouchEnd={() => setHovered(false)}
-      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0"
+      style={{
+        outline: "none",
+        border: "none",
+        boxShadow: "none",
+        WebkitTapHighlightColor: "transparent",
+      }}
+      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 focus:outline-none focus:ring-0 border-none outline-none ring-0 shadow-none"
     >
-      {reel.link ? <Link to={reel.link}>{Inner}</Link> : Inner}
+      {reel.link ? (
+        <Link
+          to={reel.link}
+          className="block border-none outline-none ring-0 focus:outline-none focus:ring-0"
+        >
+          {Inner}
+        </Link>
+      ) : (
+        Inner
+      )}
     </motion.div>
   );
 };
-
 // ----- MAIN SECTION -----
 const ActivitiesReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
@@ -178,9 +186,8 @@ const ActivitiesReelsSection = () => {
             <h2 className="text-[#7a5d65] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide">
               Top
               <br />
-              Curated
-              <br />
-              Experiences
+              Activities
+              
             </h2>
 
             {/* DESCRIPTION */}

@@ -370,56 +370,110 @@ We strive to make every journey memorable through meaningful experiences, emotio
         </div>
       </section>
 
-      {/* BLOGS */}
-      <section className="py-32 bg-[#fafafa]">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <span className="text-[#C8A96B] uppercase tracking-[0.3em] text-sm">
-              Our Blogs
-            </span>
+ {/* BLOGS */}
+<section className="relative py-10 sm:py-12 lg:py-14 bg-[#f8f6f3] overflow-hidden">
 
-            <h2 className="text-5xl font-black mt-4 text-black">
-              Stories & Inspirations
-            </h2>
+  {/* BACKGROUND */}
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(200,169,107,0.08),transparent_40%)] pointer-events-none" />
+
+  <div className="relative z-10 max-w-[1180px] mx-auto px-4 sm:px-5">
+
+    {/* HEADER */}
+    <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
+
+      <span className="inline-block text-[#b8955d] uppercase tracking-[0.35em] text-[11px] sm:text-xs font-medium mb-4">
+        Luxury Journal
+      </span>
+
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[800] tracking-tight text-[#111111] leading-[1.05]">
+        Stories &
+        <br />
+        Inspirations
+      </h2>
+
+      <p className="text-[#666] text-sm sm:text-[15px] leading-relaxed mt-5 max-w-xl mx-auto">
+        Discover curated travel stories, hidden gems, spiritual escapes,
+        luxury retreats, and unforgettable experiences across Madhya Pradesh.
+      </p>
+    </div>
+
+    {/* BLOG GRID */}
+    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+      {blogs.map((blog, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: index * 0.08 }}
+          whileHover={{ y: -6 }}
+          className="group relative rounded-[26px] overflow-hidden bg-white border border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
+        >
+
+          {/* IMAGE */}
+          <div className="relative overflow-hidden">
+
+            <img
+              src={blog.image}
+              alt={blog.title}
+              className="h-[220px] sm:h-[250px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+
+            {/* OVERLAY */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+            {/* CATEGORY */}
+            <div className="absolute top-4 left-4">
+              <span className="bg-white/90 backdrop-blur-md text-[#111] text-[10px] uppercase tracking-[0.25em] px-3 py-1.5 rounded-full">
+                Travel Stories
+              </span>
+            </div>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {blogs.map((blog, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -8 }}
-                className="rounded-[32px] overflow-hidden border border-black/10 bg-white"
-              >
-                <img
-                  src={blog.image}
-                  className="h-[280px] w-full object-cover"
-                  alt=""
+          {/* CONTENT */}
+          <div className="p-6">
+
+            {/* META */}
+            <div className="flex items-center gap-2 text-[#999] text-[10px] uppercase tracking-[0.2em]">
+              <span>Luxury Travel</span>
+
+              <div className="w-1 h-1 rounded-full bg-[#c8a96b]" />
+
+              <span>Editorial</span>
+            </div>
+
+            {/* TITLE */}
+            <h3 className="text-[22px] sm:text-[24px] font-[700] leading-tight text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d]">
+              {blog.title}
+            </h3>
+
+            {/* DESCRIPTION */}
+            <p className="text-[#666] leading-relaxed mt-4 text-sm">
+              Discover meaningful stories, hidden experiences, cultural escapes,
+              and refined travel inspirations crafted for modern explorers.
+            </p>
+
+            {/* BUTTON */}
+            <button className="mt-6 inline-flex items-center gap-3 text-[#111] font-medium group/button">
+
+              <span className="uppercase tracking-[0.2em] text-[11px]">
+                Read Article
+              </span>
+
+              <div className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center transition-all duration-300 group-hover/button:bg-black group-hover/button:text-white">
+                <ArrowRight
+                  size={15}
+                  className="transition-transform duration-300 group-hover/button:translate-x-0.5"
                 />
-
-                <div className="p-8">
-                  <span className="text-[#C8A96B] text-sm uppercase tracking-[0.2em]">
-                    Travel Stories
-                  </span>
-
-                  <h3 className="text-2xl font-bold mt-4 leading-snug text-black">
-                    {blog.title}
-                  </h3>
-
-                  <p className="text-black/60 mt-4 leading-relaxed">
-                    Discover meaningful stories, hidden experiences, and luxury
-                    travel inspirations across Madhya Pradesh.
-                  </p>
-
-                  <button className="mt-6 flex items-center gap-2 text-black font-medium">
-                    Read More
-                    <ArrowRight size={18} />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
+              </div>
+            </button>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
 
       {/* TRAVEL EXPERTS */}
       <section className="py-14 bg-white overflow-hidden">

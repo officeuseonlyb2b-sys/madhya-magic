@@ -22,6 +22,7 @@ const filterToExperienceCategories: Record<MapCategory, string[]> = {
 };
 
 // ----- EXPERIENCE CARD -----
+// ----- EXPERIENCE CARD -----
 const ExperienceCard = ({
   exp,
   index,
@@ -58,24 +59,21 @@ const ExperienceCard = ({
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
       onTouchEnd={() => setHovered(false)}
-      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0"
+      style={{
+        outline: "none",
+        border: "none",
+        boxShadow: "none",
+        WebkitTapHighlightColor: "transparent",
+      }}
+      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 border-none outline-none ring-0 shadow-none focus:outline-none focus:ring-0"
     >
-      <div className="group relative overflow-hidden rounded-[24px] bg-[#f6f1ea] shadow-[0_10px_30px_rgba(0,0,0,0.08)] transition-all duration-500 hover:-translate-y-2">
+      <div className="group relative overflow-hidden rounded-[24px] bg-[#f6f1ea] border-none outline-none ring-0 shadow-none">
 
         {/* MEDIA */}
-        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px]">
+        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none">
 
           {/* IMAGE */}
-          <img
-            src={exp.image}
-            alt={exp.title}
-            loading="lazy"
-            className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
-              exp.video && hovered
-                ? "opacity-0 scale-105"
-                : "opacity-100 scale-100"
-            }`}
-          />
+          
 
           {/* VIDEO */}
           {exp.video && (
@@ -87,7 +85,7 @@ const ExperienceCard = ({
               loop
               playsInline
               preload="none"
-              className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${
+              className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
                 hovered
                   ? "opacity-100 scale-100"
                   : "opacity-0 scale-110"
@@ -96,17 +94,17 @@ const ExperienceCard = ({
           )}
 
           {/* OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 pointer-events-none" />
 
           {/* TOP TITLE */}
-          <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full">
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full pointer-events-none">
             <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug">
               {exp.title}
             </h3>
           </div>
 
           {/* CATEGORY */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center pointer-events-none">
             <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
               {exp.category}
             </span>
@@ -114,7 +112,7 @@ const ExperienceCard = ({
         </div>
 
         {/* LOCATION */}
-        <div className="bg-[#f6f1ea] py-4 px-3 text-center border-t border-[#e4d9cb]">
+        <div className="bg-[#f6f1ea] py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
           <div className="flex items-center justify-center gap-2 text-[#8c644d]">
             <MapPin size={14} />
 
