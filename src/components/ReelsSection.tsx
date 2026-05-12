@@ -35,13 +35,13 @@ const ReelVideo = ({
         setLoaded(true);
       }
 
-      v.play().catch(() => { });
+      v.play().catch(() => {});
     } else {
       v.pause();
 
       try {
         v.currentTime = 0;
-      } catch { }
+      } catch {}
     }
   }, [isHovered, loaded]);
 
@@ -54,12 +54,12 @@ const ReelVideo = ({
       loop
       playsInline
       preload="none"
-      className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${isHovered ? "scale-100 opacity-100" : "scale-110 opacity-0"
-        }`}
+      className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
+        isHovered ? "scale-100 opacity-100" : "scale-110 opacity-0"
+      }`}
     />
   );
 };
-
 
 // ----- CARD -----
 const ReelCard = ({
@@ -106,7 +106,6 @@ const ReelCard = ({
             </h3>
           </div>
 
-
           {/* CATEGORY */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center pointer-events-none">
             <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
@@ -117,7 +116,7 @@ const ReelCard = ({
 
         {/* LOCATION */}
         <div className="bg-[#f4efe8] py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
-          <div className="flex items-center justify-center gap-2 text-[#7d5f4f]">
+          <div className="flex items-center justify-center gap-2 text-[#8b5e4f]">
             <MapPin size={14} />
             <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
               {reel.location}
@@ -166,33 +165,29 @@ const ReelsSection = () => {
           <div className="text-center lg:text-left">
 
             {/* SCRIPT TEXT */}
-            <span className="block text-[#61746d] text-2xl sm:text-3xl font-light italic mb-3">
+            <span className="block text-[#7d6673] text-2xl sm:text-3xl font-light italic mb-3">
               Explore the Beauty of
             </span>
 
             {/* HEADING */}
-            <h2 className="text-[#435750] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide">
+            <h2 className="text-[#7a5d65] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide">
               Top
               <br />
               Destinations
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="text-[#5d6e68] mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
+            <p className="text-[#7c6b67] mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
               {isAll
                 ? "Discover iconic landscapes, hidden gems, and unforgettable destinations across Madhya Pradesh."
                 : `Reels matching: ${selectedFilters.join(", ")}`}
             </p>
 
-           
-
-            {/* ARROWS */}
-            
           </div>
 
           {/* RIGHT SLIDER */}
           {sliderData.length === 0 ? (
-            <p className="text-center text-[#435750] py-10">
+            <p className="text-center text-[#7a5d65] py-10">
               No reels match the selected categories.
             </p>
           ) : (

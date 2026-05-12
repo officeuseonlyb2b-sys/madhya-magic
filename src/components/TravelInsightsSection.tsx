@@ -1,11 +1,11 @@
 "use client";
 
 import {
-  CalendarDays,
-  FolderOpen,
+  ArrowRight,
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 
 const blogs = [
@@ -16,7 +16,6 @@ const blogs = [
     title: "Unforgettable Cultural Travel Experiences",
     description:
       "Traveling is an incredible way to explore cultures and landscapes...",
-    date: "February 6, 2025",
   },
   {
     image:
@@ -25,7 +24,6 @@ const blogs = [
     title: "Ultimate Travel Packing List",
     description:
       "Discover smart packing strategies for stress-free travel...",
-    date: "February 6, 2025",
   },
   {
     image:
@@ -34,7 +32,6 @@ const blogs = [
     title: "Make The Most Of Your Holiday",
     description:
       "Plan your dream vacation with expert travel insights...",
-    date: "February 6, 2025",
   },
   {
     image:
@@ -43,7 +40,6 @@ const blogs = [
     title: "Best Places To Visit In 2025",
     description:
       "Explore the most trending travel destinations this year...",
-    date: "February 6, 2025",
   },
   {
     image:
@@ -52,7 +48,6 @@ const blogs = [
     title: "Beautiful Nature Escapes",
     description:
       "Reconnect with nature through breathtaking journeys...",
-    date: "February 6, 2025",
   },
   {
     image:
@@ -61,25 +56,6 @@ const blogs = [
     title: "Luxury Trips Around The World",
     description:
       "Experience premium travel destinations and resorts...",
-    date: "February 6, 2025",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1200&auto=format&fit=crop",
-    category: "Road Trip",
-    title: "Top Road Trip Adventures",
-    description:
-      "Enjoy scenic highways and unforgettable experiences...",
-    date: "February 6, 2025",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?q=80&w=1200&auto=format&fit=crop",
-    category: "Beach",
-    title: "Top Tropical Beach Destinations",
-    description:
-      "Relax at the world's most stunning beaches and islands...",
-    date: "February 6, 2025",
   },
 ];
 
@@ -89,18 +65,16 @@ export default function TravelInsightsSection() {
   const scroll = (direction: "left" | "right") => {
     if (!scrollRef.current) return;
 
-    const scrollAmount = 340;
-
     scrollRef.current.scrollBy({
-      left: direction === "left" ? -scrollAmount : scrollAmount,
+      left: direction === "left" ? -340 : 340,
       behavior: "smooth",
     });
   };
 
   return (
-    <section className="w-full bg-white py-20 overflow-hidden">
+    <section className="w-full bg-white py-24 overflow-hidden">
       
-      {/* Heading */}
+      {/* HEADING */}
       <div className="text-center px-4 mb-14">
         <h2 className="text-3xl md:text-5xl leading-tight tracking-tight">
           <span className="font-bold text-black">
@@ -109,7 +83,9 @@ export default function TravelInsightsSection() {
           <span className="font-light text-black/70">
             Insights
           </span>
+
           <br />
+
           <span className="font-bold text-black">
             & Expert
           </span>{" "}
@@ -119,71 +95,97 @@ export default function TravelInsightsSection() {
         </h2>
       </div>
 
-      {/* Buttons */}
-      <div className="max-w-7xl mx-auto flex justify-end gap-3 px-5 mb-6">
+      {/* NAVIGATION */}
+      <div className="max-w-7xl mx-auto flex justify-end gap-3 px-5 mb-8">
         <button
           onClick={() => scroll("left")}
-          className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center hover:scale-105 transition"
+          className="w-11 h-11 rounded-full border border-black/10 bg-white flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
         >
           <ChevronLeft size={20} />
         </button>
 
         <button
           onClick={() => scroll("right")}
-          className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center hover:scale-105 transition"
+          className="w-11 h-11 rounded-full border border-black/10 bg-white flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
         >
           <ChevronRight size={20} />
         </button>
       </div>
 
-      {/* Carousel */}
+      {/* CAROUSEL */}
       <div
         ref={scrollRef}
         className="flex gap-6 overflow-x-auto scroll-smooth px-5 no-scrollbar"
       >
         {blogs.map((blog, index) => (
-          <div
+          <motion.div
             key={index}
-            className="min-w-[300px] max-w-[300px] bg-[#111111] rounded-[24px] overflow-hidden shadow-xl flex-shrink-0 group hover:-translate-y-2 transition-all duration-500"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: index * 0.08 }}
+            whileHover={{ y: -6 }}
+            className="group relative min-w-[320px] max-w-[320px] rounded-[26px] overflow-hidden bg-white border border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-all duration-500 flex-shrink-0"
           >
             
-            {/* Image */}
-            <div className="overflow-hidden">
+            {/* IMAGE */}
+            <div className="relative overflow-hidden">
+
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="w-full h-[220px] object-cover group-hover:scale-105 transition-transform duration-700"
+                className="h-[240px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
+
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+
+              {/* CATEGORY */}
+              <div className="absolute top-4 left-4">
+                <span className="bg-white/90 backdrop-blur-md text-[#111] text-[10px] uppercase tracking-[0.25em] px-3 py-1.5 rounded-full">
+                  {blog.category}
+                </span>
+              </div>
             </div>
 
-            {/* Content */}
-            <div className="p-5">
-              
-              {/* Meta */}
-              <div className="flex items-center gap-4 text-gray-400 text-xs mb-4 flex-wrap">
-                
-                <div className="flex items-center gap-1.5">
-                  <CalendarDays size={14} />
-                  <span>{blog.date}</span>
-                </div>
+            {/* CONTENT */}
+            <div className="p-6">
 
-                <div className="flex items-center gap-1.5">
-                  <FolderOpen size={14} />
-                  <span>{blog.category}</span>
-                </div>
+              {/* META */}
+              <div className="flex items-center gap-2 text-[#999] text-[10px] uppercase tracking-[0.2em]">
+                <span>Luxury Travel</span>
+
+                <div className="w-1 h-1 rounded-full bg-[#c8a96b]" />
+
+                <span>Editorial</span>
               </div>
 
-              {/* Title */}
-              <h3 className="text-white text-[22px] leading-[1.3] font-semibold mb-4">
+              {/* TITLE */}
+              <h3 className="text-[22px] sm:text-[24px] font-[700] leading-tight text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d] line-clamp-2">
                 {blog.title}
               </h3>
 
-              {/* Description */}
-              <p className="text-gray-400 text-sm leading-6">
+              {/* DESCRIPTION */}
+              <p className="text-[#666] leading-relaxed mt-4 text-sm">
                 {blog.description}
               </p>
+
+              {/* BUTTON */}
+              <button className="mt-6 inline-flex items-center gap-3 text-[#111] font-medium group/button">
+
+                <span className="uppercase tracking-[0.2em] text-[11px]">
+                  Read Article
+                </span>
+
+                <div className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center transition-all duration-300 group-hover/button:bg-black group-hover/button:text-white">
+                  <ArrowRight
+                    size={15}
+                    className="transition-transform duration-300 group-hover/button:translate-x-0.5"
+                  />
+                </div>
+              </button>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

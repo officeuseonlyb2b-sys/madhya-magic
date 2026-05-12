@@ -1,5 +1,13 @@
+"use client";
+
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
+// ADD THESE IMPORTS
+import choose1 from "@/assets/choose1.jpeg";
+import choose2 from "@/assets/choose2.jpeg";
+import choose3 from "@/assets/choose3.jpeg";
+import choose4 from "@/assets/choose4.jpeg";
+import choose5 from "@/assets/choose5.jpeg";
 import {
   MapPin,
   Hand,
@@ -7,9 +15,17 @@ import {
   Heart,
   Headphones,
   PawPrint,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
-import whyChooseImg from "@/assets/why-choose-us.jpg";
+const carouselImages = [
+  choose1,
+  choose2,
+  choose3,
+  choose4,
+  choose5,
+];
 
 const features = [
   {
@@ -73,6 +89,28 @@ const WhyChooseUs = () => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
 
+  const [current, setCurrent] = useState(0);
+
+  const nextSlide = () => {
+    setCurrent((prev) =>
+      prev === carouselImages.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? carouselImages.length - 1 : prev - 1
+    );
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextSlide();
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section className="py-14 md:py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -83,6 +121,7 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.6 }}
           className="bg-[#f3f3f3] rounded-[28px] p-5 md:p-10 lg:p-12 border border-[#e7e7e7]"
         >
+          
           {/* Heading */}
           <div className="text-center mb-12">
             <h2 className="text-[34px] md:text-[52px] leading-tight font-bold text-black tracking-[-1px]">
@@ -92,6 +131,7 @@ const WhyChooseUs = () => {
 
           {/* Content */}
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-start">
+            
             {/* Left */}
             <div>
               <p className="text-[15px] leading-[1.7] text-[#5f5f5f] italic mb-10 max-w-2xl">
@@ -132,12 +172,49 @@ const WhyChooseUs = () => {
 
             {/* Right */}
             <div>
-              <div className="overflow-hidden rounded-[24px]">
+
+              {/* IMAGE CAROUSEL */}
+              <div className="relative overflow-hidden rounded-[24px] group">
+                
                 <img
-                  src={whyChooseImg}
+                  src={carouselImages[current]}
                   alt="Why Choose Us"
-                  className="w-full h-[300px] md:h-[390px] object-cover"
+                  className="w-full h-[300px] md:h-[390px] object-cover transition-all duration-700"
                 />
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/5 to-transparent" />
+
+                {/* Left Button */}
+                <button
+                  onClick={prevSlide}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                >
+                  <ChevronLeft size={18} className="text-black" />
+                </button>
+
+                {/* Right Button */}
+                <button
+                  onClick={nextSlide}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/80 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300"
+                >
+                  <ChevronRight size={18} className="text-black" />
+                </button>
+
+                {/* Dots */}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                  {carouselImages.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setCurrent(index)}
+                      className={`h-2 rounded-full transition-all duration-300 ${
+                        current === index
+                          ? "w-8 bg-white"
+                          : "w-2 bg-white/50"
+                      }`}
+                    />
+                  ))}
+                </div>
               </div>
 
               <div className="mt-8">
@@ -177,6 +254,7 @@ const WhyChooseUs = () => {
                 </div>
               </div>
             </div>
+
           </div>
         </motion.div>
       </div>

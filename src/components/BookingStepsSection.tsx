@@ -5,6 +5,8 @@ import {
   Plane,
 } from "lucide-react";
 
+import bookStep from "@/assets/book-step.jpg";
+
 export default function BookingStepsSection() {
   const steps = [
     {
@@ -36,20 +38,20 @@ export default function BookingStepsSection() {
   return (
     <section className="w-full bg-black overflow-hidden">
       <div className="grid lg:grid-cols-2 min-h-[520px]">
-        
+
         {/* LEFT SIDE */}
         <div className="relative z-10 flex items-center px-5 py-12 md:px-10 lg:px-14">
           <div className="max-w-[560px]">
-            
+
             {/* HEADING */}
             <h2 className="text-white text-[32px] md:text-[44px] leading-[1.1] tracking-[-1px] font-light">
-              
+
               {/* FIRST LINE */}
               <div className="whitespace-nowrap">
                 <span className="font-bold">
                   Book Your Next
                 </span>{" "}
-                
+
                 <span className="font-light">
                   Adventure in
                 </span>
@@ -79,7 +81,7 @@ export default function BookingStepsSection() {
                     key={index}
                     className="flex items-start gap-3"
                   >
-                    
+
                     {/* ICON */}
                     <div className="min-w-[58px] min-h-[58px] rounded-full bg-[#1a1a1a] border border-[#2a2a2a] flex items-center justify-center">
                       <Icon
@@ -107,10 +109,10 @@ export default function BookingStepsSection() {
 
         {/* RIGHT IMAGE */}
         <div className="relative min-h-[420px] lg:min-h-full">
-          
+
           {/* IMAGE */}
           <img
-            src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?q=80&w=1400&auto=format&fit=crop"
+            src={bookStep}
             alt="Traveler"
             className="absolute inset-0 w-full h-full object-cover"
           />
