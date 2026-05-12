@@ -207,7 +207,7 @@ const InteractiveMapSection = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-20 md:py-28 relative overflow-hidden"
+      className="py-20 md:py-28 relative overflow-hidden bg-white"
     >
       {/* Left decorative image */}
       <img
