@@ -485,8 +485,8 @@ export const exploreCategories: Record<MapCategory, { label: string; icon: strin
       { id: "amarkantak", name: "Amarkantak" },
       { id: "maihar", name: "Maihar" },
       { id: "mandsaur", name: "Mandsaur" },
-      { id: "sonagiri", name: "Sonagiri" },
       { id: "datia", name: "Datia" },
+      { id: "sonagiri", name: "Sonagiri" },
     ],
   },
 };
