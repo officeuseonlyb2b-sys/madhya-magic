@@ -36,6 +36,7 @@ import bhojpurImg from "@/assets/dest-bhojpur.jpg";
 import datiaImg from "@/assets/dest-datia.jpg";
 import sonagiriImg from "@/assets/dest-sonagiri.jpg";
 import shivpuriImg from "@/assets/dest-shivpuri.jpg";
+import chambalImg from "@/assets/dest-chambal.webp";
 // Reused images for newly added destinations (no new assets created)
 // const shivpuriImg = madhavImg; // Madhav NP is in Shivpuri district
 // const vidishaImg = udayagiriImg; // Udayagiri Caves are in Vidisha district
@@ -143,6 +144,16 @@ export const mapDestinations: MapDestination[] = [
     description: "Remote wilderness on the MP-Chhattisgarh border, home to tigers, leopards, and wild dogs.",
     x: 89.5826,
     y: 51.0164,
+  },
+
+  {
+    id: "chambal-gharial",
+    name: "Chambal Gharial Sanctuary",
+    category: ["Wildlife"],
+    image: chambalImg,
+    description: "National Chambal Sanctuary along the pristine Chambal river — home to the critically endangered gharial, marsh crocodiles, Gangetic dolphins, and rare turtles.",
+    x: 44.5,
+    y: 8.5,
   },
 
 
@@ -472,6 +483,7 @@ export const exploreCategories: Record<MapCategory, { label: string; icon: strin
       { id: "mukundpur", name: "Mukundpur White Tiger Safari & Zoo" },
       { id: "madhav", name: "Madhav National Park" },
       { id: "sanjay-dubri", name: "Sanjay Dubri National Park" },
+      { id: "chambal-gharial", name: "Chambal Gharial Sanctuary" },
     ],
   },
   Spiritual: {

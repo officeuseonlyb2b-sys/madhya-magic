@@ -114,6 +114,29 @@ const overrides: Record<string, Partial<DestinationDetails>> = {
       { title: "Camping", description: "Riverside tents under starlit skies.", icon: "🏕️" },
     ],
   },
+  "chambal-gharial": {
+    overviewParagraphs: [
+      "The National Chambal Gharial Sanctuary stretches along the crystal-clear Chambal river in northern Madhya Pradesh, protecting one of India's last unpolluted rivers. Established in 1979, it is a tri-state sanctuary spanning MP, Rajasthan, and Uttar Pradesh.",
+      "It is the most important refuge for the critically endangered gharial — the long-snouted, fish-eating crocodile — alongside healthy populations of mugger crocodiles, the rare Gangetic river dolphin, smooth-coated otters, and several species of freshwater turtles.",
+      "A boat safari through the dramatic ravine landscape offers unmatched sightings of basking gharials, soaring Indian skimmers, sarus cranes, and over 290 species of resident and migratory birds — making it a paradise for wildlife and bird photographers.",
+    ],
+    attractions: [],
+    thingsToDo: [
+      { title: "Gharial Boat Safari", description: "Glide along the Chambal to spot gharials and muggers basking on sandbanks.", icon: "🛶" },
+      { title: "River Dolphin Spotting", description: "Catch glimpses of the rare Gangetic river dolphin.", icon: "🐬" },
+      { title: "Bird Watching", description: "290+ species including Indian skimmers and sarus cranes.", icon: "🦜" },
+      { title: "Ravine Trekking", description: "Explore the dramatic Chambal badlands and ravines.", icon: "🥾" },
+      { title: "Wildlife Photography", description: "Capture turtles, otters and crocodiles in pristine habitat.", icon: "📷" },
+      { title: "Visit Bateshwar", description: "Cluster of 200+ ancient sandstone temples nearby.", icon: "🛕" },
+    ],
+    travelInfo: {
+      bestTime: "November to March",
+      road: "Well-connected by road from Gwalior (~70 km) and Agra (~70 km) via NH-44.",
+      rail: "Nearest railway stations are Morena and Gwalior, both on the main Delhi-Mumbai line.",
+      air: "Closest airport is Gwalior (~70 km); Agra and Delhi airports are also viable options.",
+    },
+    duration: "1 Day / Half-Day Safari",
+  },
 };
 
 export const getDestinationDetails = (id: string, name: string, image: string, category: string[]): DestinationDetails => {
