@@ -27,8 +27,8 @@ html, body {
 
 @layer base {
   :root {
-    /* Warm ivory base */
-    --background: 38 40% 97%;
+    /* Pure white base */
+    --background: 0 0% 100%;
     --foreground: 25 18% 14%;
 
     /* Sandstone card surface */
