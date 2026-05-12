@@ -164,7 +164,7 @@ const ActivitiesReelsSection = () => {
   const sliderData = useMemo(() => [...reels, ...reels], [reels]);
 
   return (
-    <section className="relative py-14 sm:py-16 lg:py-20 bg-[#f5f1ec] overflow-hidden">
+    <section className="relative py-14 sm:py-16 lg:py-20 bg-white overflow-hidden">
 
       {/* BACKGROUND PATTERN */}
       <div className="absolute inset-0 opacity-[0.05] bg-[url('/patterns/topography.svg')] bg-cover bg-center pointer-events-none" />

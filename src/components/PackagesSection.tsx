@@ -70,7 +70,7 @@ const PackagesSection = () => {
   return (
     <section
       id="packages"
-      className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-br from-background via-muted/30 to-background"
+      className="relative py-20 md:py-28 overflow-hidden bg-white"
     >
       {/* Subtle decorative background */}
       <div className="pointer-events-none absolute inset-0 opacity-[0.04]" style={{

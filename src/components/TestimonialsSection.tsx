@@ -20,7 +20,7 @@ const TestimonialsSection = () => {
   const next = () => setCurrent((c) => (c === testimonials.length - 1 ? 0 : c + 1));
 
   return (
-    <section className="py-20 md:py-28 bg-background">
+    <section className="py-20 md:py-28 bg-white">
       <div className="container mx-auto px-4">
         <motion.div
           ref={ref}
