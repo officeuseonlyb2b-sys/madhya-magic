@@ -48,7 +48,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-10 md:py-14 bg-[#f7f7f7] overflow-hidden">
+    <section className="py-10 md:py-14 bg-white overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 md:px-5">
 
         {/* MOBILE HEADING */}

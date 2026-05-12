@@ -98,7 +98,7 @@ export default function TravelInsightsSection() {
   };
 
   return (
-    <section className="w-full bg-[#f5f5f5] py-20 overflow-hidden">
+    <section className="w-full bg-white py-20 overflow-hidden">
       
       {/* Heading */}
       <div className="text-center px-4 mb-14">

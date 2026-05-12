@@ -157,7 +157,7 @@ const ExperiencesReelsSection = () => {
   );
 
   return (
-    <section className="relative py-10 sm:py-12 lg:py-14 bg-[#f3ede7] overflow-hidden">
+    <section className="relative py-10 sm:py-12 lg:py-14 bg-white overflow-hidden">
 
       {/* BACKGROUND PATTERN */}
       <div className="absolute inset-0 opacity-[0.05] bg-[url('/patterns/topography.svg')] bg-cover bg-center pointer-events-none" />
