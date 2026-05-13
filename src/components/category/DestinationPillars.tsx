@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -16,25 +16,32 @@ interface Props {
 
 const DestinationPillars = ({ destinations }: Props) => {
   const [activeIdx, setActiveIdx] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
 
   const len = destinations.length;
 
-  /* ================= AUTO SLIDER ================= */
+  const progressRef = useRef<NodeJS.Timeout | null>(null);
+
+  /* ================= AUTO MAIN SLIDER ================= */
   useEffect(() => {
-    if (len <= 1) return;
+    if (len <= 1 || isPaused) return;
 
-    const interval = setInterval(() => {
+    progressRef.current = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % len);
-    }, 5000);
+    }, 7000);
 
-    return () => clearInterval(interval);
-  }, [len]);
+    return () => {
+      if (progressRef.current) {
+        clearInterval(progressRef.current);
+      }
+    };
+  }, [len, isPaused]);
 
   if (!destinations?.length) return null;
 
   const activeItem = destinations[activeIdx];
 
-  /* ================= MANUAL NAVIGATION ================= */
+  /* ================= NAVIGATION ================= */
   const nextSlide = () => {
     setActiveIdx((prev) => (prev + 1) % len);
   };
@@ -48,25 +55,38 @@ const DestinationPillars = ({ destinations }: Props) => {
       <div className="container mx-auto px-4">
 
         {/* MAIN CONTAINER */}
-        <div className="relative w-full rounded-[38px] overflow-hidden bg-[#f5f5f5] shadow-[0_20px_60px_rgba(0,0,0,0.18)] p-4 md:p-5">
+        <div className="relative rounded-[42px] overflow-hidden bg-[#f7f6f3] border border-[#ece9e4] shadow-[0_15px_60px_rgba(0,0,0,0.08)] p-4 md:p-5">
 
-          {/* ================= TOP IMAGE AREA ================= */}
-          <div className="relative h-[420px] md:h-[650px] rounded-[30px] overflow-hidden">
+          {/* ================= HERO IMAGE ================= */}
+          <div className="relative h-[420px] md:h-[700px] rounded-[34px] overflow-hidden">
 
-            {/* IMAGE SLIDER */}
+            {/* IMAGE */}
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeItem.id}
-                initial={{ opacity: 0, scale: 1.08 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 1.03 }}
-                transition={{ duration: 0.9 }}
+                initial={{
+                  opacity: 0,
+                  scale: 1.04,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 1.02,
+                }}
+                transition={{
+                  duration: 1.2,
+                  ease: [0.22, 1, 0.36, 1],
+                }}
                 className="absolute inset-0"
               >
                 <img
                   src={activeItem.image}
                   alt={activeItem.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover will-change-transform"
+                  loading="lazy"
                 />
 
                 {/* OVERLAY */}
@@ -74,72 +94,93 @@ const DestinationPillars = ({ destinations }: Props) => {
               </motion.div>
             </AnimatePresence>
 
-            {/* TEXT CONTENT */}
+            {/* CONTENT */}
             <div className="absolute inset-0 z-20 flex items-end">
               <div className="p-6 md:p-10 lg:p-14 max-w-3xl">
 
+                
+
+                {/* TITLE */}
                 <motion.h2
                   key={activeItem.name}
                   initial={{ opacity: 0, y: 25 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="text-white text-3xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                  transition={{
+                    duration: 0.8,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="text-white text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-[-3px] font-light"
+                  style={{
+                    fontFamily: "Georgia, serif",
+                  }}
                 >
                   {activeItem.name}
                 </motion.h2>
 
+                {/* DESCRIPTION */}
                 <motion.p
                   key={activeItem.description}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7 }}
-                  className="mt-5 text-white/80 text-sm md:text-base leading-relaxed max-w-2xl"
+                  transition={{
+                    duration: 0.9,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  className="mt-6 text-white/75 text-[15px] md:text-[16px] leading-8 max-w-2xl"
                 >
                   {activeItem.description}
                 </motion.p>
 
                 {/* BUTTON */}
-                <Link
-                  to={`/destination/${activeItem.id}`}
-                  className="inline-flex items-center gap-3 mt-7 text-white font-medium group"
+                <motion.div
+                  initial={{ opacity: 0, y: 14 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 1 }}
                 >
-                  <span className="uppercase tracking-[0.2em] text-[12px]">
-                    Explore Destination
-                  </span>
+                  <Link
+                    to={`/destination/${activeItem.id}`}
+                    className="inline-flex items-center gap-4 mt-8 group"
+                  >
 
-                  <div className="w-10 h-10 rounded-full bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all duration-300">
-                    <ArrowRight size={16} />
-                  </div>
-                </Link>
+                    <span className="uppercase tracking-[0.24em] text-[12px] text-white font-medium">
+                      Explore Destination
+                    </span>
+
+                    <div className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 flex items-center justify-center text-white group-hover:bg-white group-hover:text-black transition-all duration-500">
+                      <ArrowRight size={18} />
+                    </div>
+                  </Link>
+                </motion.div>
               </div>
             </div>
 
-            {/* MANUAL ARROWS */}
+            {/* NAVIGATION */}
             <div className="absolute top-6 right-6 z-30 flex gap-3">
 
               <button
                 onClick={prevSlide}
-                className="w-11 h-11 rounded-full bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+                className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-500"
               >
                 <ChevronLeft size={18} />
               </button>
 
               <button
                 onClick={nextSlide}
-                className="w-11 h-11 rounded-full bg-white/15 backdrop-blur-md border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-300"
+                className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 transition-all duration-500 shadow-xl"
               >
                 <ChevronRight size={18} />
               </button>
             </div>
 
-            {/* SLIDER PROGRESS BAR */}
-            <div className="absolute bottom-0 left-0 w-full h-[3px] bg-white/10 z-30">
+            {/* PROGRESS BAR */}
+            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-white/10 z-30 overflow-hidden">
+
               <motion.div
                 key={activeIdx}
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{
-                  duration: 5,
+                  duration: 7,
                   ease: "linear",
                 }}
                 className="h-full bg-white"
@@ -147,57 +188,104 @@ const DestinationPillars = ({ destinations }: Props) => {
             </div>
           </div>
 
-          {/* ================= BOTTOM THUMBNAILS ================= */}
-          <div className="relative mt-5 overflow-hidden">
+          {/* ================= THUMBNAILS ================= */}
+          <div className="relative mt-6 overflow-hidden rounded-[26px]">
 
-            {/* AUTO SCROLL THUMBNAILS */}
+            {/* TRACK */}
             <motion.div
-              animate={{
-                x: ["0%", "-50%"],
-              }}
+              animate={
+                isPaused
+                  ? {}
+                  : {
+                      x: ["0%", "-50%"],
+                    }
+              }
               transition={{
                 repeat: Infinity,
-                duration: 22,
+                repeatType: "loop",
+                duration: 60,
                 ease: "linear",
               }}
-              className="flex gap-4 w-max"
+              className="flex gap-4 w-max py-2"
             >
-              {[...destinations, ...destinations].map((item, index) => {
-                const originalIndex =
-                  index % destinations.length;
+              {[...destinations, ...destinations].map(
+                (item, index) => {
+                  const originalIndex =
+                    index % destinations.length;
 
-                const isActive =
-                  originalIndex === activeIdx;
+                  const isActive =
+                    originalIndex === activeIdx;
 
-                return (
-                  <button
-                    key={`${item.id}-${index}`}
-                    onClick={() => setActiveIdx(originalIndex)}
-                    className={`relative shrink-0 overflow-hidden rounded-[18px] transition-all duration-500 ${
-                      isActive
-                        ? "w-[210px] md:w-[260px] h-[95px] ring-2 ring-black/20"
-                        : "w-[160px] md:w-[210px] h-[95px] opacity-70 hover:opacity-100"
-                    }`}
-                  >
-                    <img
-                      src={item.image}
-                      alt={item.name}
-                      className="w-full h-full object-cover"
-                    />
+                  return (
+                    <motion.button
+                      key={`${item.id}-${index}`}
+                      onClick={() =>
+                        setActiveIdx(originalIndex)
+                      }
+                      onMouseEnter={() =>
+                        setIsPaused(true)
+                      }
+                      onMouseLeave={() =>
+                        setIsPaused(false)
+                      }
+                      whileHover={{
+                        y: -2,
+                      }}
+                      transition={{
+                        duration: 0.35,
+                      }}
+                      className={`group relative shrink-0 overflow-hidden rounded-[22px] transition-all duration-700 ${
+                        isActive
+                          ? "w-[170px] md:w-[210px] h-[105px] ring-1 ring-black/10 shadow-lg"
+                          : "w-[135px] md:w-[165px] h-[105px] opacity-80"
+                      }`}
+                    >
 
-                    {/* OVERLAY */}
-                    <div className="absolute inset-0 bg-black/25" />
+                      {/* IMAGE */}
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        loading="lazy"
+                        className="w-full h-full object-cover transition-transform duration-[2500ms] ease-out group-hover:scale-105"
+                      />
 
-                    {/* TITLE */}
-                    <div className="absolute bottom-3 left-3 right-3">
-                      <h4 className="text-white text-sm md:text-[15px] font-medium truncate">
-                        {item.name}
-                      </h4>
-                    </div>
-                  </button>
-                );
-              })}
+                      {/* OVERLAY */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+
+                      {/* ACTIVE TAG */}
+                      {isActive && (
+                        <div className="absolute top-3 right-3 bg-white/95 text-black text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full font-semibold shadow-lg">
+                          Active
+                        </div>
+                      )}
+
+                      {/* TITLE */}
+                      <div className="absolute bottom-3 left-3 right-3">
+
+                        <h4
+                          className={`text-white leading-tight ${
+                            isActive
+                              ? "text-[15px] md:text-[16px] font-semibold"
+                              : "text-[13px] md:text-[14px] font-medium"
+                          }`}
+                          style={{
+                            fontFamily: "Georgia, serif",
+                          }}
+                        >
+                          {item.name}
+                        </h4>
+                      </div>
+                    </motion.button>
+                  );
+                }
+              )}
             </motion.div>
+
+            {/* LEFT FADE */}
+            <div className="absolute top-0 left-0 w-28 h-full bg-gradient-to-r from-[#f7f6f3] to-transparent pointer-events-none z-20" />
+
+            {/* RIGHT FADE */}
+            <div className="absolute top-0 right-0 w-28 h-full bg-gradient-to-l from-[#f7f6f3] to-transparent pointer-events-none z-20" />
           </div>
         </div>
       </div>

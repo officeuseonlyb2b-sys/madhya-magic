@@ -19,52 +19,290 @@ import faqImage1 from "@/assets/choose1.jpeg";
 import faqImage2 from "@/assets/choose2.jpeg";
 
 const categories = [
-  "Booking Process",
-  "Payment & Refunds",
-  "Travel Requirement",
-  "Trip Experience",
+  "Tour Planning & Booking",
+  "Pricing, Payments & Cancellation",
+  "Hotels, Transport & Comfort",
+  "Wildlife Safaris & National Parks",
+  "Destination Experience & Travel Insights",
+  "On-Ground Support & Assistance",
 ];
 
-const faqs = [
-  {
-    question: "Will I have a tour guide during my trip?",
-    answer:
-      "Yes, guided experiences are included in selected packages. Local expert guides ensure a smooth and enriching journey.",
-  },
-  {
-    question: "What happens if my flight is delayed?",
-    answer:
-      "Our support team monitors major travel disruptions and helps coordinate transfers or itinerary adjustments whenever possible.",
-  },
-  {
-    question: "Can I request special meals during the trip?",
-    answer:
-      "Absolutely. Vegetarian, vegan, Jain, and other dietary preferences can be arranged with prior notice.",
-  },
-  {
-    question: "What should I do if I lose my belongings?",
-    answer:
-      "Immediately contact our support team or your trip coordinator. We’ll assist you with the next steps and local support.",
-  },
-  {
-    question: "Is there 24/7 customer support while traveling?",
-    answer:
-      "Yes, our travel assistance team is available throughout your journey for emergencies and support.",
-  },
-];
+const faqsData = {
+  "Tour Planning & Booking": [
+    {
+      question:
+        "How do I plan and book a tour with Enchanting Madhya Pradesh?",
+      answer: `Planning your journey with us is simple and personalized. You can reach out to our team through the website, WhatsApp, phone call, or email and share your travel ideas, preferred travel dates, interests, and budget.
+
+Based on your preferences, our destination specialists carefully craft a journey that suits your travel style — whether it is wildlife, spirituality, heritage, luxury, family holidays, offbeat experiences, or a combination of everything that makes Madhya Pradesh special.
+
+Once the itinerary is finalized, we share the complete proposal along with hotel options, inclusions, pricing, and other travel details. After receiving the required advance payment and traveler information, our team proceeds with all reservations and confirmations.
+
+Throughout the process, you remain connected with real destination experts who understand the region deeply and guide you at every step.`,
+    },
+
+    {
+      question:
+        "Can the tour packages be customized according to our travel style, interests, and budget?",
+      answer: `Absolutely. In fact, most of our journeys are tailor-made rather than fixed.
+
+Every traveler experiences Madhya Pradesh differently — some come for tiger safaris, some for spirituality, some for heritage and culture, while others simply want a slow and peaceful holiday close to nature.
+
+That is why we carefully design journeys based on your interests, pace of travel, comfort preferences, and budget.
+
+Whether you are looking for:
+
+• A luxury & experiential getaway  
+• A wildlife escape  
+• A spiritual circuit  
+• A family holiday  
+• A honeymoon  
+• A women-exclusive journey  
+• A senior citizen-friendly tour  
+• A photography or cultural experience  
+
+our team can personalize the itinerary accordingly.
+
+From hotel categories and transportation to experiences and sightseeing pace, everything can be aligned to create a journey that truly feels yours.`,
+    },
+
+    {
+      question:
+        "What all is usually included in your tour packages?",
+      answer: `Our tour packages are designed to offer a smooth and comfortable travel experience while keeping flexibility in mind.
+
+Depending on the selected package, inclusions may typically cover:
+
+• Hotel accommodations  
+• Daily breakfast and selected meals  
+• Transportation throughout the journey  
+• Airport or railway station transfers  
+• Sightseeing as per itinerary  
+• Safari bookings (if applicable)  
+• Local guides and destination assistance  
+• Handcrafted experiences  
+• Driver allowances, tolls, parking, and taxes  
+
+Some experiences, monument entry tickets, special activities, or personal expenses may remain separate depending on the nature of the journey.
+
+Since every trip is customized differently, our team always shares a clear list of inclusions and exclusions before confirmation to maintain complete transparency.`,
+    },
+
+    {
+      question:
+        "How early should I plan and book my Madhya Pradesh journey?",
+      answer: `We always recommend planning your journey as early as possible, especially if your itinerary includes wildlife safaris, luxury stays, or travel during long weekends and holiday periods.
+
+Safari permits in Madhya Pradesh generally open 120 days prior to the date of travel, and premium safari zones often get sold out quickly during peak wildlife season.
+
+For the best experience, we usually recommend:
+
+• 3 to 6 months advance planning for wildlife and luxury journeys  
+• 1 to 3 months advance planning for regular holidays  
+• Earlier planning during festive seasons, school vacations, and long weekends  
+
+Advance planning also allows us to secure better hotel options, smoother travel routing, and more thoughtfully crafted experiences for your journey.`,
+    },
+
+    {
+      question:
+        "Why should I book my Madhya Pradesh journey through Enchanting Madhya Pradesh instead of generic online travel portals?",
+      answer: `Madhya Pradesh is one of the most rewarding yet operationally complex destinations in India. While online travel portals may help with basic bookings, truly experiencing Madhya Pradesh requires strong destination understanding and local coordination.
+
+At Enchanting Madhya Pradesh, we specialize deeply in this region. Our roots come from years of crafting journeys for travelers from across the world through leading travel partners and tour operators.
+
+We understand:
+
+• Which safari zones suit different travelers  
+• The difference between core and buffer experiences  
+• Seasonal travel realities  
+• Ground logistics and route planning  
+• Heritage and spiritual circuit flow  
+• Hidden experiences beyond standard sightseeing  
+• Hotel quality and location realities  
+
+Most importantly, we believe travel should feel personal, meaningful, and smooth — not rushed or mechanical.
+
+From the first conversation until the end of your journey, our team remains closely connected to ensure your experience feels thoughtfully planned, comfortable, and genuinely memorable.`,
+    },
+  ],
+
+  "Pricing, Payments & Cancellation": [
+    {
+      question:
+        "Are there any hidden charges in the package or will all costs be shared clearly before booking?",
+      answer: `Transparency is extremely important to us. Before confirmation, our team shares a detailed cost breakup mentioning inclusions, exclusions, hotel category, transportation, safari components, taxes, and any additional optional experiences if applicable.
+
+Since many services in travel work on dynamic pricing — especially hotels and safaris in Madhya Pradesh — we always ensure that you clearly understand what is included in your journey before making any payment.
+
+Our goal is to help travelers plan confidently without unpleasant surprises later.`,
+    },
+
+    {
+      question:
+        "What payment methods do you accept and how does the payment process work?",
+      answer: `We accept multiple convenient payment options including:
+
+• Bank Transfers  
+• UPI Payments  
+• Online Transfers  
+• Selected digital payment methods  
+
+To confirm the booking, an advance payment is generally required so that hotels, safaris, and transportation services can be secured. The remaining balance is usually scheduled closer to the travel date depending on the nature of the journey.
+
+Our team guides you through the entire payment process smoothly and shares all payment details securely.`,
+    },
+
+    {
+      question:
+        "Why do tour prices sometimes change before final confirmation?",
+      answer: `Travel pricing, especially in destinations like Madhya Pradesh, can fluctuate due to changing hotel rates, safari permit availability, seasonal demand, festivals, long weekends, and dynamic inventory systems.
+
+This is particularly common in:
+
+• Wildlife lodges  
+• Premium hotels  
+• Government accommodations  
+• Peak travel periods  
+
+That is why we always recommend early planning and confirmation. Once services are confirmed, the pricing remains secured as per the finalized booking.
+
+Our team always tries to provide the best possible combination of experience, comfort, and value.`,
+    },
+
+    {
+      question:
+        "What is your cancellation and refund policy?",
+      answer: `Cancellation policies vary depending on the services involved in the journey such as:
+
+• Hotels  
+• Safari permits  
+• Transportation  
+• Train or flight bookings  
+• Seasonal conditions  
+
+Some services may have flexible cancellation policies while others — especially safari permits and peak season accommodations — may involve stricter terms.
+
+To maintain complete transparency, our team shares the applicable cancellation policy clearly before booking confirmation so that travelers can make informed decisions comfortably.`,
+    },
+
+    {
+      question:
+        "Can I modify or reschedule my trip after booking confirmation?",
+      answer: `Yes, in many cases modifications and rescheduling are possible depending on availability and supplier policies.
+
+If travel dates, hotel preferences, or destinations need to be changed, our team tries its best to adjust the arrangements smoothly. However, certain services such as safari permits, premium hotels, or festive season bookings may involve amendment charges or limited flexibility.
+
+Whenever possible, we always try to find the most practical and comfortable solution for our travelers.`,
+    },
+  ],
+
+  "Hotels, Transport & Comfort": [
+    {
+      question:
+        "What type of hotels and accommodations do you provide during the journey?",
+      answer: `We offer a wide range of carefully selected accommodations across different travel styles and budgets — from comfortable standard hotels and boutique stays to luxury resorts, heritage properties, jungle lodges, and experiential stays.
+
+Depending on the journey you choose, accommodations may include:
+
+• Boutique cultural stays  
+• Wildlife lodges in the national parks  
+• Heritage hotels and palace stays  
+• Riverside and nature retreats  
+• Premium city hotels  
+• Luxury Hotels  
+
+Our focus is not just on hotel category, but also on location, experience, comfort, hospitality, and overall suitability for the journey you are planning.`,
+    },
+
+    {
+      question:
+        "What kind of transportation and vehicles are provided during the tour?",
+      answer: `Transportation is planned according to the route, number of travelers, comfort level, and overall travel experience.
+
+Depending on the journey, we provide:
+
+• Sedans  
+• SUVs  
+• Tempo Travellers  
+• Urbania  
+• Luxury Coaches (22 Seater to 45 Seater)  
+• Volvos  
+• Premium vehicles for luxury travel  
+
+All transportation is arranged with experienced drivers familiar with the routes, destination conditions, safari movements, and regional travel realities of Madhya Pradesh and surrounding regions.
+
+Our goal is to ensure that the journey remains smooth, safe, and comfortable throughout.`,
+    },
+
+    {
+      question:
+        "Are airport, railway station, and intercity transfers included in the package?",
+      answer: `Yes, most of our packages include necessary arrival, departure, and intercity transfers as per the finalized itinerary.
+
+Our team carefully plans:
+
+• Airport pickups and drops  
+• Railway station transfers  
+• Hotel-to-hotel movements  
+• Intercity road journeys  
+• Safari transfers where applicable  
+
+Before confirmation, we always share a detailed itinerary clearly mentioning all included transportation services.`,
+    },
+
+    {
+      question:
+        "Are your tours comfortable for families, senior citizens, and first-time travelers?",
+      answer: `Absolutely. Many of our journeys are specially designed keeping comfort, pacing, and convenience in mind.
+
+We regularly curate experiences for:
+
+• Families with children  
+• Senior citizens  
+• Women travelers  
+• International guests  
+• First-time India travelers  
+
+Our team carefully considers driving distances, hotel comfort, sightseeing pace, meal stops, accessibility, and overall travel rhythm to ensure the journey feels relaxed and enjoyable rather than hectic.`,
+    },
+
+    {
+      question:
+        "Can hotels, vehicles, or travel experiences be upgraded to luxury options?",
+      answer: `Yes, definitely. Many travelers prefer adding premium comfort and exclusive experiences to make their journey even more special.
+
+Depending on your preferences, we can arrange:
+
+• Luxury wildlife lodges  
+• Palace and heritage stays  
+• Premium suites and boutique hotels  
+• Private guided experiences  
+• Luxury transportation  
+• Curated cultural and experiential activities  
+
+Our team can customize the overall journey based on the level of comfort, exclusivity, and experience you are looking for.`,
+    },
+  ],
+};
 
 const categoryIcons = {
-  "Booking Process": Plane,
-  "Payment & Refunds": Wallet,
-  "Travel Requirement": ShieldCheck,
-  "Trip Experience": MapPinned,
+  "Tour Planning & Booking": Plane,
+  "Pricing, Payments & Cancellation": Wallet,
+  "Hotels, Transport & Comfort": ShieldCheck,
+  "Wildlife Safaris & National Parks": MapPinned,
+  "Destination Experience & Travel Insights": Plane,
+  "On-Ground Support & Assistance": ShieldCheck,
 };
 
 const FAQSection = () => {
   const [activeCategory, setActiveCategory] =
-    useState("Payment & Refunds");
+    useState("Tour Planning & Booking");
 
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const faqs =
+    faqsData[activeCategory as keyof typeof faqsData] || [];
 
   const toggleFAQ = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -150,8 +388,6 @@ const FAQSection = () => {
               />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-
-              
             </div>
 
             {/* SMALL IMAGE */}
@@ -171,7 +407,7 @@ const FAQSection = () => {
         </div>
 
         {/* MAIN FAQ GRID */}
-        <div className="grid lg:grid-cols-[250px_1fr] gap-7 lg:gap-10 items-start">
+        <div className="grid lg:grid-cols-[280px_1fr] gap-7 lg:gap-10 items-start">
 
           {/* LEFT SIDE */}
           <div>
@@ -185,12 +421,18 @@ const FAQSection = () => {
 
               <div className="flex flex-col gap-3">
                 {categories.map((item, index) => {
-                  const Icon = categoryIcons[item];
+                  const Icon =
+                    categoryIcons[
+                      item as keyof typeof categoryIcons
+                    ];
 
                   return (
                     <button
                       key={index}
-                      onClick={() => setActiveCategory(item)}
+                      onClick={() => {
+                        setActiveCategory(item);
+                        setOpenIndex(0);
+                      }}
                       className={`group flex items-center justify-between gap-3 rounded-2xl px-4 py-4 transition-all duration-300 ${
                         activeCategory === item
                           ? "bg-black text-white shadow-lg"
@@ -209,7 +451,7 @@ const FAQSection = () => {
                           <Icon size={18} />
                         </div>
 
-                        <span className="text-[14px] font-medium text-left">
+                        <span className="text-[13px] font-medium text-left leading-5">
                           {item}
                         </span>
                       </div>
@@ -275,7 +517,7 @@ const FAQSection = () => {
                         className="w-full flex items-center justify-between gap-3 px-4 md:px-6 py-5 text-left"
                       >
                         <h3
-                          className={`text-[15px] md:text-[17px] leading-[1.5] font-semibold transition-all duration-300 ${
+                          className={`text-[15px] md:text-[17px] leading-[1.6] font-semibold transition-all duration-300 ${
                             isOpen ? "text-white" : "text-black"
                           }`}
                         >
@@ -303,16 +545,19 @@ const FAQSection = () => {
                         {isOpen && (
                           <motion.div
                             initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
+                            animate={{
+                              height: "auto",
+                              opacity: 1,
+                            }}
                             exit={{ height: 0, opacity: 0 }}
                             transition={{ duration: 0.3 }}
                             className="overflow-hidden"
                           >
-                            <div className="px-4 md:px-6 pb-5">
+                            <div className="px-4 md:px-6 pb-6">
 
-                              <div className="w-full h-[1px] bg-white/10 mb-4" />
+                              <div className="w-full h-[1px] bg-white/10 mb-5" />
 
-                              <p className="text-[14px] leading-7 text-white/75 max-w-3xl">
+                              <p className="text-[14px] leading-8 whitespace-pre-line text-white/75 max-w-4xl">
                                 {faq.answer}
                               </p>
                             </div>

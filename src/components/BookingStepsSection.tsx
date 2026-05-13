@@ -3,6 +3,8 @@ import {
   Briefcase,
   CalendarDays,
   Plane,
+  PhoneCall,
+  ArrowRight,
 } from "lucide-react";
 
 import bookStep from "@/assets/book-step.jpg";
@@ -103,6 +105,30 @@ export default function BookingStepsSection() {
                   </div>
                 );
               })}
+            </div>
+
+            {/* BUTTONS */}
+            <div className="flex flex-col sm:flex-row gap-4 mt-12">
+
+              {/* SPEAK TO EXPERT */}
+              <button className="group inline-flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-full text-[14px] font-medium transition-all duration-300 hover:bg-[#d6b16d] hover:text-black">
+                <PhoneCall
+                  className="w-4 h-4"
+                  strokeWidth={2}
+                />
+
+                <span>Speak To An Expert</span>
+              </button>
+
+              {/* PLAN YOUR JOURNEY */}
+              <button className="group inline-flex items-center justify-center gap-2 border border-white/20 text-white px-6 py-3 rounded-full text-[14px] font-medium transition-all duration-300 hover:bg-white hover:text-black">
+                <span>Plan Your Journey</span>
+
+                <ArrowRight
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                  strokeWidth={2}
+                />
+              </button>
             </div>
           </div>
         </div>
