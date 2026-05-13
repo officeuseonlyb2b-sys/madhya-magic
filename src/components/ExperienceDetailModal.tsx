@@ -79,7 +79,7 @@ const ExperienceDetailModal = ({ experience, open, onClose, anchorRect }: Props)
         </div>
         <div className="p-4 sm:p-6 md:p-8 space-y-6 sm:space-y-8">
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3">About this experience</h3>
+            <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-3 font-display">About this experience</h3>
             <p className="text-sm sm:text-base md:text-lg text-foreground/90 leading-relaxed font-body">
               {experience!.fullDescription ?? experience!.description}
             </p>
@@ -102,7 +102,7 @@ const ExperienceDetailModal = ({ experience, open, onClose, anchorRect }: Props)
           )}
           {experience!.highlights && experience!.highlights.length > 0 && (
             <div>
-              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4">Experience Highlights</h3>
+              <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-primary mb-4 font-display">Experience Highlights</h3>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {experience!.highlights.map((h, i) => (
                   <motion.li key={i} initial={{ opacity: 0, x: -10 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 + i * 0.05 }} className="flex items-start gap-2.5 text-sm text-foreground/90">

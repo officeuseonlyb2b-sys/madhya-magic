@@ -140,7 +140,7 @@ useEffect(() => {
             </span>
           </div>
 
-          <h2 className="text-[32px] md:text-[52px] leading-[1] tracking-[-2px] text-black font-light">
+          <h2 className="text-[32px] md:text-[52px] leading-[1] tracking-[-2px] text-black font-light font-display">
             Loved By{" "}
             <span className="font-semibold">
               Travelers
@@ -236,7 +236,7 @@ useEffect(() => {
                       {/* USER */}
                       <div className="mt-7">
 
-                        <h4 className="text-[17px] font-semibold text-black">
+                        <h4 className="text-[17px] font-semibold text-black font-display">
                           {item.name}
                         </h4>
 

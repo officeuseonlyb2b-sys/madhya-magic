@@ -109,10 +109,7 @@ const DestinationPillars = ({ destinations }: Props) => {
                     duration: 0.8,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="text-white text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-[-3px] font-light"
-                  style={{
-                    fontFamily: "Georgia, serif",
-                  }}
+                  className="text-white text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-[-3px] font-light font-display"
                 >
                   {activeItem.name}
                 </motion.h2>
@@ -263,14 +260,11 @@ const DestinationPillars = ({ destinations }: Props) => {
                       <div className="absolute bottom-3 left-3 right-3">
 
                         <h4
-                          className={`text-white leading-tight ${
+                          className={`text-white leading-tight font-display ${
                             isActive
                               ? "text-[15px] md:text-[16px] font-semibold"
                               : "text-[13px] md:text-[14px] font-medium"
                           }`}
-                          style={{
-                            fontFamily: "Georgia, serif",
-                          }}
                         >
                           {item.name}
                         </h4>

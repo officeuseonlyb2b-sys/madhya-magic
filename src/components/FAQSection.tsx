@@ -328,7 +328,7 @@ const FAQSection = () => {
             </div>
 
             {/* HEADING */}
-            <h2 className="text-[34px] md:text-[58px] leading-[1] tracking-[-2px] text-black font-light mb-5">
+            <h2 className="text-[34px] md:text-[58px] leading-[1] tracking-[-2px] text-black font-light mb-5 font-display">
               Everything{" "}
               <span className="font-bold">
                 You Need
@@ -358,7 +358,7 @@ const FAQSection = () => {
                 </div>
 
                 <div>
-                  <h4 className="text-[18px] font-semibold text-black mb-1">
+                  <h4 className="text-[18px] font-semibold text-black mb-1 font-display">
                     Still Have Questions?
                   </h4>
 
@@ -415,7 +415,7 @@ const FAQSection = () => {
             {/* CATEGORY CARD */}
             <div className="bg-white border border-[#ececec] rounded-[28px] p-5 shadow-sm sticky top-24">
 
-              <h3 className="text-[18px] font-bold text-black mb-5">
+              <h3 className="text-[18px] font-bold text-black mb-5 font-display">
                 Browse Topics
               </h3>
 

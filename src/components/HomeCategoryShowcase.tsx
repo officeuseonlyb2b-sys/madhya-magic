@@ -107,7 +107,7 @@ const HomeCategoryShowcase = () => {
         {/* HEADING */}
         <div className="text-center mb-14">
 
-          <h2 className="text-[42px] md:text-[58px] font-light leading-none text-[#1e2432]">
+          <h2 className="text-[42px] md:text-[58px] font-light leading-none text-[#1e2432] font-display">
             <span className="font-bold">
               Know what we offer in Madhya Pradesh
             </span>
@@ -161,7 +161,7 @@ const HomeCategoryShowcase = () => {
                 <div className="relative px-5 py-5 text-center z-20">
 
                   {/* TITLE */}
-                  <h3 className="text-[18px] leading-[1.3] font-bold text-[#1e2432] min-h-[60px] transition-colors duration-300 group-hover:text-black">
+                  <h3 className="text-[18px] leading-[1.3] font-bold text-[#1e2432] min-h-[60px] transition-colors duration-300 group-hover:text-black font-display">
                     {item.label}
                   </h3>
 

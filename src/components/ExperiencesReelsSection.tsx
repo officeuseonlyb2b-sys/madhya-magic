@@ -98,7 +98,7 @@ const ExperienceCard = ({
 
           {/* TOP TITLE */}
           <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full pointer-events-none">
-            <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug">
+            <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug font-display">
               {exp.title}
             </h3>
           </div>
@@ -176,7 +176,7 @@ const ExperiencesReelsSection = () => {
             </span>
 
             {/* HEADING */}
-            <h2 className="text-[#6e5548] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide">
+            <h2 className="text-[#6e5548] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide font-display">
               Top
               <br />
               Curated

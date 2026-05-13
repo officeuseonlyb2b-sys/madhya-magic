@@ -112,7 +112,7 @@ export default function TravelInsightsSection() {
               Travel Journal
             </span>
 
-            <h2 className="text-[34px] md:text-[52px] leading-[1] tracking-[-2px] mt-3 text-black">
+            <h2 className="text-[34px] md:text-[52px] leading-[1] tracking-[-2px] mt-3 text-black font-display">
               <span className="font-bold">
                 Latest Travel
               </span>{" "}
@@ -257,7 +257,7 @@ export default function TravelInsightsSection() {
                       </div>
 
                       {/* TITLE */}
-                      <h3 className="text-[20px] font-bold leading-[1.35] text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d] line-clamp-2">
+                      <h3 className="text-[20px] font-bold leading-[1.35] text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d] line-clamp-2 font-display">
                         {blog.title}
                       </h3>
 
