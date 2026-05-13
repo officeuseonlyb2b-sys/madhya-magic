@@ -385,7 +385,7 @@ We strive to make every journey memorable through meaningful experiences, emotio
         Luxury Journal
       </span>
 
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[800] tracking-tight text-[#111111] leading-[1.05]">
+      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[800] tracking-tight text-[#111111] leading-[1.05] font-display">
         Stories &
         <br />
         Inspirations
@@ -444,7 +444,7 @@ We strive to make every journey memorable through meaningful experiences, emotio
             </div>
 
             {/* TITLE */}
-            <h3 className="text-[22px] sm:text-[24px] font-[700] leading-tight text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d]">
+            <h3 className="text-[22px] sm:text-[24px] font-[700] leading-tight text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d] font-display">
               {blog.title}
             </h3>
 
