@@ -155,7 +155,7 @@ const WhyChooseUs = () => {
 
           {/* Heading */}
           <div className="text-center mb-12">
-            <h2 className="text-[34px] md:text-[52px] leading-tight font-bold text-black tracking-[-1px]">
+            <h2 className="text-[34px] md:text-[52px] leading-tight font-bold text-black tracking-[-1px] font-display">
               Why Choose Us
             </h2>
           </div>
@@ -189,7 +189,7 @@ const WhyChooseUs = () => {
                     </div>
 
                     <div>
-                      <h3 className="font-semibold text-[16px] text-[#111] leading-snug mb-1.5">
+                      <h3 className="font-semibold text-[16px] text-[#111] leading-snug mb-1.5 font-display">
                         {item.title}
                       </h3>
 
@@ -264,7 +264,7 @@ const WhyChooseUs = () => {
 
               {/* CONTENT */}
               <div className="mt-8">
-                <h3 className="text-[28px] font-bold text-black mb-3">
+                <h3 className="text-[28px] font-bold text-black mb-3 font-display">
                   Ready to Experience Madhya Pradesh?
                 </h3>
 
@@ -297,7 +297,7 @@ const WhyChooseUs = () => {
                       key={index}
                       className="flex flex-col items-center justify-center"
                     >
-                      <h4 className="text-[34px] font-bold text-black mb-1">
+                      <h4 className="text-[34px] font-bold text-black mb-1 font-display">
                         {stat.number}
                       </h4>
 

@@ -46,7 +46,7 @@ export default function BookingStepsSection() {
           <div className="max-w-[560px]">
 
             {/* HEADING */}
-            <h2 className="text-white text-[32px] md:text-[44px] leading-[1.1] tracking-[-1px] font-light">
+            <h2 className="text-white text-[32px] md:text-[44px] leading-[1.1] tracking-[-1px] font-light font-display">
 
               {/* FIRST LINE */}
               <div className="whitespace-nowrap">
@@ -94,7 +94,7 @@ export default function BookingStepsSection() {
 
                     {/* TEXT */}
                     <div className="pt-0.5">
-                      <h3 className="text-white text-[18px] leading-[1.2] font-semibold">
+                      <h3 className="text-white text-[18px] leading-[1.2] font-semibold font-display">
                         {step.title}
                       </h3>
 
