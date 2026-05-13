@@ -5,8 +5,16 @@ import {
   ChevronLeft,
   ChevronRight,
 } from "lucide-react";
-import { motion } from "framer-motion";
-import { useRef } from "react";
+
+import {
+  motion,
+  AnimatePresence,
+} from "framer-motion";
+
+import {
+  useEffect,
+  useState,
+} from "react";
 
 const blogs = [
   {
@@ -15,7 +23,7 @@ const blogs = [
     category: "Adventure",
     title: "Unforgettable Cultural Travel Experiences",
     description:
-      "Traveling is an incredible way to explore cultures and landscapes...",
+      "Traveling is an incredible way to explore cultures and landscapes.",
   },
   {
     image:
@@ -23,7 +31,7 @@ const blogs = [
     category: "Tips",
     title: "Ultimate Travel Packing List",
     description:
-      "Discover smart packing strategies for stress-free travel...",
+      "Discover smart packing strategies for stress-free travel.",
   },
   {
     image:
@@ -31,7 +39,7 @@ const blogs = [
     category: "Destination",
     title: "Make The Most Of Your Holiday",
     description:
-      "Plan your dream vacation with expert travel insights...",
+      "Plan your dream vacation with expert travel insights.",
   },
   {
     image:
@@ -39,7 +47,7 @@ const blogs = [
     category: "Travel",
     title: "Best Places To Visit In 2025",
     description:
-      "Explore the most trending travel destinations this year...",
+      "Explore the most trending travel destinations this year.",
   },
   {
     image:
@@ -47,7 +55,7 @@ const blogs = [
     category: "Nature",
     title: "Beautiful Nature Escapes",
     description:
-      "Reconnect with nature through breathtaking journeys...",
+      "Reconnect with nature through breathtaking journeys.",
   },
   {
     image:
@@ -55,138 +63,252 @@ const blogs = [
     category: "Luxury",
     title: "Luxury Trips Around The World",
     description:
-      "Experience premium travel destinations and resorts...",
+      "Experience premium travel destinations and resorts.",
   },
 ];
 
 export default function TravelInsightsSection() {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [current, setCurrent] = useState(0);
 
-  const scroll = (direction: "left" | "right") => {
-    if (!scrollRef.current) return;
+  // AUTO SLIDE
+  useEffect(() => {
+    const timer = setInterval(() => {
+      nextSlide();
+    }, 5000);
 
-    scrollRef.current.scrollBy({
-      left: direction === "left" ? -340 : 340,
-      behavior: "smooth",
-    });
+    return () => clearInterval(timer);
+  }, [current]);
+
+  const nextSlide = () => {
+    setCurrent((prev) =>
+      prev + 3 >= blogs.length ? 0 : prev + 3
+    );
   };
 
+  const prevSlide = () => {
+    setCurrent((prev) =>
+      prev === 0 ? blogs.length - 3 : prev - 3
+    );
+  };
+
+  const visibleBlogs = [
+    blogs[current],
+    blogs[(current + 1) % blogs.length],
+    blogs[(current + 2) % blogs.length],
+  ];
+
   return (
-    <section className="w-full bg-white py-24 overflow-hidden">
-      
-      {/* HEADING */}
-      <div className="text-center px-4 mb-14">
-        <h2 className="text-3xl md:text-5xl leading-tight tracking-tight">
-          <span className="font-bold text-black">
-            Latest Travel
-          </span>{" "}
-          <span className="font-light text-black/70">
-            Insights
-          </span>
+    <section className="w-full bg-[#fafafa] py-20 overflow-hidden">
 
-          <br />
+      <div className="max-w-6xl mx-auto px-4">
 
-          <span className="font-bold text-black">
-            & Expert
-          </span>{" "}
-          <span className="font-light text-black/70">
-            Tips
-          </span>
-        </h2>
-      </div>
+        {/* TOP */}
+        <div className="flex items-end justify-between gap-5 mb-14">
 
-      {/* NAVIGATION */}
-      <div className="max-w-7xl mx-auto flex justify-end gap-3 px-5 mb-8">
-        <button
-          onClick={() => scroll("left")}
-          className="w-11 h-11 rounded-full border border-black/10 bg-white flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
-        >
-          <ChevronLeft size={20} />
-        </button>
+          {/* HEADING */}
+          <div>
 
-        <button
-          onClick={() => scroll("right")}
-          className="w-11 h-11 rounded-full border border-black/10 bg-white flex items-center justify-center hover:bg-black hover:text-white transition-all duration-300"
-        >
-          <ChevronRight size={20} />
-        </button>
-      </div>
+            <span className="text-[11px] uppercase tracking-[0.32em] text-[#b8955d] font-semibold">
+              Travel Journal
+            </span>
 
-      {/* CAROUSEL */}
-      <div
-        ref={scrollRef}
-        className="flex gap-6 overflow-x-auto scroll-smooth px-5 no-scrollbar"
-      >
-        {blogs.map((blog, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: index * 0.08 }}
-            whileHover={{ y: -6 }}
-            className="group relative min-w-[320px] max-w-[320px] rounded-[26px] overflow-hidden bg-white border border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-all duration-500 flex-shrink-0"
-          >
-            
-            {/* IMAGE */}
-            <div className="relative overflow-hidden">
+            <h2 className="text-[34px] md:text-[52px] leading-[1] tracking-[-2px] mt-3 text-black">
+              <span className="font-bold">
+                Latest Travel
+              </span>{" "}
 
-              <img
-                src={blog.image}
-                alt={blog.title}
-                className="h-[240px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+              <span className="font-light text-black/65">
+                Insights
+              </span>
+            </h2>
 
-              {/* OVERLAY */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
+            <p className="text-[#666] mt-4 text-[15px] max-w-xl leading-relaxed">
+              Explore destination guides, luxury travel inspiration,
+              and curated travel experiences from around the world.
+            </p>
+          </div>
 
-              {/* CATEGORY */}
-              <div className="absolute top-4 left-4">
-                <span className="bg-white/90 backdrop-blur-md text-[#111] text-[10px] uppercase tracking-[0.25em] px-3 py-1.5 rounded-full">
-                  {blog.category}
-                </span>
-              </div>
-            </div>
+          {/* NAVIGATION */}
+          <div className="hidden md:flex items-center gap-3">
 
-            {/* CONTENT */}
-            <div className="p-6">
+            <button
+              onClick={prevSlide}
+              className="w-11 h-11 rounded-full border border-black/10 bg-white flex items-center justify-center hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
+            >
+              <ChevronLeft size={18} />
+            </button>
 
-              {/* META */}
-              <div className="flex items-center gap-2 text-[#999] text-[10px] uppercase tracking-[0.2em]">
-                <span>Luxury Travel</span>
+            <button
+              onClick={nextSlide}
+              className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center hover:opacity-90 transition-all duration-500 shadow-sm"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
 
-                <div className="w-1 h-1 rounded-full bg-[#c8a96b]" />
+        {/* CAROUSEL */}
+        <div className="relative overflow-visible">
 
-                <span>Editorial</span>
-              </div>
+          <AnimatePresence mode="wait">
 
-              {/* TITLE */}
-              <h3 className="text-[22px] sm:text-[24px] font-[700] leading-tight text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d] line-clamp-2">
-                {blog.title}
-              </h3>
+            <motion.div
+              key={current}
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              exit={{
+                opacity: 0,
+                y: -20,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7"
+              style={{
+                perspective: "2000px",
+              }}
+            >
+              {visibleBlogs.map((blog, index) => (
+                <motion.div
+                  key={index}
+                  initial={{
+                    opacity: 0,
+                    y: 50,
+                    rotateX: 12,
+                  }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    rotateX: 0,
+                  }}
+                  transition={{
+                    delay: index * 0.12,
+                    duration: 0.9,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
+                  whileHover={{
+                    y: -14,
+                    rotateX: -6,
+                    rotateY:
+                      index === 1
+                        ? 0
+                        : index % 2 === 0
+                        ? -4
+                        : 4,
+                    scale: 1.02,
+                  }}
+                  style={{
+                    transformStyle: "preserve-3d",
+                    transformOrigin: "center bottom",
+                  }}
+                  className="group relative rounded-[28px] overflow-visible transition-all duration-700"
+                >
 
-              {/* DESCRIPTION */}
-              <p className="text-[#666] leading-relaxed mt-4 text-sm">
-                {blog.description}
-              </p>
+                  {/* 3D SHADOW LAYER */}
+                  <div className="absolute inset-0 translate-y-5 scale-[0.96] rounded-[28px] bg-black/5 blur-2xl opacity-70 transition-all duration-700 group-hover:translate-y-7 group-hover:scale-[0.93]" />
 
-              {/* BUTTON */}
-              <button className="mt-6 inline-flex items-center gap-3 text-[#111] font-medium group/button">
+                  {/* CARD */}
+                  <div className="relative rounded-[28px] overflow-hidden bg-white border border-black/[0.04] shadow-[0_10px_25px_rgba(0,0,0,0.04),0_25px_60px_rgba(0,0,0,0.03)] group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.10),0_10px_25px_rgba(0,0,0,0.05)] transition-all duration-700">
 
-                <span className="uppercase tracking-[0.2em] text-[11px]">
-                  Read Article
-                </span>
+                    {/* TOP ELEVATION LIGHT */}
+                    <div className="absolute top-0 left-[8%] w-[84%] h-[14px] rounded-full bg-white/90 blur-xl z-20 opacity-90" />
 
-                <div className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center transition-all duration-300 group-hover/button:bg-black group-hover/button:text-white">
-                  <ArrowRight
-                    size={15}
-                    className="transition-transform duration-300 group-hover/button:translate-x-0.5"
-                  />
-                </div>
-              </button>
-            </div>
-          </motion.div>
-        ))}
+                    {/* SOFT GLOW */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-gradient-to-br from-[#fff7ea]/60 via-transparent to-[#f8efe2]/30 pointer-events-none z-10" />
+
+                    {/* IMAGE */}
+                    <div className="relative overflow-hidden">
+
+                      <img
+                        src={blog.image}
+                        alt={blog.title}
+                        className="h-[220px] w-full object-cover transition-transform duration-[2500ms] ease-out group-hover:scale-105"
+                      />
+
+                      {/* OVERLAY */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
+
+                      {/* CATEGORY */}
+                      <div className="absolute top-4 left-4 z-20">
+                        <span className="bg-white/85 backdrop-blur-xl text-[#111] text-[10px] uppercase tracking-[0.25em] px-3 py-1.5 rounded-full border border-white/60 shadow-sm">
+                          {blog.category}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* CONTENT */}
+                    <div className="relative p-5 z-20">
+
+                      {/* META */}
+                      <div className="flex items-center gap-2 text-[#999] text-[10px] uppercase tracking-[0.18em]">
+
+                        <span>Luxury Travel</span>
+
+                        <div className="w-1 h-1 rounded-full bg-[#c8a96b]" />
+
+                        <span>Editorial</span>
+                      </div>
+
+                      {/* TITLE */}
+                      <h3 className="text-[20px] font-bold leading-[1.35] text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d] line-clamp-2">
+                        {blog.title}
+                      </h3>
+
+                      {/* DESCRIPTION */}
+                      <p className="text-[#666] leading-7 mt-3 text-[14px] line-clamp-2">
+                        {blog.description}
+                      </p>
+
+                      {/* BUTTON */}
+                      <button className="mt-5 inline-flex items-center gap-3 text-[#111] font-medium group/button">
+
+                        <span className="uppercase tracking-[0.18em] text-[11px]">
+                          Read More
+                        </span>
+
+                        <div className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center transition-all duration-300 group-hover/button:bg-black group-hover/button:text-white">
+
+                          <ArrowRight
+                            size={14}
+                            className="transition-transform duration-300 group-hover/button:translate-x-0.5"
+                          />
+                        </div>
+                      </button>
+                    </div>
+
+                    {/* OUTER RING */}
+                    <div className="absolute inset-0 rounded-[28px] ring-0 ring-[#d4af37]/0 group-hover:ring-1 group-hover:ring-[#d4af37]/20 transition-all duration-700 pointer-events-none" />
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
+          </AnimatePresence>
+
+          {/* MOBILE NAVIGATION */}
+          <div className="flex md:hidden justify-center items-center gap-3 mt-8">
+
+            <button
+              onClick={prevSlide}
+              className="w-10 h-10 rounded-full border border-black/10 bg-white flex items-center justify-center shadow-sm"
+            >
+              <ChevronLeft size={18} />
+            </button>
+
+            <button
+              onClick={nextSlide}
+              className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shadow-sm"
+            >
+              <ChevronRight size={18} />
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

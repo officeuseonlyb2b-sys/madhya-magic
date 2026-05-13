@@ -106,17 +106,8 @@ const HomeCategoryShowcase = () => {
 
         {/* HEADING */}
         <div className="text-center mb-14">
-          
-          <h2 className="text-[42px] md:text-[58px] font-light leading-none text-[#1e2432]">
-            {/* <span
-              className="font-normal italic mr-3"
-              style={{
-                fontFamily: "cursive",
-              }}
-            >
-              Know
-            </span> */}
 
+          <h2 className="text-[42px] md:text-[58px] font-light leading-none text-[#1e2432]">
             <span className="font-bold">
               Know what we offer in Madhya Pradesh
             </span>
@@ -133,61 +124,66 @@ const HomeCategoryShowcase = () => {
           {/* LEFT BUTTON */}
           <button
             onClick={prevSlide}
-            className="absolute -left-3 z-20 w-14 h-14 rounded-full bg-[#e9e9e9] hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center"
+            className="absolute -left-3 z-20 w-14 h-14 rounded-full bg-[#ececec] hover:bg-black hover:text-white transition-all duration-500 flex items-center justify-center shadow-md"
           >
             <ChevronLeft size={28} />
           </button>
 
           {/* CARDS */}
-<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full px-8">
-  
-  {visibleCards.map((item, index) => (
-    <Link
-      key={index}
-      to={`/packages${item.query}`}
-      className={`group rounded-[28px] overflow-hidden bg-white border border-[#e7e7e7] transition-all duration-500 ${
-        index === 1
-          ? "shadow-[0_15px_40px_rgba(255,190,11,0.35)]"
-          : "shadow-sm hover:shadow-xl"
-      }`}
-    >
-      
-      {/* IMAGE */}
-      <div className="relative h-[220px] overflow-hidden">
-        <img
-          src={item.image}
-          alt={item.label}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full px-8">
 
-        {/* GOLD CORNER */}
-        <div className="absolute top-5 right-5 w-8 h-8 border-t-2 border-r-2 border-[#d4af37] rounded-tr-xl" />
-      </div>
+            {visibleCards.map((item, index) => (
+              <Link
+                key={index}
+                to={`/packages${item.query}`}
+                className="group relative rounded-[28px] overflow-hidden bg-white border border-[#ebebeb] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(212,175,55,0.28)]"
+              >
 
-      {/* CONTENT */}
-      <div className="px-5 py-5 text-center">
+                {/* GLOW EFFECT */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-gradient-to-br from-[#fff7dd]/60 via-transparent to-[#fff2c2]/40 pointer-events-none z-10" />
 
-        {/* TITLE */}
-        <h3 className="text-[18px] leading-[1.3] font-bold text-[#1e2432] min-h-[60px]">
-          {item.label}
-        </h3>
+                {/* IMAGE */}
+                <div className="relative h-[220px] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.label}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2500ms] ease-out"
+                  />
 
-        {/* GOLD LINE */}
-        <div className="w-10 h-[2px] bg-[#d4af37] mx-auto my-3 rounded-full" />
+                  {/* DARK OVERLAY */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-transparent opacity-80" />
 
-        {/* DESCRIPTION */}
-        <p className="text-[14px] leading-6 text-[#666] line-clamp-3">
-          {item.description}
-        </p>
-      </div>
-    </Link>
-  ))}
-</div>
+                  {/* GOLD CORNER */}
+                  <div className="absolute top-5 right-5 w-8 h-8 border-t-2 border-r-2 border-[#d4af37] rounded-tr-xl z-20" />
+                </div>
+
+                {/* CONTENT */}
+                <div className="relative px-5 py-5 text-center z-20">
+
+                  {/* TITLE */}
+                  <h3 className="text-[18px] leading-[1.3] font-bold text-[#1e2432] min-h-[60px] transition-colors duration-300 group-hover:text-black">
+                    {item.label}
+                  </h3>
+
+                  {/* GOLD LINE */}
+                  <div className="w-10 h-[2px] bg-[#d4af37] mx-auto my-3 rounded-full transition-all duration-500 group-hover:w-16" />
+
+                  {/* DESCRIPTION */}
+                  <p className="text-[14px] leading-6 text-[#666] line-clamp-3">
+                    {item.description}
+                  </p>
+                </div>
+
+                {/* OUTER GLOW */}
+                <div className="absolute inset-0 rounded-[28px] ring-0 ring-[#d4af37]/0 group-hover:ring-2 group-hover:ring-[#d4af37]/40 transition-all duration-500" />
+              </Link>
+            ))}
+          </div>
 
           {/* RIGHT BUTTON */}
           <button
             onClick={nextSlide}
-            className="absolute -right-3 z-20 w-14 h-14 rounded-full bg-[#e9e9e9] hover:bg-black hover:text-white transition-all duration-300 flex items-center justify-center"
+            className="absolute -right-3 z-20 w-14 h-14 rounded-full bg-[#ececec] hover:bg-black hover:text-white transition-all duration-500 flex items-center justify-center shadow-md"
           >
             <ChevronRight size={28} />
           </button>
