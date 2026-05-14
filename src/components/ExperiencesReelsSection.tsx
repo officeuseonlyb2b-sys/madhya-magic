@@ -36,19 +36,9 @@ const ExperienceCard = ({
 
   useEffect(() => {
     const v = videoRef.current;
-
     if (!v) return;
-
-    if (hovered) {
-      v.play().catch(() => {});
-    } else {
-      v.pause();
-
-      try {
-        v.currentTime = 0;
-      } catch {}
-    }
-  }, [hovered]);
+    v.play().catch(() => {});
+  }, []);
 
   return (
     <motion.div
@@ -67,20 +57,21 @@ const ExperienceCard = ({
       }}
       className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 border-none outline-none ring-0 shadow-none focus:outline-none focus:ring-0"
     >
-      <div className="group relative overflow-hidden rounded-[24px] bg-[#f6f1ea] border-none outline-none ring-0 shadow-none">
+      <div className="group relative overflow-hidden rounded-[24px] bg-black border-none outline-none ring-0 shadow-none">
 
         {/* MEDIA */}
-        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none">
+        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
 
           {/* VIDEO */}
           {exp.video && (
             <video
               ref={videoRef}
               src={exp.video}
+              autoPlay
               muted
               loop
               playsInline
-              preload="none"
+              preload="auto"
               className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
                 hovered
                   ? "opacity-100 scale-100"
