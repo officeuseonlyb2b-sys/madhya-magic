@@ -15,6 +15,7 @@ const PackagesSection = lazy(() => import("@/components/PackagesSection"));
 const HomeCategoryShowcase = lazy(() => import("@/components/HomeCategoryShowcase"));
 const ReasonsToExploreMP = lazy(() => import("@/components/ReasonsToExploreMP"));
 const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
+const TrustedBrandsSection = lazy(() => import("@/components/TrustedBrandsSection"));
 const FAQSection = lazy(() => import("@/components/FAQSection"));
 const BookingStepsSection = lazy(() => import("@/components/BookingStepsSection"));
 const TravelInsightsSection = lazy(() => import("@/components/TravelInsightsSection"));
@@ -50,6 +51,7 @@ const Index = () => (
       <LazySection variant="grid"><HomeCategoryShowcase /></LazySection>
       <LazySection variant="default"><ReasonsToExploreMP /></LazySection>
       <LazySection variant="default"><WhyChooseUs /></LazySection>
+      <LazySection variant="slider"><TrustedBrandsSection /></LazySection>
       <LazySection variant="compact"><FAQSection /></LazySection>
       <LazySection variant="default"><BookingStepsSection /></LazySection>
       <LazySection variant="grid"><TravelInsightsSection /></LazySection>

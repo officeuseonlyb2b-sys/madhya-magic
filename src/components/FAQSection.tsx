@@ -284,6 +284,254 @@ Depending on your preferences, we can arrange:
 Our team can customize the overall journey based on the level of comfort, exclusivity, and experience you are looking for.`,
     },
   ],
+
+  "Wildlife Safaris & National Parks": [
+    {
+      question: "Which are the best national parks and wildlife destinations to visit in Madhya Pradesh?",
+      answer: `Madhya Pradesh is often known as the “Tiger State of India” and is home to some of the country’s finest wildlife destinations.
+
+Some of the most popular national parks include:
+
+• Bandhavgarh National Park  
+• Kanha National Park  
+• Pench National Park  
+• Satpura National Park  
+• Panna National Park  
+
+Each park offers a different experience — some are known for higher tiger movement, some for peaceful forest landscapes, walking safaris, birdlife, or unique wilderness experiences.
+
+Our team helps travelers choose the right park and safari experience depending on travel period, interests, comfort level, and overall itinerary flow.`,
+    },
+    {
+      question: "How early should I book safari permits and why is advance planning important?",
+      answer: `Safari permits in Madhya Pradesh generally open 120 days prior to the travel date, and premium safari zones often get booked very quickly — especially during peak wildlife season, weekends, holidays, and long weekends.
+
+Advance planning is highly recommended because:
+
+• Core safari zones have limited entries  
+• Premium lodges get sold out early  
+• Better safari combinations can be planned  
+• Route planning becomes smoother  
+• Chances of getting preferred safari zones improve significantly  
+
+For wildlife-focused journeys, we usually recommend planning at least 3 to 6 months in advance for the best overall experience.`,
+    },
+    {
+      question: "What is the difference between Core Zone and Buffer Zone in wildlife safaris?",
+      answer: `Core Zones are the primary protected forest areas of a national park where wildlife density and tiger movement are generally higher. These are considered the premium safari zones and usually remain in highest demand.
+
+Buffer Zones are the surrounding forest regions around the core area. They often offer quieter safari experiences, beautiful landscapes, and excellent opportunities to experience the wilderness with comparatively lesser crowd movement.
+
+In recent years, many buffer zones in Madhya Pradesh have become extremely rewarding for tiger sightings as well.
+
+Both zones offer unique experiences, and the right choice depends on your expectations, travel season, and permit availability.`,
+    },
+    {
+      question: "What are the chances of tiger sightings during safari?",
+      answer: `Tiger sightings depend on many factors such as:
+
+• Season  
+• Safari zone  
+• Weather conditions  
+• Animal movement  
+• Time of safari  
+• Forest conditions  
+
+While sightings can never be guaranteed in the wild, Madhya Pradesh is considered one of India’s best destinations for tiger safaris and wildlife experiences.
+
+Apart from tigers, safaris often include sightings of:
+
+• Leopards  
+• Sloth bears  
+• Deer species  
+• Wild dogs  
+• Gaur  
+• Rich birdlife  
+• Beautiful forest landscapes  
+
+We always encourage travelers to enjoy the complete jungle experience rather than focusing only on tiger sightings.`,
+    },
+    {
+      question: "What should I know before going for a wildlife safari in Madhya Pradesh?",
+      answer: `Wildlife safaris are beautiful nature experiences and a little preparation makes the journey even more enjoyable.
+
+A few important things travelers should know:
+
+• Wear comfortable clothes in earthy or neutral shades  
+• Early mornings can feel cold during winters  
+• Carry valid ID proof for safari entry  
+• Follow forest rules and guide instructions  
+• Maintain silence during safari for better wildlife experience  
+• Avoid bright colors and loud sounds  
+• Mobile network may be limited inside forest regions  
+
+Most importantly, safaris are about experiencing nature in its purest form — every jungle drive is unique and memorable in its own way.`,
+    },
+  ],
+
+  "Destination Experience & Travel Insights": [
+    {
+      question: "What makes Madhya Pradesh different from other destinations in India?",
+      answer: `Madhya Pradesh offers a side of India that still feels authentic, raw, culturally rich, and deeply connected to its roots.
+
+Unlike destinations that are known for just one experience, Madhya Pradesh brings together wildlife, spirituality, heritage, culture, nature, tribal traditions, architecture, local crafts, and slow travel — all within one state.
+
+Here, travelers can:
+
+• Explore ancient temples and UNESCO sites  
+• Experience tiger safaris in dense forests  
+• Witness living spiritual traditions  
+• Stay in heritage properties  
+• Discover lesser-known villages and cultural regions  
+• Travel through landscapes untouched by mass tourism  
+
+It is a destination for travelers who want to experience the real essence of India beyond the usual tourist circuits.`,
+    },
+    {
+      question: "What is the best time to visit Madhya Pradesh and how many days are ideal for the trip?",
+      answer: `Madhya Pradesh can be explored throughout the year depending on the type of experience you are looking for.
+
+• October to March → Best for heritage, culture, spirituality, and comfortable weather  
+• November to June → Ideal for wildlife safaris and tiger sightings  
+• July to September → Beautiful monsoon landscapes, waterfalls, and greenery  
+
+The ideal trip duration depends on the regions you wish to explore:
+
+• 3 to 5 days → Short getaways or wildlife escapes  
+• 6 to 9 days → Combination of wildlife, heritage, and spirituality  
+• 10+ days → Deeper exploration across multiple regions of the state  
+
+Our team helps design journeys that feel balanced, comfortable, and meaningful rather than rushed.`,
+    },
+    {
+      question: "Is Madhya Pradesh suitable for family holidays, senior citizens, and first-time travelers?",
+      answer: `Absolutely. Madhya Pradesh is one of the most diverse and comfortable destinations for different kinds of travelers.
+
+Whether you are:
+
+• Traveling with family  
+• Planning a relaxed holiday for senior citizens  
+• Visiting India for the first time  
+• Looking for a spiritual retreat  
+• Seeking nature and wildlife experiences  
+
+the state offers excellent possibilities for all age groups and travel styles.
+
+With proper route planning, comfortable accommodations, balanced sightseeing, and carefully designed travel pacing, the journey becomes smooth and enjoyable for everyone.`,
+    },
+    {
+      question: "What kind of experiences can I expect during a journey through Madhya Pradesh?",
+      answer: `A journey through Madhya Pradesh is not just about sightseeing — it is about experiencing different layers of India.
+
+Depending on your interests, experiences may include:
+
+• Tiger safaris and forest stays  
+• Spiritual ceremonies and temple visits  
+• Heritage walks and fort explorations  
+• Tribal and cultural interactions  
+• Riverside experiences  
+• Textile and handicraft traditions  
+• Local cuisine and culinary experiences  
+• Rural and offbeat landscapes  
+• Slow travel and nature retreats  
+
+Every region of Madhya Pradesh has its own personality, rhythm, and cultural depth, which makes the journey feel continuously evolving.`,
+    },
+    {
+      question: "Is Madhya Pradesh safe for travelers, including solo and women travelers?",
+      answer: `Yes. Madhya Pradesh is generally considered a culturally welcoming and comfortable destination for travelers.
+
+We regularly assist:
+
+• Solo travelers  
+• Women travelers  
+• International guests  
+• Families  
+• Senior citizens  
+
+For additional comfort and safety, our team carefully plans accommodations, transportation, travel timings, and local coordination throughout the journey.
+
+We also offer specially curated women-exclusive journeys and remain available for support during the trip whenever required.`,
+    },
+  ],
+
+  "On-Ground Support & Assistance": [
+    {
+      question: "Will there be any on-ground support available during the journey?",
+      answer: `Yes, absolutely. One of the biggest advantages of traveling with Enchanting Madhya Pradesh is that our support does not end after the booking.
+
+Our operations and coordination teams remain connected throughout the journey to assist with:
+
+• Hotel coordination  
+• Transportation support  
+• Safari scheduling  
+• Route guidance  
+• Local assistance  
+• Travel updates  
+• Unexpected situations if any arise during the trip  
+
+We believe travelers should feel supported, comfortable, and well-guided throughout their experience rather than feeling left on their own after confirmation.`,
+    },
+    {
+      question: "Do you provide local guides and destination experts during the trip?",
+      answer: `Yes. Depending on the destination and travel experience, we can arrange experienced local guides, naturalists, and destination experts.
+
+Guided experiences can greatly enhance:
+
+• Heritage explorations  
+• Spiritual circuits  
+• Wildlife safaris  
+• Cultural interactions  
+• Walking tours  
+• Historical storytelling experiences  
+
+Our focus is not just on sightseeing, but on helping travelers understand the stories, culture, traditions, and soul of the destination more meaningfully.`,
+    },
+    {
+      question: "What happens if there are unexpected changes, delays, or travel issues during the trip?",
+      answer: `Travel can sometimes involve unexpected situations such as weather changes, traffic delays, operational adjustments, train or flight disruptions, or safari timing changes.
+
+In such situations, our team actively coordinates with hotels, drivers, guides, and local partners to find the most practical and comfortable solution for travelers.
+
+Because of our strong ground-level network and destination understanding, we are often able to handle changes smoothly and minimize inconvenience wherever possible.`,
+    },
+    {
+      question: "Can you assist with special travel requirements or personalized requests?",
+      answer: `Yes, definitely. We understand that every traveler has different needs and preferences.
+
+Depending on the journey, we can assist with:
+
+• Senior citizen support  
+• Women-exclusive travel arrangements  
+• Dietary preferences  
+• Celebration planning  
+• Slow-paced itineraries  
+• Luxury upgrades  
+• Photography-focused journeys  
+• Spiritual experiences  
+• Special occasions and honeymoon arrangements  
+
+Our team always tries to personalize the experience as thoughtfully as possible.`,
+    },
+    {
+      question: "How do you ensure a smooth and comfortable travel experience across Madhya Pradesh?",
+      answer: `Madhya Pradesh is a beautiful but operationally detailed destination where proper planning makes a huge difference.
+
+Our team carefully manages:
+
+• Travel routing  
+• Hotel selection  
+• Safari logistics  
+• Driver coordination  
+• Destination sequencing  
+• Seasonal considerations  
+• Travel pacing and comfort  
+
+This helps travelers avoid unnecessary rush, confusion, and operational challenges while allowing them to experience the destination in a much smoother and more meaningful way.
+
+Our goal is simple — to let travelers focus on enjoying the journey while we take care of the complexities behind the scenes.`,
+    },
+  ],
 };
 
 const categoryIcons = {

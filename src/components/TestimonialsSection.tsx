@@ -7,6 +7,7 @@ import {
   ChevronLeft,
   ChevronRight,
   MapPin,
+  Quote,
 } from "lucide-react";
 
 const testimonials = [
@@ -86,19 +87,15 @@ const TestimonialsSection = () => {
   const [current, setCurrent] = useState(0);
 
   // AUTO SLIDE
-  // CHANGE THIS PART ONLY
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) =>
+        prev + 2 >= testimonials.length ? 0 : prev + 2
+      );
+    }, 5000);
 
-// AUTO SLIDE
-useEffect(() => {
-  const timer = setInterval(() => {
-    setCurrent((prev) =>
-      prev + 2 >= testimonials.length ? 0 : prev + 2
-    );
-  }, 5000); // 5 seconds
-
-  return () => clearInterval(timer);
-}, []);
-
+    return () => clearInterval(timer);
+  }, []);
 
   const prev = () => {
     setCurrent((prev) =>
@@ -118,143 +115,151 @@ useEffect(() => {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-[#f7f7f5] overflow-hidden">
-      <div className="max-w-5xl mx-auto px-4">
+    <section className="relative overflow-hidden py-14 bg-[#f8fafc]">
+      
+      {/* BG GLOW */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-[-120px] left-[-120px] w-[280px] h-[280px] bg-primary/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-150px] right-[-150px] w-[320px] h-[320px] bg-orange-400/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-6xl mx-auto px-4 lg:px-6">
 
         {/* HEADING */}
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 40 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{
-            duration: 1,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          className="text-center mb-10"
-        >
-          <div className="inline-flex items-center gap-2 bg-white border border-[#ececec] rounded-full px-4 py-2 mb-5 shadow-sm">
-            <div className="w-2 h-2 rounded-full bg-[#f97343]" />
+<motion.div
+  ref={ref}
+  initial={{ opacity: 0, y: 40 }}
+  animate={inView ? { opacity: 1, y: 0 } : {}}
+  transition={{
+    duration: 1,
+  }}
+  className="text-center mb-8"
+>
+  {/* TOP BADGE */}
+  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-white/80 backdrop-blur-md shadow-sm mb-4">
+    
+    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
 
-            <span className="text-[11px] uppercase tracking-[0.3em] font-semibold text-[#666]">
-              Traveler Reviews
-            </span>
-          </div>
+    <span className="text-[10px] uppercase tracking-[0.28em] font-semibold text-gray-600">
+      Traveler Reviews
+    </span>
+  </div>
 
-          <h2 className="text-[32px] md:text-[52px] leading-[1] tracking-[-2px] text-black font-light font-display">
-            Loved By{" "}
-            <span className="font-semibold">
-              Travelers
-            </span>
-          </h2>
+  {/* TITLE */}
+  <div className="max-w-3xl mx-auto">
+    <h2 className="text-[30px] md:text-[48px] leading-[1.05] tracking-[-2px] font-bold text-gray-900">
+      Loved By{" "}
+      <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
+        Travelers Worldwide
+      </span>
+    </h2>
 
-          <p className="text-[#777] text-[14px] md:text-[16px] mt-4 max-w-xl mx-auto leading-relaxed">
-            Beautiful journeys and unforgettable experiences shared
-            by travelers around the world.
-          </p>
-        </motion.div>
+    {/* SUBTITLE */}
+    <p className="text-gray-600 text-[14px] md:text-[15px] mt-3 max-w-2xl mx-auto leading-relaxed">
+      Luxury journeys and unforgettable experiences shared
+      by travelers around the world.
+    </p>
+  </div>
+</motion.div>
 
         {/* SLIDER */}
         <div className="relative">
 
           <AnimatePresence mode="wait">
-
             <motion.div
               key={current}
               initial={{
                 opacity: 0,
                 y: 30,
-                scale: 0.98,
               }}
               animate={{
                 opacity: 1,
                 y: 0,
-                scale: 1,
               }}
               exit={{
                 opacity: 0,
                 y: -20,
-                scale: 0.98,
               }}
               transition={{
-                duration: 0.8,
-                ease: [0.22, 1, 0.36, 1],
+                duration: 0.7,
               }}
-              className="grid lg:grid-cols-2 gap-4"
+              className="grid lg:grid-cols-2 gap-5"
             >
               {visibleTestimonials.map((item, index) => (
                 <motion.div
                   key={`${item.name}-${index}`}
-                  initial={{
-                    opacity: 0,
-                    y: 20,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    y: 0,
-                  }}
-                  transition={{
-                    delay: index * 0.1,
-                    duration: 0.7,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
                   whileHover={{
-                    y: -4,
+                    y: -5,
                   }}
-                  className="group relative bg-white rounded-[26px] overflow-hidden border border-[#ececec] shadow-[0_10px_40px_rgba(0,0,0,0.05)]"
+                  className="group relative overflow-hidden rounded-[28px] border border-white/60 bg-white/75 backdrop-blur-xl shadow-[0_15px_60px_rgba(0,0,0,0.07)]"
                 >
+                  
+                  {/* GLOW */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-orange-400/5 opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
-                  {/* BG */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#fffaf7] via-white to-[#f8f8f8]" />
+                  <div className="relative grid md:grid-cols-[1fr_210px] min-h-[250px]">
 
-                  {/* MAIN */}
-                  <div className="relative grid md:grid-cols-[1fr_190px] min-h-[230px]">
-
-                    {/* LEFT */}
+                    {/* CONTENT */}
                     <div className="p-5 md:p-6 flex flex-col justify-between">
 
                       <div>
 
-                        {/* STARS */}
-                        <div className="flex items-center gap-1 mb-4">
-                          {Array.from({
-                            length: item.rating,
-                          }).map((_, i) => (
-                            <Star
-                              key={i}
-                              size={14}
-                              className="fill-[#f97343] text-[#f97343]"
-                            />
-                          ))}
+                        {/* TOP */}
+                        <div className="flex items-center justify-between mb-5">
+
+                          <div className="flex items-center gap-1">
+                            {Array.from({
+                              length: item.rating,
+                            }).map((_, i) => (
+                              <Star
+                                key={i}
+                                size={14}
+                                className="fill-[#ff7a45] text-[#ff7a45]"
+                              />
+                            ))}
+                          </div>
+
+                          <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
+                            <Quote size={18} />
+                          </div>
                         </div>
 
                         {/* REVIEW */}
-                        <p className="text-[17px] md:text-[20px] leading-[1.7] tracking-[-0.4px] text-[#1d1d1d] font-medium">
+                        <p className="text-[18px] md:text-[21px] leading-[1.6] tracking-[-0.5px] text-gray-900 font-semibold">
                           “{item.text}”
                         </p>
                       </div>
 
                       {/* USER */}
-                      <div className="mt-7">
+                      <div className="flex items-center gap-3 mt-8">
 
-                        <h4 className="text-[17px] font-semibold text-black font-display">
-                          {item.name}
-                        </h4>
+                        <img
+                          src={item.image}
+                          alt={item.name}
+                          className="w-12 h-12 rounded-2xl object-cover border-2 border-white shadow-md"
+                        />
 
-                        <div className="flex items-center gap-1.5 mt-1">
-                          <MapPin
-                            size={13}
-                            className="text-[#888]"
-                          />
+                        <div>
+                          <h4 className="text-[16px] font-bold text-gray-900">
+                            {item.name}
+                          </h4>
 
-                          <p className="text-[13px] text-[#777]">
-                            {item.location}
-                          </p>
+                          <div className="flex items-center gap-1 mt-1">
+                            <MapPin
+                              size={12}
+                              className="text-gray-500"
+                            />
+
+                            <p className="text-[12px] text-gray-500">
+                              {item.location}
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
 
-                    {/* RIGHT IMAGE */}
-                    <div className="relative h-[220px] md:h-full overflow-hidden">
+                    {/* IMAGE */}
+                    <div className="relative overflow-hidden min-h-[250px]">
 
                       <motion.img
                         src={item.image}
@@ -262,14 +267,20 @@ useEffect(() => {
                         initial={{ scale: 1.08 }}
                         animate={{ scale: 1 }}
                         transition={{
-                          duration: 1.2,
-                          ease: [0.22, 1, 0.36, 1],
+                          duration: 1,
                         }}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2500ms]"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2500ms]"
                       />
 
                       {/* OVERLAY */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/15 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+
+                      {/* BADGE */}
+                      <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-lg">
+                        <p className="text-[11px] font-semibold text-gray-900">
+                          Verified Traveler
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -283,9 +294,9 @@ useEffect(() => {
             {/* PREV */}
             <button
               onClick={prev}
-              className="w-10 h-10 rounded-full border border-[#e7e7e7] bg-white flex items-center justify-center hover:bg-black hover:text-white transition-all duration-500 shadow-sm"
+              className="w-11 h-11 rounded-full border border-white/60 bg-white/80 backdrop-blur-md flex items-center justify-center shadow-md hover:bg-black hover:text-white transition-all duration-500"
             >
-              <ChevronLeft size={17} />
+              <ChevronLeft size={18} />
             </button>
 
             {/* DOTS */}
@@ -297,7 +308,7 @@ useEffect(() => {
                   className={`rounded-full transition-all duration-500 ${
                     current === index
                       ? "w-8 h-2 bg-black"
-                      : "w-2 h-2 bg-[#d4d4d4] hover:bg-black/40"
+                      : "w-2 h-2 bg-gray-300 hover:bg-black/40"
                   }`}
                 />
               ))}
@@ -306,9 +317,9 @@ useEffect(() => {
             {/* NEXT */}
             <button
               onClick={next}
-              className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center hover:opacity-90 transition-all duration-500 shadow-sm"
+              className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:scale-105 transition-all duration-500"
             >
-              <ChevronRight size={17} />
+              <ChevronRight size={18} />
             </button>
           </div>
         </div>

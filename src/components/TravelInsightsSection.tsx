@@ -19,8 +19,33 @@ import {
 import { Link } from "react-router-dom";
 import { blogs } from "@/data/blogsData";
 
+// UJJAIN BLOG IMAGE
+import ujjainBlog from "@/assets/blog/ujjainblog.webp";
+
+// ORCHHA BLOG IMAGE
+import orchhaBlog from "@/assets/blog/orchhablog.webp";
+
 export default function TravelInsightsSection() {
   const [current, setCurrent] = useState(0);
+
+  // UPDATED BLOGS WITH UJJAIN + ORCHHA IMAGE
+  const updatedBlogs = blogs.map((blog) =>
+    blog.slug === "ujjain" ||
+    blog.slug?.includes("ujjain") ||
+    blog.title?.toLowerCase().includes("ujjain")
+      ? {
+          ...blog,
+          image: ujjainBlog,
+        }
+      : blog.slug === "orchha" ||
+        blog.slug?.includes("orchha") ||
+        blog.title?.toLowerCase().includes("orchha")
+      ? {
+          ...blog,
+          image: orchhaBlog,
+        }
+      : blog
+  );
 
   // AUTO SLIDE
   useEffect(() => {
@@ -33,20 +58,20 @@ export default function TravelInsightsSection() {
 
   const nextSlide = () => {
     setCurrent((prev) =>
-      prev + 3 >= blogs.length ? 0 : prev + 3
+      prev + 3 >= updatedBlogs.length ? 0 : prev + 3
     );
   };
 
   const prevSlide = () => {
     setCurrent((prev) =>
-      prev === 0 ? blogs.length - 3 : prev - 3
+      prev === 0 ? updatedBlogs.length - 3 : prev - 3
     );
   };
 
   const visibleBlogs = [
-    blogs[current],
-    blogs[(current + 1) % blogs.length],
-    blogs[(current + 2) % blogs.length],
+    updatedBlogs[current],
+    updatedBlogs[(current + 1) % updatedBlogs.length],
+    updatedBlogs[(current + 2) % updatedBlogs.length],
   ];
 
   return (

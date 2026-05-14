@@ -1,6 +1,9 @@
 import { motion, useInView } from "framer-motion";
 import WhyChooseUse from "@/components/WhyChooseUs";
 import HomeCategoryShowcase from "@/components/HomeCategoryShowcase";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import TravellnsightsSection from "@/components/TravelInsightsSection";
+import TrustedBrandsSection from "@/components/TrustedBrandsSection";
 import { useRef } from "react";
 import {
   Compass,
@@ -24,6 +27,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import TravelInsightsSection from "@/components/TravelInsightsSection";
 
 const stats = [
   {
@@ -141,64 +145,8 @@ const About = () => {
     <div className="bg-white text-black overflow-hidden">
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
-        <img
-          src="https://images.unsplash.com/photo-1528127269322-539801943592?q=80&w=2070&auto=format&fit=crop"
-          className="absolute inset-0 w-full h-full object-cover"
-          alt=""
-        />
-
-        <div className="absolute inset-0 bg-white/60" />
-
-        <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#C8A96B]/10 blur-[140px]" />
-
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className="max-w-5xl"
-          >
-            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-black/10 bg-white/80 backdrop-blur-xl mb-8">
-              <Sparkles size={16} className="text-[#C8A96B]" />
-              <span className="uppercase tracking-[0.25em] text-sm text-black/70">
-                Luxury Destination Specialists
-              </span>
-            </div>
-
-            <h1 className="text-6xl md:text-8xl font-black leading-[0.95] tracking-[-0.04em] text-black">
-              Discover The Soul Of Madhya Pradesh
-            </h1>
-
-            <p className="mt-8 text-lg md:text-xl text-black/70 leading-relaxed max-w-3xl">
-              Thoughtfully curated journeys inspired by heritage, wildlife,
-              spirituality, culture, and authentic local experiences.
-            </p>
-
-            <div className="flex flex-wrap gap-4 mt-10">
-              <button className="px-8 py-4 rounded-full bg-black text-white font-semibold hover:scale-105 transition">
-                Explore Journeys
-              </button>
-
-              <button className="px-8 py-4 rounded-full border border-black/10 bg-white/70 backdrop-blur-xl hover:bg-black hover:text-white transition">
-                Our Story
-              </button>
-            </div>
-          </motion.div>
-        </div>
-
-        {/* Floating Card */}
-        <div className="absolute bottom-10 right-6 md:right-16 backdrop-blur-3xl bg-white/90 border border-black/10 rounded-[30px] p-8 w-[320px]">
-          <p className="text-[#C8A96B] uppercase tracking-[0.2em] text-sm">
-            Since 2014
-          </p>
-
-          <h3 className="text-2xl font-bold mt-3 leading-snug text-black">
-            Specialists In Curated Experiences Across Madhya Pradesh
-          </h3>
-        </div>
-      </section>
+      
+        
 
       {/* ABOUT */}
       <section ref={aboutRef} className="py-32 bg-white">
@@ -269,211 +217,77 @@ const About = () => {
         </div>
       </section>
 
-{/* MISSION & VISION */}
-<section className="py-10 md:py-14 bg-[#fafafa] overflow-hidden">
-  <div className="container mx-auto px-4">
-    {/* Heading */}
-    <div className="text-center mb-7 md:mb-10">
-      <span className="text-[#C8A96B] uppercase tracking-[0.22em] text-[10px] md:text-xs">
-        Our Purpose
-      </span>
-
-      <h2 className="text-2xl md:text-4xl font-black mt-2 leading-tight text-black">
-        Mission & Vision
-      </h2>
-    </div>
-
-    {/* Cards */}
-    <div className="grid lg:grid-cols-2 gap-4 md:gap-5">
-      {[
-        {
-          title: "Our Vision",
-          text: `To showcase the true soul of Madhya Pradesh through authentic and thoughtfully crafted journeys that connect travelers with nature, culture, heritage, spirituality, and local communities.
-
-We aim to become a trusted destination specialist helping travelers discover the timeless beauty and hidden treasures of Central India.`,
-        },
-        {
-          title: "Our Mission",
-          text: `To create seamless and personalized travel experiences that go beyond traditional tourism through local expertise, genuine hospitality, and carefully curated journeys.
-
-We strive to make every journey memorable through meaningful experiences, emotions, and stories travelers carry back with them.`,
-        },
-      ].map((item, index) => (
-        <motion.div
-          key={index}
-          whileHover={{ y: -4 }}
-          transition={{ duration: 0.25 }}
-          className="rounded-2xl border border-black/10 bg-white p-5 md:p-6 hover:border-[#C8A96B]/40 shadow-sm"
-        >
-          {/* Icon */}
-          <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#C8A96B]/10 border border-[#C8A96B]/20 flex items-center justify-center mb-4">
-            <Compass className="text-[#C8A96B] w-4 h-4 md:w-5 md:h-5" />
-          </div>
-
-          {/* Title */}
-          <h3 className="text-xl md:text-3xl font-black mb-3 text-black">
-            {item.title}
-          </h3>
-
-          {/* Text */}
-          <p className="text-black/70 text-sm md:text-[15px] leading-6 whitespace-pre-line">
-            {item.text}
-          </p>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
-
-      {/* WHY CHOOSE US */}
-      <WhyChooseUse />
-
-      <HomeCategoryShowcase />
-
-      {/* TESTIMONIALS */}
-      <section className="py-32 bg-white">
+      {/* MISSION & VISION */}
+      <section className="py-10 md:py-14 bg-[#fafafa] overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <span className="text-[#C8A96B] uppercase tracking-[0.3em] text-sm">
-              Testimonials
+          {/* Heading */}
+          <div className="text-center mb-7 md:mb-10">
+            <span className="text-[#C8A96B] uppercase tracking-[0.22em] text-[10px] md:text-xs">
+              Our Purpose
             </span>
 
-            <h2 className="text-5xl font-black mt-4 text-black">
-              What Travelers Say
+            <h2 className="text-2xl md:text-4xl font-black mt-2 leading-tight text-black">
+              Mission & Vision
             </h2>
           </div>
 
-          <div className="grid lg:grid-cols-3 gap-8">
-            {testimonials.map((item) => (
-              <div
-                key={item}
-                className="rounded-[32px] border border-black/10 bg-[#fafafa] p-10"
-              >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className="w-16 h-16 rounded-full bg-black/10" />
+          {/* Cards */}
+          <div className="grid lg:grid-cols-2 gap-4 md:gap-5">
+            {[
+              {
+                title: "Our Vision",
+                text: `To showcase the true soul of Madhya Pradesh through authentic and thoughtfully crafted journeys that connect travelers with nature, culture, heritage, spirituality, and local communities.
 
-                  <div>
-                    <h4 className="font-semibold text-black">Client Name</h4>
-                    <p className="text-black/50 text-sm">
-                      Traveler Experience
-                    </p>
-                  </div>
+We aim to become a trusted destination specialist helping travelers discover the timeless beauty and hidden treasures of Central India.`,
+              },
+              {
+                title: "Our Mission",
+                text: `To create seamless and personalized travel experiences that go beyond traditional tourism through local expertise, genuine hospitality, and carefully curated journeys.
+
+We strive to make every journey memorable through meaningful experiences, emotions, and stories travelers carry back with them.`,
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.25 }}
+                className="rounded-2xl border border-black/10 bg-white p-5 md:p-6 hover:border-[#C8A96B]/40 shadow-sm"
+              >
+                {/* Icon */}
+                <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl bg-[#C8A96B]/10 border border-[#C8A96B]/20 flex items-center justify-center mb-4">
+                  <Compass className="text-[#C8A96B] w-4 h-4 md:w-5 md:h-5" />
                 </div>
 
-                <p className="text-black/70 leading-relaxed">
-                  “Beautifully curated travel experiences filled with
-                  authenticity, comfort, and unforgettable memories.”
+                {/* Title */}
+                <h3 className="text-xl md:text-3xl font-black mb-3 text-black">
+                  {item.title}
+                </h3>
+
+                {/* Text */}
+                <p className="text-black/70 text-sm md:text-[15px] leading-6 whitespace-pre-line">
+                  {item.text}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
- {/* BLOGS */}
-<section className="relative py-10 sm:py-12 lg:py-14 bg-[#f8f6f3] overflow-hidden">
+      {/* WHY CHOOSE US */}
+      <WhyChooseUse />
 
-  {/* BACKGROUND */}
-  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(200,169,107,0.08),transparent_40%)] pointer-events-none" />
+      <TrustedBrandsSection/>
 
-  <div className="relative z-10 max-w-[1180px] mx-auto px-4 sm:px-5">
+      <HomeCategoryShowcase />
 
-    {/* HEADER */}
-    <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
 
-      <span className="inline-block text-[#b8955d] uppercase tracking-[0.35em] text-[11px] sm:text-xs font-medium mb-4">
-        Luxury Journal
-      </span>
+      {/* BLOGS */}
+      <TravelInsightsSection />
 
-      <h2 className="text-3xl sm:text-4xl lg:text-5xl font-[800] tracking-tight text-[#111111] leading-[1.05] font-display">
-        Stories &
-        <br />
-        Inspirations
-      </h2>
 
-      <p className="text-[#666] text-sm sm:text-[15px] leading-relaxed mt-5 max-w-xl mx-auto">
-        Discover curated travel stories, hidden gems, spiritual escapes,
-        luxury retreats, and unforgettable experiences across Madhya Pradesh.
-      </p>
-    </div>
+      {/* TESTIMONIALS */}
+      <TestimonialsSection />
 
-    {/* BLOG GRID */}
-    <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
-
-      {blogs.map((blog, index) => (
-        <motion.div
-          key={index}
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.08 }}
-          whileHover={{ y: -6 }}
-          className="group relative rounded-[26px] overflow-hidden bg-white border border-black/5 shadow-[0_8px_30px_rgba(0,0,0,0.04)] hover:shadow-[0_16px_40px_rgba(0,0,0,0.08)] transition-all duration-500"
-        >
-
-          {/* IMAGE */}
-          <div className="relative overflow-hidden">
-
-            <img
-              src={blog.image}
-              alt={blog.title}
-              className="h-[220px] sm:h-[250px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-
-            {/* OVERLAY */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent" />
-
-            {/* CATEGORY */}
-            <div className="absolute top-4 left-4">
-              <span className="bg-white/90 backdrop-blur-md text-[#111] text-[10px] uppercase tracking-[0.25em] px-3 py-1.5 rounded-full">
-                Travel Stories
-              </span>
-            </div>
-          </div>
-
-          {/* CONTENT */}
-          <div className="p-6">
-
-            {/* META */}
-            <div className="flex items-center gap-2 text-[#999] text-[10px] uppercase tracking-[0.2em]">
-              <span>Luxury Travel</span>
-
-              <div className="w-1 h-1 rounded-full bg-[#c8a96b]" />
-
-              <span>Editorial</span>
-            </div>
-
-            {/* TITLE */}
-            <h3 className="text-[22px] sm:text-[24px] font-[700] leading-tight text-[#111] mt-4 transition-colors duration-300 group-hover:text-[#b8955d] font-display">
-              {blog.title}
-            </h3>
-
-            {/* DESCRIPTION */}
-            <p className="text-[#666] leading-relaxed mt-4 text-sm">
-              Discover meaningful stories, hidden experiences, cultural escapes,
-              and refined travel inspirations crafted for modern explorers.
-            </p>
-
-            {/* BUTTON */}
-            <button className="mt-6 inline-flex items-center gap-3 text-[#111] font-medium group/button">
-
-              <span className="uppercase tracking-[0.2em] text-[11px]">
-                Read Article
-              </span>
-
-              <div className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center transition-all duration-300 group-hover/button:bg-black group-hover/button:text-white">
-                <ArrowRight
-                  size={15}
-                  className="transition-transform duration-300 group-hover/button:translate-x-0.5"
-                />
-              </div>
-            </button>
-          </div>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
 
       {/* TRAVEL EXPERTS */}
       <section className="py-14 bg-white overflow-hidden">
@@ -529,24 +343,7 @@ We strive to make every journey memorable through meaningful experiences, emotio
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-36 bg-[#fafafa]">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-5xl md:text-7xl font-black max-w-5xl mx-auto leading-tight text-black">
-            Begin Your Journey Through The Heart Of India
-          </h2>
 
-          <div className="flex flex-wrap justify-center gap-5 mt-12">
-            <button className="px-10 py-5 rounded-full bg-black text-white font-semibold hover:scale-105 transition">
-              Explore Tours
-            </button>
-
-            <button className="px-10 py-5 rounded-full border border-black/10 bg-white hover:bg-black hover:text-white transition">
-              Contact Us
-            </button>
-          </div>
-        </div>
-      </section>
 
       <Footer />
       <FloatingButtons />
