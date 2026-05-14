@@ -55,7 +55,7 @@ const ReelVideo = ({
       playsInline
       preload="none"
       className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
-        isHovered ? "scale-100 opacity-100" : "scale-110 opacity-0"
+        isHovered ? "scale-100 opacity-100" : "scale-110 opacity-100"
       }`}
     />
   );
@@ -92,13 +92,6 @@ const ReelCard = ({
 
         {/* MEDIA */}
         <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none">
-
-          {/* THUMBNAIL */}
-          <img
-            src={reel.thumbnail}
-            alt={reel.title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
 
           {/* VIDEO */}
           <ReelVideo reel={reel} isHovered={hovered} />
