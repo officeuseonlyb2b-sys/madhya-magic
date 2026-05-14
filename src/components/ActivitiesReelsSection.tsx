@@ -19,34 +19,22 @@ const ReelVideo = ({
   isHovered: boolean;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-
-    if (isHovered) {
-      if (!loaded) {
-        v.load();
-        setLoaded(true);
-      }
-      v.play().catch(() => {});
-    } else {
-      v.pause();
-      try {
-        v.currentTime = 0;
-      } catch {}
-    }
-  }, [isHovered, loaded]);
+    v.play().catch(() => {});
+  }, []);
 
   return (
     <video
       ref={videoRef}
       src={reel.video}
+      autoPlay
       muted
       loop
       playsInline
-      preload="none"
+      preload="auto"
       className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
         isHovered ? "scale-100 opacity-100" : "scale-110 opacity-100"
       }`}
@@ -85,9 +73,9 @@ const ReelCard = ({
       className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 focus:outline-none focus:ring-0"
     >
       <Wrapper {...wrapperProps} className="block">
-        <div className="group relative overflow-hidden rounded-[24px] bg-[#f4efe8] border-none outline-none ring-0 shadow-none">
+        <div className="group relative overflow-hidden rounded-[24px] bg-black border-none outline-none ring-0 shadow-none">
           {/* MEDIA */}
-          <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none">
+          <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
             <ReelVideo reel={reel} isHovered={hovered} />
 
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 pointer-events-none" />
