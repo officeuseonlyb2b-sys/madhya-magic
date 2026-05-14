@@ -16,56 +16,8 @@ import {
   useState,
 } from "react";
 
-const blogs = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
-    category: "Adventure",
-    title: "Unforgettable Cultural Travel Experiences",
-    description:
-      "Traveling is an incredible way to explore cultures and landscapes.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=1200&auto=format&fit=crop",
-    category: "Tips",
-    title: "Ultimate Travel Packing List",
-    description:
-      "Discover smart packing strategies for stress-free travel.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
-    category: "Destination",
-    title: "Make The Most Of Your Holiday",
-    description:
-      "Plan your dream vacation with expert travel insights.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1200&auto=format&fit=crop",
-    category: "Travel",
-    title: "Best Places To Visit In 2025",
-    description:
-      "Explore the most trending travel destinations this year.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1200&auto=format&fit=crop",
-    category: "Nature",
-    title: "Beautiful Nature Escapes",
-    description:
-      "Reconnect with nature through breathtaking journeys.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
-    category: "Luxury",
-    title: "Luxury Trips Around The World",
-    description:
-      "Experience premium travel destinations and resorts.",
-  },
-];
+import { Link } from "react-router-dom";
+import { blogs } from "@/data/blogsData";
 
 export default function TravelInsightsSection() {
   const [current, setCurrent] = useState(0);
