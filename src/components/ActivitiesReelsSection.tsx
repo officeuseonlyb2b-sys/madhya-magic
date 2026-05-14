@@ -39,8 +39,8 @@ const ReelVideo = ({
       loop
       playsInline
       preload="metadata"
-      className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
-        isHovered ? "scale-100 opacity-100" : "scale-110 opacity-100"
+      className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-transform duration-700 will-change-transform ${
+        isHovered ? "scale-100" : "scale-110"
       }`}
     />
   );
