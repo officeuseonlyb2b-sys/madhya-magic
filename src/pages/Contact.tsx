@@ -5,13 +5,32 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 
+import { submitFormWithToast } from "@/lib/submitForm";
+
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", phone: "", subject: "", message: "" });
+  const upd = (k: string, v: string) => setForm((p) => ({ ...p, [k]: v }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+    if (loading) return;
+    setLoading(true);
+    const res = await submitFormWithToast({
+      formName: "Contact Form",
+      fullName: form.name,
+      email: form.email,
+      phone: form.phone,
+      message: form.message,
+      extraFields: { Subject: form.subject },
+    });
+    setLoading(false);
+    if (res.ok) {
+      setSubmitted(true);
+      setForm({ name: "", email: "", phone: "", subject: "", message: "" });
+      setTimeout(() => setSubmitted(false), 4000);
+    }
   };
 
   return (
@@ -44,28 +63,29 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div className="input-glow bg-muted/50 rounded-xl px-4 py-3 border border-transparent">
-                    <input placeholder="Your Name" className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground" required />
+                    <input value={form.name} onChange={(e) => upd("name", e.target.value)} placeholder="Your Name" className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground" required />
                   </div>
                   <div className="input-glow bg-muted/50 rounded-xl px-4 py-3 border border-transparent">
-                    <input type="email" placeholder="Email Address" className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground" required />
+                    <input value={form.email} onChange={(e) => upd("email", e.target.value)} type="email" placeholder="Email Address" className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground" required />
                   </div>
                 </div>
                 <div className="input-glow bg-muted/50 rounded-xl px-4 py-3 border border-transparent">
-                  <input placeholder="Phone Number" className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground" />
+                  <input value={form.phone} onChange={(e) => upd("phone", e.target.value)} placeholder="Phone Number" className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground" />
                 </div>
                 <div className="input-glow bg-muted/50 rounded-xl px-4 py-3 border border-transparent">
-                  <input placeholder="Subject" className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground" required />
+                  <input value={form.subject} onChange={(e) => upd("subject", e.target.value)} placeholder="Subject" className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground" required />
                 </div>
                 <div className="input-glow bg-muted/50 rounded-xl px-4 py-3 border border-transparent">
-                  <textarea placeholder="Your Message" rows={5} className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground resize-none" required />
+                  <textarea value={form.message} onChange={(e) => upd("message", e.target.value)} placeholder="Your Message" rows={5} className="bg-transparent outline-none w-full text-sm text-foreground placeholder:text-muted-foreground resize-none" required />
                 </div>
                 <motion.button
                   type="submit"
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="w-full gradient-gold glow-button text-primary-foreground rounded-xl py-3.5 font-semibold text-lg flex items-center justify-center gap-2"
+                  disabled={loading}
+                  whileHover={{ scale: loading ? 1 : 1.02 }}
+                  whileTap={{ scale: loading ? 1 : 0.98 }}
+                  className="w-full gradient-gold glow-button text-primary-foreground rounded-xl py-3.5 font-semibold text-lg flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {submitted ? "Message Sent! ✓" : (<>Send Message <Send size={18} /></>)}
+                  {loading ? "Sending…" : submitted ? "Message Sent! ✓" : (<>Send Message <Send size={18} /></>)}
                 </motion.button>
               </form>
             </motion.div>

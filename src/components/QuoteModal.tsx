@@ -15,7 +15,8 @@ import { Button } from "@/components/ui/button";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
-import { toast } from "sonner";
+import { submitFormWithToast } from "@/lib/submitForm";
+import { useState as useStateLoading } from "react";
 
 interface QuoteModalProps {
   open: boolean;
@@ -26,14 +27,25 @@ interface QuoteModalProps {
 const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", people: "2", message: "" });
   const [travelDate, setTravelDate] = useState<Date>();
+  const [loading, setLoading] = useStateLoading(false);
   const update = (k: string, v: string) => setForm((p) => ({ ...p, [k]: v }));
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Quote request sent!", {
-      description: `We'll share the best ${destinationName} quote with you shortly.`,
+    if (loading) return;
+    setLoading(true);
+    const res = await submitFormWithToast({
+      formName: "Quote Request",
+      fullName: form.name,
+      email: form.email,
+      phone: form.phone,
+      destination: destinationName,
+      travelers: `${form.people} people`,
+      travelDate: travelDate ? format(travelDate, "PPP") : undefined,
+      message: form.message,
     });
-    onOpenChange(false);
+    setLoading(false);
+    if (res.ok) onOpenChange(false);
   };
 
   return (
@@ -103,8 +115,8 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
             <Button type="button" variant="outline" className="flex-1" onClick={() => onOpenChange(false)}>
               Cancel
             </Button>
-            <Button type="submit" className="flex-1 gradient-gold text-primary-foreground font-semibold">
-              Submit
+            <Button type="submit" disabled={loading} className="flex-1 gradient-gold text-primary-foreground font-semibold disabled:opacity-70">
+              {loading ? "Sending…" : "Submit"}
             </Button>
           </div>
         </form>

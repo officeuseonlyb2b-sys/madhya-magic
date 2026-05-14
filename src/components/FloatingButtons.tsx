@@ -1,10 +1,37 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowUp, MessageCircle, X } from "lucide-react";
+import { submitFormWithToast } from "@/lib/submitForm";
 
 const FloatingButtons = () => {
   const [showTop, setShowTop] = useState(false);
   const [showInquiry, setShowInquiry] = useState(false);
+  const [inquiry, setInquiry] = useState({ name: "", phone: "", destination: "" });
+  const [loading, setLoading] = useState(false);
+  const upd = (k: string, v: string) => setInquiry((p) => ({ ...p, [k]: v }));
+
+  const sendInquiry = async () => {
+    if (loading) return;
+    if (!inquiry.name || !inquiry.phone) {
+      // Quick required-field check; full validation happens in submitForm
+      return;
+    }
+    setLoading(true);
+    // Use phone-derived placeholder email so internal team gets the lead even
+    // without an email; auto-reply will go to placeholder (silently dropped if invalid).
+    const res = await submitFormWithToast({
+      formName: "Quick Trip Inquiry",
+      fullName: inquiry.name,
+      email: `lead-${Date.now()}@enchantingmp.com`,
+      phone: inquiry.phone,
+      destination: inquiry.destination,
+    });
+    setLoading(false);
+    if (res.ok) {
+      setInquiry({ name: "", phone: "", destination: "" });
+      setShowInquiry(false);
+    }
+  };
 
   useEffect(() => {
     const onScroll = () => setShowTop(window.scrollY > 500);
@@ -49,12 +76,12 @@ const FloatingButtons = () => {
               <h3 className="font-display font-bold text-foreground">Trip Inquiry</h3>
               <button onClick={() => setShowInquiry(false)}><X size={18} /></button>
             </div>
-            <form className="space-y-3">
-              <input placeholder="Your Name" className="w-full bg-muted rounded-lg px-3 py-2 text-sm outline-none" />
-              <input placeholder="Phone Number" className="w-full bg-muted rounded-lg px-3 py-2 text-sm outline-none" />
-              <input placeholder="Destination" className="w-full bg-muted rounded-lg px-3 py-2 text-sm outline-none" />
-              <button type="button" className="w-full gradient-gold text-primary-foreground rounded-lg py-2.5 font-semibold text-sm">
-                Send Inquiry
+            <form className="space-y-3" onSubmit={(e) => { e.preventDefault(); sendInquiry(); }}>
+              <input value={inquiry.name} onChange={(e) => upd("name", e.target.value)} placeholder="Your Name" className="w-full bg-muted rounded-lg px-3 py-2 text-sm outline-none" required />
+              <input value={inquiry.phone} onChange={(e) => upd("phone", e.target.value)} placeholder="Phone Number" className="w-full bg-muted rounded-lg px-3 py-2 text-sm outline-none" required />
+              <input value={inquiry.destination} onChange={(e) => upd("destination", e.target.value)} placeholder="Destination" className="w-full bg-muted rounded-lg px-3 py-2 text-sm outline-none" />
+              <button type="submit" disabled={loading} className="w-full gradient-gold text-primary-foreground rounded-lg py-2.5 font-semibold text-sm disabled:opacity-70">
+                {loading ? "Sending…" : "Send Inquiry"}
               </button>
             </form>
           </motion.div>

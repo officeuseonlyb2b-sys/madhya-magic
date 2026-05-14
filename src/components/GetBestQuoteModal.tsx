@@ -27,6 +27,7 @@ import {
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { submitFormWithToast } from "@/lib/submitForm";
 
 interface GetBestQuoteModalProps {
   open: boolean;
@@ -99,19 +100,35 @@ const GetBestQuoteModal = ({
   const update = (k: string, v: string) =>
     setForm((p) => ({ ...p, [k]: v }));
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const [loading, setLoading] = useState(false);
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (loading) return;
     if (form.phoneNumber.length !== 10) {
       toast.error("Please enter a valid 10 digit phone number");
       return;
     }
-
-    toast.success("Query submitted!", {
-      description: "Our team will share the best quote with you shortly.",
+    setLoading(true);
+    const res = await submitFormWithToast({
+      formName: "Best Quote Request",
+      fullName: form.agentName,
+      email: form.agentEmail,
+      phone: form.phoneNumber,
+      packageName: form.tourName,
+      travelDate: arrivalDate ? format(arrivalDate, "PPP") : undefined,
+      travelers: `${form.adults} adults, ${form.children} children, ${form.infants} infants`,
+      message: form.message,
+      extraFields: {
+        Duration: form.duration,
+        "Hotel Category": form.hotel,
+        "Departure City": form.departureCity,
+        "Travelling By": form.travellingBy,
+        "Departure Date": departureDate ? format(departureDate, "PPP") : "",
+      },
     });
-
-    onOpenChange(false);
+    setLoading(false);
+    if (res.ok) onOpenChange(false);
   };
 
   return (
@@ -407,9 +424,10 @@ const GetBestQuoteModal = ({
 
           <Button
             type="submit"
-            className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-6 rounded-xl text-base"
+            disabled={loading}
+            className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold py-6 rounded-xl text-base disabled:opacity-70"
           >
-            Submit Now
+            {loading ? "Sending…" : "Submit Now"}
           </Button>
         </form>
       </DialogContent>
