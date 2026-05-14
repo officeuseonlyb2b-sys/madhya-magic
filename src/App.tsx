@@ -20,6 +20,7 @@ import TermsConditions from "@/components/TermsConditions";
 import CancellationPolicy from "./components/CancellationPolicy";
 import BlogsListing from "./pages/BlogsListing.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
+import Unsubscribe from "./pages/Unsubscribe.tsx";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/cancellation-policy" element={<CancellationPolicy />}/>
           <Route path="/blogs" element={<BlogsListing />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
+          <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
