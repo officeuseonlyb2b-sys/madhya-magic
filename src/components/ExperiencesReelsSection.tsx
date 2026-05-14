@@ -72,8 +72,12 @@ const ExperienceCard = ({
         {/* MEDIA */}
         <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none">
 
-          {/* IMAGE */}
-          
+          {/* THUMBNAIL */}
+          <img
+            src={exp.image}
+            alt={exp.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
 
           {/* VIDEO */}
           {exp.video && (
