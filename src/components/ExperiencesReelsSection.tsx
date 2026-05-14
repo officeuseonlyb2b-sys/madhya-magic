@@ -72,6 +72,13 @@ const ExperienceCard = ({
         {/* MEDIA */}
         <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none">
 
+          {/* THUMBNAIL */}
+          <img
+            src={exp.image}
+            alt={exp.title}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+
           {/* VIDEO */}
           {exp.video && (
             <video
@@ -85,7 +92,7 @@ const ExperienceCard = ({
               className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
                 hovered
                   ? "opacity-100 scale-100"
-                  : "opacity-100 scale-110"
+                  : "opacity-0 scale-110"
               }`}
             />
           )}
