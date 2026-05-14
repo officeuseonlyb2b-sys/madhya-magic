@@ -77,7 +77,6 @@ const ExperienceCard = ({
             <video
               ref={videoRef}
               src={exp.video}
-              poster={exp.image}
               muted
               loop
               playsInline

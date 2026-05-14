@@ -49,7 +49,6 @@ const ReelVideo = ({
     <video
       ref={videoRef}
       src={reel.videoUrl}
-      poster={reel.thumbnail}
       muted
       loop
       playsInline
