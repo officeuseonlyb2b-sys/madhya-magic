@@ -26,20 +26,24 @@ const ReelVideo = ({
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    v.play().catch(() => {});
-  }, []);
+    if (isHovered) {
+      v.play().catch(() => {});
+    } else {
+      v.pause();
+      try { v.currentTime = 0; } catch {}
+    }
+  }, [isHovered]);
 
   return (
     <video
       ref={videoRef}
       src={reel.videoUrl}
-      autoPlay
       muted
       loop
       playsInline
-      preload="auto"
-      className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
-        isHovered ? "scale-100 opacity-100" : "scale-110 opacity-100"
+      preload="metadata"
+      className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-transform duration-700 will-change-transform ${
+        isHovered ? "scale-100" : "scale-110"
       }`}
     />
   );

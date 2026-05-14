@@ -37,8 +37,13 @@ const ExperienceCard = ({
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    v.play().catch(() => {});
-  }, []);
+    if (hovered) {
+      v.play().catch(() => {});
+    } else {
+      v.pause();
+      try { v.currentTime = 0; } catch {}
+    }
+  }, [hovered]);
 
   return (
     <motion.div
@@ -67,15 +72,12 @@ const ExperienceCard = ({
             <video
               ref={videoRef}
               src={exp.video}
-              autoPlay
               muted
               loop
               playsInline
-              preload="auto"
-              className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-700 ${
-                hovered
-                  ? "opacity-100 scale-100"
-                  : "opacity-100 scale-110"
+              preload="metadata"
+              className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-transform duration-700 will-change-transform ${
+                hovered ? "scale-100" : "scale-110"
               }`}
             />
           )}
