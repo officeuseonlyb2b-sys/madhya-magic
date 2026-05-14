@@ -18,6 +18,8 @@ import ScrollToTop from "./components/ScrollToTop.tsx";
 import PrivacyPolicy from "@/components/PrivacyPolicy";
 import TermsConditions from "@/components/TermsConditions";
 import CancellationPolicy from "./components/CancellationPolicy";
+import BlogsListing from "./pages/BlogsListing.tsx";
+import BlogDetail from "./pages/BlogDetail.tsx";
 
 const queryClient = new QueryClient();
 
@@ -45,6 +47,8 @@ const App = () => (
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/cancellation-policy" element={<CancellationPolicy />}/>
+          <Route path="/blogs" element={<BlogsListing />} />
+          <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

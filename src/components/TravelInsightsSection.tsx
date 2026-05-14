@@ -16,56 +16,8 @@ import {
   useState,
 } from "react";
 
-const blogs = [
-  {
-    image:
-      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop",
-    category: "Adventure",
-    title: "Unforgettable Cultural Travel Experiences",
-    description:
-      "Traveling is an incredible way to explore cultures and landscapes.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?q=80&w=1200&auto=format&fit=crop",
-    category: "Tips",
-    title: "Ultimate Travel Packing List",
-    description:
-      "Discover smart packing strategies for stress-free travel.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1200&auto=format&fit=crop",
-    category: "Destination",
-    title: "Make The Most Of Your Holiday",
-    description:
-      "Plan your dream vacation with expert travel insights.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1200&auto=format&fit=crop",
-    category: "Travel",
-    title: "Best Places To Visit In 2025",
-    description:
-      "Explore the most trending travel destinations this year.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1493558103817-58b2924bce98?q=80&w=1200&auto=format&fit=crop",
-    category: "Nature",
-    title: "Beautiful Nature Escapes",
-    description:
-      "Reconnect with nature through breathtaking journeys.",
-  },
-  {
-    image:
-      "https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop",
-    category: "Luxury",
-    title: "Luxury Trips Around The World",
-    description:
-      "Experience premium travel destinations and resorts.",
-  },
-];
+import { Link } from "react-router-dom";
+import { blogs } from "@/data/blogsData";
 
 export default function TravelInsightsSection() {
   const [current, setCurrent] = useState(0);
@@ -215,7 +167,11 @@ export default function TravelInsightsSection() {
                   <div className="absolute inset-0 translate-y-5 scale-[0.96] rounded-[28px] bg-black/5 blur-2xl opacity-70 transition-all duration-700 group-hover:translate-y-7 group-hover:scale-[0.93]" />
 
                   {/* CARD */}
-                  <div className="relative rounded-[28px] overflow-hidden bg-white border border-black/[0.04] shadow-[0_10px_25px_rgba(0,0,0,0.04),0_25px_60px_rgba(0,0,0,0.03)] group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.10),0_10px_25px_rgba(0,0,0,0.05)] transition-all duration-700">
+                  <Link
+                    to={`/blogs/${blog.slug}`}
+                    aria-label={blog.title}
+                    className="block relative rounded-[28px] overflow-hidden bg-white border border-black/[0.04] shadow-[0_10px_25px_rgba(0,0,0,0.04),0_25px_60px_rgba(0,0,0,0.03)] group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.10),0_10px_25px_rgba(0,0,0,0.05)] transition-all duration-700"
+                  >
 
                     {/* TOP ELEVATION LIGHT */}
                     <div className="absolute top-0 left-[8%] w-[84%] h-[14px] rounded-full bg-white/90 blur-xl z-20 opacity-90" />
@@ -229,6 +185,7 @@ export default function TravelInsightsSection() {
                       <img
                         src={blog.image}
                         alt={blog.title}
+                        loading="lazy"
                         className="h-[220px] w-full object-cover transition-transform duration-[2500ms] ease-out group-hover:scale-105"
                       />
 
@@ -254,6 +211,10 @@ export default function TravelInsightsSection() {
                         <div className="w-1 h-1 rounded-full bg-[#c8a96b]" />
 
                         <span>Editorial</span>
+
+                        <div className="w-1 h-1 rounded-full bg-[#c8a96b]" />
+
+                        <span>{blog.date}</span>
                       </div>
 
                       {/* TITLE */}
@@ -267,25 +228,25 @@ export default function TravelInsightsSection() {
                       </p>
 
                       {/* BUTTON */}
-                      <button className="mt-5 inline-flex items-center gap-3 text-[#111] font-medium group/button">
+                      <span className="mt-5 inline-flex items-center gap-3 text-[#111] font-medium group/button">
 
                         <span className="uppercase tracking-[0.18em] text-[11px]">
                           Read More
                         </span>
 
-                        <div className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center transition-all duration-300 group-hover/button:bg-black group-hover/button:text-white">
+                        <span className="w-9 h-9 rounded-full border border-black/10 flex items-center justify-center transition-all duration-300 group-hover/button:bg-black group-hover/button:text-white">
 
                           <ArrowRight
                             size={14}
                             className="transition-transform duration-300 group-hover/button:translate-x-0.5"
                           />
-                        </div>
-                      </button>
+                        </span>
+                      </span>
                     </div>
 
                     {/* OUTER RING */}
                     <div className="absolute inset-0 rounded-[28px] ring-0 ring-[#d4af37]/0 group-hover:ring-1 group-hover:ring-[#d4af37]/20 transition-all duration-700 pointer-events-none" />
-                  </div>
+                  </Link>
                 </motion.div>
               ))}
             </motion.div>
