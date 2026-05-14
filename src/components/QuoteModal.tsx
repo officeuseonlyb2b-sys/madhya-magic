@@ -16,7 +16,6 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
 import { Calendar } from "@/components/ui/calendar";
 import { cn } from "@/lib/utils";
 import { submitFormWithToast } from "@/lib/submitForm";
-import { useState as useStateLoading } from "react";
 
 interface QuoteModalProps {
   open: boolean;
@@ -27,7 +26,7 @@ interface QuoteModalProps {
 const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) => {
   const [form, setForm] = useState({ name: "", phone: "", email: "", people: "2", message: "" });
   const [travelDate, setTravelDate] = useState<Date>();
-  const [loading, setLoading] = useStateLoading(false);
+  const [loading, setLoading] = useState(false);
   const update = (k: string, v: string) => setForm((p) => ({ ...p, [k]: v }));
 
   const handleSubmit = async (e: React.FormEvent) => {
