@@ -32,6 +32,7 @@ const Footer = () => {
     quickLinks: [
       { name: "Packages", href: "/#packages" },
       { name: "Experiences", href: "/#experiences" },
+      { name: "Travel Insights", href: "/blogs" },
       { name: "About Us", href: "/about" },
       { name: "Contact", href: "/contact" },
       { name: "Create Query", href: "/create-query" },
