@@ -107,31 +107,9 @@ html, body {
     font-family: 'Playfair Display', serif;
   }
 
-  /* =========================================================
-     GLOBAL IMAGE RULE — show images fully, never crop.
-     Overrides Tailwind's object-cover and bg-cover usages so
-     every image/video and background fits inside its container
-     while preserving aspect ratio. Letterboxing is expected.
-     ========================================================= */
-  img,
-  video {
-    object-fit: contain !important;
-    object-position: center !important;
-  }
-
-  /* Avoid layout shift: keep intrinsic aspect ratio when present */
-  img[width][height],
-  video[width][height] {
-    height: auto;
-  }
-
-  /* Background-image based "hero/banner" containers */
-  .bg-cover {
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    background-color: hsl(var(--background));
-  }
+  /* Images and videos use Tailwind's object-* utilities per component.
+     No global object-fit override — banners, reels, and cards fill
+     their containers as designed. */
 }
 
 
