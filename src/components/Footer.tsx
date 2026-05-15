@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import {
   MapPin,
   Phone,
@@ -8,65 +7,15 @@ import {
   Twitter,
   Youtube,
   Send,
-  Clock,
   Award,
-  ChevronLeft,
-  ChevronRight,
 } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  // ---------- Slider data (Unsplash images) ----------
-  const sliderImages = [
-    {
-      id: 1,
-      url: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1200&h=500&fit=crop",
-      title: "Mountain Escape",
-    },
-    {
-      id: 2,
-      url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&h=500&fit=crop",
-      title: "Beach Paradise",
-    },
-    {
-      id: 3,
-      url: "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=1200&h=500&fit=crop",
-      title: "Historic Temple",
-    },
-    {
-      id: 4,
-      url: "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=1200&h=500&fit=crop",
-      title: "City Lights",
-    },
-    {
-      id: 5,
-      url: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1200&h=500&fit=crop",
-      title: "Wildlife Safari",
-    },
-  ];
-
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  // Auto-slide
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [sliderImages.length]);
-
-  const nextSlide = () => {
-    setCurrentIndex((prev) => (prev + 1) % sliderImages.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex((prev) => (prev - 1 + sliderImages.length) % sliderImages.length);
-  };
-
-  // ---------- Footer links (existing content preserved) ----------
   const footerLinks = {
     destinations: [
       { name: "Ujjain", path: "/destination/ujjain" },
@@ -80,8 +29,7 @@ const Footer = () => {
       { name: "Jabalpur", path: "/destination/jabalpur" },
     ],
 
-    // Renamed to "Explore" for Travilla style
-    exploreLinks: [
+    quickLinks: [
       { name: "Packages", href: "/#packages" },
       { name: "Experiences", href: "/#experiences" },
       { name: "Travel Insights", href: "/blogs" },
@@ -91,7 +39,7 @@ const Footer = () => {
     ],
 
     legalLinks: [
-      { name: "Terms & Condition", href: "/terms-conditions" },
+      { name: "Terms & Conditions", href: "/terms-conditions" },
       { name: "Privacy Policy", href: "/privacy-policy" },
       { name: "Cancellation Policy", href: "/cancellation-policy" },
       { name: "Careers", href: "/careers" },
@@ -100,163 +48,86 @@ const Footer = () => {
   };
 
   const socialIcons = [
-    {
-      Icon: Instagram,
-      href: "https://instagram.com",
-      label: "Instagram",
-      color: "hover:bg-gradient-to-tr from-purple-500 to-pink-500",
-    },
-    {
-      Icon: Facebook,
-      href: "https://facebook.com",
-      label: "Facebook",
-      color: "hover:bg-blue-600",
-    },
-    {
-      Icon: Twitter,
-      href: "https://twitter.com",
-      label: "Twitter",
-      color: "hover:bg-sky-500",
-    },
-    {
-      Icon: Youtube,
-      href: "https://youtube.com",
-      label: "YouTube",
-      color: "hover:bg-red-600",
-    },
+    { Icon: Twitter, href: "https://twitter.com", label: "Twitter" },
+    { Icon: Facebook, href: "https://facebook.com", label: "Facebook" },
+    { Icon: Instagram, href: "https://instagram.com", label: "Instagram" },
+    { Icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  ];
+
+  const instagramImages = [
+    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400",
+    "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=400",
+    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400",
+    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400",
+    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400",
+    "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400",
+    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=400",
+    "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=400",
   ];
 
   return (
-    <footer className="relative bg-gray-900 text-white pt-12 pb-8 overflow-hidden">
-      {/* ----- KEPT: animated background elements (made very subtle) ----- */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-30">
+    <footer className="relative bg-gradient-to-b from-gray-900 via-gray-900 to-black text-white pt-20 pb-8 overflow-hidden">
+      {/* Background Texture */}
+      <div
+        className="absolute inset-0 opacity-[0.06] bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1600')",
+        }}
+      />
+
+      {/* Animated Background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-yellow-500/5 rounded-full blur-3xl animate-pulse delay-1000" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
-
-        {/* Floating particles */}
-        {[...Array(8)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-amber-400/20 rounded-full"
-            initial={{ opacity: 0 }}
-            animate={{
-              y: [0, -200],
-              x: [0, (Math.random() - 0.5) * 80],
-              opacity: [0, 0.5, 0],
-            }}
-            transition={{
-              duration: 10 + Math.random() * 15,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* ----- NEW: Image slider (Unsplash) ----- */}
-        <div className="mb-16 rounded-2xl overflow-hidden shadow-2xl relative group">
-          <div className="relative h-[300px] md:h-[400px]">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={currentIndex}
-                src={sliderImages[currentIndex].url}
-                alt={sliderImages[currentIndex].title}
-                className="absolute inset-0 w-full h-full object-cover"
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.7 }}
-              />
-            </AnimatePresence>
-
-            {/* Gradient overlay for better text visibility */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
-
-            {/* Navigation buttons */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
-            >
-              <ChevronLeft size={24} />
-            </button>
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100"
-            >
-              <ChevronRight size={24} />
-            </button>
-
-            {/* Dots */}
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-              {sliderImages.map((_, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentIndex(idx)}
-                  className={`h-2 rounded-full transition-all ${
-                    idx === currentIndex
-                      ? "w-8 bg-amber-400"
-                      : "w-2 bg-white/50 hover:bg-white/80"
-                  }`}
-                />
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* ----- MAIN FOOTER GRID (Travilla style) ----- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12 mb-12">
-          {/* Column 1: Brand + Follow Instagram */}
+        {/* MAIN GRID — Unequal column widths */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 pb-14 border-b border-white/10">
+          {/* 1. BRAND COLUMN — 3/12 */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
+            className="md:col-span-3"
           >
-            <div className="mb-4">
-              <h2 className="text-2xl md:text-3xl font-display font-bold bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
-                Enchanting MP
-              </h2>
-              <div className="w-12 h-0.5 bg-gradient-to-r from-amber-400 to-yellow-500 mt-2" />
-            </div>
-            <p className="text-gray-300 text-sm leading-relaxed mb-6">
+            <div className="mb-6">
+  <div className="flex items-center gap-3">
+    <img
+      src={logo}
+      alt="Enchanting MP Logo"
+      className="w-14 h-14 object-contain"
+    />
+
+    <h2 className="text-[28px] leading-none font-bold whitespace-nowrap bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
+      Enchanting MP
+    </h2>
+  </div>
+
+  {/* <div className="w-16 h-[2px] bg-gradient-to-r from-amber-400 to-yellow-500 mt-4 rounded-full" /> */}
+</div>
+            <p className="text-gray-300 text-[15px] leading-relaxed max-w-[280px]">
               Your gateway to exploring the heart of incredible India. Curated
               travel experiences across Madhya Pradesh — from ancient temples to
               roaring tigers.
             </p>
-
-            {/* "Follow Instagram" (exactly as in Travilla) */}
-            <div className="flex items-center gap-3 mb-6 group cursor-pointer">
-              <Instagram size={20} className="text-amber-400 group-hover:scale-110 transition" />
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-gray-300 hover:text-amber-400 transition"
-              >
-                Follow Instagram
-              </a>
+            <div className="flex items-center gap-2 mt-6">
+              <Award size={16} className="text-amber-400" />
+              <span className="text-xs text-gray-400">
+                Recognized by MP Tourism
+              </span>
             </div>
-
-            <div className="flex gap-3">
-              {socialIcons.map((social, idx) => (
+            <div className="flex gap-4 mt-10">
+              {socialIcons.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.15, y: -3 }}
-                  whileTap={{ scale: 0.95 }}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: idx * 0.05 }}
-                  className={`w-10 h-10 rounded-full bg-white/5 backdrop-blur-sm flex items-center justify-center text-gray-300 transition-all duration-300 border border-white/10 ${social.color} hover:text-white hover:border-transparent`}
-                  aria-label={social.label}
+                  className="w-12 h-12 rounded-full border border-white/15 bg-white/5 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-white transition-colors"
                 >
                   <social.Icon size={18} />
                 </motion.a>
@@ -264,155 +135,159 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Column 2: Explore (was Quick Links) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="font-display font-bold text-lg mb-5 relative inline-block">
+          {/* 2. DESTINATIONS COLUMN — pushed down */}
+          <motion.div className="md:col-span-2 mt-8 md:mt-12">
+            <h3 className="text-[30px] font-semibold mb-8 text-white">
+              Destinations
+            </h3>
+            <ul className="space-y-5">
+              {footerLinks.destinations.slice(0, 5).map((dest, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={dest.path}
+                    className="text-gray-400 hover:text-amber-400 transition-colors"
+                  >
+                    {dest.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* 3. EXPLORE COLUMN — pushed down */}
+          <motion.div className="md:col-span-2 mt-8 md:mt-12">
+            <h3 className="text-[30px] font-semibold mb-8 text-white">
               Explore
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-amber-400 rounded-full" />
-            </h4>
-            <ul className="space-y-2.5 text-sm">
-              {footerLinks.exploreLinks.map((link, idx) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.1 + idx * 0.02 }}
-                  viewport={{ once: true }}
-                >
+            </h3>
+            <ul className="space-y-5">
+              {footerLinks.quickLinks.map((link, idx) => (
+                <li key={idx}>
                   {link.href.startsWith("/#") ? (
                     <a
                       href={link.href}
-                      className="text-gray-400 hover:text-amber-400 transition-all duration-300 hover:pl-2 block"
+                      className="text-gray-400 hover:text-amber-400 transition-colors"
                     >
                       {link.name}
                     </a>
                   ) : (
                     <Link
                       to={link.href}
-                      className="text-gray-400 hover:text-amber-400 transition-all duration-300 hover:pl-2 block"
+                      className="text-gray-400 hover:text-amber-400 transition-colors"
                     >
                       {link.name}
                     </Link>
                   )}
-                </motion.li>
+                </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Column 3: Destinations */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="font-display font-bold text-lg mb-5 relative inline-block">
-              Destinations
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-amber-400 rounded-full" />
-            </h4>
-            <ul className="space-y-2.5 text-sm">
-              {footerLinks.destinations.map((dest, idx) => (
-                <motion.li
-                  key={dest.name}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2 + idx * 0.02 }}
-                  viewport={{ once: true }}
-                >
-                  <Link
-                    to={dest.path}
-                    className="text-gray-400 hover:text-amber-400 transition-all duration-300 hover:pl-2 block"
-                  >
-                    {dest.name}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </motion.div>
+          {/* 4. LEGAL + CONTACT COLUMN — pushed down */}
+          <motion.div className="md:col-span-5 mt-8 md:mt-12">
+            <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
+              {/* Legal section */}
+              <div className="flex-1">
+                <h3 className="text-[30px] font-semibold mb-8 text-white">
+                  Legal
+                </h3>
+                <ul className="space-y-5">
+                  {footerLinks.legalLinks.map((link, idx) => (
+                    <li key={idx}>
+                      <Link
+                        to={link.href}
+                        className="text-gray-400 hover:text-amber-400 transition-colors"
+                      >
+                        {link.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
-          {/* Column 4: Legal + Contact (combined like Travilla) */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-            viewport={{ once: true }}
-          >
-            <h4 className="font-display font-bold text-lg mb-5 relative inline-block">
-              Legal
-              <span className="absolute -bottom-1 left-0 w-8 h-0.5 bg-amber-400 rounded-full" />
-            </h4>
-            <ul className="space-y-2.5 text-sm mb-6">
-              {footerLinks.legalLinks.map((link, idx) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3 + idx * 0.02 }}
-                  viewport={{ once: true }}
-                >
-                  <Link
-                    to={link.href}
-                    className="text-gray-400 hover:text-amber-400 transition-all duration-300 hover:pl-2 block"
-                  >
-                    {link.name}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
+              {/* Contact section */}
+              <div className="flex-1">
+                <h3 className="text-[30px] font-semibold mb-8 text-white">
+                  Contact
+                </h3>
+                <div className="space-y-5">
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                      <Phone size={20} className="text-amber-400" />
+                    </div>
+                    <a href="tel:+919109114934" className="text-white break-all">
+                      +91 9109114934
+                    </a>
+                  </div>
 
-            <div className="pt-4 border-t border-white/10">
-              <p className="text-gray-400 text-sm mb-3">Contact us</p>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center gap-3">
-                  <Phone size={16} className="text-amber-400" />
-                  <a href="tel:+919109114934" className="text-gray-300 hover:text-amber-400">
-                    +91 9109114934
-                  </a>
-                </li>
-                <li className="flex items-center gap-3">
-                  <Mail size={16} className="text-amber-400" />
-                  <a href="mailto:info@enchantingmp.com" className="text-gray-300 hover:text-amber-400">
-                    info@enchantingmp.com
-                  </a>
-                </li>
-                <li className="flex items-start gap-3">
-                  <MapPin size={16} className="text-amber-400 mt-0.5" />
-                  <span className="text-gray-300 text-xs">
-                    1st Floor, Jain Bhawan, Above Himalaya Wellness Centre,
-                    Nayaa Bazaar, Gwalior, MP – 474009
-                  </span>
-                </li>
-              </ul>
+                  <div className="flex items-center gap-4">
+                    <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                      <Mail size={20} className="text-amber-400" />
+                    </div>
+                    <a href="mailto:info@enchantingmp.com" className="text-gray-300 break-all">
+                      info@enchantingmp.com
+                    </a>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin size={20} className="text-amber-400" />
+                    </div>
+                    <p className="text-gray-300 text-sm leading-relaxed">
+                      1st Floor, Jain Bhawan, Above Himalaya Wellness Centre,
+                      Nayaa Bazaar, Gwalior, Madhya Pradesh – 474009
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-5 border-t border-white/10">
+                  <div className="flex items-center gap-2 text-xs text-gray-400 ml-[50px]">
+                    <Send size={14} className="text-amber-400" />
+                    <span>Quick response within 24 hours</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
 
-        {/* Bottom Bar (simplified – keep existing links) */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
-          viewport={{ once: true }}
-          className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-400"
-        >
-          <p>© {currentYear} Enchanting Madhya Pradesh. All rights reserved.</p>
-          <div className="flex gap-6">
-            <Link to="/privacy-policy" className="hover:text-amber-400 transition">
-              Privacy Policy
-            </Link>
-            <Link to="/terms-conditions" className="hover:text-amber-400 transition">
-              Terms of Service
-            </Link>
-            <Link to="/cancellation-policy" className="hover:text-amber-400 transition">
-              Cancellation Policy
-            </Link>
+        {/* INSTAGRAM SECTION — AUTO SLIDER */}
+        <div className="pt-12 overflow-hidden">
+          <h3 className="text-[38px] font-semibold mb-10 text-white">
+            Follow Instagram
+          </h3>
+
+          <div className="relative w-full overflow-hidden">
+            <motion.div
+              className="flex gap-4 w-max"
+              animate={{
+                x: ["0%", "-50%"],
+              }}
+              transition={{
+                duration: 25,
+                repeat: Infinity,
+                ease: "linear",
+              }}
+            >
+              {[...instagramImages, ...instagramImages].map((img, idx) => (
+                <div
+                  key={idx}
+                  className="rounded-[22px] overflow-hidden flex-shrink-0"
+                >
+                  <img
+                    src={img}
+                    alt={`Instagram ${idx + 1}`}
+                    className="h-[110px] w-[160px] object-cover"
+                  />
+                </div>
+              ))}
+            </motion.div>
           </div>
-        </motion.div>
+        </div>
+
+        {/* COPYRIGHT */}
+        <div className="text-center pt-12 text-gray-400 text-sm">
+          © {currentYear} Enchanting Madhya Pradesh. All rights reserved.
+        </div>
       </div>
     </footer>
   );
