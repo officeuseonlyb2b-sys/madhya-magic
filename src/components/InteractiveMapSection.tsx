@@ -81,7 +81,7 @@ const SliderCard = ({
           <div className="flex flex-wrap gap-3">
             <Link
               to={`/destination/${dest.id}`}
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 text-white text-sm font-semibold hover:shadow-lg transition-all"
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-[#C89B5E] text-white text-sm font-semibold hover:shadow-lg transition-all"
             >
               <Eye size={16} />
               View More

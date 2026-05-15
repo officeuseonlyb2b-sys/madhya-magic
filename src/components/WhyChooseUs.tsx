@@ -150,7 +150,7 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="bg-[#f3f3f3] rounded-[28px] p-5 md:p-10 lg:p-12 border border-[#e7e7e7]"
+          className="bg-[#f8f4ee] rounded-[28px] p-5 md:p-10 lg:p-12 border border-[#efe2cf]"
         >
 
           {/* Heading */}
@@ -165,7 +165,7 @@ const WhyChooseUs = () => {
 
             {/* LEFT */}
             <div>
-              <p className="text-[15px] leading-[1.7] text-[#5f5f5f] italic mb-10 max-w-2xl">
+              <p className="text-[15px] leading-[1.7] border-[#e7cfac] text-[#6d5c4f] italic mb-10 max-w-2xl">
                 Deeply rooted in Madhya Pradesh since 2014, we create
                 thoughtfully curated journeys that go beyond sightseeing. From
                 wilderness and heritage to spirituality and local traditions,
@@ -184,8 +184,8 @@ const WhyChooseUs = () => {
                     className="flex items-start gap-4"
                   >
                     {/* ICON BOX */}
-                    <div className="w-12 h-12 rounded-2xl bg-white border border-[#ececec] shadow-sm flex items-center justify-center shrink-0">
-                      <item.icon size={19} className="text-[#f97343]" />
+                    <div className="w-12 h-12 rounded-2xl bg-[#fffaf3] border border-[#f1dfc7] shadow-sm flex items-center justify-center shrink-0">
+                      <item.icon size={19} className="text-[#c89b5e]" />
                     </div>
 
                     <div>
@@ -193,7 +193,7 @@ const WhyChooseUs = () => {
                         {item.title}
                       </h3>
 
-                      <p className="text-[13.5px] leading-[1.5] text-[#8a8a8a]">
+                      <p className="text-[13.5px] leading-[1.5] text-[#7b6b5d]">
                         {item.desc}
                       </p>
                     </div>
@@ -277,13 +277,13 @@ const WhyChooseUs = () => {
                 <div className="flex flex-wrap gap-4 mb-10">
 
                   {/* SPEAK TO EXPERT */}
-                  <button className="h-11 px-7 rounded-full border border-[#d7d7d7] text-[#5f5f5f] text-sm font-medium hover:bg-white transition-all duration-300 flex items-center gap-2">
+                  <button className="h-11 px-7 rounded-full border border-[#d7d7d7] text-[#6d5c4f] text-sm font-medium hover:bg-white transition-all duration-300 flex items-center gap-2">
                     <MessageCircle size={16} />
                     Speak to an Expert
                   </button>
 
                   {/* PLAN JOURNEY */}
-                  <button className="h-11 px-7 rounded-full bg-[#f97343] text-white text-sm font-medium hover:opacity-90 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-orange-200">
+                  <button className="h-11 px-7 rounded-full bg-[#c89b5e] text-white text-sm font-medium hover:opacity-90 transition-all duration-300 flex items-center gap-2 shadow-lg shadow-[#d8b07a]/40">
                     <Plane size={16} />
                     Plan Your Journey
                   </button>
@@ -301,7 +301,7 @@ const WhyChooseUs = () => {
                         {stat.number}
                       </h4>
 
-                      <p className="text-[12px] text-[#9a9a9a] leading-5 max-w-[120px]">
+                      <p className="text-[12px] text-[#8b7355] leading-5 max-w-[120px]">
                         {stat.label}
                       </p>
                     </div>

@@ -15,90 +15,89 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import SEO from "@/components/SEO";
-
-import {
-  getBlogBySlug,
-  getRelatedBlogs,
-} from "@/data/blogsData";
-
+import { getBlogBySlug, getRelatedBlogs } from "@/data/blogsData";
 import { useEffect, useMemo } from "react";
 
-// UJJAIN BLOG IMAGE
+// BLOG IMAGES
 import ujjainBlog from "@/assets/blog/ujjainblog.webp";
-
-// ORCHHA BLOG IMAGE
+import khajurahoBlog from "@/assets/blog/khajurahoblod.webp";
+import jabalpurBlog from "@/assets/blog/jabalpurblog.webp";
+import datiaBlog from "@/assets/blog/datiablog.webp";
+import gwaliorBlog from "@/assets/blog/gwaliorblog.webp";
 import orchhaBlog from "@/assets/blog/orchhablog.webp";
+
+const getBlogImage = (blog) => {
+  if (
+    blog.slug === "ujjain" ||
+    blog.slug?.includes("ujjain") ||
+    blog.title?.toLowerCase().includes("ujjain")
+  )
+    return ujjainBlog;
+
+  if (
+    blog.slug === "khajuraho" ||
+    blog.slug?.includes("khajuraho") ||
+    blog.title?.toLowerCase().includes("khajuraho")
+  )
+    return khajurahoBlog;
+
+  if (
+    blog.slug === "jabalpur" ||
+    blog.slug?.includes("jabalpur") ||
+    blog.title?.toLowerCase().includes("jabalpur")
+  )
+    return jabalpurBlog;
+
+  if (
+    blog.slug === "datia" ||
+    blog.slug?.includes("datia") ||
+    blog.title?.toLowerCase().includes("datia")
+  )
+    return datiaBlog;
+
+  if (
+    blog.slug === "gwalior" ||
+    blog.slug?.includes("gwalior") ||
+    blog.title?.toLowerCase().includes("gwalior")
+  )
+    return gwaliorBlog;
+
+  // ORCHHA IMAGE
+  if (
+    blog.slug === "orchha" ||
+    blog.slug?.includes("orchha") ||
+    blog.title?.toLowerCase().includes("orchha")
+  )
+    return orchhaBlog;
+
+  return blog.image;
+};
 
 const BlogDetail = () => {
   const { slug } = useParams<{ slug: string }>();
+  const originalBlog = slug ? getBlogBySlug(slug) : undefined;
 
-  const originalBlog = slug
-    ? getBlogBySlug(slug)
+  const blog = originalBlog
+    ? { ...originalBlog, image: getBlogImage(originalBlog) }
     : undefined;
 
-  // UPDATE UJJAIN + ORCHHA BLOG IMAGE
-  const blog =
-    originalBlog &&
-    (
-      originalBlog.slug === "ujjain" ||
-      originalBlog.slug?.includes("ujjain") ||
-      originalBlog.title?.toLowerCase().includes("ujjain")
-    )
-      ? {
-          ...originalBlog,
-          image: ujjainBlog,
-        }
-      : originalBlog &&
-        (
-          originalBlog.slug === "orchha" ||
-          originalBlog.slug?.includes("orchha") ||
-          originalBlog.title?.toLowerCase().includes("orchha")
-        )
-      ? {
-          ...originalBlog,
-          image: orchhaBlog,
-        }
-      : originalBlog;
-
   useEffect(() => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [slug]);
 
   const related = useMemo(() => {
-    const blogs = slug
-      ? getRelatedBlogs(slug, 3)
-      : [];
+    const blogs = slug ? getRelatedBlogs(slug, 3) : [];
 
-    return blogs.map((r) =>
-      r.slug === "ujjain" ||
-      r.slug?.includes("ujjain") ||
-      r.title?.toLowerCase().includes("ujjain")
-        ? {
-            ...r,
-            image: ujjainBlog,
-          }
-        : r.slug === "orchha" ||
-          r.slug?.includes("orchha") ||
-          r.title?.toLowerCase().includes("orchha")
-        ? {
-            ...r,
-            image: orchhaBlog,
-          }
-        : r
-    );
+    return blogs.map((r) => ({
+      ...r,
+      image: getBlogImage(r),
+    }));
   }, [slug]);
 
-  if (!blog) {
-    return <Navigate to="/blogs" replace />;
-  }
+  if (!blog) return <Navigate to="/blogs" replace />;
 
   const url =
-    typeof window !== "undefined"
-      ? window.location.href
-      : "";
+    typeof window !== "undefined" ? window.location.href : "";
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -119,16 +118,12 @@ const BlogDetail = () => {
   };
 
   const share = (
-    platform:
-      | "facebook"
-      | "twitter"
-      | "linkedin"
-      | "copy"
+    platform: "facebook" | "twitter" | "linkedin" | "copy"
   ) => {
     const u = encodeURIComponent(url);
     const t = encodeURIComponent(blog.title);
 
-    const links: Record<string, string> = {
+    const links = {
       facebook: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
       twitter: `https://twitter.com/intent/tweet?url=${u}&text=${t}`,
       linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
@@ -148,7 +143,6 @@ const BlogDetail = () => {
 
   return (
     <div className="min-h-screen bg-[#fafafa]">
-
       <SEO
         title={`${blog.title} | Enchanting MP`}
         description={blog.metaDescription}
@@ -159,9 +153,7 @@ const BlogDetail = () => {
 
       <Navbar />
 
-      {/* HERO */}
-      <section className="relative w-full h-[60vh] min-h-[420px] overflow-hidden">
-
+      <section className="relative w-full h-[110vh] min-h-[620px] overflow-hidden">
         <img
           src={blog.image}
           alt={blog.title}
@@ -171,21 +163,14 @@ const BlogDetail = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30" />
 
         <motion.div
-          initial={{
-            opacity: 0,
-            y: 30,
-          }}
-          animate={{
-            opacity: 1,
-            y: 0,
-          }}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{
             duration: 0.8,
             ease: [0.22, 1, 0.36, 1],
           }}
           className="relative z-10 max-w-4xl mx-auto px-4 h-full flex flex-col justify-end pb-14 text-white"
         >
-
           <span className="bg-white/20 backdrop-blur-md text-[10px] uppercase tracking-[0.3em] px-3 py-1.5 rounded-full border border-white/30 w-fit">
             {blog.category}
           </span>
@@ -195,7 +180,6 @@ const BlogDetail = () => {
           </h1>
 
           <div className="flex flex-wrap items-center gap-5 mt-4 text-[13px] uppercase tracking-[0.2em] opacity-90">
-
             <span className="flex items-center gap-2">
               <Calendar size={14} />
               {blog.date}
@@ -209,11 +193,8 @@ const BlogDetail = () => {
         </motion.div>
       </section>
 
-      {/* BREADCRUMB */}
       <div className="max-w-4xl mx-auto px-4 pt-8">
-
         <nav className="flex items-center gap-2 text-[12px] uppercase tracking-[0.2em] text-[#888]">
-
           <Link
             to="/"
             className="hover:text-[#b8955d] transition-colors"
@@ -238,33 +219,20 @@ const BlogDetail = () => {
         </nav>
       </div>
 
-      {/* CONTENT */}
       <article className="max-w-3xl mx-auto px-4 py-12">
-
         <p className="text-[18px] leading-[1.8] text-[#444] italic border-l-2 border-[#c8a96b] pl-5 mb-10">
           {blog.excerpt}
         </p>
 
         {blog.content.map((block, i) => {
-
           if (block.type === "heading") {
             return (
               <motion.h2
                 key={i}
-                initial={{
-                  opacity: 0,
-                  y: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  duration: 0.5,
-                }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
                 className="font-display text-[24px] md:text-[30px] font-bold text-[#111] mt-10 mb-4"
               >
                 {block.text}
@@ -284,10 +252,7 @@ const BlogDetail = () => {
           }
 
           return (
-            <ul
-              key={i}
-              className="space-y-2 mb-6 ml-2"
-            >
+            <ul key={i} className="space-y-2 mb-6 ml-2">
               {block.items.map((item, j) => (
                 <li
                   key={j}
@@ -302,11 +267,8 @@ const BlogDetail = () => {
           );
         })}
 
-        {/* SHARE */}
         <div className="mt-14 pt-8 border-t border-black/10">
-
           <div className="flex items-center gap-4 flex-wrap">
-
             <span className="text-[11px] uppercase tracking-[0.3em] text-[#888]">
               Share
             </span>
@@ -332,22 +294,16 @@ const BlogDetail = () => {
                 key: "copy" as const,
                 label: "Copy link",
               },
-            ].map(
-              ({
-                Icon,
-                key,
-                label,
-              }) => (
-                <button
-                  key={key}
-                  onClick={() => share(key)}
-                  aria-label={label}
-                  className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-[#111] hover:bg-black hover:text-white transition-all duration-300"
-                >
-                  <Icon size={16} />
-                </button>
-              )
-            )}
+            ].map(({ Icon, key, label }) => (
+              <button
+                key={key}
+                onClick={() => share(key)}
+                aria-label={label}
+                className="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center text-[#111] hover:bg-black hover:text-white transition-all duration-300"
+              >
+                <Icon size={16} />
+              </button>
+            ))}
           </div>
         </div>
 
@@ -360,12 +316,9 @@ const BlogDetail = () => {
         </Link>
       </article>
 
-      {/* RELATED */}
       {related.length > 0 && (
         <section className="bg-white border-t border-black/5 py-16">
-
           <div className="max-w-6xl mx-auto px-4">
-
             <h2 className="font-display text-[28px] md:text-[36px] font-bold text-[#111] mb-2">
               Related Insights
             </h2>
@@ -375,16 +328,13 @@ const BlogDetail = () => {
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-7">
-
               {related.map((r) => (
                 <Link
                   key={r.slug}
                   to={`/blogs/${r.slug}`}
                   className="group block rounded-[24px] overflow-hidden bg-white border border-black/[0.05] shadow-sm hover:shadow-xl transition-all duration-500"
                 >
-
                   <div className="relative h-[200px] overflow-hidden">
-
                     <img
                       src={r.image}
                       alt={r.title}
@@ -398,7 +348,6 @@ const BlogDetail = () => {
                   </div>
 
                   <div className="p-5">
-
                     <div className="text-[10px] uppercase tracking-[0.2em] text-[#999]">
                       Luxury Travel · {r.date}
                     </div>
@@ -415,7 +364,6 @@ const BlogDetail = () => {
       )}
 
       <Footer />
-
       <FloatingButtons />
     </div>
   );

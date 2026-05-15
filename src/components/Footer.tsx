@@ -13,6 +13,20 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
+// FOOTER IMAGES
+import footer1 from "@/assets/footer/footer1.webp";
+import footer2 from "@/assets/footer/footer2.webp";
+import footer3 from "@/assets/footer/footer3.webp";
+import footer4 from "@/assets/footer/footer4.webp";
+import footer5 from "@/assets/footer/footer5.webp";
+import footer6 from "@/assets/footer/footer6.webp";
+import footer7 from "@/assets/footer/footer7.webp";
+import footer8 from "@/assets/footer/footer8.webp";
+import footer9 from "@/assets/footer/footer9.webp";
+import footer10 from "@/assets/footer/footer10.webp";
+import footer11 from "@/assets/footer/footer11.webp";
+import footer12 from "@/assets/footer/footer12.webp";
+
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
@@ -54,15 +68,20 @@ const Footer = () => {
     { Icon: Youtube, href: "https://youtube.com", label: "YouTube" },
   ];
 
+  // LOCAL FOOTER IMAGES
   const instagramImages = [
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=400",
-    "https://images.unsplash.com/photo-1527631746610-bca00a040d60?w=400",
-    "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400",
-    "https://images.unsplash.com/photo-1519046904884-53103b34b206?w=400",
-    "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=400",
-    "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=400",
-    "https://images.unsplash.com/photo-1493246507139-91e8fad9978e?w=400",
-    "https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?w=400",
+    footer1,
+    footer2,
+    footer3,
+    footer4,
+    footer5,
+    footer6,
+    footer7,
+    footer8,
+    footer9,
+    footer10,
+    footer11,
+    footer12,
   ];
 
   return (
@@ -95,31 +114,32 @@ const Footer = () => {
             className="md:col-span-3"
           >
             <div className="mb-6">
-  <div className="flex items-center gap-3">
-    <img
-      src={logo}
-      alt="Enchanting MP Logo"
-      className="w-14 h-14 object-contain"
-    />
+              <div className="flex items-center gap-3">
+                <img
+                  src={logo}
+                  alt="Enchanting MP Logo"
+                  className="w-14 h-14 object-contain"
+                />
 
-    <h2 className="text-[28px] leading-none font-bold whitespace-nowrap bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
-      Enchanting MP
-    </h2>
-  </div>
+                <h2 className="text-[28px] leading-none font-bold whitespace-nowrap bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
+                  Enchanting MP
+                </h2>
+              </div>
+            </div>
 
-  {/* <div className="w-16 h-[2px] bg-gradient-to-r from-amber-400 to-yellow-500 mt-4 rounded-full" /> */}
-</div>
             <p className="text-gray-300 text-[15px] leading-relaxed max-w-[280px]">
               Your gateway to exploring the heart of incredible India. Curated
               travel experiences across Madhya Pradesh — from ancient temples to
               roaring tigers.
             </p>
+
             <div className="flex items-center gap-2 mt-6">
               <Award size={16} className="text-amber-400" />
               <span className="text-xs text-gray-400">
                 Recognized by MP Tourism
               </span>
             </div>
+
             <div className="flex gap-4 mt-10">
               {socialIcons.map((social) => (
                 <motion.a
@@ -135,12 +155,13 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* 2. DESTINATIONS COLUMN — pushed down */}
+          {/* 2. DESTINATIONS COLUMN */}
           <motion.div className="md:col-span-2 mt-8 md:mt-12">
             <h3 className="text-[30px] font-semibold mb-8 text-white">
               Destinations
             </h3>
-            <ul className="space-y-5">
+
+            <ul className="space-y-2">
               {footerLinks.destinations.slice(0, 5).map((dest, idx) => (
                 <li key={idx}>
                   <Link
@@ -154,12 +175,13 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* 3. EXPLORE COLUMN — pushed down */}
+          {/* 3. EXPLORE COLUMN */}
           <motion.div className="md:col-span-2 mt-8 md:mt-12">
             <h3 className="text-[30px] font-semibold mb-8 text-white">
               Explore
             </h3>
-            <ul className="space-y-5">
+
+            <ul className="space-y-2">
               {footerLinks.quickLinks.map((link, idx) => (
                 <li key={idx}>
                   {link.href.startsWith("/#") ? (
@@ -182,7 +204,7 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* 4. LEGAL + CONTACT COLUMN — pushed down */}
+          {/* 4. LEGAL + CONTACT COLUMN */}
           <motion.div className="md:col-span-5 mt-8 md:mt-12">
             <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
               {/* Legal section */}
@@ -190,7 +212,8 @@ const Footer = () => {
                 <h3 className="text-[30px] font-semibold mb-8 text-white">
                   Legal
                 </h3>
-                <ul className="space-y-5">
+
+                <ul className="space-y-2">
                   {footerLinks.legalLinks.map((link, idx) => (
                     <li key={idx}>
                       <Link
@@ -209,12 +232,17 @@ const Footer = () => {
                 <h3 className="text-[30px] font-semibold mb-8 text-white">
                   Contact
                 </h3>
-                <div className="space-y-5">
+
+                <div className="space-y-2">
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
                       <Phone size={20} className="text-amber-400" />
                     </div>
-                    <a href="tel:+919109114934" className="text-white break-all">
+
+                    <a
+                      href="tel:+919109114934"
+                      className="text-white break-all"
+                    >
                       +91 9109114934
                     </a>
                   </div>
@@ -223,7 +251,11 @@ const Footer = () => {
                     <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
                       <Mail size={20} className="text-amber-400" />
                     </div>
-                    <a href="mailto:info@enchantingmp.com" className="text-gray-300 break-all">
+
+                    <a
+                      href="mailto:info@enchantingmp.com"
+                      className="text-gray-300 break-all"
+                    >
                       info@enchantingmp.com
                     </a>
                   </div>
@@ -232,6 +264,7 @@ const Footer = () => {
                     <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
                       <MapPin size={20} className="text-amber-400" />
                     </div>
+
                     <p className="text-gray-300 text-sm leading-relaxed">
                       1st Floor, Jain Bhawan, Above Himalaya Wellness Centre,
                       Nayaa Bazaar, Gwalior, Madhya Pradesh – 474009

@@ -15,8 +15,8 @@ import {
 } from "lucide-react";
 
 // IMAGES
-import faqImage1 from "@/assets/choose1.jpeg";
-import faqImage2 from "@/assets/choose2.jpeg";
+import faqImage1 from "@/assets/faqimage1.jpeg";
+import faqImage2 from "@/assets/faqimage2.jpeg";
 
 const categories = [
   "Tour Planning & Booking",
@@ -557,7 +557,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="py-14 md:py-20 bg-[#fafafa] overflow-hidden">
+    <section className="py-14 md:py-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 md:px-5">
 
         {/* TOP SECTION */}
@@ -601,7 +601,7 @@ const FAQSection = () => {
             <div className="bg-white border border-[#ececec] rounded-[24px] p-5 shadow-sm flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
 
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-[#f97343] text-white flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-2xl bg-[#C89B5E] text-white flex items-center justify-center shrink-0">
                   <PhoneCall size={20} />
                 </div>
 
@@ -617,7 +617,7 @@ const FAQSection = () => {
                 </div>
               </div>
 
-              <button className="h-11 px-6 rounded-full bg-black text-white text-sm font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-all duration-300">
+              <button className="h-11 px-6 rounded-full bg-[#c89b5e] text-white text-sm font-medium flex items-center justify-center gap-2 hover:opacity-90 transition-all duration-300">
                 Contact Us
                 <ArrowRight size={16} />
               </button>
@@ -683,8 +683,8 @@ const FAQSection = () => {
                       }}
                       className={`group flex items-center justify-between gap-3 rounded-2xl px-4 py-4 transition-all duration-300 ${
                         activeCategory === item
-                          ? "bg-black text-white shadow-lg"
-                          : "bg-[#f6f6f6] hover:bg-black hover:text-white text-[#555]"
+                          ? "bg-[#C89B5E] text-white shadow-lg"
+                          : "bg-white hover:bg-[#C89B5E] hover:text-white text-[#555]"
                       }`}
                     >
 
@@ -726,7 +726,7 @@ const FAQSection = () => {
             <div className="bg-white rounded-[30px] border border-[#ececec] overflow-hidden shadow-sm">
 
               {/* TOP STRIP */}
-              <div className="flex flex-wrap items-center justify-between gap-4 px-5 md:px-7 py-5 border-b border-[#efefef] bg-[#fcfcfc]">
+              <div className="flex flex-wrap items-center justify-between gap-4 px-5 md:px-7 py-5 border-b border-[#efefef] bg-white]">
 
                 <div>
                   <h3 className="text-[22px] font-bold text-black">
@@ -738,7 +738,7 @@ const FAQSection = () => {
                   </p>
                 </div>
 
-                <div className="bg-[#f5f5f5] rounded-full px-4 py-2 text-[12px] font-medium text-[#666]">
+                <div className="bg-white border border-[#ececec] rounded-full px-4 py-2 text-[12px] font-medium text-[#666]">
                   {faqs.length} Questions
                 </div>
               </div>
@@ -754,8 +754,8 @@ const FAQSection = () => {
                       key={index}
                       className={`rounded-[22px] mb-3 overflow-hidden border transition-all duration-300 ${
                         isOpen
-                          ? "border-black bg-black"
-                          : "border-[#ececec] bg-white hover:bg-[#fafafa]"
+                          ? "border-black bg-[#F8F4EE]"
+                          : "border-[#ececec] bg-white hover:bg-[#F8F4EE]"
                       }`}
                     >
 
@@ -766,7 +766,7 @@ const FAQSection = () => {
                       >
                         <h3
                           className={`text-[15px] md:text-[17px] leading-[1.6] font-semibold transition-all duration-300 ${
-                            isOpen ? "text-white" : "text-black"
+                            isOpen ? "text-black" : "text-black"
                           }`}
                         >
                           {faq.question}
@@ -805,7 +805,7 @@ const FAQSection = () => {
 
                               <div className="w-full h-[1px] bg-white/10 mb-5" />
 
-                              <p className="text-[14px] leading-8 whitespace-pre-line text-white/75 max-w-4xl">
+                              <p className="text-[14px] leading-8 whitespace-pre-line text-black/75 max-w-4xl">
                                 {faq.answer}
                               </p>
                             </div>

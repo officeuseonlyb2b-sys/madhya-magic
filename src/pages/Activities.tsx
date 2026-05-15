@@ -57,14 +57,7 @@ const Activities = () => {
         
 
         <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-4">
-          <motion.span
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="inline-block px-5 py-2 rounded-full text-sm bg-white/10 backdrop-blur-md border border-white/20 mb-6"
-          >
-            🏔️ Adventures Await
-          </motion.span>
+          
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -72,7 +65,7 @@ const Activities = () => {
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-bold leading-tight"
           >
             <span className="block text-white/90">Explore</span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 via-yellow-300 to-amber-400">
+            <span className="text-white">
               Activities
             </span>
           </motion.h1>

@@ -103,8 +103,8 @@ const ReelCard = ({
         </div>
 
         {/* LOCATION */}
-        <div className="bg-[#f4efe8] py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
-          <div className="flex items-center justify-center gap-2 text-[#8b5e4f]">
+        <div className="bg-white py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
+          <div className="flex items-center justify-center gap-2 text-black">
             <MapPin size={14} />
             <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
               {reel.location}
@@ -153,19 +153,19 @@ const ReelsSection = () => {
           <div className="text-center lg:text-left">
 
             {/* SCRIPT TEXT */}
-            <span className="block text-[#7d6673] text-2xl sm:text-3xl font-light italic mb-3">
+            <span className="block text-black text-2xl sm:text-3xl font-light italic mb-3">
               Explore the Beauty of
             </span>
 
             {/* HEADING */}
-            <h2 className="text-[#7a5d65] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide font-display">
+            <h2 className="text-black text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide font-display">
               Top
               <br />
               Destinations
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="text-[#7c6b67] mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
+            <p className="text-black mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
               {isAll
                 ? "Discover iconic landscapes, hidden gems, and unforgettable destinations across Madhya Pradesh."
                 : `Reels matching: ${selectedFilters.join(", ")}`}
@@ -175,7 +175,7 @@ const ReelsSection = () => {
 
           {/* RIGHT SLIDER */}
           {sliderData.length === 0 ? (
-            <p className="text-center text-[#7a5d65] py-10">
+            <p className="text-center text-black py-10">
               No reels match the selected categories.
             </p>
           ) : (

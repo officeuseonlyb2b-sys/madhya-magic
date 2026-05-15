@@ -98,8 +98,8 @@ const ReelCard = ({
           </div>
 
           {/* LOCATION */}
-          <div className="bg-[#f4efe8] py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
-            <div className="flex items-center justify-center gap-2 text-[#8b5e4f]">
+          <div className="bg-white py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
+            <div className="flex items-center justify-center gap-2 text-black">
               <MapPin size={14} />
               <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
                 {reel.location}
@@ -165,17 +165,17 @@ const ActivitiesReelsSection = () => {
 
           {/* TEXT RIGHT */}
           <div className="text-center lg:text-left order-1 lg:order-2">
-            <span className="block text-[#7d6673] text-2xl sm:text-3xl font-light italic mb-3">
+            <span className="block text-black text-2xl sm:text-3xl font-light italic mb-3">
               Discover the World of
             </span>
 
-            <h2 className="text-[#7a5d65] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide font-display">
+            <h2 className="text-black text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide font-display">
               Top
               <br />
               Activities
             </h2>
 
-            <p className="text-[#7c6b67] mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
+            <p className="text-black mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
               {isAll
                 ? "Immerse yourself in safaris, heritage walks, adventures, and curated experiences across Madhya Pradesh."
                 : `Activities matching: ${selectedFilters.join(", ")}`}
@@ -183,7 +183,7 @@ const ActivitiesReelsSection = () => {
 
             <Link
               to="/activities"
-              className="group inline-flex items-center gap-3 mt-7 border border-[#7a6256] rounded-full px-5 py-2.5 text-[#6e5548] hover:bg-[#7a6256] hover:text-white transition-all duration-300"
+              className="group inline-flex items-center gap-3 mt-7 border border-black rounded-full px-5 py-2.5 text-black hover:bg-[#7a6256] hover:text-white transition-all duration-300"
             >
               <span className="uppercase tracking-[3px] text-[11px] sm:text-xs">
                 Explore More

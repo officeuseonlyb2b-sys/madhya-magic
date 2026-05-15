@@ -101,8 +101,8 @@ const ExperienceCard = ({
         </div>
 
         {/* LOCATION */}
-        <div className="bg-[#f6f1ea] py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
-          <div className="flex items-center justify-center gap-2 text-[#8c644d]">
+        <div className="bg-white py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
+          <div className="flex items-center justify-center gap-2 text-black">
             <MapPin size={14} />
 
             <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
@@ -160,12 +160,12 @@ const ExperiencesReelsSection = () => {
           <div className="text-center lg:text-left">
 
             {/* SCRIPT TEXT */}
-            <span className="block text-[#8b7268] text-2xl sm:text-3xl font-light italic mb-3">
+            <span className="block text-black text-2xl sm:text-3xl font-light italic mb-3">
               Discover Meaningful
             </span>
 
             {/* HEADING */}
-            <h2 className="text-[#6e5548] text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide font-display">
+            <h2 className="text-black text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide font-display">
               Top
               <br />
               Curated
@@ -174,7 +174,7 @@ const ExperiencesReelsSection = () => {
             </h2>
 
             {/* DESCRIPTION */}
-            <p className="text-[#7b6559] mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
+            <p className="text-black mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
               {isAll
                 ? "Moments that connect you with spirituality, wellness, wildlife, and the timeless beauty of Central India."
                 : `Experiences matching: ${selectedFilters.join(", ")}`}
@@ -183,7 +183,7 @@ const ExperiencesReelsSection = () => {
             {/* BUTTON */}
             <Link
               to="/experiences"
-              className="group inline-flex items-center gap-3 mt-7 border border-[#7a6256] rounded-full px-5 py-2.5 text-[#6e5548] hover:bg-[#7a6256] hover:text-white transition-all duration-300"
+              className="group inline-flex items-center gap-3 mt-7 border border-black rounded-full px-5 py-2.5 text-black hover:bg-[#7a6256] hover:text-white transition-all duration-300"
             >
               <span className="uppercase tracking-[3px] text-[11px] sm:text-xs">
                 Explore More
@@ -210,7 +210,7 @@ const ExperiencesReelsSection = () => {
 
           {/* RIGHT SLIDER */}
           {sliderData.length === 0 ? (
-            <p className="text-center text-[#6e5548] py-10">
+            <p className="text-center text-black py-10">
               No experiences match the selected categories.
             </p>
           ) : (

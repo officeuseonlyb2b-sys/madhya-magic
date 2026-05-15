@@ -135,15 +135,7 @@ const TestimonialsSection = () => {
   }}
   className="text-center mb-8"
 >
-  {/* TOP BADGE */}
-  <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-primary/20 bg-white/80 backdrop-blur-md shadow-sm mb-4">
-    
-    <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-
-    <span className="text-[10px] uppercase tracking-[0.28em] font-semibold text-gray-600">
-      Traveler Reviews
-    </span>
-  </div>
+  
 
   {/* TITLE */}
   <div className="max-w-3xl mx-auto">
@@ -294,7 +286,7 @@ const TestimonialsSection = () => {
             {/* PREV */}
             <button
               onClick={prev}
-              className="w-11 h-11 rounded-full border border-white/60 bg-white/80 backdrop-blur-md flex items-center justify-center shadow-md hover:bg-black hover:text-white transition-all duration-500"
+              className="w-11 h-11 rounded-full border border-white/60 bg-white/80 backdrop-blur-md flex items-center justify-center shadow-md hover:bg-[#C89B5E]  hover:text-white transition-all duration-500"
             >
               <ChevronLeft size={18} />
             </button>
@@ -307,8 +299,8 @@ const TestimonialsSection = () => {
                   onClick={() => setCurrent(index)}
                   className={`rounded-full transition-all duration-500 ${
                     current === index
-                      ? "w-8 h-2 bg-black"
-                      : "w-2 h-2 bg-gray-300 hover:bg-black/40"
+                      ? "w-8 h-2 bg-[#C89B5E] "
+                      : "w-2 h-2 bg-gray-300 hover:bg-[#C89B5E] "
                   }`}
                 />
               ))}
@@ -317,7 +309,7 @@ const TestimonialsSection = () => {
             {/* NEXT */}
             <button
               onClick={next}
-              className="w-11 h-11 rounded-full bg-black text-white flex items-center justify-center shadow-lg hover:scale-105 transition-all duration-500"
+              className="w-11 h-11 rounded-full bg-[#C89B5E]  text-white flex items-center justify-center shadow-lg hover:scale-105 transition-all duration-500"
             >
               <ChevronRight size={18} />
             </button>

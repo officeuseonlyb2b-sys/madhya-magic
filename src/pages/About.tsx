@@ -4,6 +4,8 @@ import HomeCategoryShowcase from "@/components/HomeCategoryShowcase";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import TravellnsightsSection from "@/components/TravelInsightsSection";
 import TrustedBrandsSection from "@/components/TrustedBrandsSection";
+import aboutimg2 from "@/assets/aboutimg2.jpeg";
+import aboutimg1 from "@/assets/aboutimg1.jpeg";
 import { useRef } from "react";
 import {
   Compass,
@@ -145,8 +147,8 @@ const About = () => {
     <div className="bg-white text-black overflow-hidden">
       <Navbar />
 
-      
-        
+
+
 
       {/* ABOUT */}
       <section ref={aboutRef} className="py-32 bg-white">
@@ -159,13 +161,14 @@ const About = () => {
               className="relative"
             >
               <img
-                src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?q=80&w=2070&auto=format&fit=crop"
+                src={aboutimg1}
                 className="rounded-[36px] h-[700px] object-cover w-full"
                 alt=""
               />
 
+
               <img
-                src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=2070&auto=format&fit=crop"
+                src={aboutimg2}
                 className="absolute -bottom-10 -right-8 w-[260px] h-[320px] rounded-[30px] object-cover border border-black/10"
                 alt=""
               />
@@ -276,7 +279,7 @@ We strive to make every journey memorable through meaningful experiences, emotio
       {/* WHY CHOOSE US */}
       <WhyChooseUse />
 
-      <TrustedBrandsSection/>
+      <TrustedBrandsSection />
 
       <HomeCategoryShowcase />
 

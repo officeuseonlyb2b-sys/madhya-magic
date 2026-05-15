@@ -182,16 +182,39 @@ const Navbar = () => {
   const [mobileExpanded, setMobileExpanded] = useState<MapCategory | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
+  // ✅ NEW STATE
+  const [showNavbar, setShowNavbar] = useState(true);
+
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
+    let lastScrollY = window.scrollY;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      setScrolled(currentScrollY > 80);
+
+      // ✅ Hide navbar on scroll down
+      if (currentScrollY > lastScrollY && currentScrollY > 120) {
+        setShowNavbar(false);
+      }
+      // ✅ Show navbar on scroll up
+      else {
+        setShowNavbar(true);
+      }
+
+      lastScrollY = currentScrollY;
+    };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <motion.nav
       initial={{ y: -80 }}
-      animate={{ y: 0 }}
+      animate={{ y: showNavbar ? 0 : -140 }}
+      transition={{ duration: 0.35 }}
       className={`fixed top-0 left-0 right-0 z-50
       transition-all duration-500
       ${
