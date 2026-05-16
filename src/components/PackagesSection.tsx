@@ -16,12 +16,10 @@ const PackagesSection = () => {
 
   const filteredPackages = useMemo(() => {
     if (isAll) return allPackages.slice(0, POPULAR_LIMIT);
-    const allowed = new Set<string>();
-    selectedFilters.forEach((f) => {
-      filterToPackageCategories[f]?.forEach((c) => allowed.add(c));
-    });
     return allPackages
-      .filter((p) => allowed.has(p.category))
+      .filter((p) =>
+        matchesFilters(getPackageCategories(p), selectedFilters, isAll),
+      )
       .slice(0, POPULAR_LIMIT);
   }, [selectedFilters, isAll]);
 
