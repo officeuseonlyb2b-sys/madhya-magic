@@ -120,17 +120,8 @@ const ExperiencesReelsSection = () => {
   // FILTER DATA
   const filteredExperiences = useMemo(() => {
     if (isAll) return experiencesData;
-
-    const allowed = new Set<string>();
-
-    selectedFilters.forEach((f) => {
-      filterToExperienceCategories[f]?.forEach((c) =>
-        allowed.add(c)
-      );
-    });
-
     return experiencesData.filter((e) =>
-      allowed.has(e.category)
+      matchesFilters(getExperienceCategories(e), selectedFilters, isAll),
     );
   }, [selectedFilters, isAll]);
 
