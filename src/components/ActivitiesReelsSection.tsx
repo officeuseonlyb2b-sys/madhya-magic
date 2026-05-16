@@ -126,7 +126,7 @@ const ActivitiesReelsSection = () => {
   const filteredReels = useMemo(() => {
     if (isAll) return activityReelsData;
     return activityReelsData.filter((r) =>
-      selectedFilters.includes(r.category as any)
+      matchesFilters(getActivityReelCategories(r), selectedFilters, isAll),
     );
   }, [selectedFilters, isAll]);
 
