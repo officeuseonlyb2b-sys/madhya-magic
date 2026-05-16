@@ -9,6 +9,10 @@ import {
   type ActivityReel,
 } from "@/data/activityReelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import {
+  getActivityReelCategories,
+  matchesFilters,
+} from "@/lib/categoryMatch";
 
 // ----- VIDEO -----
 const ReelVideo = ({
