@@ -12,6 +12,7 @@ import {
 import { useFilters } from "@/contexts/FilterContext";
 import { reelsData, type ReelItem } from "@/data/reelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import { getReelCategories, matchesFilters } from "@/lib/categoryMatch";
 
 // ----- VIDEO -----
 const ReelVideo = ({
