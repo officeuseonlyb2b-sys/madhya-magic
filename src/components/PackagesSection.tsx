@@ -4,15 +4,7 @@ import { Link } from "react-router-dom";
 import { Clock, ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { allPackages } from "@/data/packagesData";
 import { useFilters } from "@/contexts/FilterContext";
-import type { MapCategory } from "@/data/mapDestinations";
-
-// Map global MapCategory → categories present on packages in packagesData
-const filterToPackageCategories: Record<MapCategory, string[]> = {
-  Wildlife: ["Wildlife"],
-  Heritage: ["Heritage"],
-  Spiritual: ["Spiritual"],
-  Nature: ["Nature"],
-};
+import { getPackageCategories, matchesFilters } from "@/lib/categoryMatch";
 
 const POPULAR_LIMIT = 8;
 
@@ -24,12 +16,10 @@ const PackagesSection = () => {
 
   const filteredPackages = useMemo(() => {
     if (isAll) return allPackages.slice(0, POPULAR_LIMIT);
-    const allowed = new Set<string>();
-    selectedFilters.forEach((f) => {
-      filterToPackageCategories[f]?.forEach((c) => allowed.add(c));
-    });
     return allPackages
-      .filter((p) => allowed.has(p.category))
+      .filter((p) =>
+        matchesFilters(getPackageCategories(p), selectedFilters, isAll),
+      )
       .slice(0, POPULAR_LIMIT);
   }, [selectedFilters, isAll]);
 

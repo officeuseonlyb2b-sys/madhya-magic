@@ -1,44 +1,58 @@
+// ============================================================
+// Combined "Reels & Experiences" — CATEGORY PAGES ONLY
+// ------------------------------------------------------------
+// Merges activity reels + experience reels into a single
+// horizontal auto-scrolling slider, filtered by the active
+// category via FilterContext. Home page is unaffected.
+// ============================================================
+
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 
 import { useFilters } from "@/contexts/FilterContext";
-import {
-  activityReelsData,
-  type ActivityReel,
-} from "@/data/activityReelsData";
+import { activityReelsData } from "@/data/activityReelsData";
+import { experiencesData } from "@/data/experiencesData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
 import {
   getActivityReelCategories,
+  getExperienceCategories,
   matchesFilters,
 } from "@/lib/categoryMatch";
 
-// ----- VIDEO -----
+interface UnifiedReel {
+  id: string;
+  title: string;
+  subtitle: string;
+  video?: string;
+  category: string;
+  link?: string;
+  source: "activity" | "experience";
+}
+
 const ReelVideo = ({
-  reel,
+  video,
   isHovered,
 }: {
-  reel: ActivityReel;
+  video?: string;
   isHovered: boolean;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
-
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
-    if (isHovered) {
-      v.play().catch(() => {});
-    } else {
+    if (isHovered) v.play().catch(() => {});
+    else {
       v.pause();
       try { v.currentTime = 0; } catch {}
     }
   }, [isHovered]);
-
+  if (!video) return null;
   return (
     <video
       ref={videoRef}
-      src={reel.video}
+      src={video}
       muted
       loop
       playsInline
@@ -50,16 +64,8 @@ const ReelVideo = ({
   );
 };
 
-// ----- CARD -----
-const ReelCard = ({
-  reel,
-  index,
-}: {
-  reel: ActivityReel;
-  index: number;
-}) => {
+const ReelCard = ({ reel, index }: { reel: UnifiedReel; index: number }) => {
   const [hovered, setHovered] = useState(false);
-
   const Wrapper: any = reel.link ? Link : "div";
   const wrapperProps = reel.link ? { to: reel.link } : {};
 
@@ -82,31 +88,25 @@ const ReelCard = ({
     >
       <Wrapper {...wrapperProps} className="block">
         <div className="group relative overflow-hidden rounded-[24px] bg-black border-none outline-none ring-0 shadow-none">
-          {/* MEDIA */}
           <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
-            <ReelVideo reel={reel} isHovered={hovered} />
-
+            <ReelVideo video={reel.video} isHovered={hovered} />
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 pointer-events-none" />
-
             <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full pointer-events-none">
               <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug font-display">
                 {reel.title}
               </h3>
             </div>
-
             <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center pointer-events-none">
               <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
                 {reel.category}
               </span>
             </div>
           </div>
-
-          {/* LOCATION */}
           <div className="bg-white py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
             <div className="flex items-center justify-center gap-2 text-black">
               <MapPin size={14} />
               <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
-                {reel.location}
+                {reel.subtitle}
               </span>
             </div>
           </div>
@@ -116,24 +116,50 @@ const ReelCard = ({
   );
 };
 
-// ----- MAIN SECTION -----
-const ActivitiesReelsSection = () => {
+const CategoryReelsExperiences = () => {
   const { selectedFilters, isAll } = useFilters();
+  const { ref, onMouseEnter, onMouseLeave } = useAutoScroll<HTMLDivElement>(50);
 
-  const { ref, onMouseEnter, onMouseLeave } =
-    useAutoScroll<HTMLDivElement>(50);
+  const merged: UnifiedReel[] = useMemo(() => {
+    const acts = activityReelsData
+      .filter((r) =>
+        matchesFilters(getActivityReelCategories(r), selectedFilters, isAll),
+      )
+      .map<UnifiedReel>((r) => ({
+        id: `act-${r.id}`,
+        title: r.title,
+        subtitle: r.location,
+        video: r.video,
+        category: r.category,
+        link: r.link,
+        source: "activity",
+      }));
 
-  const filteredReels = useMemo(() => {
-    if (isAll) return activityReelsData;
-    return activityReelsData.filter((r) =>
-      matchesFilters(getActivityReelCategories(r), selectedFilters, isAll),
-    );
+    const exps = experiencesData
+      .filter((e) =>
+        matchesFilters(getExperienceCategories(e), selectedFilters, isAll),
+      )
+      .map<UnifiedReel>((e) => ({
+        id: `exp-${e.id}`,
+        title: e.title,
+        subtitle: e.subtitle,
+        video: e.video,
+        category: e.category,
+        source: "experience",
+      }));
+
+    // Interleave so activities and experiences are mixed visually
+    const out: UnifiedReel[] = [];
+    const max = Math.max(acts.length, exps.length);
+    for (let i = 0; i < max; i++) {
+      if (acts[i]) out.push(acts[i]);
+      if (exps[i]) out.push(exps[i]);
+    }
+    return out;
   }, [selectedFilters, isAll]);
 
-  const sliderData = useMemo(
-    () => [...filteredReels, ...filteredReels],
-    [filteredReels]
-  );
+  const sliderData = useMemo(() => [...merged, ...merged], [merged]);
+  const activeLabel = isAll ? "" : selectedFilters.join(", ");
 
   return (
     <section className="relative py-10 sm:py-12 lg:py-14 bg-white overflow-hidden">
@@ -141,11 +167,11 @@ const ActivitiesReelsSection = () => {
 
       <div className="relative z-10 max-w-[1350px] mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-[70%_30%] gap-8 lg:gap-12 items-center">
-          {/* SLIDER LEFT */}
+          {/* SLIDER */}
           <div className="order-2 lg:order-1">
             {sliderData.length === 0 ? (
               <p className="text-center text-[#7a5d65] py-10">
-                No activities match the selected categories.
+                No reels or experiences match {activeLabel || "this category"}.
               </p>
             ) : (
               <div
@@ -156,37 +182,30 @@ const ActivitiesReelsSection = () => {
               >
                 <div className="reel-track flex gap-5 w-max items-center">
                   {sliderData.map((reel, i) => (
-                    <ReelCard
-                      key={`${reel.id}-${i}`}
-                      reel={reel}
-                      index={i}
-                    />
+                    <ReelCard key={`${reel.id}-${i}`} reel={reel} index={i} />
                   ))}
                 </div>
               </div>
             )}
           </div>
 
-          {/* TEXT RIGHT */}
+          {/* TEXT */}
           <div className="text-center lg:text-left order-1 lg:order-2">
             <span className="block text-black text-2xl sm:text-3xl font-light italic mb-3">
-              Discover the World of
+              Reels &amp; Curated
             </span>
-
             <h2 className="text-black text-3xl sm:text-4xl lg:text-5xl leading-[1.05] uppercase font-light tracking-wide font-display">
-              Top
-              <br />
               Activities
+              <br />
+              &amp; Experiences
             </h2>
-
             <p className="text-black mt-5 text-sm leading-relaxed max-w-sm mx-auto lg:mx-0">
               {isAll
-                ? "Immerse yourself in safaris, heritage walks, adventures, and curated experiences across Madhya Pradesh."
-                : `Activities matching: ${selectedFilters.join(", ")}`}
+                ? "Hand-picked activities and immersive experiences across Madhya Pradesh."
+                : `Activities & experiences matching: ${activeLabel}`}
             </p>
-
             <Link
-              to="/activities"
+              to="/experiences"
               className="group inline-flex items-center gap-3 mt-7 border border-black rounded-full px-5 py-2.5 text-black hover:bg-[#7a6256] hover:text-white transition-all duration-300"
             >
               <span className="uppercase tracking-[3px] text-[11px] sm:text-xs">
@@ -204,4 +223,4 @@ const ActivitiesReelsSection = () => {
   );
 };
 
-export default ActivitiesReelsSection;
+export default CategoryReelsExperiences;

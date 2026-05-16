@@ -10,16 +10,11 @@ import {
 
 import { experiencesData } from "@/data/experiencesData";
 import { useFilters } from "@/contexts/FilterContext";
-import type { MapCategory } from "@/data/mapDestinations";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
-
-// FILTER MAP
-const filterToExperienceCategories: Record<MapCategory, string[]> = {
-  Spiritual: ["Spiritual", "Wellness"],
-  Wildlife: ["Wildlife"],
-  Nature: ["Wellness", "Wildlife"],
-  Heritage: ["Spiritual"],
-};
+import {
+  getExperienceCategories,
+  matchesFilters,
+} from "@/lib/categoryMatch";
 
 // ----- EXPERIENCE CARD -----
 // ----- EXPERIENCE CARD -----
@@ -125,17 +120,8 @@ const ExperiencesReelsSection = () => {
   // FILTER DATA
   const filteredExperiences = useMemo(() => {
     if (isAll) return experiencesData;
-
-    const allowed = new Set<string>();
-
-    selectedFilters.forEach((f) => {
-      filterToExperienceCategories[f]?.forEach((c) =>
-        allowed.add(c)
-      );
-    });
-
     return experiencesData.filter((e) =>
-      allowed.has(e.category)
+      matchesFilters(getExperienceCategories(e), selectedFilters, isAll),
     );
   }, [selectedFilters, isAll]);
 

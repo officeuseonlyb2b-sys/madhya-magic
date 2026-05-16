@@ -12,6 +12,7 @@ import {
 import { useFilters } from "@/contexts/FilterContext";
 import { reelsData, type ReelItem } from "@/data/reelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import { getReelCategories, matchesFilters } from "@/lib/categoryMatch";
 
 // ----- VIDEO -----
 const ReelVideo = ({
@@ -126,9 +127,8 @@ const ReelsSection = () => {
   // FILTER DATA
   const filteredReels = useMemo(() => {
     if (isAll) return reelsData;
-
     return reelsData.filter((r) =>
-      selectedFilters.includes(r.category as any)
+      matchesFilters(getReelCategories(r), selectedFilters, isAll),
     );
   }, [selectedFilters, isAll]);
 
