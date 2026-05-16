@@ -7,6 +7,7 @@ import SpiritualHero from "@/components/category/SpiritualHero";
 import DestinationPillars from "@/components/category/DestinationPillars";
 import ActivitiesReelsSection from "@/components/ActivitiesReelsSection";
 import ReelsSection from "@/components/ReelsSection";
+import CategoryReelsExperiences from "@/components/category/CategoryReelsExperiences";
 import PackagesSection from "@/components/PackagesSection";
 import { categoryPages } from "@/data/categoryPagesData";
 import { mapDestinations, type MapCategory } from "@/data/mapDestinations";
