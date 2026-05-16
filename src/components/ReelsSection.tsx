@@ -127,9 +127,8 @@ const ReelsSection = () => {
   // FILTER DATA
   const filteredReels = useMemo(() => {
     if (isAll) return reelsData;
-
     return reelsData.filter((r) =>
-      selectedFilters.includes(r.category as any)
+      matchesFilters(getReelCategories(r), selectedFilters, isAll),
     );
   }, [selectedFilters, isAll]);
 
