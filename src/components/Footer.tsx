@@ -85,7 +85,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gradient-to-b from-gray-900 via-gray-900 to-black text-white pt-20 pb-8 overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-gray-900 via-gray-900 to-black text-white pt-16 pb-8 overflow-hidden">
       {/* Background Texture */}
       <div
         className="absolute inset-0 opacity-[0.06] bg-cover bg-center"
@@ -102,10 +102,10 @@ const Footer = () => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        {/* MAIN GRID — Unequal column widths */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 pb-14 border-b border-white/10">
-          {/* 1. BRAND COLUMN — 3/12 */}
+      <div className="container mx-auto px-4 lg:px-6 relative z-10">
+        {/* MAIN GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 lg:gap-x-8 pb-12 border-b border-white/10 items-start">
+          {/* 1. BRAND COLUMN */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -113,41 +113,42 @@ const Footer = () => {
             viewport={{ once: true }}
             className="md:col-span-3"
           >
-            <div className="mb-6">
+            <div className="mb-5">
               <div className="flex items-center gap-3">
                 <img
                   src={logo}
                   alt="Enchanting MP Logo"
-                  className="w-14 h-14 object-contain"
+                  className="w-14 h-14 object-contain flex-shrink-0"
                 />
 
-                <h2 className="text-[28px] leading-none font-bold whitespace-nowrap bg-gradient-to-r from-amber-400 to-yellow-500 bg-clip-text text-transparent">
+                <h2 className="text-[28px] leading-none font-bold whitespace-nowrap bg-[#b28434] bg-clip-text text-transparent">
                   Enchanting MP
                 </h2>
               </div>
             </div>
 
-            <p className="text-gray-300 text-[15px] leading-relaxed max-w-[280px]">
+            <p className="text-gray-300 text-[15px] leading-[1.9] max-w-[300px]">
               Your gateway to exploring the heart of incredible India. Curated
               travel experiences across Madhya Pradesh — from ancient temples to
               roaring tigers.
             </p>
 
-            <div className="flex items-center gap-2 mt-6">
-              <Award size={16} className="text-amber-400" />
+            <div className="flex items-center gap-2 mt-5">
+              <Award size={16} className="text-amber-400 flex-shrink-0" />
               <span className="text-xs text-gray-400">
                 Recognized by MP Tourism
               </span>
             </div>
 
-            <div className="flex gap-4 mt-10">
+            <div className="flex gap-4 mt-8">
               {socialIcons.map((social) => (
                 <motion.a
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full border border-white/15 bg-white/5 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-white transition-colors"
+                  whileHover={{ y: -3 }}
+                  className="w-12 h-12 rounded-full border border-white/15 bg-white/5 backdrop-blur-md flex items-center justify-center text-gray-300 hover:text-white hover:border-amber-400/40 transition-all duration-300"
                 >
                   <social.Icon size={18} />
                 </motion.a>
@@ -155,13 +156,13 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* 2. DESTINATIONS COLUMN */}
-          <motion.div className="md:col-span-2 mt-8 md:mt-12">
-            <h3 className="text-[30px] font-semibold mb-8 text-white">
+          {/* DESTINATIONS */}
+          <motion.div className="md:col-span-2 md:pl-4">
+            <h3 className="text-[30px] font-semibold mb-6 text-white">
               Destinations
             </h3>
 
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {footerLinks.destinations.slice(0, 5).map((dest, idx) => (
                 <li key={idx}>
                   <Link
@@ -175,13 +176,13 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* 3. EXPLORE COLUMN */}
-          <motion.div className="md:col-span-2 mt-8 md:mt-12">
-            <h3 className="text-[30px] font-semibold mb-8 text-white">
+          {/* EXPLORE */}
+          <motion.div className="md:col-span-2">
+            <h3 className="text-[30px] font-semibold mb-6 text-white">
               Explore
             </h3>
 
-            <ul className="space-y-2">
+            <ul className="space-y-3">
               {footerLinks.quickLinks.map((link, idx) => (
                 <li key={idx}>
                   {link.href.startsWith("/#") ? (
@@ -204,16 +205,16 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* 4. LEGAL + CONTACT COLUMN */}
-          <motion.div className="md:col-span-5 mt-8 md:mt-12">
-            <div className="flex flex-col lg:flex-row gap-5 lg:gap-6">
-              {/* Legal section */}
-              <div className="flex-1">
-                <h3 className="text-[30px] font-semibold mb-8 text-white">
+          {/* LEGAL + CONTACT */}
+          <motion.div className="md:col-span-5">
+            <div className="flex flex-col lg:flex-row justify-between gap-10">
+              {/* LEGAL */}
+              <div className="min-w-[180px]">
+                <h3 className="text-[30px] font-semibold mb-6 text-white">
                   Legal
                 </h3>
 
-                <ul className="space-y-2">
+                <ul className="space-y-3">
                   {footerLinks.legalLinks.map((link, idx) => (
                     <li key={idx}>
                       <Link
@@ -227,13 +228,14 @@ const Footer = () => {
                 </ul>
               </div>
 
-              {/* Contact section */}
-              <div className="flex-1">
-                <h3 className="text-[30px] font-semibold mb-8 text-white">
+              {/* CONTACT */}
+              <div className="flex-1 max-w-[360px]">
+                <h3 className="text-[30px] font-semibold mb-6 text-white">
                   Contact
                 </h3>
 
-                <div className="space-y-2">
+                <div className="space-y-5">
+                  {/* PHONE */}
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
                       <Phone size={20} className="text-amber-400" />
@@ -241,12 +243,13 @@ const Footer = () => {
 
                     <a
                       href="tel:+919109114934"
-                      className="text-white break-all"
+                      className="text-white text-[16px]"
                     >
                       +91 9109114934
                     </a>
                   </div>
 
+                  {/* EMAIL */}
                   <div className="flex items-center gap-4">
                     <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
                       <Mail size={20} className="text-amber-400" />
@@ -254,26 +257,27 @@ const Footer = () => {
 
                     <a
                       href="mailto:info@enchantingmp.com"
-                      className="text-gray-300 break-all"
+                      className="text-gray-300 text-[15px] break-all"
                     >
                       info@enchantingmp.com
                     </a>
                   </div>
 
-                  <div className="flex gap-4">
+                  {/* ADDRESS */}
+                  <div className="flex items-start gap-4">
                     <div className="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center flex-shrink-0">
                       <MapPin size={20} className="text-amber-400" />
                     </div>
 
-                    <p className="text-gray-300 text-sm leading-relaxed">
+                    <p className="text-gray-300 text-sm leading-[1.9] pt-1">
                       1st Floor, Jain Bhawan, Above Himalaya Wellness Centre,
                       Nayaa Bazaar, Gwalior, Madhya Pradesh – 474009
                     </p>
                   </div>
                 </div>
 
-                <div className="mt-8 pt-5 border-t border-white/10">
-                  <div className="flex items-center gap-2 text-xs text-gray-400 ml-[50px]">
+                <div className="mt-6 pt-5 border-t border-white/10">
+                  <div className="flex items-center gap-2 text-sm text-gray-400">
                     <Send size={14} className="text-amber-400" />
                     <span>Quick response within 24 hours</span>
                   </div>
@@ -283,9 +287,9 @@ const Footer = () => {
           </motion.div>
         </div>
 
-        {/* INSTAGRAM SECTION — AUTO SLIDER */}
-        <div className="pt-12 overflow-hidden">
-          <h3 className="text-[38px] font-semibold mb-10 text-white">
+        {/* INSTAGRAM SECTION */}
+        <div className="pt-8 overflow-hidden">
+          <h3 className="text-[38px] font-semibold mb-8 text-white">
             Follow Instagram
           </h3>
 
@@ -309,7 +313,7 @@ const Footer = () => {
                   <img
                     src={img}
                     alt={`Instagram ${idx + 1}`}
-                    className="h-[110px] w-[160px] object-cover"
+                    className="h-[120px] w-[180px] object-cover"
                   />
                 </div>
               ))}
@@ -318,7 +322,7 @@ const Footer = () => {
         </div>
 
         {/* COPYRIGHT */}
-        <div className="text-center pt-12 text-gray-400 text-sm">
+        <div className="text-center pt-10 text-gray-400 text-sm">
           © {currentYear} Enchanting Madhya Pradesh. All rights reserved.
         </div>
       </div>

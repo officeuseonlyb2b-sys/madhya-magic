@@ -15,6 +15,8 @@ import { FilterProvider } from "@/contexts/FilterContext";
 import natureHero from "@/assets/explore/nature-hero.jpg";
 import heritageHero from "@/assets/explore/heritage-hero.jpg";
 import wildlifeHero from "@/assets/explore/wildlife-hero.png";
+import CustomPackage from "@/components/CustomPackage";
+
 
 const heroImageMap: Record<string, string> = {
   nature: natureHero,
@@ -49,10 +51,13 @@ const CategoryPage = () => {
       {/* Home-page–style sections, scoped to this category via FilterProvider */}
       <FilterProvider initialFilters={[categoryTitle as MapCategory]}>
         <ReelsSection />
-        <ActivitiesReelsSection />
+        {/* <ActivitiesReelsSection /> */}
         <CategoryReelsExperiences />
         <PackagesSection />
+        <CustomPackage/>
       </FilterProvider>
+      
+
 
       <Footer />
       <FloatingButtons />
