@@ -48,8 +48,9 @@ const CategoryPage = () => {
 
       {/* Home-page–style sections, scoped to this category via FilterProvider */}
       <FilterProvider initialFilters={[categoryTitle as MapCategory]}>
-        <ActivitiesReelsSection />
         <ReelsSection />
+        <ActivitiesReelsSection />
+        <CategoryReelsExperiences />
         <PackagesSection />
       </FilterProvider>
 
