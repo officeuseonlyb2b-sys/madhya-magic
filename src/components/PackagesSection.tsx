@@ -4,15 +4,7 @@ import { Link } from "react-router-dom";
 import { Clock, ArrowRight, MapPin, Sparkles } from "lucide-react";
 import { allPackages } from "@/data/packagesData";
 import { useFilters } from "@/contexts/FilterContext";
-import type { MapCategory } from "@/data/mapDestinations";
-
-// Map global MapCategory → categories present on packages in packagesData
-const filterToPackageCategories: Record<MapCategory, string[]> = {
-  Wildlife: ["Wildlife"],
-  Heritage: ["Heritage"],
-  Spiritual: ["Spiritual"],
-  Nature: ["Nature"],
-};
+import { getPackageCategories, matchesFilters } from "@/lib/categoryMatch";
 
 const POPULAR_LIMIT = 8;
 
