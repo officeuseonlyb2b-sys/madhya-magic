@@ -12,6 +12,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import QuoteModal from "@/components/QuoteModal";
+import { getBackgroundForCategories } from "@/lib/categoryBackground";
 
 const fade = { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5 } };
 
@@ -54,19 +55,22 @@ const DestinationDetail = () => {
   }
 
   const destPackages = allPackages.filter((p) => p.destination === dest.id);
+  const categoryBg = getBackgroundForCategories(dest.category) ??
+    "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80";
 
   return (
     <div className="min-h-screen relative bg-background">
-      {/* 🖼️ Fixed background image – subtle, travel vibe */}
+      {/* Category-based fixed background */}
       <div
-        className="fixed inset-0 z-0 opacity-10 pointer-events-none"
+        className="fixed inset-0 z-0 pointer-events-none"
         style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80')`,
+          backgroundImage: `url('${categoryBg}')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
         }}
       />
+      <div className="fixed inset-0 z-0 pointer-events-none bg-black/45" />
 
       {/* Main content (above background) */}
       <div className="relative z-10">
