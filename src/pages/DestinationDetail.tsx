@@ -404,6 +404,7 @@ const DestinationDetail = () => {
             </div>
           </motion.div>
         )}
+        </section>
 
         {/* Nearby Destinations */}
         {nearby.length > 0 && (
