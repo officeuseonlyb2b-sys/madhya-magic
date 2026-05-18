@@ -166,8 +166,9 @@ const DestinationDetail = () => {
           </div>
         </section>
 
+        <section className="container mx-auto px-4 pb-16">
         {/* Top Attractions */}
-        <motion.div {...fade} className="mt-24 first:mt-0">
+        <motion.div {...fade} className="mt-12 md:mt-24 first:mt-0">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8">
             Top Attractions
           </h2>
