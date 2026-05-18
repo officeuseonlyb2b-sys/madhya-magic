@@ -106,7 +106,7 @@ const DestinationDetail = () => {
                   </span>
                 ))}
               </div>
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-2 drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-2 drop-shadow-lg">
                 {dest.name}
               </h1>
               <div className="flex items-center gap-4 text-white/80 text-sm">
