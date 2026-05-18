@@ -77,7 +77,7 @@ const DestinationDetail = () => {
         <Navbar />
 
         {/* Hero */}
-        <section className="relative h-[85vh] md:h-[85vh]">
+        <section className="relative h-[60vh] sm:h-[70vh] md:h-[85vh]">
           <img
             src={dest.image}
             alt={dest.name}
