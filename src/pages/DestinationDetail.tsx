@@ -189,7 +189,7 @@ const DestinationDetail = () => {
                   <div className="absolute top-5 right-5 w-10 h-10 border-t-2 border-r-2 border-yellow-500 rounded-tr-2xl" />
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-[28px] leading-tight font-display font-semibold text-[#1d2746] mb-5">
+                  <h3 className="text-2xl md:text-[28px] leading-tight font-display font-semibold text-[#1d2746] mb-5">
                     {a.title}
                   </h3>
                   <div className="w-14 h-[3px] bg-yellow-500 rounded-full mx-auto mb-5" />
