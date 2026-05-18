@@ -203,7 +203,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Things to Do */}
-        <motion.div {...fade} className="w-full mt-24">
+        <motion.div {...fade} className="w-full mt-16 md:mt-24">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
               Things to Do
@@ -232,7 +232,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Experiences / Highlights */}
-        <motion.div {...fade} className="mt-24">
+        <motion.div {...fade} className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
             Experiences & Highlights
           </h2>
@@ -252,7 +252,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Accommodation */}
-        <motion.div {...fade} className="mt-24">
+        <motion.div {...fade} className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
             <Hotel size={22} /> Where to Stay
           </h2>
@@ -278,7 +278,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Food & Local Cuisine */}
-        <motion.div {...fade} className="mt-24">
+        <motion.div {...fade} className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
             <Utensils size={22} /> Food & Local Cuisine
           </h2>
@@ -301,7 +301,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Gallery */}
-        <motion.div {...fade} className="overflow-hidden mt-24">
+        <motion.div {...fade} className="overflow-hidden mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8">
             Gallery
           </h2>
@@ -338,7 +338,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Travel Info */}
-        <motion.div {...fade} className="mt-24">
+        <motion.div {...fade} className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
             Travel Information
           </h2>
@@ -376,7 +376,7 @@ const DestinationDetail = () => {
 
         {/* Packages (conditionally rendered) */}
         {destPackages.length > 0 && (
-          <motion.div {...fade} className="mt-24 mb-24">
+          <motion.div {...fade} className="mt-16 md:mt-24 mb-16 md:mt-24">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
               Available Packages
             </h2>
