@@ -77,7 +77,7 @@ const DestinationDetail = () => {
         <Navbar />
 
         {/* Hero */}
-        <section className="relative h-[85vh] md:h-[85vh]">
+        <section className="relative h-[60vh] sm:h-[70vh] md:h-[85vh]">
           <img
             src={dest.image}
             alt={dest.name}
@@ -106,7 +106,7 @@ const DestinationDetail = () => {
                   </span>
                 ))}
               </div>
-              <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-2 drop-shadow-lg">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-2 drop-shadow-lg">
                 {dest.name}
               </h1>
               <div className="flex items-center gap-4 text-white/80 text-sm">
@@ -166,8 +166,9 @@ const DestinationDetail = () => {
           </div>
         </section>
 
+        <section className="container mx-auto px-4 pb-16">
         {/* Top Attractions */}
-        <motion.div {...fade} className="mt-24 first:mt-0">
+        <motion.div {...fade} className="mt-12 md:mt-24 first:mt-0">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8">
             Top Attractions
           </h2>
@@ -188,7 +189,7 @@ const DestinationDetail = () => {
                   <div className="absolute top-5 right-5 w-10 h-10 border-t-2 border-r-2 border-yellow-500 rounded-tr-2xl" />
                 </div>
                 <div className="p-6 text-center">
-                  <h3 className="text-[28px] leading-tight font-display font-semibold text-[#1d2746] mb-5">
+                  <h3 className="text-2xl md:text-[28px] leading-tight font-display font-semibold text-[#1d2746] mb-5">
                     {a.title}
                   </h3>
                   <div className="w-14 h-[3px] bg-yellow-500 rounded-full mx-auto mb-5" />
@@ -202,7 +203,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Things to Do */}
-        <motion.div {...fade} className="w-full mt-24">
+        <motion.div {...fade} className="w-full mt-16 md:mt-24">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground">
               Things to Do
@@ -231,7 +232,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Experiences / Highlights */}
-        <motion.div {...fade} className="mt-24">
+        <motion.div {...fade} className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
             Experiences & Highlights
           </h2>
@@ -251,7 +252,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Accommodation */}
-        <motion.div {...fade} className="mt-24">
+        <motion.div {...fade} className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
             <Hotel size={22} /> Where to Stay
           </h2>
@@ -277,7 +278,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Food & Local Cuisine */}
-        <motion.div {...fade} className="mt-24">
+        <motion.div {...fade} className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 flex items-center gap-2">
             <Utensils size={22} /> Food & Local Cuisine
           </h2>
@@ -300,7 +301,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Gallery */}
-        <motion.div {...fade} className="overflow-hidden mt-24">
+        <motion.div {...fade} className="overflow-hidden mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8">
             Gallery
           </h2>
@@ -337,7 +338,7 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Travel Info */}
-        <motion.div {...fade} className="mt-24">
+        <motion.div {...fade} className="mt-16 md:mt-24">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
             Travel Information
           </h2>
@@ -375,7 +376,7 @@ const DestinationDetail = () => {
 
         {/* Packages (conditionally rendered) */}
         {destPackages.length > 0 && (
-          <motion.div {...fade} className="mt-24 mb-24">
+          <motion.div {...fade} className="mt-16 md:mt-24 mb-16 md:mt-24">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
               Available Packages
             </h2>
@@ -403,6 +404,7 @@ const DestinationDetail = () => {
             </div>
           </motion.div>
         )}
+        </section>
 
         {/* Nearby Destinations */}
         {nearby.length > 0 && (
