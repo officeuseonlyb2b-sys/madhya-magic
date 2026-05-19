@@ -8,81 +8,88 @@ import {
   ChevronRight,
   MapPin,
   Quote,
+  BadgeCheck,
 } from "lucide-react";
 
+import testimonial1 from "@/assets/testimonial/testimonial1.jpeg";
+import testimonial2 from "@/assets/testimonial/testimonial2.jpeg";
+import testimonial3 from "@/assets/testimonial/testimonial3.jpeg";
+
+import testimonial4 from "@/assets/testimonial/testimonialcompany1.png";
+import testimonial5 from "@/assets/testimonial/testimonialcompany2.png";
+import testimonial6 from "@/assets/testimonial/testimonialcompany3.png";
+
 const testimonials = [
+  // 1 CLIENT
   {
-    name: "Aarav Sharma",
-    location: "Mumbai, India",
+    type: "Client",
+    name: "Hemant Kulkarni",
+    location: "India",
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=1200&auto=format&fit=crop",
-    text: "Everything was beautifully organized and premium.",
+    image: testimonial1,
+    text:
+      "Have a best experience. I finished a tour with Arpita Travels Private Ltd. Service was best with calm and quiet drivers.",
   },
+
+  // 1 COMPANY
   {
-    name: "Emily Carter",
-    location: "London, UK",
+    type: "Company",
+    name: "Juee Parab",
+    location: "Senior Executive",
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop",
-    text: "The local experiences felt authentic and beautiful.",
+    image: testimonial4,
+    text:
+      "First and foremost, a huge thank you for the amazing support. We are impressed with your itineraries and professionalism.",
   },
+
+  // 2 CLIENT
   {
-    name: "Rohan Mehta",
-    location: "Delhi, India",
+    type: "Client",
+    name: "Aishwarya Chandra",
+    location: "India",
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=1200&auto=format&fit=crop",
-    text: "Completely stress-free and perfectly managed.",
+    image: testimonial2,
+    text:
+      "Enchanting Madhya Pradesh is the best budget-friendly touring destination. Excellent stays and travel experience.",
   },
+
+  // 2 COMPANY
   {
-    name: "Sophia Wilson",
-    location: "Sydney, Australia",
+    type: "Company",
+    name: "Mahesh Dangwal",
+    location: "Team Leader",
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?q=80&w=1200&auto=format&fit=crop",
-    text: "Tiger safari experience was unforgettable.",
+    image: testimonial5,
+    text:
+      "Outstanding services in all departments including planning, pricing, follow-ups, and execution of itinerary.",
   },
+
+  // 3 CLIENT
   {
-    name: "Neha Kapoor",
-    location: "Bangalore, India",
+    type: "Client",
+    name: "Sitara Menon",
+    location: "India",
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=1200&auto=format&fit=crop",
-    text: "Warm hospitality and premium stays throughout.",
+    image: testimonial3,
+    text:
+      "My 7-day Madhya Pradesh trip was perfectly planned. Everything was smooth and well managed from start to end.",
   },
+
+  // 3 COMPANY
   {
-    name: "Daniel Brown",
-    location: "Toronto, Canada",
+    type: "Company",
+    name: "Abhishek Sengupta",
+    location: "Director",
     rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1504593811423-6dd665756598?q=80&w=1200&auto=format&fit=crop",
-    text: "Excellent coordination and smooth support team.",
-  },
-  {
-    name: "Priya Verma",
-    location: "Pune, India",
-    rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop",
-    text: "Perfect blend of comfort and adventure.",
-  },
-  {
-    name: "James Walker",
-    location: "California, USA",
-    rating: 5,
-    image:
-      "https://images.unsplash.com/photo-1504257432389-52343af06ae3?q=80&w=1200&auto=format&fit=crop",
-    text: "Luxury stays and memorable experiences everywhere.",
+    image: testimonial6,
+    text:
+      "Seamless handling of tours over the past two years. Excellent execution and strong attention to detail.",
   },
 ];
 
 const TestimonialsSection = () => {
   const ref = useRef(null);
-
-  const inView = useInView(ref, {
-    once: true,
-  });
+  const inView = useInView(ref, { once: true });
 
   const [current, setCurrent] = useState(0);
 
@@ -90,7 +97,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrent((prev) =>
-        prev + 2 >= testimonials.length ? 0 : prev + 2
+        prev + 1 >= testimonials.length ? 0 : prev + 1
       );
     }, 5000);
 
@@ -99,221 +106,171 @@ const TestimonialsSection = () => {
 
   const prev = () => {
     setCurrent((prev) =>
-      prev === 0 ? testimonials.length - 2 : prev - 2
+      prev === 0 ? testimonials.length - 1 : prev - 1
     );
   };
 
   const next = () => {
     setCurrent((prev) =>
-      prev + 2 >= testimonials.length ? 0 : prev + 2
+      prev + 1 >= testimonials.length ? 0 : prev + 1
     );
   };
 
-  const visibleTestimonials = [
-    testimonials[current],
-    testimonials[(current + 1) % testimonials.length],
-  ];
+  const item = testimonials[current];
 
   return (
     <section className="relative overflow-hidden py-14 bg-[#f8fafc]">
-      
-      {/* BG GLOW */}
+
+      {/* BACKGROUND */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-[-120px] left-[-120px] w-[280px] h-[280px] bg-primary/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-[-150px] right-[-150px] w-[320px] h-[320px] bg-orange-400/10 rounded-full blur-3xl" />
+        <div className="absolute top-[-120px] left-[-120px] w-[280px] h-[280px] bg-[#C89B5E]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-[-150px] right-[-150px] w-[320px] h-[320px] bg-[#C89B5E]/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto px-4 lg:px-6">
+      <div className="relative max-w-4xl mx-auto px-4">
 
         {/* HEADING */}
-<motion.div
-  ref={ref}
-  initial={{ opacity: 0, y: 40 }}
-  animate={inView ? { opacity: 1, y: 0 } : {}}
-  transition={{
-    duration: 1,
-  }}
-  className="text-center mb-8"
->
-  
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 40 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1 }}
+          className="text-center mb-10"
+        >
+          <h2 className="text-[32px] md:text-[48px] font-bold text-[#C89B5E]">
+            Clients & Partners Feedback
+          </h2>
 
-  {/* TITLE */}
-  <div className="max-w-3xl mx-auto">
-    <h2 className="text-[30px] md:text-[48px] leading-[1.05] tracking-[-2px] font-bold text-gray-900">
-      Loved By{" "}
-      <span className="bg-gradient-to-r from-primary to-orange-400 bg-clip-text text-transparent">
-        Travelers Worldwide
-      </span>
-    </h2>
+          <p className="text-gray-600 mt-3">
+            Alternating real experiences from clients and companies
+          </p>
+        </motion.div>
 
-    {/* SUBTITLE */}
-    <p className="text-gray-600 text-[14px] md:text-[15px] mt-3 max-w-2xl mx-auto leading-relaxed">
-      Luxury journeys and unforgettable experiences shared
-      by travelers around the world.
-    </p>
-  </div>
-</motion.div>
-
-        {/* SLIDER */}
+        {/* CARD */}
         <div className="relative">
 
           <AnimatePresence mode="wait">
             <motion.div
               key={current}
-              initial={{
-                opacity: 0,
-                y: 30,
-              }}
-              animate={{
-                opacity: 1,
-                y: 0,
-              }}
-              exit={{
-                opacity: 0,
-                y: -20,
-              }}
-              transition={{
-                duration: 0.7,
-              }}
-              className="grid lg:grid-cols-2 gap-5"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -50 }}
+              transition={{ duration: 0.5 }}
+              className="relative overflow-hidden rounded-[28px] border border-white/60 bg-white/75 backdrop-blur-xl shadow-[0_15px_60px_rgba(0,0,0,0.07)]"
             >
-              {visibleTestimonials.map((item, index) => (
-                <motion.div
-                  key={`${item.name}-${index}`}
-                  whileHover={{
-                    y: -5,
-                  }}
-                  className="group relative overflow-hidden rounded-[28px] border border-white/60 bg-white/75 backdrop-blur-xl shadow-[0_15px_60px_rgba(0,0,0,0.07)]"
-                >
-                  
-                  {/* GLOW */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-orange-400/5 opacity-0 group-hover:opacity-100 transition-all duration-700" />
 
-                  <div className="relative grid md:grid-cols-[1fr_210px] min-h-[250px]">
+              <div className="grid md:grid-cols-[1fr_240px] min-h-[340px]">
 
-                    {/* CONTENT */}
-                    <div className="p-5 md:p-6 flex flex-col justify-between">
+                {/* CONTENT */}
+                <div className="p-6 flex flex-col justify-between">
 
-                      <div>
+                  {/* TOP */}
+                  <div className="flex items-center justify-between mb-5">
 
-                        {/* TOP */}
-                        <div className="flex items-center justify-between mb-5">
-
-                          <div className="flex items-center gap-1">
-                            {Array.from({
-                              length: item.rating,
-                            }).map((_, i) => (
-                              <Star
-                                key={i}
-                                size={14}
-                                className="fill-[#ff7a45] text-[#ff7a45]"
-                              />
-                            ))}
-                          </div>
-
-                          <div className="w-10 h-10 rounded-2xl bg-primary/10 text-primary flex items-center justify-center">
-                            <Quote size={18} />
-                          </div>
-                        </div>
-
-                        {/* REVIEW */}
-                        <p className="text-[18px] md:text-[21px] leading-[1.6] tracking-[-0.5px] text-gray-900 font-semibold">
-                          “{item.text}”
-                        </p>
-                      </div>
-
-                      {/* USER */}
-                      <div className="flex items-center gap-3 mt-8">
-
-                        <img
-                          src={item.image}
-                          alt={item.name}
-                          className="w-12 h-12 rounded-2xl object-cover border-2 border-white shadow-md"
+                    {/* STARS */}
+                    <div className="flex gap-1">
+                      {Array.from({ length: item.rating }).map((_, i) => (
+                        <Star
+                          key={i}
+                          size={14}
+                          className="fill-[#C89B5E] text-[#C89B5E]"
                         />
-
-                        <div>
-                          <h4 className="text-[16px] font-bold text-gray-900">
-                            {item.name}
-                          </h4>
-
-                          <div className="flex items-center gap-1 mt-1">
-                            <MapPin
-                              size={12}
-                              className="text-gray-500"
-                            />
-
-                            <p className="text-[12px] text-gray-500">
-                              {item.location}
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                      ))}
                     </div>
 
-                    {/* IMAGE */}
-                    <div className="relative overflow-hidden min-h-[250px]">
-
-                      <motion.img
-                        src={item.image}
-                        alt={item.name}
-                        initial={{ scale: 1.08 }}
-                        animate={{ scale: 1 }}
-                        transition={{
-                          duration: 1,
-                        }}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2500ms]"
-                      />
-
-                      {/* OVERLAY */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-
-                      {/* BADGE */}
-                      <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-lg">
-                        <p className="text-[11px] font-semibold text-gray-900">
-                          Verified Traveler
-                        </p>
-                      </div>
-                    </div>
+                    <Quote size={20} className="text-[#C89B5E]" />
                   </div>
-                </motion.div>
-              ))}
+
+                  {/* TAG */}
+                  <div className="mb-3 flex items-center gap-2">
+                    <BadgeCheck size={16} className="text-[#C89B5E]" />
+                    <span className="text-xs font-semibold text-[#C89B5E] uppercase tracking-wide">
+                      {item.type}
+                    </span>
+                  </div>
+
+                  {/* TEXT */}
+                  <p className="text-[16px] md:text-[17px] leading-[1.8] text-gray-700 font-medium">
+                    “{item.text}”
+                  </p>
+
+                  {/* USER */}
+                  <div className="flex items-center gap-3 mt-8">
+
+                    <img
+                      src={item.image}
+                      className="w-12 h-12 rounded-xl object-cover"
+                    />
+
+                    <div>
+                      <h4 className="font-bold text-gray-900">
+                        {item.name}
+                      </h4>
+
+                      <div className="flex items-center gap-1 text-[#C89B5E] text-sm">
+                        <MapPin size={12} />
+                        {item.location}
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                {/* IMAGE */}
+                <div className="relative">
+                  <img
+                    src={item.image}
+                    className="w-full h-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+
+                  {/* BADGE */}
+                  <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center gap-1">
+                    <BadgeCheck size={12} className="text-[#C89B5E]" />
+                    <p className="text-[11px] font-semibold text-[#C89B5E]">
+                      {item.type} Verified
+                    </p>
+                  </div>
+                </div>
+
+              </div>
             </motion.div>
           </AnimatePresence>
 
-          {/* NAVIGATION */}
+          {/* CONTROLS */}
           <div className="flex justify-center items-center gap-4 mt-8">
 
-            {/* PREV */}
             <button
               onClick={prev}
-              className="w-11 h-11 rounded-full border border-white/60 bg-white/80 backdrop-blur-md flex items-center justify-center shadow-md hover:bg-[#C89B5E]  hover:text-white transition-all duration-500"
+              className="w-11 h-11 rounded-full bg-white shadow-md flex items-center justify-center text-[#C89B5E]"
             >
-              <ChevronLeft size={18} />
+              <ChevronLeft />
             </button>
 
-            {/* DOTS */}
-            <div className="flex items-center gap-2">
-              {[0, 2, 4, 6].map((index) => (
+            <div className="flex gap-2 flex-wrap justify-center">
+              {testimonials.map((_, i) => (
                 <button
-                  key={index}
-                  onClick={() => setCurrent(index)}
-                  className={`rounded-full transition-all duration-500 ${
-                    current === index
-                      ? "w-8 h-2 bg-[#C89B5E] "
-                      : "w-2 h-2 bg-gray-300 hover:bg-[#C89B5E] "
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className={`rounded-full transition-all ${
+                    current === i
+                      ? "w-8 h-2 bg-[#C89B5E]"
+                      : "w-2 h-2 bg-gray-300"
                   }`}
                 />
               ))}
             </div>
 
-            {/* NEXT */}
             <button
               onClick={next}
-              className="w-11 h-11 rounded-full bg-[#C89B5E]  text-white flex items-center justify-center shadow-lg hover:scale-105 transition-all duration-500"
+              className="w-11 h-11 rounded-full bg-[#C89B5E] text-white flex items-center justify-center"
             >
-              <ChevronRight size={18} />
+              <ChevronRight />
             </button>
+
           </div>
+
         </div>
       </div>
     </section>

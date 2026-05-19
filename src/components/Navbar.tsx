@@ -1,13 +1,24 @@
 import { useState, useEffect, useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, ChevronRight } from "lucide-react";
+import {
+  Menu,
+  X,
+  ChevronDown,
+  ChevronRight,
+} from "lucide-react";
+
 import logo from "@/assets/logo.png";
+
 import { exploreCategories, type MapCategory } from "@/data/mapDestinations";
+
 import natureImg from "@/assets/explore/nature.jpg";
 import heritageImg from "@/assets/explore/heritage.jpg";
 import spiritualImg from "@/assets/explore/spiritual.jpg";
 import wildlifeImg from "@/assets/explore/wildlife.png";
+
+/* ✅ IMPORT MODAL */
+import MadhyaPradeshJourneyModal from "@/components/MadhyaPradeshJourneyModal";
 
 const categoryImages: Record<MapCategory, string> = {
   Nature: natureImg,
@@ -52,7 +63,9 @@ Explore Dropdown (Desktop)
 const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
   const [open, setOpen] = useState(false);
   const [activeCat, setActiveCat] = useState<MapCategory>("Nature");
+
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+
   const navigate = useNavigate();
 
   const handleEnter = () => {
@@ -63,23 +76,36 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
   const handleLeave = () => {
     timeoutRef.current = setTimeout(() => {
       setOpen(false);
-      window.dispatchEvent(new CustomEvent("hero-category-hover", { detail: {} }));
+
+      window.dispatchEvent(
+        new CustomEvent("hero-category-hover", {
+          detail: {},
+        })
+      );
     }, 200);
   };
 
   const handleCatEnter = (cat: MapCategory) => {
     setActiveCat(cat);
+
     window.dispatchEvent(
-      new CustomEvent("hero-category-hover", { detail: { category: cat } })
+      new CustomEvent("hero-category-hover", {
+        detail: { category: cat },
+      })
     );
   };
 
   const activeDests = exploreCategories[activeCat]?.destinations ?? [];
 
   return (
-    <div className="relative" onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
+    <div
+      className="relative"
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+    >
       <button className="nav-font flex items-center gap-2 text-sm text-white">
         Explore
+
         <motion.div animate={{ rotate: open ? 180 : 0 }}>
           <ChevronDown size={14} />
         </motion.div>
@@ -114,7 +140,9 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
                   }`}
                 >
                   <span>{categoryIcons[cat]}</span>
+
                   {cat}
+
                   <ChevronRight className="ml-auto" size={12} />
                 </button>
               ))}
@@ -155,11 +183,14 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
                   className="absolute inset-0 w-full h-full object-cover"
                   loading="lazy"
                 />
+
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
                 <div className="absolute bottom-3 left-3 right-3">
                   <p className="nav-font text-white text-xs uppercase tracking-widest opacity-80">
                     {categoryIcons[activeCat]} Discover
                   </p>
+
                   <p className="font-display text-white text-lg leading-tight">
                     {activeCat} of MP
                   </p>
@@ -179,10 +210,16 @@ Navbar
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [mobileExpanded, setMobileExpanded] = useState<MapCategory | null>(null);
+
+  const [mobileExpanded, setMobileExpanded] =
+    useState<MapCategory | null>(null);
+
   const [scrolled, setScrolled] = useState(false);
 
-  // ✅ NEW STATE
+  /* ✅ MODAL STATE */
+  const [showJourneyModal, setShowJourneyModal] = useState(false);
+
+  /* ✅ NAVBAR SHOW/HIDE */
   const [showNavbar, setShowNavbar] = useState(true);
 
   useEffect(() => {
@@ -193,11 +230,12 @@ const Navbar = () => {
 
       setScrolled(currentScrollY > 80);
 
-      // ✅ Hide navbar on scroll down
+      // Hide navbar
       if (currentScrollY > lastScrollY && currentScrollY > 120) {
         setShowNavbar(false);
       }
-      // ✅ Show navbar on scroll up
+
+      // Show navbar
       else {
         setShowNavbar(true);
       }
@@ -211,164 +249,179 @@ const Navbar = () => {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ y: -80 }}
-      animate={{ y: showNavbar ? 0 : -140 }}
-      transition={{ duration: 0.35 }}
-      className={`fixed top-0 left-0 right-0 z-50
-      transition-all duration-500
-      ${
-        scrolled
-          ? "bg-black/70 backdrop-blur-xl py-3 shadow-lg"
-          : "bg-transparent py-4"
-      }`}
-    >
-      <div
-        className={`container mx-auto px-6 flex justify-between items-center transition-all duration-300 ${
-          scrolled ? "h-16" : "h-24"
+    <>
+      {/* ✅ POPUP FORM */}
+      <MadhyaPradeshJourneyModal
+        open={showJourneyModal}
+        onClose={() => setShowJourneyModal(false)}
+      />
+
+      {/* NAVBAR */}
+      <motion.nav
+        initial={{ y: -80 }}
+        animate={{ y: showNavbar ? 0 : -140 }}
+        transition={{ duration: 0.35 }}
+        className={`fixed top-0 left-0 right-0 z-50
+        transition-all duration-500
+        ${
+          scrolled
+            ? "bg-black/70 backdrop-blur-xl py-3 shadow-lg"
+            : "bg-transparent py-4"
         }`}
       >
-        {/* ✅ MP STYLE LOGO */}
-        <Link to="/" className="flex items-center">
-          <motion.img
-            src={logo}
-            initial={false}
-            animate={{
-              height: scrolled ? 56 : 88,
-            }}
-            transition={{ duration: 0.35, ease: "easeOut" }}
-            className="object-contain"
-            style={{ transformOrigin: "left center" }}
-          />
-        </Link>
-
-        {/* Desktop */}
         <div
-          className={`hidden md:flex items-center gap-10 transition-all duration-300 ${
-            scrolled ? "mt-0" : "mt-2"
+          className={`container mx-auto px-6 flex justify-between items-center transition-all duration-300 ${
+            scrolled ? "h-16" : "h-24"
           }`}
         >
-          <ExploreDropdown scrolled={scrolled} />
+          {/* LOGO */}
+          <Link to="/" className="flex items-center">
+            <motion.img
+              src={logo}
+              initial={false}
+              animate={{
+                height: scrolled ? 56 : 88,
+              }}
+              transition={{ duration: 0.35, ease: "easeOut" }}
+              className="object-contain"
+              style={{ transformOrigin: "left center" }}
+            />
+          </Link>
 
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              to={link.href}
-              className="nav-font text-white text-sm"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {/* DESKTOP MENU */}
+          <div
+            className={`hidden md:flex items-center gap-10 transition-all duration-300 ${
+              scrolled ? "mt-0" : "mt-2"
+            }`}
+          >
+            <ExploreDropdown scrolled={scrolled} />
 
-          <Link to="/packages">
-            <motion.span
+            {navLinks.map((link) => (
+              <Link
+                key={link.label}
+                to={link.href}
+                className="nav-font text-white text-sm"
+              >
+                {link.label}
+              </Link>
+            ))}
+
+            {/* ✅ BOOK NOW BUTTON */}
+            <motion.button
               whileHover={{ scale: 1.05 }}
+              onClick={() => setShowJourneyModal(true)}
               className="nav-font inline-block border border-white/30 px-6 py-2.5 rounded-full text-white backdrop-blur-md hover:bg-white/10 hover:border-white/60 transition"
             >
               Book Now
-            </motion.span>
-          </Link>
+            </motion.button>
+          </div>
+
+          {/* MOBILE TOGGLE */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden text-white"
+          >
+            {mobileOpen ? <X /> : <Menu />}
+          </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white"
-        >
-          {mobileOpen ? <X /> : <Menu />}
-        </button>
-      </div>
+        {/* MOBILE MENU */}
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="md:hidden bg-black/80 backdrop-blur-xl"
+            >
+              <div className="flex flex-col p-6 gap-2 max-h-[80vh] overflow-y-auto">
+                <p className="nav-font text-white/50 text-xs uppercase tracking-widest">
+                  Explore
+                </p>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="md:hidden bg-black/80 backdrop-blur-xl"
-          >
-            <div className="flex flex-col p-6 gap-2 max-h-[80vh] overflow-y-auto">
-              <p className="nav-font text-white/50 text-xs uppercase tracking-widest">
-                Explore
-              </p>
+                {categoryOrder.map((cat) => (
+                  <div key={cat}>
+                    <button
+                      onClick={() =>
+                        setMobileExpanded(
+                          mobileExpanded === cat ? null : cat
+                        )
+                      }
+                      className="nav-font text-white flex items-center gap-2 w-full py-2"
+                    >
+                      <span>{categoryIcons[cat]}</span>
 
-              {categoryOrder.map((cat) => (
-                <div key={cat}>
-                  <button
-                    onClick={() =>
-                      setMobileExpanded(
-                        mobileExpanded === cat ? null : cat
-                      )
-                    }
-                    className="nav-font text-white flex items-center gap-2 w-full py-2"
-                  >
-                    <span>{categoryIcons[cat]}</span> {cat}
-                    <ChevronDown
-                      size={14}
-                      className={`ml-auto transition-transform ${
-                        mobileExpanded === cat ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
+                      {cat}
 
-                  <AnimatePresence>
-                    {mobileExpanded === cat && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden pl-6"
-                      >
-                        {exploreCategories[cat].destinations.map((dest) => (
-                          <Link
-                            key={dest.id}
-                            to={`/destination/${dest.id}`}
-                            onClick={() => setMobileOpen(false)}
-                            className="block nav-font text-white/70 text-sm py-1.5"
-                          >
-                            {dest.name}
-                          </Link>
-                        ))}
+                      <ChevronDown
+                        size={14}
+                        className={`ml-auto transition-transform ${
+                          mobileExpanded === cat ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
 
-                        <Link
-                          to={`/${cat.toLowerCase()}`}
-                          onClick={() => setMobileOpen(false)}
-                          className="block nav-font text-primary text-sm font-semibold py-1.5"
+                    <AnimatePresence>
+                      {mobileExpanded === cat && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          className="overflow-hidden pl-6"
                         >
-                          View All {cat} →
-                        </Link>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              ))}
+                          {exploreCategories[cat].destinations.map((dest) => (
+                            <Link
+                              key={dest.id}
+                              to={`/destination/${dest.id}`}
+                              onClick={() => setMobileOpen(false)}
+                              className="block nav-font text-white/70 text-sm py-1.5"
+                            >
+                              {dest.name}
+                            </Link>
+                          ))}
 
-              <div className="border-t border-white/10 my-1" />
+                          <Link
+                            to={`/${cat.toLowerCase()}`}
+                            onClick={() => setMobileOpen(false)}
+                            className="block nav-font text-primary text-sm font-semibold py-1.5"
+                          >
+                            View All {cat} →
+                          </Link>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                ))}
 
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  to={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="nav-font text-white py-2"
+                <div className="border-t border-white/10 my-1" />
+
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.label}
+                    to={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="nav-font text-white py-2"
+                  >
+                    {link.label}
+                  </Link>
+                ))}
+
+                {/* ✅ MOBILE BOOK NOW */}
+                <button
+                  onClick={() => {
+                    setShowJourneyModal(true);
+                    setMobileOpen(false);
+                  }}
+                  className="nav-font border border-white py-3 rounded-xl text-white mt-2 text-center hover:bg-white/10 transition"
                 >
-                  {link.label}
-                </Link>
-              ))}
-
-              <Link
-                to="/packages"
-                onClick={() => setMobileOpen(false)}
-                className="nav-font border border-white py-3 rounded-xl text-white mt-2 text-center hover:bg-white/10 transition"
-              >
-                Book Now
-              </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+                  Book Now
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </motion.nav>
+    </>
   );
 };
 

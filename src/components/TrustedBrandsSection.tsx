@@ -83,7 +83,7 @@ export default function TrustedBrandsSection() {
           <div className="absolute right-0 top-0 z-10 h-full w-14 bg-gradient-to-l from-white via-white to-transparent" />
 
           <motion.div
-            className="flex items-center gap-0 w-max"
+            className="flex items-center gap-10 w-max"
             animate={{
               x: ["0%", "-50%"],
             }}

@@ -40,6 +40,12 @@ import chambalImg from "@/assets/dest-chambal.webp";
 // Reused images for newly added destinations (no new assets created)
 // const shivpuriImg = madhavImg; // Madhav NP is in Shivpuri district
 // const vidishaImg = udayagiriImg; // Udayagiri Caves are in Vidisha district
+import {
+  Trees,
+  Landmark,
+  PawPrint,
+  Church,
+} from "lucide-react";
 
 export type MapCategory = "Wildlife" | "Heritage" | "Spiritual" | "Nature";
 
