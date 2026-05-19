@@ -14,7 +14,7 @@ interface Props {
  * on any background image, while keeping the image fully visible.
  */
 const DestinationHero = ({ name, image, categories, bestTime }: Props) => (
-  <section className="relative h-[60vh] sm:h-[70vh] md:h-[85vh]">
+  <section className="relative h-[60vh] sm:h-[70vh] md:h-[100vh]">
     <img src={image} alt={name} className="absolute inset-0 w-full h-full object-cover" />
     {/* Layered overlays — base darken + bottom gradient for legibility */}
     <div className="absolute inset-0 bg-black/45" />

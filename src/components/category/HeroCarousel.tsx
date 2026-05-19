@@ -11,7 +11,7 @@ const HeroCarousel = ({ images, title, staticImage }: Props) => {
 
   return (
     <section
-      className="relative h-[85vh] w-full overflow-hidden bg-center bg-cover"
+      className="relative h-[100vh] w-full overflow-hidden bg-center bg-cover"
       style={{ backgroundImage: `url(${bg})` }}
     >
       <img src={bg} alt={`Explore ${title} of Madhya Pradesh`} className="sr-only" />

@@ -7,7 +7,7 @@ const TopAttractions = ({ attractions }: { attractions: AttractionCard[] }) => {
   if (!attractions.length) return null;
   return (
     <motion.div {...fade} className="mt-12 md:mt-24 first:mt-0">
-      <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8">
+      <h2 className="text-3xl md:text-4xl font-display font-bold text-black mb-8">
         Top Attractions
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">

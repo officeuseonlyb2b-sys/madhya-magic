@@ -6,7 +6,7 @@ const fade = { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }
 
 const TravelInfo = ({ info }: { info: TravelInfoType }) => (
   <motion.div {...fade} className="mt-16 md:mt-24">
-    <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
+    <h2 className="text-3xl md:text-4xl font-display font-bold text-black mb-6">
       Travel Information
     </h2>
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
