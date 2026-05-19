@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  MapPin, Calendar, ArrowRight, ArrowLeft, Phone, MessageSquare,
-  Users, Clock, Train, Plane, Car, Utensils, Hotel,
+  MapPin, ArrowRight, Phone, MessageSquare,
+  Users, Clock, Calendar, Utensils, Hotel,
 } from "lucide-react";
 import { destinations, packages as allPackages } from "@/data/destinations";
 import { mapDestinations } from "@/data/mapDestinations";
@@ -13,6 +13,10 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import QuoteModal from "@/components/QuoteModal";
 import { getBackgroundForCategories } from "@/lib/categoryBackground";
+import DestinationHero from "@/components/destination/DestinationHero";
+import TopAttractions from "@/components/destination/TopAttractions";
+import DestinationGallery from "@/components/destination/DestinationGallery";
+import TravelInfo from "@/components/destination/TravelInfo";
 
 const fade = { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5 } };
 
@@ -77,49 +81,12 @@ const DestinationDetail = () => {
         <Navbar />
 
         {/* Hero */}
-        <section className="relative h-[60vh] sm:h-[70vh] md:h-[85vh]">
-          <img
-            src={dest.image}
-            alt={dest.name}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-          <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-12">
-            <Link
-              to="/"
-              className="flex items-center gap-1 text-white/80 text-sm mb-4 hover:text-white transition-colors"
-            >
-              <ArrowLeft size={16} /> Back to Home
-            </Link>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex flex-wrap gap-2 mb-3">
-                {dest.category.map((c) => (
-                  <span
-                    key={c}
-                    className="text-xs font-medium bg-white/20 text-white px-3 py-1 rounded-full backdrop-blur-sm"
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-2 drop-shadow-lg">
-                {dest.name}
-              </h1>
-              <div className="flex items-center gap-4 text-white/80 text-sm">
-                <span className="flex items-center gap-1">
-                  <MapPin size={14} /> Madhya Pradesh
-                </span>
-                <span className="flex items-center gap-1">
-                  <Calendar size={14} /> Best: {dest.bestTime}
-                </span>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <DestinationHero
+          name={dest.name}
+          image={(details as { heroImage?: string }).heroImage ?? dest.image}
+          categories={dest.category}
+          bestTime={dest.bestTime}
+        />
 
         {/* Content */}
         <section className="py-16">
@@ -168,39 +135,7 @@ const DestinationDetail = () => {
 
         <section className="container mx-auto px-4 pb-16">
         {/* Top Attractions */}
-        <motion.div {...fade} className="mt-12 md:mt-24 first:mt-0">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8">
-            Top Attractions
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
-            {details.attractions.map((a, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-[32px] overflow-hidden border border-gray-200 hover:shadow-2xl transition-all duration-500 group"
-              >
-                <div className="relative overflow-hidden rounded-b-[24px]">
-                  <img
-                    src={a.image}
-                    alt={a.title}
-                    loading="lazy"
-                    className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute top-5 right-5 w-10 h-10 border-t-2 border-r-2 border-yellow-500 rounded-tr-2xl" />
-                </div>
-                <div className="p-6 text-center">
-                  <h3 className="text-2xl md:text-[28px] leading-tight font-display font-semibold text-[#1d2746] mb-5">
-                    {a.title}
-                  </h3>
-                  <div className="w-14 h-[3px] bg-yellow-500 rounded-full mx-auto mb-5" />
-                  <p className="text-gray-600 leading-8 text-[17px]">
-                    {a.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
+        <TopAttractions attractions={details.attractions} />
 
         {/* Things to Do */}
         <motion.div {...fade} className="w-full mt-16 md:mt-24">
@@ -301,78 +236,10 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Gallery */}
-        <motion.div {...fade} className="overflow-hidden mt-16 md:mt-24">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8">
-            Gallery
-          </h2>
-          <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex items-center gap-6 min-w-max px-1 py-2">
-              {details.gallery.map((g, i) => {
-                const imageStyles = [
-                  "w-[260px] h-[520px]",
-                  "w-[340px] h-[220px]",
-                  "w-[330px] h-[300px]",
-                  "w-[320px] h-[520px]",
-                  "w-[300px] h-[230px]",
-                ];
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className={`flex-shrink-0 overflow-hidden rounded-none ${imageStyles[i % imageStyles.length]}`}
-                  >
-                    <img
-                      src={g}
-                      alt={`${dest.name} ${i + 1}`}
-                      loading="lazy"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    />
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </motion.div>
+        <DestinationGallery images={details.gallery} destinationName={dest.name} />
 
         {/* Travel Info */}
-        <motion.div {...fade} className="mt-16 md:mt-24">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-            Travel Information
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] flex gap-4">
-              <Calendar className="text-primary shrink-0" size={22} />
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">Best Time to Visit</h3>
-                <p className="text-sm text-muted-foreground">{details.travelInfo.bestTime}</p>
-              </div>
-            </div>
-            <div className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] flex gap-4">
-              <Car className="text-primary shrink-0" size={22} />
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">By Road</h3>
-                <p className="text-sm text-muted-foreground">{details.travelInfo.road}</p>
-              </div>
-            </div>
-            <div className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] flex gap-4">
-              <Train className="text-primary shrink-0" size={22} />
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">By Rail</h3>
-                <p className="text-sm text-muted-foreground">{details.travelInfo.rail}</p>
-              </div>
-            </div>
-            <div className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] flex gap-4">
-              <Plane className="text-primary shrink-0" size={22} />
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">By Air</h3>
-                <p className="text-sm text-muted-foreground">{details.travelInfo.air}</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <TravelInfo info={details.travelInfo} />
 
         {/* Packages (conditionally rendered) */}
         {destPackages.length > 0 && (
