@@ -139,11 +139,16 @@ const overrides: Record<string, Partial<DestinationDetails>> = {
   },
 };
 
+// Per-destination overrides now live in `src/data/destinations/*` for clean
+// manual content management. Legacy `overrides` above is kept as a fallback.
+import { getDestinationContent } from "@/data/destinations";
+
 export const getDestinationDetails = (id: string, name: string, image: string, category: string[]): DestinationDetails => {
   const d = mapDestinations.find((m) => m.id === id);
   const base = generic(d, name, image, category);
-  const ov = overrides[id];
-  return ov ? { ...base, ...ov } : base;
+  const legacy = overrides[id];
+  const registry = getDestinationContent(id);
+  return { ...base, ...(legacy ?? {}), ...(registry ?? {}) };
 };
 
 export const getNearbyDestinations = (id: string, category: string[], limit = 4): NearbyPlace[] => {
