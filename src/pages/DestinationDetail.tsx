@@ -2,8 +2,8 @@ import { useMemo, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
-  MapPin, Calendar, ArrowRight, ArrowLeft, Phone, MessageSquare,
-  Users, Clock, Train, Plane, Car, Utensils, Hotel,
+  MapPin, ArrowRight, Phone, MessageSquare,
+  Users, Clock, Calendar, Utensils, Hotel,
 } from "lucide-react";
 import { destinations, packages as allPackages } from "@/data/destinations";
 import { mapDestinations } from "@/data/mapDestinations";
@@ -13,6 +13,10 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import QuoteModal from "@/components/QuoteModal";
 import { getBackgroundForCategories } from "@/lib/categoryBackground";
+import DestinationHero from "@/components/destination/DestinationHero";
+import TopAttractions from "@/components/destination/TopAttractions";
+import DestinationGallery from "@/components/destination/DestinationGallery";
+import TravelInfo from "@/components/destination/TravelInfo";
 
 const fade = { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true }, transition: { duration: 0.5 } };
 
