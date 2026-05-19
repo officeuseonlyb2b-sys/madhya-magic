@@ -83,7 +83,7 @@ const DestinationDetail = () => {
         {/* Hero */}
         <DestinationHero
           name={dest.name}
-          image={details.heroImage ?? dest.image}
+          image={(details as { heroImage?: string }).heroImage ?? dest.image}
           categories={dest.category}
           bestTime={dest.bestTime}
         />
