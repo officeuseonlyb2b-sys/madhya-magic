@@ -81,49 +81,12 @@ const DestinationDetail = () => {
         <Navbar />
 
         {/* Hero */}
-        <section className="relative h-[60vh] sm:h-[70vh] md:h-[85vh]">
-          <img
-            src={dest.image}
-            alt={dest.name}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-          <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-12">
-            <Link
-              to="/"
-              className="flex items-center gap-1 text-white/80 text-sm mb-4 hover:text-white transition-colors"
-            >
-              <ArrowLeft size={16} /> Back to Home
-            </Link>
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
-              <div className="flex flex-wrap gap-2 mb-3">
-                {dest.category.map((c) => (
-                  <span
-                    key={c}
-                    className="text-xs font-medium bg-white/20 text-white px-3 py-1 rounded-full backdrop-blur-sm"
-                  >
-                    {c}
-                  </span>
-                ))}
-              </div>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-2 drop-shadow-lg">
-                {dest.name}
-              </h1>
-              <div className="flex items-center gap-4 text-white/80 text-sm">
-                <span className="flex items-center gap-1">
-                  <MapPin size={14} /> Madhya Pradesh
-                </span>
-                <span className="flex items-center gap-1">
-                  <Calendar size={14} /> Best: {dest.bestTime}
-                </span>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <DestinationHero
+          name={dest.name}
+          image={details.heroImage ?? dest.image}
+          categories={dest.category}
+          bestTime={dest.bestTime}
+        />
 
         {/* Content */}
         <section className="py-16">
