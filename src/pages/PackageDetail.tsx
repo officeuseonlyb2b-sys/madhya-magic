@@ -210,6 +210,7 @@ const PackageDetail = () => {
         onOpenChange={setQuoteOpen}
         packageName={pkg.name}
         duration={customize ? `${customDays} Days / ${customDays - 1} Nights` : pkg.duration}
+        destinations={pkg.location}
       />
     </div>
   );

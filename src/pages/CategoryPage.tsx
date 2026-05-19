@@ -16,6 +16,7 @@ import natureHero from "@/assets/explore/nature-hero.jpg";
 import heritageHero from "@/assets/explore/heritage-hero.jpg";
 import wildlifeHero from "@/assets/explore/wildlife-hero.png";
 import CustomPackage from "@/components/CustomPackage";
+import { getCategoryBackground } from "@/lib/categoryBackground";
 
 
 const heroImageMap: Record<string, string> = {
@@ -38,8 +39,20 @@ const CategoryPage = () => {
     d.category.some((c) => c.toLowerCase() === categoryTitle.toLowerCase())
   );
 
+  const categoryBg = getCategoryBackground(data.slug);
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background relative">
+      {categoryBg && (
+        <>
+          <div
+            aria-hidden
+            className="fixed inset-0 -z-10 pointer-events-none bg-center bg-cover bg-no-repeat"
+            style={{ backgroundImage: `url(${categoryBg})` }}
+          />
+          <div aria-hidden className="fixed inset-0 -z-10 pointer-events-none bg-black/40" />
+        </>
+      )}
       <Navbar />
       {data.slug === "spiritual" ? (
         <SpiritualHero />
