@@ -141,7 +141,7 @@ const overrides: Record<string, Partial<DestinationDetails>> = {
 
 // Per-destination overrides now live in `src/data/destinations/*` for clean
 // manual content management. Legacy `overrides` above is kept as a fallback.
-import { getDestinationContent } from "@/data/destinations";
+import { getDestinationContent } from "@/data/destinations/index";
 
 export const getDestinationDetails = (id: string, name: string, image: string, category: string[]): DestinationDetails => {
   const d = mapDestinations.find((m) => m.id === id);
