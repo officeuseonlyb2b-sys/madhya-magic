@@ -236,78 +236,10 @@ const DestinationDetail = () => {
         </motion.div>
 
         {/* Gallery */}
-        <motion.div {...fade} className="overflow-hidden mt-16 md:mt-24">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-8">
-            Gallery
-          </h2>
-          <div className="overflow-x-auto scrollbar-hide">
-            <div className="flex items-center gap-6 min-w-max px-1 py-2">
-              {details.gallery.map((g, i) => {
-                const imageStyles = [
-                  "w-[260px] h-[520px]",
-                  "w-[340px] h-[220px]",
-                  "w-[330px] h-[300px]",
-                  "w-[320px] h-[520px]",
-                  "w-[300px] h-[230px]",
-                ];
-                return (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.08 }}
-                    className={`flex-shrink-0 overflow-hidden rounded-none ${imageStyles[i % imageStyles.length]}`}
-                  >
-                    <img
-                      src={g}
-                      alt={`${dest.name} ${i + 1}`}
-                      loading="lazy"
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-                    />
-                  </motion.div>
-                );
-              })}
-            </div>
-          </div>
-        </motion.div>
+        <DestinationGallery images={details.gallery} destinationName={dest.name} />
 
         {/* Travel Info */}
-        <motion.div {...fade} className="mt-16 md:mt-24">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-            Travel Information
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] flex gap-4">
-              <Calendar className="text-primary shrink-0" size={22} />
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">Best Time to Visit</h3>
-                <p className="text-sm text-muted-foreground">{details.travelInfo.bestTime}</p>
-              </div>
-            </div>
-            <div className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] flex gap-4">
-              <Car className="text-primary shrink-0" size={22} />
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">By Road</h3>
-                <p className="text-sm text-muted-foreground">{details.travelInfo.road}</p>
-              </div>
-            </div>
-            <div className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] flex gap-4">
-              <Train className="text-primary shrink-0" size={22} />
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">By Rail</h3>
-                <p className="text-sm text-muted-foreground">{details.travelInfo.rail}</p>
-              </div>
-            </div>
-            <div className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] flex gap-4">
-              <Plane className="text-primary shrink-0" size={22} />
-              <div>
-                <h3 className="font-semibold text-foreground mb-1">By Air</h3>
-                <p className="text-sm text-muted-foreground">{details.travelInfo.air}</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+        <TravelInfo info={details.travelInfo} />
 
         {/* Packages (conditionally rendered) */}
         {destPackages.length > 0 && (
