@@ -105,8 +105,9 @@ const DestinationDetail = () => {
     );
   }
 
-  const destPackages = allPackages.filter(
-    (p) => p.destination === dest.id
+  const relatedPackages = useMemo(
+    () => getRelatedPackagesForDestination(dest.id, dest.name),
+    [dest]
   );
 
   const categoryBg =
