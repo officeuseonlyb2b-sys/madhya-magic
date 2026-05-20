@@ -134,7 +134,7 @@ const DestinationDetail = () => {
         }}
       />
 
-      <div className="fixed inset-0 z-0 bg-black/45 pointer-events-none" />
+      <div className="fixed inset-0 z-0 bg-[#ece7df66]/45 pointer-events-none" />
 
       {/* Main Content */}
       <div className="relative z-10">
@@ -152,27 +152,71 @@ const DestinationDetail = () => {
           bestTime={dest.bestTime}
         />
 
-        {/* Overview */}
-        <section className="py-16">
-          <div className="container mx-auto px-4">
+{/* Overview */}
+<section className="py-16">
+  <div className="container mx-auto px-4">
 
-            <motion.div
-              {...fade}
-              className="max-w-6xl mx-auto"
-            >
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-black mb-6">
-                Overview
-              </h2>
+    <motion.div
+      {...fade}
+      className="
+        max-w-5xl
+        mx-auto
+        bg-white/10
+        backdrop-blur-md
+        border border-white/10
+        rounded-3xl
+        p-7 md:p-10
+        shadow-2xl
+      "
+    >
+      <div className="mb-7">
+        <p className="text-sm uppercase tracking-[0.25em] text-amber-300 font-medium mb-2">
+          Explore Destination
+        </p>
 
-              <div className="space-y-5 text-white leading-8 text-[17px]">
-                {details.overviewParagraphs.map((p, i) => (
-                  <p key={i}>{p}</p>
-                ))}
-              </div>
-            </motion.div>
+        <h2
+          className="
+            text-4xl
+            md:text-5xl
+            font-serif
+            font-bold
+            text-white
+            leading-tight
+          "
+        >
+          Overview
+        </h2>
+      </div>
 
-          </div>
-        </section>
+      <div
+        className="
+          space-y-6
+          text-white/150
+          leading-8
+          md:leading-9
+          text-[17px]
+          md:text-[18px]
+          font-light
+          tracking-wide
+        "
+      >
+        {details.overviewParagraphs.map((p, i) => (
+          <p
+            key={i}
+            className="
+              border-l-2
+              border-amber-300/40
+              pl-5
+            "
+          >
+            {p}
+          </p>
+        ))}
+      </div>
+    </motion.div>
+
+  </div>
+</section>
 
         {/* Main Sections */}
         <section className="container mx-auto px-4 pb-16">

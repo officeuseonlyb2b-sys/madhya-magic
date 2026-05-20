@@ -7,15 +7,14 @@ import ropewayImg from "@/assets/destimages/Jabalpur-Dhuadhar-Ropeway.webp";
 import dhuadharImg from "@/assets/destimages/Jabalpur-Dhuadhar-Waterfall.webp";
 
 // Gallery Images (Local Assets)
-import gallery1 from "@/assets/destimages/bhedaghatgallary1.webp";
-import gallery2 from "@/assets/destimages/bhedaghatgallary2.webp";
-import gallery3 from "@/assets/destimages/bhedaghatgallary3.webp";
-import gallery4 from "@/assets/destimages/bhedaghatgallary4.webp";
-import gallery5 from "@/assets/destimages/bhedaghatgallary5.webp";
-import gallery6 from "@/assets/destimages/bhedaghatgallary6.webp";
-import gallery7 from "@/assets/destimages/bhedaghatgallary7.webp";
-import gallery8 from "@/assets/destimages/bhedaghatgallary8.webp";
-
+import gallery1 from "@/assets/destimages/bhedaghatgallary1.jpeg";
+import gallery2 from "@/assets/destimages/bhedaghatgallary2.jpeg";
+import gallery3 from "@/assets/destimages/bhedaghatgallary3.jpeg";
+import gallery4 from "@/assets/destimages/bhedaghatgallary4.jpeg";
+import gallery5 from "@/assets/destimages/bhedaghatgallary5.jpeg";
+import gallery6 from "@/assets/destimages/bhedaghatgallary6.jpeg";
+import gallery7 from "@/assets/destimages/bhedaghatgallary7.jpeg";
+import gallery8 from "@/assets/destimages/bhedaghatgallary8.jpeg";
 const bhedaghat: DestinationContent = {
   overviewParagraphs: [
     "Bhedaghat is one of Madhya Pradesh's most spectacular natural wonders — a 25-kilometre stretch where the Narmada river carves its way through gleaming white marble cliffs that soar nearly 100 feet above the water.",
