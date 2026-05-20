@@ -152,6 +152,25 @@ export const getDestinationDetails = (id: string, name: string, image: string, c
 };
 
 export const getNearbyDestinations = (id: string, category: string[], limit = 4): NearbyPlace[] => {
+  // Per-destination override takes precedence
+  const override = getDestinationContent(id)?.nearbyDestinations;
+  if (override && override.length > 0) {
+    return override
+      .map((entry, i) => {
+        if (typeof entry !== "string") return entry;
+        const m = mapDestinations.find((d) => d.id === entry);
+        if (!m) return null;
+        return {
+          id: m.id,
+          name: m.name,
+          distance: `${40 + i * 35} km`,
+          image: m.image,
+        } as NearbyPlace;
+      })
+      .filter(Boolean)
+      .slice(0, limit) as NearbyPlace[];
+  }
+
   const others = mapDestinations.filter((d) => d.id !== id);
   // simple proximity: same category first, then others
   const sameCat = others.filter((d) => d.category.some((c) => category.includes(c)));
@@ -163,3 +182,7 @@ export const getNearbyDestinations = (id: string, category: string[], limit = 4)
     image: d.image,
   }));
 };
+
+/** Returns the `relatedPackageTags` declared in a destination's data file. */
+export const getRelatedPackageTagsForDestination = (id: string): string[] =>
+  getDestinationContent(id)?.relatedPackageTags ?? [];
