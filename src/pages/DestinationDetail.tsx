@@ -245,47 +245,19 @@ const DestinationDetail = () => {
           {/* Travel Info */}
           <TravelInfo info={details.travelInfo} />
 
-          {/* Packages */}
-          {destPackages.length > 0 && (
-            <motion.div
-              {...fade}
-              className="mt-16 md:mt-24 mb-16"
-            >
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-                Available Packages
-              </h2>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {destPackages.map((pkg) => (
-                  <Link
-                    key={pkg.id}
-                    to={`/package/${pkg.id}`}
-                    className="bg-card rounded-xl p-5 shadow-[var(--shadow-card)] hover-lift block"
-                  >
-                    <h3 className="font-display font-bold text-foreground mb-1">
-                      {pkg.name}
-                    </h3>
-
-                    <p className="text-sm text-muted-foreground mb-2">
-                      {pkg.duration}
-                    </p>
-
-                    <div className="flex items-end gap-2">
-                      <span className="text-lg font-bold text-primary">
-                        ₹{pkg.price.toLocaleString()}
-                      </span>
-
-                      <span className="text-sm text-muted-foreground line-through">
-                        ₹{pkg.originalPrice.toLocaleString()}
-                      </span>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </motion.div>
-          )}
-
         </section>
+
+        {/* Related Packages — auto-matched from the global packages store */}
+        {relatedPackages.length > 0 && (
+          <div className="container mx-auto px-4">
+            <RelatedPackagesStrip
+              packages={relatedPackages}
+              title={`Related Packages in ${dest.name}`}
+              subtitle="Hand-picked tours that include this destination"
+            />
+          </div>
+        )}
+
 
         {/* Nearby Destinations */}
         {nearby.length > 0 && (
