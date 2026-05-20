@@ -8,7 +8,9 @@ import {
   MessageSquare,
 } from "lucide-react";
 
-import { destinations, packages as allPackages } from "@/data/destinations";
+import { destinations } from "@/data/destinations";
+import { getRelatedPackagesForDestination } from "@/lib/relatedPackagesForDestination";
+import RelatedPackagesStrip from "@/components/RelatedPackagesStrip";
 import { mapDestinations } from "@/data/mapDestinations";
 import {
   getDestinationDetails,
