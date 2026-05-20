@@ -15,6 +15,7 @@ import { mapDestinations } from "@/data/mapDestinations";
 import {
   getDestinationDetails,
   getNearbyDestinations,
+  getRelatedPackageTagsForDestination,
 } from "@/data/destinationDetails";
 
 import Navbar from "@/components/Navbar";
@@ -106,7 +107,12 @@ const DestinationDetail = () => {
   }
 
   const relatedPackages = useMemo(
-    () => getRelatedPackagesForDestination(dest.id, dest.name),
+    () =>
+      getRelatedPackagesForDestination(
+        dest.id,
+        dest.name,
+        getRelatedPackageTagsForDestination(dest.id)
+      ),
     [dest]
   );
 
