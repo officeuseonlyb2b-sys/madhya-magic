@@ -6,13 +6,14 @@ import {
   MapPin,
 } from "lucide-react";
 
-import { experiencesData } from "@/data/experiencesData";
+import { experienceReelsData } from "@/data/experienceReelsData";
 import { useFilters } from "@/contexts/FilterContext";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
 import {
-  getExperienceCategories,
+  getReelItemCategories,
   matchesFilters,
 } from "@/lib/categoryMatch";
+
 
 // ============================================================
 // EXPERIENCE CARD
@@ -22,9 +23,10 @@ const ExperienceCard = ({
   exp,
   index,
 }: {
-  exp: typeof experiencesData[0];
+  exp: typeof experienceReelsData[0];
   index: number;
 }) => {
+
   const videoRef = useRef<HTMLVideoElement>(null);
 
   const [hovered, setHovered] = useState(false);
@@ -111,8 +113,9 @@ const ExperienceCard = ({
             }`}
           >
             <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
-              {exp.category}
+              {exp.tags[0] ?? ""}
             </span>
+
           </div>
         </div>
 
@@ -122,8 +125,9 @@ const ExperienceCard = ({
             <MapPin size={14} />
 
             <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
-              {exp.subtitle}
+              {exp.location}
             </span>
+
           </div>
         </div>
       </div>
@@ -146,12 +150,13 @@ const ExperiencesReelsSection = () => {
   // ============================================================
 
   const filteredExperiences = useMemo(() => {
-    if (isAll) return experiencesData;
+    if (isAll) return experienceReelsData;
 
-    return experiencesData.filter((e) =>
-      matchesFilters(getExperienceCategories(e), selectedFilters, isAll),
+    return experienceReelsData.filter((e) =>
+      matchesFilters(getReelItemCategories(e), selectedFilters, isAll),
     );
   }, [selectedFilters, isAll]);
+
 
   // ============================================================
   // TRIPLE DATA FOR PERFECT LOOP
