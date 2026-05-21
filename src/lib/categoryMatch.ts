@@ -8,10 +8,18 @@
 // ============================================================
 
 import type { MapCategory } from "@/data/mapDestinations";
-import type { ReelItem } from "@/data/reelsData";
-import type { ActivityReel } from "@/data/activityReelsData";
+import type { ReelItem as DestReelItem } from "@/data/reelsData";
+import type { ReelItem, ReelTag } from "@/data/reelTypes";
 import type { Experience } from "@/data/experiencesData";
 import type { PackageData } from "@/data/packagesData";
+
+const TAG_TO_CAT: Record<ReelTag, MapCategory> = {
+  nature: "Nature",
+  heritage: "Heritage",
+  wildlife: "Wildlife",
+  spiritual: "Spiritual",
+};
+
 
 const ALL_CATS: MapCategory[] = ["Nature", "Heritage", "Wildlife", "Spiritual"];
 
