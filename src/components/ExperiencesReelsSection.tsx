@@ -3,8 +3,6 @@ import { useMemo, useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  ChevronLeft,
-  ChevronRight,
   MapPin,
 } from "lucide-react";
 
@@ -16,8 +14,10 @@ import {
   matchesFilters,
 } from "@/lib/categoryMatch";
 
-// ----- EXPERIENCE CARD -----
-// ----- EXPERIENCE CARD -----
+// ============================================================
+// EXPERIENCE CARD
+// ============================================================
+
 const ExperienceCard = ({
   exp,
   index,
@@ -31,12 +31,17 @@ const ExperienceCard = ({
 
   useEffect(() => {
     const v = videoRef.current;
+
     if (!v) return;
+
     if (hovered) {
       v.play().catch(() => {});
     } else {
       v.pause();
-      try { v.currentTime = 0; } catch {}
+
+      try {
+        v.currentTime = 0;
+      } catch {}
     }
   }, [hovered]);
 
@@ -78,17 +83,33 @@ const ExperienceCard = ({
           )}
 
           {/* OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 pointer-events-none" />
+          <div
+            className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 transition-opacity duration-500 pointer-events-none ${
+              hovered ? "opacity-0" : "opacity-100"
+            }`}
+          />
 
           {/* TOP TITLE */}
-          <div className="absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full pointer-events-none">
+          <div
+            className={`absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full transition-all duration-500 pointer-events-none ${
+              hovered
+                ? "opacity-0 -translate-y-5"
+                : "opacity-100 translate-y-0"
+            }`}
+          >
             <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug font-display">
               {exp.title}
             </h3>
           </div>
 
           {/* CATEGORY */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-center pointer-events-none">
+          <div
+            className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-center transition-all duration-500 pointer-events-none ${
+              hovered
+                ? "opacity-0 translate-y-5"
+                : "opacity-100 translate-y-0"
+            }`}
+          >
             <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
               {exp.category}
             </span>
@@ -110,26 +131,58 @@ const ExperienceCard = ({
   );
 };
 
-// ----- MAIN SECTION -----
+// ============================================================
+// MAIN SECTION
+// ============================================================
+
 const ExperiencesReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
 
   const { ref, onMouseEnter, onMouseLeave } =
     useAutoScroll<HTMLDivElement>(50);
 
+  // ============================================================
   // FILTER DATA
+  // ============================================================
+
   const filteredExperiences = useMemo(() => {
     if (isAll) return experiencesData;
+
     return experiencesData.filter((e) =>
       matchesFilters(getExperienceCategories(e), selectedFilters, isAll),
     );
   }, [selectedFilters, isAll]);
 
-  // DUPLICATE FOR INFINITE LOOP
+  // ============================================================
+  // TRIPLE DATA FOR PERFECT LOOP
+  // ============================================================
+
   const sliderData = useMemo(
-    () => [...filteredExperiences, ...filteredExperiences],
+    () => [
+      ...filteredExperiences,
+      ...filteredExperiences,
+      ...filteredExperiences,
+    ],
     [filteredExperiences]
   );
+
+  // ============================================================
+  // START FROM CENTER
+  // ============================================================
+
+  useEffect(() => {
+    const el = ref.current;
+
+    if (!el || filteredExperiences.length === 0) return;
+
+    requestAnimationFrame(() => {
+      el.scrollLeft = el.scrollWidth / 3;
+    });
+  }, [filteredExperiences]);
+
+  // ============================================================
+  // JSX
+  // ============================================================
 
   return (
     <section className="relative py-10 sm:py-12 lg:py-14 bg-white overflow-hidden">
@@ -180,18 +233,6 @@ const ExperiencesReelsSection = () => {
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </Link>
-
-            {/* ARROWS */}
-            {/* <div className="flex items-center justify-center lg:justify-start gap-4 mt-10 text-[#6e5548]">
-
-              <button className="hover:scale-110 transition">
-                <ChevronLeft size={34} strokeWidth={1.5} />
-              </button>
-
-              <button className="hover:scale-110 transition">
-                <ChevronRight size={34} strokeWidth={1.5} />
-              </button>
-            </div> */}
           </div>
 
           {/* RIGHT SLIDER */}
@@ -204,6 +245,23 @@ const ExperiencesReelsSection = () => {
               ref={ref}
               onMouseEnter={onMouseEnter}
               onMouseLeave={onMouseLeave}
+              onScroll={() => {
+                const el = ref.current;
+
+                if (!el) return;
+
+                const oneSetWidth = el.scrollWidth / 3;
+
+                // END → CENTER
+                if (el.scrollLeft >= oneSetWidth * 2) {
+                  el.scrollLeft = oneSetWidth;
+                }
+
+                // START → CENTER
+                if (el.scrollLeft <= 0) {
+                  el.scrollLeft = oneSetWidth;
+                }
+              }}
               className="reel-scroller overflow-x-auto no-scrollbar py-4"
             >
               <div className="reel-track flex gap-5 w-max items-center">

@@ -217,43 +217,41 @@ const TestimonialsSection = () => {
                 </div>
 
                 {/* IMAGE */}
-<div className="relative bg-white">
+                <div className="relative bg-white">
 
-  <img
-    src={item.image}
-    alt={item.name}
-    className={`
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className={`
       w-full
       h-full
-      ${
-        item.type === "Company"
-          ? "object-contain p-4 bg-white"
-          : "object-cover"
-      }
+      ${item.type === "Company"
+                        ? "object-contain p-4 bg-white"
+                        : "object-cover"
+                      }
     `}
-  />
+                  />
 
-  <div
-    className={`
+                  <div
+                    className={`
       absolute inset-0
-      ${
-        item.type === "Company"
-          ? "bg-gradient-to-t from-black/10 to-transparent"
-          : "bg-gradient-to-t from-black/30 to-transparent"
-      }
+      ${item.type === "Company"
+                        ? "bg-gradient-to-t from-black/10 to-transparent"
+                        : "bg-gradient-to-t from-black/30 to-transparent"
+                      }
     `}
-  />
+                  />
 
-  {/* BADGE */}
-  <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center gap-1">
-    <BadgeCheck size={12} className="text-[#C89B5E]" />
+                  {/* BADGE */}
+                  <div className="absolute bottom-4 left-4 px-3 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center gap-1">
+                    <BadgeCheck size={12} className="text-[#C89B5E]" />
 
-    <p className="text-[11px] font-semibold text-[#C89B5E]">
-      {item.type} Verified
-    </p>
-  </div>
+                    <p className="text-[11px] font-semibold text-[#C89B5E]">
+                      {item.type} Verified
+                    </p>
+                  </div>
 
-</div>
+                </div>
 
               </div>
             </motion.div>
@@ -274,11 +272,10 @@ const TestimonialsSection = () => {
                 <button
                   key={i}
                   onClick={() => setCurrent(i)}
-                  className={`rounded-full transition-all ${
-                    current === i
+                  className={`rounded-full transition-all ${current === i
                       ? "w-8 h-2 bg-[#C89B5E]"
                       : "w-2 h-2 bg-gray-300"
-                  }`}
+                    }`}
                 />
               ))}
             </div>

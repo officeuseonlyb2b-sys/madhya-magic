@@ -14,25 +14,27 @@ interface Props {
   categorySlug: string;
 }
 
+const AUTO_SLIDE_DURATION = 7000;
+
 const DestinationPillars = ({ destinations }: Props) => {
   const [activeIdx, setActiveIdx] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
   const len = destinations.length;
 
-  const progressRef = useRef<NodeJS.Timeout | null>(null);
+  const autoSlideRef = useRef<NodeJS.Timeout | null>(null);
 
   /* ================= AUTO MAIN SLIDER ================= */
   useEffect(() => {
     if (len <= 1 || isPaused) return;
 
-    progressRef.current = setInterval(() => {
+    autoSlideRef.current = setInterval(() => {
       setActiveIdx((prev) => (prev + 1) % len);
-    }, 7000);
+    }, AUTO_SLIDE_DURATION);
 
     return () => {
-      if (progressRef.current) {
-        clearInterval(progressRef.current);
+      if (autoSlideRef.current) {
+        clearInterval(autoSlideRef.current);
       }
     };
   }, [len, isPaused]);
@@ -66,7 +68,7 @@ const DestinationPillars = ({ destinations }: Props) => {
                 key={activeItem.id}
                 initial={{
                   opacity: 0,
-                  scale: 1.04,
+                  scale: 1.02,
                 }}
                 animate={{
                   opacity: 1,
@@ -74,10 +76,10 @@ const DestinationPillars = ({ destinations }: Props) => {
                 }}
                 exit={{
                   opacity: 0,
-                  scale: 1.02,
+                  scale: 1.01,
                 }}
                 transition={{
-                  duration: 1.2,
+                  duration: 0.9,
                   ease: [0.22, 1, 0.36, 1],
                 }}
                 className="absolute inset-0"
@@ -85,8 +87,10 @@ const DestinationPillars = ({ destinations }: Props) => {
                 <img
                   src={activeItem.image}
                   alt={activeItem.name}
-                  className="w-full h-full object-cover will-change-transform"
-                  loading="lazy"
+                  className="w-full h-full object-cover transform-gpu will-change-transform"
+                  loading="eager"
+                  decoding="async"
+                  draggable={false}
                 />
 
                 {/* OVERLAY */}
@@ -98,15 +102,13 @@ const DestinationPillars = ({ destinations }: Props) => {
             <div className="absolute inset-0 z-20 flex items-end">
               <div className="p-6 md:p-10 lg:p-14 max-w-3xl">
 
-                
-
                 {/* TITLE */}
                 <motion.h2
                   key={activeItem.name}
-                  initial={{ opacity: 0, y: 25 }}
+                  initial={{ opacity: 0, y: 18 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.8,
+                    duration: 0.7,
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   className="text-white text-4xl md:text-6xl lg:text-7xl leading-[0.95] tracking-[-3px] font-light font-display"
@@ -117,10 +119,10 @@ const DestinationPillars = ({ destinations }: Props) => {
                 {/* DESCRIPTION */}
                 <motion.p
                   key={activeItem.description}
-                  initial={{ opacity: 0, y: 18 }}
+                  initial={{ opacity: 0, y: 14 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{
-                    duration: 0.9,
+                    duration: 0.8,
                     ease: [0.22, 1, 0.36, 1],
                   }}
                   className="mt-6 text-white/75 text-[15px] md:text-[16px] leading-8 max-w-2xl"
@@ -130,15 +132,14 @@ const DestinationPillars = ({ destinations }: Props) => {
 
                 {/* BUTTON */}
                 <motion.div
-                  initial={{ opacity: 0, y: 14 }}
+                  initial={{ opacity: 0, y: 12 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 0.9 }}
                 >
                   <Link
                     to={`/destination/${activeItem.id}`}
                     className="inline-flex items-center gap-4 mt-8 group"
                   >
-
                     <span className="uppercase tracking-[0.24em] text-[12px] text-white font-medium">
                       Explore Destination
                     </span>
@@ -156,14 +157,14 @@ const DestinationPillars = ({ destinations }: Props) => {
 
               <button
                 onClick={prevSlide}
-                className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-500"
+                className="w-12 h-12 rounded-full bg-white/10 backdrop-blur-xl border border-white/15 flex items-center justify-center text-white hover:bg-white hover:text-black transition-all duration-500 active:scale-95"
               >
                 <ChevronLeft size={18} />
               </button>
 
               <button
                 onClick={nextSlide}
-                className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 transition-all duration-500 shadow-xl"
+                className="w-12 h-12 rounded-full bg-white text-black flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-500 shadow-xl"
               >
                 <ChevronRight size={18} />
               </button>
@@ -177,7 +178,7 @@ const DestinationPillars = ({ destinations }: Props) => {
                 initial={{ width: "0%" }}
                 animate={{ width: "100%" }}
                 transition={{
-                  duration: 7,
+                  duration: AUTO_SLIDE_DURATION / 1000,
                   ease: "linear",
                 }}
                 className="h-full bg-white"
@@ -185,102 +186,142 @@ const DestinationPillars = ({ destinations }: Props) => {
             </div>
           </div>
 
-          {/* ================= THUMBNAILS ================= */}
-          <div className="relative mt-6 overflow-hidden rounded-[26px]">
+  {/* ================= THUMBNAILS ================= */}
+<div className="relative mt-6">
 
-            {/* TRACK */}
-            <motion.div
-              animate={
-                isPaused
-                  ? {}
-                  : {
-                      x: ["0%", "-50%"],
-                    }
+  {/* SCROLLABLE WRAPPER */}
+  <div
+    className="
+      overflow-x-auto
+      overflow-y-hidden
+      no-scrollbar
+      scroll-smooth
+      cursor-grab
+      active:cursor-grabbing
+      [scrollbar-width:none]
+      [-ms-overflow-style:none]
+    "
+    onMouseEnter={() => setIsPaused(true)}
+    onMouseLeave={() => setIsPaused(false)}
+  >
+    {/* TRACK */}
+    <motion.div
+      animate={
+        isPaused
+          ? {}
+          : {
+              x: [0, -1200],
+            }
+      }
+      transition={{
+        repeat: Infinity,
+        repeatType: "loop",
+        duration: 38,
+        ease: "linear",
+      }}
+      className="flex gap-4 w-max py-2 px-2"
+      style={{
+        willChange: "transform",
+        transform: "translateZ(0)",
+        backfaceVisibility: "hidden",
+      }}
+    >
+      {[...destinations, ...destinations].map(
+        (item, index) => {
+          const originalIndex =
+            index % destinations.length;
+
+          const isActive =
+            originalIndex === activeIdx;
+
+          return (
+            <motion.button
+              key={`${item.id}-${index}`}
+              onClick={() =>
+                setActiveIdx(originalIndex)
               }
-              transition={{
-                repeat: Infinity,
-                repeatType: "loop",
-                duration: 60,
-                ease: "linear",
+              whileHover={{
+                y: -2,
               }}
-              className="flex gap-4 w-max py-2"
-            >
-              {[...destinations, ...destinations].map(
-                (item, index) => {
-                  const originalIndex =
-                    index % destinations.length;
-
-                  const isActive =
-                    originalIndex === activeIdx;
-
-                  return (
-                    <motion.button
-                      key={`${item.id}-${index}`}
-                      onClick={() =>
-                        setActiveIdx(originalIndex)
-                      }
-                      onMouseEnter={() =>
-                        setIsPaused(true)
-                      }
-                      onMouseLeave={() =>
-                        setIsPaused(false)
-                      }
-                      whileHover={{
-                        y: -2,
-                      }}
-                      transition={{
-                        duration: 0.35,
-                      }}
-                      className={`group relative shrink-0 overflow-hidden rounded-[22px] transition-all duration-700 ${
-                        isActive
-                          ? "w-[170px] md:w-[210px] h-[105px] ring-1 ring-black/10 shadow-lg"
-                          : "w-[135px] md:w-[165px] h-[105px] opacity-80"
-                      }`}
-                    >
-
-                      {/* IMAGE */}
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        loading="lazy"
-                        className="w-full h-full object-cover transition-transform duration-[2500ms] ease-out group-hover:scale-105"
-                      />
-
-                      {/* OVERLAY */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
-
-                      {/* ACTIVE TAG */}
-                      {isActive && (
-                        <div className="absolute top-3 right-3 bg-white/95 text-black text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full font-semibold shadow-lg">
-                          Active
-                        </div>
-                      )}
-
-                      {/* TITLE */}
-                      <div className="absolute bottom-3 left-3 right-3">
-
-                        <h4
-                          className={`text-white leading-tight font-display ${
-                            isActive
-                              ? "text-[15px] md:text-[16px] font-semibold"
-                              : "text-[13px] md:text-[14px] font-medium"
-                          }`}
-                        >
-                          {item.name}
-                        </h4>
-                      </div>
-                    </motion.button>
-                  );
+              whileTap={{
+                scale: 0.98,
+              }}
+              transition={{
+                duration: 0.25,
+                ease: "easeOut",
+              }}
+              className={`
+                group
+                relative
+                shrink-0
+                overflow-hidden
+                rounded-[22px]
+                transition-all
+                duration-500
+                transform-gpu
+                ${
+                  isActive
+                    ? "w-[170px] md:w-[210px] h-[105px] ring-1 ring-black/10 shadow-lg"
+                    : "w-[135px] md:w-[165px] h-[105px] opacity-80"
                 }
+              `}
+            >
+
+              {/* IMAGE */}
+              <img
+                src={item.image}
+                alt={item.name}
+                loading="lazy"
+                decoding="async"
+                draggable={false}
+                className="
+                  w-full
+                  h-full
+                  object-cover
+                  transform-gpu
+                  transition-transform
+                  duration-[1800ms]
+                  ease-out
+                  group-hover:scale-[1.04]
+                "
+              />
+
+              {/* OVERLAY */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+
+              {/* ACTIVE TAG */}
+              {isActive && (
+                <div className="absolute top-3 right-3 bg-white/95 text-black text-[10px] uppercase tracking-[0.18em] px-3 py-1 rounded-full font-semibold shadow-lg">
+                  Active
+                </div>
               )}
-            </motion.div>
 
-            {/* LEFT FADE */}
-            <div className="absolute top-0 left-0 w-28 h-full bg-gradient-to-r from-[#f7f6f3] to-transparent pointer-events-none z-20" />
+              {/* TITLE */}
+              <div className="absolute bottom-3 left-3 right-3">
 
-            {/* RIGHT FADE */}
-            <div className="absolute top-0 right-0 w-28 h-full bg-gradient-to-l from-[#f7f6f3] to-transparent pointer-events-none z-20" />
-          </div>
+                <h4
+                  className={`text-white leading-tight font-display ${
+                    isActive
+                      ? "text-[15px] md:text-[16px] font-semibold"
+                      : "text-[13px] md:text-[14px] font-medium"
+                  }`}
+                >
+                  {item.name}
+                </h4>
+              </div>
+            </motion.button>
+          );
+        }
+      )}
+    </motion.div>
+  </div>
+
+  {/* LEFT FADE */}
+  <div className="absolute top-0 left-0 w-28 h-full bg-gradient-to-r from-[#f7f6f3] to-transparent pointer-events-none z-20" />
+
+  {/* RIGHT FADE */}
+  <div className="absolute top-0 right-0 w-28 h-full bg-gradient-to-l from-[#f7f6f3] to-transparent pointer-events-none z-20" />
+</div>
         </div>
       </div>
     </section>
