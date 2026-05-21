@@ -13,13 +13,13 @@ import { ArrowRight, MapPin } from "lucide-react";
 
 import { useFilters } from "@/contexts/FilterContext";
 import { activityReelsData } from "@/data/activityReelsData";
-import { experiencesData } from "@/data/experiencesData";
+import { experienceReelsData } from "@/data/experienceReelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
 import {
-  getActivityReelCategories,
-  getExperienceCategories,
+  getReelItemCategories,
   matchesFilters,
 } from "@/lib/categoryMatch";
+
 
 interface UnifiedReel {
   id: string;
@@ -191,28 +191,29 @@ const CategoryReelsExperiences = () => {
   const merged: UnifiedReel[] = useMemo(() => {
     const acts = activityReelsData
       .filter((r) =>
-        matchesFilters(getActivityReelCategories(r), selectedFilters, isAll),
+        matchesFilters(getReelItemCategories(r), selectedFilters, isAll),
       )
       .map<UnifiedReel>((r) => ({
         id: `act-${r.id}`,
         title: r.title,
         subtitle: r.location,
         video: r.video,
-        category: r.category,
+        category: r.tags[0] ?? "",
         link: r.link,
         source: "activity",
       }));
 
-    const exps = experiencesData
+    const exps = experienceReelsData
       .filter((e) =>
-        matchesFilters(getExperienceCategories(e), selectedFilters, isAll),
+        matchesFilters(getReelItemCategories(e), selectedFilters, isAll),
       )
       .map<UnifiedReel>((e) => ({
         id: `exp-${e.id}`,
         title: e.title,
-        subtitle: e.subtitle,
+        subtitle: e.location,
         video: e.video,
-        category: e.category,
+        category: e.tags[0] ?? "",
+        link: e.link,
         source: "experience",
       }));
 
@@ -228,6 +229,7 @@ const CategoryReelsExperiences = () => {
 
     return out;
   }, [selectedFilters, isAll]);
+
 
   // ============================================================
   // TRIPLE DATA FOR PERFECT LOOP

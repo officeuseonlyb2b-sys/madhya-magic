@@ -134,8 +134,9 @@ const ReelCard = ({
               }`}
             >
               <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
-                {reel.category}
+                {reel.tags[0] ?? ""}
               </span>
+
             </div>
           </div>
 
