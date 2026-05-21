@@ -14,7 +14,9 @@ import {
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+
 import logo from "@/assets/footerlogo.png";
+import footerBackground from "@/assets/footerbackground.png";
 
 // FOOTER IMAGES
 import footer1 from "@/assets/footer/footer1.webp";
@@ -88,6 +90,18 @@ const Footer = () => {
 
   return (
     <footer className="relative overflow-hidden bg-[#030814] text-white pt-16 pb-5">
+
+      {/* FOOTER BACKGROUND IMAGE */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-[0.16] scale-[1.03]"
+        style={{
+          backgroundImage: `url(${footerBackground})`,
+        }}
+      />
+
+      {/* DARK OVERLAY */}
+      <div className="absolute inset-0 bg-[#030814]/88" />
+
       {/* PREMIUM BACKGROUND */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(234,179,8,0.08),transparent_30%),radial-gradient(circle_at_bottom_left,rgba(234,179,8,0.06),transparent_25%)]" />
 
@@ -101,251 +115,251 @@ const Footer = () => {
       />
 
       {/* GLOW EFFECTS */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-amber-500/10 blur-[140px] rounded-full" />
-      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-yellow-500/10 blur-[120px] rounded-full" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1200px] h-[520px] bg-amber-500/10 blur-[150px] rounded-full" />
+
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[650px] h-[420px] bg-yellow-500/10 blur-[130px] rounded-full" />
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
+
         {/* MAIN FOOTER */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-10 lg:gap-x-6 xl:gap-x-8 pb-10 border-b border-white/10 items-start">
 
           {/* BRAND */}
-<motion.div
-  initial={{ opacity: 0, y: 20 }}
-  whileInView={{ opacity: 1, y: 0 }}
-  viewport={{ once: true }}
-  transition={{ duration: 0.5 }}
-  className="md:col-span-3 lg:pr-6 lg:border-r border-white/10"
->
-  <div className="flex flex-col items-start text-left max-w-[270px] ml-0">
-
-    {/* LOGO */}
-    <img
-      src={logo}
-      alt="Enchanting MP"
-      className="w-[180px] object-contain"
-    />
-
-    {/* DIVIDER */}
-    <div className="relative w-[160px] h-[1px] bg-amber-400/30 mt-5">
-      <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-amber-400 text-[10px]">
-        ✦
-      </span>
-    </div>
-
-    {/* DESCRIPTION */}
-<p className="text-gray-300 text-[15px] leading-[1.9] mt-5 max-w-[290px] text-center">
-  Your gateway to explore the Heart
-  <br />
-  of incredible India..
-</p>
-
-    {/* BADGE */}
-    <div className="flex items-center gap-2 mt-6">
-      <Award size={15} className="text-amber-400 flex-shrink-0" />
-
-      <span className="text-[13px] text-gray-300">
-        Recognized by MP Tourism
-      </span>
-    </div>
-
-    {/* SOCIAL ICONS */}
-    <div className="flex items-center gap-4 mt-7">
-      {socialIcons.map((social) => (
-        <motion.a
-          key={social.label}
-          href={social.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          whileHover={{ y: -2 }}
-          className="w-11 h-11 rounded-full border border-amber-400/25 bg-transparent flex items-center justify-center text-white hover:border-amber-400 hover:text-amber-300 transition-all duration-300"
-        >
-          <social.Icon size={17} />
-        </motion.a>
-      ))}
-    </div>
-  </div>
-</motion.div>
-{/* DESTINATIONS */}
-<div className="md:col-span-2 min-w-0">
-
-  {/* HEADING */}
-  <div className="mb-7">
-    <h3 className="relative text-[12.5px] font-semibold tracking-[1.8px] uppercase text-amber-400 pb-3 border-b border-white/10 flex items-center gap-2">
-
-      <MapPin
-        size={14}
-        className="text-amber-400 flex-shrink-0"
-      />
-
-      Destinations
-
-      <span className="absolute left-0 -bottom-[1px] w-[30px] h-[2px] bg-amber-400" />
-    </h3>
-  </div>
-
-  <ul className="space-y-3.5">
-    {footerLinks.destinations.slice(0, 5).map((dest, idx) => (
-      <li key={idx}>
-        <Link
-          to={dest.path}
-          className="group flex items-center gap-2 text-[14px] text-gray-300 hover:text-amber-300 transition-all duration-500"
-        >
-          <ChevronRight
-            size={12}
-            className="text-amber-400 flex-shrink-0 group-hover:translate-x-1 transition-all duration-500"
-          />
-
-          <span>{dest.name}</span>
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
-
-{/* EXPLORE */}
-<div className="md:col-span-2 min-w-0">
-
-  {/* HEADING */}
-  <div className="mb-7">
-    <h3 className="relative text-[12.5px] font-semibold tracking-[1.8px] uppercase text-amber-400 pb-3 border-b border-white/10 flex items-center gap-2">
-
-      <Compass
-        size={14}
-        className="text-amber-400 flex-shrink-0"
-      />
-
-      Explore
-
-      <span className="absolute left-0 -bottom-[1px] w-[30px] h-[2px] bg-amber-400" />
-    </h3>
-  </div>
-
-  <ul className="space-y-3.5">
-    {footerLinks.quickLinks.map((link, idx) => (
-      <li key={idx}>
-        {link.href.startsWith("/#") ? (
-          <a
-            href={link.href}
-            className="group flex items-center gap-2 text-[14px] text-gray-300 hover:text-amber-300 transition-all duration-500"
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="md:col-span-3 lg:pr-6 lg:border-r border-white/10 flex justify-center"
           >
-            <ChevronRight
-              size={12}
-              className="text-amber-400 flex-shrink-0 group-hover:translate-x-1 transition-all duration-500"
-            />
+            <div className="flex flex-col items-center text-center max-w-[340px] mx-auto lg:translate-x-2">
 
-            <span>{link.name}</span>
-          </a>
-        ) : (
-          <Link
-            to={link.href}
-            className="group flex items-center gap-2 text-[14px] text-gray-300 hover:text-amber-300 transition-all duration-500"
-          >
-            <ChevronRight
-              size={12}
-              className="text-amber-400 flex-shrink-0 group-hover:translate-x-1 transition-all duration-500"
-            />
+              {/* LOGO */}
+              <div className="relative -mt-6 mb-1">
+                <img
+                  src={logo}
+                  alt="Enchanting MP"
+                  className="w-[230px] lg:w-[250px] object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
+                />
+              </div>
 
-            <span>{link.name}</span>
-          </Link>
-        )}
-      </li>
-    ))}
-  </ul>
-</div>
+              {/* DIVIDER */}
+              <div className="relative w-[220px] h-[1px] bg-amber-400/30 mt-3">
+                <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-amber-400 text-[10px]">
+                  ✦
+                </span>
+              </div>
 
-{/* LEGAL */}
-<div className="md:col-span-2 min-w-0">
+              {/* DESCRIPTION */}
+              <p className="text-gray-300 text-[15px] leading-[1.95] mt-5 max-w-[310px] text-center">
+                Your gateway to explore the Heart
+                <br />
+                of incredible India..
+              </p>
 
-  {/* HEADING */}
-  <div className="mb-7">
-    <h3 className="relative text-[12.5px] font-semibold tracking-[1.8px] uppercase text-amber-400 pb-3 border-b border-white/10 flex items-center gap-2">
+              {/* BADGE */}
+              <div className="flex items-center justify-center gap-2 mt-6">
+                <Award size={15} className="text-amber-400 flex-shrink-0" />
 
-      <Shield
-        size={14}
-        className="text-amber-400 flex-shrink-0"
-      />
+                <span className="text-[13px] text-gray-300">
+                  Recognized by MP Tourism
+                </span>
+              </div>
 
-      Legal
+              {/* SOCIAL ICONS */}
+              <div className="flex items-center justify-center gap-4 mt-7">
+                {socialIcons.map((social) => (
+                  <motion.a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ y: -2 }}
+                    className="w-11 h-11 rounded-full border border-amber-400/25 bg-transparent flex items-center justify-center text-white hover:border-amber-400 hover:text-amber-300 transition-all duration-300"
+                  >
+                    <social.Icon size={17} />
+                  </motion.a>
+                ))}
+              </div>
+            </div>
+          </motion.div>
 
-      <span className="absolute left-0 -bottom-[1px] w-[30px] h-[2px] bg-amber-400" />
-    </h3>
-  </div>
+          {/* DESTINATIONS */}
+          <div className="md:col-span-2 min-w-0">
 
-  <ul className="space-y-3.5">
-    {footerLinks.legalLinks.map((link, idx) => (
-      <li key={idx}>
-        <Link
-          to={link.href}
-          className="group flex items-start gap-2 text-[14px] text-gray-300 hover:text-amber-300 transition-all duration-500"
-        >
-          <ChevronRight
-            size={12}
-            className="text-amber-400 flex-shrink-0 mt-[4px] group-hover:translate-x-1 transition-all duration-500"
-          />
+            <div className="mb-7">
+              <h3 className="relative text-[12.5px] font-semibold tracking-[1.8px] uppercase text-amber-400 pb-3 border-b border-white/10 flex items-center gap-2">
 
-          <span className="leading-[1.6]">
-            {link.name}
-          </span>
-        </Link>
-      </li>
-    ))}
-  </ul>
-</div>
+                <MapPin
+                  size={14}
+                  className="text-amber-400 flex-shrink-0"
+                />
 
-         {/* CONTACT */}
-<div className="md:col-span-3 lg:border-l border-white/10 lg:pl-7">
+                Destinations
 
-  {/* HEADING */}
-  <div className="mb-7">
-    <h3 className="relative text-[12.5px] font-semibold tracking-[1.8px] uppercase text-amber-400 pb-3 border-b border-white/10">
-      Contact Us
+                <span className="absolute left-0 -bottom-[1px] w-[30px] h-[2px] bg-amber-400" />
+              </h3>
+            </div>
 
-      <span className="absolute left-0 -bottom-[1px] w-[30px] h-[2px] bg-amber-400" />
-    </h3>
-  </div>
+            <ul className="space-y-3.5">
+              {footerLinks.destinations.slice(0, 5).map((dest, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={dest.path}
+                    className="group flex items-center gap-2 text-[14px] text-gray-300 hover:text-amber-300 transition-all duration-500"
+                  >
+                    <ChevronRight
+                      size={12}
+                      className="text-amber-400 flex-shrink-0 group-hover:translate-x-1 transition-all duration-500"
+                    />
 
-  {/* CONTACT ITEMS */}
-  <div className="space-y-5">
+                    <span>{dest.name}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-    {/* PHONE */}
-    <div className="flex items-start gap-3">
-      <div className="w-[34px] h-[34px] rounded-[8px] flex-shrink-0 bg-amber-400/10 border border-amber-400/20 flex items-center justify-center mt-[2px]">
-        <Phone size={14} className="text-amber-400" />
-      </div>
+          {/* EXPLORE */}
+          <div className="md:col-span-2 min-w-0">
 
-      <div>
-        <div className="text-[10.5px] uppercase tracking-[0.8px] text-white/50 mb-1">
-          Phone
-        </div>
+            <div className="mb-7">
+              <h3 className="relative text-[12.5px] font-semibold tracking-[1.8px] uppercase text-amber-400 pb-3 border-b border-white/10 flex items-center gap-2">
 
-        <a
-          href="tel:+919109114934"
-          className="text-[13.5px] text-white/80 leading-[1.55] hover:text-amber-400 transition-colors duration-300"
-        >
-          +91 9109114934
-        </a>
-      </div>
-    </div>
+                <Compass
+                  size={14}
+                  className="text-amber-400 flex-shrink-0"
+                />
 
-    {/* EMAIL */}
-    <div className="flex items-start gap-3">
-      <div className="w-[34px] h-[34px] rounded-[8px] flex-shrink-0 bg-amber-400/10 border border-amber-400/20 flex items-center justify-center mt-[2px]">
-        <Mail size={14} className="text-amber-400" />
-      </div>
+                Explore
 
-      <div>
-        <div className="text-[10.5px] uppercase tracking-[0.8px] text-white/50 mb-1">
-          Email
-        </div>
+                <span className="absolute left-0 -bottom-[1px] w-[30px] h-[2px] bg-amber-400" />
+              </h3>
+            </div>
 
-        <a
-          href="mailto:info@enchantingmp.com"
-          className="text-[13.5px] text-white/80 leading-[1.55] hover:text-amber-400 transition-colors duration-300 break-all"
-        >
-          info@enchantingmp.com
-        </a>
-      </div>
-    </div>
+            <ul className="space-y-3.5">
+              {footerLinks.quickLinks.map((link, idx) => (
+                <li key={idx}>
+                  {link.href.startsWith("/#") ? (
+                    <a
+                      href={link.href}
+                      className="group flex items-center gap-2 text-[14px] text-gray-300 hover:text-amber-300 transition-all duration-500"
+                    >
+                      <ChevronRight
+                        size={12}
+                        className="text-amber-400 flex-shrink-0 group-hover:translate-x-1 transition-all duration-500"
+                      />
+
+                      <span>{link.name}</span>
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.href}
+                      className="group flex items-center gap-2 text-[14px] text-gray-300 hover:text-amber-300 transition-all duration-500"
+                    >
+                      <ChevronRight
+                        size={12}
+                        className="text-amber-400 flex-shrink-0 group-hover:translate-x-1 transition-all duration-500"
+                      />
+
+                      <span>{link.name}</span>
+                    </Link>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* LEGAL */}
+          <div className="md:col-span-2 min-w-0">
+
+            <div className="mb-7">
+              <h3 className="relative text-[12.5px] font-semibold tracking-[1.8px] uppercase text-amber-400 pb-3 border-b border-white/10 flex items-center gap-2">
+
+                <Shield
+                  size={14}
+                  className="text-amber-400 flex-shrink-0"
+                />
+
+                Legal
+
+                <span className="absolute left-0 -bottom-[1px] w-[30px] h-[2px] bg-amber-400" />
+              </h3>
+            </div>
+
+            <ul className="space-y-3.5">
+              {footerLinks.legalLinks.map((link, idx) => (
+                <li key={idx}>
+                  <Link
+                    to={link.href}
+                    className="group flex items-start gap-2 text-[14px] text-gray-300 hover:text-amber-300 transition-all duration-500"
+                  >
+                    <ChevronRight
+                      size={12}
+                      className="text-amber-400 flex-shrink-0 mt-[4px] group-hover:translate-x-1 transition-all duration-500"
+                    />
+
+                    <span className="leading-[1.6]">
+                      {link.name}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CONTACT */}
+          <div className="md:col-span-3 lg:border-l border-white/10 lg:pl-7">
+
+            <div className="mb-7">
+              <h3 className="relative text-[12.5px] font-semibold tracking-[1.8px] uppercase text-amber-400 pb-3 border-b border-white/10">
+                Contact Us
+
+                <span className="absolute left-0 -bottom-[1px] w-[30px] h-[2px] bg-amber-400" />
+              </h3>
+            </div>
+
+            <div className="space-y-5">
+
+              {/* PHONE */}
+              <div className="flex items-start gap-3">
+                <div className="w-[34px] h-[34px] rounded-[8px] flex-shrink-0 bg-amber-400/10 border border-amber-400/20 flex items-center justify-center mt-[2px]">
+                  <Phone size={14} className="text-amber-400" />
+                </div>
+
+                <div>
+                  <div className="text-[10.5px] uppercase tracking-[0.8px] text-white/50 mb-1">
+                    Phone
+                  </div>
+
+                  <a
+                    href="tel:+919109114934"
+                    className="text-[13.5px] text-white/80 leading-[1.55] hover:text-amber-400 transition-colors duration-300"
+                  >
+                    +91 9109114934
+                  </a>
+                </div>
+              </div>
+
+              {/* EMAIL */}
+              <div className="flex items-start gap-3">
+                <div className="w-[34px] h-[34px] rounded-[8px] flex-shrink-0 bg-amber-400/10 border border-amber-400/20 flex items-center justify-center mt-[2px]">
+                  <Mail size={14} className="text-amber-400" />
+                </div>
+
+                <div>
+                  <div className="text-[10.5px] uppercase tracking-[0.8px] text-white/50 mb-1">
+                    Email
+                  </div>
+
+                  <a
+                    href="mailto:info@enchantingmp.com"
+                    className="text-[13.5px] text-white/80 leading-[1.55] hover:text-amber-400 transition-colors duration-300 break-all"
+                  >
+                    info@enchantingmp.com
+                  </a>
+                </div>
+              </div>
 
     {/* ADDRESS */}
     <div className="flex items-start gap-3">
@@ -389,7 +403,7 @@ const Footer = () => {
 </div>
 
 {/* INSTAGRAM SECTION */}
-<div className="mt-8 border border-white/10 rounded-[28px] px-5 py-4 lg:px-6 lg:py-5 bg-[#08111f] relative overflow-hidden">
+<div className="mt-8 border border-white/10 rounded-[28px] px-5 py-4 lg:px-6 lg:py-5 bg-[#brown] relative overflow-hidden">
 
   {/* subtle overlay */}
   <div className="absolute inset-0 bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02]" />
