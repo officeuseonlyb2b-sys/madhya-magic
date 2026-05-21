@@ -113,19 +113,22 @@ const EXPERIENCE_TAGS: Record<string, MapCategory[]> = {
 };
 
 /* ---------- Public getters ---------- */
-export const getReelCategories = (r: ReelItem): MapCategory[] => {
+export const getReelCategories = (r: DestReelItem): MapCategory[] => {
   const base = normalizeCat(r.category as string);
   const inferred = inferFromText(r.title, r.location);
   return Array.from(new Set([...base, ...inferred]));
 };
 
-export const getActivityReelCategories = (r: ActivityReel): MapCategory[] => {
-  const override = ACTIVITY_REEL_TAGS[r.id];
-  if (override) return override;
-  const base = normalizeCat(r.category as string);
-  const inferred = inferFromText(r.title, r.location);
-  return base.length || inferred.length ? Array.from(new Set([...base, ...inferred])) : [];
+/** Tag-driven categories for activity + experience reels. */
+export const getReelItemCategories = (r: ReelItem): MapCategory[] => {
+  const fromTags = (r.tags ?? []).map((t) => TAG_TO_CAT[t]).filter(Boolean);
+  if (fromTags.length) return Array.from(new Set(fromTags));
+  return inferFromText(r.title, r.location);
 };
+
+export const getActivityReelCategories = (r: ReelItem): MapCategory[] =>
+  getReelItemCategories(r);
+
 
 export const getExperienceCategories = (e: Experience): MapCategory[] => {
   const override = EXPERIENCE_TAGS[e.id];
