@@ -144,7 +144,7 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
                       : "hover:bg-white/10"
                   }`}
                 >
-                  <span>{categoryIcons[cat]}</span>
+                  {(() => { const I = categoryIcons[cat]; return <I size={14} strokeWidth={1.5} className="text-[#c89b5e]" />; })()}
 
                   {cat}
 
