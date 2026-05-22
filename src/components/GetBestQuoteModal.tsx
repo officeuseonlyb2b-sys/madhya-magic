@@ -64,7 +64,7 @@ const FEATURES = [
     icon: Zap,
     title: "Quick & Easy",
     desc: "Simple forms that save your time",
-    color: "text-sky-600 bg-sky-50",
+    color: "text-green-600 bg-green-50",
   },
   {
     icon: ShieldCheck,
@@ -76,7 +76,7 @@ const FEATURES = [
     icon: Users,
     title: "Expert Assistance",
     desc: "Our local experts will connect with you soon",
-    color: "text-indigo-600 bg-indigo-50",
+    color: "text-[#C89B5E] bg-[#C89B5E]/10",
   },
   {
     icon: Sparkles,
@@ -150,12 +150,12 @@ const GetBestQuoteModal = ({
       <DialogContent className="max-w-2xl max-h-[92vh] overflow-y-auto p-0 bg-white rounded-2xl border-0 shadow-2xl">
         {/* Floating gift icon */}
         <div className="relative pt-10 px-6 sm:px-8">
-          <div className="absolute left-1/2 -translate-x-1/2 -top-7 w-14 h-14 rounded-full bg-white shadow-lg ring-1 ring-blue-100 flex items-center justify-center">
-            <Gift className="w-7 h-7 text-blue-700" />
+          <div className="absolute left-1/2 -translate-x-1/2 -top-7 w-14 h-14 rounded-full bg-white shadow-lg ring-1 ring-[#C89B5E]/20 flex items-center justify-center">
+            <Gift className="w-7 h-7 text-[#C89B5E]" />
           </div>
 
           <DialogHeader className="text-center space-y-2">
-            <DialogTitle className="font-display text-2xl sm:text-3xl text-blue-900 font-bold text-center">
+            <DialogTitle className="font-display text-2xl sm:text-3xl text-[#C89B5E] font-bold text-center">
               Interested in This Journey?
             </DialogTitle>
             <DialogDescription className="text-sm text-slate-500 max-w-md mx-auto text-center">
@@ -165,26 +165,26 @@ const GetBestQuoteModal = ({
           </DialogHeader>
 
           {/* Package summary card */}
-          <div className="mt-5 rounded-xl border border-blue-100 bg-blue-50/60 px-4 py-3 sm:px-5 sm:py-4">
+          <div className="mt-5 rounded-xl border border-[#C89B5E]/20 bg-[#C89B5E]/10 px-4 py-3 sm:px-5 sm:py-4">
             <dl className="space-y-2 text-sm">
               <div className="flex items-start gap-3">
-                <Tag className="w-4 h-4 text-blue-700 mt-0.5 flex-shrink-0" />
-                <dt className="font-semibold text-blue-900 w-28 flex-shrink-0">
+                <Tag className="w-4 h-4 text-[#C89B5E] mt-0.5 flex-shrink-0" />
+                <dt className="font-semibold text-[#C89B5E] w-28 flex-shrink-0">
                   Package:
                 </dt>
                 <dd className="text-slate-700 font-medium">{packageName}</dd>
               </div>
               <div className="flex items-start gap-3">
-                <Clock className="w-4 h-4 text-blue-700 mt-0.5 flex-shrink-0" />
-                <dt className="font-semibold text-blue-900 w-28 flex-shrink-0">
+                <Clock className="w-4 h-4 text-[#C89B5E] mt-0.5 flex-shrink-0" />
+                <dt className="font-semibold text-[#C89B5E] w-28 flex-shrink-0">
                   Duration:
                 </dt>
                 <dd className="text-slate-700 font-medium">{duration}</dd>
               </div>
               {destinations && (
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-4 h-4 text-blue-700 mt-0.5 flex-shrink-0" />
-                  <dt className="font-semibold text-blue-900 w-28 flex-shrink-0">
+                  <MapPin className="w-4 h-4 text-[#C89B5E] mt-0.5 flex-shrink-0" />
+                  <dt className="font-semibold text-[#C89B5E] w-28 flex-shrink-0">
                     Destinations:
                   </dt>
                   <dd className="text-slate-700 font-medium">{destinations}</dd>
@@ -233,7 +233,7 @@ const GetBestQuoteModal = ({
           {/* Date + Travelers */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             <div className="space-y-1.5">
-              <Label className="text-xs font-semibold text-blue-900">
+              <Label className="text-xs font-semibold text-[#C89B5E]">
                 Preferred Travel Date
               </Label>
               <Popover>
@@ -242,11 +242,11 @@ const GetBestQuoteModal = ({
                     type="button"
                     variant="outline"
                     className={cn(
-                      "w-full justify-start text-left font-normal h-11 border-slate-200 bg-white",
+                      "w-full justify-start text-left font-normal h-11 border-slate-200 bg-white hover:border-[#C89B5E]",
                       !travelDate && "text-slate-400"
                     )}
                   >
-                    <CalendarIcon className="mr-2 h-4 w-4 text-blue-700" />
+                    <CalendarIcon className="mr-2 h-4 w-4 text-[#C89B5E]" />
                     {travelDate ? format(travelDate, "PPP") : "dd/mm/yyyy"}
                   </Button>
                 </PopoverTrigger>
@@ -266,7 +266,7 @@ const GetBestQuoteModal = ({
             </div>
 
             <div className="space-y-1.5">
-              <Label className="text-xs font-semibold text-blue-900">
+              <Label className="text-xs font-semibold text-[#C89B5E]">
                 Number of Travelers
               </Label>
               <div className="grid grid-cols-2 gap-2">
@@ -274,7 +274,7 @@ const GetBestQuoteModal = ({
                   value={form.adults}
                   onValueChange={(v) => update("adults", v)}
                 >
-                  <SelectTrigger className="h-11 border-slate-200 bg-white">
+                  <SelectTrigger className="h-11 border-slate-200 bg-white focus:ring-[#C89B5E]/20 focus:border-[#C89B5E]">
                     <SelectValue placeholder="Adults" />
                   </SelectTrigger>
                   <SelectContent>
@@ -289,7 +289,7 @@ const GetBestQuoteModal = ({
                   value={form.children}
                   onValueChange={(v) => update("children", v)}
                 >
-                  <SelectTrigger className="h-11 border-slate-200 bg-white">
+                  <SelectTrigger className="h-11 border-slate-200 bg-white focus:ring-[#C89B5E]/20 focus:border-[#C89B5E]">
                     <SelectValue placeholder="Children" />
                   </SelectTrigger>
                   <SelectContent>
@@ -307,7 +307,7 @@ const GetBestQuoteModal = ({
           {/* Stay category + Customization */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             <div className="space-y-2">
-              <Label className="text-xs font-semibold text-blue-900">
+              <Label className="text-xs font-semibold text-[#C89B5E]">
                 Preferred Stay Category
               </Label>
               <div className="flex flex-wrap gap-x-4 gap-y-2">
@@ -325,7 +325,7 @@ const GetBestQuoteModal = ({
             </div>
 
             <div className="space-y-2">
-              <Label className="text-xs font-semibold text-blue-900">
+              <Label className="text-xs font-semibold text-[#C89B5E]">
                 Need Customization?
               </Label>
               <div className="flex gap-4">
@@ -345,7 +345,7 @@ const GetBestQuoteModal = ({
 
           {/* Message */}
           <div className="space-y-1.5">
-            <Label className="text-xs font-semibold text-blue-900">
+            <Label className="text-xs font-semibold text-[#C89B5E]">
               Special Requirements{" "}
               <span className="text-slate-400 font-normal">(Optional)</span>
             </Label>
@@ -354,7 +354,7 @@ const GetBestQuoteModal = ({
               value={form.message}
               onChange={(e) => update("message", e.target.value)}
               placeholder="Tell us your preferences, food, accessibility, surprises, etc."
-              className="border-slate-200 bg-white resize-none"
+              className="border-slate-200 bg-white resize-none focus-visible:ring-[#C89B5E]/20 focus-visible:border-[#C89B5E]"
             />
           </div>
 
@@ -362,7 +362,7 @@ const GetBestQuoteModal = ({
           <Button
             type="submit"
             disabled={loading}
-            className="w-full h-12 rounded-xl text-base font-semibold text-white shadow-lg bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 hover:from-blue-800 hover:to-blue-700 transition-all disabled:opacity-70"
+            className="w-full h-12 rounded-xl text-base font-semibold text-white shadow-lg bg-gradient-to-r from-[#C89B5E] via-[#C89B5E] to-[#b8894d] hover:from-[#b8894d] hover:to-[#a97b42] transition-all disabled:opacity-70"
           >
             {loading ? (
               "Sending…"
@@ -386,7 +386,7 @@ const GetBestQuoteModal = ({
                   <f.icon className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-xs font-semibold text-blue-900 leading-tight">
+                  <p className="text-xs font-semibold text-[#C89B5E] leading-tight">
                     {f.title}
                   </p>
                   <p className="text-[10px] text-slate-500 leading-snug mt-0.5">
@@ -452,7 +452,7 @@ const IconInput = ({
       value={value}
       onChange={(e) => onChange(e.target.value)}
       required={required}
-      className="h-11 pl-9 border-slate-200 bg-white placeholder:text-slate-400"
+      className="h-11 pl-9 border-slate-200 bg-white placeholder:text-slate-400 focus-visible:ring-[#C89B5E]/20 focus-visible:border-[#C89B5E]"
     />
   </div>
 );
@@ -470,10 +470,10 @@ const RadioPill = ({ name, value, label, checked, onChange }: RadioPillProps) =>
     <span
       className={cn(
         "w-4 h-4 rounded-full border-2 flex items-center justify-center transition-colors",
-        checked ? "border-blue-700" : "border-slate-300"
+        checked ? "border-[#C89B5E]" : "border-slate-300"
       )}
     >
-      {checked && <span className="w-2 h-2 rounded-full bg-blue-700" />}
+      {checked && <span className="w-2 h-2 rounded-full bg-[#C89B5E]" />}
     </span>
     <input
       type="radio"

@@ -46,10 +46,10 @@ const months = [
 ];
 
 const inputBase =
-  "w-full h-11 pl-10 pr-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition";
+  "w-full h-11 pl-10 pr-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#C89B5E] focus:ring-2 focus:ring-[#C89B5E]/20 transition";
 
 const selectBase =
-  "w-full h-11 pl-10 pr-8 rounded-lg border border-gray-200 bg-white text-sm text-gray-700 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition appearance-none";
+  "w-full h-11 pl-10 pr-8 rounded-lg border border-gray-200 bg-white text-sm text-gray-700 focus:outline-none focus:border-[#C89B5E] focus:ring-2 focus:ring-[#C89B5E]/20 transition appearance-none";
 
 const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) => {
   const [form, setForm] = useState({
@@ -119,12 +119,12 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
         {/* Floating pin */}
         <div className="relative flex justify-center pt-8">
           <div className="absolute -top-2 w-14 h-14 rounded-full bg-white shadow-lg border border-gray-100 flex items-center justify-center">
-            <MapPin className="text-purple-700" size={24} />
+            <MapPin className="text-[#C89B5E]" size={24} />
           </div>
         </div>
 
         <div className="px-6 md:px-10 pt-16 pb-6 text-center">
-          <h2 className="text-2xl md:text-3xl font-display font-bold text-purple-800 leading-tight">
+          <h2 className="text-2xl md:text-3xl font-display font-bold text-[#C89B5E] leading-tight">
             Want to Explore<br className="md:hidden" /> {destinationName}?
           </h2>
           <p className="text-sm text-gray-500 mt-2 max-w-md mx-auto">
@@ -185,7 +185,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
           {/* Travel Date + Nights */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label className="block text-sm font-semibold text-purple-700 mb-1.5">
+              <label className="block text-sm font-semibold text-[#C89B5E] mb-1.5">
                 Travel Date / Month
               </label>
               <div className="relative">
@@ -202,7 +202,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
               </div>
             </div>
             <div>
-              <label className="block text-sm font-semibold text-purple-700 mb-1.5">
+              <label className="block text-sm font-semibold text-[#C89B5E] mb-1.5">
                 Number of Nights
               </label>
               <div className="relative">
@@ -213,7 +213,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
                   className={selectBase}
                 >
                   <option value="">Select</option>
-                  {[1,2,3,4,5,6,7,8,9,10].map((n) => (
+                  {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((n) => (
                     <option key={n} value={`${n} Nights`}>{n} {n === 1 ? "Night" : "Nights"}</option>
                   ))}
                 </select>
@@ -224,7 +224,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
 
           {/* Travelers */}
           <div>
-            <label className="block text-sm font-semibold text-purple-700 mb-1.5">
+            <label className="block text-sm font-semibold text-[#C89B5E] mb-1.5">
               Number of Travelers
             </label>
             <div className="grid grid-cols-2 gap-4">
@@ -235,7 +235,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
                   onChange={(e) => update("adults", e.target.value)}
                   className={selectBase}
                 >
-                  {[1,2,3,4,5,6,7,8].map((n) => (
+                  {[1, 2, 3, 4, 5, 6, 7, 8].map((n) => (
                     <option key={n} value={n}>{n} {n === 1 ? "Adult" : "Adults"}</option>
                   ))}
                 </select>
@@ -248,7 +248,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
                   onChange={(e) => update("children", e.target.value)}
                   className={selectBase}
                 >
-                  {[0,1,2,3,4,5].map((n) => (
+                  {[0, 1, 2, 3, 4, 5].map((n) => (
                     <option key={n} value={n}>{n} {n === 1 ? "Child" : "Children"}</option>
                   ))}
                 </select>
@@ -259,7 +259,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
 
           {/* Interests */}
           <div>
-            <label className="block text-sm font-semibold text-purple-700 mb-2">
+            <label className="block text-sm font-semibold text-[#C89B5E] mb-2">
               I am interested in
             </label>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -273,11 +273,11 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
                     className={cn(
                       "flex items-center justify-center gap-2 h-12 px-3 rounded-lg border text-sm font-medium transition",
                       active
-                        ? "border-purple-600 bg-purple-50 text-purple-700 shadow-sm"
-                        : "border-gray-200 bg-white text-gray-700 hover:border-purple-300 hover:bg-purple-50/40",
+                        ? "border-[#C89B5E] bg-[#C89B5E]/10 text-[#C89B5E] shadow-sm"
+                        : "border-gray-200 bg-white text-gray-700 hover:border-[#C89B5E]/50 hover:bg-[#C89B5E]/10",
                     )}
                   >
-                    <Icon size={16} className={active ? "text-purple-600" : "text-purple-500"} />
+                    <Icon size={16} className={active ? "text-[#C89B5E]" : "text-[#C89B5E]"} />
                     <span>{label}</span>
                   </button>
                 );
@@ -287,7 +287,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
 
           {/* Additional preferences */}
           <div>
-            <label className="block text-sm font-semibold text-purple-700 mb-1.5">
+            <label className="block text-sm font-semibold text-[#C89B5E] mb-1.5">
               Additional Preferences <span className="text-gray-400 font-normal">(Optional)</span>
             </label>
             <textarea
@@ -295,7 +295,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
               value={form.message}
               onChange={(e) => update("message", e.target.value)}
               placeholder="Tell us your preferences, must-see places, accessibility needs, etc."
-              className="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-white text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-100 transition resize-none"
+              className="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-white text-sm text-gray-800 placeholder:text-gray-400 focus:outline-none focus:border-[#C89B5E] focus:ring-2 focus:ring-[#C89B5E]/20 transition resize-none"
             />
           </div>
 
@@ -303,7 +303,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
           <button
             type="submit"
             disabled={loading}
-            className="w-full h-12 rounded-lg bg-gradient-to-r from-purple-700 via-purple-700 to-purple-800 hover:from-purple-800 hover:to-purple-900 text-white font-semibold text-base flex items-center justify-center gap-2 shadow-lg shadow-purple-700/25 transition disabled:opacity-70"
+            className="w-full h-12 rounded-lg bg-gradient-to-r from-[#C89B5E] via-[#C89B5E] to-[#b8894d] hover:from-[#b8894d] hover:to-[#a97b42] text-white font-semibold text-base flex items-center justify-center gap-2 shadow-lg shadow-[#C89B5E]/25 transition disabled:opacity-70"
           >
             {loading ? "Sending…" : (
               <>Plan My Visit <ArrowRight size={18} /></>
@@ -315,7 +315,7 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
             {[
               { icon: Zap, title: "Quick & Easy", desc: "Simple forms that save your time", color: "text-green-600" },
               { icon: ShieldCheck, title: "Secure & Safe", desc: "Your details are 100% secure with us", color: "text-blue-600" },
-              { icon: Headphones, title: "Expert Assistance", desc: "Our local experts will connect with you soon", color: "text-purple-600" },
+              { icon: Headphones, title: "Expert Assistance", desc: "Our local experts will connect with you soon", color: "text-[#C89B5E]" },
               { icon: Sparkles, title: "Personalized Trips", desc: "Customized itineraries as per your preferences", color: "text-orange-500" },
             ].map((f) => (
               <div key={f.title} className="flex items-start gap-2">
@@ -328,17 +328,28 @@ const QuoteModal = ({ open, onOpenChange, destinationName }: QuoteModalProps) =>
             ))}
           </div>
 
-          {/* WhatsApp footer */}
+          {/* WHATSAPP */}
           <div className="text-center pt-2">
             <a
               href="https://wa.me/919999999999"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-green-600 transition"
+              className="inline-flex items-center gap-2 text-sm text-[#6b7280] hover:text-green-600 transition"
             >
-              <span className="w-5 h-5 rounded-full bg-green-500 text-white flex items-center justify-center text-[11px] font-bold">W</span>
-              Prefer to chat? Connect with our travel expert on{" "}
-              <span className="text-green-600 font-semibold">WhatsApp</span>
+              <svg
+                viewBox="0 0 24 24"
+                className="w-4 h-4 text-green-500 flex-shrink-0"
+                fill="currentColor"
+                aria-hidden
+              >
+                <path d="M20.52 3.48A11.78 11.78 0 0 0 12.06 0C5.5 0 .15 5.34.15 11.9c0 2.1.55 4.15 1.6 5.96L0 24l6.3-1.65a11.86 11.86 0 0 0 5.76 1.47h.01c6.56 0 11.91-5.34 11.91-11.9 0-3.18-1.24-6.17-3.46-8.44ZM12.06 21.3h-.01a9.4 9.4 0 0 1-4.79-1.31l-.34-.2-3.74.98 1-3.65-.22-.37a9.39 9.39 0 0 1-1.44-5 9.55 9.55 0 0 1 16.3-6.75 9.45 9.45 0 0 1 2.79 6.75 9.56 9.56 0 0 1-9.55 9.55Zm5.24-7.16c-.29-.14-1.7-.84-1.96-.94-.26-.1-.45-.14-.64.15-.19.28-.74.93-.9 1.12-.17.19-.34.21-.62.07-.29-.14-1.22-.45-2.33-1.44-.86-.77-1.44-1.71-1.61-2-.17-.29-.02-.45.13-.59.13-.13.29-.34.43-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.46-.48-.64-.49l-.55-.01a1.06 1.06 0 0 0-.77.36c-.26.29-1.01.99-1.01 2.41 0 1.42 1.03 2.79 1.18 2.99.14.19 2.03 3.1 4.93 4.35.69.3 1.23.48 1.65.61.69.22 1.32.19 1.82.12.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34Z" />
+              </svg>
+
+              Prefer to chat? Connect with our travel expert on
+
+              <span className="text-green-600 font-semibold">
+                WhatsApp
+              </span>
             </a>
           </div>
         </form>

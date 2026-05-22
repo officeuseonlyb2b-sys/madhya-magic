@@ -65,12 +65,14 @@ const CategoryCustomPackage = ({ category }: Props) => {
           <p className="text-white/80 mb-8 max-w-xl">
             Let our experts craft your perfect {category.toLowerCase()} journey across Madhya Pradesh.
           </p>
+
           <button
             onClick={() => setOpen(true)}
-            className="bg-gradient-to-r from-orange-500 via-orange-600 to-orange-700 hover:from-orange-600 hover:to-orange-800 transition-all duration-300 px-8 py-3 rounded-full text-white font-semibold shadow-xl hover:scale-105"
+            className="bg-gradient-to-r from-[#b78645] via-[#c89b5e] to-[#a97838] hover:from-[#a97838] hover:via-[#b78645] hover:to-[#8f632d] transition-all duration-300 px-8 py-3 rounded-full text-white font-semibold shadow-xl shadow-[#c89b5e]/30 hover:scale-105"
           >
             Book Custom Package
           </button>
+
         </div>
       </section>
 

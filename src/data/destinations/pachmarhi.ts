@@ -1,11 +1,18 @@
 import type { DestinationContent } from "./types";
+import pachmarhiattraction1 from "@/assets/destimages/pachmarhiattraction1.jpeg";
+import pachmarhiattraction2 from "@/assets/destimages/pachmarhiattraction2.jpeg";
+import pachmarhiattraction3 from "@/assets/destimages/pachmarhiattraction3.jpeg";
+import pachmarhiattraction4 from "@/assets/destimages/pachmarhiattraction4.jpeg";
 
-const beeFalls = "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80";
-const dhoopgarh = "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80";
-const pandavaCaves = "https://images.unsplash.com/photo-1518002171953-a080ee817e1f?auto=format&fit=crop&w=1200&q=80";
-const jataShankar = "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80";
-const satpuraHills = "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80";
-const handiKhoh = "https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80";
+// gallary
+
+import pachmarhigallary1 from "@/assets/destimages/pachmarhigallary1.jpeg";
+import pachmarhigallary2 from "@/assets/destimages/pachmarhigallary2.jpeg";
+import pachmarhigallary3 from "@/assets/destimages/pachmarhigallary3.jpeg";
+import pachmarhigallary4 from "@/assets/destimages/pachmarhigallary4.jpeg";
+import pachmarhigallary5 from "@/assets/destimages/pachmarhigallary5.jpeg";
+import pachmarhigallary6 from "@/assets/destimages/pachmarhigallary6.jpeg";
+
 
 const pachmarhi: DestinationContent = {
   overviewParagraphs: [
@@ -14,10 +21,10 @@ const pachmarhi: DestinationContent = {
     "From sunrise at Dhoopgarh — the highest point in MP — to the spray of Bee Falls and the mystery of the Pandava Caves, Pachmarhi delivers a soulful mountain experience just a short drive from Bhopal.",
   ],
   attractions: [
-    { title: "Bee Falls", description: "A pristine cascade tumbling through dense forest — the source of Pachmarhi's drinking water and a favourite trekking spot.", image: beeFalls },
-    { title: "Dhoopgarh Sunset Point", description: "At 1,350 m, the highest peak in the Satpura range delivers Madhya Pradesh's most dramatic sunsets.", image: dhoopgarh },
-    { title: "Pandava Caves", description: "Five ancient rock-cut caves perched on a hillock, said to have sheltered the Pandavas during exile.", image: pandavaCaves },
-    { title: "Jata Shankar Cave", description: "A sacred Shiva cave shrine where a natural Shivalinga sits beneath a hanging-rock formation resembling Shiva's locks.", image: jataShankar },
+    { title: "Bee Falls", description: "A pristine cascade tumbling through dense forest — the source of Pachmarhi's drinking water and a favourite trekking spot.", image: pachmarhiattraction1 },
+    { title: "Dhoopgarh Sunset Point", description: "At 1,350 m, the highest peak in the Satpura range delivers Madhya Pradesh's most dramatic sunsets.", image: pachmarhiattraction2 },
+    { title: "Pandava Caves", description: "Five ancient rock-cut caves perched on a hillock, said to have sheltered the Pandavas during exile.", image: pachmarhiattraction3 },
+    { title: "Jata Shankar Cave", description: "A sacred Shiva cave shrine where a natural Shivalinga sits beneath a hanging-rock formation resembling Shiva's locks.", image: pachmarhiattraction4 },
   ],
   thingsToDo: [
     { title: "Dhoopgarh Sunset", description: "Watch the Satpuras glow gold and purple.", icon: "🌄" },
@@ -33,7 +40,14 @@ const pachmarhi: DestinationContent = {
     { title: "Cantonment Charm", description: "Stroll through colonial-era cottages, churches and quiet pine-lined avenues." },
     { title: "Tribal Encounters", description: "Meet the Gond and Korku communities and learn their forest wisdom." },
   ],
-  gallery: [dhoopgarh, beeFalls, satpuraHills, pandavaCaves, jataShankar, handiKhoh],
+  gallery: [
+    pachmarhigallary1,
+    pachmarhigallary2,
+    pachmarhigallary3,
+    pachmarhigallary4,
+    pachmarhigallary5,
+    pachmarhigallary6
+  ],
   travelInfo: {
     bestTime: "September to June — monsoon is dramatic, winter is crisp",
     road: "Well-connected by road from Bhopal (210 km, ~5 hrs) and Nagpur (250 km).",
