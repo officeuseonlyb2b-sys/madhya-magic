@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
+import { IconFor } from "@/lib/iconMap";
 import { experiencesData, type Experience } from "@/data/experiencesData";
 import { Link } from "react-router-dom";
 import ExperienceDetailModal from "@/components/ExperienceDetailModal";

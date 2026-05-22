@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MapPin, Clock, Calendar, ArrowRight, CheckCircle2 } from "lucide-react";
+import { IconFor } from "@/lib/iconMap";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import type { Experience } from "@/data/experiencesData";
