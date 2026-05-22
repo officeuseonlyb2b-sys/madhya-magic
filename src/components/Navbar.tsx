@@ -6,6 +6,11 @@ import {
   X,
   ChevronDown,
   ChevronRight,
+  Mountain,
+  Landmark,
+  PawPrint,
+  Flower2,
+  type LucideIcon,
 } from "lucide-react";
 
 import logo from "@/assets/logo.png";
@@ -35,11 +40,11 @@ const navLinks = [
   { label: "Contact", href: "/contact" },
 ];
 
-const categoryIcons: Record<MapCategory, string> = {
-  Nature: "🌄",
-  Heritage: "🏛️",
-  Wildlife: "🐅",
-  Spiritual: "🛕",
+const categoryIcons: Record<MapCategory, LucideIcon> = {
+  Nature: Mountain,
+  Heritage: Landmark,
+  Wildlife: PawPrint,
+  Spiritual: Flower2,
 };
 
 const categoryOrder: MapCategory[] = [
