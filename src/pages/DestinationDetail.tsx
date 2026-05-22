@@ -243,7 +243,7 @@ const DestinationDetail = () => {
                 >
                   <div>
                     <div className="text-4xl mb-4 flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10">
-                      {t.icon}
+                      <IconFor name={t.icon} size={24} className="text-[#c89b5e]" />
                     </div>
 
                     <h3 className="font-display font-semibold text-[18px] text-foreground mb-2 leading-snug">
