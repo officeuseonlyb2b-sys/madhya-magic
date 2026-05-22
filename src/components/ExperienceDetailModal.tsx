@@ -68,7 +68,7 @@ const ExperienceDetailModal = ({ experience, open, onClose, anchorRect }: Props)
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
             <div className="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-primary/90 backdrop-blur-sm text-primary-foreground text-[10px] sm:text-xs font-bold uppercase tracking-wider">
-                <span>{experience!.icon}</span> {experience!.category}
+                <IconFor name={experience!.icon} size={12} className="opacity-90" /> {experience!.category}
               </span>
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full bg-white/15 backdrop-blur-sm text-white text-[10px] sm:text-xs font-medium border border-white/20">
                 <MapPin size={12} /> {experience!.subtitle}

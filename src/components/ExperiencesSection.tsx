@@ -54,7 +54,7 @@ const ExperienceCard = ({
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={inView ? { opacity: 1, scale: 1 } : {}} transition={{ delay: 0.4 }} className="absolute top-5 left-5 z-10">
             <span className="inline-flex items-center gap-1.5 px-4 py-2 rounded-full bg-background/80 backdrop-blur-md text-xs font-semibold text-foreground border border-border/50 shadow-lg">
-              <span className="text-base">{exp.icon}</span>
+              <IconFor name={exp.icon} size={14} className="text-[#c89b5e]" />
               {exp.category}
             </span>
           </motion.div>

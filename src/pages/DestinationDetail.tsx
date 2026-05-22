@@ -7,6 +7,7 @@ import {
   Phone,
   MessageSquare,
 } from "lucide-react";
+import { IconFor } from "@/lib/iconMap";
 
 import { destinations } from "@/data/destinations";
 import { getRelatedPackagesForDestination } from "@/lib/relatedPackagesForDestination";
