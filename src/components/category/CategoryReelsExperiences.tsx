@@ -320,7 +320,7 @@ const CategoryReelsExperiences = () => {
           {/* TEXT */}
           <div className="text-center lg:text-left order-1 lg:order-2">
 
-            <span className="block text-black text-2xl sm:text-3xl font-light italic mb-3">
+            <span className="font-script block text-black text-3xl sm:text-4xl mb-3">
               Reels &amp; Curated
             </span>
 
