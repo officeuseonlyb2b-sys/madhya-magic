@@ -192,8 +192,9 @@ const ExploreDropdown = ({ scrolled }: { scrolled: boolean }) => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
                 <div className="absolute bottom-3 left-3 right-3">
-                  <p className="nav-font text-white text-xs uppercase tracking-widest opacity-80">
-                    {categoryIcons[activeCat]} Discover
+                  <p className="nav-font text-white text-xs uppercase tracking-widest opacity-80 flex items-center gap-1.5">
+                    {(() => { const I = categoryIcons[activeCat]; return <I size={12} strokeWidth={1.5} className="text-[#c89b5e]" />; })()}
+                    Discover
                   </p>
 
                   <p className="font-display text-white text-lg leading-tight">
@@ -354,7 +355,7 @@ const Navbar = () => {
                       }
                       className="nav-font text-white flex items-center gap-2 w-full py-2"
                     >
-                      <span>{categoryIcons[cat]}</span>
+                      {(() => { const I = categoryIcons[cat]; return <I size={14} strokeWidth={1.5} className="text-[#c89b5e]" />; })()}
 
                       {cat}
 
