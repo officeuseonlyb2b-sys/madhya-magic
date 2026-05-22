@@ -15,7 +15,7 @@ import { FilterProvider } from "@/contexts/FilterContext";
 import natureHero from "@/assets/explore/nature-hero.jpg";
 import heritageHero from "@/assets/explore/heritage-hero.jpg";
 import wildlifeHero from "@/assets/explore/wildlife-hero.png";
-import CustomPackage from "@/components/CustomPackage";
+import CategoryCustomPackage, { type CategoryKey } from "@/components/category/CategoryCustomPackage";
 import { getCategoryBackground } from "@/lib/categoryBackground";
 
 
@@ -67,7 +67,7 @@ const CategoryPage = () => {
         {/* <ActivitiesReelsSection /> */}
         <CategoryReelsExperiences />
         <PackagesSection />
-        <CustomPackage/>
+        <CategoryCustomPackage category={categoryTitle as CategoryKey} />
       </FilterProvider>
       
 
