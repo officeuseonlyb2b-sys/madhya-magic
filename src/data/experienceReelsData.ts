@@ -15,7 +15,15 @@ import bhimbetkaCavePaintings from "@/assets/reels/experience/bhimbetka-cave-pai
 import dhuandharFallsRopeway from "@/assets/reels/experience/dhuandhar-falls-ropeway.mp4";
 import heritageWalkGwalior from "@/assets/reels/experience/heritage-walk-gwalior.mp4";
 import meditationPachmarhi from "@/assets/reels/experience/meditation-pachmarhi.mp4";
-
+import snorkelingTrek from "@/assets/reels/experience/Snorkeling-Trek.mp4";
+import tribalMuseum from "@/assets/reels/experience/Tribal-Museum.mp4";
+import birdsWatching from "@/assets/reels/experience/birds-watching-madhya-pradesh.mp4";
+import harsiddhiAarti from "@/assets/reels/experience/harsiddhi-aarti-ujjain.mp4";
+import bhasmaAarti from "@/assets/reels/experience/bhasm-aarti-ujjain.mp4";
+import chitrakootSpiritualSites from "@/assets/reels/experience/chitrakoot-spiritual-sites.mp4";
+import narmadaAarti from "@/assets/reels/experience/narmada-aarti-gwarighat.mp4";
+import abhiskhekam from "@/assets/reels/experience/abhiskekam-omkareswar.mp4";
+import mahakalCorridor from "@/assets/reels/experience/mahakal-corridor.mp4";
 import type { ReelItem } from "@/data/reelTypes";
 
 export const experienceReelsData: ReelItem[] = [
@@ -48,12 +56,77 @@ export const experienceReelsData: ReelItem[] = [
     tags: ["heritage"],
   },
   {
+    id: "snorkeling-trek",
+    title: "snorkeling-Trek",
+    location: "Pachmarhi",
+    video: snorkelingTrek,
+    tags: ["nature"],
+  },
+  {
     id: "meditation-pachmarhi",
-    title: "Meditation in Nature",
+    title: "meditation-pachmarhi",
     location: "Pachmarhi",
     video: meditationPachmarhi,
-    tags: ["spiritual", "nature"],
+    tags: ["nature"],
   },
+  {
+    id: "tribal-museum",
+    title: "tribal-museum",
+    location: "Bhopal",
+    video: tribalMuseum,
+    tags: ["heritage"],
+  },
+  {
+    id: "birds-watching",
+    title: "birds watching",
+    location: "Madhya Pradesh",
+    video: birdsWatching,
+    tags: ["wildlife"],
+  },
+  {
+    id: "harsiddhi-aarti",
+    title: "Harsiddhi Mata Aarti",
+    location: "Ujjain",
+    video: harsiddhiAarti,
+    tags: ["spiritual"],
+  },
+  {
+    id: "bhasma-aarti",
+    title: "Bhasma Aarti",
+    location: "Ujjain",
+    video: bhasmaAarti,
+    tags: ["spiritual"],
+  },
+  {
+    id: "chitrakoot-spiritual-sites",
+    title: "Chitrakoot Spirituals Sites",
+    location: "Chitrakoot",
+    video: chitrakootSpiritualSites,
+    tags: ["spiritual"],
+  },
+  {
+    id: "narmada-aarti",
+    title: "Narmada Aarti",
+    location: "Jabalpur",
+    video: narmadaAarti,
+    tags: ["spiritual"],
+  },
+  {
+    id: "abhiskhekam",
+    title: "Abhiskhekam",
+    location: "Omkareswar",
+    video: abhiskhekam,
+    tags: ["spiritual"],
+  },
+  {
+    id: "mahakal-corridor",
+    title: "Mahakal Corridor",
+    location: "Ujjain",
+    video: mahakalCorridor,
+    tags: ["spiritual"],
+  },
+  
+  
 
   // ---------- ADD NEW EXPERIENCE REELS BELOW ----------
 ];

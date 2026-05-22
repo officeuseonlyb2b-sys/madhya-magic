@@ -16,6 +16,11 @@ import boatingUpperLakeBhopal from "@/assets/reels/activity/boating-upper-lake-b
 import skyDiving from "@/assets/reels/activity/sky-diving.mp4";
 import raftingOrchha from "@/assets/reels/activity/rafting-orchha.mp4";
 import waterActivitiesHanuwantiya from "@/assets/reels/activity/water-activities-hanuwantiya.mp4";
+import jungleWalkSafari from "@/assets/reels/activity/jungle-walk-safari-madhya-pradesh.mp4";
+import jeepSafariTigerReserve from "@/assets/reels/activity/jeep-safari-tiger-reserves.mp4";
+import wildlifePhotography from "@/assets/reels/activity/wildlife-photography-bandhavghar.mp4"
+import motorBoatSafari from "@/assets/reels/activity/motor-boat-safari-satpura.mp4";
+import canoeingSatpura from "@/assets/reels/activity/canoeing-satpura.mp4";
 
 import type { ReelItem, ReelTag } from "@/data/reelTypes";
 export type { ReelItem, ReelTag };
@@ -60,6 +65,43 @@ export const activityReelsData: ReelItem[] = [
     video: waterActivitiesHanuwantiya,
     tags: ["nature"],
   },
+  {
+    id: "jungle-walk-safari-madhya-pradesh",
+    title: "Jungle Walk Safari",
+    location: "Kanha",
+    video: jungleWalkSafari,
+    tags: ["wildlife"],
+  },
+  {
+    id: "jeep-safari-tiger-reserve",
+    title: "Jeep Safari Tiger Reserve",
+    location: "Madhya Pradesh",
+    video: jeepSafariTigerReserve,
+    tags: ["wildlife"],
+  },
+  {
+    id: "wildlife-photography",
+    title: "Wildlife Photography",
+    location: "Bandhavghar",
+    video: wildlifePhotography,
+    tags: ["wildlife"],
+  },
+  {
+    id: "motor-boat-safari-satpura",
+    title: "Motor Boat Safari",
+    location: "Satpura",
+    video: motorBoatSafari,
+    tags: ["wildlife"],
+  },
+  {
+    id: "canoeing-satpura",
+    title: "Canoeing Safari",
+    location: "Satpura",
+    video: canoeingSatpura,
+    tags: ["wildlife"],
+  },
+
+
 
   // ---------- ADD NEW ACTIVITY REELS BELOW ----------
   // {
