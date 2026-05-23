@@ -4,30 +4,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Enchanting Madhya Pradesh | Premium Travel</title>
+
   <meta name="description"
     content="Discover the heart of India with curated travel packages to Ujjain, Khajuraho, Kanha, Pachmarhi & more." />
   <meta name="author" content="Enchanting Madhya Pradesh" />
-  <link rel="canonical" href="https://enchantingmp.com" />
-    <meta property="og:title" content="Enchanting Madhya Pradesh | Premium Travel" />
-    <meta property="og:description" content="Curated travel experiences across Madhya Pradesh — temples, tigers & timeless beauty." />
-    <meta property="og:type" content="website" />
-    <!-- <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
 
-    <!-- <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
-    <link rel="icon" href="/logo.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="video" href="/videos/hero/jabalpur.mp4" type="video/mp4">
-    <link rel="preload" as="image" href="/videos/posters/hero_jabalpur.jpg">
-  
+  <link rel="canonical" href="https://enchantingmp.com" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Enchanting Madhya Pradesh | Premium Travel" />
+  <meta property="og:description"
+    content="Curated travel experiences across Madhya Pradesh — temples, tigers & timeless beauty." />
+  <meta property="og:type" content="website" />
+  <!-- <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" /> -->
+
+  <!-- Twitter -->
+  <!--
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Lovable" />
+  <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  -->
+
+  <link rel="icon" href="/logo.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="preload" as="video" href="/videos/hero/jabalpur.mp4" type="video/mp4">
+  <link rel="preload" as="image" href="/videos/posters/hero_jabalpur.jpg">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod
+          ? n.callMethod.apply(n, arguments)
+          : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = true;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1475745991016508');
+    fbq('track', 'PageView');
+  </script>
+  <!-- End Meta Pixel Code -->
+
 </head>
 
 <body>
+
+  <!-- Meta Pixel (noscript fallback) -->
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1475745991016508&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
+
   <div id="root"></div>
+
   <script type="module" src="/src/main.tsx"></script>
+
 </body>
 
 </html>
