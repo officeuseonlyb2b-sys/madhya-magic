@@ -13,6 +13,12 @@ import ujjaingallary3 from "@/assets/destimages/ujjaingallary3.jpeg";
 import ujjaingallary4 from "@/assets/destimages/ujjaingallary4.jpeg";
 import ujjaingallary5 from "@/assets/destimages/ujjaingallary5.jpeg";
 import ujjaingallary6 from "@/assets/destimages/ujjaingallary6.jpeg";
+import ujjaingallary7 from "@/assets/destimages/ujjaingallary7.jpeg";
+import ujjaingallary8 from "@/assets/destimages/ujjaingallary8.jpeg";
+import ujjaingallary9 from "@/assets/destimages/ujjaingallary9.jpeg";
+import ujjaingallary10 from "@/assets/destimages/ujjaingallary10.jpeg";
+import ujjaingallary11 from "@/assets/destimages/ujjaingallary11.jpeg";
+import ujjaingallary12 from "@/assets/destimages/ujjaingallary12.jpeg";
 
 const ujjain: DestinationContent = {
   overviewParagraphs: [
@@ -111,6 +117,12 @@ const ujjain: DestinationContent = {
     ujjaingallary4,
     ujjaingallary5,
     ujjaingallary6,
+    ujjaingallary7,
+    ujjaingallary8,
+    ujjaingallary9,
+    ujjaingallary10,
+    ujjaingallary11,
+    ujjaingallary12,
   ],
 
   travelInfo: {
