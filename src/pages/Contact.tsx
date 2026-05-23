@@ -95,8 +95,8 @@ const Contact = () => {
               <h2 className="text-2xl font-display font-bold text-foreground mb-6">Contact Information</h2>
 
               {[
-                { icon: MapPin, title: "Office Address", text: "45, MP Nagar Zone-II, Bhopal, Madhya Pradesh 462011" },
-                { icon: Phone, title: "Phone Number", text: "+91 98765 43210" },
+                { icon: MapPin, title: "Office Address", text: "1st Floor, Jain Bhawan, Above Himalaya Wellness Centre, Nayaa Bazaar, Gwalior, Madhya Pradesh - 474009" },
+                { icon: Phone, title: "Phone Number", text: "+91 9109114934" },
                 { icon: Mail, title: "Email Address", text: "info@enchantingmp.com" },
                 { icon: Clock, title: "Working Hours", text: "Mon - Sat: 9:00 AM - 7:00 PM" },
               ].map((item, i) => (
