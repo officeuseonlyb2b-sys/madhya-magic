@@ -3,6 +3,10 @@ import pkgHeritagePilgrimage from "@/assets/pkg-heritage-pilgrimage.jpg";
 import pkgMarvelsMalwa from "@/assets/pkg-marvels-malwa.jpg";
 import pkgJyotirlingaHeritage from "@/assets/pkg-jyotirlinga-heritage.jpg";
 import pkgHeritageTrailsSacred from "@/assets/pkg-heritage-trails-sacred.jpg";
+// Manually-managed packages, organised per destination under src/data/packages/.
+// These are prepended to `allPackages` so they appear FIRST in their
+// destination's listing without altering any existing entries.
+import { manualPackages } from "./packages";
 
 // Unique per-package imagery for the 44 Excel-imported packages (ids 6–49)
 import pkgBhopal from "@/assets/pkg-bhopal.jpg";
@@ -403,6 +407,8 @@ function buildExcelPackages(): PackageData[] {
 }
 
 export const allPackages: PackageData[] = [
+  // ── Manually-curated packages (per-destination files) come first ──
+  ...manualPackages,
   {
     id: "mahakal-darshan",
     name: "Mahakal Darshan",
