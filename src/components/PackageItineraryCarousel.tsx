@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, MapPin } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import { destinationRegistry } from "@/data/destinations";
+import { destinationRegistry } from "@/data/destinations/index";
 import { mapDestinations } from "@/data/mapDestinations";
 
 export interface ItineraryDay {
