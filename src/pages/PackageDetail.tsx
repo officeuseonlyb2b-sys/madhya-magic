@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import GetBestQuoteModal from "@/components/GetBestQuoteModal";
+import PackageItineraryCarousel from "@/components/PackageItineraryCarousel";
 
 const PackageDetail = () => {
   const { id } = useParams();
@@ -80,22 +81,11 @@ const PackageDetail = () => {
               {/* Itinerary */}
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                 <h2 className="text-2xl font-display font-bold text-foreground mb-6">Day-by-Day Itinerary</h2>
-                <div className="space-y-0">
-                  {pkg.itinerary.map((item, i) => (
-                    <div key={i} className="flex gap-4">
-                      <div className="flex flex-col items-center">
-                        <div className="w-10 h-10 rounded-full gradient-gold flex items-center justify-center text-primary-foreground font-bold text-sm shrink-0">
-                          D{item.day}
-                        </div>
-                        {i < pkg.itinerary.length - 1 && <div className="w-0.5 flex-1 bg-border mt-2" />}
-                      </div>
-                      <div className="pb-8">
-                        <h3 className="font-display font-bold text-foreground">{item.title}</h3>
-                        <p className="text-sm text-muted-foreground mt-1 leading-relaxed">{item.description}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+                <PackageItineraryCarousel
+                  itinerary={pkg.itinerary}
+                  fallbackImage={pkg.image}
+                  location={pkg.location}
+                />
               </motion.div>
 
               {/* Included / Excluded */}
