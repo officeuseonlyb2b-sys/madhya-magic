@@ -78,6 +78,12 @@ const PackageDetail = () => {
                 </div>
               </motion.div>
 
+              {/* Destinations Covered */}
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+                <h2 className="text-2xl font-display font-bold text-foreground mb-6">Destinations Covered</h2>
+                <PackageDestinationsCovered location={pkg.location} fallbackImage={pkg.image} />
+              </motion.div>
+
               {/* Itinerary */}
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                 <h2 className="text-2xl font-display font-bold text-foreground mb-6">Day-by-Day Itinerary</h2>
