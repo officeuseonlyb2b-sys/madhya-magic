@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Clock, Check, X as XIcon, ArrowLeft, MapPin, MessageCircle, Phone, Plus, Minus, Sparkles, FileText } from "lucide-react";
+import { Clock, Check, X as XIcon, ArrowLeft, MapPin, MessageCircle, Phone, Plus, Minus, Sparkles, FileText, Tag, Compass, IndianRupee } from "lucide-react";
 import { allPackages } from "@/data/packagesData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
