@@ -179,20 +179,26 @@ const PackageDetail = () => {
                     </p>
                   )}
 
-                  <div className="space-y-3 mb-5 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Duration</span>
-                      <span className="text-foreground font-medium">
+                  <div className="space-y-2.5 mb-5 text-sm border-t border-border/60 pt-5">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-2 text-muted-foreground">
+                        <Clock size={15} className="text-primary shrink-0" /> Duration
+                      </span>
+                      <span className="text-foreground font-medium text-right truncate">
                         {customize ? `${customDays} Days / ${customDays - 1} Nights` : pkg.duration}
                       </span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Location</span>
-                      <span className="text-foreground font-medium">{pkg.location}</span>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-2 text-muted-foreground shrink-0">
+                        <MapPin size={15} className="text-primary shrink-0" /> Location
+                      </span>
+                      <span className="text-foreground font-medium text-right break-words">{pkg.location}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Category</span>
-                      <span className="text-foreground font-medium">{pkg.category}</span>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-2 text-muted-foreground">
+                        <Tag size={15} className="text-primary shrink-0" /> Category
+                      </span>
+                      <span className="text-foreground font-medium text-right truncate">{pkg.category}</span>
                     </div>
                   </div>
 
