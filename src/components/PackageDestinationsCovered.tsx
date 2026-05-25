@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import DestinationImageSlider from "@/components/DestinationImageSlider";
-import { destinationRegistry } from "@/data/destinations";
+import { destinationRegistry } from "@/data/destinations/index";
 import { mapDestinations } from "@/data/mapDestinations";
 
 interface Props {
