@@ -12,6 +12,11 @@ import pachmarhigallary3 from "@/assets/destimages/pachmarhigallary3.jpeg";
 import pachmarhigallary4 from "@/assets/destimages/pachmarhigallary4.jpeg";
 import pachmarhigallary5 from "@/assets/destimages/pachmarhigallary5.jpeg";
 import pachmarhigallary6 from "@/assets/destimages/pachmarhigallary6.jpeg";
+import pachmarhigallary7 from "@/assets/destimages/pachmarhigallary7.jpeg";
+import pachmarhigallary8 from "@/assets/destimages/pachmarhigallary8.jpeg";
+import pachmarhigallary9 from "@/assets/destimages/pachmarhigallary9.jpeg";
+import pachmarhigallary10 from "@/assets/destimages/pachmarhigallary10.jpeg";
+import pachmarhigallary11 from "@/assets/destimages/pachmarhigallary11.jpeg";
 
 
 const pachmarhi: DestinationContent = {
@@ -46,7 +51,12 @@ const pachmarhi: DestinationContent = {
     pachmarhigallary3,
     pachmarhigallary4,
     pachmarhigallary5,
-    pachmarhigallary6
+    pachmarhigallary6,
+    pachmarhigallary7,
+    pachmarhigallary8,
+    pachmarhigallary9,
+    pachmarhigallary10,
+    pachmarhigallary11
   ],
   travelInfo: {
     bestTime: "September to June — monsoon is dramatic, winter is crisp",

@@ -19,6 +19,7 @@ import ujjaingallary9 from "@/assets/destimages/ujjaingallary9.jpeg";
 import ujjaingallary10 from "@/assets/destimages/ujjaingallary10.jpeg";
 import ujjaingallary11 from "@/assets/destimages/ujjaingallary11.jpeg";
 import ujjaingallary12 from "@/assets/destimages/ujjaingallary12.jpeg";
+import ujjaingallary13 from "@/assets/destimages/ujjaingallary13.jpeg";
 
 const ujjain: DestinationContent = {
   overviewParagraphs: [
@@ -123,6 +124,7 @@ const ujjain: DestinationContent = {
     ujjaingallary10,
     ujjaingallary11,
     ujjaingallary12,
+    ujjaingallary13
   ],
 
   travelInfo: {

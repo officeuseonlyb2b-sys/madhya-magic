@@ -13,6 +13,11 @@ import gwaliorgallary3 from "@/assets/destimages/gwalliorgallary3.jpeg";
 import gwaliorgallary4 from "@/assets/destimages/gwalliorgallary4.jpeg";
 import gwaliorgallary5 from "@/assets/destimages/gwalliorgallary5.jpeg";
 import gwaliorgallary6 from "@/assets/destimages/gwalliorgallary6.jpeg";
+import gwaliorgallary7 from "@/assets/destimages/gwalliorgallary7.jpeg";
+import gwaliorgallary8 from "@/assets/destimages/gwalliorgallary8.jpeg";
+import gwaliorgallary9 from "@/assets/destimages/gwalliorgallary9.jpeg";
+import gwaliorgallary10 from "@/assets/destimages/gwalliorgallary10.jpeg";
+import gwaliorgallary11 from "@/assets/destimages/gwalliorgallary11.jpeg";
 
 const gwalior: DestinationContent = {
   overviewParagraphs: [
@@ -111,6 +116,11 @@ const gwalior: DestinationContent = {
     gwaliorgallary4,
     gwaliorgallary5,
     gwaliorgallary6,
+    gwaliorgallary7,
+    gwaliorgallary8,
+    gwaliorgallary9,
+    gwaliorgallary10,
+    gwaliorgallary11,
   ],
 
   travelInfo: {

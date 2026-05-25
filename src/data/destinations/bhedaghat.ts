@@ -7,14 +7,16 @@ import ropewayImg from "@/assets/destimages/Jabalpur-Dhuadhar-Ropeway.webp";
 import dhuadharImg from "@/assets/destimages/Jabalpur-Dhuadhar-Waterfall.webp";
 
 // Gallery Images (Local Assets)
-import gallery1 from "@/assets/destimages/bhedaghatgallary1.jpeg";
-import gallery2 from "@/assets/destimages/bhedaghatgallary2.jpeg";
-import gallery3 from "@/assets/destimages/bhedaghatgallary3.jpeg";
-import gallery4 from "@/assets/destimages/bhedaghatgallary4.jpeg";
-import gallery5 from "@/assets/destimages/bhedaghatgallary5.jpeg";
-import gallery6 from "@/assets/destimages/bhedaghatgallary6.jpeg";
-import gallery7 from "@/assets/destimages/bhedaghatgallary7.jpeg";
-import gallery8 from "@/assets/destimages/bhedaghatgallary8.jpeg";
+import gallary1 from "@/assets/destimages/bhedaghatgallary1.jpeg";
+import gallary2 from "@/assets/destimages/bhedaghatgallary2.jpeg";
+import gallary3 from "@/assets/destimages/bhedaghatgallary3.jpeg";
+import gallary4 from "@/assets/destimages/bhedaghatgallary4.jpeg";
+import gallary5 from "@/assets/destimages/bhedaghatgallary5.jpeg";
+import gallary6 from "@/assets/destimages/bhedaghatgallary6.jpeg";
+import gallary7 from "@/assets/destimages/bhedaghatgallary7.jpeg";
+import gallary8 from "@/assets/destimages/bhedaghatgallary8.jpeg";
+import gallary9 from "@/assets/destimages/bhedaghatgallary9.jpeg";
+import gallary10 from "@/assets/destimages/bhedaghatgallary10.jpeg";
 const bhedaghat: DestinationContent = {
   overviewParagraphs: [
     "Bhedaghat is one of Madhya Pradesh's most spectacular natural wonders — a 25-kilometre stretch where the Narmada river carves its way through gleaming white marble cliffs that soar nearly 100 feet above the water.",
@@ -115,14 +117,16 @@ const bhedaghat: DestinationContent = {
 
   // Gallery Images
   gallery: [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    gallery5,
-    gallery6,
-    gallery7,
-    gallery8,
+    gallary1,
+    gallary2,
+    gallary3,
+    gallary4,
+    gallary5,
+    gallary6,
+    gallary7,
+    gallary8,
+    gallary9,
+    gallary10,
   ],
 
   travelInfo: {

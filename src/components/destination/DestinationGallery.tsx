@@ -3,11 +3,7 @@ import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const imageStyles = [
-  "w-[180px] h-[360px]",
-  "w-[240px] h-[170px]",
-  "w-[220px] h-[220px]",
-  "w-[230px] h-[360px]",
-  "w-[210px] h-[180px]",
+  "w-[1033px] h-[596px]",
 ];
 
 interface Props {
@@ -23,7 +19,7 @@ const DestinationGallery = ({ images, destinationName }: Props) => {
 
     if (!container) return;
 
-    const scrollAmount = 320;
+    const scrollAmount = 1050;
 
     container.scrollBy({
       left: direction === "left" ? -scrollAmount : scrollAmount,
@@ -49,47 +45,128 @@ const DestinationGallery = ({ images, destinationName }: Props) => {
       <div className="relative">
 
         {/* Left Arrow */}
-        <button
-          onClick={() => scroll("left")}
-          className="
-            absolute left-0 top-1/2 -translate-y-1/2 z-20
-            w-12 h-12
-            bg-white/90 backdrop-blur-md
-            border border-border
-            shadow-2xl
-            flex items-center justify-center
-            hover:scale-110 transition-all duration-300
-          "
-        >
-          <ChevronLeft size={22} />
-        </button>
+<button
+  onClick={() => scroll("left")}
+  className="
+    absolute left-6 top-1/2 -translate-y-1/2 z-30
+    group
+  "
+>
+  <div
+    className="
+      relative
+      w-16 h-16
+      rounded-full
+      bg-white/15
+      backdrop-blur-2xl
+      border border-white/30
+      shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+      flex items-center justify-center
+      overflow-hidden
+      transition-all duration-500
+      group-hover:scale-110
+      group-hover:bg-white/25
+      group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]
+    "
+  >
+    {/* Glow Effect */}
+    <div
+      className="
+        absolute inset-0
+        bg-gradient-to-br from-white/40 via-transparent to-transparent
+        opacity-70
+      "
+    />
 
-        {/* Right Arrow */}
-        <button
-          onClick={() => scroll("right")}
-          className="
-            absolute right-0 top-1/2 -translate-y-1/2 z-20
-            w-12 h-12
-            bg-white/90 backdrop-blur-md
-            border border-border
-            shadow-2xl
-            flex items-center justify-center
-            hover:scale-110 transition-all duration-300
-          "
-        >
-          <ChevronRight size={22} />
-        </button>
+    {/* Inner Ring */}
+    <div
+      className="
+        absolute inset-[3px]
+        rounded-full
+        border border-white/20
+      "
+    />
+
+    <ChevronLeft
+      size={28}
+      className="
+        relative z-10
+        text-white
+        transition-transform duration-300
+        group-hover:-translate-x-1
+      "
+      strokeWidth={2.2}
+    />
+  </div>
+</button>
+
+{/* Right Arrow */}
+<button
+  onClick={() => scroll("right")}
+  className="
+    absolute right-6 top-1/2 -translate-y-1/2 z-30
+    group
+  "
+>
+  <div
+    className="
+      relative
+      w-16 h-16
+      rounded-full
+      bg-white/15
+      backdrop-blur-2xl
+      border border-white/30
+      shadow-[0_8px_32px_rgba(0,0,0,0.25)]
+      flex items-center justify-center
+      overflow-hidden
+      transition-all duration-500
+      group-hover:scale-110
+      group-hover:bg-white/25
+      group-hover:shadow-[0_12px_40px_rgba(0,0,0,0.35)]
+    "
+  >
+    {/* Glow Effect */}
+    <div
+      className="
+        absolute inset-0
+        bg-gradient-to-br from-white/40 via-transparent to-transparent
+        opacity-70
+      "
+    />
+
+    {/* Inner Ring */}
+    <div
+      className="
+        absolute inset-[3px]
+        rounded-full
+        border border-white/20
+      "
+    />
+
+    <ChevronRight
+      size={28}
+      className="
+        relative z-10
+        text-white
+        transition-transform duration-300
+        group-hover:translate-x-1
+      "
+      strokeWidth={2.2}
+    />
+  </div>
+</button>
 
         {/* Gallery */}
         <div
           ref={scrollRef}
           className="
-            overflow-x-hidden
-            px-14
+            overflow-x-auto
+            scrollbar-hide
+            px-16
             select-none
           "
         >
-          <div className="flex items-center gap-5 min-w-max py-2">
+          <div className="flex items-center gap-6 min-w-max py-2">
             {images.map((g, i) => (
               <motion.div
                 key={i}
@@ -103,8 +180,9 @@ const DestinationGallery = ({ images, destinationName }: Props) => {
                 className={`
                   flex-shrink-0
                   overflow-hidden
+                  rounded-3xl
                   shadow-2xl
-                  ${imageStyles[i % imageStyles.length]}
+                  ${imageStyles[0]}
                 `}
               >
                 <img
