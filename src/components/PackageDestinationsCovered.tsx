@@ -38,8 +38,8 @@ const resolveDestination = (name: string, fallbackImage: string): DestEntry => {
   const images = gallery.length
     ? gallery
     : heroImg
-    ? [heroImg]
-    : [fallbackImage];
+      ? [heroImg]
+      : [fallbackImage];
 
   return { name: name.trim(), slug, images };
 };
@@ -93,21 +93,6 @@ const PackageDestinationsCovered = ({ location, fallbackImage }: Props) => {
 
   return (
     <div className="space-y-5">
-      {/* Slideshow */}
-      <div className="relative w-full overflow-hidden rounded-3xl shadow-[var(--shadow-card)] bg-muted">
-        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9]">
-          <DestinationImageSlider
-            key={current.slug}
-            images={current.images}
-            alt={current.name}
-            active
-            intervalMs={3500}
-          />
-          {/* Subtle bottom vignette for premium feel — no text */}
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/20 to-transparent" />
-        </div>
-      </div>
-
       {/* Destination tags */}
       <div className="flex flex-wrap gap-2.5 sm:gap-3">
         {entries.map((d, i) => {
@@ -123,12 +108,12 @@ const PackageDestinationsCovered = ({ location, fallbackImage }: Props) => {
               animate={
                 isHint
                   ? {
-                      boxShadow: [
-                        "0 0 0 0 hsl(var(--primary) / 0.0)",
-                        "0 0 0 6px hsl(var(--primary) / 0.18)",
-                        "0 0 0 0 hsl(var(--primary) / 0.0)",
-                      ],
-                    }
+                    boxShadow: [
+                      "0 0 0 0 hsl(var(--primary) / 0.0)",
+                      "0 0 0 6px hsl(var(--primary) / 0.18)",
+                      "0 0 0 0 hsl(var(--primary) / 0.0)",
+                    ],
+                  }
                   : { boxShadow: "0 0 0 0 hsl(var(--primary) / 0)" }
               }
               transition={
@@ -154,6 +139,22 @@ const PackageDestinationsCovered = ({ location, fallbackImage }: Props) => {
           );
         })}
       </div>
+      {/* Slideshow */}
+      <div className="relative w-full overflow-hidden rounded-3xl shadow-[var(--shadow-card)] bg-muted">
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9]">
+          <DestinationImageSlider
+            key={current.slug}
+            images={current.images}
+            alt={current.name}
+            active
+            intervalMs={3500}
+          />
+          {/* Subtle bottom vignette for premium feel — no text */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-black/20 to-transparent" />
+        </div>
+      </div>
+
+
     </div>
   );
 };
