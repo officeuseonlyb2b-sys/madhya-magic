@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import GetBestQuoteModal from "@/components/GetBestQuoteModal";
 import PackageItineraryCarousel from "@/components/PackageItineraryCarousel";
+import PackageDestinationsCovered from "@/components/PackageDestinationsCovered";
 
 const PackageDetail = () => {
   const { id } = useParams();
