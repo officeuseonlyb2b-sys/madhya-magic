@@ -85,14 +85,29 @@ const PackageDetail = () => {
                 <PackageDestinationsCovered location={pkg.location} fallbackImage={pkg.image} />
               </motion.div>
 
-              {/* Itinerary */}
+              {/* Itinerary - simple vertical timeline */}
               <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
                 <h2 className="text-2xl font-display font-bold text-foreground mb-6">Day-by-Day Itinerary</h2>
-                <PackageItineraryCarousel
-                  itinerary={pkg.itinerary}
-                  fallbackImage={pkg.image}
-                  location={pkg.location}
-                />
+                <div className="relative">
+                  <div className="absolute left-5 top-2 bottom-2 w-px bg-primary/30" aria-hidden="true" />
+                  <ol className="space-y-8">
+                    {pkg.itinerary.map((day, i) => {
+                      const [title, ...descParts] = day.split(/:\s*/);
+                      const description = descParts.join(": ");
+                      return (
+                        <li key={i} className="relative pl-16">
+                          <span className="absolute left-0 top-0 w-10 h-10 rounded-full gradient-gold text-primary-foreground text-sm font-bold flex items-center justify-center shadow-md">
+                            D{i + 1}
+                          </span>
+                          <h3 className="font-display font-bold text-foreground text-lg mb-1.5">{title}</h3>
+                          {description && (
+                            <p className="text-muted-foreground leading-relaxed">{description}</p>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ol>
+                </div>
               </motion.div>
 
               {/* Included / Excluded */}
