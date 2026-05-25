@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import GetBestQuoteModal from "@/components/GetBestQuoteModal";
 import PackageItineraryCarousel from "@/components/PackageItineraryCarousel";
+import PackageDestinationsCovered from "@/components/PackageDestinationsCovered";
 
 const PackageDetail = () => {
   const { id } = useParams();
@@ -76,6 +77,12 @@ const PackageDetail = () => {
                     <span key={h} className="bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium">{h}</span>
                   ))}
                 </div>
+              </motion.div>
+
+              {/* Destinations Covered */}
+              <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+                <h2 className="text-2xl font-display font-bold text-foreground mb-6">Destinations Covered</h2>
+                <PackageDestinationsCovered location={pkg.location} fallbackImage={pkg.image} />
               </motion.div>
 
               {/* Itinerary */}
