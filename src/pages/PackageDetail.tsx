@@ -1,7 +1,7 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { Clock, Check, X as XIcon, ArrowLeft, MapPin, MessageCircle, Phone, Plus, Minus, Sparkles, FileText } from "lucide-react";
+import { Clock, Check, X as XIcon, ArrowLeft, MapPin, MessageCircle, Phone, Plus, Minus, Sparkles, FileText, Tag, Compass, IndianRupee } from "lucide-react";
 import { allPackages } from "@/data/packagesData";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -36,22 +36,43 @@ const PackageDetail = () => {
       <Navbar />
 
       {/* Hero Banner */}
-      <section className="relative h-[50vh] md:h-[60vh]">
-        <img src={pkg.image} alt={pkg.name} className="absolute inset-0 w-full h-full object-cover" />
-        <div className="absolute inset-0 gradient-overlay" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-12">
-          <Link to="/packages" className="flex items-center gap-1 text-primary-foreground/80 text-sm mb-4 hover:text-primary-foreground transition-colors">
+      <section className="relative h-[80vh] md:h-[88vh] min-h-[520px] w-full overflow-hidden">
+        <motion.img
+          src={pkg.image}
+          alt={pkg.name}
+          loading="eager"
+          decoding="async"
+          initial={{ scale: 1.08 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.6, ease: "easeOut" }}
+          className="absolute inset-0 w-full h-full object-cover object-center select-none"
+        />
+        {/* Layered overlays for crisp text readability */}
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/55 to-background/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-background/20 to-transparent" />
+        <div className="absolute inset-0 bg-black/15" />
+
+        <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-14 md:pb-20">
+          <Link to="/packages" className="inline-flex w-fit items-center gap-1.5 text-primary-foreground/90 text-sm mb-5 hover:text-primary-foreground transition-colors backdrop-blur-sm bg-black/20 border border-white/15 px-3 py-1.5 rounded-full">
             <ArrowLeft size={16} /> Back to Packages
           </Link>
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}>
-            <span className="inline-block gradient-gold text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-md mb-3">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} className="max-w-3xl">
+            <span className="inline-block gradient-gold text-primary-foreground text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg mb-4">
               {pkg.category}
             </span>
-            <h1 className="text-3xl md:text-5xl font-display font-bold text-primary-foreground mb-2">{pkg.name}</h1>
-            <div className="flex items-center gap-4 text-primary-foreground/80 text-sm">
-              <span className="flex items-center gap-1"><MapPin size={14} /> {pkg.location}</span>
-              <span className="flex items-center gap-1"><Clock size={14} /> {pkg.duration}</span>
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4 leading-[1.1] drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+              {pkg.name}
+            </h1>
+            <div className="flex flex-wrap items-center gap-2.5 md:gap-3">
+              <span className="inline-flex items-center gap-1.5 text-white text-xs md:text-sm font-medium backdrop-blur-md bg-white/10 border border-white/20 px-3.5 py-2 rounded-full shadow-sm">
+                <MapPin size={14} className="text-secondary" /> {pkg.location}
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-white text-xs md:text-sm font-medium backdrop-blur-md bg-white/10 border border-white/20 px-3.5 py-2 rounded-full shadow-sm">
+                <Clock size={14} className="text-secondary" /> {pkg.duration}
+              </span>
+              <span className="inline-flex items-center gap-1.5 text-white text-xs md:text-sm font-medium backdrop-blur-md bg-white/10 border border-white/20 px-3.5 py-2 rounded-full shadow-sm">
+                <Tag size={14} className="text-secondary" /> {pkg.category}
+              </span>
             </div>
           </motion.div>
         </div>
@@ -158,20 +179,26 @@ const PackageDetail = () => {
                     </p>
                   )}
 
-                  <div className="space-y-3 mb-5 text-sm">
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Duration</span>
-                      <span className="text-foreground font-medium">
+                  <div className="space-y-2.5 mb-5 text-sm border-t border-border/60 pt-5">
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-2 text-muted-foreground">
+                        <Clock size={15} className="text-primary shrink-0" /> Duration
+                      </span>
+                      <span className="text-foreground font-medium text-right truncate">
                         {customize ? `${customDays} Days / ${customDays - 1} Nights` : pkg.duration}
                       </span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Location</span>
-                      <span className="text-foreground font-medium">{pkg.location}</span>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-2 text-muted-foreground shrink-0">
+                        <MapPin size={15} className="text-primary shrink-0" /> Location
+                      </span>
+                      <span className="text-foreground font-medium text-right break-words">{pkg.location}</span>
                     </div>
-                    <div className="flex justify-between">
-                      <span className="text-muted-foreground">Category</span>
-                      <span className="text-foreground font-medium">{pkg.category}</span>
+                    <div className="flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-2 text-muted-foreground">
+                        <Tag size={15} className="text-primary shrink-0" /> Category
+                      </span>
+                      <span className="text-foreground font-medium text-right truncate">{pkg.category}</span>
                     </div>
                   </div>
 
