@@ -52,26 +52,26 @@ export default function TrustedBrandsSection() {
       <div className="relative flex items-center overflow-hidden border-y border-white/60 bg-white/95 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.06)]">
 
         {/* LEFT CONTENT */}
-<div className="relative z-20 flex items-center gap-5 min-w-fit px-8 lg:px-12 py-5 bg-white border-r border-gray-200/60">
-  
-  <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary">
-    <ShieldCheck size={26} />
-  </div>
+        <div className="relative z-20 flex items-center gap-5 min-w-fit px-8 lg:px-12 py-5 bg-white border-r border-gray-200/60">
+          
+          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary">
+            <ShieldCheck size={26} />
+          </div>
 
-  <div>
-    <p className="text-[13px] uppercase tracking-[4px] text-gray-500 font-semibold mb-1">
-      Trusted By
-    </p>
+          <div>
+            <p className="text-[13px] uppercase tracking-[4px] text-gray-500 font-semibold mb-1">
+              Trusted By
+            </p>
 
-    <h2 className="text-[30px] lg:text-[42px] font-bold text-gray-900 leading-[0.95] whitespace-nowrap tracking-[-1.5px]">
-  Brands That
+            <h2 className="text-[30px] lg:text-[42px] font-bold text-gray-900 leading-[0.95] whitespace-nowrap tracking-[-1.5px]">
+              Brands That
 
-  <span className="block text-primary text-[26px] lg:text-[36px] mt-1">
-    Trust Us
-  </span>
-</h2>
-  </div>
-</div>
+              <span className="block text-primary text-[26px] lg:text-[36px] mt-1">
+                Trust Us
+              </span>
+            </h2>
+          </div>
+        </div>
 
         {/* LOGO SLIDER */}
         <div className="relative flex-1 overflow-hidden py-0">
@@ -88,7 +88,7 @@ export default function TrustedBrandsSection() {
               x: ["0%", "-50%"],
             }}
             transition={{
-              duration: 15,
+              duration: 60, // ✅ thoda fast — pehle 15 (fast), phir 120 (bahut slow), ab 60 (balanced)
               repeat: Infinity,
               ease: "linear",
             }}

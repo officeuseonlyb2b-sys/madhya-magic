@@ -166,85 +166,141 @@ const PackageDetail = () => {
 
             {/* Right Column - Pricing Card */}
             <div>
-              <div className="sticky top-24">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.15 }}
-                  className="bg-card rounded-2xl p-6 shadow-[var(--shadow-card)]"
-                >
-                  <div className="flex items-end gap-2 mb-1">
-                    <span className="text-3xl font-bold text-primary">₹{finalPrice.toLocaleString()}</span>
-                    {!customize && (
-                      <span className="text-muted-foreground line-through text-sm">₹{pkg.originalPrice.toLocaleString()}</span>
-                    )}
-                  </div>
-                  <p className="text-sm text-muted-foreground mb-1">per person {customize && extraDays !== 0 ? `(${customDays} days)` : ""}</p>
-                  {!customize && (
-                    <p className="text-sm font-medium text-secondary mb-6">
-                      Save ₹{(pkg.originalPrice - pkg.price).toLocaleString()}
-                    </p>
-                  )}
-                  {customize && extraDays > 0 && (
-                    <p className="text-sm font-medium text-primary mb-6">
-                      +{extraDays} extra {extraDays === 1 ? "day" : "days"} • +₹{(extraDays * perDay).toLocaleString()}
-                    </p>
-                  )}
+              
+<div className="sticky top-24">
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ delay: 0.15 }}
+    className="rounded-3xl border border-border/50 bg-card shadow-xl overflow-hidden"
+  >
+    {/* Top Accent */}
+    <div className="h-1 w-full bg-gradient-to-r from-yellow-500 via-amber-400 to-yellow-500" />
 
-                  <div className="space-y-2.5 mb-5 text-sm border-t border-border/60 pt-5">
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex items-center gap-2 text-muted-foreground">
-                        <Clock size={15} className="text-primary shrink-0" /> Duration
-                      </span>
-                      <span className="text-foreground font-medium text-right truncate">
-                        {customize ? `${customDays} Days / ${customDays - 1} Nights` : pkg.duration}
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex items-center gap-2 text-muted-foreground shrink-0">
-                        <MapPin size={15} className="text-primary shrink-0" /> Location
-                      </span>
-                      <span className="text-foreground font-medium text-right break-words">{pkg.location}</span>
-                    </div>
-                    <div className="flex items-center justify-between gap-3">
-                      <span className="inline-flex items-center gap-2 text-muted-foreground">
-                        <Tag size={15} className="text-primary shrink-0" /> Category
-                      </span>
-                      <span className="text-foreground font-medium text-right truncate">{pkg.category}</span>
-                    </div>
-                  </div>
+    <div className="p-6">
+      {/* Tags */}
+      <div className="flex items-center justify-between mb-6">
+        <span className="rounded-full bg-primary/10 text-primary px-4 py-1.5 text-xs font-semibold tracking-wider uppercase">
+          Luxury Escape
+        </span>
 
+        <span className="rounded-full border border-border px-3 py-1 text-xs text-muted-foreground">
+          Premium Stay
+        </span>
+      </div>
 
-                  <a
-                    href={`https://wa.me/919111009498?text=${encodeURIComponent(
-                      `Hi! I'm interested in the "${pkg.name}" package${
-                        customize && extraDays > 0
-                          ? ` customized to ${customDays} days`
-                          : ""
-                      } (₹${finalPrice.toLocaleString()}). Please share more details.`
-                    )}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full gradient-gold text-primary-foreground rounded-xl py-3.5 font-semibold text-lg transition-transform hover:scale-105 flex items-center justify-center gap-2 mb-3"
-                  >
-                    <MessageCircle size={20} /> Book via WhatsApp
-                  </a>
-                  <a
-                    href="tel:+919111009498"
-                    className="w-full border-2 border-primary text-primary rounded-xl py-3 font-semibold transition-transform hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <Phone size={18} /> Call to Book
-                  </a>
-                  <button
-                    type="button"
-                    onClick={() => setQuoteOpen(true)}
-                    className="mt-3 w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground rounded-xl py-3 font-semibold transition-transform hover:scale-105 flex items-center justify-center gap-2"
-                  >
-                    <FileText size={18} /> Get Best Quote
-                  </button>
-                  <p className="text-xs text-muted-foreground text-center mt-3">Free cancellation up to 48 hours</p>
-                </motion.div>
-              </div>
+      {/* Price */}
+      <div className="mb-6">
+        <div className="flex items-end gap-3">
+          <h2 className="text-5xl font-bold leading-none text-foreground">
+            ₹{finalPrice.toLocaleString()}
+          </h2>
+
+          {!customize && (
+            <span className="text-lg text-muted-foreground line-through mb-1">
+              ₹{pkg.originalPrice.toLocaleString()}
+            </span>
+          )}
+        </div>
+
+        <div className="flex items-center justify-between mt-3">
+          <p className="text-sm text-muted-foreground">
+            Per Person
+          </p>
+
+          {!customize && (
+            <span className="rounded-full bg-green-500/10 text-green-600 px-3 py-1 text-xs font-semibold">
+              Save ₹{(pkg.originalPrice - pkg.price).toLocaleString()}
+            </span>
+          )}
+        </div>
+      </div>
+
+      {/* Info Cards */}
+      <div className="space-y-4 mb-7">
+        <div className="flex items-center gap-4 rounded-2xl border border-border/50 bg-background/40 p-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+            <Clock className="h-5 w-5 text-primary" />
+          </div>
+
+          <div>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground">
+              Duration
+            </p>
+
+            <p className="text-base font-semibold text-foreground">
+              {customize
+                ? `${customDays} Days / ${customDays - 1} Nights`
+                : pkg.duration}
+            </p>
+          </div>
+        </div>
+
+        <div className="flex items-center gap-4 rounded-2xl border border-border/50 bg-background/40 p-4">
+          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10">
+            <MapPin className="h-5 w-5 text-primary" />
+          </div>
+
+          <div>
+            <p className="text-xs uppercase tracking-wider text-muted-foreground">
+              Destinations
+            </p>
+
+            <p className="text-base font-semibold text-foreground leading-relaxed">
+              {pkg.location}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Buttons */}
+      <div className="space-y-3">
+        <a
+          href={`https://wa.me/919111009498?text=${encodeURIComponent(
+            `Hi! I'm interested in the "${pkg.name}" package${
+              customize && extraDays > 0
+                ? ` customized to ${customDays} days`
+                : ""
+            } (₹${finalPrice.toLocaleString()}). Please share more details.`
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary py-4 text-base font-semibold text-primary-foreground transition-all duration-300 hover:scale-[1.02]"
+        >
+          <MessageCircle size={20} />
+          Book Luxury Tour
+        </a>
+
+        <div className="grid grid-cols-2 gap-3">
+          <a
+            href="tel:+919111009498"
+            className="flex items-center justify-center gap-2 rounded-2xl border border-border py-3.5 font-medium transition-all hover:bg-muted/40"
+          >
+            <Phone size={18} />
+            Call
+          </a>
+
+          <button
+            type="button"
+            onClick={() => setQuoteOpen(true)}
+            className="flex items-center justify-center gap-2 rounded-2xl border border-primary/20 bg-primary/5 py-3.5 font-medium text-primary transition-all hover:bg-primary/10"
+          >
+            <FileText size={18} />
+            Quote
+          </button>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-5 border-t border-border/50 pt-4 text-center">
+        <p className="text-xs text-muted-foreground">
+          Free cancellation up to 48 hours
+        </p>
+      </div>
+    </div>
+  </motion.div>
+</div>
+
             </div>
           </div>
         </div>

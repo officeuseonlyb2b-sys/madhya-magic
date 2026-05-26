@@ -185,64 +185,7 @@ const HeroSection = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Hero Content */}
-      <motion.div
-        style={{ y: textY, opacity }}
-        className="relative z-10 w-full container mx-auto px-4 sm:px-6 pb-2 sm:pb-4 md:pb-6 lg:pb-8 xl:pb-10 pt-20 md:pt-24 lg:pt-28 text-left text-white"
-      >
-        {/* Badge */}
-        <motion.div
-          key={`badge-${activeIndex}`}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="mb-6 md:mb-8"
-        >
-          
-        </motion.div>
-
-        {/* Title */}
-        <motion.h1
-          key={`title-${activeIndex}`}
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="flex flex-wrap items-center gap-1.5 sm:gap-2 md:gap-3 font-display leading-[1] tracking-[-0.03em] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl [text-shadow:_0_4px_24px_rgba(0,0,0,0.4)]"
-        >
-          <span className="text-white font-light italic">
-            {currentSlide.titleLine1}
-          </span>
-
-          <span className="font-semibold text-transparent bg-clip-text bg-gradient-to-r from-amber-100 via-yellow-200 to-amber-300 drop-shadow-[0_2px_12px_rgba(251,191,36,0.3)]">
-            {currentSlide.titleLine2}
-          </span>
-        </motion.h1>
-        {/* Divider */}
-        <motion.div
-          key={`div-${activeIndex}`}
-          initial={{ opacity: 0, scaleX: 0 }}
-          animate={{ opacity: 1, scaleX: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="mt-6 sm:mt-8 h-px w-16 sm:w-24 bg-gradient-to-r from-amber-300/70 to-transparent origin-left"
-        />
-
-        {/* Description */}
-        <motion.p key={`desc-${activeIndex}`} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }} className="text-xs sm:text-sm md:text-base lg:text-lg text-white/85 max-w-xl mt-4 sm:mt-5 font-body font-light leading-[1.7] tracking-[0.01em] [text-shadow:_0_2px_12px_rgba(0,0,0,0.5)]">  {currentSlide.description}</motion.p>
-        {/* Indicators */}
-        <div className="flex justify-start gap-2 mt-12 sm:mt-16">
-          {slides.map((s, i) => (
-            <button
-              key={s.key}
-              onClick={() => setActiveIndex(i)}
-              className={`h-1.5 rounded-full transition-all duration-500 ${i === activeIndex
-                ? "w-8 sm:w-10 bg-amber-400 shadow-[0_0_12px_#fbbf24]"
-                : "w-3 bg-white/30 hover:bg-white/50"
-                }`}
-              aria-label={`Go to ${s.key} slide`}
-            />
-          ))}
-        </div>
-      </motion.div>
+      
     </section>
   );
 };
