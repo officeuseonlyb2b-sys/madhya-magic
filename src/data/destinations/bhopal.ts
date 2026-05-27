@@ -32,13 +32,13 @@ const bhopal: DestinationContent = {
       title: "Upper Lake",
       description:
         "The iconic Bhojtal lake offers boating, sunset views and a peaceful escape in the center of the city.",
-      image: bhopalattraction1,
+      image: bhopalattraction2,
     },
     {
       title: "Taj-ul-Masajid",
       description:
         "One of the largest mosques in India, admired for its pink facade, domes and stunning Mughal architecture.",
-      image: bhopalattraction2,
+      image: bhopalattraction1,
     },
     {
       title: "Van Vihar National Park",

@@ -1,46 +1,137 @@
 import type { DestinationContent } from "./types";
 
-const tiger = "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?auto=format&fit=crop&w=1200&q=80";
-const safari = "https://images.unsplash.com/photo-1549366021-9f761d450615?auto=format&fit=crop&w=1200&q=80";
-const barasingha = "https://images.unsplash.com/photo-1484406566174-9da000fda645?auto=format&fit=crop&w=1200&q=80";
-const sunset = "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80";
-const forest = "https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1200&q=80";
-const birds = "https://images.unsplash.com/photo-1444464666168-49d633b86797?auto=format&fit=crop&w=1200&q=80";
+import kanhaattraction1 from "@/assets/destimages/kanhaattraction1.jpeg";
+import kanhaattraction2 from "@/assets/destimages/kanhaattraction2.jpeg";
+import kanhaattraction3 from "@/assets/destimages/kanhaattraction3.jpeg";
+import kanhaattraction4 from "@/assets/destimages/kanhaattraction4.jpeg";
+
+// gallery
+
+import kanhagallary1 from "@/assets/destimages/kanhagallary1.jpeg";
+import kanhagallary2 from "@/assets/destimages/kanhagallary2.jpeg";
+import kanhagallary3 from "@/assets/destimages/kanhagallary3.jpeg";
+import kanhagallary4 from "@/assets/destimages/kanhagallary4.jpeg";
+import kanhagallary5 from "@/assets/destimages/kanhagallary5.jpeg";
+import kanhagallary6 from "@/assets/destimages/kanhagallary6.jpeg";
+import kanhagallary7 from "@/assets/destimages/kanhagallary7.jpeg";
+import kanhagallary8 from "@/assets/destimages/kanhagallary8.jpeg";
+import kanhagallary9 from "@/assets/destimages/kanhagallary9.jpeg";
+import kanhagallary10 from "@/assets/destimages/kanhagallary10.jpeg";
 
 const kanha: DestinationContent = {
   overviewParagraphs: [
-    "Kanha National Park — sprawling across 940 sq km of central India — is one of Asia's finest tiger reserves and the green inspiration behind Rudyard Kipling's Jungle Book.",
-    "Vast meadows, sal and bamboo forests and shaded ravines shelter the Royal Bengal Tiger, the rare hard-ground Barasingha (saved from extinction here), leopards, sloth bears and more than 300 bird species.",
-    "Two safaris a day — morning and afternoon — across the Kisli, Mukki and Sarhi zones offer some of the most reliable tiger sightings in India, with the dramatic Bamni Dadar sunset capping the day.",
+    "Kanha National Park — one of India’s finest wildlife reserves — is famous for its lush sal forests, open meadows and majestic Royal Bengal Tigers.",
+    "Located in Madhya Pradesh, Kanha inspired Rudyard Kipling’s famous Jungle Book with its rich biodiversity and natural beauty.",
+    "From thrilling jeep safaris and rare wildlife sightings to scenic forest landscapes, Kanha offers an unforgettable jungle adventure.",
   ],
+
   attractions: [
-    { title: "Tiger Safari", description: "Open-jeep safaris across multiple zones offer India's best chance to spot the Royal Bengal Tiger in the wild.", image: tiger },
-    { title: "Bamni Dadar Sunset Point", description: "Watch sambar and barasingha graze in golden light as the Kanha sun dips behind the sal forest.", image: sunset },
-    { title: "Barasingha Habitat", description: "Witness the hard-ground swamp deer — once nearly extinct, now thriving thanks to Kanha's conservation programme.", image: barasingha },
-    { title: "Kanha Museum & Interpretation Centre", description: "Tribal exhibits, wildlife dioramas and conservation history right inside the reserve.", image: forest },
+    {
+      title: "Kanha National Park",
+      description:
+        "A world-famous tiger reserve known for its rich biodiversity and scenic forest landscapes.",
+      image: kanhaattraction1,
+    },
+    {
+      title: "Jeep Safari",
+      description:
+        "Experience thrilling jungle safaris through Kanha’s dense forests and wildlife zones.",
+      image: kanhaattraction2,
+    },
+    {
+      title: "Bamni Dadar",
+      description:
+        "A beautiful sunset point offering breathtaking panoramic views of Kanha’s forests and meadows.",
+      image: kanhaattraction3,
+    },
+    {
+      title: "Barasingha Conservation Area",
+      description:
+        "A special zone dedicated to the rare hard-ground swamp deer, the pride of Kanha.",
+      image: kanhaattraction4,
+    },
   ],
+
   thingsToDo: [
-    { title: "Morning Jungle Safari", description: "Dawn drives offer the best tiger sightings.", icon: "🐯" },
-    { title: "Afternoon Safari", description: "Spot leopards, sloth bears and gaur.", icon: "🚙" },
-    { title: "Bird Watching", description: "Over 300 species of resident & migratory birds.", icon: "🦜" },
-    { title: "Tribal Village Visit", description: "Experience Baiga and Gond communities.", icon: "🏘️" },
-    { title: "Nature Walk", description: "Guided buffer-zone walks with a naturalist.", icon: "🌿" },
-    { title: "Sunset at Bamni Dadar", description: "Kanha's iconic golden-hour viewpoint.", icon: "🌅" },
+    {
+      title: "Jungle Safari",
+      description: "Explore dense forests and wildlife-rich safari routes.",
+      icon: "🛻",
+    },
+    {
+      title: "Tiger Spotting",
+      description: "Witness majestic Royal Bengal Tigers in their natural habitat.",
+      icon: "🐅",
+    },
+    {
+      title: "Bird Watching",
+      description: "Observe colorful birds and diverse wildlife species.",
+      icon: "🦜",
+    },
+    {
+      title: "Nature Photography",
+      description: "Capture breathtaking wildlife and forest landscapes.",
+      icon: "📸",
+    },
+    {
+      title: "Sunset Viewing",
+      description: "Enjoy mesmerizing sunset views from Bamni Dadar.",
+      icon: "🌅",
+    },
+    {
+      title: "Forest Exploration",
+      description: "Experience peaceful nature trails and scenic greenery.",
+      icon: "🌿",
+    },
   ],
+
   experiences: [
-    { title: "First Tiger Sighting", description: "Heart-stopping silence as a tiger emerges from tall grass — Kanha delivers this more often than almost anywhere else." },
-    { title: "Barasingha Comeback", description: "Watch a species saved from the brink of extinction graze freely across the Sondar meadows." },
-    { title: "Jungle Lodge Evenings", description: "Bonfires, naturalist talks and the calls of the night jungle." },
-    { title: "Baiga Tribal Culture", description: "Folk songs, dances and stories from the forest-dwelling Baiga community." },
+    {
+      title: "Wildlife Adventure",
+      description:
+        "Feel the thrill of exploring one of India’s top tiger reserves.",
+    },
+    {
+      title: "Natural Beauty",
+      description:
+        "Enjoy lush forests, grasslands and peaceful jungle surroundings.",
+    },
+    {
+      title: "Rare Wildlife",
+      description:
+        "Spot Barasingha, leopards, deer species and exotic birds.",
+    },
+    {
+      title: "Photography Paradise",
+      description:
+        "Capture unforgettable moments of wildlife and scenic landscapes.",
+    },
   ],
-  gallery: [tiger, safari, barasingha, forest, birds, sunset],
+
+  gallery: [
+  kanhagallary1,
+  kanhagallary2,
+  kanhagallary3,
+  kanhagallary4,
+  kanhagallary5,
+  kanhagallary6,
+  kanhagallary7,
+  kanhagallary8,
+  kanhagallary9,
+  kanhagallary10,
+],
   travelInfo: {
-    bestTime: "October to June — April–May for the best tiger sightings",
-    road: "Well-connected by road from Jabalpur (165 km), Nagpur (270 km) and Raipur (250 km).",
-    rail: "Jabalpur and Gondia are the nearest railway stations.",
-    air: "Jabalpur Dumna Airport (~165 km) is the closest, with onward taxi to Kisli or Mukki gate.",
+    bestTime:
+      "October to June — ideal season for wildlife safaris and tiger sightings",
+    road:
+      "Well-connected by road from Jabalpur, Nagpur and nearby cities.",
+    rail:
+      "The nearest railway station is Gondia Junction (~145 km).",
+    air:
+      "The nearest airport is Jabalpur Airport.",
   },
-  duration: "3 Days / 2 Nights",
+
+  duration: "2 Days / 1 Night",
 };
 
 export default kanha;

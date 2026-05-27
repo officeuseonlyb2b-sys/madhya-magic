@@ -13,6 +13,10 @@ import khajurahogallary3 from "@/assets/destimages/khajurahogallary3.jpeg";
 import khajurahogallary4 from "@/assets/destimages/khajurahogallary4.jpeg";
 import khajurahogallary5 from "@/assets/destimages/khajurahogallary5.jpeg";
 import khajurahogallary6 from "@/assets/destimages/khajurahogallary6.jpeg";
+import khajurahogallary7 from "@/assets/destimages/khajurahogallary7.jpeg";
+import khajurahogallary8 from "@/assets/destimages/khajurahogallary8.jpeg";
+import khajurahogallary9 from "@/assets/destimages/khajurahogallary9.jpeg";
+import khajurahogallary10 from "@/assets/destimages/khajurahogallary10.jpeg";
 
 const khajuraho: DestinationContent = {
   overviewParagraphs: [
@@ -111,6 +115,10 @@ const khajuraho: DestinationContent = {
     khajurahogallary4,
     khajurahogallary5,
     khajurahogallary6,
+    khajurahogallary7,
+    khajurahogallary8,
+    khajurahogallary9,
+    khajurahogallary10,
   ],
 
   travelInfo: {
