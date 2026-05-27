@@ -151,7 +151,8 @@ const ReelCard = memo(({
       </div>
     </motion.div>
   );
-};
+});
+ReelCard.displayName = "ReelCard";
 
 // ============================================================
 // MAIN SECTION
