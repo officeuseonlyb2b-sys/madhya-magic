@@ -7,12 +7,15 @@ import chanderiattraction4 from "@/assets/destimages/chanderiattraction4.jpeg";
 
 // gallery
 
+import chanderigallary from "@/assets/destimages/chanderigallary.jpeg";
 import chanderigallary1 from "@/assets/destimages/chanderigallary1.jpeg";
 import chanderigallary2 from "@/assets/destimages/chanderigallary2.jpeg";
 import chanderigallary3 from "@/assets/destimages/chanderigallary3.jpeg";
 import chanderigallary4 from "@/assets/destimages/chanderigallary4.jpeg";
 import chanderigallary5 from "@/assets/destimages/chanderigallary5.jpeg";
 import chanderigallary6 from "@/assets/destimages/chanderigallary6.jpeg";
+import chanderigallary7 from "@/assets/destimages/chanderigallary7.jpeg";
+import chanderigallary8 from "@/assets/destimages/chanderigallary8.jpeg";
 
 const chanderi: DestinationContent = {
   overviewParagraphs: [
@@ -105,12 +108,15 @@ const chanderi: DestinationContent = {
   ],
 
   gallery: [
+    chanderigallary,
     chanderigallary1,
     chanderigallary2,
     chanderigallary3,
     chanderigallary4,
     chanderigallary5,
     chanderigallary6,
+    chanderigallary7,
+    chanderigallary8,
   ],
 
   travelInfo: {

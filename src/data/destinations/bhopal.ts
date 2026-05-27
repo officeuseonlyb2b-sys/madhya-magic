@@ -13,6 +13,12 @@ import bhopalgallary3 from "@/assets/destimages/bhopalgallary3.jpeg";
 import bhopalgallary4 from "@/assets/destimages/bhopalgallary4.jpeg";
 import bhopalgallary5 from "@/assets/destimages/bhopalgallary5.jpeg";
 import bhopalgallary6 from "@/assets/destimages/bhopalgallary6.jpeg";
+import bhopalgallary7 from "@/assets/destimages/bhopalgallary7.jpeg";
+import bhopalgallary8 from "@/assets/destimages/bhopalgallary8.jpeg";
+import bhopalgallary9 from "@/assets/destimages/bhopalgallary9.jpeg";
+import bhopalgallary10 from "@/assets/destimages/bhopalgallary10.jpeg";
+import bhopalgallary11 from "@/assets/destimages/bhopalgallary11.jpeg";
+import bhopalgallary12 from "@/assets/destimages/bhopalgallary12.jpeg";
 
 const bhopal: DestinationContent = {
   overviewParagraphs: [
@@ -111,6 +117,12 @@ const bhopal: DestinationContent = {
     bhopalgallary4,
     bhopalgallary5,
     bhopalgallary6,
+    bhopalgallary7,
+    bhopalgallary8,
+    bhopalgallary9,
+    bhopalgallary10,
+    bhopalgallary11,
+    bhopalgallary12,
   ],
 
   travelInfo: {

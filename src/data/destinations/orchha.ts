@@ -13,6 +13,11 @@ import orchhagallary3 from "@/assets/destimages/orchhagallary3.jpeg";
 import orchhagallary4 from "@/assets/destimages/orchhagallary4.jpeg";
 import orchhagallary5 from "@/assets/destimages/orchhagallary5.jpeg";
 import orchhagallary6 from "@/assets/destimages/orchhagallary6.jpeg";
+import orchhagallary7 from "@/assets/destimages/orchhagallary7.jpeg";
+import orchhagallary8 from "@/assets/destimages/orchhagallary8.jpeg";
+import orchhagallary9 from "@/assets/destimages/orchhagallary9.jpeg";
+import orchhagallary10 from "@/assets/destimages/orchhagallary10.jpeg";
+import orchhagallary11 from "@/assets/destimages/orchhagallary11.jpeg";
 
 const orchha: DestinationContent = {
   overviewParagraphs: [
@@ -111,6 +116,11 @@ const orchha: DestinationContent = {
     orchhagallary4,
     orchhagallary5,
     orchhagallary6,
+    orchhagallary7,
+    orchhagallary8,
+    orchhagallary9,
+    orchhagallary10,
+    orchhagallary11,
   ],
 
   travelInfo: {

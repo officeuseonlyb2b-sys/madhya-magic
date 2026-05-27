@@ -13,6 +13,11 @@ import shivpurigallary3 from "@/assets/destimages/shivpurigallary3.jpeg";
 import shivpurigallary4 from "@/assets/destimages/shivpurigallary4.jpeg";
 import shivpurigallary5 from "@/assets/destimages/shivpurigallary5.jpeg";
 import shivpurigallary6 from "@/assets/destimages/shivpurigallary6.jpeg";
+import shivpurigallary7 from "@/assets/destimages/shivpurigallary7.jpeg";
+import shivpurigallary8 from "@/assets/destimages/shivpurigallary8.jpeg";
+import shivpurigallary9 from "@/assets/destimages/shivpurigallary9.jpeg";
+import shivpurigallary11 from "@/assets/destimages/shivpurigallary11.jpeg";
+import shivpurigallary12 from "@/assets/destimages/shivpurigallary12.jpeg";
 
 const shivpuri: DestinationContent = {
   overviewParagraphs: [
@@ -111,6 +116,11 @@ const shivpuri: DestinationContent = {
     shivpurigallary4,
     shivpurigallary5,
     shivpurigallary6,
+    shivpurigallary7,
+    shivpurigallary8,
+    shivpurigallary9,
+    shivpurigallary11,
+    shivpurigallary12,
   ],
 
   travelInfo: {

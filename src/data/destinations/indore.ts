@@ -13,6 +13,9 @@ import indoregallary3 from "@/assets/destimages/indoregallary3.jpeg";
 import indoregallary4 from "@/assets/destimages/indoregallary4.jpeg";
 import indoregallary5 from "@/assets/destimages/indoregallary5.jpeg";
 import indoregallary6 from "@/assets/destimages/indoregallary6.jpeg";
+import indoregallary7 from "@/assets/destimages/indoregallary7.jpeg";
+import indoregallary8 from "@/assets/destimages/indoregallary8.jpeg";
+import indoregallary9 from "@/assets/destimages/indoregallary9.jpeg";
 
 const indore: DestinationContent = {
   overviewParagraphs: [
@@ -111,6 +114,9 @@ const indore: DestinationContent = {
     indoregallary4,
     indoregallary5,
     indoregallary6,
+    indoregallary7,
+    indoregallary8,
+    indoregallary9,
   ],
 
   travelInfo: {

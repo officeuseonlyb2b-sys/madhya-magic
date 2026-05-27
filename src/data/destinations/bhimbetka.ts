@@ -13,6 +13,8 @@ import bhimbetkagallary3 from "@/assets/destimages/bhimbetkagallary3.jpeg";
 import bhimbetkagallary4 from "@/assets/destimages/bhimbetkagallary4.jpeg";
 import bhimbetkagallary5 from "@/assets/destimages/bhimbetkagallary5.jpeg";
 import bhimbetkagallary6 from "@/assets/destimages/bhimbetkagallary6.jpeg";
+import bhimbetkagallary7 from "@/assets/destimages/bhimbetkagallary7.jpeg";
+import bhimbetkagallary8 from "@/assets/destimages/bhimbetkagallary8.jpeg";
 
 const bhimbetka: DestinationContent = {
     overviewParagraphs: [
@@ -113,6 +115,8 @@ const bhimbetka: DestinationContent = {
         bhimbetkagallary4,
         bhimbetkagallary5,
         bhimbetkagallary6,
+        bhimbetkagallary7,
+        bhimbetkagallary8,
     ],
 
     travelInfo: {
