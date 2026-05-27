@@ -71,7 +71,7 @@ ReelVideo.displayName = "ActivityReelVideo";
 // CARD
 // ============================================================
 
-const ReelCard = ({
+const ReelCard = memo(({
   reel,
   index,
 }: {
@@ -79,6 +79,7 @@ const ReelCard = ({
   index: number;
 }) => {
   const [hovered, setHovered] = useState(false);
+  const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
 
   const Wrapper: any = reel.link ? Link : "div";
 
@@ -90,9 +91,10 @@ const ReelCard = ({
 
   return (
     <motion.div
+      ref={viewRef}
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.04 }}
+      transition={{ delay: Math.min(index, 6) * 0.04 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
@@ -112,7 +114,7 @@ const ReelCard = ({
           <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
 
             {/* VIDEO */}
-            <ReelVideo reel={reel} isHovered={hovered} />
+            <ReelVideo reel={reel} isHovered={hovered} shouldLoad={inView} />
 
             {/* OVERLAY */}
             <div
@@ -163,7 +165,8 @@ const ReelCard = ({
       </Wrapper>
     </motion.div>
   );
-};
+});
+ReelCard.displayName = "ActivityReelCard";
 
 // ============================================================
 // MAIN SECTION
