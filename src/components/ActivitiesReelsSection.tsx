@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin } from "lucide-react";
 
@@ -9,39 +9,47 @@ import {
   type ActivityReel,
 } from "@/data/activityReelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import { useInViewport } from "@/hooks/useInViewport";
 import {
   getActivityReelCategories,
   matchesFilters,
 } from "@/lib/categoryMatch";
 
 // ============================================================
-// VIDEO
+// VIDEO (lazy-mounted)
 // ============================================================
 
-const ReelVideo = ({
+const ReelVideo = memo(({
   reel,
   isHovered,
+  shouldLoad,
 }: {
   reel: ActivityReel;
   isHovered: boolean;
+  shouldLoad: boolean;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const v = videoRef.current;
-
     if (!v) return;
-
     if (isHovered) {
       v.play().catch(() => {});
     } else {
       v.pause();
-
-      try {
-        v.currentTime = 0;
-      } catch {}
+      try { v.currentTime = 0; } catch {}
     }
   }, [isHovered]);
+
+  if (!shouldLoad) {
+    return (
+      <div
+        className={`absolute inset-0 w-full h-full bg-black transition-transform duration-700 will-change-transform ${
+          isHovered ? "scale-100" : "scale-110"
+        }`}
+      />
+    );
+  }
 
   return (
     <video
@@ -50,19 +58,20 @@ const ReelVideo = ({
       muted
       loop
       playsInline
-      preload="metadata"
+      preload="none"
       className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-transform duration-700 will-change-transform ${
         isHovered ? "scale-100" : "scale-110"
       }`}
     />
   );
-};
+});
+ReelVideo.displayName = "ActivityReelVideo";
 
 // ============================================================
 // CARD
 // ============================================================
 
-const ReelCard = ({
+const ReelCard = memo(({
   reel,
   index,
 }: {
@@ -70,6 +79,7 @@ const ReelCard = ({
   index: number;
 }) => {
   const [hovered, setHovered] = useState(false);
+  const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
 
   const Wrapper: any = reel.link ? Link : "div";
 
@@ -81,9 +91,10 @@ const ReelCard = ({
 
   return (
     <motion.div
+      ref={viewRef}
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.04 }}
+      transition={{ delay: Math.min(index, 6) * 0.04 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
@@ -103,7 +114,7 @@ const ReelCard = ({
           <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
 
             {/* VIDEO */}
-            <ReelVideo reel={reel} isHovered={hovered} />
+            <ReelVideo reel={reel} isHovered={hovered} shouldLoad={inView} />
 
             {/* OVERLAY */}
             <div
@@ -154,7 +165,8 @@ const ReelCard = ({
       </Wrapper>
     </motion.div>
   );
-};
+});
+ReelCard.displayName = "ActivityReelCard";
 
 // ============================================================
 // MAIN SECTION
