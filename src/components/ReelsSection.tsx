@@ -1,55 +1,70 @@
 import { motion } from "framer-motion";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import { MapPin } from "lucide-react";
 
 import { useFilters } from "@/contexts/FilterContext";
 import { reelsData, type ReelItem } from "@/data/reelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import { useInViewport } from "@/hooks/useInViewport";
 import { getReelCategories, matchesFilters } from "@/lib/categoryMatch";
 
 // ============================================================
-// VIDEO
+// VIDEO (lazy-mounted near viewport for perf)
 // ============================================================
 
-const ReelVideo = ({
+const ReelVideo = memo(({
   reel,
   isHovered,
+  shouldLoad,
 }: {
   reel: ReelItem;
   isHovered: boolean;
+  shouldLoad: boolean;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const v = videoRef.current;
-
     if (!v) return;
-
     if (isHovered) {
       v.play().catch(() => {});
     } else {
       v.pause();
-
-      try {
-        v.currentTime = 0;
-      } catch {}
+      try { v.currentTime = 0; } catch {}
     }
   }, [isHovered]);
+
+  if (!shouldLoad) {
+    return (
+      <img
+        src={reel.thumbnail}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        decoding="async"
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 will-change-transform ${
+          isHovered ? "scale-100" : "scale-110"
+        }`}
+      />
+    );
+  }
 
   return (
     <video
       ref={videoRef}
       src={reel.videoUrl}
+      poster={reel.thumbnail}
       muted
       loop
       playsInline
-      preload="metadata"
+      preload="none"
       className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 will-change-transform ${
         isHovered ? "scale-100" : "scale-110"
       }`}
     />
   );
-};
+});
+ReelVideo.displayName = "ReelVideo";
 
 // ============================================================
 // CARD
