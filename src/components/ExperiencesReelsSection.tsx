@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useMemo, useRef, useEffect, useState } from "react";
+import { memo, useMemo, useRef, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
@@ -9,6 +9,7 @@ import {
 import { experienceReelsData } from "@/data/experienceReelsData";
 import { useFilters } from "@/contexts/FilterContext";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
+import { useInViewport } from "@/hooks/useInViewport";
 import {
   getReelItemCategories,
   matchesFilters,
@@ -19,7 +20,7 @@ import {
 // EXPERIENCE CARD
 // ============================================================
 
-const ExperienceCard = ({
+const ExperienceCard = memo(({
   exp,
   index,
 }: {
@@ -28,30 +29,26 @@ const ExperienceCard = ({
 }) => {
 
   const videoRef = useRef<HTMLVideoElement>(null);
-
   const [hovered, setHovered] = useState(false);
+  const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
 
   useEffect(() => {
     const v = videoRef.current;
-
     if (!v) return;
-
     if (hovered) {
       v.play().catch(() => {});
     } else {
       v.pause();
-
-      try {
-        v.currentTime = 0;
-      } catch {}
+      try { v.currentTime = 0; } catch {}
     }
   }, [hovered]);
 
   return (
     <motion.div
+      ref={viewRef}
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: index * 0.04 }}
+      transition={{ delay: Math.min(index, 6) * 0.04 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
@@ -69,15 +66,15 @@ const ExperienceCard = ({
         {/* MEDIA */}
         <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
 
-          {/* VIDEO */}
-          {exp.video && (
+          {/* VIDEO — lazy mount near viewport */}
+          {exp.video && inView && (
             <video
               ref={videoRef}
               src={exp.video}
               muted
               loop
               playsInline
-              preload="metadata"
+              preload="none"
               className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-transform duration-700 will-change-transform ${
                 hovered ? "scale-100" : "scale-110"
               }`}
@@ -133,7 +130,8 @@ const ExperienceCard = ({
       </div>
     </motion.div>
   );
-};
+});
+ExperienceCard.displayName = "ExperienceCard";
 
 // ============================================================
 // MAIN SECTION
