@@ -55,7 +55,7 @@ const CategoryCustomPackage = ({ category }: Props) => {
     <>
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={customImage} alt="Custom Package" className="w-full h-full object-cover scale-105" />
+          <img src={customImage} alt="Custom Package" className="w-full h-full object-cover scale-105" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.65),rgba(0,0,0,0.3),rgba(0,0,0,0.85))]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,120,50,0.18),transparent)] mix-blend-multiply" />
         </div>

@@ -135,8 +135,7 @@ const RelatedPackagesStrip = ({
                     src={pkg.image}
                     alt={pkg.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                  />
+                    className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" decoding="async" />
 
                   <span
                     className={`absolute top-3 left-3 text-[10px] font-bold px-2.5 py-1 rounded-full ${

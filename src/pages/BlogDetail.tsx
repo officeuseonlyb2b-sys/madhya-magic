@@ -157,8 +157,7 @@ const BlogDetail = () => {
         <img
           src={blog.image}
           alt={blog.title}
-          className="absolute inset-0 w-full h-full object-cover"
-        />
+          className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
 
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/30" />
 
@@ -339,8 +338,7 @@ const BlogDetail = () => {
                       src={r.image}
                       alt={r.title}
                       loading="lazy"
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
-                    />
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" decoding="async" />
 
                     <div className="absolute top-3 left-3 bg-white/85 backdrop-blur-md text-[10px] uppercase tracking-[0.25em] px-3 py-1 rounded-full">
                       {r.category}

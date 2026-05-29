@@ -18,8 +18,7 @@ const HeroCarousel = ({ images, title, staticImage }: Props) => {
       <img
         src={bg}
         alt={`Explore ${title} of Madhya Pradesh`}
-        className="sr-only"
-      />
+        className="sr-only" loading="lazy" decoding="async" />
 
       {/* Dark overlay for text legibility */}
       <div className="absolute inset-0 bg-black/40" />

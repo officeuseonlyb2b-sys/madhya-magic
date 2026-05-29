@@ -47,8 +47,7 @@ const TopActivities = ({ activities }: Props) => {
                     src={act.image}
                     alt={act.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" decoding="async" />
                 </div>
                 <div className="p-5">
                   <h3 className="font-display font-bold text-foreground text-lg">{act.name}</h3>

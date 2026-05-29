@@ -199,8 +199,7 @@ const TestimonialsSection = () => {
 
                     <img
                       src={item.image}
-                      className="w-12 h-12 rounded-xl object-cover"
-                    />
+                      className="w-12 h-12 rounded-xl object-cover" loading="lazy" decoding="async" />
 
                     <div>
                       <h4 className="font-bold text-gray-900">
@@ -229,8 +228,7 @@ const TestimonialsSection = () => {
                         ? "object-contain p-4 bg-white"
                         : "object-cover"
                       }
-    `}
-                  />
+    `} loading="lazy" decoding="async" />
 
                   <div
                     className={`

@@ -163,8 +163,7 @@ export default function TravelInsightsSection() {
                       src={blog.image}
                       alt={blog.title}
                       loading="lazy"
-                      className="h-[220px] w-full object-cover"
-                    />
+                      className="h-[220px] w-full object-cover" decoding="async" />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
 

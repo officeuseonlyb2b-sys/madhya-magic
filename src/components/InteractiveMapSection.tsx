@@ -213,15 +213,13 @@ const InteractiveMapSection = () => {
       <img
         src={exploreStatue}
         alt=""
-        className="absolute left-0 top-0 hidden lg:block z-[1] pointer-events-none select-none w-auto h-[320px] xl:h-[480px] max-w-none object-contain object-left-top -translate-x-[10%] -translate-y-[2%]"
-      />
+        className="absolute left-0 top-0 hidden lg:block z-[1] pointer-events-none select-none w-auto h-[320px] xl:h-[480px] max-w-none object-contain object-left-top -translate-x-[10%] -translate-y-[2%]" loading="lazy" decoding="async" />
 
       {/* Right decorative image */}
       <img
         src={exploreJharokha}
         alt=""
-        className="absolute right-0 top-0 hidden lg:block z-[1] pointer-events-none select-none w-auto h-[320px] xl:h-[480px] max-w-none object-contain object-right-top translate-x-[2%] -translate-y-[-4%]"
-      />
+        className="absolute right-0 top-0 hidden lg:block z-[1] pointer-events-none select-none w-auto h-[320px] xl:h-[480px] max-w-none object-contain object-right-top translate-x-[2%] -translate-y-[-4%]" loading="lazy" decoding="async" />
 
       <div className="container mx-auto px-4 max-w-[1400px] relative z-10">
         {/* Header */}

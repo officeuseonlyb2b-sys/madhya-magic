@@ -147,8 +147,7 @@ const HomeCategoryShowcase = () => {
                   <img
                     src={item.image}
                     alt={item.label}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2500ms] ease-out"
-                  />
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[2500ms] ease-out" loading="lazy" decoding="async" />
 
                   {/* DARK OVERLAY */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/0 to-transparent opacity-80" />

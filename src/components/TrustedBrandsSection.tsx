@@ -124,8 +124,7 @@ export default function TrustedBrandsSection() {
                           ? "h-[160px] min-w-[260px]"
                           : ""
                       }
-                    `}
-                  />
+                    `} decoding="async" />
                 </div>
               );
             })}

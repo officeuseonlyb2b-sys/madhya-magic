@@ -111,8 +111,7 @@ const PackagesSection = () => {
                   <img
                     src={activePkg.image}
                     alt={activePkg.name}
-                    className="w-full h-full object-cover transition-transform duration-[8000ms] ease-out group-hover:scale-110"
-                  />
+                    className="w-full h-full object-cover transition-transform duration-[8000ms] ease-out group-hover:scale-110" loading="lazy" decoding="async" />
                   {/* Gradient overlays for readability */}
                   <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/40 to-transparent" />
                   <div className="absolute inset-0 bg-gradient-to-r from-foreground/50 via-transparent to-transparent" />
@@ -238,8 +237,7 @@ const PackagesSection = () => {
                           loading="lazy"
                           className={`w-full h-full object-cover transition-all duration-500 ${
                             isActive ? "scale-105" : "grayscale-[30%]"
-                          }`}
-                        />
+                          }`} decoding="async" />
                         {isActive && (
                           <div className="absolute inset-0 ring-2 ring-primary/60 rounded-xl pointer-events-none" />
                         )}

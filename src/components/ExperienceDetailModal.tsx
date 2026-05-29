@@ -64,7 +64,7 @@ const ExperienceDetailModal = ({ experience, open, onClose, anchorRect }: Props)
       </button>
       <div className="overflow-y-auto overscroll-contain">
         <div className="relative h-52 xs:h-60 sm:h-72 md:h-[380px] overflow-hidden">
-          <img src={experience!.image} alt={experience!.title} className="w-full h-full object-cover" loading="lazy" />
+          <img src={experience!.image} alt={experience!.title} className="w-full h-full object-cover" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8">
             <div className="flex items-center gap-2 mb-2 sm:mb-3 flex-wrap">
@@ -131,7 +131,7 @@ const ExperienceDetailModal = ({ experience, open, onClose, anchorRect }: Props)
                   <motion.div key={pkg.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.08 }}>
                     <Link to={`/package/${pkg.id}`} onClick={onClose} className="group block rounded-2xl overflow-hidden bg-card border border-border/40 hover:border-primary/40 hover:shadow-lg transition-all hover:-translate-y-1">
                       <div className="aspect-[16/10] overflow-hidden relative">
-                        <img src={pkg.image} alt={pkg.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                        <img src={pkg.image} alt={pkg.name} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" decoding="async" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                         <span className="absolute top-3 left-3 text-[10px] font-bold px-2.5 py-1 rounded-full bg-primary text-primary-foreground">
                           {Math.round(((pkg.originalPrice - pkg.price) / pkg.originalPrice) * 100)}% OFF

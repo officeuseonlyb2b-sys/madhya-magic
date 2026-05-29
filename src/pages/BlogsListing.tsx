@@ -206,8 +206,7 @@ const BlogsListing = () => {
                       src={blog.image}
                       alt={blog.title}
                       loading="lazy"
-                      className="h-[220px] w-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-110"
-                    />
+                      className="h-[220px] w-full object-cover transition-transform duration-[2000ms] ease-out group-hover:scale-110" decoding="async" />
 
                     <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
 

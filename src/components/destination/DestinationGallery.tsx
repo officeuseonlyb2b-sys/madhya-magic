@@ -194,8 +194,7 @@ const DestinationGallery = ({ images, destinationName }: Props) => {
                     w-full h-full object-cover
                     hover:scale-105
                     transition-transform duration-700
-                  "
-                />
+                  " decoding="async" />
               </motion.div>
             ))}
           </div>

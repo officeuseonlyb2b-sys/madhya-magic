@@ -632,8 +632,7 @@ const FAQSection = () => {
               <img
                 src={faqImage1}
                 alt="Travel FAQ"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" decoding="async" />
 
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
             </div>
@@ -648,8 +647,7 @@ const FAQSection = () => {
               <img
                 src={faqImage2}
                 alt="Support"
-                className="w-full h-full object-cover"
-              />
+                className="w-full h-full object-cover" loading="lazy" decoding="async" />
             </motion.div>
           </div>
         </div>

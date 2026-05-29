@@ -69,8 +69,7 @@ const SpiritualHero = () => {
             src={FALLBACK_IMG}
             alt="Sacred spiritual destinations of Madhya Pradesh"
             loading="lazy"
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" decoding="async" />
         )}
       </motion.div>
 

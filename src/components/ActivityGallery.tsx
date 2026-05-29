@@ -72,8 +72,7 @@ const ActivityGallery = ({ images, activityName }: ActivityGalleryProps) => {
                   src={img}
                   alt={`${activityName} ${realIndex + 1}`}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" decoding="async" />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center">
                   <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity text-sm font-semibold">
                     View

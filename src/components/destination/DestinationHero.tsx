@@ -16,8 +16,7 @@ const DestinationHero = ({ name, image, categories, bestTime }: Props) => (
     <img
       src={image}
       alt={name}
-      className="absolute inset-0 w-full h-full object-cover"
-    />
+      className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
 
     {/* CONTENT */}
     <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-12">

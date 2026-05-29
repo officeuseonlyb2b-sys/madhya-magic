@@ -14,8 +14,7 @@ const CustomPackageCTA = () => {
           <img
             src={customImage}
             alt="Custom Package"
-            className="w-full h-full object-cover scale-105"
-          />
+            className="w-full h-full object-cover scale-105" loading="lazy" decoding="async" />
 
           {/* OVERLAYS */}
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.65),rgba(0,0,0,0.3),rgba(0,0,0,0.85))]" />

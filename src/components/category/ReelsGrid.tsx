@@ -71,8 +71,7 @@ const ReelsGrid = ({ reels }: Props) => {
                   src={reel.thumbnail}
                   alt={reel.title}
                   loading="lazy"
-                  className="w-full h-full object-cover transition duration-700 group-hover:scale-110"
-                />
+                  className="w-full h-full object-cover transition duration-700 group-hover:scale-110" decoding="async" />
 
 
                 {/* Floating Glass Play Button */}
