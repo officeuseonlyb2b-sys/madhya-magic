@@ -217,8 +217,7 @@ const WhyChooseUs = () => {
                   <img
                     src={carouselData[current].image}
                     alt="Why Choose Us"
-                    className="w-full h-[300px] md:h-[390px] object-cover transition-all duration-700"
-                  />
+                    className="w-full h-[300px] md:h-[390px] object-cover transition-all duration-700" loading="lazy" decoding="async" />
 
                   {/* OVERLAY */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-black/5 to-transparent" />

@@ -21,8 +21,7 @@ const TopAttractions = ({ attractions }: { attractions: AttractionCard[] }) => {
                 src={a.image}
                 alt={a.title}
                 loading="lazy"
-                className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-105"
-              />
+                className="w-full h-[260px] object-cover transition-transform duration-700 group-hover:scale-105" decoding="async" />
               <div className="absolute top-5 right-5 w-10 h-10 border-t-2 border-r-2 border-yellow-500 rounded-tr-2xl" />
             </div>
             <div className="p-6 text-center">

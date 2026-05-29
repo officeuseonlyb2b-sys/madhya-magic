@@ -139,8 +139,7 @@ const Footer = () => {
                 <img
                   src={logo}
                   alt="Enchanting MP"
-                  className="w-[230px] lg:w-[250px] object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]"
-                />
+                  className="w-[230px] lg:w-[250px] object-contain drop-shadow-[0_10px_30px_rgba(0,0,0,0.45)]" loading="lazy" decoding="async" />
               </div>
 
               {/* DIVIDER */}
@@ -470,8 +469,7 @@ const Footer = () => {
                 imageRendering: "auto",
                 backfaceVisibility: "hidden",
                 transform: "translateZ(0)",
-              }}
-            />
+              }} decoding="async" />
 
             {/* sharpness overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-white/[0.03] pointer-events-none" />

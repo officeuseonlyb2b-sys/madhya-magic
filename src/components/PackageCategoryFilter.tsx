@@ -120,8 +120,7 @@ const CategoryCard = ({
         <img
           src={image}
           alt={label}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-        />
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" decoding="async" />
 
 
         {/* Active Glow */}

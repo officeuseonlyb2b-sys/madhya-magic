@@ -14,8 +14,7 @@ const PrivacyPolicy = () => {
                     {/* <img
           src={privacyBanner}
           alt="Privacy Policy"
-          className="w-full h-full object-cover"
-        /> */}
+          className="w-full h-full object-cover" loading="lazy" decoding="async" /> */}
                     <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70 flex flex-col items-center justify-center text-center px-4">
                         <h1 className="text-5xl md:text-7xl font-extrabold text-white tracking-tight">
                             Privacy Policy

@@ -146,8 +146,7 @@ const Activities = () => {
                           loading="lazy"
                           width={1280}
                           height={832}
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" decoding="async" />
                         
                         <span className="absolute top-4 left-4 px-3 py-1 rounded-full text-xs bg-amber-400/90 text-black font-semibold">
                           {activity.category}
@@ -196,7 +195,7 @@ const Activities = () => {
 
       {/* CTA Section */}
       <section className="relative py-20 overflow-hidden">
-        <img src={actSafari} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" />
+        <img src={actSafari} alt="" className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
         <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
         <div className="relative z-10 container mx-auto px-4 text-center max-w-3xl">
           <motion.div

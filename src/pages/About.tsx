@@ -163,15 +163,13 @@ const About = () => {
               <img
                 src={aboutimg1}
                 className="rounded-[36px] h-[700px] object-cover w-full"
-                alt=""
-              />
+                alt="" loading="lazy" decoding="async" />
 
 
               <img
                 src={aboutimg2}
                 className="absolute -bottom-10 -right-8 w-[260px] h-[320px] rounded-[30px] object-cover border border-black/10"
-                alt=""
-              />
+                alt="" loading="lazy" decoding="async" />
             </motion.div>
 
             <motion.div
@@ -316,8 +314,7 @@ We strive to make every journey memorable through meaningful experiences, emotio
                 <img
                   src={expert.image}
                   className="w-20 h-20 md:w-24 md:h-24 rounded-full object-cover mx-auto border-2 border-black/10"
-                  alt=""
-                />
+                  alt="" loading="lazy" decoding="async" />
 
                 <h3 className="text-lg md:text-xl font-bold mt-4 text-black">
                   {expert.name}

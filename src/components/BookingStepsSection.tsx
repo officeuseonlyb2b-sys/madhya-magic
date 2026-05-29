@@ -150,8 +150,7 @@ export default function BookingStepsSection() {
             <img
               src={bookStep}
               alt="Traveler"
-              className="absolute inset-0 w-full h-full object-cover"
-            />
+              className="absolute inset-0 w-full h-full object-cover" loading="lazy" decoding="async" />
 
             {/* GRADIENT */}
             <div className="absolute inset-0 bg-gradient-to-r from-black via-black/40 to-transparent" />

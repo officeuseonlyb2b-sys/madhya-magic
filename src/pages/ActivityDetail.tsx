@@ -239,8 +239,7 @@ const ActivityDetail = () => {
                     src={a.image}
                     alt={a.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" decoding="async" />
                   
                   <div className="absolute bottom-3 left-3">
                     <p className="text-sm font-display font-bold">{a.name}</p>

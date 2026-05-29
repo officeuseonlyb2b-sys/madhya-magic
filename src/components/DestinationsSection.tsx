@@ -28,8 +28,7 @@ const DestinationCard = ({ dest, index }: { dest: typeof destinations[0]; index:
             loading="lazy"
             width={800}
             height={600}
-            className="w-full h-full object-cover"
-          />
+            className="w-full h-full object-cover" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-t from-foreground/70 via-foreground/20 to-transparent" />
           <div className="absolute top-3 right-3 flex gap-1">
             {dest.category.slice(0, 2).map(c => (

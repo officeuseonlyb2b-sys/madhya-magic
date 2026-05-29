@@ -597,8 +597,7 @@ const PackageCard = ({ pkg, index }: { pkg: PackageData; index: number }) => {
             loading="lazy"
             width={1024}
             height={768}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-          />
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" decoding="async" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
           <div className="absolute top-3 left-3 gradient-gold text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-md text-shadow-soft">
             {Math.round(((pkg.originalPrice - pkg.price) / pkg.originalPrice) * 100)}% OFF
@@ -1099,7 +1098,7 @@ const Packages = () => {
       {/* CTA */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0">
-          <img src={customImage} className="w-full h-full object-cover scale-105" />
+          <img src={customImage} className="w-full h-full object-cover scale-105" loading="lazy" decoding="async" />
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.65),rgba(0,0,0,0.3),rgba(0,0,0,0.85))]" />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,120,50,0.18),transparent)] mix-blend-multiply" />
         </div>

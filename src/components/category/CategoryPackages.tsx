@@ -52,8 +52,7 @@ const CategoryPackages = ({ categoryFilter }: Props) => {
                     src={pkg.image}
                     alt={pkg.name}
                     loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" decoding="async" />
                   <div className="absolute top-3 left-3">
                     <span className="bg-primary text-primary-foreground text-xs font-bold px-3 py-1.5 rounded-full shadow-md">
                       {pkg.duration}
