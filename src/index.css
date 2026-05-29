@@ -399,3 +399,16 @@ section { content-visibility: auto; contain-intrinsic-size: 1px 800px; }
     scroll-behavior: auto !important;
   }
 }
+
+/* Mobile: soften expensive backdrop blurs to cut paint cost */
+@media (max-width: 768px) {
+  .backdrop-blur-2xl { backdrop-filter: blur(12px) !important; -webkit-backdrop-filter: blur(12px) !important; }
+  .backdrop-blur-xl  { backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; }
+}
+
+/* Hint compositor for animated/parallax surfaces */
+[data-parallax], .ken-burns, .float, .reel-card, .pkg-card-3d {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
