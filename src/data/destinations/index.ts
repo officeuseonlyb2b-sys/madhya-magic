@@ -22,6 +22,7 @@ import orchha from "./orchha";
 import datia from "./datia";
 import shivpuri from "./shivpuri";
 import chanderi from "./chanderi";
+import sanchi from "./sanchi";
 import bhimbetka from "./bhimbetka";
 import indore from "./indore";
 import mandu from "./mandu";
