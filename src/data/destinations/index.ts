@@ -29,7 +29,6 @@ import mandu from "./mandu";
 import burhanpur from "./burhanpur";
 import udayagiri from "./udayagiri";
 import jabalpur from "./jabalpur";
-import sanchi from "./sanchi";
 
 // Wildlife
 import pench from "./pench";
