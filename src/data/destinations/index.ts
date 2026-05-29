@@ -78,6 +78,7 @@ export const destinationRegistry: Record<string, DestinationContent> = {
   burhanpur,
   udayagiri,
   jabalpur,
+  sanchi,
 
   // Wildlife
   pench,
