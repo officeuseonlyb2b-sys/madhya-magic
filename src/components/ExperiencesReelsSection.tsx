@@ -15,7 +15,6 @@ import {
   matchesFilters,
 } from "@/lib/categoryMatch";
 
-
 // ============================================================
 // EXPERIENCE CARD
 // ============================================================
@@ -29,17 +28,22 @@ const ExperienceCard = memo(({
 }) => {
 
   const videoRef = useRef<HTMLVideoElement>(null);
+
   const [hovered, setHovered] = useState(false);
-  const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
+  const [loaded, setLoaded] = useState(false);
+
+  const { ref: viewRef, inView } =
+    useInViewport<HTMLDivElement>("400px");
 
   useEffect(() => {
     const v = videoRef.current;
+
     if (!v) return;
+
     if (hovered) {
       v.play().catch(() => {});
     } else {
       v.pause();
-      try { v.currentTime = 0; } catch {}
     }
   }, [hovered]);
 
@@ -48,7 +52,10 @@ const ExperienceCard = memo(({
       ref={viewRef}
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
-      transition={{ delay: Math.min(index, 6) * 0.04 }}
+      transition={{
+        delay: Math.min(index, 6) * 0.03,
+        duration: 0.35,
+      }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
@@ -58,15 +65,21 @@ const ExperienceCard = memo(({
         border: "none",
         boxShadow: "none",
         WebkitTapHighlightColor: "transparent",
+        transform: "translateZ(0)",
       }}
-      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 border-none outline-none ring-0 shadow-none focus:outline-none focus:ring-0"
+      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 border-none outline-none ring-0 shadow-none focus:outline-none focus:ring-0 will-change-transform"
     >
-      <div className="group relative overflow-hidden rounded-[24px] bg-black border-none outline-none ring-0 shadow-none">
+      <div className="group relative overflow-hidden rounded-[24px] bg-transparent border-none outline-none ring-0 shadow-none">
 
         {/* MEDIA */}
-        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
+        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-neutral-100">
 
-          {/* VIDEO — lazy mount near viewport */}
+          {/* PLACEHOLDER */}
+          {!loaded && (
+            <div className="absolute inset-0 bg-neutral-100 animate-pulse" />
+          )}
+
+          {/* VIDEO */}
           {exp.video && inView && (
             <video
               ref={videoRef}
@@ -74,9 +87,12 @@ const ExperienceCard = memo(({
               muted
               loop
               playsInline
-              preload="none"
-              className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-transform duration-700 will-change-transform ${
-                hovered ? "scale-100" : "scale-110"
+              preload="metadata"
+              onLoadedData={() => setLoaded(true)}
+              className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-500 ${
+                loaded ? "opacity-100" : "opacity-0"
+              } ${
+                hovered ? "scale-100" : "scale-105"
               }`}
             />
           )}
@@ -112,7 +128,6 @@ const ExperienceCard = memo(({
             <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
               {exp.tags[0] ?? ""}
             </span>
-
           </div>
         </div>
 
@@ -131,6 +146,7 @@ const ExperienceCard = memo(({
     </motion.div>
   );
 });
+
 ExperienceCard.displayName = "ExperienceCard";
 
 // ============================================================
@@ -140,8 +156,11 @@ ExperienceCard.displayName = "ExperienceCard";
 const ExperiencesReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
 
-  const { ref, onMouseEnter, onMouseLeave } =
-    useAutoScroll<HTMLDivElement>(50);
+  const {
+    ref,
+    onMouseEnter,
+    onMouseLeave,
+  } = useAutoScroll<HTMLDivElement>(50);
 
   // ============================================================
   // FILTER DATA
@@ -151,10 +170,13 @@ const ExperiencesReelsSection = () => {
     if (isAll) return experienceReelsData;
 
     return experienceReelsData.filter((e) =>
-      matchesFilters(getReelItemCategories(e), selectedFilters, isAll),
+      matchesFilters(
+        getReelItemCategories(e),
+        selectedFilters,
+        isAll,
+      ),
     );
   }, [selectedFilters, isAll]);
-
 
   // ============================================================
   // TRIPLE DATA FOR PERFECT LOOP
@@ -265,7 +287,10 @@ const ExperiencesReelsSection = () => {
                   el.scrollLeft = oneSetWidth;
                 }
               }}
-              className="reel-scroller overflow-x-auto no-scrollbar py-4"
+              className="reel-scroller overflow-x-auto no-scrollbar py-4 scroll-smooth"
+              style={{
+                WebkitOverflowScrolling: "touch",
+              }}
             >
               <div className="reel-track flex gap-5 w-max items-center">
 

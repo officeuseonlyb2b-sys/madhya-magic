@@ -13,12 +13,6 @@ import madhavgallary3 from "@/assets/destimages/madhavgallary3.jpeg";
 import madhavgallary4 from "@/assets/destimages/madhavgallary4.jpeg";
 import madhavgallary5 from "@/assets/destimages/madhavgallary5.jpeg";
 import madhavgallary6 from "@/assets/destimages/madhavgallary6.jpeg";
-import madhavgallary7 from "@/assets/destimages/madhavgallary7.jpeg";
-import madhavgallary8 from "@/assets/destimages/madhavgallary8.jpeg";
-import madhavgallary9 from "@/assets/destimages/madhavgallary9.jpeg";
-import madhavgallary10 from "@/assets/destimages/madhavgallary10.jpeg";
-import madhavgallary11 from "@/assets/destimages/madhavgallary11.jpeg";
-import madhavgallary12 from "@/assets/destimages/madhavgallary12.jpeg";
 
 const madhav: DestinationContent = {
     overviewParagraphs: [
@@ -110,20 +104,14 @@ const madhav: DestinationContent = {
         },
     ],
 
-    // gallery: [
-    //     madhavgallary1,
-    //     madhavgallary2,
-    //     madhavgallary3,
-    //     madhavgallary4,
-    //     madhavgallary5,
-    //     madhavgallary6,
-    //     madhavgallary7,
-    //     madhavgallary8,
-    //     madhavgallary9,
-    //     madhavgallary10,
-    //     madhavgallary11,
-    //     madhavgallary12,
-    // ],
+    gallery: [
+        madhavgallary1,
+        madhavgallary2,
+        madhavgallary3,
+        madhavgallary4,
+        madhavgallary5,
+        madhavgallary6,
+    ],
 
     travelInfo: {
         bestTime:

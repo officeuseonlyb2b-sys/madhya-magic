@@ -16,7 +16,7 @@ import {
 } from "@/lib/categoryMatch";
 
 // ============================================================
-// VIDEO (lazy-mounted)
+// VIDEO (remove black loading screen)
 // ============================================================
 
 const ReelVideo = memo(({
@@ -29,42 +29,53 @@ const ReelVideo = memo(({
   shouldLoad: boolean;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const v = videoRef.current;
+
     if (!v) return;
+
     if (isHovered) {
       v.play().catch(() => {});
     } else {
       v.pause();
-      try { v.currentTime = 0; } catch {}
     }
   }, [isHovered]);
 
+  // DO NOT SHOW BLACK SCREEN
+  // SHOW NOTHING UNTIL VIDEO LOADS
   if (!shouldLoad) {
     return (
-      <div
-        className={`absolute inset-0 w-full h-full bg-black transition-transform duration-700 will-change-transform ${
-          isHovered ? "scale-100" : "scale-110"
-        }`}
-      />
+      <div className="absolute inset-0 bg-transparent" />
     );
   }
 
   return (
-    <video
-      ref={videoRef}
-      src={reel.video}
-      muted
-      loop
-      playsInline
-      preload="none"
-      className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-transform duration-700 will-change-transform ${
-        isHovered ? "scale-100" : "scale-110"
-      }`}
-    />
+    <>
+      {/* SOFT PLACEHOLDER */}
+      {!loaded && (
+        <div className="absolute inset-0 bg-neutral-100 animate-pulse" />
+      )}
+
+      <video
+        ref={videoRef}
+        src={reel.video}
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        onLoadedData={() => setLoaded(true)}
+        className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-500 ${
+          loaded ? "opacity-100" : "opacity-0"
+        } ${
+          isHovered ? "scale-100" : "scale-105"
+        }`}
+      />
+    </>
   );
 });
+
 ReelVideo.displayName = "ActivityReelVideo";
 
 // ============================================================

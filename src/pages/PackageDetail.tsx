@@ -37,56 +37,70 @@ const PackageDetail = () => {
 
       {/* Hero Banner */}
    <section className="relative h-screen w-screen overflow-hidden">
-  <motion.img
-    src={pkg.image}
-    alt={pkg.name}
-    loading="eager"
-    decoding="async"
-    initial={{ scale: 1.08 }}
-    animate={{ scale: 1 }}
-    transition={{ duration: 1.6, ease: "easeOut" }}
-    className="absolute inset-0 w-full h-full object-cover object-center select-none"
-  />
+<motion.img
+  src={pkg.image}
+  alt={pkg.name}
+  loading="eager"
+  decoding="async"
+  initial={{ scale: 1.08 }}
+  animate={{ scale: 1 }}
+  transition={{ duration: 1.6, ease: "easeOut" }}
+  className="absolute inset-0 w-full h-full object-cover object-center select-none"
+/>
 
-  {/* Only slight dark overlay for text visibility */}
-  <div className="absolute inset-0 bg-black/20" />
+{/* OVERLAY */}
+<div className="absolute inset-0 bg-black/20" />
 
-  <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-14 md:pb-20">
-    <Link
-      to="/packages"
-      className="inline-flex w-fit items-center gap-1.5 text-white text-sm mb-5 hover:text-white/80 transition-colors backdrop-blur-sm bg-black/20 border border-white/15 px-3 py-1.5 rounded-full"
-    >
-      <ArrowLeft size={16} /> Back to Packages
-    </Link>
+<div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-8 md:pb-12">
 
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.7 }}
-      className="max-w-3xl"
-    >
-      <span className="inline-block gradient-gold text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg mb-4">
+  {/* BACK BUTTON */}
+  <Link
+    to="/packages"
+    className="inline-flex w-fit items-center gap-1.5 text-white text-sm mb-6 hover:text-white/80 transition-colors backdrop-blur-sm bg-black/20 border border-white/15 px-3 py-1.5 rounded-full"
+  >
+    <ArrowLeft size={16} />
+    Back to Packages
+  </Link>
+
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.7 }}
+    className="max-w-3xl"
+  >
+
+    {/* CATEGORY + DURATION */}
+    <div className="flex flex-wrap items-center gap-3 mb-4">
+
+      {/* CATEGORY */}
+      <span className="inline-block gradient-gold text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-lg">
         {pkg.category}
       </span>
 
-      <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-4 leading-[1.1] drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
-        {pkg.name}
-      </h1>
+      {/* DURATION */}
+      <span className="inline-flex items-center gap-1.5 text-white text-xs font-medium backdrop-blur-md bg-white/10 border border-white/20 px-3 py-1.5 rounded-full shadow-sm">
+        <Clock size={13} className="text-secondary" />
+        {pkg.duration}
+      </span>
 
-      <div className="flex flex-wrap items-center gap-2.5 md:gap-3">
-        <span className="inline-flex items-center gap-1.5 text-white text-xs md:text-sm font-medium backdrop-blur-md bg-white/10 border border-white/20 px-3.5 py-2 rounded-full shadow-sm">
-          <MapPin size={14} className="text-secondary" /> {pkg.location}
-        </span>
+    </div>
 
-        <span className="inline-flex items-center gap-1.5 text-white text-xs md:text-sm font-medium backdrop-blur-md bg-white/10 border border-white/20 px-3.5 py-2 rounded-full shadow-sm">
-          <Clock size={14} className="text-secondary" /> {pkg.duration}
-        </span>
+    {/* TITLE */}
+    <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-5 leading-[1.1] drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+      {pkg.name}
+    </h1>
 
-        <span className="inline-flex items-center gap-1.5 text-white text-xs md:text-sm font-medium backdrop-blur-md bg-white/10 border border-white/20 px-3.5 py-2 rounded-full shadow-sm">
-          <Tag size={14} className="text-secondary" /> {pkg.category}
-        </span>
-      </div>
-    </motion.div>
+    {/* LOCATION */}
+    <div className="flex flex-wrap items-center gap-2.5 md:gap-3">
+      <span className="inline-flex items-center gap-1.5 text-white text-xs md:text-sm font-medium backdrop-blur-md bg-white/10 border border-white/20 px-3.5 py-2 rounded-full shadow-sm">
+        <MapPin size={14} className="text-secondary" />
+        {pkg.location}
+      </span>
+    </div>
+
+  </motion.div>
+
+
   </div>
 </section>
 
