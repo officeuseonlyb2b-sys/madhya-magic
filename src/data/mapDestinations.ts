@@ -526,6 +526,7 @@ export const exploreCategories: Record<MapCategory, { label: string; icon: strin
       { id: "mandsaur", name: "Mandsaur" },
       { id: "datia", name: "Datia" },
       { id: "sonagiri", name: "Sonagiri" },
+      { id: "jabalpur", name: "Jabalpur" },
     ],
   },
 };
