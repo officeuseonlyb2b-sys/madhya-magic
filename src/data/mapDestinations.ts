@@ -37,6 +37,8 @@ import datiaImg from "@/assets/dest-datia.jpg";
 import sonagiriImg from "@/assets/dest-sonagiri.jpg";
 import shivpuriImg from "@/assets/dest-shivpuri.jpg";
 import chambalImg from "@/assets/dest-chambal.webp";
+import sanchiImg from "@/assets/dest-sanchi.jpg";
+import jabalpurImg from "@/assets/dest-jabalpur.jpg";
 // Reused images for newly added destinations (no new assets created)
 // const shivpuriImg = madhavImg; // Madhav NP is in Shivpuri district
 // const vidishaImg = udayagiriImg; // Udayagiri Caves are in Vidisha district
@@ -239,6 +241,15 @@ export const mapDestinations: MapDestination[] = [
     y: 54.4836,
   },
   {
+    id: "sanchi",
+    name: "Sanchi",
+    category: ["Heritage"],
+    image: sanchiImg,
+    description: "UNESCO-listed Buddhist stupas commissioned by Emperor Ashoka, set on a serene hilltop.",
+    x: 44.5,
+    y: 55.2,
+  },
+  {
     id: "bhimbetka",
     name: "Bhimbetka Rock Shelters",
     category: ["Heritage"],
@@ -363,6 +374,15 @@ export const mapDestinations: MapDestination[] = [
     x: 48.2606,
     y: 8.2515,
   },
+  {
+    id: "jabalpur",
+    name: "Jabalpur",
+    category: ["Spiritual"],
+    image: jabalpurImg,
+    description: "Gateway to the Narmada with sacred ghats, ancient temples, and serene riverside rituals.",
+    x: 67.0,
+    y: 62.0,
+  },
 
   // ─── Nature ───
 
@@ -467,6 +487,7 @@ export const exploreCategories: Record<MapCategory, { label: string; icon: strin
       { id: "datia", name: "Datia" },
       { id: "shivpuri", name: "Shivpuri" },
       { id: "chanderi", name: "Chanderi" },
+      { id: "sanchi", name: "Sanchi" },
       { id: "bhimbetka", name: "Bhimbetka Rock Shelters" },
       { id: "indore", name: "Indore" },
       { id: "mandu", name: "Mandu" },
@@ -505,6 +526,7 @@ export const exploreCategories: Record<MapCategory, { label: string; icon: strin
       { id: "mandsaur", name: "Mandsaur" },
       { id: "datia", name: "Datia" },
       { id: "sonagiri", name: "Sonagiri" },
+      { id: "jabalpur", name: "Jabalpur" },
     ],
   },
 };
