@@ -405,10 +405,47 @@ const Footer = () => {
 </div>
 </div>
 
-{/* INSTAGRAM SECTION */}
-<div className="mt-8 border border-white/10 rounded-[28px] px-5 py-4 lg:px-6 lg:py-5 bg-[#brown] relative overflow-hidden">
+        {/* TRAVEL PARTNER ONBOARDING */}
+        <div className="mt-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative overflow-hidden rounded-[24px] border border-amber-400/25 bg-gradient-to-br from-amber-400/[0.10] via-amber-400/[0.04] to-transparent px-6 py-6 lg:px-8 lg:py-7"
+          >
+            <div className="absolute -top-16 -right-16 w-[260px] h-[260px] bg-amber-400/20 blur-[100px] rounded-full pointer-events-none" />
 
-  {/* subtle overlay */}
+            <div className="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5">
+              <div className="flex items-start gap-4 max-w-2xl">
+                <div className="w-12 h-12 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center flex-shrink-0">
+                  <Handshake size={20} className="text-amber-400" />
+                </div>
+                <div>
+                  <h3 className="text-[17px] lg:text-[19px] font-serif font-semibold text-white leading-snug">
+                    Travel Partner Onboarding
+                  </h3>
+                  <p className="text-[13px] lg:text-[13.5px] text-white/65 leading-relaxed mt-1.5">
+                    Join our trusted travel partner network and collaborate with Enchanting Madhya Pradesh.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setPartnerOpen(true)}
+                className="self-start lg:self-auto group inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 px-6 py-3 text-[13.5px] font-semibold text-black tracking-wide shadow-[0_10px_30px_-8px_rgba(234,179,8,0.55)] transition-all duration-300 whitespace-nowrap"
+              >
+                Open Form
+                <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
+              </button>
+            </div>
+          </motion.div>
+        </div>
+
+        <TravelPartnerOnboardingModal open={partnerOpen} onOpenChange={setPartnerOpen} />
+
+        {/* INSTAGRAM SECTION */}
+<div className="mt-8 border border-white/10 rounded-[28px] px-5 py-4 lg:px-6 lg:py-5 bg-[#brown] relative overflow-hidden">
   <div className="absolute inset-0 bg-gradient-to-r from-white/[0.02] via-transparent to-white/[0.02]" />
 
   <div className="relative z-10 flex flex-col lg:flex-row lg:items-center gap-5">
