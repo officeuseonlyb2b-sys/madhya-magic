@@ -37,6 +37,7 @@ import footer12 from "@/assets/footer/footer12.webp";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const [partnerOpen, setPartnerOpen] = useState(false);
 
   const footerLinks = {
     destinations: [
