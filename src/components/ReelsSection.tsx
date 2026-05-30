@@ -9,23 +9,35 @@ import { useInViewport } from "@/hooks/useInViewport";
 import { getReelCategories, matchesFilters } from "@/lib/categoryMatch";
 
 // ============================================================
-// VIDEO (lazy-mounted near viewport for perf)
+// VIDEO (lazy-loaded when near viewport, no image fallback)
 // ============================================================
 
 const ReelVideo = memo(({
   reel,
   isHovered,
-  shouldLoad,
+  inView,
 }: {
   reel: ReelItem;
   isHovered: boolean;
-  shouldLoad: boolean;
+  inView: boolean;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const srcSetRef = useRef(false);
 
+  // Set video source only when component is near viewport (performance)
+  useEffect(() => {
+    if (inView && videoRef.current && !srcSetRef.current) {
+      videoRef.current.src = reel.videoUrl;
+      videoRef.current.preload = "auto";
+      srcSetRef.current = true;
+    }
+  }, [inView, reel.videoUrl]);
+
+  // Handle hover play/pause
   useEffect(() => {
     const v = videoRef.current;
-    if (!v) return;
+    if (!v || !srcSetRef.current) return;
+
     if (isHovered) {
       v.play().catch(() => {});
     } else {
@@ -34,30 +46,12 @@ const ReelVideo = memo(({
     }
   }, [isHovered]);
 
-  if (!shouldLoad) {
-    return (
-      <img
-        src={reel.thumbnail}
-        alt=""
-        aria-hidden
-        loading="lazy"
-        decoding="async"
-        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 will-change-transform ${
-          isHovered ? "scale-100" : "scale-110"
-        }`}
-      />
-    );
-  }
-
   return (
     <video
       ref={videoRef}
-      src={reel.videoUrl}
-      poster={reel.thumbnail}
       muted
       loop
       playsInline
-      preload="none"
       className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 will-change-transform ${
         isHovered ? "scale-100" : "scale-110"
       }`}
@@ -97,14 +91,11 @@ const ReelCard = memo(({
     >
       <div className="group relative overflow-hidden rounded-[24px] bg-black">
 
-        {/* MEDIA */}
+        {/* MEDIA - VIDEO ONLY */}
         <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] bg-black">
+          <ReelVideo reel={reel} isHovered={hovered} inView={inView} />
 
-          {/* VIDEO */}
-          <ReelVideo reel={reel} isHovered={hovered} shouldLoad={inView} />
-
-
-          {/* OVERLAY */}
+          {/* OVERLAY GRADIENT */}
           <div
             className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 transition-opacity duration-500 pointer-events-none ${
               hovered ? "opacity-0" : "opacity-100"
@@ -142,7 +133,6 @@ const ReelCard = memo(({
         <div className="bg-white py-4 px-3 text-center">
           <div className="flex items-center justify-center gap-2 text-black">
             <MapPin size={14} />
-
             <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
               {reel.location}
             </span>
