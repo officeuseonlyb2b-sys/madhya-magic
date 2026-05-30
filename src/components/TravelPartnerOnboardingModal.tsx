@@ -108,7 +108,7 @@ const TravelPartnerOnboardingModal = ({ open, onOpenChange }: Props) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!/^\\+?[0-9\\s\\-()]{7,20}$/.test(mobile.trim())) {
+    if (!/^\+?[0-9\s()-]{7,20}$/.test(mobile.trim())) {
       const { toast } = await import("sonner");
       toast.error("Please enter a valid mobile number.");
       return;
