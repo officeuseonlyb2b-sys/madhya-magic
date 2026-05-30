@@ -1,145 +1,130 @@
 import type { DestinationContent } from "./types";
 
-import bhedaGhatImg from "@/assets/destimages/Jabalpur-Bheda-Ghat.webp";
-import chausathImg from "@/assets/destimages/Jabalpur-Chausath-Yogini.webp";
-import ropewayImg from "@/assets/destimages/Jabalpur-Dhuadhar-Ropeway.webp";
-import dhuadharImg from "@/assets/destimages/Jabalpur-Dhuadhar-Waterfall.webp";
+import amarkantakattraction1 from "@/assets/destimages/amarkantakattraction1.jpeg";
+import amarkantakattraction2 from "@/assets/destimages/amarkantakattraction2.jpeg";
+import amarkantakattraction3 from "@/assets/destimages/amarkantakattraction3.jpeg";
+import amarkantakattraction4 from "@/assets/destimages/amarkantakattraction4.jpeg";
 
-// Gallery Images (Local Assets)
-import gallery1 from "@/assets/destimages/bhedaghatgallary1.jpeg";
-import gallery2 from "@/assets/destimages/bhedaghatgallary2.jpeg";
-import gallery3 from "@/assets/destimages/bhedaghatgallary3.jpeg";
-import gallery4 from "@/assets/destimages/bhedaghatgallary4.jpeg";
-import gallery5 from "@/assets/destimages/bhedaghatgallary5.jpeg";
-import gallery6 from "@/assets/destimages/bhedaghatgallary6.jpeg";
-import gallery7 from "@/assets/destimages/bhedaghatgallary7.jpeg";
-import gallery8 from "@/assets/destimages/bhedaghatgallary8.jpeg";
+// gallery
+
+import amarkantakgallary1 from "@/assets/destimages/amarkantakgallary1.jpeg";
+import amarkantakgallary2 from "@/assets/destimages/amarkantakgallary2.jpeg";
+import amarkantakgallary3 from "@/assets/destimages/amarkantakgallary3.jpeg";
+import amarkantakgallary4 from "@/assets/destimages/amarkantakgallary4.jpeg";
+import amarkantakgallary5 from "@/assets/destimages/amarkantakgallary5.jpeg";
+import amarkantakgallary6 from "@/assets/destimages/amarkantakgallary6.jpeg";
 
 const amarkantak: DestinationContent = {
   overviewParagraphs: [
-    "Bhedaghat is one of Madhya Pradesh's most spectacular natural wonders — a 25-kilometre stretch where the Narmada river carves its way through gleaming white marble cliffs that soar nearly 100 feet above the water.",
-
-    "Famous for the thundering Dhuandhar Falls — literally the 'smoke cascade' — and the surreal marble gorge that glows silver under the moon, Bhedaghat has inspired poets, painters and pilgrims for centuries.",
-
-    "Pair a sunrise boat ride through the marble canyons with the bird's-eye ropeway view of Dhuandhar, and you have one of the most photogenic short escapes in central India.",
+    "Amarkantak — the sacred origin of the Narmada River — is one of the most important pilgrimage destinations in Madhya Pradesh.",
+    "Nestled in the Maikal Hills, Amarkantak is known for its temples, waterfalls, dense forests and spiritual significance.",
+    "From the holy Narmada Kund to breathtaking waterfalls and ancient ashrams, Amarkantak offers a perfect blend of spirituality and natural beauty.",
   ],
 
   attractions: [
     {
-      title: "Dhuandhar Falls",
+      title: "Narmada Udgam Kund",
       description:
-        "The mighty Narmada plunges 30 metres through a narrow chasm, throwing up clouds of mist that give the falls their name.",
-      image: dhuadharImg,
+        "The sacred source of the Narmada River and the most revered site in Amarkantak.",
+      image: amarkantakattraction1,
     },
     {
-      title: "Marble Rocks",
+      title: "Kapil Dhara Waterfall",
       description:
-        "Glistening white and pale-pink marble cliffs flank both sides of the river — best seen from a slow gondola at sunset or under the full moon.",
-      image: bhedaGhatImg,
+        "A spectacular waterfall where the Narmada cascades down amidst lush greenery.",
+      image: amarkantakattraction2,
     },
     {
-      title: "Dhuandhar Ropeway",
+      title: "Shri Yantra Mandir",
       description:
-        "Glide across the gorge in a cable car for a breathtaking aerial view of the falls and the marble canyon.",
-      image: ropewayImg,
+        "A unique spiritual temple dedicated to the sacred Shri Yantra, renowned for its intricate architecture and peaceful atmosphere.",
+      image: amarkantakattraction3,
     },
     {
-      title: "Chausath Yogini Temple",
+      title: "Sonmuda",
       description:
-        "A 10th-century circular temple of 64 yoginis perched on a hilltop overlooking the Narmada.",
-      image: chausathImg,
+        "A scenic viewpoint and the origin point of the Son River offering panoramic valley views.",
+      image: amarkantakattraction4,
     },
   ],
 
   thingsToDo: [
     {
-      title: "Marble Gorge Boat Ride",
-      description:
-        "Glide between towering marble cliffs on a traditional rowboat.",
-      icon: "⛵",
-    },
-    {
-      title: "Dhuandhar Ropeway",
-      description:
-        "Aerial cable-car view across the thundering falls.",
-      icon: "🚠",
-    },
-    {
-      title: "Sunset at Panchvati Ghat",
-      description:
-        "Golden hour over the Narmada — pure magic.",
-      icon: "🌅",
-    },
-    {
-      title: "Full-Moon Boating",
-      description:
-        "On full-moon nights the marble glows silver.",
-      icon: "🌕",
-    },
-    {
-      title: "Chausath Yogini Trek",
-      description:
-        "Short climb to the ancient hilltop temple.",
+      title: "Narmada Darshan",
+      description: "Visit the sacred origin of the Narmada River.",
       icon: "🛕",
     },
     {
-      title: "Riverside Photography",
-      description:
-        "One of India's most photogenic gorges.",
-      icon: "📷",
+      title: "Waterfall Exploration",
+      description: "Witness the beauty of Kapil Dhara and nearby waterfalls.",
+      icon: "🌊",
+    },
+    {
+      title: "Temple Visits",
+      description: "Explore ancient temples and spiritual landmarks.",
+      icon: "🪔",
+    },
+    {
+      title: "Nature Walks",
+      description: "Enjoy peaceful forest trails and scenic landscapes.",
+      icon: "🌿",
+    },
+    {
+      title: "Photography",
+      description: "Capture stunning waterfalls, temples and valley views.",
+      icon: "📸",
+    },
+    {
+      title: "Meditation",
+      description: "Experience tranquility in the spiritual surroundings.",
+      icon: "🧘",
     },
   ],
 
   experiences: [
     {
-      title: "Moonlight on Marble",
+      title: "Spiritual Journey",
       description:
-        "On Sharad Purnima nights, the marble cliffs shimmer under the full moon — an unforgettable boat ride.",
+        "Experience the sacred atmosphere at the birthplace of the Narmada.",
     },
     {
-      title: "Smoke of the Narmada",
+      title: "Natural Beauty",
       description:
-        "Stand on the viewing deck as Dhuandhar Falls roars and mist drifts up to soak you.",
+        "Enjoy waterfalls, forests and scenic mountain landscapes.",
     },
     {
-      title: "Stone-Carved Stories",
+      title: "Sacred Heritage",
       description:
-        "Local boatmen narrate legends embedded in every marble formation along the gorge.",
+        "Discover ancient temples, ashrams and pilgrimage traditions.",
     },
     {
-      title: "Sunrise Aarti at the Ghats",
+      title: "Peaceful Escape",
       description:
-        "Watch the river wake up to chants, lamps and birdsong.",
+        "Reconnect with nature in one of Madhya Pradesh’s most serene destinations.",
     },
   ],
 
-  // Gallery Images
   gallery: [
-    gallery1,
-    gallery2,
-    gallery3,
-    gallery4,
-    gallery5,
-    gallery6,
-    gallery7,
-    gallery8,
+    amarkantakgallary1,
+    amarkantakgallary2,
+    amarkantakgallary3,
+    amarkantakgallary4,
+    amarkantakgallary5,
+    amarkantakgallary6,
   ],
 
   travelInfo: {
     bestTime:
-      "October to March (full-moon nights are extra special)",
-
+      "October to March — ideal weather for pilgrimage and sightseeing",
     road:
-      "Just 25 km from Jabalpur on a smooth state highway — taxis and auto-rickshaws run all day.",
-
+      "Well-connected by road from Anuppur, Shahdol and Jabalpur.",
     rail:
-      "Jabalpur Junction (25 km) is the nearest major railhead, connected to Delhi, Mumbai, Kolkata and Chennai.",
-
+      "The nearest railway station is Pendra Road Railway Station (~40 km).",
     air:
-      "Jabalpur Dumna Airport (~30 km) has direct flights from Delhi, Mumbai, Hyderabad and Bengaluru.",
+      "The nearest airport is Jabalpur Airport.",
   },
 
-  duration: "1 Day / Half-Day Excursion",
+  duration: "2 Days / 1 Night",
 };
 
 export default amarkantak;

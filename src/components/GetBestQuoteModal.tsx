@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { format } from "date-fns";
 import {
   CalendarIcon,
@@ -48,7 +48,6 @@ interface GetBestQuoteModalProps {
   onOpenChange: (open: boolean) => void;
   packageName: string;
   duration: string;
-  /** Optional destinations summary, e.g. "Jabalpur • Bandhavgarh" */
   destinations?: string;
   hotelCategory?: string;
   agentName?: string;
@@ -56,8 +55,7 @@ interface GetBestQuoteModalProps {
 }
 
 const STAY_CATEGORIES = ["Standard", "Deluxe", "Premium", "Luxury"] as const;
-
-const WHATSAPP_NUMBER = "919999999999"; // adjust if a project-wide constant exists
+const WHATSAPP_NUMBER = "9109114934";
 
 const FEATURES = [
   {
@@ -106,19 +104,105 @@ const GetBestQuoteModal = ({
     customize: "No",
     message: "",
   });
+  const [adultsCustom, setAdultsCustom] = useState("");
+  const [childrenCustom, setChildrenCustom] = useState("");
+  const [childrenAges, setChildrenAges] = useState<string[]>([]);
+
   const [travelDate, setTravelDate] = useState<Date>();
   const [loading, setLoading] = useState(false);
 
   const update = (k: string, v: string) =>
     setForm((p) => ({ ...p, [k]: v }));
 
+  // ----- helper to get actual numeric traveler counts -----
+  const getActualAdults = useCallback((): number => {
+    if (form.adults === "custom") {
+      const n = parseInt(adultsCustom, 10);
+      return isNaN(n) || n < 1 ? 1 : n;
+    }
+    return parseInt(form.adults, 10) || 1;
+  }, [form.adults, adultsCustom]);
+
+  const getActualChildren = useCallback((): number => {
+    if (form.children === "custom") {
+      const n = parseInt(childrenCustom, 10);
+      return isNaN(n) || n < 0 ? 0 : n;
+    }
+    return parseInt(form.children, 10) || 0;
+  }, [form.children, childrenCustom]);
+
+  // ---- handle children ages array resize ----
+  const updateChildrenAges = (count: number) => {
+    setChildrenAges((prev) => {
+      if (count > prev.length) {
+        return [...prev, ...Array(count - prev.length).fill("")];
+      }
+      return prev.slice(0, count);
+    });
+  };
+
+  // ---- adult/children select change handlers ----
+  const onAdultChange = (value: string) => {
+    update("adults", value);
+    if (value !== "custom") {
+      setAdultsCustom(""); // clear custom input when switching to preset
+    }
+  };
+
+  const onChildrenChange = (value: string) => {
+    update("children", value);
+    if (value === "custom") {
+      // custom input will handle ages update
+    } else {
+      setChildrenCustom("");
+      const count = parseInt(value, 10) || 0;
+      updateChildrenAges(count);
+    }
+  };
+
+  // ---- custom number input handlers ----
+  const onAdultsCustomChange = (v: string) => {
+    const cleaned = v.replace(/\D/g, "");
+    setAdultsCustom(cleaned);
+  };
+
+  const onChildrenCustomChange = (v: string) => {
+    const cleaned = v.replace(/\D/g, "");
+    setChildrenCustom(cleaned);
+    const num = parseInt(cleaned, 10);
+    if (!isNaN(num)) {
+      updateChildrenAges(num);
+    }
+  };
+
+  const handleAgeChange = (index: number, value: string) => {
+    const updated = [...childrenAges];
+    updated[index] = value.replace(/\D/g, "").slice(0, 2);
+    setChildrenAges(updated);
+  };
+
+  // ---- form submission ----
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (loading) return;
+
     if (form.phone.length !== 10) {
       toast.error("Please enter a valid 10 digit phone number");
       return;
     }
+
+    const adults = getActualAdults();
+    const children = getActualChildren();
+
+    // validate children ages if children > 0
+    if (children > 0) {
+      const allFilled = childrenAges.slice(0, children).every((age) => age.trim().length > 0);
+      if (!allFilled) {
+        toast.error("Please enter age for all children");
+        return;
+      }
+    }
+
     setLoading(true);
     const res = await submitFormWithToast({
       formName: "Customized Quote Request",
@@ -127,7 +211,7 @@ const GetBestQuoteModal = ({
       phone: form.phone,
       packageName,
       travelDate: travelDate ? format(travelDate, "PPP") : undefined,
-      travelers: `${form.adults} adults, ${form.children} children`,
+      travelers: `${adults} adult${adults > 1 ? "s" : ""}, ${children} child${children !== 1 ? "ren" : ""}`,
       message: form.message,
       extraFields: {
         Duration: duration,
@@ -135,6 +219,7 @@ const GetBestQuoteModal = ({
         "Travelling From": form.travellingFrom,
         "Preferred Stay Category": form.stay,
         "Needs Customization": form.customize,
+        "Children Ages": children > 0 ? childrenAges.slice(0, children).join(", ") : "N/A",
       },
     });
     setLoading(false);
@@ -144,6 +229,11 @@ const GetBestQuoteModal = ({
   const whatsappMsg = encodeURIComponent(
     `Hi! I'm interested in the package: ${packageName} (${duration}).`
   );
+
+  // compute actual numbers for conditional rendering
+  const childrenCount = getActualChildren();
+  const adultOptions = Array.from({ length: 20 }, (_, i) => i + 1);
+  const childOptions = Array.from({ length: 21 }, (_, i) => i); // 0-20
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
@@ -265,42 +355,89 @@ const GetBestQuoteModal = ({
               </Popover>
             </div>
 
+            {/* Travelers section – now with custom options */}
             <div className="space-y-1.5">
               <Label className="text-xs font-semibold text-[#C89B5E]">
                 Number of Travelers
               </Label>
               <div className="grid grid-cols-2 gap-2">
-                <Select
-                  value={form.adults}
-                  onValueChange={(v) => update("adults", v)}
-                >
-                  <SelectTrigger className="h-11 border-slate-200 bg-white focus:ring-[#C89B5E]/20 focus:border-[#C89B5E]">
-                    <SelectValue placeholder="Adults" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {Array.from({ length: 10 }, (_, i) => i + 1).map((n) => (
-                      <SelectItem key={n} value={String(n)}>
-                        {n} Adult{n > 1 ? "s" : ""}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-                <Select
-                  value={form.children}
-                  onValueChange={(v) => update("children", v)}
-                >
-                  <SelectTrigger className="h-11 border-slate-200 bg-white focus:ring-[#C89B5E]/20 focus:border-[#C89B5E]">
-                    <SelectValue placeholder="Children" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {Array.from({ length: 9 }, (_, i) => i).map((n) => (
-                      <SelectItem key={n} value={String(n)}>
-                        {n} Child{n !== 1 ? "ren" : ""}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
+                {/* Adults */}
+                <div className="space-y-1">
+                  <Select value={form.adults} onValueChange={onAdultChange}>
+                    <SelectTrigger className="h-11 border-slate-200 bg-white focus:ring-[#C89B5E]/20 focus:border-[#C89B5E]">
+                      <SelectValue placeholder="Adults" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {adultOptions.map((n) => (
+                        <SelectItem key={n} value={String(n)}>
+                          {n} Adult{n > 1 ? "s" : ""}
+                        </SelectItem>
+                      ))}
+                      <SelectItem value="custom">Custom</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {form.adults === "custom" && (
+                    <Input
+                      type="text"
+                      inputMode="numeric"
+                      placeholder="Enter number"
+                      value={adultsCustom}
+                      onChange={(e) => onAdultsCustomChange(e.target.value)}
+                      className="h-9 mt-1 border-slate-200 bg-white placeholder:text-slate-400 focus-visible:ring-[#C89B5E]/20 focus-visible:border-[#C89B5E] text-sm"
+                    />
+                  )}
+                </div>
+
+                {/* Children */}
+                <div className="space-y-1">
+                  <Select value={form.children} onValueChange={onChildrenChange}>
+                    <SelectTrigger className="h-11 border-slate-200 bg-white focus:ring-[#C89B5E]/20 focus:border-[#C89B5E]">
+                      <SelectValue placeholder="Children" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {childOptions.map((n) => (
+                        <SelectItem key={n} value={String(n)}>
+                          {n} Child{n !== 1 ? "ren" : ""}
+                        </SelectItem>
+                      ))}
+                      <SelectItem value="custom">Custom</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  {form.children === "custom" && (
+                    <Input
+                      type="text"
+                      inputMode="numeric"
+                      placeholder="Enter number"
+                      value={childrenCustom}
+                      onChange={(e) => onChildrenCustomChange(e.target.value)}
+                      className="h-9 mt-1 border-slate-200 bg-white placeholder:text-slate-400 focus-visible:ring-[#C89B5E]/20 focus-visible:border-[#C89B5E] text-sm"
+                    />
+                  )}
+                </div>
               </div>
+
+              {/* Children ages – visible when children > 0 */}
+              {childrenCount > 0 && (
+                <div className="mt-3 space-y-2">
+                  <Label className="text-xs font-semibold text-[#C89B5E]">
+                    Children Ages (in years)
+                  </Label>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                    {Array.from({ length: childrenCount }).map((_, idx) => (
+                      <Input
+                        key={idx}
+                        type="text"
+                        inputMode="numeric"
+                        placeholder={`Child ${idx + 1} age`}
+                        value={childrenAges[idx] || ""}
+                        onChange={(e) => handleAgeChange(idx, e.target.value)}
+                        className="h-9 border-slate-200 bg-white text-sm placeholder:text-slate-400 focus-visible:ring-[#C89B5E]/20 focus-visible:border-[#C89B5E]"
+                        required
+                      />
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </div>
 

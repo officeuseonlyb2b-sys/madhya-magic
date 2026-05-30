@@ -33,9 +33,7 @@ const ReelVideo = memo(({
 
   useEffect(() => {
     const v = videoRef.current;
-
     if (!v) return;
-
     if (isHovered) {
       v.play().catch(() => {});
     } else {
@@ -43,8 +41,6 @@ const ReelVideo = memo(({
     }
   }, [isHovered]);
 
-  // DO NOT SHOW BLACK SCREEN
-  // SHOW NOTHING UNTIL VIDEO LOADS
   if (!shouldLoad) {
     return (
       <div className="absolute inset-0 bg-transparent" />
@@ -53,11 +49,9 @@ const ReelVideo = memo(({
 
   return (
     <>
-      {/* SOFT PLACEHOLDER */}
       {!loaded && (
         <div className="absolute inset-0 bg-neutral-100 animate-pulse" />
       )}
-
       <video
         ref={videoRef}
         src={reel.video}
@@ -93,12 +87,7 @@ const ReelCard = memo(({
   const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
 
   const Wrapper: any = reel.link ? Link : "div";
-
-  const wrapperProps = reel.link
-    ? {
-        to: reel.link,
-      }
-    : {};
+  const wrapperProps = reel.link ? { to: reel.link } : {};
 
   return (
     <motion.div
@@ -116,14 +105,12 @@ const ReelCard = memo(({
         boxShadow: "none",
         WebkitTapHighlightColor: "transparent",
       }}
-      className="reel-card w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 focus:outline-none focus:ring-0"
+      className="reel-card w-[180px] xs:w-[200px] sm:w-[250px] lg:w-[280px] flex-shrink-0 focus:outline-none focus:ring-0"
     >
       <Wrapper {...wrapperProps} className="block">
         <div className="group relative overflow-hidden rounded-[24px] bg-black border-none outline-none ring-0 shadow-none">
-
           {/* MEDIA */}
           <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
-
             {/* VIDEO */}
             <ReelVideo reel={reel} isHovered={hovered} shouldLoad={inView} />
 
@@ -158,7 +145,6 @@ const ReelCard = memo(({
               <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
                 {reel.tags[0] ?? ""}
               </span>
-
             </div>
           </div>
 
@@ -166,7 +152,6 @@ const ReelCard = memo(({
           <div className="bg-white py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
             <div className="flex items-center justify-center gap-2 text-black">
               <MapPin size={14} />
-
               <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
                 {reel.location}
               </span>
@@ -185,7 +170,6 @@ ReelCard.displayName = "ActivityReelCard";
 
 const ActivitiesReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
-
   const { ref, onMouseEnter, onMouseLeave } =
     useAutoScroll<HTMLDivElement>(50);
 
@@ -195,7 +179,6 @@ const ActivitiesReelsSection = () => {
 
   const filteredReels = useMemo(() => {
     if (isAll) return activityReelsData;
-
     return activityReelsData.filter((r) =>
       matchesFilters(getActivityReelCategories(r), selectedFilters, isAll),
     );
@@ -216,9 +199,7 @@ const ActivitiesReelsSection = () => {
 
   useEffect(() => {
     const el = ref.current;
-
     if (!el || filteredReels.length === 0) return;
-
     requestAnimationFrame(() => {
       el.scrollLeft = el.scrollWidth / 3;
     });
@@ -230,17 +211,15 @@ const ActivitiesReelsSection = () => {
 
   return (
     <section className="relative py-10 sm:py-12 lg:py-14 bg-white overflow-hidden">
-
       {/* BACKGROUND */}
       <div className="absolute inset-0 opacity-[0.05] bg-[url('/patterns/topography.svg')] bg-cover bg-center pointer-events-none" />
 
       <div className="relative z-10 max-w-[1350px] mx-auto px-4 sm:px-6">
+        {/* Responsive container: stacks on mobile, grid on desktop */}
+        <div className="flex flex-col lg:grid lg:grid-cols-[70%_30%] gap-8 lg:gap-12 items-center">
 
-        <div className="grid lg:grid-cols-[70%_30%] gap-8 lg:gap-12 items-center">
-
-          {/* SLIDER LEFT */}
-          <div className="order-2 lg:order-1">
-
+          {/* SLIDER - order-2 on mobile (below text), order-1 on desktop (left) */}
+          <div className="w-full order-2 lg:order-1">
             {sliderData.length === 0 ? (
               <p className="text-center text-[#7a5d65] py-10">
                 No activities match the selected categories.
@@ -252,17 +231,11 @@ const ActivitiesReelsSection = () => {
                 onMouseLeave={onMouseLeave}
                 onScroll={() => {
                   const el = ref.current;
-
                   if (!el) return;
-
                   const oneSetWidth = el.scrollWidth / 3;
-
-                  // END → CENTER
                   if (el.scrollLeft >= oneSetWidth * 2) {
                     el.scrollLeft = oneSetWidth;
                   }
-
-                  // START → CENTER
                   if (el.scrollLeft <= 0) {
                     el.scrollLeft = oneSetWidth;
                   }
@@ -270,7 +243,6 @@ const ActivitiesReelsSection = () => {
                 className="reel-scroller overflow-x-auto no-scrollbar py-4"
               >
                 <div className="reel-track flex gap-5 w-max items-center">
-
                   {sliderData.map((reel, i) => (
                     <ReelCard
                       key={`${reel.id}-${i}`}
@@ -278,15 +250,13 @@ const ActivitiesReelsSection = () => {
                       index={i}
                     />
                   ))}
-
                 </div>
               </div>
             )}
           </div>
 
-          {/* TEXT RIGHT */}
-          <div className="text-center lg:text-left order-1 lg:order-2">
-
+          {/* TEXT - order-1 on mobile (top), order-2 on desktop (right) */}
+          <div className="text-center lg:text-left order-1 lg:order-2 w-full mb-6 lg:mb-0">
             <span className="font-script block text-black text-3xl sm:text-4xl mb-3">
               Discover the World of
             </span>
@@ -310,7 +280,6 @@ const ActivitiesReelsSection = () => {
               <span className="uppercase tracking-[3px] text-[11px] sm:text-xs">
                 Explore More
               </span>
-
               <ArrowRight
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"

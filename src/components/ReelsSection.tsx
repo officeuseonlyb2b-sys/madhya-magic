@@ -9,161 +9,149 @@ import { useInViewport } from "@/hooks/useInViewport";
 import { getReelCategories, matchesFilters } from "@/lib/categoryMatch";
 
 // ============================================================
-// VIDEO (optimized - no image fallback)
+// VIDEO (lazy-mounted near viewport for perf)
 // ============================================================
 
-const ReelVideo = memo(
-  ({
-    reel,
-    isHovered,
-    shouldLoad,
-  }: {
-    reel: ReelItem;
-    isHovered: boolean;
-    shouldLoad: boolean;
-  }) => {
-    const videoRef = useRef<HTMLVideoElement>(null);
+const ReelVideo = memo(({
+  reel,
+  isHovered,
+  shouldLoad,
+}: {
+  reel: ReelItem;
+  isHovered: boolean;
+  shouldLoad: boolean;
+}) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
 
-    useEffect(() => {
-      const v = videoRef.current;
-
-      if (!v) return;
-
-      // Play only on hover
-      if (isHovered) {
-        const playPromise = v.play();
-
-        if (playPromise !== undefined) {
-          playPromise.catch(() => {});
-        }
-      } else {
-        v.pause();
-      }
-    }, [isHovered]);
-
-    // DO NOT LOAD VIDEO UNTIL NEAR VIEWPORT
-    if (!shouldLoad) {
-      return <div className="absolute inset-0 bg-black" />;
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    if (isHovered) {
+      v.play().catch(() => {});
+    } else {
+      v.pause();
+      try { v.currentTime = 0; } catch {}
     }
+  }, [isHovered]);
 
+  if (!shouldLoad) {
     return (
-      <video
-        ref={videoRef}
-        src={reel.videoUrl}
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        disablePictureInPicture
-        controlsList="nodownload noplaybackrate"
-        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-500 ${
-          isHovered ? "scale-100" : "scale-105"
+      <img
+        src={reel.thumbnail}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        decoding="async"
+        className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 will-change-transform ${
+          isHovered ? "scale-100" : "scale-110"
         }`}
       />
     );
   }
-);
 
+  return (
+    <video
+      ref={videoRef}
+      src={reel.videoUrl}
+      poster={reel.thumbnail}
+      muted
+      loop
+      playsInline
+      preload="none"
+      className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 will-change-transform ${
+        isHovered ? "scale-100" : "scale-110"
+      }`}
+    />
+  );
+});
 ReelVideo.displayName = "ReelVideo";
 
 // ============================================================
 // CARD
 // ============================================================
 
-const ReelCard = memo(
-  ({
-    reel,
-    index,
-  }: {
-    reel: ReelItem;
-    index: number;
-  }) => {
-    const [hovered, setHovered] = useState(false);
+const ReelCard = memo(({
+  reel,
+  index,
+}: {
+  reel: ReelItem;
+  index: number;
+}) => {
+  const [hovered, setHovered] = useState(false);
+  const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
 
-    const { ref: viewRef, inView } =
-      useInViewport<HTMLDivElement>("350px");
+  return (
+    <motion.div
+      ref={viewRef}
+      initial={{ opacity: 0, x: 40 }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ delay: Math.min(index, 6) * 0.04 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onTouchStart={() => setHovered(true)}
+      onTouchEnd={() => setHovered(false)}
+      className="w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0"
+      style={{
+        WebkitTapHighlightColor: "transparent",
+      }}
+    >
+      <div className="group relative overflow-hidden rounded-[24px] bg-black">
 
-    return (
-      <motion.div
-        ref={viewRef}
-        initial={{ opacity: 0, x: 40 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{
-          delay: Math.min(index, 6) * 0.03,
-          duration: 0.35,
-        }}
-        onMouseEnter={() => setHovered(true)}
-        onMouseLeave={() => setHovered(false)}
-        onTouchStart={() => setHovered(true)}
-        onTouchEnd={() => setHovered(false)}
-        className="w-[220px] sm:w-[250px] lg:w-[280px] flex-shrink-0 will-change-transform"
-        style={{
-          WebkitTapHighlightColor: "transparent",
-          transform: "translateZ(0)",
-        }}
-      >
-        <div className="group relative overflow-hidden rounded-[24px] bg-black">
-          
-          {/* MEDIA */}
-          <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] bg-black">
-            
-            {/* VIDEO */}
-            <ReelVideo
-              reel={reel}
-              isHovered={hovered}
-              shouldLoad={inView}
-            />
+        {/* MEDIA */}
+        <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] bg-black">
 
-            {/* OVERLAY */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 transition-opacity duration-500 pointer-events-none ${
-                hovered ? "opacity-0" : "opacity-100"
-              }`}
-            />
+          {/* VIDEO */}
+          <ReelVideo reel={reel} isHovered={hovered} shouldLoad={inView} />
 
-            {/* TOP TITLE */}
-            <div
-              className={`absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full transition-all duration-500 pointer-events-none ${
-                hovered
-                  ? "opacity-0 -translate-y-5"
-                  : "opacity-100 translate-y-0"
-              }`}
-            >
-              <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug font-display">
-                {reel.title}
-              </h3>
-            </div>
 
-            {/* CATEGORY */}
-            <div
-              className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-center transition-all duration-500 pointer-events-none ${
-                hovered
-                  ? "opacity-0 translate-y-5"
-                  : "opacity-100 translate-y-0"
-              }`}
-            >
-              <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
-                {reel.category}
-              </span>
-            </div>
+          {/* OVERLAY */}
+          <div
+            className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 transition-opacity duration-500 pointer-events-none ${
+              hovered ? "opacity-0" : "opacity-100"
+            }`}
+          />
+
+          {/* TOP TITLE */}
+          <div
+            className={`absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full transition-all duration-500 pointer-events-none ${
+              hovered
+                ? "opacity-0 -translate-y-5"
+                : "opacity-100 translate-y-0"
+            }`}
+          >
+            <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm lg:text-base font-light leading-snug font-display">
+              {reel.title}
+            </h3>
           </div>
 
-          {/* LOCATION */}
-          <div className="bg-white py-4 px-3 text-center">
-            <div className="flex items-center justify-center gap-2 text-black">
-              <MapPin size={14} />
-
-              <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
-                {reel.location}
-              </span>
-            </div>
+          {/* CATEGORY */}
+          <div
+            className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-center transition-all duration-500 pointer-events-none ${
+              hovered
+                ? "opacity-0 translate-y-5"
+                : "opacity-100 translate-y-0"
+            }`}
+          >
+            <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
+              {reel.category}
+            </span>
           </div>
         </div>
-      </motion.div>
-    );
-  }
-);
 
+        {/* LOCATION */}
+        <div className="bg-white py-4 px-3 text-center">
+          <div className="flex items-center justify-center gap-2 text-black">
+            <MapPin size={14} />
+
+            <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
+              {reel.location}
+            </span>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+});
 ReelCard.displayName = "ReelCard";
 
 // ============================================================
@@ -173,11 +161,8 @@ ReelCard.displayName = "ReelCard";
 const ReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
 
-  const {
-    ref,
-    onMouseEnter,
-    onMouseLeave,
-  } = useAutoScroll<HTMLDivElement>(50);
+  const { ref, onMouseEnter, onMouseLeave } =
+    useAutoScroll<HTMLDivElement>(50);
 
   // ============================================================
   // FILTER DATA
@@ -187,11 +172,7 @@ const ReelsSection = () => {
     if (isAll) return reelsData;
 
     return reelsData.filter((r) =>
-      matchesFilters(
-        getReelCategories(r),
-        selectedFilters,
-        isAll
-      )
+      matchesFilters(getReelCategories(r), selectedFilters, isAll),
     );
   }, [selectedFilters, isAll]);
 
@@ -200,11 +181,7 @@ const ReelsSection = () => {
   // ============================================================
 
   const sliderData = useMemo(
-    () => [
-      ...filteredReels,
-      ...filteredReels,
-      ...filteredReels,
-    ],
+    () => [...filteredReels, ...filteredReels, ...filteredReels],
     [filteredReels]
   );
 
@@ -228,15 +205,15 @@ const ReelsSection = () => {
 
   return (
     <section className="relative py-14 sm:py-16 lg:py-20 bg-white overflow-hidden">
-      
+
       {/* BACKGROUND PATTERN */}
       <div className="absolute inset-0 opacity-[0.05] bg-[url('/patterns/topography.svg')] bg-cover bg-center pointer-events-none" />
 
       {/* CONTAINER */}
       <div className="relative z-10 max-w-[1350px] mx-auto px-4 sm:px-6">
-        
+
         <div className="grid lg:grid-cols-[30%_70%] gap-8 lg:gap-12 items-center">
-          
+
           {/* LEFT CONTENT */}
           <div className="text-center lg:text-left">
 
@@ -287,13 +264,10 @@ const ReelsSection = () => {
                   el.scrollLeft = oneSetWidth;
                 }
               }}
-              className="overflow-x-auto no-scrollbar py-4 scroll-smooth"
-              style={{
-                WebkitOverflowScrolling: "touch",
-              }}
+              className="overflow-x-auto no-scrollbar py-4"
             >
               <div className="flex gap-5 w-max items-center">
-                
+
                 {sliderData.map((reel, i) => (
                   <ReelCard
                     key={`${reel.id}-${i}`}
