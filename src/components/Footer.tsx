@@ -11,9 +11,12 @@ import {
   ChevronRight,
   Shield,
   Compass,
+  Handshake,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import TravelPartnerOnboardingModal from "@/components/TravelPartnerOnboardingModal";
 
 import logo from "@/assets/footerlogo.png";
 import footerBackground from "@/assets/footerbackground.png";
