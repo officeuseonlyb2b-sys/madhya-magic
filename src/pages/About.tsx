@@ -30,6 +30,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import TravelInsightsSection from "@/components/TravelInsightsSection";
+import SEO from "@/components/SEO";
 
 const stats = [
   {
@@ -145,6 +146,11 @@ const About = () => {
 
   return (
     <div className="bg-white text-black overflow-hidden">
+      <SEO
+        title="About Enchanting Madhya Pradesh | Premium MP Tourism Travel Agency"
+        description="Enchanting Madhya Pradesh curates premium tours across MP — heritage, spiritual, wildlife, cultural and luxury journeys crafted for modern travellers."
+        url="https://enchantingmadhyapradesh.com/about"
+      />
       <Navbar />
 
 

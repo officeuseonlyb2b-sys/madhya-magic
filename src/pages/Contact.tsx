@@ -4,6 +4,7 @@ import { MapPin, Phone, Mail, Send, Clock, Instagram, Facebook, Twitter } from "
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import SEO from "@/components/SEO";
 
 import { submitFormWithToast } from "@/lib/submitForm";
 
@@ -35,6 +36,11 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Contact Enchanting Madhya Pradesh | Plan Your MP Tour Package"
+        description="Get in touch with Enchanting Madhya Pradesh to plan customised tour packages — heritage, spiritual, wildlife, family and luxury journeys across MP."
+        url="https://enchantingmadhyapradesh.com/contact"
+      />
       <Navbar />
 
       <section className="relative pt-32 pb-20 bg-foreground overflow-hidden">

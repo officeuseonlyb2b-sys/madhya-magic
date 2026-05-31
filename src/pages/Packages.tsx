@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import PackageCategoryFilter, { type TourCategory } from "@/components/PackageCategoryFilter";
 import {
   allPackages,
@@ -983,6 +984,19 @@ const Packages = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO
+        title="Madhya Pradesh Tour Packages | Heritage, Wildlife, Spiritual & Luxury Tours"
+        description="Browse curated Madhya Pradesh tour packages — Ujjain, Khajuraho, Kanha, Bandhavgarh, Pachmarhi, Maheshwar & more. Heritage, wildlife, spiritual, family and luxury MP tours."
+        url="https://enchantingmadhyapradesh.com/packages"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://enchantingmadhyapradesh.com/" },
+            { "@type": "ListItem", position: 2, name: "Tour Packages", item: "https://enchantingmadhyapradesh.com/packages" },
+          ],
+        }}
+      />
       <Navbar />
 
       {/* Hero */}
