@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SEO from "@/components/SEO";
 import PackageCategoryFilter, { type TourCategory } from "@/components/PackageCategoryFilter";
 import {
   allPackages,

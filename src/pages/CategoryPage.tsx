@@ -2,6 +2,7 @@ import { useLocation, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
+import SEO from "@/components/SEO";
 import HeroCarousel from "@/components/category/HeroCarousel";
 import SpiritualHero from "@/components/category/SpiritualHero";
 import DestinationPillars from "@/components/category/DestinationPillars";
