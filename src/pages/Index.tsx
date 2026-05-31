@@ -4,6 +4,8 @@ import HeroSection from "@/components/HeroSection";
 import { FilterProvider } from "@/contexts/FilterContext";
 import FloatingButtons from "@/components/FloatingButtons";
 import SectionSkeleton from "@/components/SectionSkeleton";
+import SEO from "@/components/SEO";
+
 
 
 // Lazy-load below-the-fold sections to reduce initial JS, improve LCP/TBT.
@@ -36,6 +38,19 @@ const LazySection = ({
 
 const Index = () => (
   <FilterProvider>
+    <SEO
+      title="Madhya Pradesh Tourism | Tour Packages, Heritage, Wildlife & Spiritual Journeys"
+      description="Explore Madhya Pradesh Tourism with curated tour packages, spiritual journeys, heritage destinations, wildlife safaris, cultural experiences and luxury travel across MP."
+      url="https://enchantingmadhyapradesh.com/"
+      image="https://enchantingmadhyapradesh.com/videos/posters/hero_jabalpur.jpg"
+      jsonLd={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://enchantingmadhyapradesh.com/" },
+        ],
+      }}
+    />
     <div className="min-h-screen">
       <Navbar />
       <HeroSection />
