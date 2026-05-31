@@ -23,6 +23,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingButtons from "@/components/FloatingButtons";
 import QuoteModal from "@/components/QuoteModal";
+import SEO from "@/components/SEO";
+import { getDestinationSEO } from "@/data/seoMeta";
 import { getBackgroundForCategories } from "@/lib/categoryBackground";
 
 import DestinationHero from "@/components/destination/DestinationHero";
