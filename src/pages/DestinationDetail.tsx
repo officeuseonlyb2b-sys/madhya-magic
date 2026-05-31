@@ -123,8 +123,62 @@ const DestinationDetail = () => {
     getBackgroundForCategories(dest.category) ??
     "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80";
 
+  const seo = getDestinationSEO(dest.id, dest.name);
+  const canonical = `https://enchantingmadhyapradesh.com/destination/${dest.id}`;
+  const heroImg =
+    (details as { heroImage?: string }).heroImage ?? dest.image;
+  const seoImage = typeof heroImg === "string" && heroImg.startsWith("http")
+    ? heroImg
+    : `https://enchantingmadhyapradesh.com${typeof heroImg === "string" ? heroImg : ""}`;
+
+  const jsonLd: Record<string, unknown> = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://enchantingmadhyapradesh.com/" },
+          { "@type": "ListItem", position: 2, name: "Destinations", item: "https://enchantingmadhyapradesh.com/packages" },
+          { "@type": "ListItem", position: 3, name: dest.name, item: canonical },
+        ],
+      },
+      {
+        "@type": "TouristDestination",
+        name: `${dest.name}, Madhya Pradesh`,
+        description: seo.description,
+        url: canonical,
+        image: seoImage,
+        touristType: dest.category,
+        address: {
+          "@type": "PostalAddress",
+          addressRegion: "Madhya Pradesh",
+          addressCountry: "IN",
+        },
+      },
+      ...(seo.faq && seo.faq.length
+        ? [{
+            "@type": "FAQPage",
+            mainEntity: seo.faq.map((f) => ({
+              "@type": "Question",
+              name: f.question,
+              acceptedAnswer: { "@type": "Answer", text: f.answer },
+            })),
+          }]
+        : []),
+    ],
+  };
+
   return (
     <div className="min-h-screen relative bg-background overflow-hidden">
+      <SEO
+        title={seo.title}
+        description={seo.description}
+        url={canonical}
+        image={seoImage}
+        type="article"
+        jsonLd={jsonLd}
+      />
+
 
       {/* Background */}
       <div
