@@ -6,6 +6,9 @@ import { experiencesData, type Experience } from "@/data/experiencesData";
 import { Link } from "react-router-dom";
 import ExperienceDetailModal from "@/components/ExperienceDetailModal";
 
+// Import the banner image from your assets folder
+import bannerImage from "@/assets/expimage.jpeg";
+
 const ExperienceCard = ({
   exp,
   index,
@@ -113,10 +116,60 @@ const ExperiencesSection = () => {
   };
 
   return (
-    <section id="experiences" className="py-20 md:py-32 relative overflow-hidden bg-muted/30">
+    <section
+  id="experiences"
+  className="relative overflow-hidden bg-muted/30 -mt-24 md:-mt-28"
+>
+      {/* Background decorative blobs */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full bg-primary/5 blur-[150px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-secondary/5 blur-[120px] pointer-events-none" />
-      <div className="container mx-auto px-4 relative z-10">
+
+      {/* ===== FULL WIDTH + FULL HEIGHT BANNER ===== */}
+      <div className="relative w-full h-screen min-h-[600px]">
+        {/* Background image covering entire banner */}
+        <div className="absolute inset-0">
+          <img
+            src={bannerImage}
+            alt="Madhya Pradesh experiences banner"
+            className="w-full h-full object-cover"
+          />
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
+
+        {/* Centered text overlay */}
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+          <motion.span
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-block px-4 py-1.5 rounded-full bg-primary/80 backdrop-blur-sm text-xs font-semibold uppercase tracking-wider mb-4"
+          >
+            SIGNATURE COLLECTION
+          </motion.span>
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold max-w-4xl leading-tight"
+          >
+            Handcrafted Journeys<br />
+            Through the Heart of India
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-base sm:text-lg md:text-xl text-white/90 max-w-2xl mt-6"
+          >
+            From ancient temples to royal wildlife — each experience is designed to leave you transformed.
+          </motion.p>
+        </div>
+      </div>
+
+      {/* Rest of the content (experiences) – UPDATED: added pt-20 to offset the negative margin */}
+      <div className="container mx-auto px-4 relative z-10 py-20 md:py-32 pt-20">
+        {/* Same pt-20 value as the negative mt-20 to push content back down */}
         <motion.div ref={headerRef} initial={{ opacity: 0, y: 40 }} animate={headerInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8 }} className="text-center mb-16 md:mb-24">
           <span className="text-primary font-semibold text-sm uppercase tracking-[0.25em]">Immersive Journeys</span>
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mt-3">
@@ -127,12 +180,14 @@ const ExperiencesSection = () => {
             From sacred rituals to wild safaris — discover once-in-a-lifetime moments that connect you to the soul of Madhya Pradesh
           </p>
         </motion.div>
+
         <div className="space-y-10 md:space-y-16">
           {experiencesData.map((exp, i) => (
             <ExperienceCard key={exp.id} exp={exp} index={i} onOpenDetails={handleOpenDetails} />
           ))}
         </div>
       </div>
+
       <ExperienceDetailModal experience={activeExp} open={!!activeExp} onClose={handleCloseModal} anchorRect={anchorRect} />
     </section>
   );
