@@ -13,6 +13,7 @@ import {
   Briefcase,
   Bike,
   Sparkles,
+  Crown,
   type LucideIcon,
 } from "lucide-react";
 
@@ -55,13 +56,17 @@ const discoverItems = [
   { label: "Packages", href: "/packages", icon: Briefcase },
   { label: "Activities", href: "/activities", icon: Bike },
   { label: "Experiences", href: "/experiences", icon: Sparkles },
+  { label: "Exclusive", href: "/exclusive/sawan-ujjira", icon: Crown },
 ];
+// Fix typo above via override (kept array immutability simple):
+discoverItems[3].href = "/exclusive/sawan-ujjain";
 
 // Images for Discover preview (replace with your own assets later)
 const discoverImages: Record<string, string> = {
   Packages: natureImg,
   Activities: heritageImg,
   Experiences: wildlifeImg,
+  Exclusive: spiritualImg,
 };
 
 // Example sub‑links for Discover preview
@@ -80,6 +85,9 @@ const discoverSubLinks: Record<string, Array<{ name: string; href: string }>> = 
     { name: "Village Homestays", href: "/experiences?category=village" },
     { name: "Cooking Classes", href: "/experiences?category=cooking" },
     { name: "Folk Performances", href: "/experiences?category=folk" },
+  ],
+  Exclusive: [
+    { name: "Sawan in Ujjain", href: "/exclusive/sawan-ujjain" },
   ],
 };
 

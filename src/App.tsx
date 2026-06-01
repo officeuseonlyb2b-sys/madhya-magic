@@ -21,6 +21,7 @@ import CancellationPolicy from "./components/CancellationPolicy";
 import BlogsListing from "./pages/BlogsListing.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
+import ExclusiveSawanPage from "./pages/ExclusiveSawanPage.tsx";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/blogs" element={<BlogsListing />} />
           <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
+          <Route path="/exclusive/sawan-ujjain" element={<ExclusiveSawanPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
