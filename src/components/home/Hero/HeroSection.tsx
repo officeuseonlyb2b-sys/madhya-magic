@@ -75,7 +75,7 @@ const HeroSection = () => {
             decoding="async"
           />
         )}
-        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 " />
       </motion.div>
     </section>
   );
