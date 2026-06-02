@@ -2,13 +2,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { HERO_VIDEO } from "@/config/heroVideo";
 
-/**
- * Home Hero Section
- * - Single autoplay/muted/loop/playsInline video
- * - Reads source from src/config/heroVideo.ts
- * - Graceful fallback to poster image if the video fails to load
- * - Lazy-mounts when the section is near the viewport
- */
 const HeroSection = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -19,12 +12,10 @@ const HeroSection = () => {
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  // Preserved for backward compatibility of parallax behaviour
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
   void textY; void opacity;
 
-  // Lazy mount the video element until close to viewport
   useEffect(() => {
     const node = sectionRef.current;
     if (!node) return;
@@ -41,13 +32,10 @@ const HeroSection = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Attempt autoplay once mounted
   useEffect(() => {
     const v = videoRef.current;
     if (!v || !inView) return;
-    v.play().catch(() => {
-      /* autoplay may be blocked — loop/poster still visible */
-    });
+    v.play().catch(() => {});
   }, [inView]);
 
   return (
@@ -79,7 +67,6 @@ const HeroSection = () => {
             className="w-full h-full object-cover"
           />
         ) : (
-          // Fallback: poster image if video fails or hasn't mounted yet
           <img
             src={HERO_VIDEO.poster}
             alt={HERO_VIDEO.alt}
@@ -88,8 +75,6 @@ const HeroSection = () => {
             decoding="async"
           />
         )}
-
-        {/* Overlay — preserved */}
         <div className="absolute inset-0 bg-black/35" />
       </motion.div>
     </section>

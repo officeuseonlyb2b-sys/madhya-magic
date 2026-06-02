@@ -1,19 +1,16 @@
 // =============================================================
 // HERO VIDEO CONFIG
 // -------------------------------------------------------------
-// To replace the home hero video later:
-//   1. Re-upload via lovable-assets to:
-//      src/assets/hero/hero-video.mp4.asset.json
-//   2. Or change `src` below to any public URL.
-//   No other code changes required.
+// Video located at: src/assets/hero/home-banner-video.mp4
 // =============================================================
 
-import heroVideoAsset from "@/assets/hero/hero-video.mp4.asset.json";
+// Direct import of the mp4 file
+import homeBannerVideo from "@/assets/hero/home-banner-video.mp4";
 
 export const HERO_VIDEO = {
-  /** Primary video URL (CDN-served via lovable-assets) */
-  src: heroVideoAsset.url,
-  /** Optional poster fallback */
+  /** Primary video URL (locally imported) */
+  src: homeBannerVideo,
+  /** Optional poster fallback – adjust path or add your own */
   poster: "/videos/posters/hero_jabalpur.jpg",
   /** Alt / aria description */
   alt: "Discover the magic of Madhya Pradesh — nature, heritage, wildlife & spirituality",
