@@ -7,58 +7,22 @@ interface Props {
 }
 
 const ExclusiveReels = ({ reels }: Props) => {
-  // Floating sacred particles (ॐ shimmer)
-  const particles = Array.from({ length: 12 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    delay: Math.random() * 5,
-    size: Math.random() * 4 + 2,
-  }));
-
   return (
     <section
       id="sawan-reels"
       className="relative py-20 md:py-28 overflow-hidden"
       style={{
-        background: "radial-gradient(ellipse at 30% 20%, #3b2f1e 0%, #0a0a0a 65%)",
+        background:
+          "linear-gradient(180deg, #FFF3DD 0%, #FFE7C2 50%, #FFF7EC 100%)",
       }}
     >
-      {/* Ambient floating particles */}
-      {particles.map((p) => (
-        <motion.div
-          key={p.id}
-          className="absolute rounded-full pointer-events-none"
-          style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            width: `${p.size}px`,
-            height: `${p.size}px`,
-            background: "radial-gradient(circle, #fbbf24, transparent)",
-            opacity: 0,
-          }}
-          animate={{
-            opacity: [0, 0.7, 0],
-            scale: [1, 1.8, 1],
-            y: [0, -10, 0],
-          }}
-          transition={{
-            duration: 4 + p.delay,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-
-      {/* Subtle background texture – optional mandala ring */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-amber-700/30" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-amber-600/20" />
+      {/* Sacred ring */}
+      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#d4a017]/40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#ff9933]/30" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Spiritual heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -66,22 +30,21 @@ const ExclusiveReels = ({ reels }: Props) => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block nav-font text-amber-400/80 uppercase tracking-[0.35em] text-xs mb-4 border-b border-amber-600/30 pb-2">
+          <span className="inline-block nav-font text-[#b8651a] uppercase tracking-[0.35em] text-xs mb-4 border-b border-[#d4a017]/40 pb-2">
             ॐ glimpses of devotion
           </span>
-          <h2 className="font-display text-white text-3xl md:text-5xl lg:text-6xl relative">
+          <h2 className="font-display text-[#3a1d05] text-3xl md:text-5xl lg:text-6xl relative inline-block">
             Sawan Ujjain Reels
-            <span className="absolute -top-2 -right-6 text-2xl text-amber-500 opacity-40">॥</span>
+            <span className="absolute -top-2 -right-6 text-2xl text-[#ff9933] opacity-60">॥</span>
           </h2>
-          <div className="mt-3 flex justify-center gap-2">
-            <span className="w-12 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
-            <span className="text-amber-400 text-lg">🕉️</span>
-            <span className="w-12 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent" />
+          <div className="mt-3 flex justify-center gap-2 items-center">
+            <span className="w-12 h-px bg-gradient-to-r from-transparent via-[#ff9933] to-transparent" />
+            <span className="text-[#ff9933] text-lg">🕉️</span>
+            <span className="w-12 h-px bg-gradient-to-r from-transparent via-[#ff9933] to-transparent" />
           </div>
         </motion.div>
 
-        {/* Reels horizontal scroller */}
-        <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-6 px-6 scrollbar-thin scrollbar-thumb-amber-800/40 scrollbar-track-transparent">
+        <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-6 px-6 scrollbar-thin scrollbar-thumb-[#d4a017]/40 scrollbar-track-transparent">
           {reels.map((reel, i) => (
             <motion.div
               key={reel.id}
@@ -89,14 +52,12 @@ const ExclusiveReels = ({ reels }: Props) => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="relative flex-shrink-0 w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer"
+              whileHover={{ y: -8 }}
+              className="relative flex-shrink-0 w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-lg shadow-[#d4a017]/15 ring-1 ring-[#d4a017]/20"
             >
-              {/* Gold border glow on hover */}
-              <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-amber-400/60 transition-all duration-500 z-10 pointer-events-none" />
-              <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-amber-500/0 via-amber-400/0 to-amber-500/0 group-hover:from-amber-500/30 group-hover:via-transparent group-hover:to-amber-400/20 blur-md transition-all duration-700" />
+              <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[#ff9933]/70 transition-all duration-500 z-10 pointer-events-none" />
+              <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-[#ff9933]/0 via-[#d4a017]/0 to-[#ff9933]/0 group-hover:from-[#ff9933]/35 group-hover:via-transparent group-hover:to-[#d4a017]/30 blur-md transition-all duration-700" />
 
-              {/* Image */}
               <img
                 src={reel.image}
                 alt={reel.title}
@@ -105,29 +66,25 @@ const ExclusiveReels = ({ reels }: Props) => {
                 decoding="async"
               />
 
-              {/* Spiritual golden overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-amber-900/10 to-transparent mix-blend-multiply group-hover:opacity-70 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#3a1d05]/90 via-[#7a3a0a]/15 to-transparent" />
 
-              {/* Play button on hover */}
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                <div className="w-14 h-14 rounded-full bg-amber-500/20 backdrop-blur-sm border border-amber-400/40 flex items-center justify-center">
+                <div className="w-14 h-14 rounded-full bg-[#ff9933]/25 backdrop-blur-sm border border-[#FFCE7A]/60 flex items-center justify-center">
                   <Play size={22} className="text-white fill-white ml-1" />
                 </div>
               </div>
 
-              {/* Content bottom */}
               <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
                 <h3 className="font-display text-white text-xl md:text-2xl leading-tight mb-1">
                   {reel.title}
                 </h3>
-                <p className="nav-font text-amber-200/80 text-xs flex items-center gap-1.5">
-                  <MapPin size={12} className="text-amber-400" />
+                <p className="nav-font text-[#FFE6B8] text-xs flex items-center gap-1.5">
+                  <MapPin size={12} className="text-[#FFCE7A]" />
                   {reel.location}
                 </p>
               </div>
 
-              {/* ॐ watermark behind title */}
-              <span className="absolute bottom-4 right-4 text-5xl text-white/5 select-none pointer-events-none">
+              <span className="absolute bottom-4 right-4 text-5xl text-white/10 select-none pointer-events-none">
                 ॐ
               </span>
             </motion.div>
