@@ -80,6 +80,7 @@ const ReelCard = memo(({
       initial={{ opacity: 0, x: 40 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: Math.min(index, 6) * 0.04 }}
+      whileHover={{ y: -6 }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onTouchStart={() => setHovered(true)}
@@ -89,7 +90,8 @@ const ReelCard = memo(({
         WebkitTapHighlightColor: "transparent",
       }}
     >
-      <div className="group relative overflow-hidden rounded-[24px] bg-black">
+      <div className="group relative overflow-hidden rounded-[24px] bg-black shadow-md hover:shadow-2xl ring-1 ring-black/5 hover:ring-primary/30 transition-shadow duration-500">
+
 
         {/* MEDIA - VIDEO ONLY */}
         <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] bg-black">
