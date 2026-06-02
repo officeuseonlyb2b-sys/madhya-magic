@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="0.8" opacity="0.7">
+  <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="10" cy="10" r="1.2" fill="currentColor" />
+  </pattern>
+  <rect width="120" height="120" fill="url(#dots)" />
+  <g transform="translate(60 60)">
+    <circle r="40" />
+    <circle r="28" />
+    <path d="M0 -40 L0 40 M-40 0 L40 0 M-28 -28 L28 28 M-28 28 L28 -28" />
+  </g>
+</svg>

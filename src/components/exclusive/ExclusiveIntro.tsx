@@ -7,54 +7,18 @@ interface Props {
 }
 
 const ExclusiveIntro = ({ intro }: Props) => {
-  // Sacred floating particles
-  const particles = Array.from({ length: 10 }).map((_, i) => ({
-    id: i,
-    x: Math.random() * 100,
-    y: Math.random() * 100,
-    delay: Math.random() * 5,
-    size: Math.random() * 4 + 2,
-  }));
-
   return (
     <section
       className="relative py-20 md:py-28 overflow-hidden"
       style={{
         background:
-          "radial-gradient(ellipse at 50% 50%, #2f2417 0%, #0a0a0a 70%)",
+          "linear-gradient(180deg, #FFF7EC 0%, #FFFBF3 60%, #FFF3DD 100%)",
       }}
     >
-      {/* Ambient particles */}
-      {particles.map((p) => (
-        <motion.div
-          key={p.id}
-          className="absolute rounded-full pointer-events-none"
-          style={{
-            left: `${p.x}%`,
-            top: `${p.y}%`,
-            width: `${p.size}px`,
-            height: `${p.size}px`,
-            background: "radial-gradient(circle, #fbbf24, transparent)",
-            opacity: 0,
-          }}
-          animate={{
-            opacity: [0, 0.6, 0],
-            scale: [1, 1.8, 1],
-            y: [0, -8, 0],
-          }}
-          transition={{
-            duration: 4 + p.delay,
-            repeat: Infinity,
-            delay: p.delay,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-
-      {/* Sacred geometry rings */}
-      <div className="absolute inset-0 opacity-[0.03] pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-amber-700/30" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-amber-600/20" />
+      {/* Sacred geometry rings (saffron) */}
+      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#d4a017]/40" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#ff9933]/30" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -65,9 +29,8 @@ const ExclusiveIntro = ({ intro }: Props) => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7 }}
-            className="relative rounded-3xl overflow-hidden shadow-2xl aspect-[4/5] group"
+            className="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#d4a017]/15 aspect-[4/5] group ring-1 ring-[#d4a017]/20"
           >
-            {/* Image with sacred hover border */}
             <img
               src={intro.image}
               alt={intro.title}
@@ -75,14 +38,9 @@ const ExclusiveIntro = ({ intro }: Props) => {
               loading="lazy"
               decoding="async"
             />
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            {/* Gold border glow on hover */}
-            <div className="absolute inset-0 rounded-3xl border border-amber-800/20 group-hover:border-amber-500/50 transition-all duration-700 pointer-events-none" />
-            <div className="absolute -inset-[2px] rounded-3xl bg-gradient-to-br from-amber-500/0 via-amber-400/0 to-amber-500/0 group-hover:from-amber-500/20 group-hover:via-transparent group-hover:to-amber-400/10 blur-md transition-all duration-700 pointer-events-none" />
-
-            {/* ॐ watermark on image */}
-            <span className="absolute bottom-4 right-4 text-6xl text-white/10 select-none pointer-events-none">
+            <div className="absolute inset-0 bg-gradient-to-t from-[#3a1d05]/60 via-transparent to-transparent" />
+            <div className="absolute inset-0 rounded-3xl border border-[#d4a017]/30 group-hover:border-[#ff9933]/70 transition-all duration-700 pointer-events-none" />
+            <span className="absolute bottom-4 right-4 text-6xl text-white/30 select-none pointer-events-none">
               ॐ
             </span>
           </motion.div>
@@ -94,47 +52,42 @@ const ExclusiveIntro = ({ intro }: Props) => {
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            {/* Eyebrow */}
-            <span className="inline-block nav-font text-amber-400/80 uppercase tracking-[0.35em] text-xs mb-4 border-b border-amber-600/30 pb-2">
+            <span className="inline-block nav-font text-[#b8651a] uppercase tracking-[0.35em] text-xs mb-4 border-b border-[#d4a017]/40 pb-2">
               ॐ {intro.eyebrow}
             </span>
 
-            {/* Title */}
-            <h2 className="font-display text-3xl md:text-5xl text-white leading-tight mb-6 relative">
+            <h2 className="font-display text-3xl md:text-5xl text-[#3a1d05] leading-tight mb-6 relative">
               {intro.title}
-              <span className="absolute -top-2 -right-6 text-2xl text-amber-500 opacity-40">
+              <span className="absolute -top-2 -right-6 text-2xl text-[#ff9933] opacity-60">
                 ॥
               </span>
             </h2>
 
-            {/* Paragraphs */}
-            <div className="space-y-4 text-neutral-300 leading-relaxed">
+            <div className="space-y-4 text-[#5a3a1a] leading-relaxed">
               {intro.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
 
-            {/* Highlights grid */}
             <ul className="grid sm:grid-cols-2 gap-3 mt-8">
               {intro.highlights.map((h) => (
                 <li
                   key={h}
-                  className="flex items-start gap-2 text-sm text-neutral-300"
+                  className="flex items-start gap-2 text-sm text-[#5a3a1a]"
                 >
                   <Check
                     size={16}
-                    className="mt-0.5 text-amber-400 flex-shrink-0"
+                    className="mt-0.5 text-[#ff9933] flex-shrink-0"
                   />
                   <span>{h}</span>
                 </li>
               ))}
             </ul>
 
-            {/* Divine separator after highlights */}
             <div className="mt-6 flex items-center gap-2">
-              <span className="flex-1 h-px bg-gradient-to-r from-amber-600/40 to-transparent" />
-              <span className="text-amber-400 text-sm opacity-60">🕉️</span>
-              <span className="flex-1 h-px bg-gradient-to-l from-amber-600/40 to-transparent" />
+              <span className="flex-1 h-px bg-gradient-to-r from-[#d4a017]/60 to-transparent" />
+              <span className="text-[#ff9933] text-sm">🕉️</span>
+              <span className="flex-1 h-px bg-gradient-to-l from-[#d4a017]/60 to-transparent" />
             </div>
           </motion.div>
         </div>
