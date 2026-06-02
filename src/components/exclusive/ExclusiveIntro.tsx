@@ -15,6 +15,9 @@ const ExclusiveIntro = ({ intro }: Props) => {
           "linear-gradient(180deg, #FFF7EC 0%, #FFFBF3 60%, #FFF3DD 100%)",
       }}
     >
+      {/* NEW: Radial gradient ring (top center) */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle,rgba(255,176,80,0.20),transparent_65%)]" />
+
       {/* Sacred geometry rings (saffron) */}
       <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#d4a017]/40" />
