@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
+import SpiritualBackground from "@/components/spiritual/SpiritualBackground";
 import {
   ExclusiveHero,
   ExclusiveIntro,
@@ -34,7 +35,7 @@ const ExclusiveSawanPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#FFFBF3] relative">
       <SEO
         title={c.seo.title}
         description={c.seo.description}
@@ -46,15 +47,20 @@ const ExclusiveSawanPage = () => {
 
       <Navbar />
 
-      <main>
+      {/* Decorative spiritual background — sits behind all main content */}
+      <div className="absolute inset-x-0 top-0 h-full overflow-hidden pointer-events-none">
+        <SpiritualBackground />
+      </div>
+
+      <main className="relative z-[1]">
         <ExclusiveHero hero={c.hero} />
         <ExclusiveIntro intro={c.intro} />
         <ExclusiveReels reels={c.reels} />
         <ExclusivePackages packages={c.packages} />
 
-        {/* Why Book With Us */}
-        <section className="py-20 md:py-28 bg-neutral-950 text-white">
-          <div className="container mx-auto px-6">
+        {/* Why Book With Us — saffron/cream */}
+        <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-[#FFEFD5] via-[#FFF7EC] to-[#FFEFD5] text-[#3a1d05]">
+          <div className="container mx-auto px-6 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -62,8 +68,8 @@ const ExclusiveSawanPage = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-14"
             >
-              <p className="nav-font text-amber-400 uppercase tracking-[0.3em] text-xs mb-3">
-                The Promise
+              <p className="nav-font text-[#b8651a] uppercase tracking-[0.3em] text-xs mb-3">
+                ॐ The Promise
               </p>
               <h2 className="font-display text-3xl md:text-5xl">Why Book With Us</h2>
             </motion.div>
@@ -75,11 +81,11 @@ const ExclusiveSawanPage = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.45, delay: i * 0.06 }}
-                  className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition"
+                  className="bg-white border border-[#d4a017]/25 rounded-2xl p-6 hover:border-[#ff9933]/60 hover:shadow-xl hover:shadow-[#ff9933]/10 transition"
                 >
                   <div className="text-3xl mb-3">{item.icon}</div>
                   <h3 className="font-display text-xl mb-2">{item.title}</h3>
-                  <p className="text-white/70 text-sm leading-relaxed">{item.description}</p>
+                  <p className="text-[#5a3a1a]/85 text-sm leading-relaxed">{item.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -96,7 +102,8 @@ const ExclusiveSawanPage = () => {
             loading="lazy"
             decoding="async"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/85" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#3a1d05]/90 via-[#7a3a0a]/70 to-[#3a1d05]/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,176,80,0.18),transparent_60%)]" />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -107,10 +114,10 @@ const ExclusiveSawanPage = () => {
             <h2 className="font-display text-3xl md:text-5xl max-w-3xl mx-auto leading-tight">
               {c.cta.title}
             </h2>
-            <p className="text-white/80 mt-4 max-w-xl mx-auto">{c.cta.subtitle}</p>
+            <p className="text-[#FFE6B8] mt-4 max-w-xl mx-auto">{c.cta.subtitle}</p>
             <Link
               to={c.cta.buttonHref}
-              className="nav-font inline-block mt-8 bg-amber-400 text-black px-9 py-4 rounded-full font-semibold hover:bg-amber-300 transition shadow-lg shadow-amber-500/20"
+              className="nav-font inline-block mt-8 bg-gradient-to-r from-[#ff9933] to-[#d4a017] text-white px-9 py-4 rounded-full font-semibold hover:from-[#ffae5a] hover:to-[#e6b526] transition shadow-lg shadow-[#ff9933]/30"
             >
               {c.cta.buttonLabel}
             </Link>
