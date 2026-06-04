@@ -1,5 +1,5 @@
 // =============================================================
-// Sawan in Ujjain — Seasonal Exclusive Campaign Data
+// Sawan in Ujjain & Omkareshwar — Seasonal Exclusive Campaign Data
 // -------------------------------------------------------------
 // This file owns ALL content for the /exclusive/sawan-ujjain page.
 // To replace this campaign (Simhastha, Monsoon Special, etc.):
@@ -39,32 +39,36 @@ export interface SawanWhyItem {
 }
 
 export const sawanCampaign = {
-  slug: "sawan-ujjain",
+  slug: "sawan-ujjain-omkareshwar",
   hero: {
     image: heroAsset.url,
-    title: "Sawan in Ujjain",
+    title: "Sawan in Ujjain & Omkareshwar",
     subtitle:
-      "Experience the divine energy of Mahakal during the sacred month of Sawan.",
+      "Experience the divine energy of Mahakaleshwar & Omkareshwar Jyotirlingas during the sacred month of Sawan.",
     primaryCta: { label: "Explore Packages", target: "#sawan-packages" },
     secondaryCta: { label: "Watch Reels", target: "#sawan-reels" },
   },
   intro: {
     image: s4.url,
-    eyebrow: "Sacred Month • Shravan",
-    title: "About Sawan in Ujjain",
+    eyebrow: "Sacred Month • Shravan • Two Jyotirlingas",
+    title: "About Sawan in Ujjain & Omkareshwar",
     paragraphs: [
-      "Sawan, the holiest month in the Hindu calendar, transforms Ujjain into a luminous river of devotion. Pilgrims from across the country converge at the banks of the Shipra to honour Lord Shiva at the revered Mahakaleshwar Jyotirlinga.",
-      "The Mahakaleshwar Temple — one of the twelve Jyotirlingas — radiates a singular spiritual power. The pre-dawn Bhasma Aarti, performed only here, is an unforgettable encounter with the divine, drawing seekers, sadhus and devotees alike.",
-      "Every Monday of Sawan, the grand Sawari procession of Mahakal winds through the old city — adorned palanquins, chanting devotees, and rhythmic dhol-tasha turn Ujjain's streets into a moving temple of celebration.",
-      "From the ghats of Ram Ghat to the inner sanctum at Mahakal, the city's spiritual atmosphere during Sawan is unlike any other time of the year — making it the most blessed time to visit Ujjain.",
+      "Sawan, also known as Shravan, is considered one of the most sacred months dedicated to Lord Shiva. During this divine period, the spiritual energy across the Jyotirlingas of India becomes truly extraordinary — and among them, the sacred cities of Ujjain and Omkareshwar hold a deeply special place in the hearts of devotees.",
+      "Home to the revered Mahakaleshwar Jyotirlinga and Omkareshwar Jyotirlinga, Madhya Pradesh transforms into a land of devotion, rituals, temple chants, and spiritual celebrations throughout the holy month of Sawan. From the sacred Bhasma Aarti at Mahakaleshwar and the grandeur of Mahakal Lok in Ujjain to the peaceful riverside spirituality of Omkareshwar on the banks of Maa Narmada, every moment feels spiritually immersive and deeply uplifting.",
+      "Every Monday of Sawan, the divine energy reaches another level as thousands of devotees gather to witness the grand Sawari processions, evening aartis, sacred rituals, and timeless spiritual traditions that have been followed for centuries. Temple bells echo through ancient streets, devotional chants fill the air, and the monsoon rains add a magical calmness to the entire journey.",
+      "Beyond darshan, Sawan in Madhya Pradesh is about experiencing devotion in its purest form — a journey of blessings, peace, faith, and spiritual connection that stays with you long after the journey ends.",
     ],
     highlights: [
-      "Sacred significance of the Shravan month",
-      "Mahakaleshwar Jyotirlinga darshan",
-      "Iconic Bhasma Aarti experience",
-      "Grand Monday Sawari processions",
-      "Shipra ghats & evening aartis",
-      "Curated spiritual itineraries",
+      "Mahakaleshwar Jyotirlinga Darshan",
+      "Omkareshwar Jyotirlinga Experience",
+      "Sacred Bhasma Aarti Experience",
+      "Mahakal Lok Spiritual Corridor",
+      "Grand Sawan Monday Sawari Processions",
+      "Ram Ghat & Shipra Aarti Experiences",
+      "Harsiddhi Shaktipeeth Darshan",
+      "Harsiddhi Temple Evening Aarti Ceremony",
+      "Ancient Shiva Temples & Sacred Rituals",
+      "Monsoon Spiritual Ambience & Devotional Energy",
     ],
   },
   reels: [
@@ -73,6 +77,7 @@ export const sawanCampaign = {
     { id: "palki", title: "Adorned Palki of Mata", location: "Sawan Yatra", image: s2.url },
     { id: "darshan", title: "Mahakal Darshan", location: "Mahakaleshwar Temple", image: s3.url },
     { id: "shipra", title: "Shipra Ghat Evening", location: "Ram Ghat, Ujjain", image: heroAsset.url },
+    { id: "omkareshwar-aarti", title: "Narmada Aarti at Omkareshwar", location: "Omkareshwar", image: s2.url },
   ] satisfies SawanReel[],
   packages: [
     {
@@ -120,6 +125,21 @@ export const sawanCampaign = {
       cta: "View Details",
       ctaHref: "/packages",
     },
+    {
+      id: "omkareshwar-narmada-yatra",
+      name: "Omkareshwar Sawan Yatra",
+      duration: "3 Days / 2 Nights",
+      price: "₹16,500",
+      image: heroAsset.url,
+      highlights: [
+        "Omkareshwar Jyotirlinga Darshan",
+        "Narmada Aarti Experience",
+        "Mamleshwar Temple Visit",
+        "Serene Riverside Stay",
+      ],
+      cta: "View Details",
+      ctaHref: "/packages",
+    },
   ] satisfies SawanPackage[],
   whyBookWithUs: [
     { icon: "🛕", title: "Local Spiritual Experts", description: "Curated by Ujjain-based pandits and guides." },
@@ -130,16 +150,16 @@ export const sawanCampaign = {
     { icon: "🧭", title: "Custom Tours", description: "Tailor every itinerary to your devotion." },
   ] satisfies SawanWhyItem[],
   cta: {
-    title: "Plan Your Spiritual Journey to Ujjain",
-    subtitle: "Limited Sawan slots. Reserve your darshan & sawari experience today.",
+    title: "Plan Your Spiritual Journey to Ujjain & Omkareshwar",
+    subtitle: "Limited Sawan slots. Reserve your darshan, sawari & Narmada aarti experience today.",
     buttonLabel: "Book Now",
     buttonHref: "/contact",
   },
   seo: {
-    title: "Sawan in Ujjain | Exclusive Spiritual Experiences",
+    title: "Sawan in Ujjain & Omkareshwar | Exclusive Spiritual Experiences with Mahakal & Narmada",
     description:
-      "Experience the divine Sawan celebrations in Ujjain with special packages, spiritual tours, Mahakal darshan, reels and curated experiences.",
-    canonical: "/exclusive/sawan-ujjain",
+      "Experience the divine Sawan celebrations in Ujjain and Omkareshwar with special packages, spiritual tours, Mahakal darshan, Narmada aarti, reels and curated experiences.",
+    canonical: "/exclusive/sawan-ujjain-omkareshwar",
     image: heroAsset.url,
   },
 };
