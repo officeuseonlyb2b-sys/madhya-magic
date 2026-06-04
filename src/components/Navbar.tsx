@@ -86,6 +86,7 @@ const discoverSubLinks: Record<string, Array<{ name: string; href: string }>> = 
   ],
   Exclusive: [
     { name: "Sawan in Ujjain", href: "/exclusive/sawan-ujjain" },
+    { name: "Sawan Special Packages", href: "/exclusive/sawan-special-packages" },
   ],
 };
 
