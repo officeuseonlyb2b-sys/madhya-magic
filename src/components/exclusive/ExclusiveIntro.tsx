@@ -133,34 +133,32 @@ const ExclusiveIntro = ({ intro }: Props) => {
 
   return (
     <section
-      className="relative py-20 md:py-28 overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(180deg, #FFF7EC 0%, #FFFBF3 60%, #FFF3DD 100%)",
-      }}
+      className="relative py-20 md:py-28 overflow-hidden bg-white"
     >
-      {/* Decorative rings */}
-      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle,rgba(255,176,80,0.20),transparent_65%)]" />
-      <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#d4a017]/40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#ff9933]/30" />
+      {/* White + Orange gradient glow */}
+      <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-radial from-orange-200/30 via-transparent to-transparent" />
+      
+      {/* Decorative orange rings */}
+      <div className="absolute inset-0 opacity-[0.08] pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-orange-300" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-orange-400" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           {/* LEFT: Gallery without scrollbar */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#d4a017]/15 aspect-[4/5] group ring-1 ring-[#d4a017]/20 bg-[#2a1a0a]">
-            {/* Arrow buttons */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/50 aspect-[4/5] group ring-1 ring-orange-200 bg-orange-50">
+            {/* Arrow buttons - orange theme */}
             <button
               onClick={() => scrollByImage("left")}
-              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+              className="absolute left-3 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-orange-600 text-white p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
               aria-label="Previous"
             >
               <ChevronLeft size={24} />
             </button>
             <button
               onClick={() => scrollByImage("right")}
-              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
+              className="absolute right-3 top-1/2 -translate-y-1/2 z-20 bg-black/50 hover:bg-orange-600 text-white p-2 rounded-full backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 focus:opacity-100"
               aria-label="Next"
             >
               <ChevronRight size={24} />
@@ -173,12 +171,11 @@ const ExclusiveIntro = ({ intro }: Props) => {
               onMouseLeave={handleMouseLeave}
               className="absolute inset-0 overflow-x-auto cursor-grab active:cursor-grabbing"
               style={{
-                scrollbarWidth: "none", // Firefox
-                msOverflowStyle: "none", // IE/Edge
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
                 WebkitOverflowScrolling: "touch",
               }}
             >
-              {/* Hide scrollbar for Chrome/Safari */}
               <style>
                 {`
                   div::-webkit-scrollbar {
@@ -204,47 +201,45 @@ const ExclusiveIntro = ({ intro }: Props) => {
               </div>
             </div>
 
-            {/* Om symbol & hint */}
-            <span className="absolute bottom-4 right-4 text-6xl text-white/30 select-none pointer-events-none">
+            {/* Om symbol - orange tint */}
+            <span className="absolute bottom-4 right-4 text-6xl text-orange-300/30 select-none pointer-events-none">
               ॐ
             </span>
-            <div className="absolute bottom-4 left-4 bg-black/40 backdrop-blur-sm text-white/90 text-xs px-2 py-1 rounded-full pointer-events-none">
-            </div>
           </div>
 
-          {/* RIGHT: Text content (unchanged) */}
+          {/* RIGHT: Text content - orange/white theme */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, delay: 0.1 }}
           >
-            <span className="inline-block nav-font text-[#b8651a] uppercase tracking-[0.35em] text-xs mb-4 border-b border-[#d4a017]/40 pb-2">
+            <span className="inline-block nav-font text-orange-600 uppercase tracking-[0.35em] text-xs mb-4 border-b border-orange-300 pb-2">
               ॐ {intro.eyebrow}
             </span>
-            <h2 className="font-display text-3xl md:text-5xl text-[#3a1d05] leading-tight mb-6 relative">
+            <h2 className="font-display text-3xl md:text-5xl text-orange-800 leading-tight mb-6 relative">
               {intro.title}
-              <span className="absolute -top-2 -right-6 text-2xl text-[#ff9933] opacity-60">
+              <span className="absolute -top-2 -right-6 text-2xl text-orange-400 opacity-60">
                 ॥
               </span>
             </h2>
-            <div className="space-y-4 text-[#5a3a1a] leading-relaxed">
+            <div className="space-y-4 text-orange-800/80 leading-relaxed">
               {intro.paragraphs.map((p, i) => (
                 <p key={i}>{p}</p>
               ))}
             </div>
             <ul className="grid sm:grid-cols-2 gap-3 mt-8">
               {intro.highlights.map((h) => (
-                <li key={h} className="flex items-start gap-2 text-sm text-[#5a3a1a]">
-                  <Check size={16} className="mt-0.5 text-[#ff9933] flex-shrink-0" />
+                <li key={h} className="flex items-start gap-2 text-sm text-orange-800/80">
+                  <Check size={16} className="mt-0.5 text-orange-500 flex-shrink-0" />
                   <span>{h}</span>
                 </li>
               ))}
             </ul>
             <div className="mt-6 flex items-center gap-2">
-              <span className="flex-1 h-px bg-gradient-to-r from-[#d4a017]/60 to-transparent" />
-              <span className="text-[#ff9933] text-sm">🕉️</span>
-              <span className="flex-1 h-px bg-gradient-to-l from-[#d4a017]/60 to-transparent" />
+              <span className="flex-1 h-px bg-gradient-to-r from-orange-300/60 to-transparent" />
+              <span className="text-orange-500 text-sm">🕉️</span>
+              <span className="flex-1 h-px bg-gradient-to-l from-orange-300/60 to-transparent" />
             </div>
           </motion.div>
         </div>

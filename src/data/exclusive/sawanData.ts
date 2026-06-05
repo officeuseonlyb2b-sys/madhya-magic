@@ -1,11 +1,5 @@
 // =============================================================
 // Sawan in Ujjain & Omkareshwar — Seasonal Exclusive Campaign Data
-// -------------------------------------------------------------
-// This file owns ALL content for the /exclusive/sawan-ujjain page.
-// To replace this campaign (Simhastha, Monsoon Special, etc.):
-//   1. Replace images under src/assets/exclusive/<campaign>/
-//   2. Swap this data file's contents
-//   3. (optionally) rename the route/files
 // =============================================================
 
 import heroAsset from "@/assets/exclusive/sawan/sawan-hero.jpg.asset.json";
@@ -14,19 +8,24 @@ import s2 from "@/assets/exclusive/sawan/sawan-2.jpg.asset.json";
 import s3 from "@/assets/exclusive/sawan/sawan-3.jpg.asset.json";
 import s4 from "@/assets/exclusive/sawan/sawan-4.jpg.asset.json";
 
-// ========== VIDEO IMPORTS ==========
-import video1 from "@/assets/shravan/video1.mp4";
-import video2 from "@/assets/shravan/video2.mp4";
-import video3 from "@/assets/shravan/video3.mp4";
-import video4 from "@/assets/shravan/video4.mp4";
-import video5 from "@/assets/shravan/video5.mp4";
+// ========== VIDEO IMPORTS WITH ?url (ensures correct path) ==========
+import video1 from "@/assets/shravan/video1.mp4?url";
+import video2 from "@/assets/shravan/video2.mp4?url";
+import video3 from "@/assets/shravan/video3.mp4?url";
+import video4 from "@/assets/shravan/video4.mp4?url";
+import video5 from "@/assets/shravan/video5.mp4?url";
+import video6 from "@/assets/shravan/video6.mp4?url";
+import video7 from "@/assets/shravan/video7.mp4?url";
+import video8 from "@/assets/shravan/video8.mp4?url";
+import video9 from "@/assets/shravan/video9.mp4?url";
+import video10 from "@/assets/shravan/video10.mp4?url";
 
 export interface SawanReel {
   id: string;
   title: string;
   location: string;
-  image: string;     // poster / thumbnail
-  videoUrl: string;  // actual reel video
+  image: string;
+  videoUrl: string;
 }
 
 export interface SawanPackage {
@@ -79,46 +78,78 @@ export const sawanCampaign = {
       "Monsoon Spiritual Ambience & Devotional Energy",
     ],
   },
-
-  // ====== UPDATED REELS – 5 videos from assets/shravan/ ======
   reels: [
     {
-      id: "sawan-reel-1",
+      id: "reel-1",
       title: "Mahakal Sawari Procession",
       location: "Ujjain",
       image: s1.url,
       videoUrl: video1,
     },
     {
-      id: "sawan-reel-2",
+      id: "reel-2",
       title: "Sawan Street Devotion",
       location: "Ujjain Old City",
       image: s2.url,
       videoUrl: video2,
     },
     {
-      id: "sawan-reel-3",
+      id: "reel-3",
       title: "Adorned Palki of Mata",
       location: "Sawan Yatra",
       image: s3.url,
       videoUrl: video3,
     },
     {
-      id: "sawan-reel-4",
+      id: "reel-4",
       title: "Shipra Ghat Evening Aarti",
       location: "Ram Ghat, Ujjain",
       image: s4.url,
       videoUrl: video4,
     },
     {
-      id: "sawan-reel-5",
-      title: "Omkareshwar Narmada Aarti",
-      location: "Omkareshwar",
+      id: "reel-5",
+      title: "Ujjain Old City Heritage",
+      location: "Ujjain",
       image: heroAsset.url,
       videoUrl: video5,
     },
+    {
+      id: "reel-6",
+      title: "Mahakal Bhasma Aarti",
+      location: "Mahakaleshwar Temple",
+      image: s1.url,
+      videoUrl: video6,
+    },
+    {
+      id: "reel-7",
+      title: "Narmada Aarti Omkareshwar",
+      location: "Omkareshwar Ghat",
+      image: s2.url,
+      videoUrl: video7,
+    },
+    {
+      id: "reel-8",
+      title: "Kal Bhairav Darshan",
+      location: "Ujjain",
+      image: s3.url,
+      videoUrl: video8,
+    },
+    {
+      id: "reel-9",
+      title: "Harsiddhi Evening Aarti",
+      location: "Ujjain",
+      image: s4.url,
+      videoUrl: video9,
+    },
+    {
+      id: "reel-10",
+      title: "Shipra Ghat Holy Dip",
+      location: "Ram Ghat, Ujjain",
+      image: heroAsset.url,
+      videoUrl: video10,
+    },
   ] satisfies SawanReel[],
-
   packages: [
     {
       id: "sawan-mahakal-darshan-2n",

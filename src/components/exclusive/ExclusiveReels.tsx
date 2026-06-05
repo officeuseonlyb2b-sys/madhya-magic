@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { MapPin, Play, X } from "lucide-react";
-import { useState, useRef } from "react";
+import { MapPin } from "lucide-react";
+import { useRef } from "react";
 import type { SawanCampaign } from "@/data/exclusive/sawanData";
 
 interface Props {
@@ -8,35 +8,32 @@ interface Props {
 }
 
 const ExclusiveReels = ({ reels }: Props) => {
-  const [playingId, setPlayingId] = useState<string | null>(null);
   const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
 
-  const handlePlay = (id: string) => {
-    // Stop any currently playing video
-    if (playingId && videoRefs.current[playingId]) {
-      videoRefs.current[playingId]?.pause();
+  const handleMouseEnter = (id: string) => {
+    const video = videoRefs.current[id];
+    if (video) {
+      video.currentTime = 0;
+      video.play().catch((err) => {
+        console.error(`Auto-play failed for ${id}:`, err);
+      });
     }
-    setPlayingId(id);
-    videoRefs.current[id]?.play();
   };
 
-  const handleVideoEnd = (id: string) => {
-    setPlayingId(null);
+  const handleMouseLeave = (id: string) => {
+    const video = videoRefs.current[id];
+    if (video && !video.paused) {
+      video.pause();
+      video.currentTime = 0; // reset to first frame
+    }
   };
 
   return (
-    <section
-      id="sawan-reels"
-      className="relative py-20 md:py-28 overflow-hidden"
-      style={{
-        background:
-          "linear-gradient(180deg, #FFF3DD 0%, #FFE7C2 50%, #FFF7EC 100%)",
-      }}
-    >
-      {/* Sacred rings (unchanged) */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#d4a017]/40" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#ff9933]/30" />
+    <section className="relative py-20 md:py-28 overflow-hidden bg-white">
+      {/* Orange decorative rings */}
+      <div className="absolute inset-0 opacity-10 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-orange-300" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-orange-400" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -44,91 +41,67 @@ const ExclusiveReels = ({ reels }: Props) => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
           className="text-center mb-14"
         >
-          <span className="inline-block nav-font text-[#b8651a] uppercase tracking-[0.35em] text-xs mb-4 border-b border-[#d4a017]/40 pb-2">
+          <span className="text-orange-600 uppercase tracking-[0.35em] text-xs mb-4 border-b border-orange-300 pb-2 inline-block">
             ॐ glimpses of devotion
           </span>
-          <h2 className="font-display text-[#3a1d05] text-3xl md:text-5xl lg:text-6xl relative inline-block">
+          <h2 className="font-display text-orange-800 text-3xl md:text-5xl lg:text-6xl">
             Sawan Ujjain Reels
-            <span className="absolute -top-2 -right-6 text-2xl text-[#ff9933] opacity-60">॥</span>
           </h2>
-          <div className="mt-3 flex justify-center gap-2 items-center">
-            <span className="w-12 h-px bg-gradient-to-r from-transparent via-[#ff9933] to-transparent" />
-            <span className="text-[#ff9933] text-lg">🕉️</span>
-            <span className="w-12 h-px bg-gradient-to-r from-transparent via-[#ff9933] to-transparent" />
+          <div className="mt-3 flex justify-center gap-2">
+            <span className="w-12 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
+            <span className="text-orange-500">🕉️</span>
+            <span className="w-12 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
           </div>
         </motion.div>
 
-        <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-6 px-6 scrollbar-thin scrollbar-thumb-[#d4a017]/40 scrollbar-track-transparent">
-          {reels.map((reel, i) => {
-            const isPlaying = playingId === reel.id;
-            return (
-              <motion.div
-                key={reel.id}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                whileHover={{ y: -8 }}
-                className="relative flex-shrink-0 w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-lg shadow-[#d4a017]/15 ring-1 ring-[#d4a017]/20"
+        <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-6 px-6 scrollbar-thin scrollbar-thumb-orange-300">
+          {reels.map((reel, i) => (
+            <motion.div
+              key={reel.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              whileHover={{ y: -8 }}
+              className="relative flex-shrink-0 w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-xl ring-1 ring-orange-200 bg-gray-100"
+              onMouseEnter={() => handleMouseEnter(reel.id)}
+              onMouseLeave={() => handleMouseLeave(reel.id)}
+            >
+              {/* Hover border effect */}
+              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-orange-400 transition-all z-10 pointer-events-none" />
+
+              {/* Video element – no overlay, poster initially, plays on hover */}
+              <video
+                ref={(el) => {
+                  if (el) videoRefs.current[reel.id] = el;
+                }}
+                poster={reel.image}
+                className="absolute inset-0 w-full h-full object-cover"
+                muted
+                playsInline
+                preload="metadata"
               >
-                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[#ff9933]/70 transition-all duration-500 z-10 pointer-events-none" />
-                <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-[#ff9933]/0 via-[#d4a017]/0 to-[#ff9933]/0 group-hover:from-[#ff9933]/35 group-hover:via-transparent group-hover:to-[#d4a017]/30 blur-md transition-all duration-700" />
+                <source src={reel.videoUrl} type="video/mp4" />
+              </video>
 
-                {/* VIDEO element */}
-                <video
-                  ref={(el) => {
-                    if (el) videoRefs.current[reel.id] = el;
-                  }}
-                  poster={reel.image}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  onClick={() => !isPlaying && handlePlay(reel.id)}
-                  onEnded={() => handleVideoEnd(reel.id)}
-                  playsInline
-                  muted={false}
-                  controls={false}
-                  preload="metadata"
-                >
-                  <source src={reel.videoUrl} type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
+              {/* Text overlay – clean, no background, only white text with shadow */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                <h3 className="text-white text-xl md:text-2xl font-bold drop-shadow-lg">
+                  {reel.title}
+                </h3>
+                <p className="text-orange-200 text-xs flex items-center gap-1 drop-shadow-md">
+                  <MapPin size={12} className="text-orange-300" />
+                  {reel.location}
+                </p>
+              </div>
 
-                {/* Gradient overlay (only when not playing to keep text readable) */}
-                {!isPlaying && (
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#3a1d05]/90 via-[#7a3a0a]/15 to-transparent" />
-                )}
-
-                {/* Play button overlay (visible when not playing) */}
-                {!isPlaying && (
-                  <div
-                    onClick={() => handlePlay(reel.id)}
-                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 cursor-pointer"
-                  >
-                    <div className="w-14 h-14 rounded-full bg-[#ff9933]/25 backdrop-blur-sm border border-[#FFCE7A]/60 flex items-center justify-center">
-                      <Play size={22} className="text-white fill-white ml-1" />
-                    </div>
-                  </div>
-                )}
-
-                {/* Text overlay (always visible) */}
-                <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
-                  <h3 className="font-display text-white text-xl md:text-2xl leading-tight mb-1">
-                    {reel.title}
-                  </h3>
-                  <p className="nav-font text-[#FFE6B8] text-xs flex items-center gap-1.5">
-                    <MapPin size={12} className="text-[#FFCE7A]" />
-                    {reel.location}
-                  </p>
-                </div>
-
-                <span className="absolute bottom-4 right-4 text-5xl text-white/10 select-none pointer-events-none">
-                  ॐ
-                </span>
-              </motion.div>
-            );
-          })}
+              {/* Sacred Om symbol */}
+              <span className="absolute bottom-3 right-3 text-4xl text-white/15 select-none pointer-events-none">
+                ॐ
+              </span>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
