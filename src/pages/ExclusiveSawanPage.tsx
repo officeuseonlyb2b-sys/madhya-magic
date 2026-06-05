@@ -75,6 +75,10 @@ const ExclusiveSawanPage = () => {
         <ExclusiveReels reels={c.reels} />
         <ExclusivePackages packages={c.packages} />
 
+        {/* Seasonal: Sawan Special Packages (isolated feature module) */}
+        <SawanPackageGrid onOpen={setSelectedPkg} />
+
+
         {/* Why Book With Us — saffron/cream */}
         <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-[#FFEFD5] via-[#FFF7EC] to-[#FFEFD5] text-[#3a1d05]">
           <div className="container mx-auto px-6 relative z-10">
