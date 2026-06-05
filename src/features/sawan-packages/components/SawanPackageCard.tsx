@@ -85,6 +85,33 @@ const SawanPackageCard = ({ pkg, index, onOpen }: Props) => {
           </span>
         </div>
 
+        {/* ─── NEW: Quick Travel Facts ─── */}
+        {pkg.facts && (
+          <div className="mt-4 p-3 rounded-lg bg-gradient-to-br from-[#fff7ec] to-[#ffefe0] border border-[#d4a017]/20 text-xs text-[#5a3a1a] space-y-1.5">
+            <p className="font-semibold text-[#b8651a] mb-1">🧳 Travel Facts</p>
+            <p className="flex items-start gap-1.5">
+              <span className="whitespace-nowrap">✈️ Nearest Airport:</span>
+              <span className="leading-tight">{pkg.facts.nearestAirport}</span>
+            </p>
+            <p className="flex items-start gap-1.5">
+              <span className="whitespace-nowrap">🚂 Railway Station:</span>
+              <span className="leading-tight">{pkg.facts.nearestRailway}</span>
+            </p>
+            <p className="flex items-start gap-1.5">
+              <span className="whitespace-nowrap">🌦 Weather:</span>
+              <span className="leading-tight">{pkg.facts.weather}</span>
+            </p>
+          </div>
+        )}
+
+        {/* ─── NEW: Notes Preview ─── */}
+        {pkg.notes && pkg.notes.length > 0 && (
+          <div className="mt-3 text-xs text-[#8a5a2a] italic border-l-2 border-[#ff9933] pl-3 leading-relaxed">
+            {pkg.notes[0]}
+          </div>
+        )}
+
+        {/* Footer */}
         <div className="mt-auto pt-5 flex items-center justify-between border-t border-[#d4a017]/30 mt-5">
           <div>
             <p className="text-[11px] text-[#8a5a2a]">Starting from</p>

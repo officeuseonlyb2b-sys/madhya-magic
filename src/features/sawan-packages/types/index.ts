@@ -26,4 +26,26 @@ export interface SawanPackage {
   exclusions: string[];
   itinerary: SawanItineraryDay[];
   description: string;
+
+  // ─── NEW FIELDS (helicopter packages data) ───
+  pricing?: {
+    vehicle: string;
+    pax: number;
+    cost: number;
+  }[];
+
+  facts?: {
+    transportation: string;
+    accommodation: string;
+    weather: string;
+    nearestAirport: string;
+    nearestRailway: string;
+  };
+
+  notes?: string[];
+
+  category?: string;        // e.g. "Spiritual", "Spiritual & Heritage"
+  isPopular?: boolean;
+  isLuxury?: boolean;
+  onlyGroup?: boolean;
 }

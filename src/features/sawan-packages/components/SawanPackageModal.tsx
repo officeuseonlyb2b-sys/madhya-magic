@@ -1,6 +1,20 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
-import { X, Clock, MapPin, Calendar, Check, Ban, Sparkles } from "lucide-react";
+import {
+  X,
+  Clock,
+  MapPin,
+  Calendar,
+  Check,
+  Ban,
+  Sparkles,
+  IndianRupee,
+  Info,
+  FileText,
+  Plane,
+  Train,
+  CloudRain,
+} from "lucide-react";
 import type { SawanPackage } from "../types";
 
 interface Props {
@@ -10,7 +24,6 @@ interface Props {
 }
 
 const SawanPackageModal = ({ pkg, onClose, onEnquire }: Props) => {
-  // Lock body scroll while open
   useEffect(() => {
     if (!pkg) return;
     const original = document.body.style.overflow;
@@ -63,12 +76,14 @@ const SawanPackageModal = ({ pkg, onClose, onEnquire }: Props) => {
                 <span className="nav-font inline-block text-[10px] uppercase tracking-[0.3em] text-[#FFCE7A] border border-[#FFCE7A]/40 px-3 py-1 rounded-full mb-3">
                   {pkg.badge}
                 </span>
-                <h3 className="font-display text-2xl md:text-4xl leading-tight">{pkg.name}</h3>
+                <h3 className="font-display text-2xl md:text-4xl leading-tight">
+                  {pkg.name}
+                </h3>
                 <p className="text-[#FFE6B8] mt-1 text-sm">{pkg.tagline}</p>
               </div>
             </div>
 
-            {/* Body — scrollable */}
+            {/* Body */}
             <div className="flex-1 overflow-y-auto px-6 md:px-10 py-8 text-[#3a1d05]">
               {/* Meta row */}
               <div className="grid sm:grid-cols-3 gap-4 mb-6">
@@ -99,9 +114,13 @@ const SawanPackageModal = ({ pkg, onClose, onEnquire }: Props) => {
                       <span className="absolute left-0 top-0 w-6 h-6 rounded-full bg-gradient-to-br from-[#ff9933] to-[#d4a017] text-white text-[11px] font-semibold flex items-center justify-center shadow">
                         {i + 1}
                       </span>
-                      <p className="nav-font text-[#b8651a] text-xs uppercase tracking-widest">{d.day}</p>
+                      <p className="nav-font text-[#b8651a] text-xs uppercase tracking-widest">
+                        {d.day}
+                      </p>
                       <h4 className="font-display text-lg text-[#3a1d05] mt-0.5">{d.title}</h4>
-                      <p className="text-sm text-[#5a3a1a] mt-1 leading-relaxed whitespace-pre-line">{d.body}</p>
+                      <p className="text-sm text-[#5a3a1a] mt-1 leading-relaxed whitespace-pre-line">
+                        {d.body}
+                      </p>
                     </li>
                   ))}
                 </ol>
@@ -130,9 +149,73 @@ const SawanPackageModal = ({ pkg, onClose, onEnquire }: Props) => {
                   </ul>
                 </Section>
               </div>
+
+              {/* ─── MULTI‑TIER PRICING ─── */}
+              {pkg.pricing && pkg.pricing.length > 0 && (
+                <Section title="Pricing" icon={<IndianRupee size={16} />}>
+                  <div className="space-y-6">
+                    {pkg.pricing.map((tier, idx) => (
+                      <div key={idx}>
+                        <h5 className="text-sm font-semibold text-[#b8651a] mb-2 bg-[#fff7ec] px-3 py-1 rounded-full inline-block">
+                          {tier.hotelCategory}
+                        </h5>
+                        <div className="border border-[#d4a017]/30 rounded-xl overflow-hidden bg-white/60">
+                          <table className="w-full text-sm">
+                            <thead className="bg-[#fff7ec] text-[#b8651a] font-semibold">
+                              <tr>
+                                <th className="p-3 text-left">Vehicle</th>
+                                <th className="p-3 text-center">Pax</th>
+                                <th className="p-3 text-right">Per Person (₹)</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              {tier.variants.map((v, i) => (
+                                <tr key={i} className="border-t border-[#d4a017]/20">
+                                  <td className="p-3 text-[#3a1d05]">{v.vehicle}</td>
+                                  <td className="p-3 text-center text-[#3a1d05]">{v.pax}</td>
+                                  <td className="p-3 text-right font-medium text-[#b8651a]">
+                                    {v.cost.toLocaleString()}
+                                  </td>
+                                </tr>
+                              ))}
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </Section>
+              )}
+
+              {/* Travel Facts */}
+              {pkg.facts && (
+                <Section title="Travel Facts" icon={<Info size={16} />}>
+                  <div className="bg-[#fff7ec] border border-[#d4a017]/20 rounded-2xl p-5 space-y-3">
+                    <FactItem icon={<Plane size={16} />} label="Nearest Airport" value={pkg.facts.nearestAirport} />
+                    <FactItem icon={<Train size={16} />} label="Nearest Railway Station" value={pkg.facts.nearestRailway} />
+                    <FactItem icon={<CloudRain size={16} />} label="Weather" value={pkg.facts.weather} />
+                    <FactItem icon={<Info size={16} />} label="Accommodation" value={pkg.facts.accommodation} />
+                    <FactItem icon={<Info size={16} />} label="Transportation" value={pkg.facts.transportation} />
+                  </div>
+                </Section>
+              )}
+
+              {/* Notes */}
+              {pkg.notes && pkg.notes.length > 0 && (
+                <Section title="Important Notes" icon={<FileText size={16} />}>
+                  <ul className="space-y-2 text-sm text-[#5a3a1a] bg-[#fff7ec] border border-[#d4a017]/20 rounded-2xl p-5">
+                    {pkg.notes.map((note, i) => (
+                      <li key={i} className="flex items-start gap-2">
+                        <span className="font-bold text-[#b8651a] mt-0.5 select-none">•</span>
+                        {note}
+                      </li>
+                    ))}
+                  </ul>
+                </Section>
+              )}
             </div>
 
-            {/* Sticky CTA */}
+            {/* CTA */}
             <div className="flex-shrink-0 border-t border-[#d4a017]/30 bg-[#FFF7EC] px-6 md:px-10 py-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
               <div>
                 <p className="text-[11px] text-[#8a5a2a]">Starting from</p>
@@ -160,7 +243,32 @@ const SawanPackageModal = ({ pkg, onClose, onEnquire }: Props) => {
   );
 };
 
-const Meta = ({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) => (
+const FactItem = ({
+  icon,
+  label,
+  value,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+}) => (
+  <div className="flex gap-2 text-sm text-[#5a3a1a]">
+    <span className="text-[#ff9933] flex-shrink-0 mt-0.5">{icon}</span>
+    <div>
+      <span className="font-medium">{label}:</span> {value}
+    </div>
+  </div>
+);
+
+const Meta = ({
+  icon,
+  label,
+  value,
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+}) => (
   <div className="rounded-2xl border border-[#d4a017]/30 bg-white px-4 py-3">
     <p className="nav-font text-[10px] uppercase tracking-widest text-[#b8651a] flex items-center gap-1.5">
       <span className="text-[#ff9933]">{icon}</span> {label}
