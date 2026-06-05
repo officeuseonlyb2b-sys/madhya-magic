@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
@@ -11,10 +12,26 @@ import {
   ExclusivePackages,
 } from "@/components/exclusive";
 import { sawanCampaign } from "@/data/exclusive/sawanData";
+import {
+  SawanPackageGrid,
+  SawanPackageModal,
+  SawanEnquiryFormModal,
+  type SawanPackage,
+} from "@/features/sawan-packages";
 
 const ExclusiveSawanPage = () => {
   const c = sawanCampaign;
   const canonicalUrl = `https://explore-mp-magic.lovable.app${c.seo.canonical}`;
+
+  const [selectedPkg, setSelectedPkg] = useState<SawanPackage | null>(null);
+  const [enquiryOpen, setEnquiryOpen] = useState(false);
+  const [enquiryPkgId, setEnquiryPkgId] = useState<string | null>(null);
+
+  const openEnquiry = (pkg?: SawanPackage) => {
+    setEnquiryPkgId(pkg?.id ?? null);
+    setEnquiryOpen(true);
+  };
+
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -57,6 +74,10 @@ const ExclusiveSawanPage = () => {
         <ExclusiveIntro intro={c.intro} />
         <ExclusiveReels reels={c.reels} />
         <ExclusivePackages packages={c.packages} />
+
+        {/* Seasonal: Sawan Special Packages (isolated feature module) */}
+        <SawanPackageGrid onOpen={setSelectedPkg} />
+
 
         {/* Why Book With Us — saffron/cream */}
         <section className="relative py-20 md:py-28 overflow-hidden bg-gradient-to-b from-[#FFEFD5] via-[#FFF7EC] to-[#FFEFD5] text-[#3a1d05]">
@@ -126,6 +147,21 @@ const ExclusiveSawanPage = () => {
       </main>
 
       <Footer />
+
+      <SawanPackageModal
+        pkg={selectedPkg}
+        onClose={() => setSelectedPkg(null)}
+        onEnquire={(pkg) => {
+          setSelectedPkg(null);
+          openEnquiry(pkg);
+        }}
+      />
+
+      <SawanEnquiryFormModal
+        open={enquiryOpen}
+        initialPackageId={enquiryPkgId}
+        onClose={() => setEnquiryOpen(false)}
+      />
     </div>
   );
 };

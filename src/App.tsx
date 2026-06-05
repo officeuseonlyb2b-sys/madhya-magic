@@ -22,7 +22,6 @@ import BlogsListing from "./pages/BlogsListing.tsx";
 import BlogDetail from "./pages/BlogDetail.tsx";
 import Unsubscribe from "./pages/Unsubscribe.tsx";
 import ExclusiveSawanPage from "./pages/ExclusiveSawanPage.tsx";
-import { SawanPackagesPage } from "@/features/sawan-packages";
 
 const queryClient = new QueryClient();
 
@@ -54,7 +53,6 @@ const App = () => (
           <Route path="/blogs/:slug" element={<BlogDetail />} />
           <Route path="/unsubscribe" element={<Unsubscribe />} />
           <Route path="/exclusive/sawan-ujjain" element={<ExclusiveSawanPage />} />
-          <Route path="/exclusive/sawan-special-packages" element={<SawanPackagesPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
