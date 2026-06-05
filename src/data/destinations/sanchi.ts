@@ -13,7 +13,6 @@ import sanchigallary3 from "@/assets/destimages/sanchigallary3.jpeg";
 import sanchigallary4 from "@/assets/destimages/sanchigallary4.jpeg";
 import sanchigallary5 from "@/assets/destimages/sanchigallary5.jpeg";
 import sanchigallary6 from "@/assets/destimages/sanchigallary6.jpeg";
-import sanchigallary7 from "@/assets/destimages/sanchigallary7.jpeg";
 
 const sanchi: DestinationContent = {
     overviewParagraphs: [
@@ -112,7 +111,6 @@ const sanchi: DestinationContent = {
         sanchigallary4,
         sanchigallary5,
         sanchigallary6,
-        sanchigallary7,
     ],
 
     travelInfo: {

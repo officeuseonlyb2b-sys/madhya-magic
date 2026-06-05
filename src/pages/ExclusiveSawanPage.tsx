@@ -9,7 +9,6 @@ import {
   ExclusiveHero,
   ExclusiveIntro,
   ExclusiveReels,
-  ExclusivePackages,
 } from "@/components/exclusive";
 import { sawanCampaign } from "@/data/exclusive/sawanData";
 import {
@@ -73,7 +72,6 @@ const ExclusiveSawanPage = () => {
         <ExclusiveHero hero={c.hero} />
         <ExclusiveIntro intro={c.intro} />
         <ExclusiveReels reels={c.reels} />
-        <ExclusivePackages packages={c.packages} />
 
         {/* Seasonal: Sawan Special Packages (isolated feature module) */}
         <SawanPackageGrid onOpen={setSelectedPkg} />
