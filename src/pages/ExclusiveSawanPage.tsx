@@ -147,6 +147,21 @@ const ExclusiveSawanPage = () => {
       </main>
 
       <Footer />
+
+      <SawanPackageModal
+        pkg={selectedPkg}
+        onClose={() => setSelectedPkg(null)}
+        onEnquire={(pkg) => {
+          setSelectedPkg(null);
+          openEnquiry(pkg);
+        }}
+      />
+
+      <SawanEnquiryFormModal
+        open={enquiryOpen}
+        initialPackageId={enquiryPkgId}
+        onClose={() => setEnquiryOpen(false)}
+      />
     </div>
   );
 };
