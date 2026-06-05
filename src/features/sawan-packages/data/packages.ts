@@ -35,10 +35,9 @@ const COMMON_NOTES = [
 ];
 
 // ──────────────────────────────────────────────
-// NORMAL PACKAGES
+// NORMAL PACKAGES (3 total)
 // ──────────────────────────────────────────────
 
-// 1. Mahakaal Blessings Yatra (3 Days)
 const mahakaalBlessings: SawanPackage = {
   id: "mahakaal-blessings-yatra",
   kind: "normal",
@@ -143,7 +142,6 @@ const mahakaalBlessings: SawanPackage = {
   onlyGroup: false,
 };
 
-// 2. Divine Jyotirlinga Yatra (4 Days)
 const divineJyotirlinga: SawanPackage = {
   id: "divine-jyotirlinga-yatra",
   kind: "normal",
@@ -261,7 +259,6 @@ const divineJyotirlinga: SawanPackage = {
   onlyGroup: false,
 };
 
-// 3. Jyotirlinga Monsoon Escape (5 Days)
 const jyotirlingaMonsoonEscape: SawanPackage = {
   id: "jyotirlinga-monsoon-escape",
   kind: "normal",
@@ -391,21 +388,8 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
 };
 
 // ──────────────────────────────────────────────
-// HELICOPTER PACKAGES (unchanged from before)
-// ... (insert the three helicopter packages with single-tier pricing, facts, notes)
+// HELICOPTER PACKAGES (5 total)
 // ──────────────────────────────────────────────
-
-// I'll include them briefly for completeness but keep them identical to the previous fully fleshed-out versions.
-// For brevity, I'll reference them: they are "heli-jyotirlinga-experience", "heli-spiritual-journeys", "heli-divine-essence-mp"
-// with their respective data, but now using the new PricingTier format? Actually helicopter packages only have one hotel category ("4 Star & Best Available Hotel"),
-// so we can treat them as a single tier in the same array: [ { hotelCategory: "4 Star & Best Available Hotel", variants: [...] } ]
-// We'll adapt them below.
-
-// However, I won't repeat the entire helicopter code here to keep the response focused;
-// the user can merge the existing helicopter packages with the new pricing structure by replacing the `pricing` field.
-// For completeness, I'll show how to update one helicopter package as an example, then the full array export.
-
-// I'll create the three helicopter packages with the new pricing type.
 
 const heliExperience: SawanPackage = {
   id: "heli-jyotirlinga-experience",
@@ -428,9 +412,9 @@ const heliExperience: SawanPackage = {
     "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
     "Wash & change room facility.",
     "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air‑Conditioned Vehicle.",
-    "Experince VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
+    "Experience VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
     "Enjoy VIP entry ticket in Kaal Bhairav Temple In Ujjain.",
-    "Experince VVIP Darshan at Omkar Mandhata Temple In Omkareshwar.",
+    "Experience VVIP Darshan at Omkar Mandhata Temple In Omkareshwar.",
     "English / Hindi speaking local professional guides for the complete city tours as per the itinerary.",
     "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
   ],
@@ -483,9 +467,6 @@ const heliExperience: SawanPackage = {
   onlyGroup: false,
 };
 
-// Similarly define the other two helicopter packages (heli-spiritual-journeys, heli-divine-essence-mp) with the same pattern.
-// I'll add them quickly.
-
 const heliSpiritual: SawanPackage = {
   id: "heli-spiritual-journeys",
   kind: "helicopter",
@@ -509,9 +490,9 @@ const heliSpiritual: SawanPackage = {
     "Accommodation for Total 01 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
     "Total 01 Breakfast as mentioned in the program.",
     "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air‑Conditioned Vehicle.",
-    "Experince VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
+    "Experience VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
     "Enjoy VIP entry ticket in Kaal Bhairav Temple In Ujjain.",
-    "Experince VVIP Darshan at Omkar Mandhata Temple In Omkareshwar.",
+    "Experience VVIP Darshan at Omkar Mandhata Temple In Omkareshwar.",
     "English / Hindi speaking local professional guides for the complete city tours as per the itinerary.",
     "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
   ],
@@ -594,9 +575,9 @@ const heliDivine: SawanPackage = {
     "Accommodation for Total 02 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
     "Total 02 Breakfasts as mentioned in the program.",
     "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air‑Conditioned Vehicle.",
-    "Experince VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
+    "Experience VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
     "Enjoy VIP entry ticket in Kaal Bhairav Temple In Ujjain.",
-    "Experince VVIP Darshan at Omkar Mandhata Temple In Omkareshwar.",
+    "Experience VVIP Darshan at Omkar Mandhata Temple In Omkareshwar.",
     "English / Hindi speaking local professional guides for the complete city tours as per the itinerary.",
     "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
   ],
@@ -662,7 +643,176 @@ const heliDivine: SawanPackage = {
   onlyGroup: false,
 };
 
-// Final export array
+// ──────────────────────────────────────────────
+// TWO NEW HELICOPTER PACKAGES
+// ──────────────────────────────────────────────
+
+const heliMahakalSacredWings: SawanPackage = {
+  id: "heli-mahakal-sacred-wings",
+  kind: "helicopter",
+  name: "Mahakal Sacred Wings",
+  tagline: "Helicopter VIP · Same Day Darshan",
+  duration: "1 Day",
+  route: "Indore ⇋ Ujjain ⇋ Indore (by Helicopter)",
+  validity: "30 July – 30 August",
+  badge: "Helicopter VIP",
+  startingPrice: "₹31,500",
+  image: HELI,
+  description:
+    "An exclusive helicopter darshan of Mahakaleshwar Jyotirlinga, offering VVIP access and a seamless spiritual retreat.",
+  highlights: [
+    "The Kingdom of Mahakaal, where ancient spirituality reigns supreme, beckoning travelers with its sacred shrines and mystical allure.",
+    "Discover the spiritual aura of Ujjain through an elite helicopter Darshan experience at Mahakaal.",
+  ],
+  inclusions: [
+    "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
+    "Wash & change room facility at Indore.",
+    "Arrival / Departure transfers, and surface travel as per the above program by Air‑Conditioned Vehicle.",
+    "Experince VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
+    "English / Hindi speaking local professional guides for the complete city tours as per the itinerary.",
+    "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
+  ],
+  exclusions: [
+    ...COMMON_EXCLUSIONS,
+    "Rates are exclusive of 5% GST",
+  ],
+  itinerary: [
+    {
+      day: "Day 1",
+      title: "Indore → Ujjain → Indore (by Helicopter)",
+      body:
+        "Day 01: Arrival Indore – Ujjain by Air – Tour Begins\n" +
+        "Upon arrival at Indore Airport, you will be warmly welcomed by our company representative and transferred for the divine helicopter pilgrimage to Ujjain. Experience a seamless spiritual journey with dedicated ground assistance and VVIP Darshan at Shri Mahakaleshwar Jyotirlinga Temple.\n\n" +
+        "11:30 AM – Transfer to Bicholi (Indore) Helipad\n" +
+        "11:50 AM – Arrival at Police Line (Ujjain) Helipad\n" +
+        "11:55 AM – Assistance by our ground staff followed by transfer to Shri Mahakaleshwar Jyotirlinga Temple\n" +
+        "12:15 PM – 01:10 PM – Experience VVIP Darshan near the Garbh Griha at Shri Mahakaleshwar Jyotirlinga Temple\n" +
+        "01:15 PM – Transfer back to Police Line Helipad\n" +
+        "01:30 PM – Departure from Ujjain Helipad\n" +
+        "01:50 PM – Arrival at Bicholi (Indore) Helipad\n\n" +
+        "Later, transfer to Indore Airport for your onward journey with divine blessings of Baba Mahakal.\n\nMeals NA",
+    },
+  ],
+  pricing: [
+    {
+      hotelCategory: "4 Star & Best Available Hotel",
+      variants: [
+        { vehicle: "AC Sedan Car", pax: 2, cost: 33700 },
+        { vehicle: "Innova Crysta", pax: 4, cost: 31700 },
+        { vehicle: "Tempo Traveller", pax: 6, cost: 31500 },
+      ],
+    },
+  ],
+  facts: {
+    transportation:
+      "Various modes of transportation are available for this trip, including AC sedans / Innova Crysta and large coaches, catering to different group sizes.",
+    accommodation:
+      "Accommodation options on this trip range from excellent budget hotels to luxury hotels, providing choices to suit different preferences and budgets.",
+    weather:
+      "July and August bring pleasant monsoon weather to Indore, Ujjain, Omkareshwar, and Maheshwar, with temperatures between 23°C–30°C, lush greenery, and refreshing rainfall creating a perfect spiritual and scenic travel experience.",
+    nearestAirport: "Devi Ahilyabai Holkar Airport, Indore",
+    nearestRailway: "Indore Railway Station / Ujjain Railway Station",
+  },
+  notes: [
+    "Rates are quoted on a Per Person basis in Indian Rupees.",
+    "Rates may vary depending on the period of travel, as Madhya Pradesh is a dynamic state where rates are subject to change based on dates.",
+    "Quotation is based on using the base category room at all hotels.",
+    "The chauffeur‑driven private transport is for the client’s exclusive use.",
+    "The vehicle will be provided for the exact itinerary specified.",
+    "Our vehicle includes: Water bottles | Tissue Papers | Masks | Hand Sanitizers.",
+    "The confirmation of rooms at desired hotels will be subject to availability on the day of making the booking. In case rooms are not available at the hotel foreseen/desired, bookings will be made in an alternate or similar category, or the next best available hotel. Any supplement/reduction applicable in such cases will be payable accordingly.",
+  ],
+  category: "Spiritual & Heritage",
+  isPopular: true,
+  isLuxury: true,
+  onlyGroup: false,
+};
+
+const heliDivineOmkareshwar: SawanPackage = {
+  id: "heli-divine-omkareshwar",
+  kind: "helicopter",
+  name: "Divine Omkareshwar Sky Retreat",
+  tagline: "Helicopter VIP · Same Day Darshan",
+  duration: "1 Day",
+  route: "Indore ⇋ Omkareshwar ⇋ Indore (by Helicopter)",
+  validity: "30 July – 30 August",
+  badge: "Helicopter VIP",
+  startingPrice: "₹30,500",
+  image: OMKAR,
+  description:
+    "An exclusive aerial pilgrimage to Omkareshwar, where devotion meets comfort and peace.",
+  highlights: [
+    "Omkareshwar: Sacred island retreat, where the divine Om symbol is etched naturally, evoking spiritual wonder amidst scenic Narmada vistas.",
+    "An exclusive aerial pilgrimage to Omkareshwar where devotion meets comfort and peace.",
+  ],
+  inclusions: [
+    "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
+    "Wash & change room facility at Indore.",
+    "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air‑Conditioned Vehicle.",
+    "Experince VVIP Darshan at Omkar Mandhata Temple In Omkareshwar.",
+    "English / Hindi speaking local professional guides for the complete city tours as per the itinerary.",
+    "Mineral water 02 (250 Ml.) Water bottles Per Person, Per Day, Tissues, Hand Sanitizers, Masks etc. in vehicle during the tour.",
+  ],
+  exclusions: [
+    ...COMMON_EXCLUSIONS,
+    "Rates are exclusive of 5% GST",
+  ],
+  itinerary: [
+    {
+      day: "Day 1",
+      title: "Indore → Omkareshwar → Indore (by Helicopter)",
+      body:
+        "Day 01: Arrival Indore – Omkareshwar by Air – Tour Begins\n" +
+        "Upon arrival at Indore Airport, you will be warmly welcomed by our company representative and transferred for the divine helicopter pilgrimage to Omkareshwar. Experience a seamless spiritual journey with dedicated ground assistance and VVIP Darshan at Shri Omkareshwar Jyotirlinga Temple.\n\n" +
+        "11:30 AM – Transfer to Bicholi (Indore) Helipad\n" +
+        "12:20 PM – Arrival at Mandhata (Omkareshwar) Helipad\n" +
+        "12:25 PM – Assistance by our ground staff followed by transfer to Shri Omkareshwar Jyotirlinga Temple\n" +
+        "12:45 PM – 02:15 PM – Experience VVIP Darshan at Shri Omkar Mandhata Jyotirlinga Temple\n" +
+        "02:20 PM – Transfer back to Mandhata Helipad\n" +
+        "02:45 PM – Departure from Omkareshwar Helipad\n" +
+        "03:35 PM – Arrival at Bicholi (Indore) Helipad\n\n" +
+        "Later, transfer to Indore Airport for your onward journey with divine blessings of Omkareshwar Jyotirlinga.\n\nMeals NA",
+    },
+  ],
+  pricing: [
+    {
+      hotelCategory: "4 Star & Best Available Hotel",
+      variants: [
+        { vehicle: "AC Sedan Car", pax: 2, cost: 32600 },
+        { vehicle: "Innova Crysta", pax: 4, cost: 31000 },
+        { vehicle: "Tempo Traveller", pax: 6, cost: 30500 },
+      ],
+    },
+  ],
+  facts: {
+    transportation:
+      "Various modes of transportation are available for this trip, including AC sedans / Innova Crysta and large coaches, catering to different group sizes.",
+    accommodation:
+      "Accommodation options on this trip range from excellent budget hotels to luxury hotels, providing choices to suit different preferences and budgets.",
+    weather:
+      "July and August bring pleasant monsoon weather to Indore, Ujjain, Omkareshwar, and Maheshwar, with temperatures between 23°C–30°C, lush greenery, and refreshing rainfall creating a perfect spiritual and scenic travel experience.",
+    nearestAirport: "Devi Ahilyabai Holkar Airport, Indore",
+    nearestRailway: "Indore Railway Station / Ujjain Railway Station",
+  },
+  notes: [
+    "Rates are quoted on a Per Person basis in Indian Rupees.",
+    "Rates may vary depending on the period of travel, as Madhya Pradesh is a dynamic state where rates are subject to change based on dates.",
+    "Quotation is based on using the base category room at all hotels.",
+    "The chauffeur‑driven private transport is for the client’s exclusive use.",
+    "The vehicle will be provided for the exact itinerary specified.",
+    "Our vehicle includes: Water bottles | Tissue Papers | Masks | Hand Sanitizers.",
+    "The confirmation of rooms at desired hotels will be subject to availability on the day of making the booking. In case rooms are not available at the hotel foreseen/desired, bookings will be made in an alternate or similar category, or the next best available hotel. Any supplement/reduction applicable in such cases will be payable accordingly.",
+  ],
+  category: "Spiritual & Heritage",
+  isPopular: true,
+  isLuxury: true,
+  onlyGroup: false,
+};
+
+// ──────────────────────────────────────────────
+// FINAL EXPORT
+// ──────────────────────────────────────────────
+
 export const sawanPackages: SawanPackage[] = [
   mahakaalBlessings,
   divineJyotirlinga,
@@ -670,6 +820,8 @@ export const sawanPackages: SawanPackage[] = [
   heliExperience,
   heliSpiritual,
   heliDivine,
+  heliMahakalSacredWings,
+  heliDivineOmkareshwar,
 ];
 
 export const sawanHeroImage =

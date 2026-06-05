@@ -14,11 +14,19 @@ import s2 from "@/assets/exclusive/sawan/sawan-2.jpg.asset.json";
 import s3 from "@/assets/exclusive/sawan/sawan-3.jpg.asset.json";
 import s4 from "@/assets/exclusive/sawan/sawan-4.jpg.asset.json";
 
+// ========== VIDEO IMPORTS ==========
+import video1 from "@/assets/shravan/video1.mp4";
+import video2 from "@/assets/shravan/video2.mp4";
+import video3 from "@/assets/shravan/video3.mp4";
+import video4 from "@/assets/shravan/video4.mp4";
+import video5 from "@/assets/shravan/video5.mp4";
+
 export interface SawanReel {
   id: string;
   title: string;
   location: string;
-  image: string;
+  image: string;     // poster / thumbnail
+  videoUrl: string;  // actual reel video
 }
 
 export interface SawanPackage {
@@ -71,14 +79,46 @@ export const sawanCampaign = {
       "Monsoon Spiritual Ambience & Devotional Energy",
     ],
   },
+
+  // ====== UPDATED REELS – 5 videos from assets/shravan/ ======
   reels: [
-    { id: "sawari-1", title: "Mahakal Sawari Procession", location: "Ujjain", image: s4.url },
-    { id: "ganesh-band", title: "Sawan Street Devotion", location: "Ujjain Old City", image: s1.url },
-    { id: "palki", title: "Adorned Palki of Mata", location: "Sawan Yatra", image: s2.url },
-    { id: "darshan", title: "Mahakal Darshan", location: "Mahakaleshwar Temple", image: s3.url },
-    { id: "shipra", title: "Shipra Ghat Evening", location: "Ram Ghat, Ujjain", image: heroAsset.url },
-    { id: "omkareshwar-aarti", title: "Narmada Aarti at Omkareshwar", location: "Omkareshwar", image: s2.url },
+    {
+      id: "sawan-reel-1",
+      title: "Mahakal Sawari Procession",
+      location: "Ujjain",
+      image: s1.url,
+      videoUrl: video1,
+    },
+    {
+      id: "sawan-reel-2",
+      title: "Sawan Street Devotion",
+      location: "Ujjain Old City",
+      image: s2.url,
+      videoUrl: video2,
+    },
+    {
+      id: "sawan-reel-3",
+      title: "Adorned Palki of Mata",
+      location: "Sawan Yatra",
+      image: s3.url,
+      videoUrl: video3,
+    },
+    {
+      id: "sawan-reel-4",
+      title: "Shipra Ghat Evening Aarti",
+      location: "Ram Ghat, Ujjain",
+      image: s4.url,
+      videoUrl: video4,
+    },
+    {
+      id: "sawan-reel-5",
+      title: "Omkareshwar Narmada Aarti",
+      location: "Omkareshwar",
+      image: heroAsset.url,
+      videoUrl: video5,
+    },
   ] satisfies SawanReel[],
+
   packages: [
     {
       id: "sawan-mahakal-darshan-2n",

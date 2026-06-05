@@ -21,7 +21,7 @@ const SawanPackageGrid = ({ onOpen }: Props) => {
         <SectionTitle
           eyebrow="ॐ Hotel Packages"
           title="Sawan Pilgrimage Packages"
-          subtitle="3 to 5 night curated journeys with 3-star / 4-star hotels, VVIP darshan and AC transport."
+          subtitle="3 to 5 night curated journeys with VVIP darshan, AC transport and comfortable stays."
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {normal.map((p, i) => (
@@ -33,7 +33,7 @@ const SawanPackageGrid = ({ onOpen }: Props) => {
           <SectionTitle
             eyebrow="✈ Helicopter VIP"
             title="Sawan Helicopter Packages"
-            subtitle="Same-day and luxury overnight darshan of both Jyotirlingas by chartered helicopter."
+            subtitle="Same‑day, 2‑day & 3‑day exclusive darshan of both Jyotirlingas by chartered helicopter."
           />
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {heli.map((p, i) => (

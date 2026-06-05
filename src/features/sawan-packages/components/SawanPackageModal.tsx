@@ -85,7 +85,6 @@ const SawanPackageModal = ({ pkg, onClose, onEnquire }: Props) => {
 
             {/* Body */}
             <div className="flex-1 overflow-y-auto px-6 md:px-10 py-8 text-[#3a1d05]">
-              {/* Meta row */}
               <div className="grid sm:grid-cols-3 gap-4 mb-6">
                 <Meta icon={<Clock size={16} />} label="Duration" value={pkg.duration} />
                 <Meta icon={<MapPin size={16} />} label="Route" value={pkg.route} />
@@ -150,7 +149,7 @@ const SawanPackageModal = ({ pkg, onClose, onEnquire }: Props) => {
                 </Section>
               </div>
 
-              {/* ─── MULTI‑TIER PRICING ─── */}
+              {/* Multi‑tier Pricing */}
               {pkg.pricing && pkg.pricing.length > 0 && (
                 <Section title="Pricing" icon={<IndianRupee size={16} />}>
                   <div className="space-y-6">
@@ -215,7 +214,7 @@ const SawanPackageModal = ({ pkg, onClose, onEnquire }: Props) => {
               )}
             </div>
 
-            {/* CTA */}
+            {/* Sticky CTA */}
             <div className="flex-shrink-0 border-t border-[#d4a017]/30 bg-[#FFF7EC] px-6 md:px-10 py-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
               <div>
                 <p className="text-[11px] text-[#8a5a2a]">Starting from</p>

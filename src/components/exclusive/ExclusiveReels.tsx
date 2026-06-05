@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import { MapPin, Play } from "lucide-react";
+import { MapPin, Play, X } from "lucide-react";
+import { useState, useRef } from "react";
 import type { SawanCampaign } from "@/data/exclusive/sawanData";
 
 interface Props {
@@ -7,6 +8,22 @@ interface Props {
 }
 
 const ExclusiveReels = ({ reels }: Props) => {
+  const [playingId, setPlayingId] = useState<string | null>(null);
+  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
+
+  const handlePlay = (id: string) => {
+    // Stop any currently playing video
+    if (playingId && videoRefs.current[playingId]) {
+      videoRefs.current[playingId]?.pause();
+    }
+    setPlayingId(id);
+    videoRefs.current[id]?.play();
+  };
+
+  const handleVideoEnd = (id: string) => {
+    setPlayingId(null);
+  };
+
   return (
     <section
       id="sawan-reels"
@@ -16,7 +33,7 @@ const ExclusiveReels = ({ reels }: Props) => {
           "linear-gradient(180deg, #FFF3DD 0%, #FFE7C2 50%, #FFF7EC 100%)",
       }}
     >
-      {/* Sacred ring */}
+      {/* Sacred rings (unchanged) */}
       <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-[#d4a017]/40" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-[#ff9933]/30" />
@@ -45,50 +62,73 @@ const ExclusiveReels = ({ reels }: Props) => {
         </motion.div>
 
         <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-6 px-6 scrollbar-thin scrollbar-thumb-[#d4a017]/40 scrollbar-track-transparent">
-          {reels.map((reel, i) => (
-            <motion.div
-              key={reel.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="relative flex-shrink-0 w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-lg shadow-[#d4a017]/15 ring-1 ring-[#d4a017]/20"
-            >
-              <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[#ff9933]/70 transition-all duration-500 z-10 pointer-events-none" />
-              <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-[#ff9933]/0 via-[#d4a017]/0 to-[#ff9933]/0 group-hover:from-[#ff9933]/35 group-hover:via-transparent group-hover:to-[#d4a017]/30 blur-md transition-all duration-700" />
+          {reels.map((reel, i) => {
+            const isPlaying = playingId === reel.id;
+            return (
+              <motion.div
+                key={reel.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                whileHover={{ y: -8 }}
+                className="relative flex-shrink-0 w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-lg shadow-[#d4a017]/15 ring-1 ring-[#d4a017]/20"
+              >
+                <div className="absolute inset-0 rounded-2xl border border-transparent group-hover:border-[#ff9933]/70 transition-all duration-500 z-10 pointer-events-none" />
+                <div className="absolute -inset-[2px] rounded-2xl bg-gradient-to-br from-[#ff9933]/0 via-[#d4a017]/0 to-[#ff9933]/0 group-hover:from-[#ff9933]/35 group-hover:via-transparent group-hover:to-[#d4a017]/30 blur-md transition-all duration-700" />
 
-              <img
-                src={reel.image}
-                alt={reel.title}
-                className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                loading="lazy"
-                decoding="async"
-              />
+                {/* VIDEO element */}
+                <video
+                  ref={(el) => {
+                    if (el) videoRefs.current[reel.id] = el;
+                  }}
+                  poster={reel.image}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  onClick={() => !isPlaying && handlePlay(reel.id)}
+                  onEnded={() => handleVideoEnd(reel.id)}
+                  playsInline
+                  muted={false}
+                  controls={false}
+                  preload="metadata"
+                >
+                  <source src={reel.videoUrl} type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#3a1d05]/90 via-[#7a3a0a]/15 to-transparent" />
+                {/* Gradient overlay (only when not playing to keep text readable) */}
+                {!isPlaying && (
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#3a1d05]/90 via-[#7a3a0a]/15 to-transparent" />
+                )}
 
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20">
-                <div className="w-14 h-14 rounded-full bg-[#ff9933]/25 backdrop-blur-sm border border-[#FFCE7A]/60 flex items-center justify-center">
-                  <Play size={22} className="text-white fill-white ml-1" />
+                {/* Play button overlay (visible when not playing) */}
+                {!isPlaying && (
+                  <div
+                    onClick={() => handlePlay(reel.id)}
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-20 cursor-pointer"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-[#ff9933]/25 backdrop-blur-sm border border-[#FFCE7A]/60 flex items-center justify-center">
+                      <Play size={22} className="text-white fill-white ml-1" />
+                    </div>
+                  </div>
+                )}
+
+                {/* Text overlay (always visible) */}
+                <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
+                  <h3 className="font-display text-white text-xl md:text-2xl leading-tight mb-1">
+                    {reel.title}
+                  </h3>
+                  <p className="nav-font text-[#FFE6B8] text-xs flex items-center gap-1.5">
+                    <MapPin size={12} className="text-[#FFCE7A]" />
+                    {reel.location}
+                  </p>
                 </div>
-              </div>
 
-              <div className="absolute bottom-0 left-0 right-0 p-5 z-20">
-                <h3 className="font-display text-white text-xl md:text-2xl leading-tight mb-1">
-                  {reel.title}
-                </h3>
-                <p className="nav-font text-[#FFE6B8] text-xs flex items-center gap-1.5">
-                  <MapPin size={12} className="text-[#FFCE7A]" />
-                  {reel.location}
-                </p>
-              </div>
-
-              <span className="absolute bottom-4 right-4 text-5xl text-white/10 select-none pointer-events-none">
-                ॐ
-              </span>
-            </motion.div>
-          ))}
+                <span className="absolute bottom-4 right-4 text-5xl text-white/10 select-none pointer-events-none">
+                  ॐ
+                </span>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
