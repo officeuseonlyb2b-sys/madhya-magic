@@ -29,9 +29,12 @@ export interface SawanPackage {
 
   // ─── NEW FIELDS (helicopter packages data) ───
   pricing?: {
-    vehicle: string;
-    pax: number;
-    cost: number;
+    hotelCategory: string;
+    variants: {
+      vehicle: string;
+      pax: number;
+      cost: number;
+    }[];
   }[];
 
   facts?: {
