@@ -15,6 +15,7 @@ import { SawanPackageGrid } from "@/features/sawan-packages";
 
 // ✅ Your existing image – confirmed to exist
 import formBackgroundImg from "@/assets/shravan/formbackgroundimg.jpeg";
+import TestimonialsSection from "@/components/TestimonialsSection";
 
 
 const ORANGE = "#FF7A00";
@@ -101,6 +102,7 @@ const ExclusiveSawanPage = () => {
             </Link>
           </motion.div>
         </section>
+        <TestimonialsSection />
       </main>
 
       <Footer />

@@ -270,7 +270,7 @@ const PackageDetail = () => {
       {/* Buttons */}
       <div className="space-y-3">
         <a
-          href={`https://wa.me/919111009498?text=${encodeURIComponent(
+          href={`https://wa.me/919109114934?text=${encodeURIComponent(
             `Hi! I'm interested in the "${pkg.name}" package${
               customize && extraDays > 0
                 ? ` customized to ${customDays} days`
@@ -287,7 +287,7 @@ const PackageDetail = () => {
 
         <div className="grid grid-cols-2 gap-3">
           <a
-            href="tel:+919111009498"
+            href="tel:+919109114934"
             className="flex items-center justify-center gap-2 rounded-2xl border border-border py-3.5 font-medium transition-all hover:bg-muted/40"
           >
             <Phone size={18} />

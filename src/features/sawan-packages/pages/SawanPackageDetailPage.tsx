@@ -36,7 +36,7 @@ const SawanPackageDetailPage = () => {
     return <Navigate to="/exclusive/sawan-ujjain" replace />;
   }
 
-  const whatsappHref = `https://wa.me/919111009498?text=${encodeURIComponent(
+  const whatsappHref = `https://wa.me/919109114934?text=${encodeURIComponent(
     `Hi! I'm interested in the "${pkg.name}" Sawan package (${pkg.startingPrice}). Please share more details.`
   )}`;
 
@@ -347,7 +347,7 @@ const SawanPackageDetailPage = () => {
                           WhatsApp
                         </a>
                         <a
-                          href="tel:+919111009498"
+                          href="tel:+919109114934"
                           className="flex items-center justify-center gap-2 rounded-2xl border border-orange-200 py-3.5 font-medium text-gray-800 transition-all hover:bg-orange-50"
                         >
                           <Phone size={18} style={{ color: ORANGE }} />
