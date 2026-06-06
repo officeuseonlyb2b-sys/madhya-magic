@@ -535,7 +535,7 @@ const SectionTitle = ({
   title,
   suffix,
 }: {
-  Icon: React.ComponentType<{ size?: number; className?: string }>;
+  Icon: import("lucide-react").LucideIcon;
   title: string;
   suffix?: string;
 }) => (
@@ -581,7 +581,7 @@ const InfoBar = ({
   value,
   color = "orange",
 }: {
-  Icon: React.ComponentType<{ size?: number; className?: string }>;
+  Icon: import("lucide-react").LucideIcon;
   title: string;
   value: string;
   color?: "orange" | "emerald";
