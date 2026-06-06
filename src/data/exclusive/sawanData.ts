@@ -224,7 +224,7 @@ export const sawanCampaign = {
     title: "Plan Your Spiritual Journey to Ujjain & Omkareshwar",
     subtitle: "Limited Sawan slots. Reserve your darshan, sawari & Narmada aarti experience today.",
     buttonLabel: "Book Now",
-    buttonHref: "/contact",
+    buttonHref: "/sawan-ujjain/book-now",
   },
   seo: {
     title: "Sawan in Ujjain & Omkareshwar | Exclusive Spiritual Experiences with Mahakal & Narmada",
