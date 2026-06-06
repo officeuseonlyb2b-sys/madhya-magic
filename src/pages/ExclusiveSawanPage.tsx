@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
-import WhyChooseUs from "@/components/WhyChooseUs";
 import TrustedBrandsSection from "@/components/TrustedBrandsSection";
+import WhychooseUs from "@/components/exclusive/WhychooseUs";
 import {
   ExclusiveHero,
   ExclusiveIntro,
@@ -59,10 +59,11 @@ const ExclusiveSawanPage = () => {
         <SawanPackageGrid />
 
         {/* Why Choose Us (from Home) */}
-        <WhyChooseUs />
+        <WhychooseUs />
 
         {/* Brands That Trust Us (from Home) */}
         <TrustedBrandsSection />
+        
 
         {/* CTA */}
         <section className="relative py-24 md:py-32 overflow-hidden">

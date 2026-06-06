@@ -1,22 +1,18 @@
 // data/packages.ts
 import type { SawanPackage } from "../types";
+import helicopter1 from "@/assets/shravan/helicopter1.webp";
+import helicopter2 from "@/assets/shravan/helicopter2.webp";
+import helicopter3 from "@/assets/shravan/helicopter3.webp";
+import helicopter4 from "@/assets/shravan/helicopter4.webp";
+import helicopter5 from "@/assets/shravan/helicopter5.webp";
 
-const UJJAIN_TEMPLE =
-  "https://images.unsplash.com/photo-1591777334757-1b13fc4e8baa?auto=format&fit=crop&w=1600&q=80";
-const OMKAR =
-  "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=1600&q=80";
-const NARMADA =
-  "https://images.unsplash.com/photo-1582719471384-894fbb16e074?auto=format&fit=crop&w=1600&q=80";
-const HELI =
-  "https://images.unsplash.com/photo-1535320903710-d993d3d77d29?auto=format&fit=crop&w=1600&q=80";
-const HELI_2 =
-  "https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=1600&q=80";
-const HELI_3 =
-  "https://images.unsplash.com/photo-1502920917128-1aa500764cbd?auto=format&fit=crop&w=1600&q=80";
-const MAHESHWAR =
-  "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?auto=format&fit=crop&w=1600&q=80";
-const MANDU =
-  "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80";
+// Normal package 
+
+import normalpkg1 from "@/assets/shravan/normalpkg1.webp"
+import normalpkg2 from "@/assets/shravan/normalpkg2.webp"
+import normalpkg3 from "@/assets/shravan/normalpkg3.webp"
+
+
 
 const COMMON_EXCLUSIONS = [
   "Any services other than the ones mentioned above or air fares, train or flight tickets, activities, meals other than those mentioned above",
@@ -41,14 +37,14 @@ const COMMON_NOTES = [
 const mahakaalBlessings: SawanPackage = {
   id: "mahakaal-blessings-yatra",
   kind: "normal",
-  name: "Mahakaal Blessings Yatra",
+  name: "A Spiritual Experience of Jyotirlingas",
   tagline: "Sawan Exclusive · Spiritual",
   duration: "3 Days / 2 Nights",
   route: "Indore → Ujjain → Omkareshwar → Indore",
   validity: "30 July – 30 August",
   badge: "Sawan Exclusive",
   startingPrice: "From ₹23,000",
-  image: UJJAIN_TEMPLE,
+  image: normalpkg1,
   description:
     "A curated 3‑day Sawan pilgrimage covering Mahakaleshwar and Omkareshwar Jyotirlingas with VVIP darshan, evening aartis and Indore heritage.",
   highlights: [
@@ -145,14 +141,14 @@ const mahakaalBlessings: SawanPackage = {
 const divineJyotirlinga: SawanPackage = {
   id: "divine-jyotirlinga-yatra",
   kind: "normal",
-  name: "Divine Jyotirlinga Yatra",
+  name: "Along the Sacred Narmada",
   tagline: "Sawan Exclusive · Spiritual & Heritage",
   duration: "4 Days / 3 Nights",
   route: "Indore → Ujjain → Omkareshwar → Maheshwar → Indore",
   validity: "30 July – 30 August",
   badge: "Sawan Exclusive",
   startingPrice: "From ₹27,900",
-  image: OMKAR,
+  image: normalpkg2,
   description:
     "A 4‑day spiritual journey across two Jyotirlingas plus the queenly riverside town of Maheshwar — including a Narmada sunset boat ride.",
   highlights: [
@@ -262,14 +258,14 @@ const divineJyotirlinga: SawanPackage = {
 const jyotirlingaMonsoonEscape: SawanPackage = {
   id: "jyotirlinga-monsoon-escape",
   kind: "normal",
-  name: "Jyotirlinga Monsoon Escape",
+  name: "Where Faith Meets Heritage",
   tagline: "Sawan Exclusive · Spiritual & Heritage",
   duration: "5 Days / 4 Nights",
   route: "Indore → Ujjain → Omkareshwar → Maheshwar → Mandu → Indore",
   validity: "30 July – 30 August",
   badge: "Sawan Exclusive",
   startingPrice: "From ₹31,800",
-  image: MAHESHWAR,
+  image: normalpkg3,
   description:
     "Five days of monsoon‑soaked devotion and heritage — Mahakal, Omkareshwar, Maheshwar and the romantic ruins of Mandu.",
   highlights: [
@@ -394,14 +390,14 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
 const heliExperience: SawanPackage = {
   id: "heli-jyotirlinga-experience",
   kind: "helicopter",
-  name: "A Spiritual Experience of Jyotirlingas",
+  name: "The Twin Jyotirlinga Helicopter Darshan",
   tagline: "Helicopter VIP · Same Day Darshan",
   duration: "1 Day",
   route: "Indore ⇋ Ujjain ⇋ Omkareshwar ⇋ Indore (by Helicopter)",
   validity: "30 July – 30 August",
   badge: "Helicopter VIP",
   startingPrice: "₹54,200",
-  image: HELI,
+  image: helicopter1,
   description:
     "Same‑day VVIP darshan of Mahakaleshwar and Omkareshwar Jyotirlingas by chartered helicopter. The most exclusive way to receive Sawan blessings.",
   highlights: [
@@ -470,14 +466,14 @@ const heliExperience: SawanPackage = {
 const heliSpiritual: SawanPackage = {
   id: "heli-spiritual-journeys",
   kind: "helicopter",
-  name: "Spiritual Journeys, Timeless Memories",
+  name: "Sacred Skies & Divine Darshan",
   tagline: "Helicopter VIP · 2 Days / 1 Night",
   duration: "2 Days / 1 Night",
   route: "Indore ⇋ Ujjain ⇋ Omkareshwar ⇋ Indore (by Helicopter + Road)",
   validity: "30 July – 30 August",
   badge: "Helicopter VIP",
   startingPrice: "₹62,200",
-  image: HELI_2,
+  image: helicopter2,
   description:
     "A 2‑day VIP pilgrimage with luxury overnight in Ujjain, helicopter darshan of both Jyotirlingas, and the famous Harsiddhi Mata Aarti.",
   highlights: [
@@ -553,15 +549,15 @@ const heliSpiritual: SawanPackage = {
 const heliDivine: SawanPackage = {
   id: "heli-divine-essence-mp",
   kind: "helicopter",
-  name: "The Divine Essence of Madhya Pradesh",
+  name: "A Magical Experience of Jyotirlingas",
   tagline: "Helicopter VIP · 3 Days / 2 Nights",
   duration: "3 Days / 2 Nights",
   route: "Indore ⇋ Ujjain ⇋ Omkareshwar ⇋ Indore (by Helicopter + Road)",
   validity: "30 July – 30 August",
   badge: "Helicopter VIP",
   startingPrice: "₹70,300",
-  image: HELI_3,
-  gallery: [HELI_3, OMKAR, MANDU],
+  image: helicopter3,
+  gallery: [helicopter1],
   description:
     "The most complete VIP Sawan experience — three days of helicopter‑led pilgrimage, Bhasma Aarti, Omkareshwar darshan and the vibrant culture of Indore.",
   highlights: [
@@ -650,14 +646,14 @@ const heliDivine: SawanPackage = {
 const heliMahakalSacredWings: SawanPackage = {
   id: "heli-mahakal-sacred-wings",
   kind: "helicopter",
-  name: "Mahakal Sacred Wings",
+  name: "An Exclusive Experience with Mahakaal",
   tagline: "Helicopter VIP · Same Day Darshan",
   duration: "1 Day",
   route: "Indore ⇋ Ujjain ⇋ Indore (by Helicopter)",
   validity: "30 July – 30 August",
   badge: "Helicopter VIP",
   startingPrice: "₹31,500",
-  image: HELI,
+  image: helicopter4,
   description:
     "An exclusive helicopter darshan of Mahakaleshwar Jyotirlinga, offering VVIP access and a seamless spiritual retreat.",
   highlights: [
@@ -731,14 +727,14 @@ const heliMahakalSacredWings: SawanPackage = {
 const heliDivineOmkareshwar: SawanPackage = {
   id: "heli-divine-omkareshwar",
   kind: "helicopter",
-  name: "Divine Omkareshwar Sky Retreat",
+  name: "An Exclusive Journey To The Sacred Island of Om",
   tagline: "Helicopter VIP · Same Day Darshan",
   duration: "1 Day",
   route: "Indore ⇋ Omkareshwar ⇋ Indore (by Helicopter)",
   validity: "30 July – 30 August",
   badge: "Helicopter VIP",
   startingPrice: "₹30,500",
-  image: OMKAR,
+  image: helicopter5,
   description:
     "An exclusive aerial pilgrimage to Omkareshwar, where devotion meets comfort and peace.",
   highlights: [

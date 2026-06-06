@@ -51,8 +51,8 @@ const SawanPackageDetailPage = () => {
       />
       <Navbar />
 
-      {/* Hero Banner */}
-      <section className="relative h-[80vh] min-h-[520px] w-full overflow-hidden">
+      {/* Hero Banner - Full screen, no overlay layer */}
+      <section className="relative h-screen w-full overflow-hidden">
         <motion.img
           src={pkg.image}
           alt={pkg.name}
@@ -63,7 +63,7 @@ const SawanPackageDetailPage = () => {
           transition={{ duration: 1.6, ease: "easeOut" }}
           className="absolute inset-0 w-full h-full object-cover object-center select-none"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/30 to-black/20" />
+        {/* Removed gradient overlay - no layer above image */}
 
         <div className="relative z-10 container mx-auto px-4 h-full flex flex-col justify-end pb-10 md:pb-14">
           <Link
@@ -112,7 +112,7 @@ const SawanPackageDetailPage = () => {
         </div>
       </section>
 
-      {/* Content */}
+      {/* Rest of the content unchanged */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">

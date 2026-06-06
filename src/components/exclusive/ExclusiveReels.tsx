@@ -47,7 +47,7 @@ const ExclusiveReels = ({ reels }: Props) => {
             ॐ glimpses of devotion
           </span>
           <h2 className="font-display text-orange-800 text-3xl md:text-5xl lg:text-6xl">
-            Sawan Ujjain Reels
+            Experience The Spirit of Shravan
           </h2>
           <div className="mt-3 flex justify-center gap-2">
             <span className="w-12 h-px bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
