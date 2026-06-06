@@ -30,13 +30,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { submitForm } from "@/lib/submitForm";
-import bookingBgAsset from "@/assets/sawan/booking-bg.jpg.asset.json";
 
-/**
- * Replace this with any image url/import to update the booking banner.
- * The page accepts a `bannerImage` prop fallback.
- */
-const DEFAULT_BANNER = bookingBgAsset.url;
+// ✅ Updated image import – place your file at this path
+import formBackgroundImg from "@/assets/shravan/formbackgroundimg.jpeg";
 
 const WHATSAPP_NUMBER = "919109114934";
 const SUPPORT_PHONE = "+91 9109114934";
@@ -89,7 +85,7 @@ interface Props {
   bannerImage?: string;
 }
 
-const SawanBookingPage = ({ bannerImage = DEFAULT_BANNER }: Props) => {
+const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
   const [values, setValues] = useState({
     fullName: "",
     mobile: "",
@@ -203,7 +199,7 @@ const SawanBookingPage = ({ bannerImage = DEFAULT_BANNER }: Props) => {
             <ArrowLeft size={16} /> Back to Sawan in Ujjain
           </Link>
 
-          {/* Banner */}
+          {/* Banner with your new image */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}

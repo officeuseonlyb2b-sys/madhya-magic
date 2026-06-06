@@ -13,6 +13,10 @@ import {
 import { sawanCampaign } from "@/data/exclusive/sawanData";
 import { SawanPackageGrid } from "@/features/sawan-packages";
 
+// ✅ Your existing image – confirmed to exist
+import formBackgroundImg from "@/assets/shravan/formbackgroundimg.jpeg";
+
+
 const ORANGE = "#FF7A00";
 
 const ExclusiveSawanPage = () => {
@@ -67,8 +71,9 @@ const ExclusiveSawanPage = () => {
 
         {/* CTA */}
         <section className="relative py-24 md:py-32 overflow-hidden">
+          {/* ✅ Using your imported formBackgroundImg */}
           <img
-            src={c.hero.image}
+            src={formBackgroundImg}
             alt=""
             aria-hidden="true"
             className="absolute inset-0 w-full h-full object-cover"
