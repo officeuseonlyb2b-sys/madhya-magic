@@ -1,15 +1,14 @@
 // src/components/exclusive/WhychooseUs.tsx
 import { useState } from "react";
 import {
-  Award,
-  Globe,
-  ShieldCheck,
-  Headphones,
+  Home,
+  Compass,
+  Handshake,
+  Heart,
   PhoneCall,
   ArrowRight,
 } from "lucide-react";
 import JourneyPopup from "@/components/MadhyaPradeshJourneyModal";
-// Adjust the import path to your actual asset location
 import whyChooseUsImage from "@/assets/shravan/choose.jpeg";
 
 export default function WhychooseUs() {
@@ -17,34 +16,33 @@ export default function WhychooseUs() {
 
   const reasons = [
     {
-      icon: Award,
-      title: "Award-Winning Service",
+      icon: Home,
+      title: "Madhya Pradesh Is Our Home",
       description:
-        "Recognized excellence in travel planning with a focus on customer satisfaction and quality.",
+        "We know Madhya Pradesh beyond guidebooks — from hidden forests and heritage towns to authentic local experiences.",
     },
     {
-      icon: Globe,
-      title: "Global Destinations",
+      icon: Compass,
+      title: "Handcrafted Journeys",
       description:
-        "Curated experiences across the world, from exotic beaches to mountain retreats.",
+        "Every journey is thoughtfully designed around your travel style, interests, and pace.",
     },
     {
-      icon: ShieldCheck,
-      title: "Secure & Safe",
+      icon: Handshake,
+      title: "Trusted Local Network Across the State",
       description:
-        "Your safety is our priority, ensuring end-to-end travel security and reliable partners.",
+        "Longstanding partnerships with hotels, guides, drivers and communities ensure smooth, authentic journeys every time.",
     },
     {
-      icon: Headphones,
-      title: "24/7 Support",
+      icon: Heart,
+      title: "Real Experiences. Genuine Hospitality.",
       description:
-        "Dedicated travel experts available anytime to assist you before, during, and after your trip.",
+        "Warm welcomes, thoughtful planning and people-first service make each trip personal and memorable.",
     },
   ];
 
   const handleSpeakToExpert = () => {
-    // Replace with your actual contact method
-    alert("📞 Speak to our travel experts: +1 (555) 123-4567 or hello@bavro.com");
+    alert("📞 Speak to our Madhya Pradesh travel experts — we'll craft your perfect journey.");
   };
 
   return (
@@ -54,33 +52,31 @@ export default function WhychooseUs() {
           {/* LEFT SIDE - Why Choose Us Content */}
           <div className="relative z-10 flex items-center px-5 py-12 md:px-10 lg:px-14">
             <div className="max-w-[560px]">
-              {/* HEADING - Black text */}
+              {/* HEADING - Now reflects Madhya Pradesh roots */}
               <h2 className="text-black text-[32px] md:text-[44px] leading-[1.1] tracking-[-1px] font-light font-display">
                 <div className="whitespace-nowrap">
-                  <span className="font-bold">Why Travelers</span>{" "}
-                  <span className="font-light">Love</span>
+                  <span className="font-bold">Why Choose Us</span>
                 </div>
-                <span className="font-bold block mt-1">Bavro Travel</span>
+                {/* <span className="font-bold block mt-1">Madhya Pradesh Since 2014</span> */}
               </h2>
 
-              {/* DESCRIPTION - Dark gray */}
+              {/* MAIN DESCRIPTION - Your provided paragraph */}
               <p className="mt-5 text-gray-600 text-[13px] md:text-[14px] leading-[1.8] max-w-[500px]">
-                Discover what makes Bavro the preferred choice for thousands of
-                adventurers. We offer exceptional service, personalized planning,
-                and unforgettable experiences — without the stress.
+                Deeply rooted in Madhya Pradesh since 2014, we create thoughtfully curated journeys
+                that go beyond sightseeing. From wilderness and heritage to spirituality and local
+                traditions, our strong local expertise, trusted network, and personalized approach
+                help you experience the true soul of Central India with comfort, authenticity, and care.
               </p>
 
-              {/* REASONS GRID */}
+              {/* REASONS GRID - New 4 core promises */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-8 mt-10">
                 {reasons.map((reason, index) => {
                   const Icon = reason.icon;
                   return (
                     <div key={index} className="flex items-start gap-3">
-                      {/* ICON - Light theme background */}
                       <div className="min-w-[58px] min-h-[58px] rounded-full bg-gray-100 border border-gray-200 flex items-center justify-center">
                         <Icon className="text-black w-5 h-5" strokeWidth={1.8} />
                       </div>
-                      {/* TEXT */}
                       <div className="pt-0.5">
                         <h3 className="text-black text-[18px] leading-[1.2] font-semibold font-display">
                           {reason.title}
@@ -94,9 +90,8 @@ export default function WhychooseUs() {
                 })}
               </div>
 
-              {/* BUTTONS - Light theme */}
+              {/* ACTION BUTTONS - unchanged functionality, clearer CTA */}
               <div className="flex flex-col sm:flex-row gap-4 mt-12">
-                {/* SPEAK TO AN EXPERT */}
                 <button
                   onClick={handleSpeakToExpert}
                   className="group inline-flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-full text-[14px] font-medium transition-all duration-300 hover:bg-gray-800"
@@ -105,7 +100,6 @@ export default function WhychooseUs() {
                   <span>Speak To An Expert</span>
                 </button>
 
-                {/* PLAN YOUR JOURNEY */}
                 <button
                   onClick={() => setOpenJourneyPopup(true)}
                   className="group inline-flex items-center justify-center gap-2 border border-gray-300 text-black px-6 py-3 rounded-full text-[14px] font-medium transition-all duration-300 hover:bg-black hover:text-white hover:border-black"
@@ -120,21 +114,20 @@ export default function WhychooseUs() {
             </div>
           </div>
 
-          {/* RIGHT SIDE - IMAGE with white gradient overlay */}
+          {/* RIGHT SIDE - Image (alt text updated for MP context) */}
           <div className="relative min-h-[420px] lg:min-h-full">
             <img
               src={whyChooseUsImage}
-              alt="Happy travelers enjoying adventure"
+              alt="Authentic Madhya Pradesh travel experience – wildlife, heritage, and local culture"
               className="absolute inset-0 w-full h-full object-cover"
               loading="lazy"
               decoding="async"
             />
-            
           </div>
         </div>
       </section>
 
-      {/* JOURNEY PLANNING POPUP */}
+      {/* JOURNEY PLANNING POPUP (kept as is) */}
       <JourneyPopup
         open={openJourneyPopup}
         onClose={() => setOpenJourneyPopup(false)}

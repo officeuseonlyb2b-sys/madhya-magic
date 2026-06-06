@@ -100,7 +100,7 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
   };
 
-  const fieldBase = "w-full rounded-xl border border-[#d4a017]/30 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-400 focus:outline-none focus:border-[#ff9933] focus:ring-2 focus:ring-[#ff9933]/20 transition";
+  const fieldBase = "w-full rounded-xl border border-[#d4a017]/30 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-400 focus:outline-none transition";
 
   return (
     <AnimatePresence>
@@ -133,7 +133,7 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
             </div>
 
             <form onSubmit={handleSubmit} className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
-              {/* YOUR DETAILS - heading black */}
+              {/* YOUR DETAILS - heading black, no text shadow */}
               <Section title="YOUR DETAILS">
                 <div className="grid sm:grid-cols-2 gap-5">
                   <InputField label="Full Name" error={errors.fullName}>
@@ -245,7 +245,10 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
   <div className="space-y-3">
-    <h4 className="nav-font text-xs uppercase tracking-widest text-black border-b border-[#d4a017]/30 pb-1">
+    <h4
+      className="nav-font text-xs uppercase tracking-widest text-black border-b border-[#d4a017]/30 pb-1"
+      style={{ textShadow: "none" }}
+    >
       {title}
     </h4>
     {children}
@@ -254,7 +257,10 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 const InputField = ({ label, error, children }: { label: string; error?: string; children: React.ReactNode }) => (
   <label className="block">
-    <span className="nav-font text-xs uppercase tracking-widest text-black mb-1.5 block">
+    <span
+      className="nav-font text-xs uppercase tracking-widest text-black mb-1.5 block"
+      style={{ textShadow: "none" }}
+    >
       {label}
     </span>
     {children}
@@ -265,7 +271,9 @@ const InputField = ({ label, error, children }: { label: string; error?: string;
 const TrustBadge = ({ icon: Icon, text }: { icon: any; text: string }) => (
   <div className="flex flex-col items-center text-center gap-1">
     <Icon size={20} className="text-[#d4a017]" />
-    <span className="text-[11px] font-medium text-black">{text}</span>
+    <span className="text-[11px] font-medium text-black" style={{ textShadow: "none" }}>
+      {text}
+    </span>
   </div>
 );
 
