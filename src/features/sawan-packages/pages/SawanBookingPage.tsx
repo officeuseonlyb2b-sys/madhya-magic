@@ -30,14 +30,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { submitForm } from "@/lib/submitForm";
-import heroAsset from "@/assets/exclusive/sawan/sawan-hero.jpg.asset.json";
+import bookingBgAsset from "@/assets/sawan/booking-bg.jpg.asset.json";
 
 /**
  * Replace this with any image url/import to update the booking banner.
- * The page accepts a `bannerImage` prop fallback, but the default is the
- * Sawan hero image and is easy to change here.
+ * The page accepts a `bannerImage` prop fallback.
  */
-const DEFAULT_BANNER = heroAsset.url;
+const DEFAULT_BANNER = bookingBgAsset.url;
 
 const WHATSAPP_NUMBER = "919109114934";
 const SUPPORT_PHONE = "+91 9109114934";
