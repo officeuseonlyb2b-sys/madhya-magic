@@ -29,24 +29,24 @@ const ExclusiveReels = ({ reels }: Props) => {
   };
 
   return (
-    <section className="relative py-20 md:py-28 overflow-hidden bg-white">
+    <section className="relative py-12 sm:py-16 md:py-28 overflow-hidden bg-white">
       {/* Orange decorative rings */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-orange-300" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-orange-400" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-10 sm:mb-14"
         >
-          <span className="text-orange-600 uppercase tracking-[0.35em] text-xs mb-4 border-b border-orange-300 pb-2 inline-block">
+          <span className="text-orange-600 uppercase tracking-[0.35em] text-[10px] sm:text-xs mb-4 border-b border-orange-300 pb-2 inline-block">
             ॐ glimpses of devotion
           </span>
-          <h2 className="font-display text-orange-800 text-3xl md:text-5xl lg:text-6xl">
+          <h2 className="font-display text-orange-800 text-2xl sm:text-3xl md:text-5xl lg:text-6xl mt-3">
             Experience The Spirit of Shravan
           </h2>
           <div className="mt-3 flex justify-center gap-2">
@@ -56,7 +56,7 @@ const ExclusiveReels = ({ reels }: Props) => {
           </div>
         </motion.div>
 
-        <div className="flex gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-6 px-6 scrollbar-thin scrollbar-thumb-orange-300">
+        <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-4 sm:-mx-6 px-4 sm:px-6 scrollbar-thin scrollbar-thumb-orange-300">
           {reels.map((reel, i) => (
             <motion.div
               key={reel.id}
@@ -64,7 +64,7 @@ const ExclusiveReels = ({ reels }: Props) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
               whileHover={{ y: -8 }}
-              className="relative flex-shrink-0 w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-xl ring-1 ring-orange-200 bg-gray-100"
+              className="relative flex-shrink-0 w-[220px] sm:w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-xl ring-1 ring-orange-200 bg-gray-100"
               onMouseEnter={() => handleMouseEnter(reel.id)}
               onMouseLeave={() => handleMouseLeave(reel.id)}
             >

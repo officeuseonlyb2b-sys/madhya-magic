@@ -133,7 +133,7 @@ const ExclusiveIntro = ({ intro }: Props) => {
 
   return (
     <section
-      className="relative py-20 md:py-28 overflow-hidden bg-white"
+      className="relative py-12 sm:py-16 md:py-28 overflow-hidden bg-white"
     >
       {/* White + Orange gradient glow */}
       <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-gradient-radial from-orange-200/30 via-transparent to-transparent" />
@@ -144,10 +144,10 @@ const ExclusiveIntro = ({ intro }: Props) => {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-orange-400" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* LEFT: Gallery without scrollbar */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/50 aspect-[4/5] group ring-1 ring-orange-200 bg-orange-50">
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/50 aspect-[4/5] sm:aspect-[4/5] group ring-1 ring-orange-200 bg-orange-50">
             {/* Arrow buttons - orange theme */}
             <button
               onClick={() => scrollByImage("left")}
@@ -217,7 +217,7 @@ const ExclusiveIntro = ({ intro }: Props) => {
             <span className="inline-block nav-font text-orange-600 uppercase tracking-[0.35em] text-xs mb-4 border-b border-orange-300 pb-2">
               ॐ {intro.eyebrow}
             </span>
-            <h2 className="font-display text-3xl md:text-5xl text-orange-800 leading-tight mb-6 relative">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-5xl text-orange-800 leading-tight mb-4 sm:mb-6 relative">
               {intro.title}
               <span className="absolute -top-2 -right-6 text-2xl text-orange-400 opacity-60">
                 ॥

@@ -43,16 +43,16 @@ const SawanPackageGrid = () => {
   return (
     <section
       id="sawan-special-packages"
-      className="relative py-20 md:py-28 overflow-hidden bg-white"
+      className="relative py-12 sm:py-16 md:py-28 overflow-hidden bg-white"
     >
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Normal Packages - Grid */}
         <SectionTitle
           eyebrow="ॐ Crafted with Devotion"
           title="Choose Your Shravan Journey"
           subtitle=""
         />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {normal.map((p, i) => (
             <SawanPackageCard key={p.id} pkg={p} index={i} />
           ))}
@@ -60,7 +60,7 @@ const SawanPackageGrid = () => {
 
         {/* Helicopter Packages - Carousel with fixed visible cards */}
         {heli.length > 0 && (
-          <div className="mt-24">
+          <div className="mt-16 sm:mt-20 md:mt-24">
             <SectionTitle
               eyebrow="✈ Fly to Faith"
               title="Darshan Beyond the Ordinary"
@@ -163,7 +163,7 @@ const SectionTitle = ({
     >
       {eyebrow}
     </span>
-    <h2 className="font-display text-black text-3xl md:text-5xl">{title}</h2>
+    <h2 className="font-display text-black text-2xl sm:text-3xl md:text-5xl">{title}</h2>
     <p className="max-w-2xl mx-auto text-gray-600 mt-4">{subtitle}</p>
     <div className="mt-4 flex justify-center gap-2 items-center">
       <span
