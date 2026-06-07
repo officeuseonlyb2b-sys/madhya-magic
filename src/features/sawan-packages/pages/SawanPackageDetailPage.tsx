@@ -52,7 +52,7 @@ const SawanPackageDetailPage = () => {
       <Navbar />
 
       {/* Hero Banner - Full screen, no overlay layer */}
-      <section className="relative h-screen w-full overflow-hidden">
+      <section className="relative h-[75vh] sm:h-[85vh] md:h-screen w-full overflow-hidden">
         <motion.img
           src={pkg.image}
           alt={pkg.name}
@@ -97,10 +97,10 @@ const SawanPackageDetailPage = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-white mb-5 leading-[1.1] drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-4 sm:mb-5 leading-[1.1] drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
               {pkg.name}
             </h1>
-            <p className="text-white/90 text-base md:text-lg max-w-2xl">{pkg.tagline}</p>
+            <p className="text-white/90 text-sm sm:text-base md:text-lg max-w-2xl">{pkg.tagline}</p>
 
             <div className="flex flex-wrap items-center gap-2.5 md:gap-3 mt-5">
               <span className="inline-flex items-center gap-1.5 text-white text-xs md:text-sm font-medium backdrop-blur-md bg-white/15 border border-white/25 px-3.5 py-2 rounded-full">
@@ -113,9 +113,9 @@ const SawanPackageDetailPage = () => {
       </section>
 
       {/* Rest of the content unchanged */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-12 md:py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-10">
               {/* Description */}
@@ -228,26 +228,28 @@ const SawanPackageDetailPage = () => {
                           {tier.hotelCategory}
                         </h5>
                         <div className="border border-orange-100 rounded-xl overflow-hidden bg-white">
-                          <table className="w-full text-sm">
-                            <thead style={{ backgroundColor: `${ORANGE}10`, color: ORANGE }}>
-                              <tr className="font-semibold">
-                                <th className="p-3 text-left">Vehicle</th>
-                                <th className="p-3 text-center">Pax</th>
-                                <th className="p-3 text-right">Per Person (₹)</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              {tier.variants.map((v, i) => (
-                                <tr key={i} className="border-t border-orange-100">
-                                  <td className="p-3 text-gray-800">{v.vehicle}</td>
-                                  <td className="p-3 text-center text-gray-800">{v.pax}</td>
-                                  <td className="p-3 text-right font-medium" style={{ color: ORANGE }}>
-                                    {v.cost.toLocaleString()}
-                                  </td>
+                          <div className="overflow-x-auto">
+                            <table className="w-full text-sm min-w-[420px]">
+                              <thead style={{ backgroundColor: `${ORANGE}10`, color: ORANGE }}>
+                                <tr className="font-semibold">
+                                  <th className="p-3 text-left">Vehicle</th>
+                                  <th className="p-3 text-center">Pax</th>
+                                  <th className="p-3 text-right">Per Person (₹)</th>
                                 </tr>
-                              ))}
-                            </tbody>
-                          </table>
+                              </thead>
+                              <tbody>
+                                {tier.variants.map((v, i) => (
+                                  <tr key={i} className="border-t border-orange-100">
+                                    <td className="p-3 text-gray-800">{v.vehicle}</td>
+                                    <td className="p-3 text-center text-gray-800">{v.pax}</td>
+                                    <td className="p-3 text-right font-medium" style={{ color: ORANGE }}>
+                                      {v.cost.toLocaleString()}
+                                    </td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
                         </div>
                       </div>
                     ))}
@@ -371,7 +373,6 @@ const SawanPackageDetailPage = () => {
       <FloatingButtons />
       <SawanEnquiryFormModal
         open={enquiryOpen}
-        initialPackageId={pkg.id}
         onClose={() => setEnquiryOpen(false)}
       />
     </div>
