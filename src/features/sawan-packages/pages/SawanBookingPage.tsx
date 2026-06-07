@@ -212,14 +212,14 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/55 to-black/20" />
-            <div className="relative px-6 md:px-12 py-10 md:py-16 text-white">
-              <p className="nav-font text-orange-300 uppercase tracking-[0.35em] text-[11px] md:text-xs mb-3">
+            <div className="relative px-5 sm:px-8 md:px-12 py-8 sm:py-12 md:py-16 text-white">
+              <p className="nav-font text-orange-300 uppercase tracking-[0.35em] text-[10px] sm:text-[11px] md:text-xs mb-3">
                 ॐ PLAN YOUR DIVINE YATRA
               </p>
-              <h1 className="font-display text-3xl md:text-5xl leading-tight max-w-2xl">
+              <h1 className="font-display text-2xl sm:text-3xl md:text-5xl leading-tight max-w-2xl">
                 Begin Your Sacred Journey
               </h1>
-              <p className="mt-4 text-white/85 max-w-xl text-sm md:text-base leading-relaxed">
+              <p className="mt-3 sm:mt-4 text-white/85 max-w-xl text-sm md:text-base leading-relaxed">
                 Our Yatra Experts will help you choose the right package,
                 darshan options, travel dates and accommodation.
               </p>
@@ -231,7 +231,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
             onSubmit={handleSubmit}
             className="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6"
           >
-            <div className="bg-white rounded-3xl shadow-lg border border-orange-100 p-6 md:p-10 space-y-10">
+            <div className="bg-white rounded-2xl sm:rounded-3xl shadow-lg border border-orange-100 p-4 sm:p-6 md:p-10 space-y-8 sm:space-y-10">
               {/* Section 1 */}
               <section>
                 <SectionTitle Icon={User} title="YOUR DETAILS" />
@@ -287,7 +287,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
                 </div>
               </section>
 
-              <div className="grid md:grid-cols-2 gap-10">
+              <div className="grid md:grid-cols-2 gap-8 md:gap-10">
                 {/* Section 2 */}
                 <section>
                   <SectionTitle Icon={Landmark} title="YOUR JOURNEY PREFERENCES" />
@@ -340,7 +340,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
                     title="WHAT ARE YOU LOOKING FOR?"
                     suffix="(Select any)"
                   />
-                  <div className="grid grid-cols-2 gap-3 mt-5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-5">
                     {lookingForOptions.map(({ label, Icon }) => {
                       const checked = selectedServices.includes(label);
                       return (
