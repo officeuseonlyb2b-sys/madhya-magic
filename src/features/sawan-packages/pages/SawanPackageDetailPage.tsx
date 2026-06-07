@@ -97,7 +97,7 @@ const SawanPackageDetailPage = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-4 sm:mb-5 leading-[1.1] drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)]">
+            <h1 className="text-2xl sm:text-4xl md:text-6xl font-display font-bold text-white mb-4 sm:mb-5 leading-[1.1] drop-shadow-[0_2px_18px_rgba(0,0,0,0.55)] break-words">
               {pkg.name}
             </h1>
             <p className="text-white/90 text-sm sm:text-base md:text-lg max-w-2xl">{pkg.tagline}</p>
@@ -318,7 +318,7 @@ const SawanPackageDetailPage = () => {
 
                     <div className="mb-6">
                       <p className="text-xs uppercase tracking-wider text-gray-500 mb-1">Starting from</p>
-                      <h2 className="text-4xl font-bold leading-none text-black">{pkg.startingPrice}</h2>
+                      <h2 className="text-3xl sm:text-4xl font-bold leading-none text-black break-words">{pkg.startingPrice}</h2>
                       <p className="text-sm text-gray-500 mt-2">Per Person</p>
                     </div>
 
