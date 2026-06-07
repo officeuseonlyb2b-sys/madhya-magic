@@ -190,7 +190,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
       />
       <Navbar />
 
-      <main className="pt-20 md:pt-24 pb-12">
+      <main className="pt-24 md:pt-28 pb-12">
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <Link
             to="/exclusive/sawan-ujjain"
