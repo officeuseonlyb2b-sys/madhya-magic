@@ -371,7 +371,6 @@ const SawanPackageDetailPage = () => {
       <FloatingButtons />
       <SawanEnquiryFormModal
         open={enquiryOpen}
-        initialPackageId={pkg.id}
         onClose={() => setEnquiryOpen(false)}
       />
     </div>
