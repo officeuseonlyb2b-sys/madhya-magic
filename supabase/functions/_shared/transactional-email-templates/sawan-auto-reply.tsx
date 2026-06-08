@@ -51,7 +51,7 @@ const SawanAutoReplyEmail = ({ fullName }: SawanAutoReplyProps) => (
             May Lord Mahakal bless you and your family with peace, prosperity,
             and spiritual fulfillment.
           </Text>
-          <Text style={mantra}>Har Har Mahadev 🙏</Text>
+          <Text style={mantra}>Jai Shree Mahakal 🙏</Text>
 
           <Hr style={hr} />
 

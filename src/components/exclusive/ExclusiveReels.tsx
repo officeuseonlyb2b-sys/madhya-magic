@@ -71,7 +71,16 @@ const ExclusiveReels = ({ reels }: Props) => {
               {/* Hover border effect */}
               <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-orange-400 transition-all z-10 pointer-events-none" />
 
-              {/* Video element – no overlay, poster initially, plays on hover */}
+              {/* Poster image fallback – always visible behind the video */}
+              <img
+                src={reel.image}
+                alt={reel.title}
+                className="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
+              />
+
+              {/* Video element – plays on hover, sits above poster */}
               <video
                 ref={(el) => {
                   if (el) videoRefs.current[reel.id] = el;
@@ -84,6 +93,9 @@ const ExclusiveReels = ({ reels }: Props) => {
               >
                 <source src={reel.videoUrl} type="video/mp4" />
               </video>
+
+              {/* Subtle bottom gradient for text readability (no white layer) */}
+              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none z-10" />
 
               {/* Text overlay – clean, no background, only white text with shadow */}
               <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
