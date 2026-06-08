@@ -11,8 +11,10 @@ export interface TemplateEntry {
 
 import { template as inquiryNotification } from './inquiry-notification.tsx'
 import { template as inquiryAutoReply } from './inquiry-auto-reply.tsx'
+import { template as sawanAutoReply } from './sawan-auto-reply.tsx'
 
 export const TEMPLATES: Record<string, TemplateEntry> = {
   'inquiry-notification': inquiryNotification,
   'inquiry-auto-reply': inquiryAutoReply,
+  'sawan-auto-reply': sawanAutoReply,
 }

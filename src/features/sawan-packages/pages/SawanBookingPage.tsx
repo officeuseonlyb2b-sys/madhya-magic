@@ -168,7 +168,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
     setSubmitting(true);
     const agesStr = childrenAges.map((a) => (a !== null ? a : "?")).join(", ");
     const res = await submitForm({
-      formName: "Sawan in Ujjain – Begin Your Sacred Journey",
+      formName: "SawanBookingPage",
       fullName: values.fullName,
       email: values.email,
       phone: values.mobile,
@@ -178,13 +178,14 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
       travelers: `${adultsCount} adults, ${childrenCount} kids`,
       message: values.message,
       extraFields: {
-  City: values.city,
-  "Journey Type": values.journey,
-  "Selected Services": selectedServices.join(", "),
-  Adults: adultsCount.toString(),        // ← convert number to string
-  "Number of Kids": childrenCount.toString(), // ← convert number to string
-  "Kids Ages": agesStr,
-},
+        City: values.city,
+        "Journey Type": values.journey,
+        "Selected Services": selectedServices.join(", "),
+        Adults: values.adults,
+        Kids: values.kids,
+        "Kids Age": values.kidsAge,
+      },
+      autoReplyTemplate: "sawan-auto-reply",
     });
     setSubmitting(false);
     if (res.ok) {
