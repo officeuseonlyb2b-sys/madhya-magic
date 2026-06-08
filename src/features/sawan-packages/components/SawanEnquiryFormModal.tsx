@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { X, Send, MessageCircle, Shield, Star, Clock, Hotel, Phone } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
+import { submitForm } from "@/lib/submitForm";
 
 const WHATSAPP_NUMBER = "919109114934";
 
@@ -86,9 +87,38 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
     if (!validate()) return;
     setSubmitting(true);
     try {
-      await new Promise(r => setTimeout(r, 700));
-      toast({ title: "Enquiry received 🪔", description: "Our Yatra expert will call you shortly." });
-      onClose();
+      const enhancements = [
+        ...values.enhanceOptions,
+        values.seniorCitizenAssistance && "Senior Citizen Assistance",
+        values.luxuryStayUpgrade && "Luxury Stay Upgrade",
+        values.airportTransfers && "Airport Transfers",
+        values.needCustomisation && "Need Customisation",
+        values.specialVipDarshan && "VIP Darshan Assistance",
+        values.completeTravelAssistance && "Complete Travel Assistance",
+      ].filter(Boolean).join(", ");
+
+      const res = await submitForm({
+        formName: "SawanEnquiryFormModal",
+        fullName: values.fullName,
+        email: values.email,
+        phone: values.mobile,
+        destination: "Ujjain & Omkareshwar",
+        travelDate: values.travelDate,
+        travelers: `${values.adults} adults, ${values.children} children`,
+        message: values.additionalRequests,
+        extraFields: {
+          City: values.city,
+          "Children Ages": values.childrenAges,
+          Enhancements: enhancements,
+        },
+        autoReplyTemplate: "sawan-auto-reply",
+      });
+      if (res.ok) {
+        toast({ title: "Enquiry received 🪔", description: "Our Yatra expert will call you shortly." });
+        onClose();
+      } else {
+        toast({ title: "Submission failed", description: res.error || "Please try again.", variant: "destructive" });
+      }
     } finally {
       setSubmitting(false);
     }

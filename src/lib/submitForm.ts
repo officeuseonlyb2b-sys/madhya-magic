@@ -25,6 +25,8 @@ export interface FormSubmission {
   message?: string;
   /** Any additional structured fields to include in the notification email. */
   extraFields?: Record<string, string | undefined>;
+  /** Optional override for the user auto-reply template (defaults to 'inquiry-auto-reply'). */
+  autoReplyTemplate?: string;
 }
 
 const baseSchema = z.object({
@@ -106,7 +108,7 @@ export async function submitForm(
     // 2. Auto-reply to the user
     await supabase.functions.invoke("send-transactional-email", {
       body: {
-        templateName: "inquiry-auto-reply",
+        templateName: data.autoReplyTemplate || "inquiry-auto-reply",
         recipientEmail: baseData.email,
         idempotencyKey: `reply-${idempotencyBase}`,
         templateData: { fullName: baseData.fullName, formName: baseData.formName },

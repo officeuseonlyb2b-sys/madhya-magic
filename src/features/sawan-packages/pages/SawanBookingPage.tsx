@@ -131,7 +131,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
     }
     setSubmitting(true);
     const res = await submitForm({
-      formName: "Sawan in Ujjain – Begin Your Sacred Journey",
+      formName: "SawanBookingPage",
       fullName: values.fullName,
       email: values.email,
       phone: values.mobile,
@@ -148,6 +148,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
         Kids: values.kids,
         "Kids Age": values.kidsAge,
       },
+      autoReplyTemplate: "sawan-auto-reply",
     });
     setSubmitting(false);
     if (res.ok) {
