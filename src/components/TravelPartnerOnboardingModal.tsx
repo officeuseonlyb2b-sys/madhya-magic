@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { submitFormWithToast } from "@/lib/submitForm";
 import { cn } from "@/lib/utils";
+import { ChevronDown } from "lucide-react";
 
 const BUSINESS_TYPES = ["B2B", "B2C", "Both"];
 
@@ -25,39 +26,39 @@ const TRAVELER_TYPES = [
 ];
 
 const DOMESTIC_DESTS = [
-  "Andhra Pradesh","Arunachal Pradesh","Assam","Bihar","Chhattisgarh","Goa",
-  "Gujarat","Haryana","Himachal Pradesh","Jammu & Kashmir","Jharkhand","Karnataka",
-  "Kerala","Ladakh","Madhya Pradesh","Maharashtra","Meghalaya","Mizoram","Nagaland",
-  "Odisha","Punjab","Rajasthan","Sikkim","Tamil Nadu","Telangana","Uttarakhand",
-  "Uttar Pradesh","West Bengal","Andaman & Nicobar Islands","Lakshadweep",
+  "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa",
+  "Gujarat", "Haryana", "Himachal Pradesh", "Jammu & Kashmir", "Jharkhand", "Karnataka",
+  "Kerala", "Ladakh", "Madhya Pradesh", "Maharashtra", "Meghalaya", "Mizoram", "Nagaland",
+  "Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Uttarakhand",
+  "Uttar Pradesh", "West Bengal", "Andaman & Nicobar Islands", "Lakshadweep",
 ];
 
 const INTL_DESTS = [
-  "Bhutan","Nepal","Thailand","Bali","Dubai","Vietnam","Singapore","Malaysia",
-  "Maldives","Sri Lanka","Europe","Other",
+  "Bhutan", "Nepal", "Thailand", "Bali", "Dubai", "Vietnam", "Singapore", "Malaysia",
+  "Maldives", "Sri Lanka", "Europe", "Other",
 ];
 
 const ALL_DESTS = [...DOMESTIC_DESTS, ...INTL_DESTS];
 
 const HOTEL_CATEGORIES = [
-  "Budget Hotels","3 Star Hotels","4 Star Hotels","Premium Hotels",
-  "Luxury Hotels","Heritage Hotels","Boutique Stays","Mixed Category",
+  "Budget Hotels", "3 Star Hotels", "4 Star Hotels", "Premium Hotels",
+  "Luxury Hotels", "Heritage Hotels", "Boutique Stays",
 ];
 
-const DURATIONS = ["2–4 Days","5–7 Days","8–12 Days","12+ Days"];
+const DURATIONS = ["2–4 Days", "5–7 Days", "8–12 Days", "12+ Days"];
 
-const PAX_SIZES = ["1–2 Pax","3–6 Pax","7–15 Pax","16–30 Pax","31–50 Pax","50+ Pax"];
+const PAX_SIZES = ["1–2 Pax", "3–6 Pax", "7–15 Pax", "16–30 Pax", "31–50 Pax", "50+ Pax"];
 
 const INTERESTS = [
-  "Wildlife","Spiritual","Heritage","Culture","Luxury","Adventure","Leisure",
-  "Honeymoon","Nature","Photography","Textile & Art","Festivals","Wellness",
-  "Food Experiences","Offbeat Experiences","Experiential Journeys",
+  "Wildlife", "Spiritual", "Heritage", "Culture", "Luxury", "Adventure", "Leisure",
+  "Honeymoon", "Nature", "Photography", "Textile & Art", "Festivals", "Wellness",
+  "Food Experiences", "Offbeat Experiences", "Experiential Journeys",
 ];
 
 const PROMOTION_METHODS = [
-  "Instagram","Facebook","Google Ads","WhatsApp Marketing","Email Marketing",
-  "Walk-ins","Referrals","Repeat Clients","Corporate Tie-ups","School Networks",
-  "Offline Networking","YouTube","Travel Exhibitions / Events",
+  "Instagram", "Facebook", "Google Ads", "WhatsApp Marketing", "Email Marketing",
+  "Walk-ins", "Referrals", "Repeat Clients", "Corporate Tie-ups", "School Networks",
+  "Offline Networking", "YouTube", "Travel Exhibitions / Events",
 ];
 
 interface Props {
@@ -172,6 +173,89 @@ const TravelPartnerOnboardingModal = ({ open, onOpenChange }: Props) => {
   const inputCls =
     "bg-white/[0.04] border-white/15 text-white placeholder:text-white/35 focus-visible:ring-amber-400/40 focus-visible:border-amber-400/60 h-11";
 
+  interface MultiSelectDropdownProps {
+    label: string;
+    options: string[];
+    selected: string[];
+    setSelected: (value: string[]) => void;
+  }
+
+  const MultiSelectDropdown = ({
+    label,
+    options,
+    selected,
+    setSelected,
+  }: MultiSelectDropdownProps) => {
+    const [open, setOpen] = useState(false);
+
+    const toggleOption = (value: string) => {
+      if (selected.includes(value)) {
+        setSelected(selected.filter((item) => item !== value));
+      } else {
+        setSelected([...selected, value]);
+      }
+    };
+
+    return (
+      <div className="space-y-2">
+        <Label className="text-[13px] font-medium tracking-wide text-amber-300/90 block">
+          {label}
+        </Label>
+
+        <button
+          type="button"
+          onClick={() => setOpen(!open)}
+          className="w-full h-11 px-4 rounded-md border border-white/15 bg-white/[0.04] flex items-center justify-between text-left text-white"
+        >
+          <span className="truncate">
+            {selected.length
+              ? `${selected.length} selected`
+              : "Select options"}
+          </span>
+
+          <ChevronDown
+            size={16}
+            className={`transition-transform ${open ? "rotate-180" : ""
+              }`}
+          />
+        </button>
+
+        {open && (
+          <div className="max-h-60 overflow-y-auto rounded-md border border-white/15 bg-[#0b1627] p-3 space-y-2">
+            {options.map((option) => (
+              <label
+                key={option}
+                className="flex items-center gap-3 text-sm text-white cursor-pointer"
+              >
+                <input
+                  type="checkbox"
+                  checked={selected.includes(option)}
+                  onChange={() => toggleOption(option)}
+                  className="accent-amber-400"
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        )}
+
+        {selected.length > 0 && (
+          <div className="flex flex-wrap gap-2">
+            {selected.map((item) => (
+              <span
+                key={item}
+                className="px-2.5 py-1 rounded-full bg-amber-400 text-black text-xs font-medium"
+              >
+                {item}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
+
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent
@@ -245,14 +329,12 @@ const TravelPartnerOnboardingModal = ({ open, onOpenChange }: Props) => {
                   </div>
                 </div>
 
-                <div>
-                  <SectionLabel>Which category best describes your business?</SectionLabel>
-                  <div className="flex flex-wrap gap-2">
-                    {CATEGORIES.map(c => (
-                      <Chip key={c} selected={categories.includes(c)} onClick={() => toggle(categories, setCategories, c)}>{c}</Chip>
-                    ))}
-                  </div>
-                </div>
+                <MultiSelectDropdown
+                  label="Which category best describes your business?"
+                  options={CATEGORIES}
+                  selected={categories}
+                  setSelected={setCategories}
+                />
 
                 <div>
                   <SectionLabel>How do you typically operate your tours?</SectionLabel>
@@ -268,53 +350,43 @@ const TravelPartnerOnboardingModal = ({ open, onOpenChange }: Props) => {
                   </div>
                 </div>
 
-                <div>
-                  <SectionLabel>What type of travelers do you mostly handle?</SectionLabel>
-                  <div className="flex flex-wrap gap-2">
-                    {TRAVELER_TYPES.map(t => (
-                      <Chip key={t} selected={travelerTypes.includes(t)} onClick={() => toggle(travelerTypes, setTravelerTypes, t)}>{t}</Chip>
-                    ))}
-                  </div>
+                <MultiSelectDropdown
+                  label="What type of travelers do you mostly handle?"
+                  options={TRAVELER_TYPES}
+                  selected={travelerTypes}
+                  setSelected={setTravelerTypes}
+                />
+
+                <div className="space-y-4">
+                  <SectionLabel>
+                    Which destinations currently perform best for your business?
+                  </SectionLabel>
+
+                  <MultiSelectDropdown
+                    label={`Domestic Destinations (${bestDests.filter(d =>
+                      DOMESTIC_DESTS.includes(d)
+                    ).length} selected)`}
+                    options={DOMESTIC_DESTS}
+                    selected={bestDests}
+                    setSelected={setBestDests}
+                  />
+
+                  <MultiSelectDropdown
+                    label={`International / Nearby (${bestDests.filter(d =>
+                      INTL_DESTS.includes(d)
+                    ).length} selected)`}
+                    options={INTL_DESTS}
+                    selected={bestDests}
+                    setSelected={setBestDests}
+                  />
                 </div>
 
-                <div>
-                  <SectionLabel>Which destinations currently perform best for your business?</SectionLabel>
-                  <p className="text-[11.5px] text-white/40 mb-2 -mt-1">Domestic</p>
-                  <div className="flex flex-wrap gap-2 mb-3">
-                    {DOMESTIC_DESTS.map(d => (
-                      <Chip key={d} selected={bestDests.includes(d)} onClick={() => toggle(bestDests, setBestDests, d)}>{d}</Chip>
-                    ))}
-                  </div>
-                  <p className="text-[11.5px] text-white/40 mb-2">International / Nearby</p>
-                  <div className="flex flex-wrap gap-2">
-                    {INTL_DESTS.map(d => (
-                      <Chip key={d} selected={bestDests.includes(d)} onClick={() => toggle(bestDests, setBestDests, d)}>{d}</Chip>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <SectionLabel>Which destination is currently your strongest seller?</SectionLabel>
-                  <select
-                    value={strongestSeller}
-                    onChange={e => setStrongestSeller(e.target.value)}
-                    className={cn(inputCls, "w-full rounded-md px-3 appearance-none")}
-                  >
-                    <option value="" className="bg-[#08111f]">Select a destination</option>
-                    {ALL_DESTS.map(d => (
-                      <option key={d} value={d} className="bg-[#08111f]">{d}</option>
-                    ))}
-                  </select>
-                </div>
-
-                <div>
-                  <SectionLabel>What category of hotels do your clients usually prefer?</SectionLabel>
-                  <div className="flex flex-wrap gap-2">
-                    {HOTEL_CATEGORIES.map(h => (
-                      <Chip key={h} selected={hotels.includes(h)} onClick={() => toggle(hotels, setHotels, h)}>{h}</Chip>
-                    ))}
-                  </div>
-                </div>
+                <MultiSelectDropdown
+                  label="What category of hotels do your clients usually prefer?"
+                  options={HOTEL_CATEGORIES}
+                  selected={hotels}
+                  setSelected={setHotels}
+                />
 
                 <div>
                   <SectionLabel>Average duration of your guests' tour programs</SectionLabel>
@@ -334,14 +406,12 @@ const TravelPartnerOnboardingModal = ({ open, onOpenChange }: Props) => {
                   </div>
                 </div>
 
-                <div>
-                  <SectionLabel>Major interests of your guests</SectionLabel>
-                  <div className="flex flex-wrap gap-2">
-                    {INTERESTS.map(i => (
-                      <Chip key={i} selected={interests.includes(i)} onClick={() => toggle(interests, setInterests, i)}>{i}</Chip>
-                    ))}
-                  </div>
-                </div>
+                <MultiSelectDropdown
+                  label="Major interests of your guests"
+                  options={INTERESTS}
+                  selected={interests}
+                  setSelected={setInterests}
+                />
 
                 <div>
                   <SectionLabel>Which cities do your guests usually travel from?</SectionLabel>
@@ -353,14 +423,12 @@ const TravelPartnerOnboardingModal = ({ open, onOpenChange }: Props) => {
                   />
                 </div>
 
-                <div>
-                  <SectionLabel>Which promotion methods do you actively use?</SectionLabel>
-                  <div className="flex flex-wrap gap-2">
-                    {PROMOTION_METHODS.map(p => (
-                      <Chip key={p} selected={promotion.includes(p)} onClick={() => toggle(promotion, setPromotion, p)}>{p}</Chip>
-                    ))}
-                  </div>
-                </div>
+                <MultiSelectDropdown
+                  label="Which promotion methods do you actively use?"
+                  options={PROMOTION_METHODS}
+                  selected={promotion}
+                  setSelected={setPromotion}
+                />
 
                 <div>
                   <SectionLabel>Destinations or travel segments you are currently looking to grow in</SectionLabel>
