@@ -108,7 +108,7 @@ const ExclusiveReels = ({ reels }: Props) => {
                 </p>
               </div>
 
-              {/* Sacred Om symbol */}
+              {/* Sacred Oom symbol */}
               <span className="absolute bottom-3 right-3 text-4xl text-white/15 select-none pointer-events-none">
                 ॐ
               </span>
