@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -31,7 +31,6 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { submitForm } from "@/lib/submitForm";
 
-// ✅ Updated image import – place your file at this path
 import formBackgroundImg from "@/assets/shravan/formbackgroundimg.jpeg";
 
 const WHATSAPP_NUMBER = "919109114934";
@@ -67,18 +66,31 @@ const commitments = [
 
 const schema = z.object({
   fullName: z.string().trim().min(2, "Please enter your full name").max(100),
-  mobile: z
-    .string()
-    .trim()
-    .regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit mobile number"),
+  mobile: z.string().trim().regex(/^[6-9]\d{9}$/, "Enter a valid 10-digit mobile number"),
   email: z.string().trim().email("Enter a valid email").max(255),
   city: z.string().trim().min(2, "Please enter your city").max(80),
   journey: z.string().min(1, "Please select a journey"),
   travelDate: z.string().min(1, "Please pick a travel date"),
-  adults: z.string().min(1, "Select number of adults"),
-  kids: z.string(),
-  kidsAge: z.string().max(60).optional(),
+  adultsCount: z.number().min(1, "At least 1 adult required").max(50),
+  childrenCount: z.number().min(0),
+  childrenAges: z.array(z.number().nullable()),
   message: z.string().trim().max(2000).optional(),
+}).superRefine((data, ctx) => {
+  if (data.childrenCount > 0) {
+    if (data.childrenAges.length !== data.childrenCount) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["childrenAges"],
+        message: "Please provide ages for all children",
+      });
+    } else if (data.childrenAges.some((age) => age === null || age < 0 || age > 17)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["childrenAges"],
+        message: "Each child age must be between 0 and 17 years",
+      });
+    }
+  }
 });
 
 interface Props {
@@ -86,6 +98,27 @@ interface Props {
 }
 
 const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
+  // Adults state with custom mode
+  const [adultsCustomMode, setAdultsCustomMode] = useState(false);
+  const [adultsCount, setAdultsCount] = useState(2);
+
+  // Children state with custom mode and ages
+  const [childrenCustomMode, setChildrenCustomMode] = useState(false);
+  const [childrenCount, setChildrenCount] = useState(0);
+  const [childrenAges, setChildrenAges] = useState<(number | null)[]>([]);
+
+  // Sync childrenAges length with childrenCount
+  useEffect(() => {
+    setChildrenAges((prev) => {
+      const newLen = childrenCount;
+      if (prev.length === newLen) return prev;
+      if (prev.length < newLen) {
+        return [...prev, ...Array(newLen - prev.length).fill(null)];
+      }
+      return prev.slice(0, newLen);
+    });
+  }, [childrenCount]);
+
   const [values, setValues] = useState({
     fullName: "",
     mobile: "",
@@ -93,9 +126,6 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
     city: "",
     journey: "A Spiritual Experience of Jyotirlingas",
     travelDate: "",
-    adults: "2",
-    kids: "0",
-    kidsAge: "",
     message: "",
   });
   const [selectedServices, setSelectedServices] = useState<string[]>([]);
@@ -106,18 +136,24 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
     setValues((s) => ({ ...s, [k]: v }));
     setErrors((e) => ({ ...e, [k]: "" }));
   };
+
   const toggleService = (label: string) =>
     setSelectedServices((s) =>
       s.includes(label) ? s.filter((x) => x !== label) : [...s, label]
     );
 
   const validate = () => {
-    const r = schema.safeParse(values);
-    if (r.success) return true;
+    const result = schema.safeParse({
+      ...values,
+      adultsCount,
+      childrenCount,
+      childrenAges,
+    });
+    if (result.success) return true;
     const map: Record<string, string> = {};
-    r.error.issues.forEach((i) => {
-      const k = i.path[0] as string;
-      if (!map[k]) map[k] = i.message;
+    result.error.issues.forEach((i) => {
+      const path = i.path[0] as string;
+      if (!map[path]) map[path] = i.message;
     });
     setErrors(map);
     return false;
@@ -130,6 +166,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
       return;
     }
     setSubmitting(true);
+    const agesStr = childrenAges.map((a) => (a !== null ? a : "?")).join(", ");
     const res = await submitForm({
       formName: "SawanBookingPage",
       fullName: values.fullName,
@@ -138,7 +175,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
       destination: "Ujjain & Omkareshwar",
       packageName: values.journey,
       travelDate: values.travelDate,
-      travelers: `${values.adults} adults, ${values.kids} kids`,
+      travelers: `${adultsCount} adults, ${childrenCount} kids`,
       message: values.message,
       extraFields: {
         City: values.city,
@@ -160,20 +197,23 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
         city: "",
         journey: "A Spiritual Experience of Jyotirlingas",
         travelDate: "",
-        adults: "2",
-        kids: "0",
-        kidsAge: "",
         message: "",
       });
       setSelectedServices([]);
+      setAdultsCount(2);
+      setAdultsCustomMode(false);
+      setChildrenCount(0);
+      setChildrenCustomMode(false);
+      setChildrenAges([]);
     } else {
       toast.error(res.error || "Something went wrong. Please try again.");
     }
   };
 
   const handleWhatsApp = () => {
+    const agesStr = childrenAges.map((a) => (a !== null ? a : "?")).join(", ");
     const txt = encodeURIComponent(
-      `Namaste! I'd like to plan my Sawan Yatra.\n\nName: ${values.fullName || "-"}\nMobile: ${values.mobile || "-"}\nEmail: ${values.email || "-"}\nCity: ${values.city || "-"}\nJourney: ${values.journey}\nTravel Date: ${values.travelDate || "-"}\nTravellers: ${values.adults} adults, ${values.kids} kids\nLooking for: ${selectedServices.join(", ") || "-"}\nMessage: ${values.message || "-"}`
+      `Namaste! I'd like to plan my Sawan Yatra.\n\nName: ${values.fullName || "-"}\nMobile: ${values.mobile || "-"}\nEmail: ${values.email || "-"}\nCity: ${values.city || "-"}\nJourney: ${values.journey}\nTravel Date: ${values.travelDate || "-"}\nTravellers: ${adultsCount} adults, ${childrenCount} kids\nAges: ${agesStr}\nLooking for: ${selectedServices.join(", ") || "-"}\nMessage: ${values.message || "-"}`
     );
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${txt}`, "_blank");
   };
@@ -200,7 +240,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
             <ArrowLeft size={16} /> Back to Sawan in Ujjain
           </Link>
 
-          {/* Banner with your new image */}
+          {/* Banner */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -370,64 +410,163 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
                 </section>
               </div>
 
-              {/* Section 4 */}
+              {/* Section 4 – Travellers (Adults + Children with custom options) */}
               <section>
                 <SectionTitle Icon={Users} title="SELECT NUMBER OF TRAVELLERS" />
-                <div className="grid sm:grid-cols-3 gap-5 mt-5">
-                  <Field label="Adults (12+ years)" error={errors.adults}>
+                <div className="grid md:grid-cols-2 gap-5 mt-5">
+                  {/* ADULTS field with custom option */}
+                  <Field label="Adults (18+ years)" error={errors.adultsCount}>
                     <div className="relative">
                       <Users size={16} className={iconCls} />
-                      <select
-                        className={fieldBase + " appearance-none pr-10"}
-                        value={values.adults}
-                        onChange={(e) => update("adults", e.target.value)}
-                      >
-                        {Array.from({ length: 20 }, (_, i) => i + 1).map((n) => (
-                          <option key={n} value={n}>
-                            {n}
-                          </option>
-                        ))}
-                      </select>
+                      {!adultsCustomMode ? (
+                        <select
+                          value={adultsCount}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            if (val === "custom") {
+                              setAdultsCustomMode(true);
+                            } else {
+                              setAdultsCount(Number(val));
+                            }
+                          }}
+                          className={fieldBase + " appearance-none pr-10"}
+                        >
+                          {Array.from({ length: 20 }, (_, i) => i + 1).map((n) => (
+                            <option key={n} value={n}>
+                              {n}
+                            </option>
+                          ))}
+                          <option value="custom">✏️ Custom (Manual)</option>
+                        </select>
+                      ) : (
+                        <div className="flex gap-2 items-center">
+                          <input
+                            type="number"
+                            min={1}
+                            max={50}
+                            value={adultsCount}
+                            onChange={(e) => setAdultsCount(Math.max(1, Number(e.target.value)))}
+                            className={fieldBase.replace("pl-11", "pl-4") + " flex-1"}
+                            placeholder="Adults count"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setAdultsCustomMode(false);
+                              if (adultsCount > 20) setAdultsCount(20);
+                            }}
+                            className="text-xs text-stone-500 hover:text-red-500 underline whitespace-nowrap"
+                          >
+                            Use preset
+                          </button>
+                        </div>
+                      )}
                       <ChevronDown
                         size={16}
                         className="absolute right-3.5 top-1/2 -translate-y-1/2 text-orange-500 pointer-events-none"
                       />
                     </div>
                   </Field>
-                  <Field label="Kids (1 – 12 years)">
+
+                  {/* CHILDREN field with custom option */}
+                  <Field label="Children (0–17 years)">
                     <div className="relative">
                       <Users size={16} className={iconCls} />
-                      <select
-                        className={fieldBase + " appearance-none pr-10"}
-                        value={values.kids}
-                        onChange={(e) => update("kids", e.target.value)}
-                      >
-                        {Array.from({ length: 11 }, (_, i) => i).map((n) => (
-                          <option key={n} value={n}>
-                            {n}
-                          </option>
-                        ))}
-                      </select>
+                      {!childrenCustomMode ? (
+                        <select
+                          value={childrenCount}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            if (val === "custom") {
+                              setChildrenCustomMode(true);
+                            } else {
+                              setChildrenCount(Number(val));
+                            }
+                          }}
+                          className={fieldBase + " appearance-none pr-10"}
+                        >
+                          {[...Array(11).keys()].map((n) => (
+                            <option key={n} value={n}>
+                              {n} {n === 1 ? "Child" : "Children"}
+                            </option>
+                          ))}
+                          <option value="custom">✏️ Custom (Manual)</option>
+                        </select>
+                      ) : (
+                        <div className="flex gap-2 items-center">
+                          <input
+                            type="number"
+                            min={0}
+                            max={30}
+                            value={childrenCount}
+                            onChange={(e) => setChildrenCount(Math.max(0, Number(e.target.value)))}
+                            className={fieldBase.replace("pl-11", "pl-4") + " flex-1"}
+                            placeholder="Children count"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setChildrenCustomMode(false);
+                              if (childrenCount > 10) setChildrenCount(10);
+                            }}
+                            className="text-xs text-stone-500 hover:text-red-500 underline whitespace-nowrap"
+                          >
+                            Use preset
+                          </button>
+                        </div>
+                      )}
                       <ChevronDown
                         size={16}
                         className="absolute right-3.5 top-1/2 -translate-y-1/2 text-orange-500 pointer-events-none"
                       />
                     </div>
-                  </Field>
-                  <Field label="Age Of Kids">
-                    <div className="relative">
-                      <User size={16} className={iconCls} />
-                      <input
-                        className={fieldBase}
-                        placeholder="e.g. 5, 8"
-                        value={values.kidsAge}
-                        onChange={(e) => update("kidsAge", e.target.value)}
-                      />
-                    </div>
+                    {errors.childrenAges && (
+                      <span className="text-xs text-rose-600 mt-1 block">
+                        {errors.childrenAges}
+                      </span>
+                    )}
                   </Field>
                 </div>
+
+                {/* Dynamic Ages Grid for Children */}
+                {childrenCount > 0 && (
+                  <div className="mt-4 space-y-2 border-t border-orange-100 pt-4">
+                    <label className="block text-[13px] font-semibold text-orange-700">
+                      Children Ages (required, 0–17 years)
+                    </label>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {Array.from({ length: childrenCount }).map((_, idx) => (
+                        <div key={idx} className="relative">
+                          <input
+                            type="number"
+                            min={0}
+                            max={17}
+                            placeholder={`Child ${idx + 1} age`}
+                            value={childrenAges[idx] ?? ""}
+                            onChange={(e) => {
+                              const val = e.target.value === "" ? null : Number(e.target.value);
+                              const newAges = [...childrenAges];
+                              newAges[idx] = val;
+                              setChildrenAges(newAges);
+                            }}
+                            className={`w-full rounded-xl border ${
+                              (childrenAges[idx] === null ||
+                                childrenAges[idx] < 0 ||
+                                childrenAges[idx] > 17)
+                                ? "border-red-300 focus:border-red-500"
+                                : "border-orange-200 focus:border-orange-500"
+                            } bg-white px-4 py-3 text-center text-sm text-stone-800 placeholder:text-stone-400 outline-none focus:ring-2 focus:ring-orange-200 transition`}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-xs text-stone-500">
+                      Age must be between 0 and 17 years
+                    </p>
+                  </div>
+                )}
                 <p className="text-xs text-stone-500 mt-3">
-                  Note: Kids below 1 year are complimentary. Please mention in
+                  Note: Kids below 5 years are complimentary. Please mention in
                   special requests if applicable.
                 </p>
               </section>
@@ -449,7 +588,7 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
               </section>
             </div>
 
-            {/* Sidebar */}
+            {/* Sidebar (unchanged) */}
             <aside className="space-y-4 lg:sticky lg:top-24 self-start">
               <div className="bg-white rounded-3xl border border-orange-100 shadow-lg p-6">
                 <p className="font-display text-orange-800 text-lg leading-tight">
@@ -526,15 +665,8 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
   );
 };
 
-const SectionTitle = ({
-  Icon,
-  title,
-  suffix,
-}: {
-  Icon: import("lucide-react").LucideIcon;
-  title: string;
-  suffix?: string;
-}) => (
+// Helper components (unchanged)
+const SectionTitle = ({ Icon, title, suffix }: { Icon: any; title: string; suffix?: string }) => (
   <div className="flex items-center gap-2.5">
     <span className="w-9 h-9 rounded-full bg-orange-50 border border-orange-200 flex items-center justify-center text-orange-600">
       <Icon size={16} />
@@ -550,17 +682,7 @@ const SectionTitle = ({
   </div>
 );
 
-const Field = ({
-  label,
-  required,
-  error,
-  children,
-}: {
-  label: string;
-  required?: boolean;
-  error?: string;
-  children: React.ReactNode;
-}) => (
+const Field = ({ label, required, error, children }: { label: string; required?: boolean; error?: string; children: React.ReactNode }) => (
   <label className="block">
     <span className="block text-[11px] uppercase tracking-[0.18em] text-stone-600 mb-1.5 font-medium">
       {label}
@@ -571,17 +693,7 @@ const Field = ({
   </label>
 );
 
-const InfoBar = ({
-  Icon,
-  title,
-  value,
-  color = "orange",
-}: {
-  Icon: import("lucide-react").LucideIcon;
-  title: string;
-  value: string;
-  color?: "orange" | "emerald";
-}) => {
+const InfoBar = ({ Icon, title, value, color = "orange" }: { Icon: any; title: string; value: string; color?: "orange" | "emerald" }) => {
   const colors =
     color === "emerald"
       ? "bg-emerald-50 border-emerald-200 text-emerald-600"

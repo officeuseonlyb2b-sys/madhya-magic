@@ -1,21 +1,22 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { X, Send, MessageCircle, Shield, Star, Clock, Hotel, Phone } from "lucide-react";
+import { X, Send, MessageCircle, Shield, Star, Clock, Hotel, Phone, Users, ChevronDown } from "lucide-react";
 import { z } from "zod";
 import { toast } from "@/hooks/use-toast";
 import { submitForm } from "@/lib/submitForm";
 
 const WHATSAPP_NUMBER = "919109114934";
 
+// Updated schema with custom adults and children
 const formSchema = z.object({
   fullName: z.string().trim().min(2, "Please enter your full name").max(100),
   mobile: z.string().trim().min(7, "Valid mobile number required").max(20).regex(/^[+\d\s-]+$/),
   email: z.string().trim().email("Enter a valid email").max(255),
   city: z.string().trim().min(2, "Enter your city").max(80),
   travelDate: z.string().min(1, "Select a travel date"),
-  adults: z.string().regex(/^\d+$/).transform(Number).refine(n => n >= 1 && n <= 20, "1–20 adults"),
-  children: z.string().regex(/^\d+$/).transform(Number).refine(n => n >= 0 && n <= 10, "0–10 children"),
-  childrenAges: z.string().optional(),
+  adultsCount: z.number().min(1, "At least 1 adult required").max(50),
+  childrenCount: z.number().min(0).max(30),
+  childrenAges: z.array(z.number().nullable()),
   enhanceOptions: z.array(z.string()).optional(),
   additionalRequests: z.string().optional(),
   seniorCitizenAssistance: z.boolean().optional(),
@@ -24,6 +25,22 @@ const formSchema = z.object({
   needCustomisation: z.boolean().optional(),
   specialVipDarshan: z.boolean().optional(),
   completeTravelAssistance: z.boolean().optional(),
+}).superRefine((data, ctx) => {
+  if (data.childrenCount > 0) {
+    if (data.childrenAges.length !== data.childrenCount) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["childrenAges"],
+        message: "Please provide ages for all children",
+      });
+    } else if (data.childrenAges.some(age => age === null || age < 0 || age > 17)) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ["childrenAges"],
+        message: "Each child age must be between 0 and 17 years",
+      });
+    }
+  }
 });
 
 interface Props {
@@ -34,15 +51,32 @@ interface Props {
 const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
   const [submitting, setSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  
+  // Adults custom mode
+  const [adultsCustomMode, setAdultsCustomMode] = useState(false);
+  const [adultsCount, setAdultsCount] = useState(2);
+  
+  // Children custom mode + ages
+  const [childrenCustomMode, setChildrenCustomMode] = useState(false);
+  const [childrenCount, setChildrenCount] = useState(0);
+  const [childrenAges, setChildrenAges] = useState<(number | null)[]>([]);
+  
+  // Sync childrenAges length with childrenCount
+  useEffect(() => {
+    setChildrenAges(prev => {
+      const newLen = childrenCount;
+      if (prev.length === newLen) return prev;
+      if (prev.length < newLen) return [...prev, ...Array(newLen - prev.length).fill(null)];
+      return prev.slice(0, newLen);
+    });
+  }, [childrenCount]);
+
   const [values, setValues] = useState({
     fullName: "",
     mobile: "",
     email: "",
     city: "",
     travelDate: "",
-    adults: "2",
-    children: "0",
-    childrenAges: "",
     enhanceOptions: [] as string[],
     additionalRequests: "",
     seniorCitizenAssistance: false,
@@ -71,7 +105,12 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
   };
 
   const validate = () => {
-    const result = formSchema.safeParse(values);
+    const result = formSchema.safeParse({
+      ...values,
+      adultsCount,
+      childrenCount,
+      childrenAges,
+    });
     if (result.success) return true;
     const errMap: Record<string, string> = {};
     result.error.issues.forEach(iss => {
@@ -126,11 +165,13 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
 
   const handleWhatsApp = () => {
     if (!validate()) return;
-    const msg = `*Sacred Journey Enquiry*%0A%0AName: ${values.fullName}%0AMobile: ${values.mobile}%0AEmail: ${values.email}%0ACity: ${values.city}%0ATravel Date: ${values.travelDate}%0AAdults: ${values.adults} | Children: ${values.children}%0AAges: ${values.childrenAges || "-"}%0AEnhancements: ${values.enhanceOptions.join(", ") || "-"}%0AExtra needs: ${values.additionalRequests || "-"}%0ASenior assist: ${values.seniorCitizenAssistance ? "Yes" : "No"}%0ALuxury stay: ${values.luxuryStayUpgrade ? "Yes" : "No"}%0AAirport transfer: ${values.airportTransfers ? "Yes" : "No"}%0ACustomisation: ${values.needCustomisation ? "Yes" : "No"}%0AComplete travel assist: ${values.completeTravelAssistance ? "Yes" : "No"}`;
+    const agesStr = childrenAges.map(a => a !== null ? a : "?").join(", ");
+    const msg = `*Sacred Journey Enquiry*%0A%0AName: ${values.fullName}%0AMobile: ${values.mobile}%0AEmail: ${values.email}%0ACity: ${values.city}%0ATravel Date: ${values.travelDate}%0AAdults: ${adultsCount} | Children: ${childrenCount}%0AAges: ${agesStr || "-"}%0AEnhancements: ${values.enhanceOptions.join(", ") || "-"}%0AExtra needs: ${values.additionalRequests || "-"}%0ASenior assist: ${values.seniorCitizenAssistance ? "Yes" : "No"}%0ALuxury stay: ${values.luxuryStayUpgrade ? "Yes" : "No"}%0AAirport transfer: ${values.airportTransfers ? "Yes" : "No"}%0ACustomisation: ${values.needCustomisation ? "Yes" : "No"}%0AComplete travel assist: ${values.completeTravelAssistance ? "Yes" : "No"}`;
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
   };
 
   const fieldBase = "w-full rounded-xl border border-[#d4a017]/30 bg-white px-4 py-3 text-sm text-black placeholder:text-gray-400 focus:outline-none transition";
+  const iconCls = "absolute left-3.5 top-1/2 -translate-y-1/2 text-[#d4a017]";
 
   return (
     <AnimatePresence>
@@ -188,22 +229,143 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
               </Section>
 
               <Section title="TRAVELLERS">
-                <div className="grid sm:grid-cols-3 gap-5">
-                  <InputField label="Adults (12+ Years)">
-                    <select className={fieldBase} value={values.adults} onChange={e => update("adults", e.target.value)}>
-                      {[...Array(20).keys()].map(n => <option key={n+1} value={n+1}>{n+1}</option>)}
-                    </select>
-                  </InputField>
-                  <InputField label="Children (1–12 Years)">
-                    <select className={fieldBase} value={values.children} onChange={e => update("children", e.target.value)}>
-                      {[...Array(11).keys()].map(n => <option key={n} value={n}>{n}</option>)}
-                    </select>
-                  </InputField>
-                  <InputField label="Age of Children">
-                    <input className={fieldBase} value={values.childrenAges} onChange={e => update("childrenAges", e.target.value)} placeholder="e.g., 5, 8, 10" />
-                  </InputField>
+                <div className="grid sm:grid-cols-2 gap-5">
+                  {/* ADULTS with custom option */}
+                  <div>
+                    <span className="nav-font text-xs uppercase tracking-widest text-black mb-1.5 block">Adults (18+ Years)</span>
+                    <div className="relative">
+                      <Users size={16} className={iconCls} />
+                      {!adultsCustomMode ? (
+                        <select
+                          value={adultsCount}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            if (val === "custom") {
+                              setAdultsCustomMode(true);
+                            } else {
+                              setAdultsCount(Number(val));
+                            }
+                          }}
+                          className={fieldBase + " appearance-none pl-10 pr-8"}
+                        >
+                          {Array.from({ length: 20 }, (_, i) => i + 1).map(n => (
+                            <option key={n} value={n}>{n}</option>
+                          ))}
+                          <option value="custom">✏️ Custom (Manual)</option>
+                        </select>
+                      ) : (
+                        <div className="flex gap-2 items-center">
+                          <input
+                            type="number"
+                            min={1}
+                            max={50}
+                            value={adultsCount}
+                            onChange={(e) => setAdultsCount(Math.max(1, Number(e.target.value)))}
+                            className={fieldBase.replace("pl-10", "pl-4") + " flex-1"}
+                            placeholder="Adults count"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setAdultsCustomMode(false);
+                              if (adultsCount > 20) setAdultsCount(20);
+                            }}
+                            className="text-xs text-stone-500 hover:text-red-500 underline whitespace-nowrap"
+                          >
+                            Use preset
+                          </button>
+                        </div>
+                      )}
+                      <ChevronDown size={16} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#d4a017] pointer-events-none" />
+                    </div>
+                    {errors.adultsCount && <span className="text-xs text-rose-600 mt-1 block">{errors.adultsCount}</span>}
+                  </div>
+
+                  {/* CHILDREN with custom option */}
+                  <div>
+                    <span className="nav-font text-xs uppercase tracking-widest text-black mb-1.5 block">Children (0–17 Years)</span>
+                    <div className="relative">
+                      <Users size={16} className={iconCls} />
+                      {!childrenCustomMode ? (
+                        <select
+                          value={childrenCount}
+                          onChange={(e) => {
+                            const val = e.target.value;
+                            if (val === "custom") {
+                              setChildrenCustomMode(true);
+                            } else {
+                              setChildrenCount(Number(val));
+                            }
+                          }}
+                          className={fieldBase + " appearance-none pl-10 pr-8"}
+                        >
+                          {[...Array(11).keys()].map(n => (
+                            <option key={n} value={n}>{n} {n === 1 ? "Child" : "Children"}</option>
+                          ))}
+                          <option value="custom">✏️ Custom (Manual)</option>
+                        </select>
+                      ) : (
+                        <div className="flex gap-2 items-center">
+                          <input
+                            type="number"
+                            min={0}
+                            max={30}
+                            value={childrenCount}
+                            onChange={(e) => setChildrenCount(Math.max(0, Number(e.target.value)))}
+                            className={fieldBase.replace("pl-10", "pl-4") + " flex-1"}
+                            placeholder="Children count"
+                          />
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setChildrenCustomMode(false);
+                              if (childrenCount > 10) setChildrenCount(10);
+                            }}
+                            className="text-xs text-stone-500 hover:text-red-500 underline whitespace-nowrap"
+                          >
+                            Use preset
+                          </button>
+                        </div>
+                      )}
+                      <ChevronDown size={16} className="absolute right-3.5 top-1/2 -translate-y-1/2 text-[#d4a017] pointer-events-none" />
+                    </div>
+                    {errors.childrenCount && <span className="text-xs text-rose-600 mt-1 block">{errors.childrenCount}</span>}
+                    {errors.childrenAges && <span className="text-xs text-rose-600 mt-1 block">{errors.childrenAges}</span>}
+                  </div>
                 </div>
-                <p className="text-xs text-gray-600 mt-2">Note: Children below 1 year are complimentary.</p>
+
+                {/* Dynamic Ages Grid for Children */}
+                {childrenCount > 0 && (
+                  <div className="mt-4 space-y-2 border-t border-[#d4a017]/20 pt-4">
+                    <label className="nav-font text-xs uppercase tracking-widest text-black block mb-2">Children Ages (required, 0–17 years)</label>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                      {Array.from({ length: childrenCount }).map((_, idx) => (
+                        <div key={idx}>
+                          <input
+                            type="number"
+                            min={0}
+                            max={17}
+                            placeholder={`Child ${idx + 1} age`}
+                            value={childrenAges[idx] ?? ""}
+                            onChange={(e) => {
+                              const val = e.target.value === "" ? null : Number(e.target.value);
+                              const newAges = [...childrenAges];
+                              newAges[idx] = val;
+                              setChildrenAges(newAges);
+                            }}
+                            className={`w-full rounded-xl border ${
+                              (childrenAges[idx] === null || childrenAges[idx] < 0 || childrenAges[idx] > 17)
+                                ? "border-red-300 focus:border-red-500"
+                                : "border-[#d4a017]/30 focus:border-[#d4a017]"
+                            } bg-white px-4 py-3 text-center text-sm text-black placeholder:text-gray-400 outline-none transition`}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                    <p className="text-xs text-gray-600">Age must be between 0 and 17 years</p>
+                  </div>
+                )}
+                <p className="text-xs text-gray-600 mt-2">Note: Children below 5 years are complimentary.</p>
               </Section>
 
               <Section title="ENHANCE YOUR JOURNEY (Select any)">
@@ -218,9 +380,7 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
                     </label>
                   ))}
                 </div>
-                <InputField label="Tell us about your preferred darshan, senior citizens travelling, room preferences, dietary requirements or any special assistance needed.">
-                  <textarea rows={3} className={fieldBase + " resize-none"} value={values.additionalRequests} onChange={e => update("additionalRequests", e.target.value)} placeholder="Your special requests..." />
-                </InputField>
+                
                 <div className="grid sm:grid-cols-2 gap-3 mt-4">
                   {[
                     { key: "seniorCitizenAssistance", label: "Senior Citizen Assistance" },
@@ -233,11 +393,7 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
                       <span className="text-sm">{label}</span>
                     </label>
                   ))}
-                </div>
-              </Section>
-
-              <Section title="SPECIAL REQUESTS (OPTIONAL)">
-                <div className="flex flex-wrap gap-6 mb-5">
+                  <div className="flex flex-wrap gap-6 mb-5">
                   <label className="flex items-center gap-2 text-black">
                     <input type="checkbox" className="w-4 h-4 accent-[#d4a017]" checked={values.specialVipDarshan} onChange={e => update("specialVipDarshan", e.target.checked)} />
                     <span className="text-sm">VIP Darshan Assistance</span>
@@ -247,6 +403,13 @@ const SacredEnquiryFormModal = ({ open, onClose }: Props) => {
                     <span className="text-sm">Complete Travel Assistance</span>
                   </label>
                 </div>
+                </div>
+              </Section>
+
+              <Section title="SPECIAL REQUESTS (OPTIONAL)">
+                <InputField label="Tell us about your preferred darshan, senior citizens travelling, room preferences, dietary requirements or any special assistance needed.">
+                  <textarea rows={3} className={fieldBase + " resize-none"} value={values.additionalRequests} onChange={e => update("additionalRequests", e.target.value)} placeholder="Your special requests..." />
+                </InputField>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-3 p-4 bg-[#fdf3e0] rounded-xl">
                   <TrustBadge icon={Clock} text="Response Within 30 Minutes" />
                   <TrustBadge icon={Star} text="Personalised Yatra Planning" />
