@@ -66,9 +66,9 @@ const mahakaalBlessings: SawanPackage = {
   itinerary: [
     {
       day: "Day 1",
-      title: "Arrive Indore & Drive to Ujjain – SAWAN SPECIAL TOUR BEGINS",
+      title: "Arrive Indore & Drive to Ujjain by Road (55 Kms | Approx. 1.5 Hours) – SAWAN SPECIAL TOUR BEGINS",
       body:
-        "Arrive Indore & Drive to Ujjain by Road (55 Kms | Approx. 1.5 Hours) – SAWAN SPECIAL TOUR BEGINS\n" +
+        
         "Upon arrival at Indore Railway Station / Airport, meet our representative and proceed towards the holy city of Ujjain – the divine abode of Mahakal during the sacred month of Sawan.\n\n" +
         "Arrive in Ujjain and transfer to the hotel. After check-in and relaxation, begin your spiritual journey with visits to the sacred Sandipani Ashram and Mangal Nath Temple. Continue to the famous Kaal Bhairav Temple, known for its unique rituals and deep spiritual significance during Sawan.\n\n" +
         "Later, visit the holy Ram Ghat on the banks of the sacred Shipra River and seek blessings at the revered Harsiddhi Mata Temple. Experience the devotional atmosphere of Ujjain as the city comes alive with Shiva devotees, chants, and Sawan celebrations.\n\n" +
@@ -79,7 +79,7 @@ const mahakaalBlessings: SawanPackage = {
       day: "Day 2",
       title: "Ujjain – Omkareshwar – Indore (220 Kms / 5.5 Hrs)",
       body:
-        "Ujjain – Omkareshwar – Indore by Road (220 Kms | Approx. 5.5 Hours)\n" +
+        
         "Morning after breakfast, check-out from the hotel and proceed towards the sacred island town of Omkareshwar, one of the revered 12 Jyotirlingas of Lord Shiva.\n\n" +
         "Upon arrival, visit Shri Omkareshwar Jyotirlinga Temple and experience One-Time VVIP Darshan for a smooth and spiritually enriching visit during the auspicious Sawan season. Feel the divine aura of the temple surrounded by the holy Narmada River and devotional chants of Shiva devotees.\n\n" +
         "Thereafter, explore the nearby sacred temples including Siddhanath Temple, Gouri Somnath Temple, and Annapurna Temple, known for their religious importance and ancient architectural beauty.\n\n" +
@@ -90,7 +90,7 @@ const mahakaalBlessings: SawanPackage = {
       day: "Day 3",
       title: "Departure Indore – TOUR END",
       body:
-        "Departure Indore -TOUR END\n" +
+        
         "Morning after breakfast check-out from the hotel & proceed to visit on a captivating half-day journey through the cultural heart of Indore, beginning with a visit to the iconic Rajwada, a splendid architectural marvel steeped in history. Continue your exploration at Bada Ganpati Temple, where the colossal idol of Lord Ganesh inspires awe and devotion. Then, seek blessings at Khajrana Ganesh Temple, known for its spiritual ambiance and revered deity. Experience the serene beauty of Kanch Mandir, adorned with exquisite mirror work that reflects the city's artistic heritage. Delve into the historical significance of Boliya Chattri, a testament to the regal legacy of Indore's rulers. Finally, immerse yourself in the vibrant ambiance of 56 Dukaan Street, a bustling marketplace offering a plethora of local delights, from handicrafts to street food delicacies.\n\n" +
         "Later visits in time transfer to railway station / Airport and board flight / train for onward journey.\n\nMeals: Breakfast",
     },
@@ -173,9 +173,9 @@ const divineJyotirlinga: SawanPackage = {
   itinerary: [
     {
       day: "Day 1",
-      title: "Arrive Indore & Drive to Ujjain – SAWAN SPECIAL TOUR BEGINS",
+      title: "Arrive Indore & Drive to Ujjain by Road (55 Kms | Approx. 1.5 Hours) – SAWAN SPECIAL TOUR BEGINS",
       body:
-        "Arrive Indore & Drive to Ujjain by Road (55 Kms | Approx. 1.5 Hours) – SAWAN SPECIAL TOUR BEGINS\n" +
+        
         "Upon arrival at Indore Railway Station / Airport, meet our representative and proceed towards the holy city of Ujjain – the divine abode of Mahakal during the sacred month of Sawan.\n\n" +
         "Arrive in Ujjain and transfer to the hotel. After check-in and relaxation, begin your spiritual journey with visits to the sacred Sandipani Ashram and Mangal Nath Temple. Continue to the famous Kaal Bhairav Temple, known for its unique rituals and deep spiritual significance during Sawan.\n\n" +
         "Later, visit the holy Ram Ghat on the banks of the sacred Shipra River and seek blessings at the revered Harsiddhi Mata Temple. Experience the devotional atmosphere of Ujjain as the city comes alive with Shiva devotees, chants, and Sawan celebrations.\n\n" +
@@ -186,7 +186,7 @@ const divineJyotirlinga: SawanPackage = {
       day: "Day 2",
       title: "Ujjain – Omkareshwar – Maheshwar (213 Kms / 5.5 Hrs)",
       body:
-        "Ujjain - Omkareshwar - Maheshwar by road (213 Kms & 5.5 Hours approx.)\n" +
+        
         "Morning after breakfast, check-out from the hotel and proceed towards the sacred island town of Omkareshwar, one of the revered 12 Jyotirlingas of Lord Shiva.\n\n" +
         "Upon arrival, visit Shri Omkareshwar Jyotirlinga Temple and experience One-Time VVIP Darshan for a smooth and spiritually enriching visit during the auspicious Sawan season. Feel the divine aura of the temple surrounded by the holy Narmada River and devotional chants of Shiva devotees.\n\n" +
         "Thereafter, explore the nearby sacred temples including Siddhanath Temple, Gouri Somnath Temple, and Annapurna Temple, known for their religious importance and ancient architectural beauty.\n\n" +
@@ -197,7 +197,7 @@ const divineJyotirlinga: SawanPackage = {
       day: "Day 3",
       title: "Maheshwar – Indore (96 Kms / 2 Hrs)",
       body:
-        "Maheshwar - Indore by road (96 Kms & 2 Hours approx.)\n" +
+        
         "Morning after breakfast check-out from the hotel proceed to visit the magnificent fort of Maheshwar & Rajwada. Situated on the banks of river Narmada, Maheshwar appeals to both, the pilgrim as well as the tourist in you. The town possesses a treasure trove of beautiful temples that calm the soul, alongside man-made creations that please the eyes.\n" +
         "A centre of handloom weaving since the 5th century, Maheshwar has been producing the exquisite Maheshwari saris and fabric. The town also holds the distinction of being the capital of Rajmata Ahilya Devi Holkar’s empire during the 18th century.\n\n" +
         "After visits in the evening one can enjoy boat ride at Narmada River overlooking Maheshwar fort. After visit drive to Indore, arrive Indore check-in at the hotel.\n\n" +
@@ -207,7 +207,7 @@ const divineJyotirlinga: SawanPackage = {
       day: "Day 4",
       title: "Departure from Indore – TOUR END",
       body:
-        "Departure from Indore -TOUR END\n" +
+        
         "Morning after breakfast check-out from the hotel proceed to full-day exploration of Indore's cultural and historical treasures, beginning with the majestic Rajwada and Lal Bagh Palace (close on Monday). Admire the dazzling mirror work at Kanch Mandir and pay homage at Bada Ganpati Temple and Khajrana Ganesh Temple. Marvel at the architectural splendors of Boliya and Krishna Pura Chhatris, epitomizing the city's rich heritage.\n\n" +
         "After visit in time transfer to airport/railway station flight/train for onward journey.\n\nMeals: Breakfast",
     },
@@ -292,9 +292,9 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
   itinerary: [
     {
       day: "Day 1",
-      title: "Arrive Indore & Drive to Ujjain – SAWAN SPECIAL TOUR BEGINS",
+      title: "Arrive Indore & Drive to Ujjain by Road (55 Kms | Approx. 1.5 Hours) – SAWAN SPECIAL TOUR BEGINS",
       body:
-        "Arrive Indore & Drive to Ujjain by Road (55 Kms | Approx. 1.5 Hours) – SAWAN SPECIAL TOUR BEGINS\n" +
+       
         "Upon arrival at Indore Railway Station / Airport, meet our representative and proceed towards the holy city of Ujjain – the divine abode of Mahakal during the sacred month of Sawan.\n\n" +
         "Arrive in Ujjain and transfer to the hotel. After check-in and relaxation, begin your spiritual journey with visits to the sacred Sandipani Ashram and Mangal Nath Temple. Continue to the famous Kaal Bhairav Temple, known for its unique rituals and deep spiritual significance during Sawan.\n\n" +
         "Later, visit the holy Ram Ghat on the banks of the sacred Shipra River and seek blessings at the revered Harsiddhi Mata Temple. Experience the devotional atmosphere of Ujjain as the city comes alive with Shiva devotees, chants, and Sawan celebrations.\n\n" +
@@ -303,9 +303,9 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
     },
     {
       day: "Day 2",
-      title: "Ujjain – Omkareshwar – Maheshwar (213 Kms / 5.5 Hrs)",
+      title: "Ujjain – Omkareshwar – Maheshwar by road (213 Kms & 5.5 Hours approx.)",
       body:
-        "Ujjain - Omkareshwar - Maheshwar by road (213 Kms & 5.5 Hours approx.)\n" +
+       
         "Morning after breakfast, check-out from the hotel and proceed towards the sacred island town of Omkareshwar, one of the revered 12 Jyotirlingas of Lord Shiva.\n\n" +
         "Upon arrival, visit Shri Omkareshwar Jyotirlinga Temple and experience One-Time VVIP Darshan for a smooth and spiritually enriching visit during the auspicious Sawan season. Feel the divine aura of the temple surrounded by the holy Narmada River and devotional chants of Shiva devotees.\n\n" +
         "Thereafter, explore the nearby sacred temples including Siddhanath Temple, Gouri Somnath Temple, and Annapurna Temple, known for their religious importance and ancient architectural beauty.\n\n" +
@@ -316,9 +316,9 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
     },
     {
       day: "Day 3",
-      title: "Maheshwar – Mandu (41 Kms / 1 Hr)",
+      title: "Maheshwar – Mandu by Road (41 Kms / Approx. 1 Hour)",
       body:
-        "Maheshwar – Mandu by Road (41 Kms / Approx. 1 Hour)\n" +
+        
         "Morning after breakfast, check-out from the hotel and drive to Mandu. On arrive Mandu, proceed for sightseeing of the historic monuments including Jahaz Mahal, Hindola Mahal, Jama Masjid and Hoshang Shah's Tomb. Mandu, also known as Mandavgad, is a historic fortress town in the Malwa region of Madhya Pradesh, famous for its Afghan architecture, ancient palaces, mosques, and romantic history. Surrounded by massive fort walls and lush landscapes, Mandu beautifully reflects the grandeur of medieval India.\n\n" +
         "Visit Baz Bahadur's Palace, known for its blend of Rajput and Mughal architecture, followed by Rani Roopmati Pavilion, which offers breathtaking panoramic views and echoes the legendary love story of Baz Bahadur and Rani Roopmati.\n\n" +
         "During monsoon, Mandu transforms into a magical paradise with mist-covered hills, waterfalls, lush greenery, and clouds floating around its ancient monuments, making it one of the most beautiful monsoon destinations in Madhya Pradesh.\n\n" +
@@ -328,7 +328,7 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
       day: "Day 4",
       title: "Mandu – Indore (97 Kms / 2 Hrs)",
       body:
-        "Mandu - Indore by road (97 Kms & 2 Hours approx.)\n" +
+        
         "Morning after breakfast check-out from the hotel & drive to Indore, arrive Indore. check in at hotel & proceed to full-day exploration of Indore's cultural and historical treasures, beginning with the majestic Rajwada and Lal Bagh Palace (Close on Monday). Admire the dazzling mirror work at Kanch Mandir and pay homage at Bada Ganpati Temple and Khajrana Ganesh Temple. Marvel at the architectural splendors of Boliya and Krishna Pura Chhatris, epitomizing the city's rich heritage.\n\n" +
         "In the evening, delve into the bustling ambiance of 56 Dukaan Street, a vibrant marketplace offering a diverse array of local crafts, textiles, and culinary delights. Immerse yourself in the colorful tapestry of Indore's street life as you browse through the bustling lanes filled with shops and eateries. As night descends, indulge in the gastronomic delights of Sarafa Food Bazaar, where the city's culinary traditions come to life. Sample a tantalizing variety of street food offerings, from savory chaats to delectable sweets, amidst the lively atmosphere of this iconic food destination. After visits return to the hotel & Overnight at Indore.\n\nMeals: Breakfast",
     },
@@ -336,7 +336,7 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
       day: "Day 5",
       title: "Departure Indore – TOUR END",
       body:
-        "Departure Indore - TOUR END\n" +
+        
         "Morning after breakfast check-out from the hotel in time transfer to airport/railway station to board flight/train for onward journey.\n\nMeals: Breakfast",
     },
   ],
@@ -498,7 +498,7 @@ const heliSpiritual: SawanPackage = {
       day: "Day 1",
       title: "Indore → Ujjain by Road – Spiritual Immersion",
       body:
-        "Arrival Indore – Ujjain by Road (55 Kms & 1.5 Hours) – Tour Begins\n" +
+        
         "Upon arrival at Indore Airport, you will be warmly welcomed by our company representative and driven to Ujjain, “The Kingdom of Mahakaal.” Upon arrival in Ujjain, transfer to the hotel and check‑in at the hotels.\n\n" +
         "Begin your sightseeing tour with a visit to the historic Sandipani Ashram, followed by the serene Mangal Nath Temple. Continue to the famous Kaal Bhairav Temple, renowned for its unique ritual of offering liquor to the deity.\n\n" +
         "Later, explore the spiritual ambiance and beautiful heritage of the city before visiting the sacred Ram Ghat, situated on the banks of the holy Shipra River. Thereafter, visit the revered Harsiddhi Mata Temple, known for its divine atmosphere and magnificent architecture.\n\n" +
@@ -508,7 +508,7 @@ const heliSpiritual: SawanPackage = {
       day: "Day 2",
       title: "Ujjain → Omkareshwar → Indore by Helicopter",
       body:
-        "Ujjain - Omkareshwar - Indore by air - TOUR END\n" +
+       
         "Morning after breakfast check‑out from the hotel.\n\n" +
         "10:30 AM Departure from Police Line (Ujjain) Helipad\n" +
         "11:30 AM Arrival at Mandhata (Omkareshwar) Helipad\n" +
@@ -581,9 +581,9 @@ const heliDivine: SawanPackage = {
   itinerary: [
     {
       day: "Day 1",
-      title: "Indore → Ujjain by Road – Sacred Beginnings",
+      title: "Indore → Ujjain by Road (55 Kms & 1.5 Hours) – Sacred Beginnings",
       body:
-        "Arrival Indore – Ujjain by Road (55 Kms & 1.5 Hours) – Tour Begins\n" +
+       
         "Upon arrival at Indore airport, you will be warmly welcomed by our company representative and driven to Ujjain, “The Kingdom of Mahakaal.” Upon arrival in Ujjain, transfer to the hotel and check‑in at the hotels.\n\n" +
         "Begin your sightseeing tour with a visit to the historic Sandipani Ashram, followed by the serene Mangal Nath Temple. Continue to the famous Kaal Bhairav Temple, renowned for its unique ritual of offering liquor to the deity.\n\n" +
         "Later, explore the spiritual ambiance and beautiful heritage of the city before visiting the sacred Ram Ghat, situated on the banks of the holy Shipra River. Thereafter, visit the revered Harsiddhi Mata Temple, known for its divine atmosphere and magnificent architecture.\n\n" +
@@ -593,7 +593,7 @@ const heliDivine: SawanPackage = {
       day: "Day 2",
       title: "Ujjain → Omkareshwar → Indore by Helicopter + Indore Evening",
       body:
-        "Ujjain - Omkareshwar - Indore by air\n" +
+        
         "Morning after breakfast check‑out from the hotel.\n\n" +
         "10:30 AM Departure from Police Line (Ujjain) Helipad\n" +
         "11:30 AM Arrival at Mandhata (Omkareshwar) Helipad\n" +
@@ -677,7 +677,7 @@ const heliMahakalSacredWings: SawanPackage = {
       day: "Day 1",
       title: "Indore → Ujjain → Indore (by Helicopter)",
       body:
-        "Day 01: Arrival Indore – Ujjain by Air – Tour Begins\n" +
+        
         "Upon arrival at Indore Airport, you will be warmly welcomed by our company representative and transferred for the divine helicopter pilgrimage to Ujjain. Experience a seamless spiritual journey with dedicated ground assistance and VVIP Darshan at Shri Mahakaleshwar Jyotirlinga Temple.\n\n" +
         "11:30 AM – Transfer to Bicholi (Indore) Helipad\n" +
         "11:50 AM – Arrival at Police Line (Ujjain) Helipad\n" +
@@ -758,7 +758,7 @@ const heliDivineOmkareshwar: SawanPackage = {
       day: "Day 1",
       title: "Indore → Omkareshwar → Indore (by Helicopter)",
       body:
-        "Day 01: Arrival Indore – Omkareshwar by Air – Tour Begins\n" +
+        
         "Upon arrival at Indore Airport, you will be warmly welcomed by our company representative and transferred for the divine helicopter pilgrimage to Omkareshwar. Experience a seamless spiritual journey with dedicated ground assistance and VVIP Darshan at Shri Omkareshwar Jyotirlinga Temple.\n\n" +
         "11:30 AM – Transfer to Bicholi (Indore) Helipad\n" +
         "12:20 PM – Arrival at Mandhata (Omkareshwar) Helipad\n" +

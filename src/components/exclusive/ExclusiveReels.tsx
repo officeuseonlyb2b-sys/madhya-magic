@@ -97,7 +97,7 @@ const ExclusiveReels = ({ reels }: Props) => {
               {/* Subtle bottom gradient for text readability (no white layer) */}
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none z-10" />
 
-              {/* Text overlay – clean, no background, only white text with shadow */}
+              {/* Text overlay – clean, no baackground, only white text with shadow */}
               <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
                 <h3 className="text-white text-xl md:text-2xl font-bold drop-shadow-lg">
                   {reel.title}
