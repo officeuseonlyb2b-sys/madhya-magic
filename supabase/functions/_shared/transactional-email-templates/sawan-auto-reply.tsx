@@ -24,7 +24,7 @@ const SawanAutoReplyEmail = ({ fullName }: SawanAutoReplyProps) => (
           <Heading as="h1" style={h1}>
             {fullName ? `Dear ${fullName},` : 'Dear Devotee,'}
           </Heading>
-          <Text style={mantra}>Har Har Mahadev 🙏</Text>
+          <Text style={mantra}>Jai Shree Mahakal🙏</Text>
 
           <Text style={text}>
             Thank you for planning your sacred Sawan Yatra with us.
