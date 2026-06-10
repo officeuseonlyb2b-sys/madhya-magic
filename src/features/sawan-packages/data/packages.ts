@@ -483,8 +483,8 @@ const heliSpiritual: SawanPackage = {
   ],
   inclusions: [
     "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-    "Accommodation for Total 01 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
-    "Total 01 Breakfast as mentioned in the program.",
+    "Accommodation for Total 01 nights on sharing basis on Room plus breakfast,lunch,dinner on fixed menu/buffet basis.",
+    "Total 01 Breakfast, 01 Lunch, 01 Dinner as mentioned in the program.",
     "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air‑Conditioned Vehicle.",
     "Experience VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
     "Enjoy VIP entry ticket in Kaal Bhairav Temple In Ujjain.",
@@ -502,7 +502,7 @@ const heliSpiritual: SawanPackage = {
         "Upon arrival at Indore Airport, you will be warmly welcomed by our company representative and driven to Ujjain, “The Kingdom of Mahakaal.” Upon arrival in Ujjain, transfer to the hotel and check‑in at the hotels.\n\n" +
         "Begin your sightseeing tour with a visit to the historic Sandipani Ashram, followed by the serene Mangal Nath Temple. Continue to the famous Kaal Bhairav Temple, renowned for its unique ritual of offering liquor to the deity.\n\n" +
         "Later, explore the spiritual ambiance and beautiful heritage of the city before visiting the sacred Ram Ghat, situated on the banks of the holy Shipra River. Thereafter, visit the revered Harsiddhi Mata Temple, known for its divine atmosphere and magnificent architecture.\n\n" +
-        "In the evening, experience the grandeur of the newly developed Mahakaal Corridor, followed by VVIP Darshan at Shri Mahakaleshwar Temple near the Garbh Grah Gate. Witness the divine Sandhya Aarti experience before returning to the hotel. Overnight stay at Ujjain.\n\nMeals NA",
+        "In the evening, experience the grandeur of the newly developed Mahakaal Corridor, followed by VVIP Darshan at Shri Mahakaleshwar Temple near the Garbh Grah Gate. Witness the divine Sandhya Aarti experience before returning to the hotel. Overnight stay at Ujjain.\n\nMeals: Lunch,Dinner",
     },
     {
       day: "Day 2",
@@ -568,8 +568,8 @@ const heliDivine: SawanPackage = {
   ],
   inclusions: [
     "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-    "Accommodation for Total 02 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.",
-    "Total 02 Breakfasts as mentioned in the program.",
+    "Accommodation for Total 02 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis.Except in Ujjain, where the stay is on APAI basis, inclusive of breakfast, lunch, and dinner on a fixed menu buffet basis.",
+    "Total 02 Breakfasts, 01 Lunch, 01 Dinner as mentioned in the program.",
     "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air‑Conditioned Vehicle.",
     "Experience VVIP Darshan at Mahakaleshwar Temple in Ujjain.",
     "Enjoy VIP entry ticket in Kaal Bhairav Temple In Ujjain.",
@@ -587,7 +587,7 @@ const heliDivine: SawanPackage = {
         "Upon arrival at Indore airport, you will be warmly welcomed by our company representative and driven to Ujjain, “The Kingdom of Mahakaal.” Upon arrival in Ujjain, transfer to the hotel and check‑in at the hotels.\n\n" +
         "Begin your sightseeing tour with a visit to the historic Sandipani Ashram, followed by the serene Mangal Nath Temple. Continue to the famous Kaal Bhairav Temple, renowned for its unique ritual of offering liquor to the deity.\n\n" +
         "Later, explore the spiritual ambiance and beautiful heritage of the city before visiting the sacred Ram Ghat, situated on the banks of the holy Shipra River. Thereafter, visit the revered Harsiddhi Mata Temple, known for its divine atmosphere and magnificent architecture.\n\n" +
-        "In the evening, experience the grandeur of the newly developed Mahakaal Corridor, followed by VVIP Darshan at Shri Mahakaleshwar Temple near the Garbh Grah Gate. Witness the divine Sandhya Aarti experience before returning to the hotel. Overnight stay at Ujjain.\n\nMeals NA",
+        "In the evening, experience the grandeur of the newly developed Mahakaal Corridor, followed by VVIP Darshan at Shri Mahakaleshwar Temple near the Garbh Grah Gate. Witness the divine Sandhya Aarti experience before returning to the hotel. Overnight stay at Ujjain.\n\nMeals: Lunch,Dinner",
     },
     {
       day: "Day 2",
