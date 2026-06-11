@@ -105,7 +105,7 @@ const mahakaalBlessings: SawanPackage = {
       ],
     },
     {
-      hotelCategory: "03 Star Deluxe Hotel",
+      hotelCategory: "03 Star Deluxe Hote l",
       variants: [
         { vehicle: "AC Sedan Car", pax: 2, cost: 29500 },
         { vehicle: "Innova Crysta", pax: 4, cost: 24500 },
@@ -161,7 +161,7 @@ const divineJyotirlinga: SawanPackage = {
   ],
   inclusions: [
     "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-    "Accommodation for Total 03 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except In Maheshwar where the stay is on MAPAI plan/Half board that is with breakfast lunch & Dinner on Fixed menu Buffet Basis.",
+    "Accommodation for Total 03 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except In Maheshwar where the stay is on MAPAI plan/Half board that is with breakfast & Dinner on Fixed menu Buffet Basis.",
     "Total 03 Breakfast & 01 Dinner as mentioned in the program.",
     "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air‑Conditioned Vehicle.",
     "Enjoy a scenic boat ride on the Narmada River, offering beautiful views of Maheshwar Fort.",
@@ -216,7 +216,7 @@ const divineJyotirlinga: SawanPackage = {
     {
       hotelCategory: "03 Star Hotel",
       variants: [
-        { vehicle: "AC Sedan Car", pax: 2, cost: 36000 },
+        { vehicle: "AC Sedan Car", pax: 2, cost: 36100 },
         { vehicle: "Innova Crysta", pax: 4, cost: 29600 },
         { vehicle: "Tempo Traveller", pax: 6, cost: 28700 },
       ],
@@ -224,9 +224,9 @@ const divineJyotirlinga: SawanPackage = {
     {
       hotelCategory: "03 Star Deluxe Hotel",
       variants: [
-        { vehicle: "AC Sedan Car", pax: 2, cost: 35300 },
-        { vehicle: "Innova Crysta", pax: 4, cost: 28800 },
-        { vehicle: "Tempo Traveller", pax: 6, cost: 27900 },
+        { vehicle: "AC Sedan Car", pax: 2, cost: 37600 },
+        { vehicle: "Innova Crysta", pax: 4, cost: 31100 },
+        { vehicle: "Tempo Traveller", pax: 6, cost: 30200 },
       ],
     },
     {
@@ -280,8 +280,8 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
   ],
   inclusions: [
     "Meeting and assistance on arrival/departure at Airport/hotel by our representative.",
-    "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except In Maheshwar where the stay is on MAPAI plan/Half board that is with breakfast lunch & Dinner on Fixed menu Buffet Basis.",
-    "Total 03 Breakfast & 01 Dinner as mentioned in the program.",
+    "Accommodation for Total 04 nights on sharing basis on Room plus breakfast on fixed menu/buffet basis. Except In Maheshwar where the stay is on MAPAI plan/Half board that is with breakfast & Dinner on Fixed menu Buffet Basis.",
+    "Total 04 Breakfast & 01 Dinner as mentioned in the program.",
     "Arrival / Departure transfers, sightseeing/ excursions and surface travel as per the above program by Air‑Conditioned Vehicle.",
     "Enjoy a scenic boat ride on the Narmada River, offering beautiful views of Maheshwar Fort.",
     "All monument entrance including VVIP Darshan at Mahakaleshwar Temple in Ujjain & Omkar Mandhata Temple in Omkareshwar & VIP Entry Ticket In Kaal Bhairav Temple In Ujjain.",
@@ -344,25 +344,25 @@ const jyotirlingaMonsoonEscape: SawanPackage = {
     {
       hotelCategory: "03 Star Hotel",
       variants: [
-        { vehicle: "AC Sedan Car", pax: 2, cost: 40500 },
-        { vehicle: "Innova Crysta", pax: 4, cost: 32800 },
-        { vehicle: "Tempo Traveller", pax: 6, cost: 31800 },
+        { vehicle: "AC Sedan Car", pax: 2, cost: 42500 },
+        { vehicle: "Innova Crysta", pax: 4, cost: 34800 },
+        { vehicle: "Tempo Traveller", pax: 6, cost: 33800 },
       ],
     },
     {
       hotelCategory: "03 Star Deluxe Hotel",
       variants: [
-        { vehicle: "AC Sedan Car", pax: 2, cost: 41700 },
-        { vehicle: "Innova Crysta", pax: 4, cost: 34000 },
-        { vehicle: "Tempo Traveller", pax: 6, cost: 33000 },
+        { vehicle: "AC Sedan Car", pax: 2, cost: 43900 },
+        { vehicle: "Innova Crysta", pax: 4, cost: 36300 },
+        { vehicle: "Tempo Traveller", pax: 6, cost: 35300 },
       ],
     },
     {
       hotelCategory: "04 Star Hotel",
       variants: [
-        { vehicle: "AC Sedan Car", pax: 2, cost: 47500 },
-        { vehicle: "Innova Crysta", pax: 4, cost: 39500 },
-        { vehicle: "Tempo Traveller", pax: 6, cost: 38500 },
+        { vehicle: "AC Sedan Car", pax: 2, cost: 47600 },
+        { vehicle: "Innova Crysta", pax: 4, cost: 39700 },
+        { vehicle: "Tempo Traveller", pax: 6, cost: 38600 },
       ],
     },
   ],
