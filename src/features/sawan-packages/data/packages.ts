@@ -46,7 +46,7 @@ const mahakaalBlessings: SawanPackage = {
   startingPrice: "From ₹23,000",
   image: normalpkg1,
   description:
-    "A curated 3‑day Sawan pilgrimage covering Mahakaleshwar and Omkareshwar Jyotirlingas with VVIP darshan, evening aartis and Indore heritage.",
+    "A curated 3‑day Sawan pilgrimage covering Mahakaleshwar and Omkareshwar Jyotirlingas with VVIP darshan, evening aartis and Indore heritage .",
   highlights: [
     "The Kingdom of Mahakaal, where ancient spirituality reigns supreme, beckoning travelers with its sacred shrines and mystical allure.",
     "Harsiddhi Mata Temple Aarti: A mesmerizing spectacle of devotion and reverence, illuminating hearts with the divine energy of the sacred ritual.",
