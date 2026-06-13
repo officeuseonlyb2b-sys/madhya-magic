@@ -1,42 +1,213 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
-import { useRef } from "react";
+import { memo, useEffect, useMemo, useRef, useState } from "react";
 import type { SawanCampaign } from "@/data/exclusive/sawanData";
+import { useAutoScroll } from "@/hooks/useAutoScroll";
+import { useInViewport } from "@/hooks/useInViewport";
 
+// ============================================================
+// VIDEO (no white flash, lazy loading)
+// ============================================================
+const ReelVideo = memo(
+  ({
+    reel,
+    isHovered,
+    shouldLoad,
+  }: {
+    reel: SawanCampaign["reels"][number];
+    isHovered: boolean;
+    shouldLoad: boolean;
+  }) => {
+    const videoRef = useRef<HTMLVideoElement>(null);
+    const [loaded, setLoaded] = useState(false);
+
+    // Play / pause on hover
+    useEffect(() => {
+      const v = videoRef.current;
+      if (!v) return;
+      if (isHovered) {
+        v.play().catch(() => {});
+      } else {
+        v.pause();
+      }
+    }, [isHovered]);
+
+    // Don’t render any <video> until we’re near the viewport
+    if (!shouldLoad) {
+      return <div className="absolute inset-0 bg-transparent" />;
+    }
+
+    return (
+      <>
+        {/* Loading shimmer */}
+        {!loaded && (
+          <div className="absolute inset-0 bg-neutral-100 animate-pulse" />
+        )}
+        <video
+          ref={videoRef}
+          src={reel.videoUrl}
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          poster={reel.image} // fallback poster
+          onLoadedData={() => setLoaded(true)}
+          // This background image is shown instantly → no white flash
+          style={{
+            backgroundImage: `url(${reel.image})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+          className={`absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0 transition-all duration-500 ${
+            loaded ? "opacity-100" : "opacity-0"
+          } ${isHovered ? "scale-100" : "scale-105"}`}
+        />
+      </>
+    );
+  }
+);
+
+ReelVideo.displayName = "ExclusiveReelVideo";
+
+// ============================================================
+// CARD (same style as ActivitiesReelsSection)
+// ============================================================
+const ReelCard = memo(
+  ({
+    reel,
+    index,
+  }: {
+    reel: SawanCampaign["reels"][number];
+    index: number;
+  }) => {
+    const [hovered, setHovered] = useState(false);
+    const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
+
+    return (
+      <motion.div
+        ref={viewRef}
+        initial={{ opacity: 0, x: 40 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: Math.min(index, 6) * 0.04 }}
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        onTouchStart={() => setHovered(true)}
+        onTouchEnd={() => setHovered(false)}
+        style={{
+          outline: "none",
+          border: "none",
+          boxShadow: "none",
+          WebkitTapHighlightColor: "transparent",
+        }}
+        className="reel-card w-[180px] sm:w-[250px] md:w-[280px] flex-shrink-0 focus:outline-none focus:ring-0"
+      >
+        <div className="group relative overflow-hidden rounded-[24px] bg-black border-none outline-none ring-0 shadow-none">
+          {/* MEDIA CONTAINER */}
+          <div className="relative h-[320px] sm:h-[380px] md:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
+            {/* LAZY VIDEO */}
+            <ReelVideo reel={reel} isHovered={hovered} shouldLoad={inView} />
+
+            {/* GRADIENT OVERLAY */}
+            <div
+              className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 transition-opacity duration-500 pointer-events-none ${
+                hovered ? "opacity-0" : "opacity-100"
+              }`}
+            />
+
+            {/* TITLE (top) */}
+            <div
+              className={`absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full transition-all duration-500 pointer-events-none ${
+                hovered
+                  ? "opacity-0 -translate-y-5"
+                  : "opacity-100 translate-y-0"
+              }`}
+            >
+              <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm md:text-base font-light leading-snug font-display">
+                {reel.title}
+              </h3>
+            </div>
+
+            {/* CATEGORY / TAG (bottom) */}
+            <div
+              className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-center transition-all duration-500 pointer-events-none ${
+                hovered
+                  ? "opacity-0 translate-y-5"
+                  : "opacity-100 translate-y-0"
+              }`}
+            >
+              <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
+                ॐ SHRAVAN
+              </span>
+            </div>
+          </div>
+
+          {/* LOCATION BAR (below video) */}
+          <div className="bg-white py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
+            <div className="flex items-center justify-center gap-2 text-black">
+              <MapPin size={14} />
+              <span className="uppercase tracking-[2px] text-xs sm:text-sm font-medium">
+                {reel.location}
+              </span>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    );
+  }
+);
+
+ReelCard.displayName = "ExclusiveReelCard";
+
+// ============================================================
+// MAIN SECTION
+// ============================================================
 interface Props {
   reels: SawanCampaign["reels"];
 }
 
 const ExclusiveReels = ({ reels }: Props) => {
-  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
+  // Triple the data for infinite smooth scroll
+  const sliderData = useMemo(
+    () => [...reels, ...reels, ...reels],
+    [reels]
+  );
 
-  const handleMouseEnter = (id: string) => {
-    const video = videoRefs.current[id];
-    if (video) {
-      video.currentTime = 0;
-      video.play().catch((err) => {
-        console.error(`Auto-play failed for ${id}:`, err);
-      });
+  // Auto‑scroll on mouse hover
+  const { ref, onMouseEnter, onMouseLeave } =
+    useAutoScroll<HTMLDivElement>(50);
+
+  // Start from the middle copy
+  useEffect(() => {
+    const el = ref.current;
+    if (!el || reels.length === 0) return;
+    requestAnimationFrame(() => {
+      el.scrollLeft = el.scrollWidth / 3;
+    });
+  }, [reels]);
+
+  // Keep the loop seamless
+  const handleScroll = () => {
+    const el = ref.current;
+    if (!el) return;
+    const oneSet = el.scrollWidth / 3;
+    if (el.scrollLeft >= oneSet * 2) {
+      el.scrollLeft = oneSet;
     }
-  };
-
-  const handleMouseLeave = (id: string) => {
-    const video = videoRefs.current[id];
-    if (video && !video.paused) {
-      video.pause();
-      video.currentTime = 0; // reset to first frame
+    if (el.scrollLeft <= 0) {
+      el.scrollLeft = oneSet;
     }
   };
 
   return (
     <section className="relative py-12 sm:py-16 md:py-28 overflow-hidden bg-white">
-      {/* Orange decorative rings */}
+      {/* Decorative rings */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-orange-300" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-orange-400" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,65 +227,30 @@ const ExclusiveReels = ({ reels }: Props) => {
           </div>
         </motion.div>
 
-        <div className="flex gap-4 sm:gap-6 overflow-x-auto pb-8 snap-x snap-mandatory -mx-4 sm:-mx-6 px-4 sm:px-6 scrollbar-thin scrollbar-thumb-orange-300">
-          {reels.map((reel, i) => (
-            <motion.div
-              key={reel.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -8 }}
-              className="relative flex-shrink-0 w-[220px] sm:w-[270px] md:w-[320px] aspect-[9/16] rounded-2xl overflow-hidden snap-start group cursor-pointer shadow-xl ring-1 ring-orange-200 bg-gray-100"
-              onMouseEnter={() => handleMouseEnter(reel.id)}
-              onMouseLeave={() => handleMouseLeave(reel.id)}
-            >
-              {/* Hover border effect */}
-              <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-orange-400 transition-all z-10 pointer-events-none" />
-
-              {/* Poster image fallback – always visible behind the video */}
-              <img
-                src={reel.image}
-                alt={reel.title}
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="lazy"
-                decoding="async"
-              />
-
-              {/* Video element – plays on hover, sits above poster */}
-              <video
-                ref={(el) => {
-                  if (el) videoRefs.current[reel.id] = el;
-                }}
-                poster={reel.image}
-                className="absolute inset-0 w-full h-full object-cover"
-                muted
-                playsInline
-                preload="metadata"
-              >
-                <source src={reel.videoUrl} type="video/mp4" />
-              </video>
-
-              {/* Subtle bottom gradient for text readability (no white layer) */}
-              <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none z-10" />
-
-              {/* Text overlay – clean, no baackground, only white text with shadow */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
-                <h3 className="text-white text-xl md:text-2xl font-bold drop-shadow-lg">
-                  {reel.title}
-                </h3>
-                <p className="text-orange-200 text-xs flex items-center gap-1 drop-shadow-md">
-                  <MapPin size={12} className="text-orange-300" />
-                  {reel.location}
-                </p>
-              </div>
-
-              {/* Sacred Oom symbol */}
-              <span className="absolute bottom-3 right-3 text-4xl text-white/15 select-none pointer-events-none">
-                ॐ
-              </span>
-            </motion.div>
-          ))}
-        </div>
+        {/* Slider */}
+        {reels.length === 0 ? (
+          <p className="text-center text-orange-800/70 py-10">
+            No reels available for this campaign.
+          </p>
+        ) : (
+          <div
+            ref={ref}
+            onMouseEnter={onMouseEnter}
+            onMouseLeave={onMouseLeave}
+            onScroll={handleScroll}
+            className="overflow-x-auto no-scrollbar py-4"
+          >
+            <div className="flex gap-5 w-max items-center">
+              {sliderData.map((reel, i) => (
+                <ReelCard
+                  key={`${reel.id}-${i}`}
+                  reel={reel}
+                  index={i}
+                />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
