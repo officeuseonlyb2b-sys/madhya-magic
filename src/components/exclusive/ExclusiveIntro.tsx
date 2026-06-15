@@ -33,6 +33,7 @@ interface Props {
 }
 
 const ExclusiveIntro = ({ intro }: Props) => {
+  const [expanded, setExpanded] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const [autoScrollActive, setAutoScrollActive] = useState(true);
   const inactivityTimer = useRef<NodeJS.Timeout | null>(null);
@@ -224,9 +225,30 @@ const ExclusiveIntro = ({ intro }: Props) => {
               </span>
             </h2>
             <div className="space-y-4 text-orange-800/80 leading-relaxed">
-              {intro.paragraphs.map((p, i) => (
-                <p key={i}>{p}</p>
-              ))}
+              {intro.paragraphs.map((p, i) => {
+                const hideOnMobile = i > 0;
+                return (
+                  <p
+                    key={i}
+                    className={
+                      hideOnMobile
+                        ? `md:block transition-all duration-500 ease-in-out ${expanded ? "block" : "hidden"}`
+                        : ""
+                    }
+                  >
+                    {p}
+                  </p>
+                );
+              })}
+              {intro.paragraphs.length > 1 && (
+                <button
+                  type="button"
+                  onClick={() => setExpanded((v) => !v)}
+                  className="md:hidden inline-flex items-center gap-1 text-orange-600 font-semibold text-sm underline underline-offset-4"
+                >
+                  {expanded ? "Read Less" : "Read More"}
+                </button>
+              )}
             </div>
             <ul className="grid sm:grid-cols-2 gap-3 mt-8">
               {intro.highlights.map((h) => (

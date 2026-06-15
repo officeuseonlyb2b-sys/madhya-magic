@@ -49,24 +49,23 @@ export default function TrustedBrandsSection() {
       </div>
 
       {/* MAIN STRIP */}
-      <div className="relative flex items-center overflow-hidden border-y border-white/60 bg-white/95 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.06)]">
+      <div className="relative flex flex-col md:flex-row items-stretch md:items-center overflow-hidden border-y border-white/60 bg-white/95 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.06)]">
 
         {/* LEFT CONTENT */}
-        <div className="relative z-20 flex items-center gap-5 min-w-fit px-8 lg:px-12 py-5 bg-white border-r border-gray-200/60">
-          
-          <div className="flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 text-primary">
+        <div className="relative z-20 flex items-center gap-4 md:gap-5 md:min-w-fit px-5 md:px-8 lg:px-12 py-4 md:py-5 bg-white md:border-r border-b md:border-b-0 border-gray-200/60 w-full md:w-auto">
+
+          <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full bg-primary/10 text-primary shrink-0">
             <ShieldCheck size={26} />
           </div>
 
-          <div>
-            <p className="text-[13px] uppercase tracking-[4px] text-gray-500 font-semibold mb-1">
+          <div className="min-w-0">
+            <p className="text-[11px] md:text-[13px] uppercase tracking-[3px] md:tracking-[4px] text-gray-500 font-semibold mb-1">
               Trusted By
             </p>
 
-            <h2 className="text-[30px] lg:text-[42px] font-bold text-gray-900 leading-[0.95] whitespace-nowrap tracking-[-1.5px]">
+            <h2 className="text-[22px] md:text-[30px] lg:text-[42px] font-bold text-gray-900 leading-[0.95] tracking-[-1px] md:tracking-[-1.5px] md:whitespace-nowrap">
               Brands That
-
-              <span className="block text-primary text-[26px] lg:text-[36px] mt-1">
+              <span className="block text-primary text-[18px] md:text-[26px] lg:text-[36px] mt-1">
                 Trust Us
               </span>
             </h2>
@@ -74,7 +73,7 @@ export default function TrustedBrandsSection() {
         </div>
 
         {/* LOGO SLIDER */}
-        <div className="relative flex-1 overflow-hidden py-0">
+        <div className="relative w-full md:flex-1 overflow-hidden py-0">
           
           {/* LEFT FADE */}
           <div className="absolute left-0 top-0 z-10 h-full w-14 bg-gradient-to-r from-white via-white to-transparent" />

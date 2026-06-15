@@ -181,9 +181,9 @@ const SawanBookingPage = ({ bannerImage = formBackgroundImg }: Props) => {
         City: values.city,
         "Journey Type": values.journey,
         "Selected Services": selectedServices.join(", "),
-        Adults: values.adults,
-        Kids: values.kids,
-        "Kids Age": values.kidsAge,
+        Adults: String(adultsCount),
+        Kids: String(childrenCount),
+        "Kids Age": agesStr,
       },
       autoReplyTemplate: "sawan-auto-reply",
     });

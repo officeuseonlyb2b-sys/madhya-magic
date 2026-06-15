@@ -6,7 +6,7 @@ import { useAutoScroll } from "@/hooks/useAutoScroll";
 import { useInViewport } from "@/hooks/useInViewport";
 
 // ============================================================
-// VIDEO (no white flash, lazy loading)
+// VIDEO (no white flash, lazy loading, no black layer)
 // ============================================================
 const ReelVideo = memo(
   ({
@@ -32,14 +32,14 @@ const ReelVideo = memo(
       }
     }, [isHovered]);
 
-    // Don’t render any <video> until we’re near the viewport
+    // Don't render any <video> until we're near the viewport
     if (!shouldLoad) {
       return <div className="absolute inset-0 bg-transparent" />;
     }
 
     return (
       <>
-        {/* Loading shimmer */}
+        {/* Loading shimmer – light gray, not black */}
         {!loaded && (
           <div className="absolute inset-0 bg-neutral-100 animate-pulse" />
         )}
@@ -52,7 +52,6 @@ const ReelVideo = memo(
           preload="metadata"
           poster={reel.image} // fallback poster
           onLoadedData={() => setLoaded(true)}
-          // This background image is shown instantly → no white flash
           style={{
             backgroundImage: `url(${reel.image})`,
             backgroundSize: "cover",
@@ -70,7 +69,7 @@ const ReelVideo = memo(
 ReelVideo.displayName = "ExclusiveReelVideo";
 
 // ============================================================
-// CARD (same style as ActivitiesReelsSection)
+// CARD – black layers completely removed
 // ============================================================
 const ReelCard = memo(
   ({
@@ -99,22 +98,18 @@ const ReelCard = memo(
           boxShadow: "none",
           WebkitTapHighlightColor: "transparent",
         }}
-        className="reel-card w-[180px] sm:w-[250px] md:w-[280px] flex-shrink-0 focus:outline-none focus:ring-0"
+        className="reel-card w-[85vw] max-w-[320px] sm:w-[250px] sm:max-w-none md:w-[280px] flex-shrink-0 focus:outline-none focus:ring-0 snap-start"
       >
-        <div className="group relative overflow-hidden rounded-[24px] bg-black border-none outline-none ring-0 shadow-none">
-          {/* MEDIA CONTAINER */}
-          <div className="relative h-[320px] sm:h-[380px] md:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-black">
+        {/* Removed bg-black from outer group; using transparent background */}
+        <div className="group relative overflow-hidden rounded-[24px] bg-transparent border-none outline-none ring-0 shadow-none">
+          {/* MEDIA CONTAINER – no black background */}
+          <div className="relative h-[460px] sm:h-[380px] md:h-[450px] overflow-hidden rounded-[24px] border-none outline-none ring-0 shadow-none bg-transparent">
             {/* LAZY VIDEO */}
             <ReelVideo reel={reel} isHovered={hovered} shouldLoad={inView} />
 
-            {/* GRADIENT OVERLAY */}
-            <div
-              className={`absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-black/20 transition-opacity duration-500 pointer-events-none ${
-                hovered ? "opacity-0" : "opacity-100"
-              }`}
-            />
+            {/* BLACK GRADIENT OVERLAY REMOVED – video now fully visible */}
 
-            {/* TITLE (top) */}
+            {/* TITLE (top) – remains, but no black layer behind it */}
             <div
               className={`absolute top-6 left-1/2 -translate-x-1/2 text-center px-4 w-full transition-all duration-500 pointer-events-none ${
                 hovered
@@ -122,12 +117,12 @@ const ReelCard = memo(
                   : "opacity-100 translate-y-0"
               }`}
             >
-              <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm md:text-base font-light leading-snug font-display">
+              <h3 className="text-white uppercase tracking-[2px] text-xs sm:text-sm md:text-base font-light leading-snug font-display drop-shadow-md">
                 {reel.title}
               </h3>
             </div>
 
-            {/* CATEGORY / TAG (bottom) */}
+            {/* CATEGORY / TAG (bottom) – no black overlay */}
             <div
               className={`absolute bottom-10 left-1/2 -translate-x-1/2 text-center transition-all duration-500 pointer-events-none ${
                 hovered
@@ -135,13 +130,13 @@ const ReelCard = memo(
                   : "opacity-100 translate-y-0"
               }`}
             >
-              <span className="text-white/90 text-[10px] tracking-[4px] uppercase">
+              <span className="text-white/90 text-[10px] tracking-[4px] uppercase drop-shadow-md">
                 ॐ SHRAVAN
               </span>
             </div>
           </div>
 
-          {/* LOCATION BAR (below video) */}
+          {/* LOCATION BAR (below video) – unchanged, white background */}
           <div className="bg-white py-4 px-3 text-center border-none outline-none ring-0 shadow-none">
             <div className="flex items-center justify-center gap-2 text-black">
               <MapPin size={14} />
@@ -159,7 +154,7 @@ const ReelCard = memo(
 ReelCard.displayName = "ExclusiveReelCard";
 
 // ============================================================
-// MAIN SECTION
+// MAIN SECTION – unchanged, only reel cards are fixed
 // ============================================================
 interface Props {
   reels: SawanCampaign["reels"];
@@ -199,15 +194,15 @@ const ExclusiveReels = ({ reels }: Props) => {
   };
 
   return (
-    <section className="relative py-12 sm:py-16 md:py-28 overflow-hidden bg-white">
-      {/* Decorative rings */}
+    <section id="sawan-reels" className="relative py-12 sm:py-16 md:py-28 overflow-hidden bg-white">
+      {/* Decorative rings – unchanged */}
       <div className="absolute inset-0 opacity-10 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full border border-orange-300" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-orange-400" />
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        {/* Heading */}
+        {/* Heading – unchanged */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -238,7 +233,7 @@ const ExclusiveReels = ({ reels }: Props) => {
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onScroll={handleScroll}
-            className="overflow-x-auto no-scrollbar py-4"
+            className="overflow-x-auto no-scrollbar py-4 snap-x snap-mandatory md:snap-none scroll-smooth"
           >
             <div className="flex gap-5 w-max items-center">
               {sliderData.map((reel, i) => (

@@ -80,7 +80,7 @@ export default function WhychooseUs() {
                                                 <h3 className="text-black text-[18px] leading-[1.2] font-semibold font-display">
                                                     {reason.title}
                                                 </h3>
-                                                <p className="mt-2 text-gray-500 text-[13px] leading-[1.7] max-w-[210px]">
+                                                <p className="hidden md:block mt-2 text-gray-500 text-[13px] leading-[1.7] max-w-[210px]">
                                                     {reason.description}
                                                 </p>
                                             </div>

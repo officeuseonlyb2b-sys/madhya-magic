@@ -11,6 +11,24 @@ const SawanPackageGrid = () => {
   const normal = sawanPackages.filter((p) => p.kind === "normal");
   const heli = sawanPackages.filter((p) => p.kind === "helicopter");
 
+  // Mobile normal-packages carousel state
+  const normalScrollRef = useRef<HTMLDivElement>(null);
+  const [normalActive, setNormalActive] = useState(0);
+
+  const handleNormalScroll = () => {
+    const el = normalScrollRef.current;
+    if (!el) return;
+    const idx = Math.round(el.scrollLeft / el.clientWidth);
+    if (idx !== normalActive) setNormalActive(idx);
+  };
+
+  const scrollNormalTo = (i: number) => {
+    const el = normalScrollRef.current;
+    if (!el) return;
+    el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
+  };
+
+
   // Carousel state
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(3); // default desktop
@@ -52,10 +70,43 @@ const SawanPackageGrid = () => {
           title="Choose Your Shravan Journey"
           subtitle=""
         />
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
+        {/* Normal Packages — grid on desktop, swipeable carousel on mobile */}
+        <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {normal.map((p, i) => (
             <SawanPackageCard key={p.id} pkg={p} index={i} />
           ))}
+        </div>
+
+        {/* Mobile-only swipe carousel */}
+        <div className="sm:hidden -mx-4">
+          <div
+            ref={normalScrollRef}
+            onScroll={handleNormalScroll}
+            className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth px-4 gap-4 pb-2"
+          >
+            {normal.map((p, i) => (
+              <div
+                key={p.id}
+                className="snap-center shrink-0 basis-[90%]"
+              >
+                <SawanPackageCard pkg={p} index={i} />
+              </div>
+            ))}
+          </div>
+          {normal.length > 1 && (
+            <div className="flex justify-center gap-2 mt-5">
+              {normal.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollNormalTo(i)}
+                  aria-label={`Go to package ${i + 1}`}
+                  className={`h-2 rounded-full transition-all ${
+                    i === normalActive ? "w-6 bg-[#FF7A00]" : "w-2 bg-gray-300"
+                  }`}
+                />
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Helicopter Packages - Carousel with fixed visible cards */}
@@ -67,12 +118,12 @@ const SawanPackageGrid = () => {
               subtitle="Helicopter packages for a divine aerial journey"
             />
 
-            <div className="relative">
+            <div className="relative px-2 sm:px-0">
               {/* Left Arrow */}
               <button
                 onClick={handlePrev}
                 disabled={!canPrev}
-                className={`absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200 transition-all -ml-4 lg:-ml-6 ${
+                className={`absolute left-1 sm:-ml-4 lg:-ml-6 sm:left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200 transition-all ${
                   !canPrev
                     ? "opacity-40 cursor-not-allowed"
                     : "hover:bg-white"
@@ -106,7 +157,7 @@ const SawanPackageGrid = () => {
               <button
                 onClick={handleNext}
                 disabled={!canNext}
-                className={`absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200 transition-all -mr-4 lg:-mr-6 ${
+                className={`absolute right-1 sm:-mr-4 lg:-mr-6 sm:right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200 transition-all ${
                   !canNext
                     ? "opacity-40 cursor-not-allowed"
                     : "hover:bg-white"

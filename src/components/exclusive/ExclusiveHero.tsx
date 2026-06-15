@@ -13,11 +13,11 @@ const ExclusiveHero = ({ hero }: Props) => {
   };
 
   return (
-    <section className="relative w-full h-[60vh] sm:h-[75vh] md:h-screen overflow-hidden">
+    <section className="relative w-full h-auto md:h-screen md:overflow-hidden bg-white">
       <img
         src={mahakalImage}
         alt="Mahakal – Sacred Shravan Campaign"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="block w-full h-auto md:absolute md:inset-0 md:h-full md:object-cover"
         loading="eager"
         decoding="async"
         fetchPriority="high"
