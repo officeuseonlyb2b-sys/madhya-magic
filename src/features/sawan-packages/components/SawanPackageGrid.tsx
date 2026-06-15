@@ -109,7 +109,7 @@ const SawanPackageGrid = () => {
           )}
         </div>
 
-        {/* Helicopter Packages - Carousel with fixed visible cards */}
+        {/* Helicopter Packages */}
         {heli.length > 0 && (
           <div className="mt-16 sm:mt-20 md:mt-24">
             <SectionTitle
@@ -118,22 +118,25 @@ const SawanPackageGrid = () => {
               subtitle="Helicopter packages for a divine aerial journey"
             />
 
-            <div className="relative px-2 sm:px-0">
+            {/* Mobile: full-width snap carousel (one card fully visible at a time) */}
+            <div className="sm:hidden -mx-4">
+              <HeliMobileCarousel items={heli} />
+            </div>
+
+            {/* Desktop / tablet: arrow-controlled carousel */}
+            <div className="relative hidden sm:block px-2 sm:px-0">
               {/* Left Arrow */}
               <button
                 onClick={handlePrev}
                 disabled={!canPrev}
                 className={`absolute left-1 sm:-ml-4 lg:-ml-6 sm:left-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200 transition-all ${
-                  !canPrev
-                    ? "opacity-40 cursor-not-allowed"
-                    : "hover:bg-white"
+                  !canPrev ? "opacity-40 cursor-not-allowed" : "hover:bg-white"
                 }`}
                 aria-label="Previous"
               >
                 <ChevronLeft className="w-5 h-5 text-black" strokeWidth={2} />
               </button>
 
-              {/* Carousel Viewport */}
               <div className="overflow-hidden">
                 <div
                   className="flex transition-transform duration-300 ease-out gap-6"
@@ -153,21 +156,17 @@ const SawanPackageGrid = () => {
                 </div>
               </div>
 
-              {/* Right Arrow */}
               <button
                 onClick={handleNext}
                 disabled={!canNext}
                 className={`absolute right-1 sm:-mr-4 lg:-mr-6 sm:right-0 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg border border-gray-200 transition-all ${
-                  !canNext
-                    ? "opacity-40 cursor-not-allowed"
-                    : "hover:bg-white"
+                  !canNext ? "opacity-40 cursor-not-allowed" : "hover:bg-white"
                 }`}
                 aria-label="Next"
               >
                 <ChevronRight className="w-5 h-5 text-black" strokeWidth={2} />
               </button>
 
-              {/* Dots */}
               {maxIndex > 0 && (
                 <div className="flex justify-center gap-2 mt-8">
                   {Array.from({ length: maxIndex + 1 }).map((_, i) => (
@@ -187,6 +186,7 @@ const SawanPackageGrid = () => {
             </div>
           </div>
         )}
+
       </div>
     </section>
   );
@@ -229,5 +229,57 @@ const SectionTitle = ({
     </div>
   </motion.div>
 );
+
+const HeliMobileCarousel = ({
+  items,
+}: {
+  items: ReturnType<typeof sawanPackages.filter>;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(0);
+
+  const onScroll = () => {
+    const el = ref.current;
+    if (!el) return;
+    const idx = Math.round(el.scrollLeft / el.clientWidth);
+    if (idx !== active) setActive(idx);
+  };
+
+  const scrollTo = (i: number) => {
+    const el = ref.current;
+    if (!el) return;
+    el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
+  };
+
+  return (
+    <>
+      <div
+        ref={ref}
+        onScroll={onScroll}
+        className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth px-4 gap-4 pb-2"
+      >
+        {items.map((pkg, i) => (
+          <div key={pkg.id} className="snap-center shrink-0 basis-[90%]">
+            <SawanPackageCard pkg={pkg} index={i} />
+          </div>
+        ))}
+      </div>
+      {items.length > 1 && (
+        <div className="flex justify-center gap-2 mt-5">
+          {items.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => scrollTo(i)}
+              aria-label={`Go to package ${i + 1}`}
+              className={`h-2 rounded-full transition-all ${
+                i === active ? "w-6 bg-[#FF7A00]" : "w-2 bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+      )}
+    </>
+  );
+};
 
 export default SawanPackageGrid;
