@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { MessageCircle } from "lucide-react";
-import SacredEnquiryFormModal from "./SawanEnquiryFormModal";
+import SawanBookingFormModal from "./SawanBookingFormModal";
 
 /**
  * Mobile-only sticky "Enquire Now" button + auto-popup trigger.
@@ -143,7 +143,7 @@ const SawanMobileEnquireFab = () => {
         <span>Enquire Now</span>
       </button>
 
-      <SacredEnquiryFormModal open={open} onClose={() => setOpen(false)} />
+      <SawanBookingFormModal open={open} onClose={() => setOpen(false)} />
     </>
   );
 };

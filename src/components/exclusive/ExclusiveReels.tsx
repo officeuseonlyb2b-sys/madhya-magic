@@ -236,25 +236,21 @@ const ExclusiveReels = ({ reels }: Props) => {
   const handleMouseEnter = useCallback(() => setIsHovered(true), []);
   const handleMouseLeave = useCallback(() => setIsHovered(false), []);
 
-  // ---- scroll detection: while user scrolls, videos stop ----
+  // ---- page scroll detection: while user scrolls the PAGE, videos stop ----
+  // (We listen on window, NOT the container, because the container is
+  //  constantly being scrolled by the auto-scroll rAF loop.)
   const handleScroll = useCallback(() => {
-    // Set scrolling flag true
     setIsScrolling(true);
-    // Clear any existing timeout
     if (window.scrollTimeout) clearTimeout(window.scrollTimeout);
-    // After 200ms of no scroll events, reset scrolling flag
     window.scrollTimeout = setTimeout(() => {
       setIsScrolling(false);
     }, 200);
   }, []);
 
-  // Attach scroll listener to the container (for manual scroll)
   useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-    container.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      container.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", handleScroll);
       if (window.scrollTimeout) clearTimeout(window.scrollTimeout);
     };
   }, [handleScroll]);
