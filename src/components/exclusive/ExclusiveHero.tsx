@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import type { SawanCampaign } from "@/data/exclusive/sawanData";
-import mahakalImage from "@/assets/shravan/mahakal-image.webp";
 import mobileHeroImage from "@/assets/shravan/home-mobile.png";
+
+const mahakalImage =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/f_auto,q_auto/v1781588482/mahakal-image_isjlof.webp";
 
 interface Props {
   hero: SawanCampaign["hero"];
@@ -15,7 +17,6 @@ const ExclusiveHero = ({ hero }: Props) => {
 
   return (
     <section className="relative w-full h-auto md:h-screen md:overflow-hidden bg-white">
-      {/* Mobile image – visible only on small screens */}
       <img
         src={mobileHeroImage}
         alt="Mahakal – Sacred Shravan Campaign (Mobile)"
@@ -25,7 +26,6 @@ const ExclusiveHero = ({ hero }: Props) => {
         fetchPriority="high"
       />
 
-      {/* Desktop / Tablet image – hidden on mobile, covers section on md+ */}
       <img
         src={mahakalImage}
         alt="Mahakal – Sacred Shravan Campaign"
@@ -34,11 +34,6 @@ const ExclusiveHero = ({ hero }: Props) => {
         decoding="async"
         fetchPriority="high"
       />
-
-      {/* Optional overlay gradients (commented out as in original) */}
-      {/* <div className="absolute inset-0 bg-gradient-to-b from-[#3a1d05]/70 via-[#7a3a0a]/40 to-[#1a0a02]/85" /> */}
-      {/* <div className="absolute inset-0 bg-gradient-to-r from-[#ff9933]/25 via-transparent to-[#d4a017]/15 mix-blend-overlay" /> */}
-      {/* <div className="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[900px] rounded-full bg-[radial-gradient(circle,rgba(255,176,80,0.20),transparent_65%)]" /> */}
     </section>
   );
 };

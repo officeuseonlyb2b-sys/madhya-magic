@@ -45,6 +45,27 @@ const baseSchema = z.object({
 const lastSubmitAt = new Map<string, number>();
 const RATE_LIMIT_MS = 4000;
 
+// Meta Pixel: dedupe Lead events per submission
+const firedLeadEvents = new Set<string>();
+declare global {
+  interface Window {
+    fbq?: (...args: unknown[]) => void;
+  }
+}
+
+function trackMetaLead(dedupeKey: string) {
+  if (typeof window === "undefined") return;
+  if (firedLeadEvents.has(dedupeKey)) return;
+  firedLeadEvents.add(dedupeKey);
+  try {
+    if (typeof window.fbq !== "undefined") {
+      window.fbq("track", "Lead", { value: 100, currency: "INR" });
+    }
+  } catch (e) {
+    console.warn("Meta Pixel Lead event failed:", e);
+  }
+}
+
 export async function submitForm(
   data: FormSubmission
 ): Promise<{ ok: boolean; error?: string }> {
@@ -114,6 +135,9 @@ export async function submitForm(
         templateData: { fullName: baseData.fullName, formName: baseData.formName },
       },
     });
+
+    // Meta Pixel Lead event — fired only after a successful submission
+    trackMetaLead(idempotencyBase);
 
     return { ok: true };
   } catch (err: any) {
