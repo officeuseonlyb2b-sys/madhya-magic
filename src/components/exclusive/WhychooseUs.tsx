@@ -9,7 +9,9 @@ import {
     ArrowRight,
 } from "lucide-react";
 import JourneyPopup from "@/components/MadhyaPradeshJourneyModal";
-import whyChooseUsImage from "@/assets/shravan/choose.jpeg";
+
+
+const whyChooseUsImage = "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607210/choose_ymv9cu.jpg";
 
 export default function WhychooseUs() {
     const [openJourneyPopup, setOpenJourneyPopup] = useState(false);

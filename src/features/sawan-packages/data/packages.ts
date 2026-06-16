@@ -1,17 +1,31 @@
 // data/packages.ts
 import type { SawanPackage } from "../types";
-import helicopter1 from "@/assets/shravan/helicopter1.webp";
-import helicopter2 from "@/assets/shravan/helicopter2.webp";
-import helicopter3 from "@/assets/shravan/helicopter3.webp";
-import helicopter4 from "@/assets/shravan/helicopter4.webp";
-import helicopter5 from "@/assets/shravan/helicopter5.webp";
+// Cloudinary Images
 
-// Normal package 
+const helicopter1 =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607211/helicopter1_hfgdle.webp";
 
-import normalpkg1 from "@/assets/shravan/normalpkg1.webp"
-import normalpkg2 from "@/assets/shravan/normalpkg2.webp"
-import normalpkg3 from "@/assets/shravan/normalpkg3.webp"
+const helicopter2 =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607212/helicopter2_eoxpte.webp";
 
+const helicopter3 =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607213/helicopter3_csh8it.webp";
+
+const helicopter4 =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607213/helicopter4_pfqvbv.webp";
+
+const helicopter5 =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607214/helicopter5_lhdn2k.webp";
+
+
+const normalpkg1 =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607215/normalpkg1_ymmkxt.webp";
+
+const normalpkg2 =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607216/normalpkg2_euryf8.webp";
+
+const normalpkg3 =
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607216/normalpkg3_s6q6j4.webp";
 
 
 const COMMON_EXCLUSIONS = [

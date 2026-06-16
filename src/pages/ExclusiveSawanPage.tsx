@@ -15,8 +15,9 @@ import { SawanPackageGrid } from "@/features/sawan-packages";
 import SawanMobileEnquireFab from "@/features/sawan-packages/components/SawanMobileEnquireFab";
 
 // ✅ Your existing image – confirmed to exist
-import formBackgroundImg from "@/assets/shravan/formbackgroundimg.jpeg";
 import TestimonialsSection from "@/components/TestimonialsSection";
+
+const formBackgroundImg = "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607210/formbackgroundimg_b5lx32.jpg";
 
 
 const ORANGE = "#FF7A00";

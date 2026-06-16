@@ -3,29 +3,24 @@ import { Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import type { SawanCampaign } from "@/data/exclusive/sawanData";
 
-// ========== IMPORT 16 IMAGES ==========
-import about1 from "@/assets/shravan/about1.webp";
-import about2 from "@/assets/shravan/about2.webp";
-import about3 from "@/assets/shravan/about3.webp";
-import about4 from "@/assets/shravan/about4.webp";
-import about5 from "@/assets/shravan/about5.webp";
-import about6 from "@/assets/shravan/about6.webp";
-import about7 from "@/assets/shravan/about7.webp";
-import about8 from "@/assets/shravan/about8.webp";
-import about9 from "@/assets/shravan/about9.webp";
-import about10 from "@/assets/shravan/about10.webp";
-import about11 from "@/assets/shravan/about11.webp";
-import about12 from "@/assets/shravan/about12.webp";
-import about13 from "@/assets/shravan/about13.webp";
-import about14 from "@/assets/shravan/about14.webp";
-import about15 from "@/assets/shravan/about15.webp";
-import about16 from "@/assets/shravan/about16.webp";
-
+// ========== CLOUDINARY IMAGE URLs (15 provided) ==========
 const aboutImages = [
-  about1, about2, about3, about4,
-  about5, about6, about7, about8,
-  about9, about10, about11, about12,
-  about13, about14, about15, about16,
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607203/about1_mzlta9.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607204/about2_psbaaa.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607206/about3_mts3bj.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607204/about4_cmobty.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607204/about5_xl6j34.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607204/about6_wkuima.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607205/about7_weyvk4.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607205/about8_eyac6z.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607205/about9_yfrif2.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607205/about10_hha0q1.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607205/about11_cpjluh.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607206/about12_gsmk6p.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607206/about13_skt7hd.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607206/about14_tr2nwl.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607208/about15_myk831.webp",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607209/about16_mcumxb.webp",
 ];
 
 interface Props {

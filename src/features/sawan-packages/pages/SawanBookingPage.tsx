@@ -31,7 +31,9 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/SEO";
 import { submitForm } from "@/lib/submitForm";
 
-import formBackgroundImg from "@/assets/shravan/formbackgroundimg.jpeg";
+
+
+const formBackgroundImg = "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607210/formbackgroundimg_b5lx32.jpg";
 
 const WHATSAPP_NUMBER = "919109114934";
 const SUPPORT_PHONE = "+91 9109114934";

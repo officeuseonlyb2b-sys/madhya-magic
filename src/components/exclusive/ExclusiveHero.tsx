@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import type { SawanCampaign } from "@/data/exclusive/sawanData";
-import mobileHeroImage from "@/assets/shravan/home-mobile.png";
+
 
 const mahakalImage =
   "https://res.cloudinary.com/dfyuf0bjl/image/upload/f_auto,q_auto/v1781588482/mahakal-image_isjlof.webp";
+
+const mobileHeroImage = "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781607217/home-mobile_ce44gg.png"
 
 interface Props {
   hero: SawanCampaign["hero"];

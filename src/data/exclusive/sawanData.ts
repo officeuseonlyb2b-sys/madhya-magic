@@ -8,17 +8,7 @@ import s2 from "@/assets/exclusive/sawan/sawan-2.jpg.asset.json";
 import s3 from "@/assets/exclusive/sawan/sawan-3.jpg.asset.json";
 import s4 from "@/assets/exclusive/sawan/sawan-4.jpg.asset.json";
 
-// ========== VIDEO IMPORTS WITH ?url (ensures correct path) ==========
-import video1 from "@/assets/shravan/video1.mp4?url";
-import video2 from "@/assets/shravan/video2.mp4?url";
-import video3 from "@/assets/shravan/video3.mp4?url";
-import video4 from "@/assets/shravan/video4.mp4?url";
-import video5 from "@/assets/shravan/video5.mp4?url";
-import video6 from "@/assets/shravan/video6.mp4?url";
-import video7 from "@/assets/shravan/video7.mp4?url";
-import video8 from "@/assets/shravan/video8.mp4?url";
-import video9 from "@/assets/shravan/video9.mp4?url";
-import video10 from "@/assets/shravan/video10.mp4?url";
+// ========== ALL VIDEO IMPORTS REMOVED — USING CLOUDINARY URLs DIRECTLY ==========
 
 export interface SawanReel {
   id: string;
@@ -84,70 +74,70 @@ export const sawanCampaign = {
       title: "The Sacred Bhasma Aarti",
       location: "Ujjain",
       image: s1.url,
-      videoUrl: video1,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608195/video1_opt1ja.mp4",
     },
     {
       id: "reel-2",
       title: "The Thousand-Lamp Ceremony at Harsiddhi Shaktipeeth",
       location: "Ujjain",
       image: s2.url,
-      videoUrl: video2,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608204/video2_rbhcnv.mp4",
     },
     {
       id: "reel-3",
       title: "The Guardian of Mahakaal 'Kaal Bhairav'",
       location: "Ujjain",
       image: s3.url,
-      videoUrl: video3,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608206/video3_kuvhq3.mp4",
     },
     {
       id: "reel-4",
       title: "The Royal Sawari of Mahakaal",
       location: "Ujjain",
       image: s4.url,
-      videoUrl: video4,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608207/video4_tda3kz.mp4",
     },
     {
       id: "reel-5",
       title: "The Sacred Om Parikrama by Boat",
       location: "Omkareshwar",
       image: heroAsset.url,
-      videoUrl: video5,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608191/video5_n1tr5m.mp4",
     },
     {
       id: "reel-6",
       title: "The Divine Palki Procession of Omkareshwar",
       location: "Omkareshwar",
       image: s1.url,
-      videoUrl: video6,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608194/video6_o2o4cd.mp4",
     },
     {
       id: "reel-7",
       title: "The Grand Aarti of Holy Shipra",
       location: "Ujjain",
       image: s2.url,
-      videoUrl: video7,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608201/video7_yqjzyu.mp4",
     },
     {
       id: "reel-8",
       title: "A Privileged Moment with Mahakaal",
       location: "Ujjain",
       image: s3.url,
-      videoUrl: video8,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608211/video8_ft9kx6.mp4",
     },
     {
       id: "reel-9",
       title: "Shravan's Grand Gulaal Celebration",
       location: "Omkareshwar",
       image: s4.url,
-      videoUrl: video9,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608211/video9_r4iev6.mp4",
     },
     {
       id: "reel-10",
       title: "The Ritual of Abhishekam",
       location: "Omkareshwar",
       image: heroAsset.url,
-      videoUrl: video10,
+      videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608213/video10_ovlwxj.mp4",
     },
   ] satisfies SawanReel[],
   packages: [
