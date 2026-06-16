@@ -28,13 +28,11 @@ const SawanPackageGrid = () => {
     el.scrollTo({ left: i * el.clientWidth, behavior: "smooth" });
   };
 
-
-  // Carousel state
+  // Carousel state for helicopter (desktop)
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3); // default desktop
+  const [visibleCards, setVisibleCards] = useState(3);
   const totalCards = heli.length;
 
-  // Update visible cards count based on window width
   useEffect(() => {
     const updateVisible = () => {
       if (window.innerWidth >= 1024) setVisibleCards(3);
@@ -70,6 +68,7 @@ const SawanPackageGrid = () => {
           title="Choose Your Shravan Journey"
           subtitle=""
         />
+
         {/* Normal Packages — grid on desktop, swipeable carousel on mobile */}
         <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {normal.map((p, i) => (
@@ -77,22 +76,47 @@ const SawanPackageGrid = () => {
           ))}
         </div>
 
-        {/* Mobile-only swipe carousel */}
+        {/* Mobile-only carousel for normal packages - one card visible at a time */}
         <div className="sm:hidden -mx-4">
-          <div
-            ref={normalScrollRef}
-            onScroll={handleNormalScroll}
-            className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth px-4 gap-4 pb-2"
-          >
-            {normal.map((p, i) => (
-              <div
-                key={p.id}
-                className="snap-center shrink-0 basis-[90%]"
-              >
-                <SawanPackageCard pkg={p} index={i} />
-              </div>
-            ))}
+          <div className="relative">
+            <div
+              ref={normalScrollRef}
+              onScroll={handleNormalScroll}
+              className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
+            >
+              {normal.map((p, i) => (
+                <div
+                  key={p.id}
+                  className="snap-start shrink-0 w-full px-2"
+                >
+                  <SawanPackageCard pkg={p} index={i} />
+                </div>
+              ))}
+            </div>
+
+            {/* Arrows for normal mobile carousel */}
+            {normal.length > 1 && (
+              <>
+                <button
+                  onClick={() => scrollNormalTo(Math.max(0, normalActive - 1))}
+                  disabled={normalActive === 0}
+                  className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-gray-200 transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white"
+                  aria-label="Previous"
+                >
+                  <ChevronLeft className="w-5 h-5 text-black" strokeWidth={2} />
+                </button>
+                <button
+                  onClick={() => scrollNormalTo(Math.min(normal.length - 1, normalActive + 1))}
+                  disabled={normalActive === normal.length - 1}
+                  className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-gray-200 transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white"
+                  aria-label="Next"
+                >
+                  <ChevronRight className="w-5 h-5 text-black" strokeWidth={2} />
+                </button>
+              </>
+            )}
           </div>
+
           {normal.length > 1 && (
             <div className="flex justify-center gap-2 mt-5">
               {normal.map((_, i) => (
@@ -118,9 +142,9 @@ const SawanPackageGrid = () => {
               subtitle="Helicopter packages for a divine aerial journey"
             />
 
-            {/* Mobile: full-width snap carousel (one card fully visible at a time) */}
+            {/* Mobile: one card visible at a time with arrows */}
             <div className="sm:hidden -mx-4">
-              <HeliMobileCarousel items={heli} />
+              <HeliMobileCarousel items={heli} showArrows={true} />
             </div>
 
             {/* Desktop / tablet: arrow-controlled carousel */}
@@ -186,7 +210,6 @@ const SawanPackageGrid = () => {
             </div>
           </div>
         )}
-
       </div>
     </section>
   );
@@ -232,8 +255,10 @@ const SectionTitle = ({
 
 const HeliMobileCarousel = ({
   items,
+  showArrows = false,
 }: {
   items: ReturnType<typeof sawanPackages.filter>;
+  showArrows?: boolean;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -252,18 +277,40 @@ const HeliMobileCarousel = ({
   };
 
   return (
-    <>
+    <div className="relative">
       <div
         ref={ref}
         onScroll={onScroll}
-        className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth px-4 gap-4 pb-2"
+        className="flex overflow-x-auto snap-x snap-mandatory no-scrollbar scroll-smooth"
       >
         {items.map((pkg, i) => (
-          <div key={pkg.id} className="snap-center shrink-0 basis-[90%]">
+          <div key={pkg.id} className="snap-start shrink-0 w-full px-2">
             <SawanPackageCard pkg={pkg} index={i} />
           </div>
         ))}
       </div>
+
+      {showArrows && items.length > 1 && (
+        <>
+          <button
+            onClick={() => scrollTo(Math.max(0, active - 1))}
+            disabled={active === 0}
+            className="absolute left-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-gray-200 transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="w-5 h-5 text-black" strokeWidth={2} />
+          </button>
+          <button
+            onClick={() => scrollTo(Math.min(items.length - 1, active + 1))}
+            disabled={active === items.length - 1}
+            className="absolute right-1 top-1/2 -translate-y-1/2 z-10 bg-white/80 backdrop-blur-sm rounded-full p-1.5 shadow-lg border border-gray-200 transition-all disabled:opacity-40 disabled:cursor-not-allowed hover:bg-white"
+            aria-label="Next"
+          >
+            <ChevronRight className="w-5 h-5 text-black" strokeWidth={2} />
+          </button>
+        </>
+      )}
+
       {items.length > 1 && (
         <div className="flex justify-center gap-2 mt-5">
           {items.map((_, i) => (
@@ -278,7 +325,7 @@ const HeliMobileCarousel = ({
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 

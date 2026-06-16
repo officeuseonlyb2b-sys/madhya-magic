@@ -827,11 +827,11 @@ export const sawanPackages: SawanPackage[] = [
   mahakaalBlessings,
   divineJyotirlinga,
   jyotirlingaMonsoonEscape,
+  heliDivineOmkareshwar,
+  heliMahakalSacredWings,
   heliExperience,
   heliSpiritual,
   heliDivine,
-  heliMahakalSacredWings,
-  heliDivineOmkareshwar,
 ];
 
 export const sawanHeroImage =
