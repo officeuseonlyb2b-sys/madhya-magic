@@ -30,7 +30,13 @@ const SawanPackageGrid = () => {
 
   // Carousel state for helicopter (desktop)
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [visibleCards, setVisibleCards] = useState(3);
+  const [visibleCards, setVisibleCards] = useState(() => {
+  if (typeof window === "undefined") return 3;
+
+  if (window.innerWidth >= 1024) return 3;
+  if (window.innerWidth >= 768) return 2;
+  return 1;
+});
   const totalCards = heli.length;
 
   useEffect(() => {
