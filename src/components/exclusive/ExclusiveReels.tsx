@@ -3,6 +3,7 @@ import { MapPin, Pause, Play } from "lucide-react";
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { SawanCampaign } from "@/data/exclusive/sawanData";
 import { useInViewport } from "@/hooks/useInViewport";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 // ============================================================
 // VIDEO – no overlays, stops on scroll
@@ -26,23 +27,35 @@ const ReelVideo = memo(
       const v = videoRef.current;
       if (!v) return;
       if (playing && shouldLoad) {
-        v.play().catch(() => {});
+        const p = v.play();
+        if (p && typeof p.catch === "function") p.catch(() => {});
       } else {
-        v.pause();
+        try { v.pause(); } catch { /* noop */ }
       }
     }, [playing, shouldLoad]);
+
+    // Pause on unmount to avoid React removeChild issues from media elements
+    useEffect(() => {
+      const v = videoRef.current;
+      return () => {
+        if (v) {
+          try { v.pause(); v.removeAttribute("src"); v.load(); } catch { /* noop */ }
+        }
+      };
+    }, []);
 
     return (
       <>
         <video
           ref={videoRef}
-          src={reel.videoUrl}
+          src={shouldLoad ? reel.videoUrl : undefined}
           muted
           loop
           playsInline
-          preload="auto"
+          preload="metadata"
           className="absolute inset-0 w-full h-full object-cover border-0 outline-none ring-0"
         />
+
 
         <button
           type="button"
@@ -79,8 +92,10 @@ const ReelCard = memo(
     const [userPlaying, setUserPlaying] = useState(false);
     const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
 
-    // Video plays only if NOT scrolling AND (hovered OR user clicked play)
-    const playing = !isScrolling && (hovered || userPlaying);
+    // User's explicit play tap takes priority over scroll-pause.
+    // Hover-play still respects scroll state on desktop.
+    const playing = userPlaying || (!isScrolling && hovered);
+
 
     // When scrolling starts, any manually playing video is overridden
     // (but we keep userPlaying state – it will resume when scrolling stops + hover)
@@ -169,8 +184,12 @@ interface Props {
 }
 
 const ExclusiveReels = ({ reels }: Props) => {
-  // Triple the data for infinite seamless scroll
-  const sliderData = useMemo(() => [...reels, ...reels, ...reels], [reels]);
+  const isMobile = useIsMobile();
+  // On mobile we don't auto-scroll, so a single set is enough (saves memory & DOM nodes).
+  const sliderData = useMemo(
+    () => (isMobile ? [...reels] : [...reels, ...reels, ...reels]),
+    [reels, isMobile]
+  );
 
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -181,12 +200,14 @@ const ExclusiveReels = ({ reels }: Props) => {
   const [isHovered, setIsHovered] = useState(false);   // pauses auto‑scroll on hover
   const [isScrolling, setIsScrolling] = useState(false); // true while user scrolls → videos pause
 
+
   // ---- measure one set width (the width of a single copy) ----
   const measureSetWidth = useCallback(() => {
     if (!trackRef.current) return;
     const trackWidth = trackRef.current.scrollWidth;
-    oneSetWidthRef.current = trackWidth / 3;
-  }, []);
+    // On mobile we render a single set; otherwise three copies for the seamless loop.
+    oneSetWidthRef.current = trackWidth / (isMobile ? 1 : 3);
+  }, [isMobile]);
 
   useEffect(() => {
     measureSetWidth();
@@ -195,7 +216,7 @@ const ExclusiveReels = ({ reels }: Props) => {
     return () => observer.disconnect();
   }, [measureSetWidth, reels]);
 
-  // ---- animation loop (only when NOT hovered) ----
+  // ---- animation loop (only when NOT hovered and NOT mobile) ----
   const animate = useCallback(
     (timestamp: number) => {
       if (!lastTimeRef.current) lastTimeRef.current = timestamp;
@@ -204,7 +225,6 @@ const ExclusiveReels = ({ reels }: Props) => {
 
       const el = containerRef.current;
       if (!el || isHovered || oneSetWidthRef.current === 0) {
-        // If hovered, we don't move – the user scrolls manually
         animFrameRef.current = requestAnimationFrame(animate);
         return;
       }
@@ -226,11 +246,18 @@ const ExclusiveReels = ({ reels }: Props) => {
   );
 
   useEffect(() => {
+    // Disable auto-scroll completely on mobile — users navigate manually via swipe/arrows.
+    if (isMobile) return;
+    lastTimeRef.current = null;
     animFrameRef.current = requestAnimationFrame(animate);
     return () => {
-      if (animFrameRef.current) cancelAnimationFrame(animFrameRef.current);
+      if (animFrameRef.current) {
+        cancelAnimationFrame(animFrameRef.current);
+        animFrameRef.current = null;
+      }
     };
-  }, [animate]);
+  }, [animate, isMobile]);
+
 
   // ---- mouse handlers: pause auto‑scroll on hover ----
   const handleMouseEnter = useCallback(() => setIsHovered(true), []);
