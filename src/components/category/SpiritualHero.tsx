@@ -47,31 +47,22 @@ const SpiritualHero = () => {
     >
       {/* Background Video / Fallback */}
       <motion.div
-        initial={{ scale: 1 }}
-        animate={{ scale: 1.05 }}
-        transition={{ duration: 18, ease: "easeOut" }}
-        className="absolute inset-0 w-full h-full"
-      >
-        {!isMobile && inView ? (
-          <video
-            ref={videoRef}
-            src={VIDEO_SRC}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            poster={FALLBACK_IMG}
-            className="w-full h-full object-cover"
-          />
-        ) : (
-          <img
-            src={FALLBACK_IMG}
-            alt="Sacred spiritual destinations of Madhya Pradesh"
-            loading="lazy"
-            className="w-full h-full object-cover" decoding="async" />
-        )}
-      </motion.div>
+  initial={{ scale: 1 }}
+  animate={{ scale: 1.05 }}
+  transition={{ duration: 18, ease: "easeOut" }}
+  className="absolute inset-0 w-full h-full"
+>
+  <video
+    ref={videoRef}
+    src={VIDEO_SRC}
+    autoPlay
+    muted
+    loop
+    playsInline
+    preload="metadata"
+    className="w-full h-full object-cover"
+  />
+</motion.div>
 
       {/* Dark gradient overlay for readability */}
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80" />
