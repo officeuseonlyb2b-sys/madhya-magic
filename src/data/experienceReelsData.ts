@@ -10,20 +10,7 @@
 //   "nature" | "heritage" | "wildlife" | "spiritual"
 // =============================================================
 
-import lightSoundShow from "@/assets/reels/experience/light-sound-show.mp4";
-import bhimbetkaCavePaintings from "@/assets/reels/experience/bhimbetka-cave-paintings.mp4";
-import dhuandharFallsRopeway from "@/assets/reels/experience/dhuandhar-falls-ropeway.mp4";
-import heritageWalkGwalior from "@/assets/reels/experience/heritage-walk-gwalior.mp4";
-import meditationPachmarhi from "@/assets/reels/experience/meditation-pachmarhi.mp4";
-import snorkelingTrek from "@/assets/reels/experience/Snorkeling-Trek.mp4";
-import tribalMuseum from "@/assets/reels/experience/Tribal-Museum.mp4";
-import birdsWatching from "@/assets/reels/experience/birds-watching-madhya-pradesh.mp4";
-import harsiddhiAarti from "@/assets/reels/experience/harsiddhi-aarti-ujjain.mp4";
-import bhasmaAarti from "@/assets/reels/experience/bhasm-aarti-ujjain.mp4";
-import chitrakootSpiritualSites from "@/assets/reels/experience/chitrakoot-spiritual-sites.mp4";
-import narmadaAarti from "@/assets/reels/experience/narmada-aarti-gwarighat.mp4";
-import abhiskhekam from "@/assets/reels/experience/abhiskekam-omkareswar.mp4";
-import mahakalCorridor from "@/assets/reels/experience/mahakal-corridor.mp4";
+
 import type { ReelItem } from "@/data/reelTypes";
 
 export const experienceReelsData: ReelItem[] = [
@@ -31,102 +18,98 @@ export const experienceReelsData: ReelItem[] = [
     id: "light-sound-show",
     title: "Light & Sound Show",
     location: "Madhya Pradesh",
-    video: lightSoundShow,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695026/light-sound-show_fp1xkt.mp4",
     tags: ["heritage"],
   },
   {
     id: "bhimbetka-cave-paintings",
     title: "Bhimbetka Cave Paintings",
     location: "Bhimbetka",
-    video: bhimbetkaCavePaintings,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695022/bhimbetka-cave-paintings_lfo153.mp4",
     tags: ["heritage"],
   },
   {
     id: "dhuandhar-falls-ropeway",
     title: "Dhuandhar Falls Ropeway",
     location: "Jabalpur",
-    video: dhuandharFallsRopeway,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695025/dhuandhar-falls-ropeway_qo3egh.mp4",
     tags: ["nature"],
   },
   {
     id: "heritage-walk-gwalior",
     title: "Heritage Walk Tour",
     location: "Gwalior",
-    video: heritageWalkGwalior,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695025/heritage-walk-gwalior_vwipsy.mp4",
     tags: ["heritage"],
   },
   {
     id: "snorkeling-trek",
     title: "snorkeling-Trek",
     location: "Pachmarhi",
-    video: snorkelingTrek,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695029/Snorkeling-Trek_w6kakt.mp4",
     tags: ["nature"],
   },
   {
     id: "meditation-pachmarhi",
     title: "meditation-pachmarhi",
     location: "Pachmarhi",
-    video: meditationPachmarhi,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695028/meditation-pachmarhi_wqecbv.mp4",
     tags: ["nature"],
   },
   {
     id: "tribal-museum",
     title: "tribal-museum",
     location: "Bhopal",
-    video: tribalMuseum,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695030/Tribal-Museum_xffjhx.mp4",
     tags: ["heritage"],
   },
   {
     id: "birds-watching",
     title: "birds watching",
     location: "Madhya Pradesh",
-    video: birdsWatching,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695054/birds-watching-madhya-pradesh_ksj91d.mp4",
     tags: ["wildlife"],
   },
   {
     id: "harsiddhi-aarti",
     title: "Harsiddhi Mata Aarti",
     location: "Ujjain",
-    video: harsiddhiAarti,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695025/harsiddhi-aarti-ujjain_buzqgm.mp4",
     tags: ["spiritual"],
   },
   {
     id: "bhasma-aarti",
     title: "Bhasma Aarti",
     location: "Ujjain",
-    video: bhasmaAarti,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695023/bhasm-aarti-ujjain_z30cod.mp4",
     tags: ["spiritual"],
   },
   {
     id: "chitrakoot-spiritual-sites",
     title: "Chitrakoot Spirituals Sites",
     location: "Chitrakoot",
-    video: chitrakootSpiritualSites,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695026/chitrakoot-spiritual-sites_q8ehz5.mp4",
     tags: ["spiritual"],
   },
   {
     id: "narmada-aarti",
     title: "Narmada Aarti",
     location: "Jabalpur",
-    video: narmadaAarti,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695028/narmada-aarti-gwarighat_dkdmhv.mp4",
     tags: ["spiritual"],
   },
   {
     id: "abhiskhekam",
     title: "Abhiskhekam",
     location: "Omkareswar",
-    video: abhiskhekam,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695022/abhiskekam-omkareswar_j2kzv2.mp4",
     tags: ["spiritual"],
   },
   {
     id: "mahakal-corridor",
     title: "Mahakal Corridor",
     location: "Ujjain",
-    video: mahakalCorridor,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781695027/mahakal-corridor_dx4j21.mp4",
     tags: ["spiritual"],
   },
-  
-  
-
-  // ---------- ADD NEW EXPERIENCE REELS BELOW ----------
 ];

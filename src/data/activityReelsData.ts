@@ -11,16 +11,7 @@
 // Multiple tags allowed, e.g. tags: ["wildlife", "nature"]
 // =============================================================
 
-import boatRideBhedaghat from "@/assets/reels/activity/boat-ride-bhedaghat.mp4";
-import boatingUpperLakeBhopal from "@/assets/reels/activity/boating-upper-lake-bhopal.mp4";
-import skyDiving from "@/assets/reels/activity/sky-diving.mp4";
-import raftingOrchha from "@/assets/reels/activity/rafting-orchha.mp4";
-import waterActivitiesHanuwantiya from "@/assets/reels/activity/water-activities-hanuwantiya.mp4";
-import jungleWalkSafari from "@/assets/reels/activity/jungle-walk-safari-madhya-pradesh.mp4";
-import jeepSafariTigerReserve from "@/assets/reels/activity/jeep-safari-tiger-reserves.mp4";
-import wildlifePhotography from "@/assets/reels/activity/wildlife-photography-bandhavghar.mp4"
-import motorBoatSafari from "@/assets/reels/activity/motor-boat-safari-satpura.mp4";
-import canoeingSatpura from "@/assets/reels/activity/canoeing-satpura.mp4";
+
 
 import type { ReelItem, ReelTag } from "@/data/reelTypes";
 export type { ReelItem, ReelTag };
@@ -34,81 +25,71 @@ export const activityReelsData: ReelItem[] = [
     id: "boat-ride-bhedaghat",
     title: "Boat Ride",
     location: "Bhedaghat",
-    video: boatRideBhedaghat,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694437/boat-ride-bhedaghat_nkc3yr.mp4",
     tags: ["nature"],
   },
   {
     id: "boating-upper-lake-bhopal",
     title: "Boating at Upper Lake",
     location: "Bhopal",
-    video: boatingUpperLakeBhopal,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694428/boating-upper-lake-bhopal_qorbcn.mp4",
     tags: ["nature"],
   },
   {
     id: "sky-diving",
     title: "Sky Diving",
     location: "Madhya Pradesh",
-    video: skyDiving,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694459/sky-diving_v2zdyi.mp4",
     tags: ["nature"],
   },
   {
     id: "rafting-orchha",
     title: "River Rafting",
     location: "Orchha",
-    video: raftingOrchha,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694428/rafting-orchha_ph1nzi.mp4",
     tags: ["heritage", "nature"],
   },
   {
     id: "water-activities-hanuwantiya",
     title: "Water Activities",
     location: "Hanuwantiya",
-    video: waterActivitiesHanuwantiya,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694433/water-activities-hanuwantiya_gcfgjd.mp4",
     tags: ["nature"],
   },
   {
     id: "jungle-walk-safari-madhya-pradesh",
     title: "Jungle Walk Safari",
     location: "Kanha",
-    video: jungleWalkSafari,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694432/jungle-walk-safari-madhya-pradesh_gh69rc.mp4",
     tags: ["wildlife"],
   },
   {
     id: "jeep-safari-tiger-reserve",
     title: "Jeep Safari Tiger Reserve",
     location: "Madhya Pradesh",
-    video: jeepSafariTigerReserve,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694423/jeep-safari-tiger-reserves_sw9r6m.mp4",
     tags: ["wildlife"],
   },
   {
     id: "wildlife-photography",
     title: "Wildlife Photography",
     location: "Bandhavghar",
-    video: wildlifePhotography,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694448/wildlife-photography-bandhavghar_upakja.mp4",
     tags: ["wildlife"],
   },
   {
     id: "motor-boat-safari-satpura",
     title: "Motor Boat Safari",
     location: "Satpura",
-    video: motorBoatSafari,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694435/motor-boat-safari-satpura_hsoctl.mp4",
     tags: ["wildlife"],
   },
   {
     id: "canoeing-satpura",
     title: "Canoeing Safari",
     location: "Satpura",
-    video: canoeingSatpura,
+    video: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781694434/canoeing-satpura_w4eegh.mp4",
     tags: ["wildlife"],
   },
-
-
-
-  // ---------- ADD NEW ACTIVITY REELS BELOW ----------
-  // {
-  //   id: "your-id",
-  //   title: "Your Title",
-  //   location: "Place",
-  //   video: yourImportedVideo,
-  //   tags: ["wildlife"],
-  // },
 ];
+
