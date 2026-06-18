@@ -1,19 +1,33 @@
 import type { DestinationContent } from "./types";
 
-import bhojpurattraction1 from "@/assets/destimages/bhojpurattraction1.jpeg";
-import bhojpurattraction2 from "@/assets/destimages/bhojpurattraction2.jpeg";
-import bhojpurattraction3 from "@/assets/destimages/bhojpurattraction3.jpeg";
-import bhojpurattraction4 from "@/assets/destimages/bhojpurattraction4.jpeg";
+// All images served from Cloudinary
+// Mapped exactly to the original variable names used in the file
+const images = {
+  // Attraction images (order from provided URLs: attraction1, attraction4, attraction3, attraction2)
+  // We assign each to its correct property name
+  attraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766372/bhojpurattraction1_n7837t.jpg",
+  attraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766374/bhojpurattraction2_ucdncs.jpg",
+  attraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766374/bhojpurattraction3_r8omsm.jpg",
+  attraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766373/bhojpurattraction4_e7iq0x.jpg",
 
-// gallery
-
-import bhojpurgallary1 from "@/assets/destimages/bhojpurgallary1.jpeg";
-import bhojpurgallary2 from "@/assets/destimages/bhojpurgallary2.jpeg";
-import bhojpurgallary3 from "@/assets/destimages/bhojpurgallary3.jpeg";
-import bhojpurgallary4 from "@/assets/destimages/bhojpurgallary4.jpeg";
-import bhojpurgallary5 from "@/assets/destimages/bhojpurgallary5.jpeg";
-import bhojpurgallary6 from "@/assets/destimages/bhojpurgallary6.jpeg";
-
+  // Gallery images (in order: gallery1 to gallery6)
+  gallery1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766374/bhojpurgallary1_nurzvs.jpg",
+  gallery2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766377/bhojpurgallary2_b1rsdf.jpg",
+  gallery3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766378/bhojpurgallary3_devaui.jpg",
+  gallery4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766380/bhojpurgallary4_bksq82.jpg",
+  gallery5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766381/bhojpurgallary5_id1us2.jpg",
+  gallery6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781766382/bhojpurgallary6_ooh6yh.jpg",
+};
 
 const bhojpur: DestinationContent = {
   overviewParagraphs: [
@@ -27,25 +41,25 @@ const bhojpur: DestinationContent = {
       title: "Bhojeshwar Temple",
       description:
         "A magnificent Shiva temple housing one of the largest Shiva Lingas in India.",
-      image: bhojpurattraction1,
+      image: images.attraction1,
     },
     {
       title: "Giant Shiva Linga",
       description:
         "A massive monolithic Shiva Linga that stands as the spiritual centerpiece of Bhojpur.",
-      image: bhojpurattraction2,
+      image: images.attraction2,
     },
     {
       title: "Ancient Rock Carvings",
       description:
         "Historic carvings and inscriptions showcasing the architectural vision of Raja Bhoj.",
-      image: bhojpurattraction3,
+      image: images.attraction3,
     },
     {
       title: "Betwa River Viewpoint",
       description:
         "A scenic spot overlooking the Betwa River and surrounding landscapes.",
-      image: bhojpurattraction4,
+      image: images.attraction4,
     },
   ],
 
@@ -106,12 +120,12 @@ const bhojpur: DestinationContent = {
   ],
 
   gallery: [
-    bhojpurgallary1,
-    bhojpurgallary2,
-    bhojpurgallary3,
-    bhojpurgallary4,
-    bhojpurgallary5,
-    bhojpurgallary6,
+    images.gallery1,
+    images.gallery2,
+    images.gallery3,
+    images.gallery4,
+    images.gallery5,
+    images.gallery6,
   ],
 
   travelInfo: {

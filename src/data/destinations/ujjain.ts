@@ -1,25 +1,43 @@
 import type { DestinationContent } from "./types";
 
-import ujjainattraction1 from "@/assets/destimages/ujjainattraction1.jpeg";
-import ujjainattraction4 from "@/assets/destimages/ujjainattraction4.jpeg";
-import ujjainattraction3 from "@/assets/destimages/ujjainattraction3.jpeg";
-import ujjainattraction2 from "@/assets/destimages/ujjainattraction2.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to ujjainattraction1..4
+  ujjainattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781660/ujjainattraction1_nzkboi.jpg",
+  ujjainattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781664/ujjainattraction2_qvnbvl.jpg",
+  ujjainattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781668/ujjainattraction3_tzefso.jpg",
+  ujjainattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781671/ujjainattraction4_sjdowt.jpg",
 
-// gallery
-
-import ujjaingallary1 from "@/assets/destimages/ujjaingallary1.jpeg";
-import ujjaingallary2 from "@/assets/destimages/ujjaingallary2.jpeg";
-import ujjaingallary3 from "@/assets/destimages/ujjaingallary3.jpeg";
-import ujjaingallary4 from "@/assets/destimages/ujjaingallary4.jpeg";
-import ujjaingallary5 from "@/assets/destimages/ujjaingallary5.jpeg";
-import ujjaingallary6 from "@/assets/destimages/ujjaingallary6.jpeg";
-import ujjaingallary7 from "@/assets/destimages/ujjaingallary7.jpeg";
-import ujjaingallary8 from "@/assets/destimages/ujjaingallary8.jpeg";
-import ujjaingallary9 from "@/assets/destimages/ujjaingallary9.jpeg";
-import ujjaingallary10 from "@/assets/destimages/ujjaingallary10.jpeg";
-import ujjaingallary11 from "@/assets/destimages/ujjaingallary11.jpeg";
-import ujjaingallary12 from "@/assets/destimages/ujjaingallary12.jpeg";
-// import ujjaingallary13 from "@/assets/destimages/ujjaingallary13.jpeg";
+  // Gallery images – mapped to ujjaingallary1..12
+  ujjaingallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781675/ujjaingallary1_w39auu.jpg",
+  ujjaingallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781679/ujjaingallary2_pesjo6.jpg",
+  ujjaingallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781683/ujjaingallary3_fz3xi3.jpg",
+  ujjaingallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781687/ujjaingallary4_rbskc6.jpg",
+  ujjaingallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781690/ujjaingallary5_uezjqs.jpg",
+  ujjaingallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781694/ujjaingallary6_bjrpft.jpg",
+  ujjaingallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781698/ujjaingallary7_o2cwjc.jpg",
+  ujjaingallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781702/ujjaingallary8_opd8qr.jpg",
+  ujjaingallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781705/ujjaingallary9_qrjqrp.jpg",
+  ujjaingallary10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781709/ujjaingallary10_jzkuqm.jpg",
+  ujjaingallary11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781713/ujjaingallary11_mupsdz.jpg",
+  ujjaingallary12:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781716/ujjaingallary12_ptiged.jpg",
+};
 
 const ujjain: DestinationContent = {
   overviewParagraphs: [
@@ -33,25 +51,25 @@ const ujjain: DestinationContent = {
       title: "Mahakaleshwar Temple",
       description:
         "One of the 12 Jyotirlingas of Lord Shiva and the spiritual heart of Ujjain.",
-      image: ujjainattraction1,
+      image: images.ujjainattraction1,
     },
     {
       title: "Ram Ghat",
       description:
         "The most famous ghat on the Shipra River, especially vibrant during evening aarti.",
-      image: ujjainattraction4,
+      image: images.ujjainattraction4, // original had ujjainattraction4 for Ram Ghat
     },
     {
       title: "Kal Bhairav Temple",
       description:
         "An ancient and unique temple dedicated to Kal Bhairav, known for its mystical traditions.",
-      image: ujjainattraction3,
+      image: images.ujjainattraction3, // original had ujjainattraction3
     },
     {
       title: "Harsiddhi Temple",
       description:
         "A sacred Shakti Peeth admired for its spiritual aura and towering oil lamps.",
-      image: ujjainattraction2,
+      image: images.ujjainattraction2, // original had ujjainattraction2
     },
   ],
 
@@ -112,18 +130,18 @@ const ujjain: DestinationContent = {
   ],
 
   gallery: [
-    ujjaingallary1,
-    ujjaingallary2,
-    ujjaingallary3,
-    ujjaingallary4,
-    ujjaingallary5,
-    ujjaingallary6,
-    ujjaingallary7,
-    ujjaingallary8,
-    ujjaingallary9,
-    ujjaingallary10,
-    ujjaingallary11,
-    ujjaingallary12,
+    images.ujjaingallary1,
+    images.ujjaingallary2,
+    images.ujjaingallary3,
+    images.ujjaingallary4,
+    images.ujjaingallary5,
+    images.ujjaingallary6,
+    images.ujjaingallary7,
+    images.ujjaingallary8,
+    images.ujjaingallary9,
+    images.ujjaingallary10,
+    images.ujjaingallary11,
+    images.ujjaingallary12,
   ],
 
   travelInfo: {

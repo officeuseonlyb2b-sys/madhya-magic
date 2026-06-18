@@ -1,23 +1,41 @@
 import type { DestinationContent } from "./types";
 
-import gwaliorattraction1 from "@/assets/destimages/gwalliorattraction1.jpeg";
-import gwaliorattraction2 from "@/assets/destimages/gwalliorattraction2.jpeg";
-import gwaliorattraction3 from "@/assets/destimages/gwalliorattraction3.jpeg";
-import gwaliorattraction4 from "@/assets/destimages/gwalliorattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to the exact variable names (gwaliorattraction1..4)
+  gwaliorattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769675/gwalliorattraction1_aysdpo.jpg",
+  gwaliorattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769677/gwalliorattraction2_pimilo.jpg",
+  gwaliorattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769681/gwalliorattraction3_yz7xvw.jpg",
+  gwaliorattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769682/gwalliorattraction4_txigtp.jpg",
 
-// gallery
-
-import gwaliorgallary1 from "@/assets/destimages/gwalliorgallary1.jpeg";
-import gwaliorgallary2 from "@/assets/destimages/gwalliorgallary2.jpeg";
-import gwaliorgallary3 from "@/assets/destimages/gwalliorgallary3.jpeg";
-import gwaliorgallary4 from "@/assets/destimages/gwalliorgallary4.jpeg";
-import gwaliorgallary5 from "@/assets/destimages/gwalliorgallary5.jpeg";
-import gwaliorgallary6 from "@/assets/destimages/gwalliorgallary6.jpeg";
-import gwaliorgallary7 from "@/assets/destimages/gwalliorgallary7.jpeg";
-import gwaliorgallary8 from "@/assets/destimages/gwalliorgallary8.jpeg";
-import gwaliorgallary9 from "@/assets/destimages/gwalliorgallary9.jpeg";
-import gwaliorgallary10 from "@/assets/destimages/gwalliorgallary10.jpeg";
-import gwaliorgallary11 from "@/assets/destimages/gwalliorgallary11.jpeg";
+  // Gallery images – mapped to gwaliorgallary1..11
+  gwaliorgallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769684/gwalliorgallary1_ifjrkr.jpg",
+  gwaliorgallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769686/gwalliorgallary2_o81hfa.jpg",
+  gwaliorgallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769690/gwalliorgallary3_qnqdei.jpg",
+  gwaliorgallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769689/gwalliorgallary4_qkwpag.jpg",
+  gwaliorgallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769691/gwalliorgallary5_svy5tg.jpg",
+  gwaliorgallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769693/gwalliorgallary6_cc7hyt.jpg",
+  gwaliorgallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769734/gwalliorgallary7_l1vgfd.jpg",
+  gwaliorgallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769736/gwalliorgallary8_ubn4wd.jpg",
+  gwaliorgallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769738/gwalliorgallary9_vordpy.jpg",
+  gwaliorgallary10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769740/gwalliorgallary10_eivgyx.jpg",
+  gwaliorgallary11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769742/gwalliorgallary11_uh37tn.jpg",
+};
 
 const gwalior: DestinationContent = {
   overviewParagraphs: [
@@ -31,25 +49,25 @@ const gwalior: DestinationContent = {
       title: "Gwalior Fort",
       description:
         "A massive hilltop fortress admired for its stunning architecture and panoramic city views.",
-      image: gwaliorattraction1,
+      image: images.gwaliorattraction1,
     },
     {
       title: "Jai Vilas Palace",
       description:
         "A luxurious royal palace showcasing European-inspired interiors and a grand museum.",
-      image: gwaliorattraction2,
+      image: images.gwaliorattraction2,
     },
     {
       title: "Sas Bahu Temples",
       description:
         "Beautiful 11th-century temples famous for intricate carvings and ancient craftsmanship.",
-      image: gwaliorattraction3,
+      image: images.gwaliorattraction3,
     },
     {
       title: "Tansen Tomb",
       description:
         "The memorial of legendary musician Tansen, surrounded by peaceful Mughal gardens.",
-      image: gwaliorattraction4,
+      image: images.gwaliorattraction4,
     },
   ],
 
@@ -110,17 +128,17 @@ const gwalior: DestinationContent = {
   ],
 
   gallery: [
-    gwaliorgallary1,
-    gwaliorgallary2,
-    gwaliorgallary3,
-    gwaliorgallary4,
-    gwaliorgallary5,
-    gwaliorgallary6,
-    gwaliorgallary7,
-    gwaliorgallary8,
-    gwaliorgallary9,
-    gwaliorgallary10,
-    gwaliorgallary11,
+    images.gwaliorgallary1,
+    images.gwaliorgallary2,
+    images.gwaliorgallary3,
+    images.gwaliorgallary4,
+    images.gwaliorgallary5,
+    images.gwaliorgallary6,
+    images.gwaliorgallary7,
+    images.gwaliorgallary8,
+    images.gwaliorgallary9,
+    images.gwaliorgallary10,
+    images.gwaliorgallary11,
   ],
 
   travelInfo: {

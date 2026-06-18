@@ -1,17 +1,29 @@
 import type { DestinationContent } from "./types";
 
-import parsiliattraction1 from "@/assets/destimages/parsiliattraction1.jpeg";
-import parsiliattraction2 from "@/assets/destimages/parsiliattraction2.jpeg";
-import parsiliattraction3 from "@/assets/destimages/parsiliattraction3.jpeg";
-import parsiliattraction4 from "@/assets/destimages/parsiliattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to parsiliattraction1..4
+  parsiliattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779137/parsiliattraction1_bhdsmg.jpg",
+  parsiliattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779140/parsiliattraction2_qgwzya.jpg",
+  parsiliattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779141/parsiliattraction3_ayovwn.jpg",
+  parsiliattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779144/parsiliattraction4_vhyk8m.jpg",
 
-// gallery
-
-import parsiligallary1 from "@/assets/destimages/parsiligallary1.jpeg";
-import parsiligallary2 from "@/assets/destimages/parsiligallary2.jpeg";
-import parsiligallary3 from "@/assets/destimages/parsiligallary3.jpeg";
-import parsiligallary4 from "@/assets/destimages/parsiligallary4.jpeg";
-import parsiligallary5 from "@/assets/destimages/parsiligallary5.jpeg";
+  // Gallery images – mapped to parsiligallary1..5
+  parsiligallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779148/parsiligallary1_somnvc.jpg",
+  parsiligallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779150/parsiligallary2_tvx86k.jpg",
+  parsiligallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779154/parsiligallary3_vvjmuq.jpg",
+  parsiligallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779157/parsiligallary4_im7eul.jpg",
+  parsiligallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779160/parsiligallary5_fbce63.jpg",
+};
 
 const parsili: DestinationContent = {
   overviewParagraphs: [
@@ -25,25 +37,25 @@ const parsili: DestinationContent = {
       title: "Banas River",
       description:
         "A scenic river flowing through Parsili, famous for its crystal-clear waters and tranquil surroundings.",
-      image: parsiliattraction1,
+      image: images.parsiliattraction1,
     },
     {
       title: "Riverside Camping Area",
       description:
         "A picturesque camping destination where visitors can enjoy nature beside the river.",
-      image: parsiliattraction2,
+      image: images.parsiliattraction2,
     },
     {
       title: "Sanjay Dubri Tiger Reserve",
       description:
         "A wildlife-rich forest reserve known for tigers, leopards, deer and diverse birdlife.",
-      image: parsiliattraction3,
+      image: images.parsiliattraction3,
     },
     {
       title: "Forest Nature Trails",
       description:
         "Beautiful trails through dense forests offering opportunities for wildlife spotting and exploration.",
-      image: parsiliattraction4,
+      image: images.parsiliattraction4,
     },
   ],
 
@@ -104,11 +116,11 @@ const parsili: DestinationContent = {
   ],
 
   gallery: [
-    parsiligallary1,
-    parsiligallary2,
-    parsiligallary3,
-    parsiligallary4,
-    parsiligallary5,
+    images.parsiligallary1,
+    images.parsiligallary2,
+    images.parsiligallary3,
+    images.parsiligallary4,
+    images.parsiligallary5,
   ],
 
   travelInfo: {

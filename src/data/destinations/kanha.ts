@@ -1,22 +1,39 @@
 import type { DestinationContent } from "./types";
 
-import kanhaattraction1 from "@/assets/destimages/kanhaattraction1.jpeg";
-import kanhaattraction2 from "@/assets/destimages/kanhaattraction2.jpeg";
-import kanhaattraction3 from "@/assets/destimages/kanhaattraction3.jpeg";
-import kanhaattraction4 from "@/assets/destimages/kanhaattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to the exact variable names
+  kanhaattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770963/kanhaattraction1_mzb7dg.jpg",
+  kanhaattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770964/kanhaattraction2_hqahwz.jpg",
+  kanhaattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770965/kanhaattraction3_pcmvir.jpg",
+  kanhaattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770967/kanhaattraction4_af9gse.jpg",
 
-// gallery
-
-import kanhagallary1 from "@/assets/destimages/kanhagallary1.jpeg";
-import kanhagallary2 from "@/assets/destimages/kanhagallary2.jpeg";
-import kanhagallary3 from "@/assets/destimages/kanhagallary3.jpeg";
-import kanhagallary4 from "@/assets/destimages/kanhagallary4.jpeg";
-import kanhagallary5 from "@/assets/destimages/kanhagallary5.jpeg";
-import kanhagallary6 from "@/assets/destimages/kanhagallary6.jpeg";
-import kanhagallary7 from "@/assets/destimages/kanhagallary7.jpeg";
-import kanhagallary8 from "@/assets/destimages/kanhagallary8.jpeg";
-import kanhagallary9 from "@/assets/destimages/kanhagallary9.jpeg";
-import kanhagallary10 from "@/assets/destimages/kanhagallary10.jpeg";
+  // Gallery images – mapped to kanhagallary1..10
+  kanhagallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770969/kanhagallary1_xs4hrc.jpg",
+  kanhagallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770971/kanhagallary2_v9wndt.jpg",
+  kanhagallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770974/kanhagallary3_aazjsj.jpg",
+  kanhagallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770975/kanhagallary4_dbb3aa.jpg",
+  kanhagallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770978/kanhagallary5_w8lteu.jpg",
+  kanhagallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770979/kanhagallary6_ujwgzc.jpg",
+  kanhagallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770981/kanhagallary7_s1jpgs.jpg",
+  kanhagallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770984/kanhagallary8_wfpsgt.jpg",
+  kanhagallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770986/kanhagallary9_ocdpih.jpg",
+  kanhagallary10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770988/kanhagallary10_hewlf4.jpg",
+};
 
 const kanha: DestinationContent = {
   overviewParagraphs: [
@@ -30,25 +47,25 @@ const kanha: DestinationContent = {
       title: "Kanha National Park",
       description:
         "A world-famous tiger reserve known for its rich biodiversity and scenic forest landscapes.",
-      image: kanhaattraction1,
+      image: images.kanhaattraction1,
     },
     {
       title: "Jeep Safari",
       description:
         "Experience thrilling jungle safaris through Kanha’s dense forests and wildlife zones.",
-      image: kanhaattraction2,
+      image: images.kanhaattraction2,
     },
     {
       title: "Bamni Dadar",
       description:
         "A beautiful sunset point offering breathtaking panoramic views of Kanha’s forests and meadows.",
-      image: kanhaattraction3,
+      image: images.kanhaattraction3,
     },
     {
       title: "Barasingha Conservation Area",
       description:
         "A special zone dedicated to the rare hard-ground swamp deer, the pride of Kanha.",
-      image: kanhaattraction4,
+      image: images.kanhaattraction4,
     },
   ],
 
@@ -109,17 +126,18 @@ const kanha: DestinationContent = {
   ],
 
   gallery: [
-  kanhagallary1,
-  kanhagallary2,
-  kanhagallary3,
-  kanhagallary4,
-  kanhagallary5,
-  kanhagallary6,
-  kanhagallary7,
-  kanhagallary8,
-  kanhagallary9,
-  kanhagallary10,
-],
+    images.kanhagallary1,
+    images.kanhagallary2,
+    images.kanhagallary3,
+    images.kanhagallary4,
+    images.kanhagallary5,
+    images.kanhagallary6,
+    images.kanhagallary7,
+    images.kanhagallary8,
+    images.kanhagallary9,
+    images.kanhagallary10,
+  ],
+
   travelInfo: {
     bestTime:
       "October to June — ideal season for wildlife safaris and tiger sightings",

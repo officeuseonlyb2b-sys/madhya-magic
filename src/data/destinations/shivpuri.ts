@@ -1,23 +1,41 @@
 import type { DestinationContent } from "./types";
 
-import shivpuriattraction1 from "@/assets/destimages/shivpuriattraction1.jpeg";
-import shivpuriattraction2 from "@/assets/destimages/shivpuriattraction2.jpeg";
-import shivpuriattraction3 from "@/assets/destimages/shivpuriattraction3.jpeg";
-import shivpuriattraction4 from "@/assets/destimages/shivpuriattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to shivpuriattraction1..4
+  shivpuriattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780811/shivpuriattraction1_nvdyrp.jpg",
+  shivpuriattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780813/shivpuriattraction2_rki1rd.jpg",
+  shivpuriattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780818/shivpuriattraction3_lc3ov5.jpg",
+  shivpuriattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780821/shivpuriattraction4_udhh5u.jpg",
 
-// gallery
-
-import shivpurigallary1 from "@/assets/destimages/shivpurigallary1.jpeg";
-import shivpurigallary2 from "@/assets/destimages/shivpurigallary2.jpeg";
-import shivpurigallary3 from "@/assets/destimages/shivpurigallary3.jpeg";
-import shivpurigallary4 from "@/assets/destimages/shivpurigallary4.jpeg";
-import shivpurigallary5 from "@/assets/destimages/shivpurigallary5.jpeg";
-import shivpurigallary6 from "@/assets/destimages/shivpurigallary6.jpeg";
-import shivpurigallary7 from "@/assets/destimages/shivpurigallary7.jpeg";
-import shivpurigallary8 from "@/assets/destimages/shivpurigallary8.jpeg";
-import shivpurigallary9 from "@/assets/destimages/shivpurigallary9.jpeg";
-import shivpurigallary11 from "@/assets/destimages/shivpurigallary11.jpeg";
-import shivpurigallary12 from "@/assets/destimages/shivpurigallary12.jpeg";
+  // Gallery images – mapped to shivpurigallary1..9, 11, 12
+  shivpurigallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780825/shivpurigallary1_ntlyok.jpg",
+  shivpurigallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780829/shivpurigallary2_du6ypt.jpg",
+  shivpurigallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780832/shivpurigallary3_flxj4y.jpg",
+  shivpurigallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780838/shivpurigallary4_rxaat1.jpg",
+  shivpurigallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780839/shivpurigallary5_gm8op7.jpg",
+  shivpurigallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780845/shivpurigallary6_ldqrlp.jpg",
+  shivpurigallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780847/shivpurigallary7_uacjrx.jpg",
+  shivpurigallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780852/shivpurigallary8_umkwep.jpg",
+  shivpurigallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780856/shivpurigallary9_caiqug.jpg",
+  shivpurigallary11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780861/shivpurigallary11_riasvq.jpg",
+  shivpurigallary12:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780862/shivpurigallary12_vg6nme.jpg",
+};
 
 const shivpuri: DestinationContent = {
   overviewParagraphs: [
@@ -31,25 +49,25 @@ const shivpuri: DestinationContent = {
       title: "Madhav National Park",
       description:
         "A scenic wildlife reserve home to deer, leopards, birds and beautiful forest landscapes.",
-      image: shivpuriattraction1,
+      image: images.shivpuriattraction1,
     },
     {
       title: "Scindia Chhatris",
       description:
         "Elegant royal cenotaphs showcasing magnificent Rajput and Mughal architecture.",
-      image: shivpuriattraction2,
+      image: images.shivpuriattraction2,
     },
     {
       title: "Bhadaiya Kund",
       description:
         "A crystal-clear natural water reservoir surrounded by greenery and peaceful views.",
-      image: shivpuriattraction3,
+      image: images.shivpuriattraction3,
     },
     {
       title: "Sakhya Sagar Lake",
       description:
         "A tranquil lake ideal for boating, birdwatching and sunset photography.",
-      image: shivpuriattraction4,
+      image: images.shivpuriattraction4,
     },
   ],
 
@@ -110,17 +128,17 @@ const shivpuri: DestinationContent = {
   ],
 
   gallery: [
-    shivpurigallary1,
-    shivpurigallary2,
-    shivpurigallary3,
-    shivpurigallary4,
-    shivpurigallary5,
-    shivpurigallary6,
-    shivpurigallary7,
-    shivpurigallary8,
-    shivpurigallary9,
-    shivpurigallary11,
-    shivpurigallary12,
+    images.shivpurigallary1,
+    images.shivpurigallary2,
+    images.shivpurigallary3,
+    images.shivpurigallary4,
+    images.shivpurigallary5,
+    images.shivpurigallary6,
+    images.shivpurigallary7,
+    images.shivpurigallary8,
+    images.shivpurigallary9,
+    images.shivpurigallary11,
+    images.shivpurigallary12,
   ],
 
   travelInfo: {
@@ -137,4 +155,3 @@ const shivpuri: DestinationContent = {
 };
 
 export default shivpuri;
-

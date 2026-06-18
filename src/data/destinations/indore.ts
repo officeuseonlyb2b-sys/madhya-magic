@@ -1,21 +1,37 @@
 import type { DestinationContent } from "./types";
 
-import indoreattraction1 from "@/assets/destimages/indoreattraction1.jpeg";
-import indoreattraction2 from "@/assets/destimages/indoreattraction2.jpeg";
-import indoreattraction3 from "@/assets/destimages/indoreattraction3.jpeg";
-import indoreattraction4 from "@/assets/destimages/indoreattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to the exact variable names
+  indoreattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770122/indoreattraction1_yf4twt.jpg",
+  indoreattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770123/indoreattraction2_u8ngb7.jpg",
+  indoreattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770125/indoreattraction3_slftnu.jpg",
+  indoreattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770127/indoreattraction4_fn8dbf.jpg",
 
-// gallery
-
-import indoregallary1 from "@/assets/destimages/indoregallary1.jpeg";
-import indoregallary2 from "@/assets/destimages/indoregallary2.jpeg";
-import indoregallary3 from "@/assets/destimages/indoregallary3.jpeg";
-import indoregallary4 from "@/assets/destimages/indoregallary4.jpeg";
-import indoregallary5 from "@/assets/destimages/indoregallary5.jpeg";
-import indoregallary6 from "@/assets/destimages/indoregallary6.jpeg";
-import indoregallary7 from "@/assets/destimages/indoregallary7.jpeg";
-import indoregallary8 from "@/assets/destimages/indoregallary8.jpeg";
-import indoregallary9 from "@/assets/destimages/indoregallary9.jpeg";
+  // Gallery images – mapped to indoregallary1..9
+  indoregallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770130/indoregallary1_jhltwa.jpg",
+  indoregallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770132/indoregallary2_hvurwf.jpg",
+  indoregallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770133/indoregallary3_u7el3m.jpg",
+  indoregallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770135/indoregallary4_sx9c8o.jpg",
+  indoregallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770137/indoregallary5_wkvowk.jpg",
+  indoregallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770138/indoregallary6_es8jus.jpg",
+  indoregallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770141/indoregallary7_s1asri.jpg",
+  indoregallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770143/indoregallary8_mnf3ob.jpg",
+  indoregallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781770144/indoregallary9_dcan9d.jpg",
+};
 
 const indore: DestinationContent = {
   overviewParagraphs: [
@@ -29,25 +45,25 @@ const indore: DestinationContent = {
       title: "Rajwada Palace",
       description:
         "A magnificent seven-storey palace showcasing the grandeur of the Holkar dynasty.",
-      image: indoreattraction1,
+      image: images.indoreattraction1,
     },
     {
       title: "Sarafa Bazaar",
       description:
         "A world-famous night street food market known for its unique flavors and lively atmosphere.",
-      image: indoreattraction2,
+      image: images.indoreattraction2,
     },
     {
       title: "Lal Bagh Palace",
       description:
         "An elegant royal palace inspired by European architecture and luxury interiors.",
-      image: indoreattraction3,
+      image: images.indoreattraction3,
     },
     {
       title: "Khajrana Ganesh Temple",
       description:
         "A revered temple attracting devotees from across the country.",
-      image: indoreattraction4,
+      image: images.indoreattraction4,
     },
   ],
 
@@ -108,15 +124,15 @@ const indore: DestinationContent = {
   ],
 
   gallery: [
-    indoregallary1,
-    indoregallary2,
-    indoregallary3,
-    indoregallary4,
-    indoregallary5,
-    indoregallary6,
-    indoregallary7,
-    indoregallary8,
-    indoregallary9,
+    images.indoregallary1,
+    images.indoregallary2,
+    images.indoregallary3,
+    images.indoregallary4,
+    images.indoregallary5,
+    images.indoregallary6,
+    images.indoregallary7,
+    images.indoregallary8,
+    images.indoregallary9,
   ],
 
   travelInfo: {

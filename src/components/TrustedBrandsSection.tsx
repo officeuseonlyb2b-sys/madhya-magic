@@ -3,40 +3,24 @@
 import { motion } from "framer-motion";
 import { ShieldCheck } from "lucide-react";
 
-// BRAND LOGOS
-import brand1 from "@/assets/brand/brand1.png";
-import brand2 from "@/assets/brand/brand2.png";
-import brand3 from "@/assets/brand/brand3.png";
-import brand4 from "@/assets/brand/brand4.png";
-import brand5 from "@/assets/brand/brand5.png";
-import brand6 from "@/assets/brand/brand6.png";
-import brand7 from "@/assets/brand/brand7.png";
-import brand8 from "@/assets/brand/brand8.png";
-import brand9 from "@/assets/brand/brand9.png";
-import brand10 from "@/assets/brand/brand10.png";
-import brand11 from "@/assets/brand/brand11.png";
-import brand12 from "@/assets/brand/brand12.png";
-import brand13 from "@/assets/brand/brand13.png";
-import brand14 from "@/assets/brand/brand14.png";
-import brand15 from "@/assets/brand/brand15.png";
-
 const brands = [
-  brand1,
-  brand2,
-  brand3,
-  brand4,
-  brand5,
-  brand6,
-  brand7,
-  brand8,
-  brand9,
-  brand10,
-  brand11,
-  brand12,
-  brand13,
-  brand14,
-  brand15,
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763223/brand1_xvdn5p.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763223/brand2_cinxmw.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763225/brand3_xaqwff.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763223/brand4_sssrov.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763223/brand5_mqzffs.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763224/brand6_sjykig.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763223/brand7_xxnmnz.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763225/brand8_ifscm8.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763224/brand9_cthpkm.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763224/brand10_midk4y.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763225/brand11_znw7ye.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763225/brand12_vvftjh.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763225/brand13_liebdj.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763226/brand14_qhwu9q.png",
+  "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781763226/brand15_uqwfei.png",
 ];
+
 
 export default function TrustedBrandsSection() {
   return (

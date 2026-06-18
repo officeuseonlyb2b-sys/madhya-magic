@@ -1,24 +1,29 @@
 import type { DestinationContent } from "./types";
 
-import maiharattraction1 from "@/assets/destimages/maiharattraction1.jpeg";
-import maiharattraction2 from "@/assets/destimages/maiharattraction2.jpeg";
-import maiharattraction3 from "@/assets/destimages/maiharattraction3.jpeg";
-import maiharattraction4 from "@/assets/destimages/maiharattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to maiharattraction1..4
+  maiharattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776755/maiharattraction1_rsio9c.jpg",
+  maiharattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776755/maiharattraction2_hhovb5.jpg",
+  maiharattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776758/maiharattraction3_fzic79.jpg",
+  maiharattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776759/maiharattraction4_zayylx.jpg",
 
-// gallery
-
-import maihargallary1 from "@/assets/destimages/maihargallary1.jpeg";
-import maihargallary2 from "@/assets/destimages/maihargallary2.jpeg";
-import maihargallary3 from "@/assets/destimages/maihargallary3.jpeg";
-import maihargallary4 from "@/assets/destimages/maihargallary4.jpeg";
-import maihargallary5 from "@/assets/destimages/maihargallary5.jpeg";
-import maihargallary6 from "@/assets/destimages/maihargallary6.jpeg";
-import maihargallary7 from "@/assets/destimages/maihargallary7.jpeg";
-import maihargallary8 from "@/assets/destimages/maihargallary8.jpeg";
-import maihargallary9 from "@/assets/destimages/maihargallary9.jpeg";
-import maihargallary10 from "@/assets/destimages/maihargallary10.jpeg";
-import maihargallary11 from "@/assets/destimages/maihargallary11.jpeg";
-import maihargallary12 from "@/assets/destimages/maihargallary12.jpeg";
+  // Gallery images – mapped to maihargallary1..5
+  maihargallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776763/maihargallary1_nmsuxg.jpg",
+  maihargallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776765/maihargallary2_armth9.jpg",
+  maihargallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776768/maihargallary3_eubivi.jpg",
+  maihargallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776770/maihargallary4_xaht2s.jpg",
+  maihargallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776774/maihargallary5_wswmbz.jpg",
+};
 
 const maihar: DestinationContent = {
   overviewParagraphs: [
@@ -32,25 +37,25 @@ const maihar: DestinationContent = {
       title: "Maa Sharda Devi Temple",
       description:
         "A renowned hilltop temple dedicated to Goddess Sharda, attracting devotees from across India.",
-      image: maiharattraction1,
+      image: images.maiharattraction1,
     },
     {
       title: "Sharda Ropeway",
       description:
         "A scenic ropeway ride offering breathtaking views while ascending to the temple.",
-      image: maiharattraction2,
+      image: images.maiharattraction2,
     },
     {
       title: "Trikuta Hills",
       description:
         "The sacred hill range that houses the famous Maa Sharda Temple and offers panoramic views.",
-      image: maiharattraction3,
+      image: images.maiharattraction3,
     },
     {
       title: "Alha Udal Akhada",
       description:
         "A historic and spiritual site associated with the legendary warriors Alha and Udal.",
-      image: maiharattraction4,
+      image: images.maiharattraction4,
     },
   ],
 
@@ -110,14 +115,13 @@ const maihar: DestinationContent = {
     },
   ],
 
-//   gallery: [
-//     maihargallary1,
-//     maihargallary2,
-//     maihargallary3,
-//     maihargallary4,
-//     maihargallary5,
-//     maihargallary6,
-//   ],
+  gallery: [
+    images.maihargallary1,
+    images.maihargallary2,
+    images.maihargallary3,
+    images.maihargallary4,
+    images.maihargallary5,
+  ],
 
   travelInfo: {
     bestTime:

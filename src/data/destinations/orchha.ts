@@ -1,23 +1,41 @@
 import type { DestinationContent } from "./types";
 
-import orchhaattraction1 from "@/assets/destimages/orchhaattraction1.jpeg";
-import orchhaattraction2 from "@/assets/destimages/orchhaattraction2.jpeg";
-import orchhaattraction3 from "@/assets/destimages/orchhaattraction3.jpeg";
-import orchhaattraction4 from "@/assets/destimages/orchhaattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to orchhaattraction1..4
+  orchhaattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778166/orchhaattraction1_x3z81g.jpg",
+  orchhaattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778168/orchhaattraction2_rusemq.jpg",
+  orchhaattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778172/orchhaattraction3_t1gx8t.jpg",
+  orchhaattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778185/orchhaattraction4_ik8wwu.jpg",
 
-// gallery
-
-import orchhagallary1 from "@/assets/destimages/orchhagallary1.jpeg";
-import orchhagallary2 from "@/assets/destimages/orchhagallary2.jpeg";
-import orchhagallary3 from "@/assets/destimages/orchhagallary3.jpeg";
-import orchhagallary4 from "@/assets/destimages/orchhagallary4.jpeg";
-import orchhagallary5 from "@/assets/destimages/orchhagallary5.jpeg";
-import orchhagallary6 from "@/assets/destimages/orchhagallary6.jpeg";
-import orchhagallary7 from "@/assets/destimages/orchhagallary7.jpeg";
-import orchhagallary8 from "@/assets/destimages/orchhagallary8.jpeg";
-import orchhagallary9 from "@/assets/destimages/orchhagallary9.jpeg";
-import orchhagallary10 from "@/assets/destimages/orchhagallary10.jpeg";
-import orchhagallary11 from "@/assets/destimages/orchhagallary11.jpeg";
+  // Gallery images – mapped to orchhagallary1..11
+  orchhagallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778188/orchhagallary1_rmlfyr.jpg",
+  orchhagallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778191/orchhagallary2_zbmkzm.jpg",
+  orchhagallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778194/orchhagallary3_zrdkkt.jpg",
+  orchhagallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778197/orchhagallary4_qqs4p0.jpg",
+  orchhagallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778200/orchhagallary5_lhpcoe.jpg",
+  orchhagallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778203/orchhagallary6_pwcmym.jpg",
+  orchhagallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778206/orchhagallary7_rixrof.jpg",
+  orchhagallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778209/orchhagallary8_rnwbpx.jpg",
+  orchhagallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778211/orchhagallary9_yxwokk.jpg",
+  orchhagallary10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778215/orchhagallary10_qv731e.jpg",
+  orchhagallary11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778218/orchhagallary11_djtdzo.jpg",
+};
 
 const orchha: DestinationContent = {
   overviewParagraphs: [
@@ -31,25 +49,25 @@ const orchha: DestinationContent = {
       title: "Orchha Fort Complex",
       description:
         "A magnificent collection of palaces and courtyards showcasing Bundela-era architecture.",
-      image: orchhaattraction1,
+      image: images.orchhaattraction1,
     },
     {
       title: "Jahangir Mahal",
       description:
         "A stunning royal palace built to honor Emperor Jahangir's visit to Orchha.",
-      image: orchhaattraction2,
+      image: images.orchhaattraction2,
     },
     {
       title: "Chaturbhuj Temple",
       description:
         "A towering temple admired for its grand structure and panoramic town views.",
-      image: orchhaattraction3,
+      image: images.orchhaattraction3,
     },
     {
       title: "Betwa River Cenotaphs",
       description:
         "Iconic royal chhatris lining the Betwa River, especially magical at sunset.",
-      image: orchhaattraction4,
+      image: images.orchhaattraction4,
     },
   ],
 
@@ -110,17 +128,17 @@ const orchha: DestinationContent = {
   ],
 
   gallery: [
-    orchhagallary1,
-    orchhagallary2,
-    orchhagallary3,
-    orchhagallary4,
-    orchhagallary5,
-    orchhagallary6,
-    orchhagallary7,
-    orchhagallary8,
-    orchhagallary9,
-    orchhagallary10,
-    orchhagallary11,
+    images.orchhagallary1,
+    images.orchhagallary2,
+    images.orchhagallary3,
+    images.orchhagallary4,
+    images.orchhagallary5,
+    images.orchhagallary6,
+    images.orchhagallary7,
+    images.orchhagallary8,
+    images.orchhagallary9,
+    images.orchhagallary10,
+    images.orchhagallary11,
   ],
 
   travelInfo: {

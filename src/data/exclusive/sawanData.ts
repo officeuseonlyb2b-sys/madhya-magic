@@ -2,19 +2,14 @@
 // Sawan in Ujjain & Omkareshwar — Seasonal Exclusive Campaign Data
 // =============================================================
 
-import heroAsset from "@/assets/exclusive/sawan/sawan-hero.jpg.asset.json";
-import s1 from "@/assets/exclusive/sawan/sawan-1.jpg.asset.json";
-import s2 from "@/assets/exclusive/sawan/sawan-2.jpg.asset.json";
-import s3 from "@/assets/exclusive/sawan/sawan-3.jpg.asset.json";
-import s4 from "@/assets/exclusive/sawan/sawan-4.jpg.asset.json";
-
+// ========== ALL IMAGE IMPORTS REMOVED ==========
 // ========== ALL VIDEO IMPORTS REMOVED — USING CLOUDINARY URLs DIRECTLY ==========
 
 export interface SawanReel {
   id: string;
   title: string;
   location: string;
-  image: string;
+  image: string; // now always empty string
   videoUrl: string;
 }
 
@@ -23,7 +18,7 @@ export interface SawanPackage {
   name: string;
   duration: string;
   price: string;
-  image: string;
+  image: string; // now always empty string
   highlights: string[];
   cta: string;
   ctaHref: string;
@@ -38,7 +33,7 @@ export interface SawanWhyItem {
 export const sawanCampaign = {
   slug: "sawan-ujjain-omkareshwar",
   hero: {
-    image: heroAsset.url,
+    image: "", // removed heroAsset.url
     title: "Sawan in Ujjain & Omkareshwar",
     subtitle:
       "Experience the divine energy of Mahakaleshwar & Omkareshwar Jyotirlingas during the sacred month of Sawan.",
@@ -46,7 +41,7 @@ export const sawanCampaign = {
     secondaryCta: { label: "Watch Reels", target: "#sawan-reels" },
   },
   intro: {
-    image: s4.url,
+    image: "", // removed s4.url
     eyebrow: "Sacred Month • Shravan • Two Jyotirlingas",
     title: "About Sawan in Ujjain & Omkareshwar",
     paragraphs: [
@@ -73,70 +68,70 @@ export const sawanCampaign = {
       id: "reel-1",
       title: "The Sacred Bhasma Aarti",
       location: "Ujjain",
-      image: s1.url,
+      image: "", // removed s1.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608195/video1_opt1ja.mp4",
     },
     {
       id: "reel-2",
       title: "The Thousand-Lamp Ceremony at Harsiddhi Shaktipeeth",
       location: "Ujjain",
-      image: s2.url,
+      image: "", // removed s2.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608204/video2_rbhcnv.mp4",
     },
     {
       id: "reel-3",
       title: "The Guardian of Mahakaal 'Kaal Bhairav'",
       location: "Ujjain",
-      image: s3.url,
+      image: "", // removed s3.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608206/video3_kuvhq3.mp4",
     },
     {
       id: "reel-4",
       title: "The Royal Sawari of Mahakaal",
       location: "Ujjain",
-      image: s4.url,
+      image: "", // removed s4.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608207/video4_tda3kz.mp4",
     },
     {
       id: "reel-5",
       title: "The Sacred Om Parikrama by Boat",
       location: "Omkareshwar",
-      image: heroAsset.url,
+      image: "", // removed heroAsset.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608191/video5_n1tr5m.mp4",
     },
     {
       id: "reel-6",
       title: "The Divine Palki Procession of Omkareshwar",
       location: "Omkareshwar",
-      image: s1.url,
+      image: "", // removed s1.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608194/video6_o2o4cd.mp4",
     },
     {
       id: "reel-7",
       title: "The Grand Aarti of Holy Shipra",
       location: "Ujjain",
-      image: s2.url,
+      image: "", // removed s2.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608201/video7_yqjzyu.mp4",
     },
     {
       id: "reel-8",
       title: "A Privileged Moment with Mahakaal",
       location: "Ujjain",
-      image: s3.url,
+      image: "", // removed s3.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608211/video8_ft9kx6.mp4",
     },
     {
       id: "reel-9",
       title: "Shravan's Grand Gulaal Celebration",
       location: "Omkareshwar",
-      image: s4.url,
+      image: "", // removed s4.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608211/video9_r4iev6.mp4",
     },
     {
       id: "reel-10",
       title: "The Ritual of Abhishekam",
       location: "Omkareshwar",
-      image: heroAsset.url,
+      image: "", // removed heroAsset.url
       videoUrl: "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781608213/video10_ovlwxj.mp4",
     },
   ] satisfies SawanReel[],
@@ -146,7 +141,7 @@ export const sawanCampaign = {
       name: "Sawan Mahakal Darshan",
       duration: "3 Days / 2 Nights",
       price: "₹18,500",
-      image: s3.url,
+      image: "", // removed s3.url
       highlights: [
         "VVIP Bhasma Aarti Darshan",
         "Mahakaleshwar Jyotirlinga",
@@ -161,7 +156,7 @@ export const sawanCampaign = {
       name: "Sawan Sawari Special",
       duration: "4 Days / 3 Nights",
       price: "₹27,900",
-      image: s4.url,
+      image: "", // removed s4.url
       highlights: [
         "Live Monday Sawari Procession",
         "Premium Darshan Access",
@@ -176,7 +171,7 @@ export const sawanCampaign = {
       name: "Sawan Jyotirlinga Yatra",
       duration: "5 Days / 4 Nights",
       price: "₹42,500",
-      image: s2.url,
+      image: "", // removed s2.url
       highlights: [
         "Ujjain + Omkareshwar Jyotirlingas",
         "Maheshwar Narmada Ghat",
@@ -191,7 +186,7 @@ export const sawanCampaign = {
       name: "Omkareshwar Sawan Yatra",
       duration: "3 Days / 2 Nights",
       price: "₹16,500",
-      image: heroAsset.url,
+      image: "", // removed heroAsset.url
       highlights: [
         "Omkareshwar Jyotirlinga Darshan",
         "Narmada Aarti Experience",
@@ -221,7 +216,7 @@ export const sawanCampaign = {
     description:
       "Experience the divine Sawan celebrations in Ujjain and Omkareshwar with special packages, spiritual tours, Mahakal darshan, Narmada aarti, reels and curated experiences.",
     canonical: "/exclusive/sawan-ujjain-omkareshwar",
-    image: heroAsset.url,
+    image: "", // removed heroAsset.url
   },
 };
 

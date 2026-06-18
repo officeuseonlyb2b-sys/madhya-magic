@@ -1,18 +1,31 @@
 import type { DestinationContent } from "./types";
 
-import mandsaurattraction1 from "@/assets/destimages/mandsaurattraction1.jpeg";
-import mandsaurattraction2 from "@/assets/destimages/mandsaurattraction2.jpeg";
-import mandsaurattraction3 from "@/assets/destimages/mandsaurattraction3.jpeg";
-import mandsaurattraction4 from "@/assets/destimages/mandsaurattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to mandsaurattraction1..4
+  mandsaurattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777161/mandsaurattraction1_r3rsny.jpg",
+  mandsaurattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777161/mandsaurattraction2_jyxoua.jpg",
+  mandsaurattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777163/mandsaurattraction3_oqgqx2.jpg",
+  mandsaurattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777167/mandsaurattraction4_hbmfbe.jpg",
 
-// gallery
-
-import mandsaurgallary1 from "@/assets/destimages/mandsaurgallary1.jpeg";
-import mandsaurgallary2 from "@/assets/destimages/mandsaurgallary2.jpeg";
-import mandsaurgallary3 from "@/assets/destimages/mandsaurgallary3.jpeg";
-import mandsaurgallary4 from "@/assets/destimages/mandsaurgallary4.jpeg";
-import mandsaurgallary5 from "@/assets/destimages/mandsaurgallary5.jpeg";
-import mandsaurgallary6 from "@/assets/destimages/mandsaurgallary6.jpeg";
+  // Gallery images – mapped to mandsaurgallary1..6
+  mandsaurgallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777170/mandsaurgallary1_p10i0q.jpg",
+  mandsaurgallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777172/mandsaurgallary2_wgtcbq.jpg",
+  mandsaurgallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777175/mandsaurgallary3_l0toft.jpg",
+  mandsaurgallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777177/mandsaurgallary4_giy7v9.jpg",
+  mandsaurgallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777181/mandsaurgallary5_aoy2xc.jpg",
+  mandsaurgallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777183/mandsaurgallary6_mk7jck.jpg",
+};
 
 const mandsaur: DestinationContent = {
   overviewParagraphs: [
@@ -26,25 +39,25 @@ const mandsaur: DestinationContent = {
       title: "Pashupatinath Temple",
       description:
         "A famous Shiva temple housing the unique eight-faced idol of Lord Pashupatinath.",
-      image: mandsaurattraction1,
+      image: images.mandsaurattraction1,
     },
     {
       title: "Gandhi Sagar Dam",
       description:
         "A scenic reservoir on the Chambal River known for beautiful views and boating opportunities.",
-      image: mandsaurattraction2,
+      image: images.mandsaurattraction2,
     },
     {
       title: "Hinglajgarh Fort",
       description:
         "A historic hill fort renowned for its archaeological remains and ancient sculptures.",
-      image: mandsaurattraction3,
+      image: images.mandsaurattraction3,
     },
     {
       title: "Shivna River Ghat",
       description:
         "A peaceful riverside location popular for spiritual activities and local gatherings.",
-      image: mandsaurattraction4,
+      image: images.mandsaurattraction4,
     },
   ],
 
@@ -105,12 +118,12 @@ const mandsaur: DestinationContent = {
   ],
 
   gallery: [
-    mandsaurgallary1,
-    mandsaurgallary2,
-    mandsaurgallary3,
-    mandsaurgallary4,
-    mandsaurgallary5,
-    mandsaurgallary6,
+    images.mandsaurgallary1,
+    images.mandsaurgallary2,
+    images.mandsaurgallary3,
+    images.mandsaurgallary4,
+    images.mandsaurgallary5,
+    images.mandsaurgallary6,
   ],
 
   travelInfo: {

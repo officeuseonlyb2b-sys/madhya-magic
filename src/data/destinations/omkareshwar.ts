@@ -1,24 +1,43 @@
 import type { DestinationContent } from "./types";
 
-import omkareshwarattraction1 from "@/assets/destimages/omkareshwarattraction1.jpeg";
-import omkareshwarattraction2 from "@/assets/destimages/omkareshwarattraction2.jpeg";
-import omkareshwarattraction3 from "@/assets/destimages/omkareshwarattraction3.jpeg";
-import omkareshwarattraction4 from "@/assets/destimages/omkareshwarattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to omkareshwarattraction1..4
+  omkareshwarattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777951/omkareshwarattraction1_y6henm.jpg",
+  omkareshwarattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777955/omkareshwarattraction2_prqe8z.jpg",
+  omkareshwarattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777959/omkareshwarattraction3_dnowv3.jpg",
+  omkareshwarattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777960/omkareshwarattraction4_nccw4u.jpg",
 
-// gallery
-
-import omkareshwargallary1 from "@/assets/destimages/omkareshwargallary1.jpeg";
-import omkareshwargallary2 from "@/assets/destimages/omkareshwargallary2.jpeg";
-import omkareshwargallary3 from "@/assets/destimages/omkareshwargallary3.jpeg";
-import omkareshwargallary4 from "@/assets/destimages/omkareshwargallary4.jpeg";
-import omkareshwargallary5 from "@/assets/destimages/omkareshwargallary5.jpeg";
-import omkareshwargallary6 from "@/assets/destimages/omkareshwargallary6.jpeg";
-import omkareshwargallary7 from "@/assets/destimages/omkareshwargallary7.jpeg";
-import omkareshwargallary8 from "@/assets/destimages/omkareshwargallary8.jpeg";
-import omkareshwargallary9 from "@/assets/destimages/omkareshwargallary9.jpeg";
-import omkareshwargallary10 from "@/assets/destimages/omkareshwargallary10.jpeg";
-import omkareshwargallary11 from "@/assets/destimages/omkareshwargallary11.jpeg";
-import omkareshwargallary12 from "@/assets/destimages/omkareshwargallary12.jpeg";
+  // Gallery images – mapped to omkareshwargallary1..12
+  omkareshwargallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777964/omkareshwargallary1_l1ymkg.jpg",
+  omkareshwargallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777968/omkareshwargallary2_qhslds.jpg",
+  omkareshwargallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777969/omkareshwargallary3_yadas4.jpg",
+  omkareshwargallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777973/omkareshwargallary4_kg9jmr.jpg",
+  omkareshwargallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777975/omkareshwargallary5_tvjcrz.jpg",
+  omkareshwargallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777980/omkareshwargallary6_vezqax.jpg",
+  omkareshwargallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777982/omkareshwargallary7_kfpnzg.jpg",
+  omkareshwargallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777983/omkareshwargallary8_awdhcv.jpg",
+  omkareshwargallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777988/omkareshwargallary9_p4jso7.jpg",
+  omkareshwargallary10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777990/omkareshwargallary10_rs30z0.jpg",
+  omkareshwargallary11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777993/omkareshwargallary11_qlpsxe.jpg",
+  omkareshwargallary12:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777995/omkareshwargallary12_nxoty4.jpg",
+};
 
 const omkareshwar: DestinationContent = {
   overviewParagraphs: [
@@ -32,25 +51,25 @@ const omkareshwar: DestinationContent = {
       title: "Omkareshwar Jyotirlinga Temple",
       description:
         "One of the twelve revered Jyotirlingas dedicated to Lord Shiva and the spiritual heart of Omkareshwar.",
-      image: omkareshwarattraction1,
+      image: images.omkareshwarattraction1,
     },
     {
       title: "Mamleshwar Temple",
       description:
         "An ancient Shiva temple known for its intricate carvings and religious significance.",
-      image: omkareshwarattraction2,
+      image: images.omkareshwarattraction2,
     },
     {
       title: "Narmada Ghat",
       description:
         "A peaceful riverside ghat where devotees perform rituals and enjoy scenic views of the Narmada.",
-      image: omkareshwarattraction3,
+      image: images.omkareshwarattraction3,
     },
     {
       title: "Omkareshwar Parikrama Path",
       description:
         "A sacred pilgrimage route around the island offering spiritual and scenic experiences.",
-      image: omkareshwarattraction4,
+      image: images.omkareshwarattraction4,
     },
   ],
 
@@ -111,18 +130,18 @@ const omkareshwar: DestinationContent = {
   ],
 
   gallery: [
-    omkareshwargallary1,
-    omkareshwargallary2,
-    omkareshwargallary3,
-    omkareshwargallary4,
-    omkareshwargallary5,
-    omkareshwargallary6,
-    omkareshwargallary7,
-    omkareshwargallary8,
-    omkareshwargallary9,
-    omkareshwargallary10,
-    omkareshwargallary11,
-    omkareshwargallary12,
+    images.omkareshwargallary1,
+    images.omkareshwargallary2,
+    images.omkareshwargallary3,
+    images.omkareshwargallary4,
+    images.omkareshwargallary5,
+    images.omkareshwargallary6,
+    images.omkareshwargallary7,
+    images.omkareshwargallary8,
+    images.omkareshwargallary9,
+    images.omkareshwargallary10,
+    images.omkareshwargallary11,
+    images.omkareshwargallary12,
   ],
 
   travelInfo: {

@@ -1,18 +1,31 @@
 import type { DestinationContent } from "./types";
 
-import sonagiriattraction1 from "@/assets/destimages/sonagiriattraction1.jpeg";
-import sonagiriattraction2 from "@/assets/destimages/sonagiriattraction2.jpeg";
-import sonagiriattraction3 from "@/assets/destimages/sonagiriattraction3.jpeg";
-import sonagiriattraction4 from "@/assets/destimages/sonagiriattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to sonagiriattraction1..4
+  sonagiriattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781289/sonagiriattraction1_qb1w3u.jpg",
+  sonagiriattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781290/sonagiriattraction2_q860t9.jpg",
+  sonagiriattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781295/sonagiriattraction3_ex0nxt.jpg",
+  sonagiriattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781298/sonagiriattraction4_bat2zc.jpg",
 
-// gallery
-
-import sonagirigallary1 from "@/assets/destimages/sonagirigallary1.jpeg";
-import sonagirigallary2 from "@/assets/destimages/sonagirigallary2.jpeg";
-import sonagirigallary3 from "@/assets/destimages/sonagirigallary3.jpeg";
-import sonagirigallary4 from "@/assets/destimages/sonagirigallary4.jpeg";
-import sonagirigallary5 from "@/assets/destimages/sonagirigallary5.jpeg";
-import sonagirigallary6 from "@/assets/destimages/sonagirigallary6.jpeg";
+  // Gallery images – mapped to sonagirigallary1..6
+  sonagirigallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781302/sonagirigallary1_ifdhbc.jpg",
+  sonagirigallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781306/sonagirigallary2_uy0ery.jpg",
+  sonagirigallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781309/sonagirigallary3_iyp8uf.jpg",
+  sonagirigallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781313/sonagirigallary4_nhwzpk.jpg",
+  sonagirigallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781318/sonagirigallary5_fsbtio.jpg",
+  sonagirigallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781322/sonagirigallary6_dehofw.jpg",
+};
 
 const sonagiri: DestinationContent = {
   overviewParagraphs: [
@@ -26,25 +39,25 @@ const sonagiri: DestinationContent = {
       title: "Sonagiri Jain Temple Complex",
       description:
         "A magnificent group of white Jain temples spread across the sacred Sonagiri Hill.",
-      image: sonagiriattraction1,
+      image: images.sonagiriattraction1,
     },
     {
       title: "Chandraprabhu Temple",
       description:
         "The main temple dedicated to the 8th Jain Tirthankara, Lord Chandraprabhu.",
-      image: sonagiriattraction2,
+      image: images.sonagiriattraction2,
     },
     {
       title: "Hilltop Temple Viewpoint",
       description:
         "A scenic viewpoint offering breathtaking panoramic views of the temple complex and surrounding landscape.",
-      image: sonagiriattraction3,
+      image: images.sonagiriattraction3,
     },
     {
       title: "Ancient Jain Shrines",
       description:
         "Historic shrines showcasing beautiful Jain architecture and spiritual heritage.",
-      image: sonagiriattraction4,
+      image: images.sonagiriattraction4,
     },
   ],
 
@@ -105,12 +118,12 @@ const sonagiri: DestinationContent = {
   ],
 
   gallery: [
-    sonagirigallary1,
-    sonagirigallary2,
-    sonagirigallary3,
-    sonagirigallary4,
-    sonagirigallary5,
-    sonagirigallary6,
+    images.sonagirigallary1,
+    images.sonagirigallary2,
+    images.sonagirigallary3,
+    images.sonagirigallary4,
+    images.sonagirigallary5,
+    images.sonagirigallary6,
   ],
 
   travelInfo: {

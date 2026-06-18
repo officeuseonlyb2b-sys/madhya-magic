@@ -1,22 +1,39 @@
 import type { DestinationContent } from "./types";
 
-import khajurahoattraction1 from "@/assets/destimages/khajurahoattraction1.jpeg";
-import khajurahoattraction2 from "@/assets/destimages/khajurahoattraction2.jpeg";
-import khajurahoattraction3 from "@/assets/destimages/khajurahoattraction3.jpeg";
-import khajurahoattraction4 from "@/assets/destimages/khajurahoattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to the exact variable names
+  khajurahoattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775575/khajurahoattraction1_iyt9ru.jpg",
+  khajurahoattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775576/khajurahoattraction2_adylba.jpg",
+  khajurahoattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775577/khajurahoattraction3_kpffgq.jpg",
+  khajurahoattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775580/khajurahoattraction4_lxfr4d.jpg",
 
-// gallery
-
-import khajurahogallary1 from "@/assets/destimages/khajurahogallary1.jpeg";
-import khajurahogallary2 from "@/assets/destimages/khajurahogallary2.jpeg";
-import khajurahogallary3 from "@/assets/destimages/khajurahogallary3.jpeg";
-import khajurahogallary4 from "@/assets/destimages/khajurahogallary4.jpeg";
-import khajurahogallary5 from "@/assets/destimages/khajurahogallary5.jpeg";
-import khajurahogallary6 from "@/assets/destimages/khajurahogallary6.jpeg";
-import khajurahogallary7 from "@/assets/destimages/khajurahogallary7.jpeg";
-import khajurahogallary8 from "@/assets/destimages/khajurahogallary8.jpeg";
-import khajurahogallary9 from "@/assets/destimages/khajurahogallary9.jpeg";
-import khajurahogallary10 from "@/assets/destimages/khajurahogallary10.jpeg";
+  // Gallery images – mapped to khajurahogallary1..10
+  khajurahogallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775583/khajurahogallary1_qemrvj.jpg",
+  khajurahogallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775585/khajurahogallary2_yqgcar.jpg",
+  khajurahogallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775588/khajurahogallary3_ql2exa.jpg",
+  khajurahogallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775590/khajurahogallary4_mwh1bx.jpg",
+  khajurahogallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775592/khajurahogallary5_sole3m.jpg",
+  khajurahogallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775595/khajurahogallary6_w62hby.jpg",
+  khajurahogallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775597/khajurahogallary7_fbla3h.jpg",
+  khajurahogallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775599/khajurahogallary8_mwqded.jpg",
+  khajurahogallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775602/khajurahogallary9_ash36r.jpg",
+  khajurahogallary10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781775604/khajurahogallary10_y5rqdr.jpg",
+};
 
 const khajuraho: DestinationContent = {
   overviewParagraphs: [
@@ -30,25 +47,25 @@ const khajuraho: DestinationContent = {
       title: "Western Group of Temples",
       description:
         "The most iconic temple complex featuring Kandariya Mahadeva and world-famous carvings.",
-      image: khajurahoattraction1,
+      image: images.khajurahoattraction1,
     },
     {
       title: "Lakshmana Temple",
       description:
         "A beautifully preserved temple dedicated to Lord Vishnu with detailed sculptural artwork.",
-      image: khajurahoattraction2,
+      image: images.khajurahoattraction2,
     },
     {
       title: "Chitragupta Temple",
       description:
         "An ancient temple devoted to the Sun God, admired for its elegant architecture.",
-      image: khajurahoattraction3,
+      image: images.khajurahoattraction3,
     },
     {
       title: "Raneh Falls",
       description:
         "A stunning canyon waterfall surrounded by colorful volcanic rock formations near Khajuraho.",
-      image: khajurahoattraction4,
+      image: images.khajurahoattraction4,
     },
   ],
 
@@ -109,16 +126,16 @@ const khajuraho: DestinationContent = {
   ],
 
   gallery: [
-    khajurahogallary1,
-    khajurahogallary2,
-    khajurahogallary3,
-    khajurahogallary4,
-    khajurahogallary5,
-    khajurahogallary6,
-    khajurahogallary7,
-    khajurahogallary8,
-    khajurahogallary9,
-    khajurahogallary10,
+    images.khajurahogallary1,
+    images.khajurahogallary2,
+    images.khajurahogallary3,
+    images.khajurahogallary4,
+    images.khajurahogallary5,
+    images.khajurahogallary6,
+    images.khajurahogallary7,
+    images.khajurahogallary8,
+    images.khajurahogallary9,
+    images.khajurahogallary10,
   ],
 
   travelInfo: {

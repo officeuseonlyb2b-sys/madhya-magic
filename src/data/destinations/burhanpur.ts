@@ -1,23 +1,41 @@
 import type { DestinationContent } from "./types";
 
-import burhanpurattraction1 from "@/assets/destimages/burhanpurattraction1.jpeg";
-import burhanpurattraction2 from "@/assets/destimages/burhanpurattraction2.jpeg";
-import burhanpurattraction3 from "@/assets/destimages/burhanpurattraction3.jpeg";
-import burhanpurattraction4 from "@/assets/destimages/burhanpurattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped by filename (attraction1, attraction2, attraction3, attraction4)
+  attraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767266/burhanpurattraction1_cgj2zb.jpg",
+  attraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767266/burhanpurattraction2_gkgozf.jpg",
+  attraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767266/burhanpurattraction3_df4o3t.jpg",
+  attraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767267/burhanpurattraction4_gp1m4f.jpg",
 
-// gallery
-
-import burhanpurgallary1 from "@/assets/destimages/burhanpurgallary1.jpeg";
-import burhanpurgallary2 from "@/assets/destimages/burhanpurgallary2.jpeg";
-import burhanpurgallary3 from "@/assets/destimages/burhanpurgallary3.jpeg";
-import burhanpurgallary4 from "@/assets/destimages/burhanpurgallary4.jpeg";
-import burhanpurgallary5 from "@/assets/destimages/burhanpurgallary5.jpeg";
-import burhanpurgallary6 from "@/assets/destimages/burhanpurgallary6.jpeg";
-import burhanpurgallary7 from "@/assets/destimages/burhanpurgallary7.jpeg";
-import burhanpurgallary8 from "@/assets/destimages/burhanpurgallary8.jpeg";
-import burhanpurgallary9 from "@/assets/destimages/burhanpurgallary9.jpeg";
-import burhanpurgallary10 from "@/assets/destimages/burhanpurgallary10.jpeg";
-import burhanpurgallary11 from "@/assets/destimages/burhanpurgallary11.jpeg";
+  // Gallery images – each mapped by its file name (gallary1 … gallary11)
+  gallery1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767269/burhanpurgallary1_txzc2x.jpg",
+  gallery2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767270/burhanpurgallary2_jdjyhk.jpg",
+  gallery3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767272/burhanpurgallary3_gfc42w.jpg",
+  gallery4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767273/burhanpurgallary4_v3tguh.jpg",
+  gallery5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767274/burhanpurgallary5_rhkguq.jpg",
+  gallery6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767276/burhanpurgallary6_skynwa.jpg",
+  gallery7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767279/burhanpurgallary7_nelu8v.jpg",
+  gallery8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767280/burhanpurgallary8_sjqbsb.jpg",
+  gallery9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767280/burhanpurgallary9_lwrexc.jpg",
+  gallery10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767282/burhanpurgallary10_dz68i3.jpg",
+  gallery11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767283/burhanpurgallary11_ga1wks.jpg",
+};
 
 const burhanpur: DestinationContent = {
   overviewParagraphs: [
@@ -27,31 +45,31 @@ const burhanpur: DestinationContent = {
   ],
 
   attractions: [
-  {
-    title: "Black Taj",
-    description:
-      "A historic monument associated with Mumtaz Mahal, often referred to as the ‘Black Taj’ of Burhanpur.",
-    image: burhanpurattraction1,
-  },
-  {
-    title: "Jama Masjid",
-    description:
-      "A historic mosque admired for its impressive Mughal-style design and spiritual atmosphere.",
-    image: burhanpurattraction2,
-  },
-  {
-    title: "Ahukhana",
-    description:
-      "A beautiful Mughal-era garden and royal retreat known for its historical significance and peaceful surroundings.",
-    image: burhanpurattraction3,
-  },
-  {
-    title: "Dargah-e-Hakimi",
-    description:
-      "A sacred pilgrimage site visited for its spiritual significance and peaceful ambience.",
-    image: burhanpurattraction4,
-  },
-],
+    {
+      title: "Black Taj",
+      description:
+        "A historic monument associated with Mumtaz Mahal, often referred to as the ‘Black Taj’ of Burhanpur.",
+      image: images.attraction1,
+    },
+    {
+      title: "Jama Masjid",
+      description:
+        "A historic mosque admired for its impressive Mughal-style design and spiritual atmosphere.",
+      image: images.attraction2,
+    },
+    {
+      title: "Ahukhana",
+      description:
+        "A beautiful Mughal-era garden and royal retreat known for its historical significance and peaceful surroundings.",
+      image: images.attraction3,
+    },
+    {
+      title: "Dargah-e-Hakimi",
+      description:
+        "A sacred pilgrimage site visited for its spiritual significance and peaceful ambience.",
+      image: images.attraction4,
+    },
+  ],
 
   thingsToDo: [
     {
@@ -110,17 +128,17 @@ const burhanpur: DestinationContent = {
   ],
 
   gallery: [
-    burhanpurgallary1,
-    burhanpurgallary2,
-    burhanpurgallary3,
-    burhanpurgallary4,
-    burhanpurgallary5,
-    burhanpurgallary6,
-    burhanpurgallary7,
-    burhanpurgallary8,
-    burhanpurgallary9,
-    burhanpurgallary10,
-    burhanpurgallary11,
+    images.gallery1,
+    images.gallery2,
+    images.gallery3,
+    images.gallery4,
+    images.gallery5,
+    images.gallery6,
+    images.gallery7,
+    images.gallery8,
+    images.gallery9,
+    images.gallery10,
+    images.gallery11,
   ],
 
   travelInfo: {

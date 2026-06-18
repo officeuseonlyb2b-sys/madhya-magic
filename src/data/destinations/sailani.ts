@@ -1,19 +1,33 @@
 import type { DestinationContent } from "./types";
 
-import sailaniattraction1 from "@/assets/destimages/sailaniattraction1.jpeg";
-import sailaniattraction2 from "@/assets/destimages/sailaniattraction2.jpeg";
-import sailaniattraction3 from "@/assets/destimages/sailaniattraction3.jpeg";
-import sailaniattraction4 from "@/assets/destimages/sailaniattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped by filename to the variable names
+  sailaniattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779978/sailaniattraction1_m0ocus.jpg",
+  sailaniattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779967/sailaniattraction2_kug1ly.jpg",
+  sailaniattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779969/sailaniattraction3_j0kblb.jpg",
+  sailaniattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779973/sailaniattraction4_bl2oqh.jpg",
 
-// gallery
-
-import sailanigallary1 from "@/assets/destimages/sailanigallary1.jpeg";
-import sailanigallary2 from "@/assets/destimages/sailanigallary2.jpeg";
-import sailanigallary3 from "@/assets/destimages/sailanigallary3.jpeg";
-import sailanigallary4 from "@/assets/destimages/sailanigallary4.jpeg";
-import sailanigallary5 from "@/assets/destimages/sailanigallary5.jpeg";
-import sailanigallary6 from "@/assets/destimages/sailanigallary6.jpeg";
-import sailanigallary7 from "@/assets/destimages/sailanigallary7.jpeg";
+  // Gallery images – mapped by filename (gallary1 … gallary7)
+  sailanigallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779975/sailanigallary1_cpy7q8.jpg",
+  sailanigallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779979/sailanigallary2_pfqfkj.jpg",
+  sailanigallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779983/sailanigallary3_iskbdm.jpg",
+  sailanigallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779987/sailanigallary4_na4wj3.jpg",
+  sailanigallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779990/sailanigallary5_xhn8ih.jpg",
+  sailanigallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779993/sailanigallary6_mhngyf.jpg",
+  sailanigallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781779997/sailanigallary7_akqfoh.jpg",
+};
 
 const sailani: DestinationContent = {
   overviewParagraphs: [
@@ -27,25 +41,25 @@ const sailani: DestinationContent = {
       title: "Sailani Island",
       description:
         "A picturesque island destination surrounded by the expansive waters of the Indira Sagar Reservoir.",
-      image: sailaniattraction1,
+      image: images.sailaniattraction1,
     },
     {
       title: "Indira Sagar Backwaters",
       description:
         "Vast stretches of blue water creating stunning landscapes and unforgettable views.",
-      image: sailaniattraction2,
+      image: images.sailaniattraction2,
     },
     {
       title: "Water Sports Zone",
       description:
         "A popular adventure area offering jet skiing, speed boating and other exciting activities.",
-      image: sailaniattraction3,
+      image: images.sailaniattraction3,
     },
     {
       title: "Sunset Point",
       description:
         "A scenic location known for spectacular sunset views over the reservoir.",
-      image: sailaniattraction4,
+      image: images.sailaniattraction4,
     },
   ],
 
@@ -106,13 +120,13 @@ const sailani: DestinationContent = {
   ],
 
   gallery: [
-    sailanigallary1,
-    sailanigallary2,
-    sailanigallary3,
-    sailanigallary4,
-    sailanigallary5,
-    sailanigallary6,
-    sailanigallary7,
+    images.sailanigallary1,
+    images.sailanigallary2,
+    images.sailanigallary3,
+    images.sailanigallary4,
+    images.sailanigallary5,
+    images.sailanigallary6,
+    images.sailanigallary7,
   ],
 
   travelInfo: {

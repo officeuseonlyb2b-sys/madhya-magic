@@ -1,23 +1,41 @@
 import type { DestinationContent } from "./types";
 
-import maheshwarattraction1 from "@/assets/destimages/maheswarattraction1.jpeg";
-import maheshwarattraction2 from "@/assets/destimages/maheswarattraction2.jpeg";
-import maheshwarattraction3 from "@/assets/destimages/maheswarattraction3.jpeg";
-import maheshwarattraction4 from "@/assets/destimages/maheswarattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to the exact variable names used in the code
+  maheshwarattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776215/maheswarattraction1_ff5sdv.jpg",
+  maheshwarattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776236/maheswarattraction2_ri4hjg.jpg",
+  maheshwarattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776238/maheswarattraction3_zplzpi.jpg",
+  maheshwarattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776241/maheswarattraction4_jc9ieu.jpg",
 
-// gallery
-
-import maheshwargallary1 from "@/assets/destimages/maheswargallary1.jpeg";
-import maheshwargallary2 from "@/assets/destimages/maheswargallary2.jpeg";
-import maheshwargallary3 from "@/assets/destimages/maheswargallary3.jpeg";
-import maheshwargallary4 from "@/assets/destimages/maheswargallary4.jpeg";
-import maheshwargallary5 from "@/assets/destimages/maheswargallary5.jpeg";
-import maheshwargallary6 from "@/assets/destimages/maheswargallary6.jpeg";
-import maheshwargallary7 from "@/assets/destimages/maheswargallary7.jpeg";
-import maheshwargallary8 from "@/assets/destimages/maheswargallary8.jpeg";
-import maheshwargallary9 from "@/assets/destimages/maheswargallary9.jpeg";
-import maheshwargallary10 from "@/assets/destimages/maheswargallary10.jpeg";
-import maheshwargallary11 from "@/assets/destimages/maheswargallary11.jpeg";
+  // Gallery images – mapped to maheshwargallary1..11
+  maheshwargallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776246/maheswargallary1_jghwrs.jpg",
+  maheshwargallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776247/maheswargallary2_bfiayu.jpg",
+  maheshwargallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776248/maheswargallary3_n1ey7u.jpg",
+  maheshwargallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776251/maheswargallary4_aoayhy.jpg",
+  maheshwargallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776253/maheswargallary5_agkxxr.jpg",
+  maheshwargallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776256/maheswargallary6_sjwrdu.jpg",
+  maheshwargallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776258/maheswargallary7_fea5h2.jpg",
+  maheshwargallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776261/maheswargallary8_dbmxgv.jpg",
+  maheshwargallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776266/maheswargallary9_xk85q2.jpg",
+  maheshwargallary10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776266/maheswargallary10_hl0cl1.jpg",
+  maheshwargallary11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781776269/maheswargallary11_px9zve.jpg",
+};
 
 const maheshwar: DestinationContent = {
   overviewParagraphs: [
@@ -27,31 +45,31 @@ const maheshwar: DestinationContent = {
   ],
 
   attractions: [
-  {
-    title: "Ahilya Fort",
-    description:
-      "A magnificent riverside fort built by Queen Ahilyabai Holkar overlooking the Narmada River.",
-    image: maheshwarattraction1,
-  },
-  {
-    title: "Narmada Ghats",
-    description:
-      "Beautiful stone ghats where visitors enjoy peaceful river views and evening aarti ceremonies.",
-    image: maheshwarattraction2,
-  },
-  {
-    title: "Ahilyeshwar Temple",
-    description:
-      "A beautifully carved Shiva temple near Ahilya Fort known for its intricate architecture and spiritual ambience.",
-    image: maheshwarattraction4,
-  },
-  {
-    title: "Maheshwari Saree Weaving Centers",
-    description:
-      "Traditional weaving workshops famous for crafting elegant Maheshwari sarees.",
-    image: maheshwarattraction3,
-  },
-],
+    {
+      title: "Ahilya Fort",
+      description:
+        "A magnificent riverside fort built by Queen Ahilyabai Holkar overlooking the Narmada River.",
+      image: images.maheshwarattraction1,
+    },
+    {
+      title: "Narmada Ghats",
+      description:
+        "Beautiful stone ghats where visitors enjoy peaceful river views and evening aarti ceremonies.",
+      image: images.maheshwarattraction2,
+    },
+    {
+      title: "Ahilyeshwar Temple",
+      description:
+        "A beautifully carved Shiva temple near Ahilya Fort known for its intricate architecture and spiritual ambience.",
+      image: images.maheshwarattraction4,
+    },
+    {
+      title: "Maheshwari Saree Weaving Centers",
+      description:
+        "Traditional weaving workshops famous for crafting elegant Maheshwari sarees.",
+      image: images.maheshwarattraction3,
+    },
+  ],
 
   thingsToDo: [
     {
@@ -110,17 +128,17 @@ const maheshwar: DestinationContent = {
   ],
 
   gallery: [
-    maheshwargallary1,
-    maheshwargallary2,
-    maheshwargallary3,
-    maheshwargallary4,
-    maheshwargallary5,
-    maheshwargallary6,
-    maheshwargallary7,
-    maheshwargallary8,
-    maheshwargallary9,
-    maheshwargallary10,
-    maheshwargallary11,
+    images.maheshwargallary1,
+    images.maheshwargallary2,
+    images.maheshwargallary3,
+    images.maheshwargallary4,
+    images.maheshwargallary5,
+    images.maheshwargallary6,
+    images.maheshwargallary7,
+    images.maheshwargallary8,
+    images.maheshwargallary9,
+    images.maheshwargallary10,
+    images.maheshwargallary11,
   ],
 
   travelInfo: {

@@ -1,23 +1,39 @@
 import type { DestinationContent } from "./types";
 
-import bandhavgarhattraction1 from "@/assets/destimages/bandhavgarhattraction1.jpeg";
-import bandhavgarhattraction2 from "@/assets/destimages/bandhavgarhattraction2.jpeg";
-import bandhavgarhattraction3 from "@/assets/destimages/bandhavgarhattraction3.jpeg";
-import bandhavgarhattraction4 from "@/assets/destimages/bandhavgarhattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  attraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764872/bandhavgarhattraction1_qtcdt6.jpg",
+  attraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764875/bandhavgarhattraction2_dk8sab.jpg",
+  attraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764879/bandhavgarhattraction3_mtrtea.jpg",
+  attraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764874/bandhavgarhattraction4_fxaqqx.jpg",
 
-// gallery
-
-import bandhavgarhgallary1 from "@/assets/destimages/bandhavgarhgallary1.jpeg";
-import bandhavgarhgallary2 from "@/assets/destimages/bandhavgarhgallary2.jpeg";
-import bandhavgarhgallary3 from "@/assets/destimages/bandhavgarhgallary3.jpeg";
-import bandhavgarhgallary4 from "@/assets/destimages/bandhavgarhgallary4.jpeg";
-import bandhavgarhgallary5 from "@/assets/destimages/bandhavgarhgallary5.jpeg";
-import bandhavgarhgallary6 from "@/assets/destimages/bandhavgarhgallary6.jpeg";
-import bandhavgarhgallary7 from "@/assets/destimages/bandhavgarhgallary7.jpeg";
-import bandhavgarhgallary8 from "@/assets/destimages/bandhavgarhgallary8.jpeg";
-import bandhavgarhgallary9 from "@/assets/destimages/bandhavgarhgallary9.jpeg";
-import bandhavgarhgallary10 from "@/assets/destimages/bandhavgarhgallary10.jpeg";
-import bandhavgarhgallary11 from "@/assets/destimages/bandhavgarhgallary11.jpeg";
+  gallery1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764875/bandhavgarhgallary1_mzcgpy.jpg",
+  gallery2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764875/bandhavgarhgallary2_jxqxuv.jpg",
+  gallery3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764874/bandhavgarhgallary3_arlqiz.jpg",
+  gallery4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764877/bandhavgarhgallary4_pmhw11.jpg",
+  gallery5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764875/bandhavgarhgallary5_lecmqj.jpg",
+  gallery6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764875/bandhavgarhgallary6_yvishy.jpg",
+  gallery7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764879/bandhavgarhgallary7_ei4ndj.jpg",
+  gallery8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764877/bandhavgarhgallary8_oivluf.jpg",
+  gallery9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764876/bandhavgarhgallary9_txlhsa.jpg",
+  gallery10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764883/bandhavgarhgallary10_zsoeri.jpg",
+  gallery11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764886/bandhavgarhgallary11_obnjx8.jpg",
+};
 
 const bandhavgarh: DestinationContent = {
   overviewParagraphs: [
@@ -27,31 +43,31 @@ const bandhavgarh: DestinationContent = {
   ],
 
   attractions: [
-  {
-    title: "Bandhavgarh National Park",
-    description:
-      "A world-famous tiger reserve known for its rich wildlife, dense forests and frequent Royal Bengal Tiger sightings.",
-    image: bandhavgarhattraction1,
-  },
-  {
-    title: "Jeep Safari",
-    description:
-      "An exciting jungle safari experience through the dense forests and wildlife zones of Bandhavgarh.",
-    image: bandhavgarhattraction2,
-  },
-  {
-    title: "Shesh Shaiya",
-    description:
-      "A gigantic reclining statue of Lord Vishnu located amidst the lush forest landscape.",
-    image: bandhavgarhattraction3,
-  },
-  {
-    title: "Climbers Point",
-    description:
-      "A scenic viewpoint offering breathtaking panoramic views of Bandhavgarh’s forests and hills.",
-    image: bandhavgarhattraction4,
-  },
-],
+    {
+      title: "Bandhavgarh National Park",
+      description:
+        "A world-famous tiger reserve known for its rich wildlife, dense forests and frequent Royal Bengal Tiger sightings.",
+      image: images.attraction1,
+    },
+    {
+      title: "Jeep Safari",
+      description:
+        "An exciting jungle safari experience through the dense forests and wildlife zones of Bandhavgarh.",
+      image: images.attraction2,
+    },
+    {
+      title: "Shesh Shaiya",
+      description:
+        "A gigantic reclining statue of Lord Vishnu located amidst the lush forest landscape.",
+      image: images.attraction3,
+    },
+    {
+      title: "Climbers Point",
+      description:
+        "A scenic viewpoint offering breathtaking panoramic views of Bandhavgarh’s forests and hills.",
+      image: images.attraction4,
+    },
+  ],
 
   thingsToDo: [
     {
@@ -110,28 +126,25 @@ const bandhavgarh: DestinationContent = {
   ],
 
   gallery: [
-    bandhavgarhgallary1,
-    bandhavgarhgallary2,
-    bandhavgarhgallary3,
-    bandhavgarhgallary4,
-    bandhavgarhgallary5,
-    bandhavgarhgallary6,
-    bandhavgarhgallary7,
-    bandhavgarhgallary8,
-    bandhavgarhgallary9,
-    bandhavgarhgallary10,
-    bandhavgarhgallary11,
+    images.gallery1,
+    images.gallery2,
+    images.gallery3,
+    images.gallery4,
+    images.gallery5,
+    images.gallery6,
+    images.gallery7,
+    images.gallery8,
+    images.gallery9,
+    images.gallery10,
+    images.gallery11,
   ],
 
   travelInfo: {
     bestTime:
       "October to June — best season for wildlife safaris and tiger sightings",
-    road:
-      "Well-connected by road from Jabalpur, Katni and nearby cities.",
-    rail:
-      "The nearest railway station is Umaria Railway Station (~35 km).",
-    air:
-      "The nearest airport is Jabalpur Airport.",
+    road: "Well-connected by road from Jabalpur, Katni and nearby cities.",
+    rail: "The nearest railway station is Umaria Railway Station (~35 km).",
+    air: "The nearest airport is Jabalpur Airport.",
   },
 
   duration: "2 Days / 1 Night",

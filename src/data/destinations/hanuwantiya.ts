@@ -1,17 +1,29 @@
 import type { DestinationContent } from "./types";
 
-import hanuwantiyaattraction1 from "@/assets/destimages/hanuwantiyaattraction1.jpeg";
-import hanuwantiyaattraction2 from "@/assets/destimages/hanuwantiyaattraction2.jpeg";
-import hanuwantiyaattraction3 from "@/assets/destimages/hanuwantiyaattraction3.jpeg";
-import hanuwantiyaattraction4 from "@/assets/destimages/hanuwantiyaattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to the exact variable names
+  hanuwantiyaattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769966/hanuwantiyaattraction1_p6hdjl.jpg",
+  hanuwantiyaattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769966/hanuwantiyaattraction2_obrn0m.jpg",
+  hanuwantiyaattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769968/hanuwantiyaattraction3_dc0xis.jpg",
+  hanuwantiyaattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769970/hanuwantiyaattraction4_ejnlix.jpg",
 
-// gallery
-
-import hanuwantiyagallary1 from "@/assets/destimages/hanuwantiyagallary1.jpeg";
-import hanuwantiyagallary2 from "@/assets/destimages/hanuwantiyagallary2.jpeg";
-import hanuwantiyagallary3 from "@/assets/destimages/hanuwantiyagallary3.jpeg";
-import hanuwantiyagallary4 from "@/assets/destimages/hanuwantiyagallary4.jpeg";
-import hanuwantiyagallary5 from "@/assets/destimages/hanuwantiyagallary5.jpeg";
+  // Gallery images – mapped to hanuwantiyagallary1..5
+  hanuwantiyagallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769973/hanuwantiyagallary1_x6wnvm.jpg",
+  hanuwantiyagallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769976/hanuwantiyagallary2_k5dzh2.jpg",
+  hanuwantiyagallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769979/hanuwantiyagallary3_jtmnbp.jpg",
+  hanuwantiyagallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769978/hanuwantiyagallary4_exw26n.jpg",
+  hanuwantiyagallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781769980/hanuwantiyagallary5_xggjbp.jpg",
+};
 
 const hanuwantiya: DestinationContent = {
   overviewParagraphs: [
@@ -25,25 +37,25 @@ const hanuwantiya: DestinationContent = {
       title: "Hanuwantiya Island",
       description:
         "A picturesque island destination surrounded by the expansive waters of the Indira Sagar Reservoir.",
-      image: hanuwantiyaattraction1,
+      image: images.hanuwantiyaattraction1,
     },
     {
       title: "Water Sports Zone",
       description:
         "The hub for adventure activities including jet skiing, speed boating, parasailing and more.",
-      image: hanuwantiyaattraction2,
+      image: images.hanuwantiyaattraction2,
     },
     {
       title: "Floating Resort",
       description:
         "Unique floating accommodations offering unforgettable stays amidst the tranquil waters.",
-      image: hanuwantiyaattraction3,
+      image: images.hanuwantiyaattraction3,
     },
     {
       title: "Sunset View Point",
       description:
         "One of the best locations to witness spectacular sunsets over the reservoir.",
-      image: hanuwantiyaattraction4,
+      image: images.hanuwantiyaattraction4,
     },
   ],
 
@@ -104,11 +116,11 @@ const hanuwantiya: DestinationContent = {
   ],
 
   gallery: [
-    hanuwantiyagallary1,
-    hanuwantiyagallary2,
-    hanuwantiyagallary3,
-    hanuwantiyagallary4,
-    hanuwantiyagallary5,
+    images.hanuwantiyagallary1,
+    images.hanuwantiyagallary2,
+    images.hanuwantiyagallary3,
+    images.hanuwantiyagallary4,
+    images.hanuwantiyagallary5,
   ],
 
   travelInfo: {

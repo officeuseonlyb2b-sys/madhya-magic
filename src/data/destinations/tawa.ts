@@ -1,18 +1,31 @@
 import type { DestinationContent } from "./types";
 
-import tawaattraction1 from "@/assets/destimages/tawaattraction1.jpeg";
-import tawaattraction2 from "@/assets/destimages/tawaattraction2.jpeg";
-import tawaattraction3 from "@/assets/destimages/tawaattraction3.jpeg";
-import tawaattraction4 from "@/assets/destimages/tawaattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to tawaattraction1..4
+  tawaattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781580/tawaattraction1_k7s239.jpg",
+  tawaattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781583/tawaattraction2_vu2gue.jpg",
+  tawaattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781588/tawaattraction3_avrcu4.jpg",
+  tawaattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781591/tawaattraction4_gotist.jpg",
 
-// gallery
-
-import tawagallary1 from "@/assets/destimages/tawagallary1.jpeg";
-import tawagallary2 from "@/assets/destimages/tawagallary2.jpeg";
-import tawagallary3 from "@/assets/destimages/tawagallary3.jpeg";
-import tawagallary4 from "@/assets/destimages/tawagallary4.jpeg";
-import tawagallary5 from "@/assets/destimages/tawagallary5.jpeg";
-import tawagallary6 from "@/assets/destimages/tawagallary6.jpeg";
+  // Gallery images – mapped by filename (tawagallary1..6)
+  tawagallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781598/tawagallary1_lngia3.jpg",
+  tawagallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781607/tawagallary2_a6aiki.jpg",
+  tawagallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781606/tawagallary3_k8pzh9.jpg",
+  tawagallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781617/tawagallary4_hfylrp.jpg",
+  tawagallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781616/tawagallary5_szd5nh.jpg",
+  tawagallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781781624/tawagallary6_dstjmz.jpg",
+};
 
 const tawa: DestinationContent = {
   overviewParagraphs: [
@@ -26,25 +39,25 @@ const tawa: DestinationContent = {
       title: "Tawa Reservoir",
       description:
         "A massive reservoir surrounded by hills and forests, famous for its scenic beauty and boating experiences.",
-      image: tawaattraction1,
+      image: images.tawaattraction1,
     },
     {
       title: "Boat Safari",
       description:
         "Enjoy thrilling boat safaris across the vast waters while exploring islands and wildlife-rich surroundings.",
-      image: tawaattraction2,
+      image: images.tawaattraction2,
     },
     {
       title: "Bird Watching",
       description:
         "Spot migratory and resident bird species along the reservoir and nearby wetlands.",
-      image: tawaattraction3,
+      image: images.tawaattraction3,
     },
     {
       title: "Sunset Point",
       description:
         "Witness spectacular sunset views over the calm waters of the Tawa Reservoir.",
-      image: tawaattraction4,
+      image: images.tawaattraction4,
     },
   ],
 
@@ -105,12 +118,12 @@ const tawa: DestinationContent = {
   ],
 
   gallery: [
-    tawagallary1,
-    tawagallary2,
-    tawagallary3,
-    tawagallary4,
-    tawagallary5,
-    tawagallary6,
+    images.tawagallary1,
+    images.tawagallary2,
+    images.tawagallary3,
+    images.tawagallary4,
+    images.tawagallary5,
+    images.tawagallary6,
   ],
 
   travelInfo: {

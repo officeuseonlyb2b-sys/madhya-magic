@@ -1,21 +1,37 @@
 import type { DestinationContent } from "./types";
 
-import satpuraattraction1 from "@/assets/destimages/satpuraattraction1.jpeg";
-import satpuraattraction2 from "@/assets/destimages/satpuraattraction2.jpeg";
-import satpuraattraction3 from "@/assets/destimages/satpuraattraction3.jpeg";
-import satpuraattraction4 from "@/assets/destimages/satpuraattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to satpuraattraction1..4
+  satpuraattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780561/satpuraattraction1_tlatil.jpg",
+  satpuraattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780563/satpuraattraction2_rsmtw0.jpg",
+  satpuraattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780566/satpuraattraction3_rzdbxa.jpg",
+  satpuraattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780570/satpuraattraction4_nnbntg.jpg",
 
-// gallery
-
-import satpuragallary1 from "@/assets/destimages/satpuragallary1.jpeg";
-import satpuragallary2 from "@/assets/destimages/satpuragallary2.jpeg";
-import satpuragallary3 from "@/assets/destimages/satpuragallary3.jpeg";
-import satpuragallary4 from "@/assets/destimages/satpuragallary4.jpeg";
-import satpuragallary5 from "@/assets/destimages/satpuragallary5.jpeg";
-import satpuragallary6 from "@/assets/destimages/satpuragallary6.jpeg";
-import satpuragallary7 from "@/assets/destimages/satpuragallary7.jpeg";
-import satpuragallary8 from "@/assets/destimages/satpuragallary8.jpeg";
-import satpuragallary9 from "@/assets/destimages/satpuragallary9.jpeg";
+  // Gallery images – mapped to satpuragallary1..9
+  satpuragallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780573/satpuragallary1_cakh9h.jpg",
+  satpuragallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780577/satpuragallary2_pu2gds.jpg",
+  satpuragallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780581/satpuragallary3_xldyew.jpg",
+  satpuragallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780584/satpuragallary4_zspco1.jpg",
+  satpuragallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780588/satpuragallary5_ogjczo.jpg",
+  satpuragallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780592/satpuragallary6_sho1nx.jpg",
+  satpuragallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780596/satpuragallary7_qdmtpj.jpg",
+  satpuragallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780600/satpuragallary8_oavldz.jpg",
+  satpuragallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781780604/satpuragallary9_u2dc30.jpg",
+};
 
 const satpura: DestinationContent = {
   overviewParagraphs: [
@@ -25,31 +41,31 @@ const satpura: DestinationContent = {
   ],
 
   attractions: [
-  {
-    title: "Satpura National Park",
-    description:
-      "A breathtaking wildlife reserve known for dense forests, rugged hills and rich biodiversity.",
-    image: satpuraattraction1,
-  },
-  {
-    title: "Jeep Safari",
-    description:
-      "Experience thrilling jungle safaris through wildlife-rich forest trails and scenic landscapes.",
-    image: satpuraattraction2,
-  },
-  {
-    title: "Denwa River Boat Safari",
-    description:
-      "Enjoy peaceful boat safaris surrounded by forests while spotting crocodiles and exotic birds.",
-    image: satpuraattraction3,
-  },
-  {
-    title: "Walking Safari",
-    description:
-      "A unique guided forest walk experience allowing close exploration of Satpura’s untouched wilderness.",
-    image: satpuraattraction4,
-  },
-],
+    {
+      title: "Satpura National Park",
+      description:
+        "A breathtaking wildlife reserve known for dense forests, rugged hills and rich biodiversity.",
+      image: images.satpuraattraction1,
+    },
+    {
+      title: "Jeep Safari",
+      description:
+        "Experience thrilling jungle safaris through wildlife-rich forest trails and scenic landscapes.",
+      image: images.satpuraattraction2,
+    },
+    {
+      title: "Denwa River Boat Safari",
+      description:
+        "Enjoy peaceful boat safaris surrounded by forests while spotting crocodiles and exotic birds.",
+      image: images.satpuraattraction3,
+    },
+    {
+      title: "Walking Safari",
+      description:
+        "A unique guided forest walk experience allowing close exploration of Satpura’s untouched wilderness.",
+      image: images.satpuraattraction4,
+    },
+  ],
 
   thingsToDo: [
     {
@@ -108,15 +124,15 @@ const satpura: DestinationContent = {
   ],
 
   gallery: [
-    satpuragallary1,
-    satpuragallary2,
-    satpuragallary3,
-    satpuragallary4,
-    satpuragallary5,
-    satpuragallary6,
-    satpuragallary7,
-    satpuragallary8,
-    satpuragallary9,
+    images.satpuragallary1,
+    images.satpuragallary2,
+    images.satpuragallary3,
+    images.satpuragallary4,
+    images.satpuragallary5,
+    images.satpuragallary6,
+    images.satpuragallary7,
+    images.satpuragallary8,
+    images.satpuragallary9,
   ],
 
   travelInfo: {

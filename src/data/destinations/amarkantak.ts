@@ -1,18 +1,29 @@
 import type { DestinationContent } from "./types";
 
-import amarkantakattraction1 from "@/assets/destimages/amarkantakattraction1.jpeg";
-import amarkantakattraction2 from "@/assets/destimages/amarkantakattraction2.jpeg";
-import amarkantakattraction3 from "@/assets/destimages/amarkantakattraction3.jpeg";
-import amarkantakattraction4 from "@/assets/destimages/amarkantakattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  attraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764501/amarkantakattraction1_u3q7cu.jpg",
+  attraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764505/amarkantakattraction2_oauumy.jpg",
+  attraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764509/amarkantakattraction3_sxoq6j.jpg",
+  attraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764503/amarkantakattraction4_zvn3eh.jpg",
 
-// gallery
-
-import amarkantakgallary1 from "@/assets/destimages/amarkantakgallary1.jpeg";
-import amarkantakgallary2 from "@/assets/destimages/amarkantakgallary2.jpeg";
-import amarkantakgallary3 from "@/assets/destimages/amarkantakgallary3.jpeg";
-import amarkantakgallary4 from "@/assets/destimages/amarkantakgallary4.jpeg";
-import amarkantakgallary5 from "@/assets/destimages/amarkantakgallary5.jpeg";
-import amarkantakgallary6 from "@/assets/destimages/amarkantakgallary6.jpeg";
+  gallery1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764502/amarkantakgallary1_dpfh67.jpg",
+  gallery2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764502/amarkantakgallary2_anlhrb.jpg",
+  gallery3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764503/amarkantakgallary3_nbznqh.jpg",
+  gallery4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764523/amarkantakgallary4_mmnatw.jpg",
+  gallery5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764550/amarkantakgallary5_gh2mev.jpg",
+  gallery6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781764560/amarkantakgallary6_pwea6y.jpg",
+};
 
 const amarkantak: DestinationContent = {
   overviewParagraphs: [
@@ -26,25 +37,25 @@ const amarkantak: DestinationContent = {
       title: "Narmada Udgam Kund",
       description:
         "The sacred source of the Narmada River and the most revered site in Amarkantak.",
-      image: amarkantakattraction1,
+      image: images.attraction1,
     },
     {
       title: "Kapil Dhara Waterfall",
       description:
         "A spectacular waterfall where the Narmada cascades down amidst lush greenery.",
-      image: amarkantakattraction2,
+      image: images.attraction2,
     },
     {
       title: "Shri Yantra Mandir",
       description:
         "A unique spiritual temple dedicated to the sacred Shri Yantra, renowned for its intricate architecture and peaceful atmosphere.",
-      image: amarkantakattraction3,
+      image: images.attraction3,
     },
     {
       title: "Sonmuda",
       description:
         "A scenic viewpoint and the origin point of the Son River offering panoramic valley views.",
-      image: amarkantakattraction4,
+      image: images.attraction4,
     },
   ],
 
@@ -105,23 +116,20 @@ const amarkantak: DestinationContent = {
   ],
 
   gallery: [
-    amarkantakgallary1,
-    amarkantakgallary2,
-    amarkantakgallary3,
-    amarkantakgallary4,
-    amarkantakgallary5,
-    amarkantakgallary6,
+    images.gallery1,
+    images.gallery2,
+    images.gallery3,
+    images.gallery4,
+    images.gallery5,
+    images.gallery6,
   ],
 
   travelInfo: {
     bestTime:
       "October to March — ideal weather for pilgrimage and sightseeing",
-    road:
-      "Well-connected by road from Anuppur, Shahdol and Jabalpur.",
-    rail:
-      "The nearest railway station is Pendra Road Railway Station (~40 km).",
-    air:
-      "The nearest airport is Jabalpur Airport.",
+    road: "Well-connected by road from Anuppur, Shahdol and Jabalpur.",
+    rail: "The nearest railway station is Pendra Road Railway Station (~40 km).",
+    air: "The nearest airport is Jabalpur Airport.",
   },
 
   duration: "2 Days / 1 Night",

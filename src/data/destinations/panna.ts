@@ -1,21 +1,37 @@
 import type { DestinationContent } from "./types";
 
-import pannaattraction1 from "@/assets/destimages/pannaattraction1.jpeg";
-import pannaattraction2 from "@/assets/destimages/pannaattraction2.jpeg";
-import pannaattraction3 from "@/assets/destimages/pannaattraction3.jpeg";
-import pannaattraction4 from "@/assets/destimages/pannaattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to pannaattraction1..4
+  pannaattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778765/pannaattraction1_gukicp.jpg",
+  pannaattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778767/pannaattraction2_dkwu6p.jpg",
+  pannaattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778769/pannaattraction3_iedkw6.jpg",
+  pannaattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778773/pannaattraction4_da4hmd.jpg",
 
-// gallery
-
-import pannagallary1 from "@/assets/destimages/pannagallary1.jpeg";
-import pannagallary2 from "@/assets/destimages/pannagallary2.jpeg";
-import pannagallary3 from "@/assets/destimages/pannagallary3.jpeg";
-import pannagallary4 from "@/assets/destimages/pannagallary4.jpeg";
-import pannagallary5 from "@/assets/destimages/pannagallary5.jpeg";
-import pannagallary6 from "@/assets/destimages/pannagallary6.jpeg";
-import pannagallary7 from "@/assets/destimages/pannagallary7.jpeg";
-import pannagallary8 from "@/assets/destimages/pannagallary8.jpeg";
-import pannagallary9 from "@/assets/destimages/pannagallary9.jpeg";
+  // Gallery images – mapped to pannagallary1..9
+  pannagallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778775/pannagallary1_lubajo.jpg",
+  pannagallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778778/pannagallary2_rj3lta.jpg",
+  pannagallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778782/pannagallary3_puqxwl.jpg",
+  pannagallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778785/pannagallary4_j86j4v.jpg",
+  pannagallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778788/pannagallary5_wlmq5m.jpg",
+  pannagallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778791/pannagallary6_wedafz.jpg",
+  pannagallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778794/pannagallary7_zfxz63.jpg",
+  pannagallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778797/pannagallary8_smktvo.jpg",
+  pannagallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781778800/pannagallary9_onsbjn.jpg",
+};
 
 const panna: DestinationContent = {
   overviewParagraphs: [
@@ -25,31 +41,31 @@ const panna: DestinationContent = {
   ],
 
   attractions: [
-  {
-    title: "Panna National Park",
-    description:
-      "A renowned tiger reserve famous for its rich wildlife, dense forests and scenic jungle landscapes.",
-    image: pannaattraction1,
-  },
-  {
-    title: "Jeep Safari",
-    description:
-      "Experience thrilling jungle safaris through Panna’s wildlife-rich forest zones.",
-    image: pannaattraction2,
-  },
-  {
-    title: "Tiger Spotting",
-    description:
-      "Witness majestic Royal Bengal Tigers roaming freely in their natural habitat.",
-    image: pannaattraction3,
-  },
-  {
-    title: "Ken River Wildlife Safari",
-    description:
-      "Enjoy scenic river safaris while spotting crocodiles, birds and diverse wildlife species.",
-    image: pannaattraction4,
-  },
-],
+    {
+      title: "Panna National Park",
+      description:
+        "A renowned tiger reserve famous for its rich wildlife, dense forests and scenic jungle landscapes.",
+      image: images.pannaattraction1,
+    },
+    {
+      title: "Jeep Safari",
+      description:
+        "Experience thrilling jungle safaris through Panna’s wildlife-rich forest zones.",
+      image: images.pannaattraction2,
+    },
+    {
+      title: "Tiger Spotting",
+      description:
+        "Witness majestic Royal Bengal Tigers roaming freely in their natural habitat.",
+      image: images.pannaattraction3,
+    },
+    {
+      title: "Ken River Wildlife Safari",
+      description:
+        "Enjoy scenic river safaris while spotting crocodiles, birds and diverse wildlife species.",
+      image: images.pannaattraction4,
+    },
+  ],
 
   thingsToDo: [
     {
@@ -108,16 +124,15 @@ const panna: DestinationContent = {
   ],
 
   gallery: [
-    pannagallary1,
-    pannagallary2,
-    pannagallary3,
-    pannagallary4,
-    pannagallary5,
-    pannagallary6,
-    pannagallary7,
-    pannagallary8,
-    pannagallary9,
-
+    images.pannagallary1,
+    images.pannagallary2,
+    images.pannagallary3,
+    images.pannagallary4,
+    images.pannagallary5,
+    images.pannagallary6,
+    images.pannagallary7,
+    images.pannagallary8,
+    images.pannagallary9,
   ],
 
   travelInfo: {

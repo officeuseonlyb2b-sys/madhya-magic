@@ -1,23 +1,41 @@
 import type { DestinationContent } from "./types";
 
-import manduattraction1 from "@/assets/destimages/manduattraction1.jpeg";
-import manduattraction2 from "@/assets/destimages/manduattraction2.jpeg";
-import manduattraction3 from "@/assets/destimages/manduattraction3.jpeg";
-import manduattraction4 from "@/assets/destimages/manduattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images – mapped to manduattraction1..4
+  manduattraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777321/manduattraction1_kz787p.jpg",
+  manduattraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777340/manduattraction2_fnwj2e.jpg",
+  manduattraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777343/manduattraction3_svxda1.jpg",
+  manduattraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777346/manduattraction4_advpxk.jpg",
 
-// gallery
-
-import mandugallary1 from "@/assets/destimages/mandugallary1.jpeg";
-import mandugallary2 from "@/assets/destimages/mandugallary2.jpeg";
-import mandugallary3 from "@/assets/destimages/mandugallary3.jpeg";
-import mandugallary4 from "@/assets/destimages/mandugallary4.jpeg";
-import mandugallary5 from "@/assets/destimages/mandugallary5.jpeg";
-import mandugallary6 from "@/assets/destimages/mandugallary6.jpeg";
-import mandugallary7 from "@/assets/destimages/mandugallary7.jpeg";
-import mandugallary8 from "@/assets/destimages/mandugallary8.jpeg";
-import mandugallary9 from "@/assets/destimages/mandugallary9.jpeg";
-import mandugallary10 from "@/assets/destimages/mandugallary10.jpeg";
-import mandugallary11 from "@/assets/destimages/mandugallary11.jpeg";
+  // Gallery images – mapped to mandugallary1..11
+  mandugallary1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777349/mandugallary1_en6mh9.jpg",
+  mandugallary2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777352/mandugallary2_qrat4i.jpg",
+  mandugallary3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777355/mandugallary3_e6nerj.jpg",
+  mandugallary4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777358/mandugallary4_phpto4.jpg",
+  mandugallary5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777361/mandugallary5_grb38u.jpg",
+  mandugallary6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777363/mandugallary6_dg64an.jpg",
+  mandugallary7:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777366/mandugallary7_offkak.jpg",
+  mandugallary8:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777370/mandugallary8_uotxpb.jpg",
+  mandugallary9:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777373/mandugallary9_yu0voj.jpg",
+  mandugallary10:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777382/mandugallary10_noc5e7.jpg",
+  mandugallary11:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781777377/mandugallary11_mqlazt.jpg",
+};
 
 const mandu: DestinationContent = {
   overviewParagraphs: [
@@ -31,25 +49,25 @@ const mandu: DestinationContent = {
       title: "Jahaz Mahal",
       description:
         "An iconic ship-shaped palace surrounded by water, famous for its unique architecture.",
-      image: manduattraction1,
+      image: images.manduattraction1,
     },
     {
       title: "Rani Roopmati Pavilion",
       description:
         "A scenic hilltop pavilion offering breathtaking valley and Narmada River views.",
-      image: manduattraction2,
+      image: images.manduattraction2,
     },
     {
       title: "Baz Bahadur Palace",
       description:
         "A beautiful palace known for its Mughal-style courtyards and romantic history.",
-      image: manduattraction3,
+      image: images.manduattraction3,
     },
     {
       title: "Hoshang Shah Tomb",
       description:
         "India’s first marble mausoleum admired for its elegant Afghan architecture.",
-      image: manduattraction4,
+      image: images.manduattraction4,
     },
   ],
 
@@ -110,18 +128,18 @@ const mandu: DestinationContent = {
   ],
 
   gallery: [
-  mandugallary1,
-  mandugallary2,
-  mandugallary3,
-  mandugallary4,
-  mandugallary5,
-  mandugallary6,
-  mandugallary7,
-  mandugallary8,
-  mandugallary9,
-  mandugallary10,
-  mandugallary11,
-],
+    images.mandugallary1,
+    images.mandugallary2,
+    images.mandugallary3,
+    images.mandugallary4,
+    images.mandugallary5,
+    images.mandugallary6,
+    images.mandugallary7,
+    images.mandugallary8,
+    images.mandugallary9,
+    images.mandugallary10,
+    images.mandugallary11,
+  ],
 
   travelInfo: {
     bestTime:

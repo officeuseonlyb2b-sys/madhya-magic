@@ -1,24 +1,31 @@
 import type { DestinationContent } from "./types";
 
-import chambalgharialattraction1 from "@/assets/destimages/chambalgharialattraction1.jpeg";
-import chambalgharialattraction2 from "@/assets/destimages/chambalgharialattraction2.jpeg";
-import chambalgharialattraction3 from "@/assets/destimages/chambalgharialattraction3.jpeg";
-import chambalgharialattraction4 from "@/assets/destimages/chambalgharialattraction4.jpeg";
+// All images served from Cloudinary
+const images = {
+  // Attraction images (from the provided list in order)
+  attraction1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767485/chambalgharialattraction1_j9b84w.jpg",
+  attraction2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767487/chambalgharialattraction2_uo7pyf.jpg",
+  attraction3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767488/chambalgharialattraction3_opibgt.jpg",
+  attraction4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767490/chambalgharialattraction4_kmdqhn.jpg",
 
-// gallery
-
-import chambalgharialgallary1 from "@/assets/destimages/chambalgharialgallary1.jpeg";
-import chambalgharialgallary2 from "@/assets/destimages/chambalgharialgallary2.jpeg";
-import chambalgharialgallary3 from "@/assets/destimages/chambalgharialgallary3.jpeg";
-import chambalgharialgallary4 from "@/assets/destimages/chambalgharialgallary4.jpeg";
-import chambalgharialgallary5 from "@/assets/destimages/chambalgharialgallary5.jpeg";
-import chambalgharialgallary6 from "@/assets/destimages/chambalgharialgallary6.jpeg";
-import chambalgharialgallary7 from "@/assets/destimages/chambalgharialgallary7.jpeg";
-import chambalgharialgallary8 from "@/assets/destimages/chambalgharialgallary8.jpeg";
-import chambalgharialgallary9 from "@/assets/destimages/chambalgharialgallary9.jpeg";
-import chambalgharialgallary10 from "@/assets/destimages/chambalgharialgallary10.jpeg";
-import chambalgharialgallary11 from "@/assets/destimages/chambalgharialgallary11.jpeg";
-import chambalgharialgallary12 from "@/assets/destimages/chambalgharialgallary12.jpeg";
+  // Gallery images (from the provided list in order)
+  gallery1:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767492/chambalgharialgallary1_cmfmr1.jpg",
+  gallery2:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767493/chambalgharialgallary2_p14qlg.jpg",
+  gallery3:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767495/chambalgharialgallary3_qff2zd.jpg",
+  gallery4:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767496/chambalgharialgallary4_cdjsqb.jpg",
+  gallery5:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767499/chambalgharialgallary5_qhmkne.jpg",
+  gallery6:
+    "https://res.cloudinary.com/dfyuf0bjl/image/upload/v1781767500/chambalgharialgallary6_zka1ox.jpg",
+};
 
 const chambalgharial: DestinationContent = {
   overviewParagraphs: [
@@ -32,25 +39,25 @@ const chambalgharial: DestinationContent = {
       title: "Chambal River Safari",
       description:
         "Enjoy thrilling boat safaris through the pristine waters of the Chambal River.",
-      image: chambalgharialattraction1,
+      image: images.attraction1,
     },
     {
       title: "Gharial Spotting",
       description:
         "Witness the rare and endangered gharials basking along the riverbanks.",
-      image: chambalgharialattraction2,
+      image: images.attraction2,
     },
     {
       title: "Gangetic Dolphin Spotting",
       description:
         "Experience the excitement of spotting rare freshwater dolphins in the Chambal River.",
-      image: chambalgharialattraction3,
+      image: images.attraction3,
     },
     {
       title: "Bird Watching",
       description:
         "Observe migratory and native bird species across the river ecosystem.",
-      image: chambalgharialattraction4,
+      image: images.attraction4,
     },
   ],
 
@@ -111,12 +118,12 @@ const chambalgharial: DestinationContent = {
   ],
 
   gallery: [
-    chambalgharialgallary1,
-    chambalgharialgallary2,
-    chambalgharialgallary3,
-    chambalgharialgallary4,
-    chambalgharialgallary5,
-    chambalgharialgallary6,
+    images.gallery1,
+    images.gallery2,
+    images.gallery3,
+    images.gallery4,
+    images.gallery5,
+    images.gallery6,
   ],
 
   travelInfo: {
