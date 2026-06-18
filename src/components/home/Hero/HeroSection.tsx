@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { cldVideo } from "@/lib/cloudinary"
 
 // Video URLs
 const DESKTOP_VIDEO_SRC = "https://res.cloudinary.com/dfyuf0bjl/video/upload/v1781689853/home-banner-video_cewinf.mp4";
@@ -16,8 +17,15 @@ const HeroSection = () => {
   const [hasError, setHasError] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
-  // Pick the right video based on screen width
-  const videoSrc = isMobile ? MOBILE_VIDEO_SRC : DESKTOP_VIDEO_SRC;
+  // Pick the right video based on screen width + inject Cloudinary
+  // delivery transformations (f_auto, q_auto, vc_auto, responsive width).
+  const videoSrc = useMemo(
+    () =>
+      cldVideo(isMobile ? MOBILE_VIDEO_SRC : DESKTOP_VIDEO_SRC, {
+        w: isMobile ? 720 : 1280,
+      }),
+    [isMobile],
+  );
 
   // Parallax / fade effects
   const { scrollYProgress } = useScroll({

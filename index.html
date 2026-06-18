@@ -51,11 +51,19 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://connect.facebook.net">
 
-  <!-- Critical fonts stylesheet (loaded directly so the preload is always used) -->
+  <!-- Fonts: non-blocking via media="print" + onload swap (with noscript fallback) -->
   <link
     rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    media="print"
+    onload="this.media='all'"
   >
+  <noscript>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    >
+  </noscript>
 
   <!-- JSON-LD: Organization -->
   <script type="application/ld+json">

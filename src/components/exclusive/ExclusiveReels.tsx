@@ -4,6 +4,7 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { SawanCampaign } from "@/data/exclusive/sawanData";
 import { useInViewport } from "@/hooks/useInViewport";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { cldVideo, pickVideoWidth } from "@/lib/cloudinary";
 
 // ============================================================
 // VIDEO – playback driven entirely by parent `playing` prop
@@ -14,11 +15,13 @@ const ReelVideo = memo(
     shouldLoad,
     playing,
     onTogglePlay,
+    videoSrc,
   }: {
     reel: SawanCampaign["reels"][number];
     shouldLoad: boolean;
     playing: boolean;
     onTogglePlay: () => void;
+    videoSrc: string;
   }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
     // Once a reel enters the viewport we keep the src mounted to avoid
@@ -63,7 +66,7 @@ const ReelVideo = memo(
       <>
         <video
           ref={videoRef}
-          src={hasLoaded ? reel.videoUrl : undefined}
+          src={hasLoaded ? videoSrc : undefined}
           muted
           loop
           playsInline
@@ -98,11 +101,13 @@ const ReelCard = memo(
     index,
     playing,
     onTogglePlay,
+    videoSrc,
   }: {
     reel: SawanCampaign["reels"][number];
     index: number;
     playing: boolean;
     onTogglePlay: () => void;
+    videoSrc: string;
   }) => {
     const [hovered, setHovered] = useState(false);
     const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
@@ -130,6 +135,7 @@ const ReelCard = memo(
               shouldLoad={inView}
               playing={playing}
               onTogglePlay={onTogglePlay}
+              videoSrc={videoSrc}
             />
 
             <div
@@ -315,6 +321,7 @@ const ExclusiveReels = ({ reels }: Props) => {
                     onTogglePlay={() =>
                       setActiveKey((prev) => (prev === key ? null : key))
                     }
+                    videoSrc={cldVideo(reel.videoUrl, { w: pickVideoWidth(isMobile) })}
                   />
                 );
               })}

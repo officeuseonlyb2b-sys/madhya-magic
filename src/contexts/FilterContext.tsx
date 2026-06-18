@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, type ReactNode } from "react";
+import { createContext, useContext, useState, useCallback, useMemo, type ReactNode } from "react";
 import type { MapCategory } from "@/data/mapDestinations";
 
 interface FilterContextType {
@@ -34,11 +34,12 @@ export const FilterProvider = ({
     setSelectedFilters([]);
   }, []);
 
-  return (
-    <FilterContext.Provider value={{ selectedFilters, toggleFilter, selectAll, isAll }}>
-      {children}
-    </FilterContext.Provider>
+  const value = useMemo(
+    () => ({ selectedFilters, toggleFilter, selectAll, isAll }),
+    [selectedFilters, toggleFilter, selectAll, isAll],
   );
+
+  return <FilterContext.Provider value={value}>{children}</FilterContext.Provider>;
 };
 
 export const useFilters = () => {

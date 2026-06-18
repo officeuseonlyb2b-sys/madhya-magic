@@ -6,7 +6,9 @@ import { useFilters } from "@/contexts/FilterContext";
 import { reelsData, type ReelItem } from "@/data/reelsData";
 import { useAutoScroll } from "@/hooks/useAutoScroll";
 import { useInViewport } from "@/hooks/useInViewport";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { getReelCategories, matchesFilters } from "@/lib/categoryMatch";
+import { cldVideo, pickVideoWidth } from "@/lib/cloudinary";
 
 // ============================================================
 // VIDEO (lazy-loaded when near viewport, no image fallback)
@@ -16,10 +18,12 @@ const ReelVideo = memo(({
   reel,
   isHovered,
   inView,
+  videoSrc,
 }: {
   reel: ReelItem;
   isHovered: boolean;
   inView: boolean;
+  videoSrc: string;
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const srcSetRef = useRef(false);
@@ -27,11 +31,11 @@ const ReelVideo = memo(({
   // Set video source only when component is near viewport (performance)
   useEffect(() => {
     if (inView && videoRef.current && !srcSetRef.current) {
-      videoRef.current.src = reel.videoUrl;
+      videoRef.current.src = videoSrc;
       videoRef.current.preload = "auto";
       srcSetRef.current = true;
     }
-  }, [inView, reel.videoUrl]);
+  }, [inView, videoSrc]);
 
   // Handle hover play/pause
   useEffect(() => {
@@ -67,9 +71,11 @@ ReelVideo.displayName = "ReelVideo";
 const ReelCard = memo(({
   reel,
   index,
+  videoSrc,
 }: {
   reel: ReelItem;
   index: number;
+  videoSrc: string;
 }) => {
   const [hovered, setHovered] = useState(false);
   const { ref: viewRef, inView } = useInViewport<HTMLDivElement>("400px");
@@ -95,7 +101,7 @@ const ReelCard = memo(({
 
         {/* MEDIA - VIDEO ONLY */}
         <div className="relative h-[320px] sm:h-[380px] lg:h-[450px] overflow-hidden rounded-[24px] bg-black">
-          <ReelVideo reel={reel} isHovered={hovered} inView={inView} />
+          <ReelVideo reel={reel} isHovered={hovered} inView={inView} videoSrc={videoSrc} />
 
           {/* OVERLAY GRADIENT */}
           <div
@@ -152,6 +158,8 @@ ReelCard.displayName = "ReelCard";
 
 const ReelsSection = () => {
   const { selectedFilters, isAll } = useFilters();
+  const isMobile = useIsMobile();
+  const videoWidth = pickVideoWidth(isMobile);
 
   const { ref, onMouseEnter, onMouseLeave } =
     useAutoScroll<HTMLDivElement>(50);
@@ -265,6 +273,7 @@ const ReelsSection = () => {
                     key={`${reel.id}-${i}`}
                     reel={reel}
                     index={i}
+                    videoSrc={cldVideo(reel.videoUrl, { w: videoWidth })}
                   />
                 ))}
 

@@ -68,7 +68,7 @@ const ReelsGrid = ({ reels }: Props) => {
               >
                 {/* Image */}
                 <img
-                  src={reel.thumbnail}
+                  src={(reel as { thumbnail?: string }).thumbnail ?? ""}
                   alt={reel.title}
                   loading="lazy"
                   className="w-full h-full object-cover transition duration-700 group-hover:scale-110" decoding="async" />
