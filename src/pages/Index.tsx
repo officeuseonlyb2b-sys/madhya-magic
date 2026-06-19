@@ -1,10 +1,11 @@
-import { Suspense, lazy, ReactNode } from "react";
+import { Suspense, ReactNode } from "react";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import { FilterProvider } from "@/contexts/FilterContext";
 import FloatingButtons from "@/components/FloatingButtons";
 import SectionSkeleton from "@/components/SectionSkeleton";
 import SEO from "@/components/SEO";
+import { lazyWithRetry as lazy } from "@/lib/lazyWithRetry";
 
 
 
@@ -23,6 +24,7 @@ const BookingStepsSection = lazy(() => import("@/components/BookingStepsSection"
 const TravelInsightsSection = lazy(() => import("@/components/TravelInsightsSection"));
 const TestimonialsSection = lazy(() => import("@/components/TestimonialsSection"));
 const Footer = lazy(() => import("@/components/Footer"));
+
 
 // Per-section Suspense boundary so each chunk shows its own skeleton
 // instead of one global spinner blocking the whole page.
