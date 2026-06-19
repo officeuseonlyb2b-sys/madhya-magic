@@ -190,6 +190,14 @@ const ExclusiveReels = ({ reels }: Props) => {
     [reels, isMobile]
   );
 
+  // Precompute video sources once per slider/mobile change so each ReelCard
+  // receives a stable string prop and React.memo can short-circuit re-renders.
+  const videoWidth = pickVideoWidth(isMobile);
+  const videoSrcs = useMemo(
+    () => sliderData.map((r) => cldVideo(r.videoUrl, { w: videoWidth })),
+    [sliderData, videoWidth]
+  );
+
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const animFrameRef = useRef<number | null>(null);
@@ -201,6 +209,19 @@ const ExclusiveReels = ({ reels }: Props) => {
   // Single active reel — guarantees only one plays at a time.
   // Key includes index so duplicated reels (desktop loop) are unique.
   const [activeKey, setActiveKey] = useState<string | null>(null);
+
+  // Stable per-card toggle factory: same reference across renders for a given key,
+  // so memoized ReelCards don't re-render when activeKey changes elsewhere.
+  const toggleHandlersRef = useRef(new Map<string, () => void>());
+  const getToggleHandler = useCallback((key: string) => {
+    const map = toggleHandlersRef.current;
+    let h = map.get(key);
+    if (!h) {
+      h = () => setActiveKey((prev) => (prev === key ? null : key));
+      map.set(key, h);
+    }
+    return h;
+  }, []);
 
   const measureSetWidth = useCallback(() => {
     if (!trackRef.current) return;
@@ -318,10 +339,8 @@ const ExclusiveReels = ({ reels }: Props) => {
                     reel={reel}
                     index={i}
                     playing={activeKey === key}
-                    onTogglePlay={() =>
-                      setActiveKey((prev) => (prev === key ? null : key))
-                    }
-                    videoSrc={cldVideo(reel.videoUrl, { w: pickVideoWidth(isMobile) })}
+                    onTogglePlay={getToggleHandler(key)}
+                    videoSrc={videoSrcs[i]}
                   />
                 );
               })}

@@ -1,12 +1,12 @@
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { memo, useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 import { MapPin, ArrowRight } from "lucide-react";
 import { destinations } from "@/data/destinations";
 import { useFilters } from "@/contexts/FilterContext";
 import destinationsBg from "@/assets/destinations-bg.png";
 
-const DestinationCard = ({ dest, index }: { dest: typeof destinations[0]; index: number }) => {
+const DestinationCard = memo(({ dest, index }: { dest: typeof destinations[0]; index: number }) => {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-50px" });
 
@@ -60,17 +60,25 @@ const DestinationCard = ({ dest, index }: { dest: typeof destinations[0]; index:
       </Link>
     </motion.div>
   );
-};
+});
+DestinationCard.displayName = "DestinationCard";
 
 const DestinationsSection = () => {
   const titleRef = useRef(null);
   const titleInView = useInView(titleRef, { once: true });
   const { selectedFilters, isAll: isGlobalAll } = useFilters();
 
-  
-  const filtered = isGlobalAll
-    ? destinations
-    : destinations.filter(d => d.category.some(c => selectedFilters.includes(c as any)));
+
+  const filtered = useMemo(
+    () =>
+      isGlobalAll
+        ? destinations
+        : destinations.filter((d) =>
+            d.category.some((c) => selectedFilters.includes(c as any)),
+          ),
+    [isGlobalAll, selectedFilters],
+  );
+
 
   return (
     <section id="destinations" className="relative py-20 md:py-28 overflow-hidden bg-white">
