@@ -49,18 +49,8 @@ const ReelsGrid = ({ reels }: Props) => {
           {/* Gradient Fade Right */}
           <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent z-10" />
 
-          <motion.div
-            className="flex gap-6 w-max"
-            animate={{
-              x: ["0%", "-50%"],
-            }}
-            transition={{
-              duration: 30,
-              ease: "linear",
-              repeat: Infinity,
-            }}
-          >
-            {[...reels, ...reels].map((reel, i) => (
+          <div className="flex gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory">
+            {reels.map((reel, i) => (
               <motion.div
                 key={i}
                 whileHover={{ scale: 1.05, y: -8 }}
@@ -105,14 +95,14 @@ const ReelsGrid = ({ reels }: Props) => {
                   </motion.div>
                 </div>
 
-                {/* Shine Effect */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition">
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-[shine_2s_linear_infinite]" />
+                {/* Shine Effect - hover only, no infinite animation */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition pointer-events-none">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent" />
                 </div>
 
               </motion.div>
             ))}
-          </motion.div>
+          </div>
 
         </div>
 

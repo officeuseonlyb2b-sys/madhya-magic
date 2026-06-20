@@ -184,11 +184,8 @@ interface Props {
 
 const ExclusiveReels = ({ reels }: Props) => {
   const isMobile = useIsMobile();
-  // Mobile: render a single set (no infinite auto-scroll).
-  const sliderData = useMemo(
-    () => (isMobile ? [...reels] : [...reels, ...reels, ...reels]),
-    [reels, isMobile]
-  );
+  // Manual horizontal scroll only — render a single set on all viewports.
+  const sliderData = useMemo(() => [...reels], [reels]);
 
   // Precompute video sources once per slider/mobile change so each ReelCard
   // receives a stable string prop and React.memo can short-circuit re-renders.
@@ -200,11 +197,6 @@ const ExclusiveReels = ({ reels }: Props) => {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
-  const animFrameRef = useRef<number | null>(null);
-  const lastTimeRef = useRef<number | null>(null);
-  const oneSetWidthRef = useRef(0);
-  const speedRef = useRef(50);
-  const [isHovered, setIsHovered] = useState(false);
 
   // Single active reel — guarantees only one plays at a time.
   // Key includes index so duplicated reels (desktop loop) are unique.
@@ -223,58 +215,8 @@ const ExclusiveReels = ({ reels }: Props) => {
     return h;
   }, []);
 
-  const measureSetWidth = useCallback(() => {
-    if (!trackRef.current) return;
-    const trackWidth = trackRef.current.scrollWidth;
-    oneSetWidthRef.current = trackWidth / (isMobile ? 1 : 3);
-  }, [isMobile]);
-
-  useEffect(() => {
-    measureSetWidth();
-    const observer = new ResizeObserver(measureSetWidth);
-    if (trackRef.current) observer.observe(trackRef.current);
-    return () => observer.disconnect();
-  }, [measureSetWidth, reels]);
-
-  const animate = useCallback(
-    (timestamp: number) => {
-      if (!lastTimeRef.current) lastTimeRef.current = timestamp;
-      const delta = (timestamp - lastTimeRef.current) / 1000;
-      lastTimeRef.current = timestamp;
-
-      const el = containerRef.current;
-      if (!el || isHovered || activeKey || oneSetWidthRef.current === 0) {
-        animFrameRef.current = requestAnimationFrame(animate);
-        return;
-      }
-
-      el.scrollLeft += speedRef.current * delta;
-      const maxScroll = oneSetWidthRef.current * 2;
-      if (el.scrollLeft >= maxScroll) {
-        el.scrollLeft -= oneSetWidthRef.current;
-      } else if (el.scrollLeft <= 0) {
-        el.scrollLeft += oneSetWidthRef.current;
-      }
-
-      animFrameRef.current = requestAnimationFrame(animate);
-    },
-    [isHovered, activeKey]
-  );
-
-  useEffect(() => {
-    if (isMobile) return; // No auto-scroll on mobile.
-    lastTimeRef.current = null;
-    animFrameRef.current = requestAnimationFrame(animate);
-    return () => {
-      if (animFrameRef.current) {
-        cancelAnimationFrame(animFrameRef.current);
-        animFrameRef.current = null;
-      }
-    };
-  }, [animate, isMobile]);
-
-  const handleMouseEnter = useCallback(() => setIsHovered(true), []);
-  const handleMouseLeave = useCallback(() => setIsHovered(false), []);
+  const handleMouseEnter = useCallback(() => {}, []);
+  const handleMouseLeave = useCallback(() => {}, []);
 
   // Pause whatever is playing when the user scrolls the page.
   useEffect(() => {

@@ -28,6 +28,8 @@ const RelatedPackagesStrip = ({
     if (!el || !packages || packages.length === 0) return;
 
     let speed = 0.6;
+    let inView = true;
+    let tabVisible = !document.hidden;
 
     const autoScroll = () => {
       if (!paused) {
@@ -42,12 +44,44 @@ const RelatedPackagesStrip = ({
       animationRef.current = requestAnimationFrame(autoScroll);
     };
 
-    animationRef.current = requestAnimationFrame(autoScroll);
+    const start = () => {
+      if (animationRef.current != null) return;
+      animationRef.current = requestAnimationFrame(autoScroll);
+    };
+    const stop = () => {
+      if (animationRef.current != null) {
+        cancelAnimationFrame(animationRef.current);
+        animationRef.current = null;
+      }
+    };
+    const sync = () => {
+      if (inView && tabVisible) start();
+      else stop();
+    };
+
+    let io: IntersectionObserver | null = null;
+    if (typeof IntersectionObserver !== "undefined") {
+      inView = false;
+      io = new IntersectionObserver(
+        (entries) => {
+          for (const e of entries) inView = e.isIntersecting;
+          sync();
+        },
+        { rootMargin: "200px" },
+      );
+      io.observe(el);
+    }
+    const onVis = () => {
+      tabVisible = !document.hidden;
+      sync();
+    };
+    document.addEventListener("visibilitychange", onVis);
+    sync();
 
     return () => {
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current);
-      }
+      stop();
+      io?.disconnect();
+      document.removeEventListener("visibilitychange", onVis);
     };
   }, [packages, paused]);
 
