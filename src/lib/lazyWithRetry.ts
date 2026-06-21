@@ -12,28 +12,42 @@ type PreloadableLazy<T extends ComponentType<any>> = LazyExoticComponent<T> & {
   preload: () => Promise<unknown>;
 };
 
+const isChunkError = (err: any) => {
+  const message = String(err?.message || err || "");
+  return (
+    message.includes("Failed to fetch dynamically imported module") ||
+    message.includes("Importing a module script failed") ||
+    message.includes("error loading dynamically imported module") ||
+    message.includes("dynamically imported module")
+  );
+};
+
+const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
 const wrapFactory = <T extends ComponentType<any>>(
   factory: () => Promise<{ default: T }>
 ) => async () => {
-  try {
-    return await factory();
-  } catch (err: any) {
-    const message = String(err?.message || err || "");
-    const isChunkError =
-      message.includes("Failed to fetch dynamically imported module") ||
-      message.includes("Importing a module script failed") ||
-      message.includes("error loading dynamically imported module");
-
-    if (isChunkError && typeof window !== "undefined") {
-      const alreadyReloaded = sessionStorage.getItem(RELOAD_KEY);
-      if (!alreadyReloaded) {
-        sessionStorage.setItem(RELOAD_KEY, "1");
-        window.location.reload();
-        return new Promise(() => {}) as Promise<{ default: T }>;
+  // Retry transient network/HMR failures a couple of times before giving up.
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      return await factory();
+    } catch (err: any) {
+      if (!isChunkError(err) || attempt === 2) {
+        if (isChunkError(err) && typeof window !== "undefined") {
+          const alreadyReloaded = sessionStorage.getItem(RELOAD_KEY);
+          if (!alreadyReloaded) {
+            sessionStorage.setItem(RELOAD_KEY, "1");
+            window.location.reload();
+            return new Promise(() => {}) as Promise<{ default: T }>;
+          }
+        }
+        throw err;
       }
+      await wait(300 * (attempt + 1));
     }
-    throw err;
   }
+  // Unreachable
+  throw new Error("lazyWithRetry: exhausted retries");
 };
 
 const pendingPrefetches: Array<() => Promise<unknown>> = [];
@@ -80,7 +94,16 @@ export function lazyWithRetry<T extends ComponentType<any>>(
 ): PreloadableLazy<T> {
   const wrapped = wrapFactory(factory);
   let cached: Promise<{ default: T }> | null = null;
-  const load = () => (cached ??= wrapped());
+  const load = () => {
+    if (!cached) {
+      cached = wrapped().catch((err) => {
+        // Don't cache failures — next render attempt should retry the import.
+        cached = null;
+        throw err;
+      });
+    }
+    return cached;
+  };
 
   const Component = lazy(load) as PreloadableLazy<T>;
   Component.preload = () => load();
